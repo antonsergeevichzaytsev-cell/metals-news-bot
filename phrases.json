@@ -1,0 +1,62 @@
+[
+  {"cat": "anchor", "lang": "en", "text": "$25K DD prevents a $5M mistake. Insurance with 200x ROI.", "use": "Возражение по цене на DD. Произнести спокойно, как медицинский диагноз."},
+  {"cat": "anchor", "lang": "en", "text": "If that math doesn't work for your deal, either the deal is too small and you don't need me, or you're underpricing the risk.", "use": "Anchor продолжение, переводит разговор с цены на их риск."},
+  {"cat": "anchor", "lang": "ru", "text": "Если эта работа предотвратит ошибку на 50 миллионов — то 2 миллиона не дорого.", "use": "RU-anchor, ставит риск выше цены."},
+  {"cat": "anchor", "lang": "en", "text": "Different scope. DD Lite is document review and risk map. DD Standard is IC-ready.", "use": "Когда просят скидку — переводим в выбор scope."},
+
+  {"cat": "calibrated", "lang": "en", "text": "That's outside what I can verify — I'd be guessing.", "use": "Любой вопрос вне зоны. Утверждение, не извинение."},
+  {"cat": "calibrated", "lang": "en", "text": "I don't have direct visibility on that. Would be speculation.", "use": "Прямой research-style вопрос без данных у тебя."},
+  {"cat": "calibrated", "lang": "en", "text": "I haven't tracked that in the last 6 months — my number would be stale.", "use": "Когда спрашивают свежую цифру, которой у тебя нет."},
+  {"cat": "calibrated", "lang": "en", "text": "Honestly, that's a question for someone in a different domain. I can name a colleague if useful.", "use": "Смежная отрасль (lithium chemistry, REE separation)."},
+  {"cat": "calibrated", "lang": "ru", "text": "Это вне того, что я могу подтвердить — будет догадка.", "use": "RU-эквивалент. Тон спокойный, утвердительный."},
+
+  {"cat": "bridge", "lang": "en", "text": "My direct experience is aluminium, not copper, but the CapEx risk pattern across greenfield non-ferrous is similar.", "use": "Вопрос про медь / другие non-ferrous."},
+  {"cat": "bridge", "lang": "en", "text": "I can't speak to that specific company, but the underlying technology dynamic is the same.", "use": "Конкретный актив вне твоего знания, но технология знакома."},
+  {"cat": "bridge", "lang": "en", "text": "I haven't reviewed that asset, but I have assessed comparable projects on the owner's side.", "use": "Когда называют незнакомый актив того же типа."},
+  {"cat": "bridge", "lang": "en", "text": "That's outside what I can verify. What I can speak to is the adjacent question of...", "use": "Bridge + pivot к зоне, где есть данные."},
+  {"cat": "bridge", "lang": "en", "text": "Aluminium and copper share cost-curve logic. Power, alumina-equivalent input, and labour productivity. Pattern transfers.", "use": "Bridge на cost-curve, твоя сильная зона."},
+
+  {"cat": "pitch", "lang": "en", "text": "Independent advisor on aluminium and non-ferrous metals. Sixteen years at RUSAL, Norilsk Nickel, UMMC.", "use": "Базовый 30-сек pitch. Выучить дословно."},
+  {"cat": "pitch", "lang": "en", "text": "Most recently project director on a $550M CapEx program at UMMC, FEL 1 to 3.", "use": "Signature proof, всегда после первого предложения pitch."},
+  {"cat": "pitch", "lang": "en", "text": "I help PE funds and industrial buyers price technical risk on non-ferrous deals.", "use": "Закрытие pitch — что предлагаешь."},
+  {"cat": "pitch", "lang": "ru", "text": "Шестнадцать лет в отрасли: РУСАЛ, Норникель, УГМК. Последний проект — директор $550M программы.", "use": "RU-pitch, базовая версия."},
+
+  {"cat": "rate", "lang": "en", "text": "My rate is $400 an hour.", "use": "Объявление ставки. Пауза 5 сек. Не объяснять. Не оправдываться."},
+  {"cat": "rate", "lang": "en", "text": "A DD Standard package is twenty-two to thirty thousand dollars.", "use": "Объявление DD-стоимости. Тон ровный."},
+  {"cat": "rate", "lang": "en", "text": "For an embedded retainer, eighteen to twenty-five thousand a month.", "use": "Объявление retainer. Без вилки — диапазон по scope."},
+  {"cat": "rate", "lang": "ru", "text": "Часовая ставка — 32 тысячи рублей.", "use": "RU-ставка часовая. Один раз. Пауза 5 сек."},
+  {"cat": "rate", "lang": "ru", "text": "Стандартная техническая экспертиза актива — 2 миллиона рублей за 4 недели работы.", "use": "RU-DD объявление. Без 'примерно'."},
+
+  {"cat": "russia", "lang": "en", "text": "Russia residence is a compliance question, fair to raise. I'm an individual entrepreneur, not sanctioned.", "use": "Russia objection. Спокойно, как банкир."},
+  {"cat": "russia", "lang": "en", "text": "Eight expert networks cleared me — GLG, Guidepoint, AlphaSights and others. Same KYC pack for your compliance.", "use": "Социальное доказательство комплаенса."},
+  {"cat": "russia", "lang": "en", "text": "I have a backup account in a non-Russian jurisdiction for direct contracts. Happy to walk through it.", "use": "Banking objection в Russia-контексте."},
+
+  {"cat": "objection", "lang": "ru", "text": "Это про брендовое прикрытие. Я даю не cover, а правильную цифру. Если CFO нужен бренд — берите большую четвёрку.", "use": "Возражение 'мы работаем с big four'."},
+  {"cat": "objection", "lang": "ru", "text": "Своя команда знает актив изнутри. Я даю внешний взгляд и benchmarking. Это разные роли.", "use": "Возражение 'у нас свой эксперт'."},
+  {"cat": "objection", "lang": "en", "text": "Their model is junior analysts running templates. Mine is sixteen years on the owner's side. Different product.", "use": "Возражение 'другой консультант дешевле'."},
+  {"cat": "objection", "lang": "en", "text": "If your decision is on price, you should take theirs. If it's on getting the number right, we should talk.", "use": "Хороший close после прайс-возражения."},
+
+  {"cat": "mirroring", "lang": "en", "text": "It sounds like the price is the main blocker.", "use": "Tactical empathy. Часто вытаскивает настоящий блок (это не цена, а сроки)."},
+  {"cat": "mirroring", "lang": "en", "text": "It seems like timing is the constraint, not the scope.", "use": "Когда подозреваешь что сроки давят, не бюджет."},
+  {"cat": "mirroring", "lang": "en", "text": "(repeat last 1-3 words of their statement as a question)", "use": "Mirror технология. Один из 4 ключевых элементов Chris Voss."},
+
+  {"cat": "slowdown", "lang": "en", "text": "(2-second pause BEFORE answering. Then: 'mm... so, the way I'd think about that is...')", "use": "Под стрессом замедление = sounds senior. Воркаут для голоса."},
+  {"cat": "slowdown", "lang": "en", "text": "(1-second pause BETWEEN sentences. Pace 130-140 wpm, not 180.)", "use": "Эксперт за $1,500/час говорит медленно."},
+
+  {"cat": "closing", "lang": "en", "text": "If your team needs deeper technical work on this, I do direct DD engagements outside the platform.", "use": "Closing expert call. Открывает direct pipeline."},
+  {"cat": "closing", "lang": "en", "text": "Your questions were sharper than the typical brief. If you ever need a written analysis on a specific asset, I work directly on those too.", "use": "Closing с комплиментом. Не настойчиво."},
+  {"cat": "closing", "lang": "ru", "text": "Подготовлю one-pager по scope, отправлю до пятницы. Решение за вами.", "use": "RU-closing. Без давления, с дедлайном."},
+
+  {"cat": "storytelling", "lang": "en", "text": "In 2023 at UMMC, we were 8 months into FEL 3 on a $550M smelter expansion. The EPC bid came back 22% over our FEL 2 estimate.", "use": "Setup для UMMC case story. Setup → conflict → decision → result."},
+  {"cat": "storytelling", "lang": "en", "text": "We broke the EPC package into 6 separate tenders and brought integration engineering in-house. Closed CapEx at 18% below benchmark.", "use": "Decision + result часть UMMC story."},
+  {"cat": "storytelling", "lang": "en", "text": "For your DD: ask the team why they chose EPC vs EPCM. The savings are real, but only if the owner has the bench to manage the interface.", "use": "Lesson часть UMMC story. Привязка к слушателю."},
+
+  {"cat": "principle", "lang": "en", "text": "Calibrated truth is the moat. Three other experts inflate; the one who says 'I don't know' when he doesn't, wins on year two.", "use": "Strategy v3 principle. Напоминание себе перед звонком."},
+  {"cat": "principle", "lang": "ru", "text": "Не врать — это не моральная установка, это бизнес-стратегия. PE-аналитики калибруют экспертов на враньё профессионально.", "use": "Strategy v3 ядро позиционирования."},
+  {"cat": "principle", "lang": "en", "text": "Year 1 success is not revenue. It's one signed retainer.", "use": "Strategy v3 leading metric. Якорь приоритета."},
+  {"cat": "principle", "lang": "ru", "text": "Кто первый заполнит паузу после объявления цены — тот проиграл переговоры. Молчи.", "use": "Правило паузы после цены. Самое важное в БЛОК 3."},
+
+  {"cat": "hard_q", "lang": "en", "text": "Q: 'When did you last touch RUSAL data?' — Answer honestly with timeline. Don't fudge.", "use": "Researcher провокация. Калиброванная правда побеждает."},
+  {"cat": "hard_q", "lang": "en", "text": "Q: 'Why are 3 other experts saying the opposite?' — 'Different data sources, different time windows. Let me show mine.'", "use": "Конфликт мнений. Не атаковать других, показать свою базу."},
+  {"cat": "hard_q", "lang": "en", "text": "Q: 'Is $550M not larger than UMMC publicly disclosed?' — Program scope vs annual CapEx — different. Phase-by-phase under NDA.", "use": "Inflation-проверка от researcher. Объясняем структуру."}
+]
