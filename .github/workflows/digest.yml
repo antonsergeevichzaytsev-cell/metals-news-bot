@@ -1,0 +1,33 @@
+name: Metals & Mining digest
+
+on:
+  schedule:
+    - cron: '0 5 * * 1-5'
+    - cron: '0 15 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run digest
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+          DEEPSEEK_API_KEY:   ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python digest.py
+      - name: Commit updated state
+        run: |
+          git config user.name  "metals-bot"
+          git config user.email "bot@noreply.local"
+          git add state.json || true
+          git diff --staged --quiet || git commit -m "state: $(date -u +%Y-%m-%d_%H-%MZ)"
+          git push
