@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Anton Daily — morning brief at 08:00 MSK Mon-Fri (also manual run on weekends).
-v2: weekend fallback for phrases, verbose Yahoo error logging, multi-endpoint fetch.
+"""Anton Daily — morning brief at 08:30 MSK Mon-Fri.
+v3: + Friday F-block (CEO quote / top story of the week from history.json).
 """
 from __future__ import annotations
 
@@ -14,24 +14,25 @@ from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PHRASES_FILE = os.path.join(ROOT, "phrases.json")
+HISTORY_FILE = os.path.join(ROOT, "history.json")
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
+DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "")  # optional
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 )
 
-# Map weekday (0=Mon) -> categories from phrases.json that suit that day's theme.
 DAY_CATEGORIES = {
-    0: ["anchor", "rate"],                                # Money
-    1: ["calibrated", "hard_q", "slowdown"],              # Calibrated truth
-    2: ["bridge", "mirroring"],                            # Off-topic -> bring back
-    3: ["closing", "objection"],                           # Sales close
-    4: ["pitch", "storytelling", "russia", "principle"],   # Identity & principle
-    5: ["principle", "russia", "pitch"],                   # Sat manual run fallback
-    6: ["principle", "russia", "pitch"],                   # Sun manual run fallback
+    0: ["anchor", "rate"],
+    1: ["calibrated", "hard_q", "slowdown"],
+    2: ["bridge", "mirroring"],
+    3: ["closing", "objection"],
+    4: ["pitch", "storytelling", "russia", "principle"],
+    5: ["principle", "russia", "pitch"],
+    6: ["principle", "russia", "pitch"],
 }
 
 DAY_THEMES = {
@@ -56,7 +57,6 @@ def pick_phrase(phrases, weekday, week_index):
     cats = DAY_CATEGORIES.get(weekday, [])
     pool = [p for p in phrases if p["cat"] in cats]
     if not pool:
-        # Final fallback: any phrase
         pool = phrases
     return pool[week_index % len(pool)] if pool else None
 
@@ -71,7 +71,6 @@ def http_get(url, timeout=10):
 
 
 def fetch_yahoo(symbol, timeout=10):
-    # Try multiple endpoints/variants. Yahoo sometimes requires interval+range.
     urls = [
         f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d",
         f"https://query2.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d",
@@ -84,59 +83,47 @@ def fetch_yahoo(symbol, timeout=10):
             data = json.loads(body)
             result = data.get("chart", {}).get("result")
             if not result:
-                err = data.get("chart", {}).get("error")
-                last_err = f"empty result, err={err}"
+                last_err = f"empty result"
                 continue
             meta = result[0]["meta"]
             cur = meta.get("regularMarketPrice")
             prev = meta.get("previousClose") or meta.get("chartPreviousClose")
             if cur is None:
-                last_err = f"no regularMarketPrice in meta keys={list(meta.keys())[:8]}"
+                last_err = "no regularMarketPrice"
                 continue
             chg = ((cur - prev) / prev * 100.0) if (prev and prev > 0) else None
             return cur, chg
         except urllib.error.HTTPError as e:
-            last_err = f"HTTP {e.code} on {url[:60]}"
+            last_err = f"HTTP {e.code}"
         except Exception as e:
-            last_err = f"{type(e).__name__}: {e} on {url[:60]}"
-    raise RuntimeError(last_err or "all endpoints failed")
+            last_err = f"{type(e).__name__}: {e}"
+    raise RuntimeError(last_err or "all failed")
 
 
 def fetch_stooq(symbol_stooq, timeout=10):
-    """Fallback: stooq.com CSV. Returns (close, chg_pct_or_None)."""
     url = f"https://stooq.com/q/l/?s={symbol_stooq}&i=d"
     body = http_get(url, timeout=timeout)
-    # CSV header: Symbol,Date,Time,Open,High,Low,Close,Volume
     lines = body.strip().split("\n")
     if len(lines) < 2:
-        raise RuntimeError(f"stooq empty for {symbol_stooq}")
+        raise RuntimeError(f"stooq empty")
     parts = lines[1].split(",")
     if len(parts) < 7 or parts[6] in ("", "N/D"):
-        raise RuntimeError(f"stooq no close for {symbol_stooq}: {lines[1][:80]}")
-    close = float(parts[6])
-    return close, None
+        raise RuntimeError(f"stooq no close: {lines[1][:80]}")
+    return float(parts[6]), None
 
 
 def fetch_prices():
-    """Returns dict {symbol: (price_per_tonne_usd, chg_pct_or_None, source_label)}.
-    Tries Yahoo first (Al/Cu via CME proxy), falls back to stooq.
-    """
     prices = {}
-
-    # --- Aluminum ---
     try:
         p, c = fetch_yahoo("ALI=F")
         prices["Al"] = (p, c, "CME")
     except Exception as e:
         print(f"  ! yahoo ALI=F: {e}", file=sys.stderr)
         try:
-            # Stooq symbol for CME aluminum futures
             p, c = fetch_stooq("ali.f")
             prices["Al"] = (p, c, "stooq")
         except Exception as e2:
             print(f"  ! stooq ali.f: {e2}", file=sys.stderr)
-
-    # --- Copper (COMEX HG=F is $/lb -> convert to $/t, 2204.62 lb/t) ---
     try:
         p, c = fetch_yahoo("HG=F")
         prices["Cu"] = (p * 2204.62, c, "CME")
@@ -147,8 +134,89 @@ def fetch_prices():
             prices["Cu"] = (p * 2204.62, c, "stooq")
         except Exception as e2:
             print(f"  ! stooq hg.f: {e2}", file=sys.stderr)
-
     return prices
+
+
+# --- F-block: top story of the week ----------------------------------------
+
+DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
+
+F_BLOCK_PROMPT = (
+    "You receive a list of metals and mining news from the past week, indexed by NUMBER. "
+    "Each item has a title, source domain, and a Russian 'why it matters' note. "
+    "Pick THE SINGLE most strategically significant item for a senior independent consultant "
+    "in non-ferrous metals and mining (16y at UC RUSAL, Norilsk Nickel, UMMC, ERG). "
+    "Strong picks: (1) executive quote from named CEO/COO of a major operator, "
+    "(2) M&A deal with disclosed value, (3) named regulatory shift (sanctions, tariffs, CBAM), "
+    "(4) production data with concrete numbers, (5) named CapEx decision. "
+    "Weak picks (avoid): generic market summaries, analyst commentary, no-name press releases. "
+    "Return ONLY valid JSON: {\"pick\": int, \"for_call\": str}. "
+    "'pick' = 0-based index of chosen item, or -1 if week was thin and nothing qualifies. "
+    "'for_call' = ONE Russian sentence (max 25 words) on how Anton can reference this on "
+    "an expert call or LinkedIn post. Start with 'На звонке:' or 'В посте:'."
+)
+
+
+def load_history():
+    if not os.path.exists(HISTORY_FILE):
+        return {"items": []}
+    try:
+        with open(HISTORY_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {"items": []}
+
+
+def pick_top_of_week(history):
+    """Returns (item_dict, for_call_str) or (None, '') if nothing qualifies."""
+    if not DEEPSEEK_KEY:
+        return None, ""
+    items = history.get("items", [])
+    if not items:
+        return None, ""
+    # Trim to last 30 items max (most recent first)
+    recent = items[-30:]
+    # Build user message: numbered list
+    lines = []
+    for i, it in enumerate(recent):
+        title = (it.get("title") or "")[:200]
+        src = (it.get("domain") or "")[:40]
+        why = (it.get("why") or "")[:200]
+        lines.append(f"[{i}] {title} | src={src} | why={why}")
+    user_msg = "\n".join(lines)
+
+    payload = {
+        "model": "deepseek-chat",
+        "messages": [
+            {"role": "system", "content": F_BLOCK_PROMPT},
+            {"role": "user", "content": user_msg},
+        ],
+        "temperature": 0.3,
+        "max_tokens": 200,
+        "response_format": {"type": "json_object"},
+    }
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        DEEPSEEK_URL,
+        data=data,
+        headers={
+            "Authorization": f"Bearer {DEEPSEEK_KEY}",
+            "Content-Type": "application/json",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            resp = json.loads(r.read().decode("utf-8"))
+        content = resp["choices"][0]["message"]["content"]
+        verdict = json.loads(content)
+        pick = verdict.get("pick", -1)
+        for_call = (verdict.get("for_call") or "").strip()
+        if pick is None or pick < 0 or pick >= len(recent):
+            return None, ""
+        return recent[pick], for_call
+    except Exception as e:
+        print(f"  ! deepseek F-block error: {e}", file=sys.stderr)
+        return None, ""
 
 
 def esc(s):
@@ -177,7 +245,7 @@ def tg_send(text):
 def main():
     msk = timezone(timedelta(hours=3))
     now = datetime.now(msk)
-    weekday = now.weekday()  # 0=Mon
+    weekday = now.weekday()
     iso_year, iso_week, _ = now.isocalendar()
 
     phrases = load_phrases()
@@ -193,8 +261,6 @@ def main():
         out += f"\U0001f5e3\ufe0f {esc(p['text'])}\n\n"
         if p.get("use"):
             out += f"\U0001f4aa <i>{esc(p['use'])}</i>\n\n"
-    else:
-        out += f"<i>\u041d\u0435\u0442 \u0444\u0440\u0430\u0437 \u0432 \u0431\u0430\u0437\u0435.</i>\n\n"
 
     prices = fetch_prices()
     if prices:
@@ -209,6 +275,25 @@ def main():
         out += " \u00b7 ".join(parts) + "\n"
     else:
         out += "<i>\U0001f4ca Markets: \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d</i>\n"
+
+    # --- F-block on Fridays ---
+    if weekday == 4:
+        history = load_history()
+        top, for_call = pick_top_of_week(history)
+        if top:
+            out += "\n<b>\U0001f3c6 \u0422\u043e\u043f-\u043d\u043e\u0432\u043e\u0441\u0442\u044c \u043d\u0435\u0434\u0435\u043b\u0438</b>\n"
+            title = esc(top.get("title", ""))
+            link = esc(top.get("link", ""))
+            domain = esc(top.get("domain", ""))
+            if link:
+                out += f'<a href="{link}">{title}</a>\n'
+            else:
+                out += f"{title}\n"
+            out += f"<i>{domain}</i>\n"
+            if for_call:
+                out += f"\U0001f4cc {esc(for_call)}\n"
+        elif DEEPSEEK_KEY:
+            out += "\n<i>\U0001f3c6 \u0422\u043e\u043f-\u043d\u043e\u0432\u043e\u0441\u0442\u044c \u043d\u0435\u0434\u0435\u043b\u0438: \u043d\u0435\u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u043e \u0434\u0430\u043d\u043d\u044b\u0445 \u0432 history</i>\n"
 
     tg_send(out)
     cat_label = p["cat"] if p else "none"
