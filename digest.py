@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Metals & Mining digest bot v3 — HTML escape + Telegram fallback + safe truncation + getMe diag."""
+"""Metals & Mining digest bot v4 — HTML escape + Telegram fallback + safe truncation."""
 from __future__ import annotations
 
 import json
@@ -204,16 +204,6 @@ def send_telegram(text):
 
 
 def main():
-    # Diagnostic: identify which bot the token actually belongs to.
-    # Telegram bot_id (digits before ':') is public — getMe reveals nothing sensitive.
-    try:
-        with urllib.request.urlopen(
-            f"https://api.telegram.org/bot{BOT_TOKEN}/getMe", timeout=10
-        ) as r:
-            print(f"Bot getMe: {r.read().decode()}")
-    except Exception as e:
-        print(f"Bot getMe failed: {e}")
-
     feeds = load_list(FEEDS_FILE)
     keywords = load_list(KEYWORDS_FILE)
     seen = load_state()
@@ -279,7 +269,7 @@ def main():
     now_msk = datetime.now(timezone.utc) + timedelta(hours=3)
     header_tag = "📰" if not DEEPSEEK_KEY else "🧠"
     header = f"<b>{header_tag} Metals &amp; Mining — {now_msk.strftime('%d %b, %H:%M')} MSK</b>"
-    BUDGET = 3900  # leave room for footer
+    BUDGET = 3900
 
     blocks = []
     for i, it in enumerate(enriched, 1):
