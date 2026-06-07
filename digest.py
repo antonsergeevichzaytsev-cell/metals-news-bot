@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Metals & Mining digest bot v2 — HTML escape + Telegram fallback."""
+"""Metals & Mining digest bot v3 — HTML escape + Telegram fallback + safe truncation + getMe diag."""
 from __future__ import annotations
 
 import json
@@ -204,6 +204,16 @@ def send_telegram(text):
 
 
 def main():
+    # Diagnostic: identify which bot the token actually belongs to.
+    # Telegram bot_id (digits before ':') is public — getMe reveals nothing sensitive.
+    try:
+        with urllib.request.urlopen(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/getMe", timeout=10
+        ) as r:
+            print(f"Bot getMe: {r.read().decode()}")
+    except Exception as e:
+        print(f"Bot getMe failed: {e}")
+
     feeds = load_list(FEEDS_FILE)
     keywords = load_list(KEYWORDS_FILE)
     seen = load_state()
@@ -264,9 +274,14 @@ def main():
         save_state(seen)
         return 0
 
+    # Compose message — build block-by-block within Telegram's 4096-char budget.
+    # Never truncate mid-HTML-tag: append whole blocks only; add footer if skipped.
     now_msk = datetime.now(timezone.utc) + timedelta(hours=3)
     header_tag = "📰" if not DEEPSEEK_KEY else "🧠"
-    lines = [f"<b>{header_tag} Metals &amp; Mining — {now_msk.strftime('%d %b, %H:%M')} MSK</b>"]
+    header = f"<b>{header_tag} Metals &amp; Mining — {now_msk.strftime('%d %b, %H:%M')} MSK</b>"
+    BUDGET = 3900  # leave room for footer
+
+    blocks = []
     for i, it in enumerate(enriched, 1):
         title = esc(it["title"][:220])
         link = esc(it["link"])
@@ -276,11 +291,21 @@ def main():
         if it.get("comment"):
             block += f'\n💡 <i>{esc(it["comment"])}</i>'
         block += f'\n<i>{src}</i>  {tags}'
-        lines.append(block)
+        blocks.append(block)
 
-    body = "\n".join(lines)
-    if len(body) > 4000:
-        body = body[:3900] + "\n\n…"
+    out_parts = [header]
+    used = len(header)
+    fit = 0
+    for b in blocks:
+        if used + len(b) > BUDGET:
+            break
+        out_parts.append(b)
+        used += len(b)
+        fit += 1
+    body = "\n".join(out_parts)
+    skipped = len(blocks) - fit
+    if skipped > 0:
+        body += f"\n\n… ещё {skipped} (отрезано по лимиту 4096)"
 
     result = send_telegram(body)
     ok = result.get("ok")
