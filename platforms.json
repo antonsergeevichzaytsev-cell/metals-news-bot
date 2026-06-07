@@ -1,0 +1,35 @@
+{
+  "platforms": [
+    {"name": "GLG", "domains": ["glg.com", "glgresearch.com", "glginsights.com"]},
+    {"name": "Guidepoint", "domains": ["guidepoint.com"]},
+    {"name": "AlphaSights", "domains": ["alphasights.com"]},
+    {"name": "Dialectica", "domains": ["dialecticanet.com", "dialectica.com"]},
+    {"name": "ProSapient", "domains": ["prosapient.com"]},
+    {"name": "Atheneum", "domains": ["atheneum-partners.com", "atheneum.io"]},
+    {"name": "Tegus", "domains": ["tegus.co", "tegus.com"]},
+    {"name": "Glasford", "domains": ["glasfordglobal.com", "glasford.com"]}
+  ],
+  "urgent_keywords": [
+    "screener",
+    "screening",
+    "are you available",
+    "would you be available",
+    "scheduled",
+    "scheduling",
+    "tomorrow",
+    "today",
+    "interview",
+    "expert opportunity",
+    "new project",
+    "project invitation",
+    "compliance form",
+    "consultation request",
+    "consult request",
+    "call request",
+    "urgent",
+    "asap",
+    "deadline",
+    "by eod",
+    "by end of day"
+  ]
+}
