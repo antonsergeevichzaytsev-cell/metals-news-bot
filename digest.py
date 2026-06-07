@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Metals & Mining news digest -> Telegram.
-v6: chunked delivery (no 4096 truncation), compact render, SKIP HR/personnel.
+v7: persist enriched items to history.json (rolling 7-day window) for F-block use.
 """
 from __future__ import annotations
 
@@ -20,6 +20,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 FEEDS_FILE = os.path.join(ROOT, "feeds.txt")
 KEYWORDS_FILE = os.path.join(ROOT, "keywords.txt")
 STATE_FILE = os.path.join(ROOT, "state.json")
+HISTORY_FILE = os.path.join(ROOT, "history.json")
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
@@ -27,7 +28,8 @@ DEEPSEEK_KEY = os.environ["DEEPSEEK_API_KEY"]
 
 MAX_ITEMS_PER_RUN = 12
 MAX_AGE_HOURS = 48
-TG_BUDGET = 3900  # per-message safe limit (Telegram hard cap is 4096)
+TG_BUDGET = 3900
+HISTORY_RETENTION_DAYS = 7
 
 USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -51,40 +53,30 @@ BLOCKED_SOURCES = {
     "247wallst.com", "24/7 wall st.",
     "stockstotrade.com",
     "barchart.com", "barchart",
-    # Tier-3 / off-profile that slipped through:
     "hrtoday.in",
     "mshale.com",
     "discovermoosejaw.com",
 }
 
 SOURCE_LABEL_TO_DOMAIN = {
-    "reuters": "reuters.com",
-    "bloomberg": "bloomberg.com",
-    "financial times": "ft.com",
-    "ft": "ft.com",
-    "wall street journal": "wsj.com",
-    "wsj": "wsj.com",
+    "reuters": "reuters.com", "bloomberg": "bloomberg.com",
+    "financial times": "ft.com", "ft": "ft.com",
+    "wall street journal": "wsj.com", "wsj": "wsj.com",
     "argus media": "argusmedia.com",
-    "s&p global commodity insights": "spglobal.com",
-    "s&p global": "spglobal.com",
+    "s&p global commodity insights": "spglobal.com", "s&p global": "spglobal.com",
     "fastmarkets": "fastmarkets.com",
     "aluminium insider": "aluminiuminsider.com",
     "light metal age": "lightmetalage.com",
     "mining.com": "mining.com",
     "mining weekly": "miningweekly.com",
     "mining journal": "miningjournal.com",
-    "the northern miner": "northernminer.com",
-    "northern miner": "northernminer.com",
+    "the northern miner": "northernminer.com", "northern miner": "northernminer.com",
     "international mining": "im-mining.com",
     "steel times international": "steeltimesint.com",
-    "bnamericas": "bnamericas.com",
-    "kitco": "kitco.com",
-    "shanghai metals market": "metal.com",
-    "smm": "metal.com",
-    "metal.com": "metal.com",
+    "bnamericas": "bnamericas.com", "kitco": "kitco.com",
+    "shanghai metals market": "metal.com", "smm": "metal.com", "metal.com": "metal.com",
 }
 
-# --- Load config files ------------------------------------------------------
 
 def load_feeds():
     feeds = []
@@ -122,6 +114,27 @@ def save_state(state):
     state["seen"] = state["seen"][-500:]
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
+
+
+def load_history():
+    """Returns {'items': [...]} or empty."""
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {"items": []}
+    return {"items": []}
+
+
+def save_history(history):
+    """Prune items older than HISTORY_RETENTION_DAYS, then write."""
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=HISTORY_RETENTION_DAYS)).isoformat()
+    history["items"] = [it for it in history.get("items", []) if it.get("ts", "") >= cutoff]
+    # Hard cap to prevent runaway file size
+    history["items"] = history["items"][-300:]
+    with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+        json.dump(history, f, ensure_ascii=False, indent=2)
 
 
 # --- Source extraction ------------------------------------------------------
@@ -210,8 +223,6 @@ def parse_feed(xml_text):
     return items
 
 
-# --- Filtering --------------------------------------------------------------
-
 def is_recent(dt):
     if dt is None:
         return True
@@ -280,8 +291,6 @@ def deepseek_enrich(title, desc, source):
         return {"skip": False, "why": ""}
 
 
-# --- Telegram ---------------------------------------------------------------
-
 def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -306,7 +315,6 @@ def tg_send(text):
 
 
 def tg_send_chunks(blocks, header):
-    """Pack blocks into messages of size <= TG_BUDGET and send sequentially."""
     msgs = []
     cur = header
     for b in blocks:
@@ -324,19 +332,18 @@ def tg_send_chunks(blocks, header):
             m = m + f"\n\n<i>({i}/{total})</i>"
         tg_send(m)
         if i < total:
-            time.sleep(1.2)  # respect Telegram rate limit (30 msg/sec, but be safe)
+            time.sleep(1.2)
     return total
 
-
-# --- Main -------------------------------------------------------------------
 
 def main():
     feeds = load_feeds()
     keywords = load_keywords()
     state = load_state()
+    history = load_history()
     seen = set(state.get("seen", []))
 
-    print(f"Feeds: {len(feeds)}, keywords: {len(keywords)}, seen: {len(seen)}")
+    print(f"Feeds: {len(feeds)}, keywords: {len(keywords)}, seen: {len(seen)}, history: {len(history.get('items', []))}")
 
     candidates = []
     for url in feeds:
@@ -370,6 +377,7 @@ def main():
     print(f"Candidates after filter: {len(candidates)}")
 
     enriched = []
+    now_iso = datetime.now(timezone.utc).isoformat()
     for c in candidates:
         if len(enriched) >= MAX_ITEMS_PER_RUN:
             break
@@ -381,6 +389,15 @@ def main():
         c["why"] = (verdict.get("why") or "").strip()
         enriched.append(c)
         seen.add(c["hash"])
+        # Append to history for F-block (CEO quote of the week)
+        history.setdefault("items", []).append({
+            "ts": now_iso,
+            "title": c["title"],
+            "desc": c["desc"][:500],
+            "domain": c["domain"],
+            "link": c["link"],
+            "why": c["why"],
+        })
 
     print(f"Enriched: {len(enriched)}")
 
@@ -388,13 +405,13 @@ def main():
         print("Nothing to send.")
         state["seen"] = list(seen)
         save_state(state)
+        save_history(history)
         return 0
 
     msk = timezone(timedelta(hours=3))
     now = datetime.now(msk).strftime("%d %b, %H:%M MSK")
-    header = f"<b>\U0001f9e0 Metals &amp; Mining</b> — {now}\n\n"
+    header = f"<b>\U0001f9e0 Metals &amp; Mining</b> \u2014 {now}\n\n"
 
-    # Compact format: title as clickable link, source + why on one line.
     blocks = []
     for i, c in enumerate(enriched, 1):
         title = esc(c["title"])
@@ -413,6 +430,7 @@ def main():
 
     state["seen"] = list(seen)
     save_state(state)
+    save_history(history)
     return 0
 
 
