@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "personal": {
+    "name": "Anton Zaytsev",
+    "name_ru": "Зайцев Антон Сергеевич",
+    "location": "Moscow, Russia",
+    "experience_years": 16
+  },
+  "signature_cases": [
+    "UMMC — $550M CapEx program director, FEL 1-3, gold-from-tailings greenfield",
+    "RUSAL — Head of Technology aluminium, 7 patents, $350M+ CapEx portfolio",
+    "Norilsk Nickel — turnaround 305 staff, 0 LTI, $4.2M savings on 5 days cut",
+    "ERG + McKinsey — CapEx portfolio transformation",
+    "RUSAL casting expansion — 40 ktpa, 18% below industry benchmark"
+  ],
+  "icp": {
+    "tier_1": "PE funds with CIS exposure",
+    "tier_2": "Industrial groups RF/CIS/Turkey/China",
+    "tier_3": "EPC contractors, investment banks, advisory firms"
+  },
+  "rates": {
+    "expert_call_usd_hr": 400,
+    "dd_lite_usd": "10-15K",
+    "dd_standard_usd": "22-30K",
+    "dd_deep_usd": "55-85K",
+    "retainer_strategic_usd_mo": "8-10K",
+    "retainer_embedded_usd_mo": "18-25K"
+  },
+  "strategy_v3": {
+    "y1_start_date": "2026-05-29",
+    "y1_end_date": "2027-05-29",
+    "y1_revenue_target_usd": "150-200K",
+    "y1_critical_success": "1 retainer signed by Y1 close",
+    "y3_target_rub_net": 50000000,
+    "weekly_hour_cap": 50,
+    "pivot_triggers": [
+      "90 days without DD inquiry → reposition",
+      "Platform rate stuck at month 6 → researcher talk",
+      "Y1 close without retainer → Y2 fails"
+    ]
+  },
+  "platforms_active": ["GLG", "Guidepoint", "AlphaSights", "Dialectica", "ProSapient", "Atheneum", "Tegus", "Glasford"],
+  "ammunition_phrases": {
+    "anchor": "$25K DD prevents $5M mistake — insurance with 200x ROI",
+    "rate": "My rate is $400 an hour.",
+    "pitch_60s": "Independent advisor on aluminium and non-ferrous metals. 16 years at UC RUSAL, Norilsk Nickel and UMMC. Most recently project director on $550M CapEx program at UMMC, FEL 1-3. I help PE funds and industrial buyers price technical risk on non-ferrous deals."
+  },
+  "constraints": {
+    "russia_residency": "Compliance filter at platforms, structural not fixable",
+    "english_level": "B2 written, needs AI translation for live calls",
+    "runway_status": "Critical — see business_profile.md"
+  }
+}
