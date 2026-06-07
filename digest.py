@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Metals & Mining news digest -> Telegram.
-v5: real source extraction, blocked-sources list, word-boundary keyword matching,
-no auto-tags, stricter DeepSeek SKIP filter.
+v6: chunked delivery (no 4096 truncation), compact render, SKIP HR/personnel.
 """
 from __future__ import annotations
 
@@ -17,8 +16,6 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 
-# --- Config -----------------------------------------------------------------
-
 ROOT = os.path.dirname(os.path.abspath(__file__))
 FEEDS_FILE = os.path.join(ROOT, "feeds.txt")
 KEYWORDS_FILE = os.path.join(ROOT, "keywords.txt")
@@ -30,14 +27,13 @@ DEEPSEEK_KEY = os.environ["DEEPSEEK_API_KEY"]
 
 MAX_ITEMS_PER_RUN = 12
 MAX_AGE_HOURS = 48
-TG_BUDGET = 3900  # leave headroom under 4096
+TG_BUDGET = 3900  # per-message safe limit (Telegram hard cap is 4096)
 
 USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 )
 
-# Sources we never want to see. Match against extracted source domain or label.
 BLOCKED_SOURCES = {
     "msn.com", "msn",
     "inkorr.com", "inkorr",
@@ -55,9 +51,12 @@ BLOCKED_SOURCES = {
     "247wallst.com", "24/7 wall st.",
     "stockstotrade.com",
     "barchart.com", "barchart",
+    # Tier-3 / off-profile that slipped through:
+    "hrtoday.in",
+    "mshale.com",
+    "discovermoosejaw.com",
 }
 
-# Map common publisher labels (from title suffix) to clean domains
 SOURCE_LABEL_TO_DOMAIN = {
     "reuters": "reuters.com",
     "bloomberg": "bloomberg.com",
@@ -236,14 +235,18 @@ SYS_PROMPT = (
     "You are an analyst supporting a senior independent consultant in non-ferrous metals "
     "and mining (16 years across UC RUSAL, Norilsk Nickel, UMMC, ERG). For each news item, "
     "decide if it is relevant to his profile and, if relevant, produce ONE short Russian "
-    "sentence (max 22 words) explaining why it matters for the industry. "
+    "sentence (max 22 words) explaining why it matters for industry strategy. "
     "Reply ONLY with valid JSON: {\"skip\": bool, \"why\": str}. "
     "Set skip=true for: stock analyst ratings, ETF picks, EPS forecasts, financial blogs, "
-    "macro-economy with no metals angle, political opinion without industry impact, "
-    "celebrity/lifestyle, generic press releases without operational substance. "
-    "Set skip=false for: production data, smelter/refinery operations, M&A deals, CapEx "
-    "decisions, regulation (tariffs, sanctions, CBAM, Section 232), prices and premia movements "
-    "with cause, technology shifts (inert anode, H2 DRI), named operators' strategic moves."
+    "macro-economy with no metals angle, political/military opinion without direct supply impact, "
+    "celebrity/lifestyle, generic press releases without operational substance, "
+    "HR/personnel news (appointments, promotions, hires, departures), "
+    "local protests without project-cancellation evidence, "
+    "award announcements, conferences without substance, ESG marketing without numbers. "
+    "Set skip=false for: production data and quarterly output, smelter/refinery operations, "
+    "M&A deals with disclosed value, CapEx decisions, regulation (tariffs, sanctions, CBAM, "
+    "Section 232), price/premia movements with cause, technology shifts (inert anode, H2 DRI, "
+    "HPAL, autonomous haulage), named operators' strategic moves with operational substance."
 )
 
 
@@ -300,6 +303,29 @@ def tg_send(text):
         body = e.read().decode("utf-8", errors="replace")
         print(f"  ! telegram error {e.code}: {body}", file=sys.stderr)
         raise
+
+
+def tg_send_chunks(blocks, header):
+    """Pack blocks into messages of size <= TG_BUDGET and send sequentially."""
+    msgs = []
+    cur = header
+    for b in blocks:
+        if len(cur) + len(b) > TG_BUDGET:
+            msgs.append(cur.rstrip())
+            cur = b
+        else:
+            cur += b
+    if cur.strip():
+        msgs.append(cur.rstrip())
+
+    total = len(msgs)
+    for i, m in enumerate(msgs, 1):
+        if total > 1:
+            m = m + f"\n\n<i>({i}/{total})</i>"
+        tg_send(m)
+        if i < total:
+            time.sleep(1.2)  # respect Telegram rate limit (30 msg/sec, but be safe)
+    return total
 
 
 # --- Main -------------------------------------------------------------------
@@ -368,32 +394,22 @@ def main():
     now = datetime.now(msk).strftime("%d %b, %H:%M MSK")
     header = f"<b>\U0001f9e0 Metals &amp; Mining</b> — {now}\n\n"
 
+    # Compact format: title as clickable link, source + why on one line.
     blocks = []
     for i, c in enumerate(enriched, 1):
         title = esc(c["title"])
         link = esc(c["link"])
         domain = esc(c["domain"])
         why = esc(c["why"])
-        block = f"<b>{i}. {title}</b>\n<i>{domain}</i>\n"
+        block = f'<b>{i}.</b> <a href="{link}">{title}</a>\n'
         if why:
-            block += f"\U0001f4a1 {why}\n"
-        block += f'<a href="{link}">\u2192 \u043e\u0442\u043a\u0440\u044b\u0442\u044c</a>\n\n'
+            block += f"<i>{domain}</i> \u00b7 \U0001f4a1 {why}\n\n"
+        else:
+            block += f"<i>{domain}</i>\n\n"
         blocks.append(block)
 
-    text = header
-    sent_count = 0
-    for b in blocks:
-        if len(text) + len(b) > TG_BUDGET:
-            break
-        text += b
-        sent_count += 1
-
-    remaining = len(enriched) - sent_count
-    if remaining > 0:
-        text += f"<i>…\u0435\u0449\u0451 {remaining} (\u043e\u0442\u0440\u0435\u0437\u0430\u043d\u043e \u043f\u043e \u043b\u0438\u043c\u0438\u0442\u0443 4096)</i>"
-
-    tg_send(text)
-    print(f"Sent {sent_count} of {len(enriched)} items.")
+    sent = tg_send_chunks(blocks, header)
+    print(f"Sent {len(enriched)} items in {sent} message(s).")
 
     state["seen"] = list(seen)
     save_state(state)
