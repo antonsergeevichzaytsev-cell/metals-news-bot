@@ -1,56 +1,52 @@
-# RSS feeds for metals & mining digest.
+# RSS feeds for metals & mining digest — trade-focused, tier-1 sources.
 # Lines starting with # are comments.
 # Format: Google News RSS — https://news.google.com/rss/search?q=QUERY&hl=en-US&gl=US&ceid=US:en
-# QUERY uses when:2d (last 48h). site: filters narrow to tier-1 sources.
+# QUERY uses when:2d (last 48h). site: filters narrow to authoritative publications.
 
-# === Tier-1 sources (narrow filter, high signal) ===
-https://news.google.com/rss/search?q=site:reuters.com+(aluminium+OR+copper+OR+nickel+OR+mining)+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=site:mining.com+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=site:argusmedia.com+(aluminium+OR+copper+OR+alumina)+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=site:spglobal.com+(metals+OR+mining)+when:2d&hl=en-US&gl=US&ceid=US:en
+# === Tier-1 commodities & business media ===
+https://news.google.com/rss/search?q=site:reuters.com+(aluminium+OR+copper+OR+nickel+OR+mining+OR+smelter)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:bloomberg.com+(aluminium+OR+copper+OR+nickel+OR+lithium+OR+mining)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:ft.com+(commodities+OR+mining+OR+metals)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:wsj.com+(mining+OR+metals+OR+aluminium+OR+copper)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:argusmedia.com+(aluminium+OR+copper+OR+alumina+OR+nickel)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:spglobal.com+(metals+OR+mining+OR+aluminium+OR+copper)+when:2d&hl=en-US&gl=US&ceid=US:en
 https://news.google.com/rss/search?q=site:fastmarkets.com+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=site:bloomberg.com+(aluminium+OR+copper+OR+nickel+OR+lithium)+when:2d&hl=en-US&gl=US&ceid=US:en
 
-# === Aluminium ===
-https://news.google.com/rss/search?q=aluminium+smelter+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=alumina+LME+price+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=RUSAL+EGA+Hydro+Alcoa+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=Hindalco+Vedanta+BALCO+NALCO+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=primary+aluminium+production+capacity+when:2d&hl=en-US&gl=US&ceid=US:en
+# === Dedicated metals / mining trade publications ===
+https://news.google.com/rss/search?q=site:aluminiuminsider.com+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:lightmetalage.com+when:7d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:mining.com+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:miningweekly.com+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:miningjournal.com+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:northernminer.com+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:im-mining.com+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:steeltimesint.com+when:7d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:bnamericas.com+(mining+OR+copper+OR+lithium)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:kitco.com+(copper+OR+nickel+OR+gold+OR+silver)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=site:metal.com+when:2d&hl=en-US&gl=US&ceid=US:en
 
-# === Copper ===
-https://news.google.com/rss/search?q=copper+mine+production+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=copper+smelter+treatment+charge+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=Codelco+Freeport+Antofagasta+First+Quantum+when:2d&hl=en-US&gl=US&ceid=US:en
+# === Named operators & deals (industry-specific) ===
+https://news.google.com/rss/search?q=(RUSAL+OR+EGA+OR+\"Norsk+Hydro\"+OR+Alcoa+OR+Hindalco+OR+Vedanta)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(Nornickel+OR+\"Norilsk+Nickel\"+OR+\"Anglo+American\"+OR+\"Rio+Tinto\"+OR+BHP+OR+Glencore+OR+Vale)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(Codelco+OR+Freeport+OR+Antofagasta+OR+\"First+Quantum\"+OR+\"KAZ+Minerals\"+OR+ERG)+when:2d&hl=en-US&gl=US&ceid=US:en
 
-# === Nickel & PGM ===
-https://news.google.com/rss/search?q=nickel+mine+smelter+Indonesia+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=Nornickel+Norilsk+palladium+platinum+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=HPAL+laterite+Philippines+nickel+when:2d&hl=en-US&gl=US&ceid=US:en
+# === Specific markets & technical events ===
+https://news.google.com/rss/search?q=(\"alumina+price\"+OR+\"aluminium+premium\"+OR+\"LME+aluminium\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(\"copper+TC\"+OR+\"treatment+charge\"+OR+\"refining+charge\"+OR+\"copper+concentrate\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(\"smelter+restart\"+OR+\"smelter+shutdown\"+OR+\"smelter+expansion\"+OR+\"potline+restart\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(\"Indonesia+nickel\"+OR+HPAL+OR+\"Tsingshan\"+OR+\"Weda+Bay\")+when:2d&hl=en-US&gl=US&ceid=US:en
 
-# === Russia / CIS metals ===
-https://news.google.com/rss/search?q=Russia+aluminium+sanctions+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=Kazakhstan+mining+ERG+KAZ+Minerals+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=Uzbekistan+Mongolia+copper+gold+when:2d&hl=en-US&gl=US&ceid=US:en
+# === Russia / CIS focus ===
+https://news.google.com/rss/search?q=(\"Russia+aluminium\"+OR+\"Russian+aluminium\"+OR+\"RUSAL+sanctions\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(Kazakhstan+OR+Uzbekistan+OR+Mongolia)+(copper+OR+gold+OR+mining+OR+aluminium)+when:2d&hl=en-US&gl=US&ceid=US:en
 
-# === Majors & operators ===
-https://news.google.com/rss/search?q=Rio+Tinto+BHP+Glencore+Vale+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=Anglo+American+Teck+Newmont+Barrick+when:2d&hl=en-US&gl=US&ceid=US:en
-
-# === Mining M&A & CapEx ===
-https://news.google.com/rss/search?q=mining+acquisition+billion+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=mining+CapEx+greenfield+FID+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=smelter+restart+expansion+ramp+up+when:2d&hl=en-US&gl=US&ceid=US:en
+# === Regulation, tariffs, sanctions ===
+https://news.google.com/rss/search?q=(\"Section+232\"+OR+\"aluminium+tariff\"+OR+\"steel+tariff\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(CBAM+OR+\"carbon+border\"+OR+\"EU+aluminium+tariff\")+when:2d&hl=en-US&gl=US&ceid=US:en
 
 # === Critical minerals & battery materials ===
-https://news.google.com/rss/search?q=lithium+mine+production+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=critical+minerals+rare+earth+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=cobalt+DRC+graphite+manganese+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(\"lithium+production\"+OR+\"lithium+mine\"+OR+\"lithium+offtake\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(\"rare+earth\"+OR+\"critical+minerals+list\"+OR+\"cobalt+DRC\"+OR+\"graphite+supply\")+when:2d&hl=en-US&gl=US&ceid=US:en
 
-# === Tariffs, sanctions, policy ===
-https://news.google.com/rss/search?q=tariff+aluminium+steel+Section+232+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=CBAM+carbon+border+metals+when:2d&hl=en-US&gl=US&ceid=US:en
-
-# === Disruptions, ESG, decarbonisation ===
-https://news.google.com/rss/search?q=mine+strike+smelter+outage+power+curtailment+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=green+aluminium+low+carbon+steel+hydrogen+DRI+when:2d&hl=en-US&gl=US&ceid=US:en
+# === Decarbonisation / technology ===
+https://news.google.com/rss/search?q=(\"green+aluminium\"+OR+\"low-carbon+steel\"+OR+\"hydrogen+DRI\"+OR+\"inert+anode\")+when:2d&hl=en-US&gl=US&ceid=US:en
