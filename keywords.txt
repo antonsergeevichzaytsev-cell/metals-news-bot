@@ -1,0 +1,109 @@
+# Keyword filter — substring match, case-insensitive.
+# An item is kept if ANY keyword appears in title+description.
+# One per line. Comments start with #.
+
+# Non-ferrous metals
+aluminium
+aluminum
+alumina
+bauxite
+copper
+nickel
+zinc
+lead
+cobalt
+lithium
+manganese
+
+# Precious / PGM
+palladium
+platinum
+rhodium
+
+# Process / equipment
+smelter
+smelting
+refinery
+refining
+electrolysis
+electrolyser
+potline
+anode
+cathode
+flotation
+
+# Companies — primary focus
+RUSAL
+Rusal
+Nornickel
+Norilsk
+UMMC
+UGMK
+EGA
+Emirates Global Aluminium
+Rio Tinto
+BHP
+Glencore
+Alcoa
+Hydro
+Norsk Hydro
+Vale
+Anglo American
+Freeport
+Antofagasta
+First Quantum
+KAZ Minerals
+KAZ
+ERG
+Eurasian Resources
+
+# Geography — focus markets
+Russia
+Russian
+Kazakhstan
+Uzbekistan
+Mongolia
+Siberia
+Indonesia
+Chile
+Peru
+Congo
+DRC
+Zambia
+Guinea
+
+# Commercial / financial
+LME
+SHFE
+CapEx
+greenfield
+brownfield
+acquisition
+divestment
+M&A
+FEL
+feasibility
+billion
+tariff
+sanction
+sanctions
+embargo
+duty
+quota
+
+# Sustainability / regulation
+ESG
+decarbonisation
+decarbonization
+carbon
+emissions
+CBAM
+
+# Technology / cost
+turnaround
+shutdown
+expansion
+ramp-up
+ramp up
+recovery
+yield
