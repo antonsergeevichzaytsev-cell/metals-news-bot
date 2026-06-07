@@ -1,20 +1,9 @@
 #!/usr/bin/env python3
-"""
-Pipeline sync — detects replies on outreach emails, updates pipeline.json,
-sends urgent pings to Telegram when target domain replies.
-"""
-import imaplib
-import email
-import json
-import os
-import re
-import hashlib
-import sys
-import time
+"""Pipeline sync v2 — detects real human replies, suppresses auto-notifications."""
+import imaplib, email, json, os, re, hashlib, sys, time
 from datetime import datetime, timedelta, timezone
 from email.header import decode_header
-import urllib.request
-import urllib.parse
+import urllib.request, urllib.parse
 
 GMAIL_USER = os.environ["GMAIL_USER"]
 GMAIL_APP_PASSWORD = os.environ["GMAIL_APP_PASSWORD"]
@@ -26,6 +15,32 @@ OUTREACH_DOMAINS_PATH = "outreach_domains.txt"
 STATE_PATH = "state_pipeline_sync.json"
 WINDOW_HOURS = 2
 MAX_FETCH = 200
+
+AUTO_NOTIFY_PREFIXES = [
+    "noreply", "no-reply", "no_reply", "donotreply", "do-not-reply",
+    "notification", "notifications", "notify", "notifier",
+    "alerts", "alert", "info", "marketing", "newsletter", "newsletters",
+    "news", "updates", "update", "system", "automated", "bot", "robot",
+    "service", "services", "mailer", "mailing", "mail", "auto",
+    "hrplatform", "hrbot", "hr", "team", "accounts", "billing",
+    "digest", "feedback",
+]
+
+
+def is_auto_notification(sender_email):
+    if "@" not in sender_email:
+        return False
+    local = sender_email.split("@", 1)[0].lower()
+    for s in ("noreply", "no-reply", "donotreply", "do-not-reply", "notification", "automated", "robot", "mailer-daemon"):
+        if s in local:
+            return True
+    if local in AUTO_NOTIFY_PREFIXES:
+        return True
+    for prefix in AUTO_NOTIFY_PREFIXES:
+        for sep in ("-", "_", "."):
+            if local.startswith(prefix + sep):
+                return True
+    return False
 
 
 def load_outreach_domains():
@@ -121,14 +136,10 @@ def fetch_emails(window_hours):
                 msgs.append(email.message_from_bytes(msg_data[0][1]))
             except Exception:
                 continue
-    try:
-        M.close()
-    except Exception:
-        pass
-    try:
-        M.logout()
-    except Exception:
-        pass
+    try: M.close()
+    except Exception: pass
+    try: M.logout()
+    except Exception: pass
     return msgs
 
 
@@ -161,12 +172,7 @@ def esc(s):
 
 def tg_send(text):
     url = f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage"
-    data = urllib.parse.urlencode({
-        "chat_id": TG_CHAT,
-        "text": text,
-        "parse_mode": "HTML",
-        "disable_web_page_preview": "true",
-    }).encode()
+    data = urllib.parse.urlencode({"chat_id": TG_CHAT, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"}).encode()
     req = urllib.request.Request(url, data=data)
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -186,6 +192,7 @@ def main():
 
     new_replies = []
     new_other = []
+    auto_notifications = []
 
     for msg in msgs:
         sender_email = extract_email(msg.get("From", ""))
@@ -198,6 +205,12 @@ def main():
             continue
         seen.add(mid)
         subject = decode_subject(msg.get("Subject", ""))
+
+        if is_auto_notification(sender_email):
+            auto_notifications.append({"sender": sender_email, "subject": subject[:140] if subject else "(no subject)"})
+            print(f"AUTO suppressed: {sender_email} | {subject[:60]}")
+            continue
+
         lead = find_lead_by_domain(pipeline, sender_domain, matched)
         if lead:
             old_status = lead.get("status", "unknown")
@@ -212,11 +225,7 @@ def main():
                 "subject": subject[:140] if subject else "(no subject)",
             })
         else:
-            new_other.append({
-                "sender": sender_email,
-                "domain": sender_domain,
-                "subject": subject[:140] if subject else "(no subject)",
-            })
+            new_other.append({"sender": sender_email, "domain": sender_domain, "subject": subject[:140] if subject else "(no subject)"})
 
     recompute_silence_days(pipeline)
     save_pipeline(pipeline)
@@ -236,7 +245,7 @@ def main():
         time.sleep(0.5)
 
     if new_other:
-        lines = ["📬 <b>Tracked domain — new contact?</b>"]
+        lines = ["📬 <b>Tracked domain — new human contact?</b>"]
         for o in new_other[:5]:
             lines.append(f"• <i>{esc(o['domain'])}</i>: {esc(o['subject'])}")
         if len(new_other) > 5:
@@ -244,7 +253,7 @@ def main():
         lines.append("\nUpdate pipeline.json if relevant.")
         tg_send("\n".join(lines))
 
-    print(f"Done. Replies: {len(new_replies)}, other: {len(new_other)}")
+    print(f"Done. Real replies: {len(new_replies)}, new contacts: {len(new_other)}, auto suppressed: {len(auto_notifications)}")
 
 
 if __name__ == "__main__":
