@@ -1,75 +1,178 @@
 #!/usr/bin/env python3
-"""Metals & Mining digest bot v4 — HTML escape + Telegram fallback + safe truncation."""
+"""Metals & Mining news digest -> Telegram.
+v5: real source extraction, blocked-sources list, word-boundary keyword matching,
+no auto-tags, stricter DeepSeek SKIP filter.
+"""
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
-import urllib.error
 import xml.etree.ElementTree as ET
-from datetime import datetime, timedelta, timezone
-from pathlib import Path
+from datetime import datetime, timezone, timedelta
 
-FEEDS_FILE = "feeds.txt"
-KEYWORDS_FILE = "keywords.txt"
-STATE_FILE = "state.json"
-MAX_AGE_HOURS = 24
-MAX_ITEMS_PER_RUN = 10
-TELEGRAM_API = "https://api.telegram.org/bot{token}/sendMessage"
-DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
-DEEPSEEK_MODEL = "deepseek-chat"
-USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 metals-news-bot"
+# --- Config -----------------------------------------------------------------
 
-BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "").strip()
+ROOT = os.path.dirname(os.path.abspath(__file__))
+FEEDS_FILE = os.path.join(ROOT, "feeds.txt")
+KEYWORDS_FILE = os.path.join(ROOT, "keywords.txt")
+STATE_FILE = os.path.join(ROOT, "state.json")
 
-if not BOT_TOKEN or not CHAT_ID:
-    print("ERROR: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set", file=sys.stderr)
-    sys.exit(1)
+BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
+CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
+DEEPSEEK_KEY = os.environ["DEEPSEEK_API_KEY"]
+
+MAX_ITEMS_PER_RUN = 12
+MAX_AGE_HOURS = 48
+TG_BUDGET = 3900  # leave headroom under 4096
+
+USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+)
+
+# Sources we never want to see. Match against extracted source domain or label.
+BLOCKED_SOURCES = {
+    "msn.com", "msn",
+    "inkorr.com", "inkorr",
+    "news.google.com",
+    "yahoo.com", "yahoo finance", "yahoo",
+    "seekingalpha.com", "seeking alpha",
+    "investorplace.com", "investorplace",
+    "marketbeat.com", "marketbeat",
+    "zacks.com", "zacks",
+    "the motley fool", "fool.com",
+    "benzinga.com", "benzinga",
+    "simplywall.st", "simply wall st",
+    "tipranks.com", "tipranks",
+    "marketwatch.com",
+    "247wallst.com", "24/7 wall st.",
+    "stockstotrade.com",
+    "barchart.com", "barchart",
+}
+
+# Map common publisher labels (from title suffix) to clean domains
+SOURCE_LABEL_TO_DOMAIN = {
+    "reuters": "reuters.com",
+    "bloomberg": "bloomberg.com",
+    "financial times": "ft.com",
+    "ft": "ft.com",
+    "wall street journal": "wsj.com",
+    "wsj": "wsj.com",
+    "argus media": "argusmedia.com",
+    "s&p global commodity insights": "spglobal.com",
+    "s&p global": "spglobal.com",
+    "fastmarkets": "fastmarkets.com",
+    "aluminium insider": "aluminiuminsider.com",
+    "light metal age": "lightmetalage.com",
+    "mining.com": "mining.com",
+    "mining weekly": "miningweekly.com",
+    "mining journal": "miningjournal.com",
+    "the northern miner": "northernminer.com",
+    "northern miner": "northernminer.com",
+    "international mining": "im-mining.com",
+    "steel times international": "steeltimesint.com",
+    "bnamericas": "bnamericas.com",
+    "kitco": "kitco.com",
+    "shanghai metals market": "metal.com",
+    "smm": "metal.com",
+    "metal.com": "metal.com",
+}
+
+# --- Load config files ------------------------------------------------------
+
+def load_feeds():
+    feeds = []
+    with open(FEEDS_FILE, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                feeds.append(line)
+    return feeds
 
 
-def load_list(path):
-    p = Path(path)
-    if not p.exists():
-        print(f"WARN: {path} missing", file=sys.stderr)
-        return []
-    return [s.strip() for s in p.read_text(encoding="utf-8").splitlines()
-            if s.strip() and not s.strip().startswith("#")]
+def load_keywords():
+    pats = []
+    with open(KEYWORDS_FILE, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            esc = re.escape(line)
+            pats.append(re.compile(r"(?i)(?<!\w)" + esc + r"(?!\w)"))
+    return pats
 
 
 def load_state():
+    if os.path.exists(STATE_FILE):
+        try:
+            with open(STATE_FILE, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {"seen": []}
+    return {"seen": []}
+
+
+def save_state(state):
+    state["seen"] = state["seen"][-500:]
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+
+
+# --- Source extraction ------------------------------------------------------
+
+def split_title_and_source(raw_title):
+    if not raw_title:
+        return "", ""
+    for sep in (" - ", " \u2014 ", " \u2013 "):
+        if sep in raw_title:
+            idx = raw_title.rfind(sep)
+            title = raw_title[:idx].strip()
+            pub = raw_title[idx + len(sep):].strip()
+            return title, pub
+    return raw_title.strip(), ""
+
+
+def source_to_domain(pub_label, fallback_url):
+    if not pub_label:
+        return urllib.parse.urlparse(fallback_url).netloc.replace("www.", "")
+    key = pub_label.lower().strip()
+    if key in SOURCE_LABEL_TO_DOMAIN:
+        return SOURCE_LABEL_TO_DOMAIN[key]
+    return pub_label.strip()
+
+
+def is_blocked(pub_label, domain):
+    candidates = {pub_label.lower().strip(), domain.lower().strip()}
+    return bool(candidates & BLOCKED_SOURCES)
+
+
+# --- Fetch & parse ----------------------------------------------------------
+
+def fetch_feed(url, timeout=20):
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
-        return set(json.loads(Path(STATE_FILE).read_text(encoding="utf-8")).get("seen", []))
-    except Exception:
-        return set()
-
-
-def save_state(seen):
-    keep = list(seen)[-1000:]
-    Path(STATE_FILE).write_text(json.dumps({"seen": keep}, ensure_ascii=False), encoding="utf-8")
-
-
-def fetch(url, timeout=25):
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "*/*"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
-
-
-def strip_html(text):
-    return re.sub(r"<[^>]+>", "", text or "").strip()
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.read().decode("utf-8", errors="replace")
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
+        print(f"  ! fetch error: {e}", file=sys.stderr)
+        return None
 
 
 def parse_pubdate(s):
     if not s:
         return None
-    s = s.strip()
-    for fmt in ("%a, %d %b %Y %H:%M:%S %z", "%a, %d %b %Y %H:%M:%S %Z",
-                "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ",
-                "%Y-%m-%dT%H:%M:%S.%f%z", "%Y-%m-%dT%H:%M:%S.%fZ"):
+    for fmt in (
+        "%a, %d %b %Y %H:%M:%S %Z",
+        "%a, %d %b %Y %H:%M:%S %z",
+        "%a, %d %b %Y %H:%M:%S GMT",
+    ):
         try:
             dt = datetime.strptime(s, fmt)
             if dt.tzinfo is None:
@@ -80,234 +183,221 @@ def parse_pubdate(s):
     return None
 
 
-def parse_feed(xml_bytes):
+def parse_feed(xml_text):
     items = []
     try:
-        root = ET.fromstring(xml_bytes)
+        root = ET.fromstring(xml_text)
     except ET.ParseError as e:
-        print(f"  parse error: {e}", file=sys.stderr)
+        print(f"  ! parse error: {e}", file=sys.stderr)
         return items
-    for it in root.iter("item"):
-        items.append(dict(
-            title=(it.findtext("title") or "").strip(),
-            link=(it.findtext("link") or "").strip(),
-            desc=strip_html(it.findtext("description") or ""),
-            guid=(it.findtext("guid") or it.findtext("link") or "").strip(),
-            pubdate=(it.findtext("pubDate") or "").strip(),
-        ))
-    atom_ns = "{http://www.w3.org/2005/Atom}"
-    for entry in root.iter(atom_ns + "entry"):
-        title_el = entry.find(atom_ns + "title")
-        summary_el = entry.find(atom_ns + "summary") or entry.find(atom_ns + "content")
-        id_el = entry.find(atom_ns + "id")
-        upd_el = entry.find(atom_ns + "updated") or entry.find(atom_ns + "published")
-        link_el = entry.find(atom_ns + "link")
-        link = link_el.get("href") if link_el is not None else ""
-        items.append(dict(
-            title=(title_el.text if title_el is not None else "").strip(),
-            link=link,
-            desc=strip_html(summary_el.text if summary_el is not None else ""),
-            guid=(id_el.text if id_el is not None else link).strip(),
-            pubdate=(upd_el.text if upd_el is not None else "").strip(),
-        ))
+    for item in root.iter("item"):
+        raw_title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        desc = (item.findtext("description") or "").strip()
+        pubd = parse_pubdate(item.findtext("pubDate") or "")
+        desc = re.sub(r"<[^>]+>", " ", desc)
+        desc = re.sub(r"\s+", " ", desc).strip()
+        title, pub_label = split_title_and_source(raw_title)
+        domain = source_to_domain(pub_label, link)
+        items.append({
+            "title": title,
+            "raw_title": raw_title,
+            "link": link,
+            "desc": desc,
+            "pub": pub_label,
+            "domain": domain,
+            "pubdate": pubd,
+        })
     return items
 
 
-def match_keywords(text, keywords):
-    t = text.lower()
-    return [kw for kw in keywords if kw.lower() in t]
+# --- Filtering --------------------------------------------------------------
 
+def is_recent(dt):
+    if dt is None:
+        return True
+    age = datetime.now(timezone.utc) - dt
+    return age <= timedelta(hours=MAX_AGE_HOURS)
+
+
+def matches_keywords(text, patterns):
+    return any(p.search(text) for p in patterns)
+
+
+def url_hash(url):
+    return hashlib.md5(url.encode("utf-8")).hexdigest()
+
+
+# --- DeepSeek enrichment ----------------------------------------------------
+
+DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
+
+SYS_PROMPT = (
+    "You are an analyst supporting a senior independent consultant in non-ferrous metals "
+    "and mining (16 years across UC RUSAL, Norilsk Nickel, UMMC, ERG). For each news item, "
+    "decide if it is relevant to his profile and, if relevant, produce ONE short Russian "
+    "sentence (max 22 words) explaining why it matters for the industry. "
+    "Reply ONLY with valid JSON: {\"skip\": bool, \"why\": str}. "
+    "Set skip=true for: stock analyst ratings, ETF picks, EPS forecasts, financial blogs, "
+    "macro-economy with no metals angle, political opinion without industry impact, "
+    "celebrity/lifestyle, generic press releases without operational substance. "
+    "Set skip=false for: production data, smelter/refinery operations, M&A deals, CapEx "
+    "decisions, regulation (tariffs, sanctions, CBAM, Section 232), prices and premia movements "
+    "with cause, technology shifts (inert anode, H2 DRI), named operators' strategic moves."
+)
+
+
+def deepseek_enrich(title, desc, source):
+    payload = {
+        "model": "deepseek-chat",
+        "messages": [
+            {"role": "system", "content": SYS_PROMPT},
+            {"role": "user", "content": f"SOURCE: {source}\nTITLE: {title}\nDESC: {desc[:500]}"},
+        ],
+        "temperature": 0.2,
+        "max_tokens": 120,
+        "response_format": {"type": "json_object"},
+    }
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        DEEPSEEK_URL,
+        data=data,
+        headers={
+            "Authorization": f"Bearer {DEEPSEEK_KEY}",
+            "Content-Type": "application/json",
+        },
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            resp = json.loads(r.read().decode("utf-8"))
+        content = resp["choices"][0]["message"]["content"]
+        return json.loads(content)
+    except Exception as e:
+        print(f"  ! deepseek error: {e}", file=sys.stderr)
+        return {"skip": False, "why": ""}
+
+
+# --- Telegram ---------------------------------------------------------------
 
 def esc(s):
-    return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+    return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-DEEPSEEK_SYSTEM = (
-    "Ты — аналитик горно-металлургической отрасли. Твой собеседник — "
-    "независимый консультант по mining & non-ferrous metals с 16-летним опытом "
-    "(RUSAL, Nornickel, UMMC, ERG). Ему важны: aluminium/copper/nickel производство, "
-    "CapEx-проекты, M&A в ГМК, Россия/СНГ, тарифы и санкции, LME-цены."
-)
-
-DEEPSEEK_USER_TMPL = (
-    "Прочитай заголовок и описание новости. Дай одну короткую строку (15-30 слов, "
-    "на русском) — почему это важно для эксперта по mining & metals. Если "
-    "новость нерелевантна (политика без связи с металлами, крипта, общий бизнес) — "
-    "ответь ровно одним словом: SKIP.\nНе используй markdown, эмодзи, кавычки.\n\n"
-    "Заголовок: {title}\nОписание: {desc}"
-)
-
-
-def deepseek_comment(title, desc):
-    if not DEEPSEEK_KEY:
-        return None
-    payload = json.dumps({
-        "model": DEEPSEEK_MODEL,
-        "messages": [
-            {"role": "system", "content": DEEPSEEK_SYSTEM},
-            {"role": "user", "content": DEEPSEEK_USER_TMPL.format(title=title[:300], desc=desc[:600])},
-        ],
-        "max_tokens": 120, "temperature": 0.3, "stream": False,
-    }).encode()
-    req = urllib.request.Request(DEEPSEEK_URL, data=payload, headers={
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {DEEPSEEK_KEY}",
-        "User-Agent": USER_AGENT,
-    })
-    try:
-        with urllib.request.urlopen(req, timeout=25) as r:
-            resp = json.loads(r.read())
-        text = resp["choices"][0]["message"]["content"].strip()
-        text = text.strip(" \n\r\t.;,:\"'")
-        if not text:
-            return None
-        if text.upper().startswith("SKIP"):
-            return "SKIP"
-        if len(text) > 250:
-            text = text[:240].rsplit(" ", 1)[0] + "…"
-        return text
-    except Exception as e:
-        print(f"  DeepSeek error: {e}", file=sys.stderr)
-        return None
-
-
-def telegram_send_raw(text, parse_mode="HTML"):
-    url = TELEGRAM_API.format(token=BOT_TOKEN)
-    payload = {"chat_id": CHAT_ID, "text": text, "disable_web_page_preview": "true"}
-    if parse_mode:
-        payload["parse_mode"] = parse_mode
-    data = urllib.parse.urlencode(payload).encode()
+def tg_send(text):
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": CHAT_ID,
+        "text": text,
+        "parse_mode": "HTML",
+        "disable_web_page_preview": True,
+    }
+    data = urllib.parse.urlencode(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
-            return True, json.loads(r.read()), None
+            r.read()
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
-        return False, None, f"HTTP {e.code}: {body}"
-    except Exception as e:
-        return False, None, f"{type(e).__name__}: {e}"
+        print(f"  ! telegram error {e.code}: {body}", file=sys.stderr)
+        raise
 
 
-def send_telegram(text):
-    ok, resp, err = telegram_send_raw(text, parse_mode="HTML")
-    if ok:
-        return resp
-    print(f"  Telegram HTML send failed: {err}", file=sys.stderr)
-    plain = re.sub(r"<[^>]+>", "", text)
-    plain = plain.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"')
-    ok2, resp2, err2 = telegram_send_raw(plain[:4000], parse_mode=None)
-    if ok2:
-        print("  Sent as plain text fallback")
-        return resp2
-    print(f"  Plain text also failed: {err2}", file=sys.stderr)
-    return {"ok": False}
-
+# --- Main -------------------------------------------------------------------
 
 def main():
-    feeds = load_list(FEEDS_FILE)
-    keywords = load_list(KEYWORDS_FILE)
-    seen = load_state()
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=MAX_AGE_HOURS)
-    print(f"Feeds: {len(feeds)} | Keywords: {len(keywords)} | Seen: {len(seen)} | DeepSeek: {'ON' if DEEPSEEK_KEY else 'OFF'}")
+    feeds = load_feeds()
+    keywords = load_keywords()
+    state = load_state()
+    seen = set(state.get("seen", []))
 
-    relevant = []
-    for feed_url in feeds:
-        try:
-            xml = fetch(feed_url)
-            items = parse_feed(xml)
-        except Exception as e:
-            print(f"  FETCH FAIL {feed_url[:80]}: {e}", file=sys.stderr)
+    print(f"Feeds: {len(feeds)}, keywords: {len(keywords)}, seen: {len(seen)}")
+
+    candidates = []
+    for url in feeds:
+        print(f"- {url[:80]}...")
+        xml = fetch_feed(url)
+        if not xml:
             continue
-        kept = 0
+        items = parse_feed(xml)
+        print(f"  parsed: {len(items)}")
         for it in items:
-            if not it["guid"] or it["guid"] in seen:
+            h = url_hash(it["link"])
+            if h in seen:
                 continue
-            dt = parse_pubdate(it["pubdate"])
-            if dt and dt < cutoff:
+            if not is_recent(it["pubdate"]):
                 continue
-            haystack = f"{it['title']} {it['desc']}"
-            matches = match_keywords(haystack, keywords)
-            if not matches:
+            if is_blocked(it["pub"], it["domain"]):
                 continue
-            it["matches"] = matches[:3]
-            it["source"] = urllib.parse.urlparse(feed_url).netloc.replace("www.", "")
-            it["dt"] = dt or datetime.now(timezone.utc)
-            relevant.append(it)
-            kept += 1
-        print(f"  {feed_url[:80]}: parsed {len(items)}, kept {kept}")
+            blob = f"{it['title']} {it['desc']}"
+            if not matches_keywords(blob, keywords):
+                continue
+            it["hash"] = h
+            candidates.append(it)
 
-    relevant.sort(key=lambda x: x["dt"], reverse=True)
-    seen_titles = set()
-    deduped = []
-    for it in relevant:
-        prefix = re.sub(r"\s+", " ", it["title"][:60].lower()).strip()
-        if prefix in seen_titles:
-            continue
-        seen_titles.add(prefix)
-        deduped.append(it)
+    by_hash = {}
+    for c in candidates:
+        by_hash.setdefault(c["hash"], c)
+    candidates = list(by_hash.values())
 
-    candidates = deduped[: MAX_ITEMS_PER_RUN * 2]
+    candidates.sort(key=lambda x: x["pubdate"] or datetime.now(timezone.utc), reverse=True)
+
+    print(f"Candidates after filter: {len(candidates)}")
+
     enriched = []
-    for it in candidates:
-        comment = deepseek_comment(it["title"], it["desc"]) if DEEPSEEK_KEY else None
-        if comment == "SKIP":
-            seen.add(it["guid"])
-            print(f"  AI dropped: {it['title'][:70]}")
-            continue
-        it["comment"] = comment
-        enriched.append(it)
+    for c in candidates:
         if len(enriched) >= MAX_ITEMS_PER_RUN:
             break
+        verdict = deepseek_enrich(c["title"], c["desc"], c["domain"])
+        if verdict.get("skip"):
+            print(f"  . skip: {c['title'][:80]}")
+            seen.add(c["hash"])
+            continue
+        c["why"] = (verdict.get("why") or "").strip()
+        enriched.append(c)
+        seen.add(c["hash"])
+
+    print(f"Enriched: {len(enriched)}")
 
     if not enriched:
-        print("No new relevant items. Skipping send.")
-        save_state(seen)
+        print("Nothing to send.")
+        state["seen"] = list(seen)
+        save_state(state)
         return 0
 
-    # Compose message — build block-by-block within Telegram's 4096-char budget.
-    # Never truncate mid-HTML-tag: append whole blocks only; add footer if skipped.
-    now_msk = datetime.now(timezone.utc) + timedelta(hours=3)
-    header_tag = "📰" if not DEEPSEEK_KEY else "🧠"
-    header = f"<b>{header_tag} Metals &amp; Mining — {now_msk.strftime('%d %b, %H:%M')} MSK</b>"
-    BUDGET = 3900
+    msk = timezone(timedelta(hours=3))
+    now = datetime.now(msk).strftime("%d %b, %H:%M MSK")
+    header = f"<b>\U0001f9e0 Metals &amp; Mining</b> — {now}\n\n"
 
     blocks = []
-    for i, it in enumerate(enriched, 1):
-        title = esc(it["title"][:220])
-        link = esc(it["link"])
-        src = esc(it["source"])
-        tags = " ".join("#" + re.sub(r"[^A-Za-z0-9]+", "", m) for m in it["matches"][:2] if m)
-        block = f'\n<b>{i}.</b> <a href="{link}">{title}</a>'
-        if it.get("comment"):
-            block += f'\n💡 <i>{esc(it["comment"])}</i>'
-        block += f'\n<i>{src}</i>  {tags}'
+    for i, c in enumerate(enriched, 1):
+        title = esc(c["title"])
+        link = esc(c["link"])
+        domain = esc(c["domain"])
+        why = esc(c["why"])
+        block = f"<b>{i}. {title}</b>\n<i>{domain}</i>\n"
+        if why:
+            block += f"\U0001f4a1 {why}\n"
+        block += f'<a href="{link}">\u2192 \u043e\u0442\u043a\u0440\u044b\u0442\u044c</a>\n\n'
         blocks.append(block)
 
-    out_parts = [header]
-    used = len(header)
-    fit = 0
+    text = header
+    sent_count = 0
     for b in blocks:
-        if used + len(b) > BUDGET:
+        if len(text) + len(b) > TG_BUDGET:
             break
-        out_parts.append(b)
-        used += len(b)
-        fit += 1
-    body = "\n".join(out_parts)
-    skipped = len(blocks) - fit
-    if skipped > 0:
-        body += f"\n\n… ещё {skipped} (отрезано по лимиту 4096)"
+        text += b
+        sent_count += 1
 
-    result = send_telegram(body)
-    ok = result.get("ok")
-    mid = result.get("result", {}).get("message_id") if ok else None
-    print(f"Sent: ok={ok}, message_id={mid}")
+    remaining = len(enriched) - sent_count
+    if remaining > 0:
+        text += f"<i>…\u0435\u0449\u0451 {remaining} (\u043e\u0442\u0440\u0435\u0437\u0430\u043d\u043e \u043f\u043e \u043b\u0438\u043c\u0438\u0442\u0443 4096)</i>"
 
-    if ok:
-        for it in enriched:
-            seen.add(it["guid"])
-        save_state(seen)
-        print(f"State saved, {len(seen)} GUIDs tracked.")
-    return 0 if ok else 1
+    tg_send(text)
+    print(f"Sent {sent_count} of {len(enriched)} items.")
+
+    state["seen"] = list(seen)
+    save_state(state)
+    return 0
 
 
 if __name__ == "__main__":
