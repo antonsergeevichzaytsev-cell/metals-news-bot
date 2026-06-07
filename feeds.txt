@@ -1,0 +1,35 @@
+# RSS feeds for metals & mining digest.
+# Lines starting with # are comments.
+#
+# Google News RSS by topic — most reliable: aggregates Reuters, Bloomberg,
+# Mining.com, Argus, S&P, MetalBulletin, etc. into one normalized feed.
+# Format: https://news.google.com/rss/search?q=QUERY&hl=en-US&gl=US&ceid=US:en
+# QUERY can include "when:1d" (last 24h) and site: filters.
+
+# Aluminium
+https://news.google.com/rss/search?q=aluminium+smelter+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=alumina+LME+price+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=RUSAL+EGA+Hydro+Alcoa+when:2d&hl=en-US&gl=US&ceid=US:en
+
+# Copper
+https://news.google.com/rss/search?q=copper+mine+production+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=copper+smelter+treatment+charge+when:2d&hl=en-US&gl=US&ceid=US:en
+
+# Nickel & PGM
+https://news.google.com/rss/search?q=nickel+mine+smelter+Indonesia+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=Nornickel+Norilsk+palladium+when:2d&hl=en-US&gl=US&ceid=US:en
+
+# Russia / CIS metals
+https://news.google.com/rss/search?q=Russia+aluminium+sanctions+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=Kazakhstan+mining+ERG+KAZ+Minerals+when:2d&hl=en-US&gl=US&ceid=US:en
+
+# Mining M&A and CapEx
+https://news.google.com/rss/search?q=mining+acquisition+billion+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=mining+CapEx+greenfield+when:2d&hl=en-US&gl=US&ceid=US:en
+
+# Critical minerals & lithium
+https://news.google.com/rss/search?q=lithium+mine+production+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=critical+minerals+rare+earth+when:2d&hl=en-US&gl=US&ceid=US:en
+
+# Tariffs and policy
+https://news.google.com/rss/search?q=tariff+aluminium+steel+when:2d&hl=en-US&gl=US&ceid=US:en
