@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-06-07T23:01:58.944918+00:00",
+  "last_updated": "2026-06-08T07:30:00Z",
   "leads": [
     {
       "id": "glg_5191288",
@@ -46,13 +46,13 @@
       "channel": "direct_outreach",
       "type": "speaking_opportunity",
       "topic": "ALUMINIUM 2026 Conference Dusseldorf speaking slot",
-      "status": "silent_27d",
+      "status": "alternative_proposed",
       "value_usd": null,
       "first_contact": "2026-05-11",
-      "last_activity": "2026-05-11",
-      "silence_days": 27,
-      "next_action": "Polite check-in or write off",
-      "notes": "Sophia Woodall RX Global via Patrick Herman"
+      "last_activity": "2026-06-08",
+      "silence_days": 0,
+      "next_action": "Wait 7-10 days for paper format reply, close loop if silent by 2026-06-18",
+      "notes": "Patrick Herman intro 11 May, Sophia direct follow-up 6 Jun, paper proposal 8 Jun. Pivoted from speaking slot to paper for proceedings (compliance-clean, no travel)."
     },
     {
       "id": "outreach_cwa_caline",
@@ -163,13 +163,13 @@
       "channel": "job_application",
       "type": "fulltime_opportunity",
       "topic": "Sberbank Project Manager AI interview",
-      "status": "reply_received",
+      "status": "ai_interview_active",
       "value_usd": null,
       "first_contact": "2026-06-06",
-      "last_activity": "2026-06-07",
-      "silence_days": 0,
+      "last_activity": "2026-06-06",
+      "silence_days": 2,
       "next_action": "Complete AI interview",
-      "notes": "Received 6 Jun 18:18"
+      "notes": "Received 6 Jun 18:18. Auto-notification from hrplatform@ on 8 Jun reclassified as AUTO by pipeline_sync v2 - status reverted."
     },
     {
       "id": "job_rt_inzhiniring_udokan",
@@ -196,6 +196,19 @@
       "silence_days": 0,
       "next_action": "Open hh.ru review messages",
       "notes": "5 unread 2 confirmed responses"
+    },
+    {
+      "id": "outreach_ibaas_paper",
+      "channel": "direct_outreach",
+      "type": "speaking_opportunity",
+      "topic": "IBAAS-2026 Jharsuguda - paper for proceedings",
+      "status": "sent_no_reply",
+      "value_usd": null,
+      "first_contact": "2026-06-08",
+      "last_activity": "2026-06-08",
+      "silence_days": 0,
+      "next_action": "Wait 7-10 days, follow up if silent by 2026-06-18",
+      "notes": "Dr. Ashok Nandi IBAAS President (ashok.nandi@ibaas.info). Conference 9-11 Sep 2026 Jharsuguda Odisha India, ~300 delegates. Proposed 2 paper topics: CapEx/contractor mgmt OR potline turnaround risk. Compliance-clean credibility per Strategy v3 channel 3."
     }
   ]
 }
