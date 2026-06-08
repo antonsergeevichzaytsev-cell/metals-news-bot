@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-06-08T07:30:00Z",
+  "last_updated": "2026-06-08T18:08:43.794907+00:00",
   "leads": [
     {
       "id": "glg_5191288",
@@ -11,7 +11,7 @@
       "value_usd": 400,
       "first_contact": "2026-05-22",
       "last_activity": "2026-05-23",
-      "silence_days": 15,
+      "silence_days": 16,
       "next_action": "Wait for client scheduling",
       "notes": "Project #5191288, accepted, no schedule yet"
     },
@@ -24,7 +24,7 @@
       "value_usd": null,
       "first_contact": "2026-05-15",
       "last_activity": "2026-05-15",
-      "silence_days": 23,
+      "silence_days": 24,
       "next_action": "Monitor for dispatch",
       "notes": "Signed agreement, no projects yet"
     },
@@ -37,7 +37,7 @@
       "value_usd": null,
       "first_contact": "2026-05-28",
       "last_activity": "2026-06-05",
-      "silence_days": 2,
+      "silence_days": 3,
       "next_action": "Send 2nd follow-up if no reply by 2026-06-12",
       "notes": "Ghalib Al Falasi g.alfalasi@ega.ae"
     },
@@ -63,7 +63,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 1,
+      "silence_days": 2,
       "next_action": "Wait 5-7 days before follow-up",
       "notes": "Dr. Caline Sahyoun cwa@cwa.international delivered"
     },
@@ -76,7 +76,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 1,
+      "silence_days": 2,
       "next_action": "Wait 5-7 days",
       "notes": "inquiry@dolbear.com"
     },
@@ -89,7 +89,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 1,
+      "silence_days": 2,
       "next_action": "Wait 5-7 days",
       "notes": "Sara Powell Senior MD"
     },
@@ -102,7 +102,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 1,
+      "silence_days": 2,
       "next_action": "Wait 5-7 days",
       "notes": "jtb-web@jtboyd.com delivered"
     },
@@ -115,7 +115,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 1,
+      "silence_days": 2,
       "next_action": "Find alternative contact via LinkedIn",
       "notes": "Web form only email bounced"
     },
@@ -128,7 +128,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 1,
+      "silence_days": 2,
       "next_action": "Wait 5-7 days",
       "notes": "Sent 6 Jun"
     },
@@ -141,7 +141,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 1,
+      "silence_days": 2,
       "next_action": "Wait 5-7 days",
       "notes": "Sent 6 Jun"
     },
@@ -154,7 +154,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 1,
+      "silence_days": 2,
       "next_action": "Wait 5-7 days",
       "notes": "Sent 6 Jun"
     },
@@ -180,7 +180,7 @@
       "value_usd": null,
       "first_contact": "2026-05-29",
       "last_activity": "2026-05-29",
-      "silence_days": 9,
+      "silence_days": 10,
       "next_action": "Follow up after 14 days",
       "notes": "Two positions submitted 29 May"
     },
@@ -193,7 +193,7 @@
       "value_usd": null,
       "first_contact": "2026-06-07",
       "last_activity": "2026-06-07",
-      "silence_days": 0,
+      "silence_days": 1,
       "next_action": "Open hh.ru review messages",
       "notes": "5 unread 2 confirmed responses"
     },
