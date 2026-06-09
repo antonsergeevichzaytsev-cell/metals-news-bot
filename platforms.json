@@ -1,13 +1,63 @@
 {
   "platforms": [
-    {"name": "GLG", "domains": ["glg.com", "glgresearch.com", "glginsights.com"]},
-    {"name": "Guidepoint", "domains": ["guidepoint.com"]},
-    {"name": "AlphaSights", "domains": ["alphasights.com"]},
-    {"name": "Dialectica", "domains": ["dialecticanet.com", "dialectica.com"]},
-    {"name": "ProSapient", "domains": ["prosapient.com"]},
-    {"name": "Atheneum", "domains": ["atheneum-partners.com", "atheneum.io"]},
-    {"name": "Tegus", "domains": ["tegus.co", "tegus.com"]},
-    {"name": "Glasford", "domains": ["glasfordglobal.com", "glasford.com"]}
+    {
+      "name": "GLG",
+      "domains": [
+        "glg.com",
+        "glgresearch.com",
+        "glginsights.com",
+        "glglink.com",
+        "glgevents.com",
+        "glgexpert.com",
+        "glg-research.com"
+      ]
+    },
+    {
+      "name": "Guidepoint",
+      "domains": [
+        "guidepoint.com"
+      ]
+    },
+    {
+      "name": "AlphaSights",
+      "domains": [
+        "alphasights.com"
+      ]
+    },
+    {
+      "name": "Dialectica",
+      "domains": [
+        "dialecticanet.com",
+        "dialectica.com"
+      ]
+    },
+    {
+      "name": "ProSapient",
+      "domains": [
+        "prosapient.com"
+      ]
+    },
+    {
+      "name": "Atheneum",
+      "domains": [
+        "atheneum-partners.com",
+        "atheneum.io"
+      ]
+    },
+    {
+      "name": "Tegus",
+      "domains": [
+        "tegus.co",
+        "tegus.com"
+      ]
+    },
+    {
+      "name": "Glasford",
+      "domains": [
+        "glasfordglobal.com",
+        "glasford.com"
+      ]
+    }
   ],
   "urgent_keywords": [
     "screener",
