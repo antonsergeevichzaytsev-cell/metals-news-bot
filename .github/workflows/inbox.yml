@@ -1,10 +1,11 @@
 name: Inbox consolidator
+
 concurrency:
   group: repo-writes
   cancel-in-progress: false
+
 on:
   schedule:
-    # Mon-Fri 10:00, 12:00, 14:00, 16:00, 18:00 MSK = 07:00, 09:00, 11:00, 13:00, 15:00 UTC
     - cron: '0 7,9,11,13,15 * * 1-5'
   workflow_dispatch:
 
@@ -16,12 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+        with:
+          fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Run inbox consolidator
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
@@ -29,12 +30,17 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python inbox.py
-
       - name: Commit state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add state_inbox.json || true
-          git diff --cached --quiet || git commit -m "state_inbox: $(date -u +%Y-%m-%d_%H-%MZ)"
-          git pull --rebase origin main
-          git push
+          git diff --cached --quiet && echo "nothing to commit" && exit 0
+          git commit -m "state_inbox: $(date -u +%Y-%m-%d_%H-%MZ)"
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main || git rebase --abort
+            git push origin HEAD:main && exit 0
+            echo "retry $i"; sleep $((RANDOM % 6 + 2))
+          done
+          echo "push failed after 5 retries"; exit 1
