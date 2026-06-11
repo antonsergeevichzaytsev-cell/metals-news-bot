@@ -1,5 +1,7 @@
 name: Pipeline sync
-
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
 on:
   schedule:
     # Каждые 30 мин Mon-Fri 10:00-18:30 MSK = 07:00-15:30 UTC
