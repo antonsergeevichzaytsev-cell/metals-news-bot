@@ -1,5 +1,7 @@
 name: Inbox consolidator
-
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
 on:
   schedule:
     # Mon-Fri 10:00, 12:00, 14:00, 16:00, 18:00 MSK = 07:00, 09:00, 11:00, 13:00, 15:00 UTC
