@@ -1,10 +1,11 @@
 name: Pipeline sync
+
 concurrency:
   group: repo-writes
   cancel-in-progress: false
+
 on:
   schedule:
-    # Каждые 30 мин Mon-Fri 10:00-18:30 MSK = 07:00-15:30 UTC
     - cron: '0,30 7-15 * * 1-5'
   workflow_dispatch:
 
@@ -16,10 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Run pipeline sync
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
@@ -27,12 +29,17 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python pipeline_sync.py
-
       - name: Commit pipeline + state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add pipeline.json state_pipeline_sync.json || true
-          git diff --cached --quiet || git commit -m "pipeline_sync: $(date -u +%Y-%m-%d_%H-%MZ)"
-          git pull --rebase origin main
-          git push
+          git diff --cached --quiet && echo "nothing to commit" && exit 0
+          git commit -m "pipeline_sync: $(date -u +%Y-%m-%d_%H-%MZ)"
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main || git rebase --abort
+            git push origin HEAD:main && exit 0
+            echo "retry $i"; sleep $((RANDOM % 6 + 2))
+          done
+          echo "push failed after 5 retries"; exit 1
