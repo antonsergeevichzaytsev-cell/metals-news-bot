@@ -1,5 +1,7 @@
 name: Metals & Mining digest
-
+concurrency:
+  group: repo-writes
+  cancel-in-progress: false
 on:
   schedule:
     - cron: '0 5 * * 1-5'
