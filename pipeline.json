@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-06-19T17:15:54.988883+00:00",
+  "last_updated": "2026-06-22T12:45:15.156637+00:00",
   "leads": [
     {
       "id": "glg_5191288",
@@ -11,7 +11,7 @@
       "value_usd": 400,
       "first_contact": "2026-05-22",
       "last_activity": "2026-05-23",
-      "silence_days": 27,
+      "silence_days": 30,
       "next_action": "Wait for client scheduling",
       "notes": "Project #5191288, accepted, no schedule yet"
     },
@@ -24,7 +24,7 @@
       "value_usd": null,
       "first_contact": "2026-05-15",
       "last_activity": "2026-05-15",
-      "silence_days": 35,
+      "silence_days": 38,
       "next_action": "Monitor for dispatch",
       "notes": "Signed agreement, no projects yet"
     },
@@ -37,7 +37,7 @@
       "value_usd": null,
       "first_contact": "2026-05-28",
       "last_activity": "2026-06-05",
-      "silence_days": 14,
+      "silence_days": 17,
       "next_action": "Send 2nd follow-up if no reply by 2026-06-12",
       "notes": "Ghalib Al Falasi g.alfalasi@ega.ae"
     },
@@ -50,7 +50,7 @@
       "value_usd": null,
       "first_contact": "2026-05-11",
       "last_activity": "2026-06-09",
-      "silence_days": 10,
+      "silence_days": 13,
       "next_action": "READ REPLY in Gmail (rxglobal.com thread). Classify: A) accepted → send bio/abstract/slot; B) clarification needed → respond; C) rejection → close + lessons; D) logistics → confirm. Update status after action.",
       "notes": "Patrick Herman intro 11 May, Sophia direct follow-up 6 Jun, paper proposal 8 Jun (paper format = compliance-clean, no travel). Reply received 9 Jun morning — re: Speaker Proposal subject preserved (CIS Smelter CapEx & Turnaround Benchmarks)."
     },
@@ -63,7 +63,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 13,
+      "silence_days": 16,
       "next_action": "Wait 5-7 days before follow-up",
       "notes": "Dr. Caline Sahyoun cwa@cwa.international delivered"
     },
@@ -76,7 +76,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 13,
+      "silence_days": 16,
       "next_action": "Wait 5-7 days",
       "notes": "inquiry@dolbear.com"
     },
@@ -89,7 +89,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 13,
+      "silence_days": 16,
       "next_action": "Wait 5-7 days",
       "notes": "Sara Powell Senior MD"
     },
@@ -102,7 +102,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-15",
-      "silence_days": 4,
+      "silence_days": 7,
       "next_action": "Wait 5-7 days",
       "notes": "jtb-web@jtboyd.com delivered"
     },
@@ -115,7 +115,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 13,
+      "silence_days": 16,
       "next_action": "Find alternative contact via LinkedIn",
       "notes": "Web form only email bounced"
     },
@@ -128,7 +128,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 13,
+      "silence_days": 16,
       "next_action": "Wait 5-7 days",
       "notes": "Sent 6 Jun"
     },
@@ -141,7 +141,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 13,
+      "silence_days": 16,
       "next_action": "Wait 5-7 days",
       "notes": "Sent 6 Jun"
     },
@@ -154,7 +154,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 13,
+      "silence_days": 16,
       "next_action": "Wait 5-7 days",
       "notes": "Sent 6 Jun"
     },
@@ -167,7 +167,7 @@
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
-      "silence_days": 13,
+      "silence_days": 16,
       "next_action": "Complete AI interview",
       "notes": "Received 6 Jun 18:18. Auto-notification from hrplatform@ on 8 Jun reclassified as AUTO by pipeline_sync v2 - status reverted."
     },
@@ -180,7 +180,7 @@
       "value_usd": null,
       "first_contact": "2026-05-29",
       "last_activity": "2026-05-29",
-      "silence_days": 21,
+      "silence_days": 24,
       "next_action": "Follow up after 14 days",
       "notes": "Two positions submitted 29 May"
     },
@@ -193,7 +193,7 @@
       "value_usd": null,
       "first_contact": "2026-06-07",
       "last_activity": "2026-06-07",
-      "silence_days": 12,
+      "silence_days": 15,
       "next_action": "Open hh.ru review messages",
       "notes": "5 unread 2 confirmed responses"
     },
@@ -206,7 +206,7 @@
       "value_usd": null,
       "first_contact": "2026-06-08",
       "last_activity": "2026-06-08",
-      "silence_days": 11,
+      "silence_days": 14,
       "next_action": "Wait 7-10 days, follow up if silent by 2026-06-18",
       "notes": "Dr. Ashok Nandi IBAAS President (ashok.nandi@ibaas.info). Conference 9-11 Sep 2026 Jharsuguda Odisha India, ~300 delegates. Proposed 2 paper topics: CapEx/contractor mgmt OR potline turnaround risk. Compliance-clean credibility per Strategy v3 channel 3."
     }
