@@ -1,198 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "Russia to impose 8% export duty on rough diamonds from September",
-      "desc": "Russia to impose 8% export duty on rough diamonds from September &nbsp;&nbsp; KITCO",
-      "domain": "kitco.com",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWU0yU0ZBT1hhUHBRZkd5SlE4dmdCejQtZlNERDB6ckQyZlNwbkhmUmRqcllFM1M4bXhlMDI5dUFLa0Vpd0J0SkJ6aXlQV19JcTFXRmtaa2oyb3Q0SnJqbVdhVGtWQ0w0amx6QS1Cckh6RE5SclhTOWJ5NTFtUmhYeVhNN3pDN2NtX3E2RlZkZjRmYW9yRGZTN3pERERUb2tsajA1WGVB?oc=5",
-      "why": "Экспортная пошлина на алмазы влияет на цепочку поставок и цены, что важно для стратегии в цветных металлах."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "China lithium price slides over CATL restart chatter",
-      "desc": "China lithium price slides over CATL restart chatter &nbsp;&nbsp; The Northern Miner",
-      "domain": "northernminer.com",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOT0J3amNNLXZJZm5ORnkxV3IwRHVnN1VyMkppOG9kc2FGTUk0dGlaVTBDQUJTTzZuck92M0VPcVdWTmtrbGdKaDFhcHVFRVlZVGlQenV1dWhNYThwV2Q5NUg0VHctS1Z2TmxwLWtMUkdvN2szeDJSdU9jbGhwM2stZ2pQX3J5Q0hfX1ZsN2tLTUlvY2txMDBPZ29XMnhQOVlp?oc=5",
-      "why": "Снижение цен на литий из-за слухов о перезапуске CATL влияет на стратегию сырья для аккумуляторов."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "Projected cost for Phase 2 of BHP Jansen potash mine in Saskatchewan rises by $2B US",
-      "desc": "Projected cost for Phase 2 of BHP Jansen potash mine in Saskatchewan rises by $2B US &nbsp;&nbsp; CBC",
-      "domain": "CBC",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPS1U0cmFRSTl1N0VtZ2VmdjF0U0ZDaVlFYjlodk8yZFdxdHdEdnBwU0xiWHpBXzR2QWpMaUMxeHdfYUtEZDYzUkJTZFhSWFZ3YWhLYkNrcUk2ckllOHhXZk9KXzBtbWxyZ0p4OWc3MUJWU3Ewa1FNVnUwbDJ6SW94LUl2U1BLQ0VRMDdsWWVZTU8?oc=5",
-      "why": "Рост затрат на $2 млрд для BHP Jansen влияет на стратегию калийных проектов и капитальные решения."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "Copper in the Age of AI",
-      "desc": "Copper in the Age of AI &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5aUjdLblAwQVd0SVhtbGdkaVIxTnFxVWtfSjFKN3k3MG1HSE5uSnVzVWRKakhUSm1LSjQwSTFJZEJOeVZ4bHVyNG9lM09yWDlNVy1SamwwcW50enFVcVZDeE94Q0lkYTJ1d3NURGZqMnh5S28?oc=5",
-      "why": "Рост спроса на медь из-за ИИ влияет на стратегию производителей и инвестиции в новые проекты."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "Column: Guinea bets bauxite dominance can reshape aluminum supply",
-      "desc": "Column: Guinea bets bauxite dominance can reshape aluminum supply &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZnZRZVB0VkpnMTJMUWtHSWR1anlScHpZdjlFb3k3ajBEMzR3WXVDc0N2LVVPMUpkYTVNSzZSalJFTVQ2TGIwNzg2dDB1cy1xTVc3enlubXpvWjgyajI4MVRieFhqTjgxN1RocUZaelZRRjdfSWwxQ1pJa01PSWxvdDFheHFzdkkwVnRDS21oT3Y1MHRMV21R?oc=5",
-      "why": "Гвинея контролирует 25% мировой добычи бокситов, что влияет на цепочку поставок алюминия и стратегию сырьевой безопасности."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "Exxaro working to transport more manganese by cheaper rail",
-      "desc": "Exxaro working to transport more manganese by cheaper rail &nbsp;&nbsp; KITCO",
-      "domain": "kitco.com",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPa3FGWDhYN1MzSE9oMVY4OTVKTUtJbE9zQWtwam5fdERmekhpcXZ4ZkpYWEVUaWhLNHJSUlctd2dCSkVUb3pzMTdVSjdOTFNZaVZuQVpIcHZGR0tPOTJJQnM3QjlsRG5kOUdMOXJKU0ozQ2JMVlFSbVNNQUJUTFpZTGRiWmtEZ2RZOUNIRktBVDBsMEhJMTlqS1hEUS1GYTFIcU1aN2lR?oc=5",
-      "why": "Снижение затрат на транспортировку марганца повышает конкурентоспособность Exxaro и может изменить баланс на рынке."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "Hindalco subsidiary East Coast Bauxite Mining Company struck off",
-      "desc": "Hindalco subsidiary East Coast Bauxite Mining Company struck off &nbsp;&nbsp; Business Upturn",
-      "domain": "Business Upturn",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZ0hNaVBTSXYyR2V2ODhJbDV6dDAzRVZwT1NSc3VfOGVGVkdBOHJtME91Y0x3cEhTblpoT1JsT1B3WmhCbzZfcjdGcmJYQkdtSTFhUy1ZLTBmZzlsTGFPVjltbzJkSTJ6TVJDUHIycnFJeUJER2E0RkZiVzl4LUI0eklEd0dCTjNuVjV5ZUItSk0zNVljWEZoTWhLZkxyYzVUZGdWcEtNV1Q?oc=5",
-      "why": "Закрытие дочерней компании Hindalco по добыче бокситов влияет на сырьевую базу алюминиевого сектора."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "[SMM data] increased storage accumulation and slowed down, aluminum bar inventory increased by 6400 tons to 218900 tons compared with last Thursday.",
-      "desc": "[SMM data] increased storage accumulation and slowed down, aluminum bar inventory increased by 6400 tons to 218900 tons compared with last Thursday. &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOWG5Dd1prZUY3dTVfM2owT0lvSVV0S19wQldIWnBHazJ2LXJlUVNUUjlVTzRiSFhDSHlXX2NscER1RVd4SkhiWTVtTFBMR3hTUVY5ZE8wWE5oWFh3Y0p3dmVNTHpaZ2RjUXFkUTVxdjNvamN2dWFUQnRQemJTMzkzSThQT3d6ZzljUVVoTENadHh6RHBtVF9JWF8zWjUzNzRIaHRGUHRLYkhTTnFIQTl2dHhFZ0hqV2ZURTFacWtiMlJ1X205NnRyWDYzeUV6NWc3VEZrRWRFLXJ0SmpBSnJPbmo2Yk5ycUNRUEtrRXBpUnBkZFdhRi1hSVFXSVotOFpIT1d3NXl2WWFSamNLeWdBWEczd1RIWF92LUU0?oc=5",
-      "why": "Рост запасов алюминиевых прутков указывает на замедление спроса, что влияет на стратегию сбыта."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "Brazil’s BNDES to partner with Vale, Petrobras on critical minerals",
-      "desc": "Brazil’s BNDES to partner with Vale, Petrobras on critical minerals &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZDVkaEFaSkcxZmdKV2t0aUlHRjR1Z1FTbkxlMzFDLWhpM1dQWlV5dXB2TWMzcUp1Rzhxbk9nbUhpZGJvWGpVWS1HNGFWQVpXdF9VRk52R3RMX3dERlp5UHVVM1Q3ekZfOFQxczRjUzlXQ09zWGF5ZmFWVktNMWhrMXZianVVaS1TOERvck5lOERiazhoSXg4bg?oc=5",
-      "why": "Госбанк Бразилии BNDES входит в проекты критических минералов с Vale и Petrobras, меняя структуру финансирования отрасли."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "BHP, GCMD trial multi-feedstock B100 blend in an existing supply chain",
-      "desc": "BHP, GCMD trial multi-feedstock B100 blend in an existing supply chain &nbsp;&nbsp; Biodiesel Magazine",
-      "domain": "Biodiesel Magazine",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRHdKTm5HVG0tR19NT0hoaUJOeHA0UHF1T2E4SUZfa21hbkxHTGZ0c3V3emdNWVBnbzdYWVFjdjhRSDREdzZpb1VXNk92M1A4YUI5dFhGVTI3YzJOcGE1WFB1Zk1pWVYxdjZqWFl3Q0JvZ1NwRVRlNVR2RjY5WDA1UUFQSUNFdUNfVnpyNV9LOGZaUWRSWlBEQ3ppMnFtR3lUTVRuS0o2bnlsV1Ff?oc=5",
-      "why": "BHP тестирует B100 биодизель в цепочке поставок, что может снизить углеродный след горнодобычи."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "China lithium price slides on speculation over CATL mine restart",
-      "desc": "China lithium price slides on speculation over CATL mine restart &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQd1FBejdSVWJ4QTVXcmxVcG1VYW15d1pvaE13YXBDVzR0QkkyUXdRUzdyS3E5bTdSZ2g0RE9SZU81aU9GOW5wZS1oVjZHN2tMUXpPOGttX2dtVUxvalZYWWQ2X3hJLXZYSlFBank3Q1JpSXBhSG5wakpBRXF5Q29weG5iMTR5ZG13c29DWHFKaU8yQQ?oc=5",
-      "why": "Цены на литий в Китае падают из-за слухов о возобновлении работы рудника CATL, что влияет на стратегию поставок."
-    },
-    {
-      "ts": "2026-06-22T19:59:34.805814+00:00",
-      "title": "Exxaro working to transport more manganese by cheaper rail",
-      "desc": "Exxaro working to transport more manganese by cheaper rail &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPS1pNUF85MVJYWmdPQVV6STJrRVhvb0ZVOWoySVdvLTV1X2pva01VLTVaMlRzaWZCUGZMZXJnOUFpRXEzaWlJZ3BoWXJhekotUUxKcHQwdmxsbWZPZEtCUFlKakVWTmdsdGJSZnFWNXRESTBIM0xwQm1Sa2thNDJjd1VxN2pEUmJWMlhBVHZlMA?oc=5",
-      "why": "Снижение затрат на логистику марганца повышает конкурентоспособность Exxaro и влияет на цены на рынке."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "Rio Tinto edges closer to EQ move",
-      "desc": "Rio Tinto edges closer to EQ move &nbsp;&nbsp; businessnews.com.au",
-      "domain": "businessnews.com.au",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5lOGs4QW0wOVUwVUI0OWlIbVV6YWVfaThmc21yTm5qUUNWVFptY01IUWtiV0hQa2pvV0pUZklHaFVaTURXQUZNcFdPRUhYTDJLdFZnbGxDQ21KRmVldGkycHR5WmsxaGw0Z203Y1l3UGUtSkJHYWFyQkZONGZHQQ?oc=5",
-      "why": "Rio Tinto приближается к сделке по EQ, что может изменить структуру рынка алюминия."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "BHP debuts electric haul truck trial",
-      "desc": "BHP debuts electric haul truck trial &nbsp;&nbsp; The Australian Mining Review",
-      "domain": "The Australian Mining Review",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxONk0wMWRtc2hTbnpRNUJwcGxxX2tJUTNFS2xXVVZkcFR1M0JSQWhyM3ZLWU90Mi1tLUI5TEhJZTZRZXNIUHItU3V5ZE9MeGVIU3dING1wSm1mYU1Ob1FZZmcyVldOMVJ2RkwyV2RIaEZ5Tl9hQ1d5SW50em1mbzNkSVZmSHpZczA?oc=5",
-      "why": "Электрификация карьерных самосвалов BHP снижает углеродный след и операционные затраты, задавая тренд для отрасли."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "[SMM Copper Scrap Flash] In May, Thailand's copper scrap exports to Ch",
-      "desc": "[SMM Copper Scrap Flash] In May, Thailand's copper scrap exports to Ch &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSlRyaUI4YmJYMGNacjJWbnpvZjduMzZybWtxYjVpU2N6UUdmbFh3aDBKdlJoZ2ZIUHRjV1RPUDNiUFZUS2R1dzEtNW5vX1N5ejJKZjA3Nlk5bGJsaWJDZklpSzdPd0Z2U0FXak05bzE4WHhvNy0yZVNQcUlNUTFwYmFfaHk4alBFRVBteDBJcTNQTnFrbWxyRVNHdmJaNGtwZXpDZGhsOVBheUE2Z1Bz?oc=5",
-      "why": "Потоки медного лома из Таиланда в Китай влияют на сырьевую базу и цены на медь."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "Vedanta Aluminium Metal to double production capacity to 60 LTPA",
-      "desc": "Vedanta Aluminium Metal to double production capacity to 60 LTPA &nbsp;&nbsp; ProjectsMonitor",
-      "domain": "ProjectsMonitor",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZURpUHpSdS0yVHMzUy0zOHR0aWFZM3ZfbzJOTmk0ZXViZ2xLSTVsM0M5OHN0MEVVcHdiRjFxQmJDOEQySXNoMFVIdlZPS1RRZ3JiN241UGZMc1hHVE5Ma3l2aDZtU3dpVkt6dDMxRjJCYlc2dGVJZkpnWVg0cmNBMzQ2eThydHdMUERfRHZZd0pJdWlmb2xTcWkzQlZUNmZtSW43OEVwTHVIRVJ3?oc=5",
-      "why": "Удвоение мощностей Vedanta до 60 млн т изменит глобальный баланс алюминия и стратегию конкурентов."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "Metals fell across the board, with SHFE tin leading the decline. Other major fallers included alumina, platinum, and palladium (down over 2%), and SHFE silver and coke (down over 4%) [SMM midday review]",
-      "desc": "Metals fell across the board, with SHFE tin leading the decline. Other major fallers included alumina, platinum, and palladium (down over 2%), and SHFE silver and coke (down over 4%) [SMM midday review] &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPRFMwaEk2RklPbUNPY3lxMHE4SWkwRzNXN0FsNXYtYlgyLTRLeUQ1ZEptdXF2OFFHeThHdHFma2xWVWxOLTZOaFlYdTBiZHBMU3cwUUluTi12ZGdYN0tOdE5vcGdmQW00bDUwc3NQNXlBaVhoODA3a0ZNQ05Zbkx1N0QtRTNTeWFCVzNvSVdwYkYtc0p0OGVPT0I1aGZ5MlkybXdFV2k5Ulh1cGZjRWhaM3p0VDNUTVVibE5rWXBfS2ZVLWtjVzFZT0xPNUtnQ3Zqa1lWaVQ1Y2xIaV83bTNyRXE3cFpxRC1SYjBOcjhTX1hlTzRIQi1PUkFoSVk?oc=5",
-      "why": "Массовое падение цен на металлы сигнализирует о возможном снижении спроса, что важно для стратегии."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "Iluka secures $1.2bn loan from Australia for rare earths refinery",
-      "desc": "Iluka secures $1.2bn loan from Australia for rare earths refinery &nbsp;&nbsp; Mining Weekly",
-      "domain": "miningweekly.com",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVVlTaFE5ZHBMZWxVV01XYlJpWjBlbllxMEM5Mi1NT0kyNzZuTFZLY1FhVC1xWi1kUlhZX2g4RnFFUHpQX096dUlPbUU0OUxDOUMweUFyZWFvdXE0YURpMnRNb0JYMHdMa2pWMXpjbHktWXlVT05EV3h4amFYQUx4TUE4RjFQYkQ5aVZhUktrYUNSU0RQVmh4RjJsQ1gyZVA5eVdkY0RFX1Y2bGxjbWdZLQ?oc=5",
-      "why": "Госфинансирование НПЗ редкоземельных металлов меняет глобальную цепочку поставок и стратегию переработки."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "Woodside inks gas supply agreement with Alcoa Australia",
-      "desc": "Woodside inks gas supply agreement with Alcoa Australia &nbsp;&nbsp; Mining Weekly",
-      "domain": "miningweekly.com",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOYmp6RzF5U1FCcERBNkhlR2gxWUFwNVN4MTctNXI5XzVDV05EZ2RKSHpiV0VMbnotVDhnRFRpNnZKTXM1SDZpUGNMXzAwSFlIbHR6Y2hDcTNibGlscUk0dDBTNHpXd3M3a1lEZmgyQnlxdEQ4ZkszSmM4MWZmNENVNWlFMGxCS09iel9CdDVkVG5sSnpVUF9ySU1tQU9kZ3JlRkdYdXhB?oc=5",
-      "why": "Сделка по газу для Alcoa влияет на затраты алюминиевых заводов в Австралии и конкурентоспособность."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "Australia's Ioneer ties up with two South Korean firms for Nevada lithium project",
-      "desc": "Australia's Ioneer ties up with two South Korean firms for Nevada lithium project &nbsp;&nbsp; Mining Weekly",
-      "domain": "miningweekly.com",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPbUo3QUxaalRQazU2YTdHRTlFVUZOeXlaMjlvdGQyWUZaYVNkYnpHMWJHUFBGMVdVR3FZc1FUSy1pdDdtb283SVhMakJtLU9nT3B2dU9PT1VrTjVXenpiS0VoeHlUT3pkSzJhRWpaTlhpYl8yN3BMelN1Y2FxWDFfdDFfanlIQ3BZSUs0aDYxV2tubkwtQklvNWNtMVF5RHNMMWpneW9LcWlmR3paTURjd2wxME8wY0d4cXBVZXUwTTMxVGR0LW8w?oc=5",
-      "why": "Сотрудничество с корейскими компаниями усиливает стратегическую позицию Ioneer в литиевом проекте, важном для цепочки поставок."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "BHP and Rio Tinto test Caterpillar's electric haul trucks in Pilbara",
-      "desc": "BHP and Rio Tinto test Caterpillar's electric haul trucks in Pilbara &nbsp;&nbsp; Mining Weekly",
-      "domain": "miningweekly.com",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVlJDU3JLZlVSSlFMdHFUM2x0OF9EQ3dBam1QbXdiME5hU3g1R3B5NGRPUy05dzY4WEszX0dXbTQxaHdzZGtHUUJ5aHk3eUowWVVVQVlKN0Q2U2ZTVTlrWEJHRmVNNzcxZ2tXbVllYXFxTWNFNUlxM0FZNFh4aUpfVWJtNFY0eW9Kb3RkeHl6VjM5c1ZaWEI5dWJLS2NxajdrTzFNNnNTSWFhU1pPRGV6UXVjUk9ldw?oc=5",
-      "why": "Тест электросамосвалов Caterpillar в Pilbara указывает на стратегический сдвиг в декарбонизации горных работ."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "[Latest Customs Data] In May, China's imports of copper-zinc alloy (br",
-      "desc": "[Latest Customs Data] In May, China's imports of copper-zinc alloy (br &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQT19jNGlJSU91TTNsR2lvb0taaDM3UzRIZHNoMlFDUWJESnBEaU04VVp4R1prUmpUbFVuRFlBVjZlQjQ5YlVZTXcxVGZyWk43MEtWYmJ6QlNwVXAtSjVzc1RQR0hpdHg1N19NWC1ucENreHVJWFV0RnpzU3ZnVm1XUDNB?oc=5",
-      "why": "Данные по импорту латуни в Китай влияют на баланс спроса и предложения меди и цинка."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "Vedanta Aluminium sets course as an independent entity; listed on National Stock Exchange (NSE) and Bombay Stock Exchange (BSE)",
-      "desc": "Vedanta Aluminium sets course as an independent entity; listed on National Stock Exchange (NSE) and Bombay Stock Exchange (BSE) &nbsp;&nbsp; AL Circle",
-      "domain": "AL Circle",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNNEZqYlBDYVpHYTRFNkp2bGdkUnV1a2cwQVZacDRHOG5jZzBPOEwzS1otQU90bllwVV9sM29OLVhCanBzUFNZYTZTd3VPSGpsaFRnemZ4WXV2cWFNNWx1OTZ1MmdxRFpsMWw4MGpxTTZMM0RkZTc5UTFuSGpqQU9XV1dJN1NGLTFPR0IzRVQ3dlhnUzlZb1RROG1kRVhwZUl3TmdmQjRYZVU2bEFhbGEyQnNrdlJ6cmdYeTFSTzM0d25nLXRUNEtNN3dQS3llb3dta1hNSkZmVXI5ZDRVZ056X3AxTkdMbW1CcXl3NXg5OXh0Q0IyVnpJbDVlZXU?oc=5",
-      "why": "Выделение Vedanta Aluminium в независимую компанию меняет структуру рынка алюминия и стратегию Vedanta."
-    },
-    {
-      "ts": "2026-06-23T08:32:07.477412+00:00",
-      "title": "Hindalco launches aluminium bicycle component plant in Pune, expanding mobility business",
-      "desc": "Hindalco launches aluminium bicycle component plant in Pune, expanding mobility business &nbsp;&nbsp; AL Circle",
-      "domain": "AL Circle",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPR1diVnVKUnBlX1Z2TXRTMlpxUlRVaXNWVUc0WmhZSi02WEJ2R3JyWEZhNGs5bEFYbzM5M1p6NXE3ci1aUnNsc09KeDJBZDFENTNtTHJVekxUZjlOS0VmMW1Md1VEdDMzRHloVTBMNEVEUi1USmJ4UFVfZVpJejN6MzcxNWk4Szl6ZHB1b0JqU3loRy16YkZtS2dEcXBSWFpMUzNpTmxBVF96Q2ZFbDgwdGRncExxbGg3WktZOE9MdmpJUQ?oc=5",
-      "why": "Расширение Hindalco в алюминиевые компоненты для велосипедов сигнализирует о диверсификации спроса на алюминий в транспорте."
-    },
-    {
       "ts": "2026-06-23T19:00:45.119407+00:00",
       "title": "BHP, Rio Tinto and Caterpillar advance battery-electric haul truck testing",
       "desc": "BHP, Rio Tinto and Caterpillar advance battery-electric haul truck testing &nbsp;&nbsp; Canadian Mining Journal",
@@ -1055,6 +863,102 @@
       "domain": "Marine News Magazine",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQQ0F3MmpmTWwyMFphZXlSZ3NUZ1o5b1JvYWRRZEhBWHhPZE1Ka0t1YnlJRldGYVNXa1hvY2xyWGw5UnVGbzJ0Y2NoV0p2V29pOGxhX0c3MlRYa21BTl92a0xGMHlIaUItOE9Mbm5IZU5IYmIwYVlfSFd4RTl6dVRXU1V3RkZxQQ?oc=5",
       "why": "Инвестиции EGA в порт указывают на рост экспортной инфраструктуры алюминия, что влияет на цепочки поставок."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "Elevra starts Stage 1 of North American Lithium mine expansion",
+      "desc": "Elevra starts Stage 1 of North American Lithium mine expansion &nbsp;&nbsp; Mining Weekly",
+      "domain": "miningweekly.com",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPV3dfRXdkQXhuM3BUQWJKMW42R2hfU0pqVTNyMWNEd1dZYl9WODllUnZwbW5HWkE1aGlhd2JOd3ZMTS1lSnVXd1dQNm5KQVBVbElGazVxN0pKWFVyNlh1Wk9WbFRpWkNRcFFQbV9OTFFYTi1CRXZDU3V6YTlEMUdITTJwM2k1dzJqYXBxS185dW43cUQzR1RRUE0xOU4ySHpzZk51ZEhVRjRueFJoYWd3?oc=5",
+      "why": "Расширение литиевого рудника в Северной Америке влияет на глобальное предложение лития и стратегию сырьевой безопасности."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "CBAM explained: Why Europe's carbon tax matters for India's exporters",
+      "desc": "CBAM explained: Why Europe's carbon tax matters for India's exporters &nbsp;&nbsp; Business Standard",
+      "domain": "Business Standard",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPeWlNQ0dLSlNXUWNSWWR5VWxOZjZocTdyWl91V1llN3R2VHAyUWtYSVJpWUxCajNzTmNac3VVdDlkT1YyMkkyRV9jUFZwNUVXTVB5aFJJSElRODEtNV9XTVdUQnNXTTc2RURYWGxjUV81LUw3cVZkdEduWW5qcmpxS3c2UnFhQWI1U2xYMzdOOXFsQWJYNndsNmwzX1hqMFM5VlpJX2x6TnIzYW5wU1NCLXNTbWlONkY5NDMwNjI5SXBPZzhyOHRpUTB30gHPAUFVX3lxTE15NTZfNTl0NV9YQWxtQkdTNGpVTjhLZVQ0ZGN4VktTM0JweWNNck5FeXJZTmxFVmZVRmotMDlXd1MtS3V2LTZOUEhqT2dfUjdmTGZFSWZYX0pJNEt4NXYtWFhaVTNRSklVdEktQU1BeEpjMDk5RGZvYnBHNklZeXU4QWVEd01XVkVxMExOd2xualFKcnlxTVBOTG43M0RsVXNrWEx6R2Y1azhGRVRVREZTX0JzNEktLXJlLTBSemlXcERKNllWRFBJQmV1YU9RWQ?oc=5",
+      "why": "CBAM повышает затраты на экспорт металлов в ЕС, требуя пересмотра стратегии декарбонизации."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "Antofagasta Plc Reports 2025 Government Payments Totalling US$695.4 Million",
+      "desc": "Antofagasta Plc Reports 2025 Government Payments Totalling US$695.4 Million &nbsp;&nbsp; DirectorsTalk Interviews",
+      "domain": "DirectorsTalk Interviews",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNTE10VV9FWGRGUklkTC1TR21peDE0S1dibFdzQ291WDI0NjA5dzUtSmU3R0k0eFk2UFVVOXU3dmhINUJUaWNKQ2dQNElzYUY2eEt0ckxKZFBIeGp5N2RsV2tTNHNwdHlIeXNvTUxsR2pFV3JnMk5lZ2hQU3BUWk9aNVpmYXRkbWNFWXp6UHE1YXhfVnVQcm81WU9FXzJZcDh4MFNlbk04ZkNkWjIwWERWZ09ocHA4Z1o4LXExOVV1YzdVZ28?oc=5",
+      "why": "Высокие налоговые выплаты указывают на масштаб операций и фискальную нагрузку, влияющую на стратегию."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "Solis Minerals Extends Completion Period For Brazil Lithium Project Deal With Rio Tinto",
+      "desc": "Solis Minerals Extends Completion Period For Brazil Lithium Project Deal With Rio Tinto &nbsp;&nbsp; TradingView",
+      "domain": "TradingView",
+      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOQm5TNXhneVhzTmhxcVhPeGpMOFFTbm50aFYyaW5aQm8yUzBGdWw2TDc0anh4dnpTMVpXNzU1QU1pUjloY2NsUnp5RzdyOWtpa0k1OEJaWVRhSHh5UVdBTWg3STkwU1pKbUJMUFhlcEZPWTItVlBuSmhROVRHRmszdGp6SlJZVnJmMllPS2N2eWtzWVIzLUV4WTRobWc4NFhkYVpONUY1X1JmX0ZWbGlPMkczbWZjcm9VaC1wOTU1UVFwRkJpQVd6TWd3TFkxOHViLWMxQUhWZUl0LWJTZXE4bTJTVWhLcnZ2TFFaOWNB?oc=5",
+      "why": "Сделка Rio Tinto по литию в Бразилии указывает на стратегический интерес к новым активам."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "[SMM Market Update] Lead-acid battery end-use consumption is sluggish",
+      "desc": "[SMM Market Update] Lead-acid battery end-use consumption is sluggish &nbsp;&nbsp; SMM Metal",
+      "domain": "SMM Metal",
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPV3UzZDYxSFh4MGIxNjNNakRXckVIbFNKenNCd1dON0ttNmhqUHg5bURXOXpUeUtPZDl5WFFCSnNSWXpxZFdUc2hpdlV3cV9DUlR2c2VtcFM4R1R3ZnVvXzRGTlJsRVlKRkJWdEdDM3p3dDVKQ0UxWkl1Mkw5UVl3TGJTYmpfUTFEQ2kyUjhRcW1HdWNDZTcxSDV2T3p3eGJLWFBUdWwzNjNGZldIbnF4dFlpQ3VNZTVOdnVOVDBJZTZRZ1p4R3ZJLWhiN2JtX1lOWlBCYUgzRFpld2pRSU9lZ3Btc0VjcXJGeVE?oc=5",
+      "why": "Слабый спрос на свинцово-кислотные батареи давит на цены свинца, влияя на стратегию сбыта."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "Congo withdraws unused cobalt export quotas",
+      "desc": "Congo withdraws unused cobalt export quotas &nbsp;&nbsp; Mining Weekly",
+      "domain": "miningweekly.com",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPQWZyd3h0LUJDSjdxb3hlLVJZSWxSbGs4RUJtako0SnYtZjBIWnMxV0RQQ0NrWVhlMC12X191TjBrRjJJSDdqaWk1TVQwTjRXNHI2cm9YS3psMHFqLWZzeGRueHVPNW1NQmptdFpfSlA0UjZrS19vRUZEbmV5MGRQLXB0eWRZV3pnSkxmVFNqZUlKOG54ZFE?oc=5",
+      "why": "Отзыв неиспользованных квот на экспорт кобальта из Конго напрямую влияет на глобальное предложение и цены."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "According to SMM, a zinc mine in North China continued processing lowe",
+      "desc": "According to SMM, a zinc mine in North China continued processing lowe &nbsp;&nbsp; SMM Metal",
+      "domain": "SMM Metal",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPOG4xNEsxR25TRDFseWNPMmVCQ3JWb0hKYVlUR1JWWTMwRmdwWklVSl83QnBKdDhhQS14TzdmZWhZcE9qYVM1OXBVSU1WYWxlVUU4ZkF6aHhKcEdlSWUwT0RVaWRfOFhCT3hJWHBaYW5HeEIwaW5ocmhjR1QzM2d5NDRTN3RFRHlCdS1tWUZQcFptQ1YwZjYxQnA5RnRBZDZrbTl5c3RnUUMzTG1CX2lhQUltMnNXVjZSMWRj?oc=5",
+      "why": "Снижение содержания руды на цинковом руднике в Северном Китае может повлиять на региональное предложение цинка."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "Why companies are swapping copper for aluminium",
+      "desc": "Why companies are swapping copper for aluminium &nbsp;&nbsp; Reuters",
+      "domain": "reuters.com",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNU01ySzZTWkhvMkNfeV95V3FRWTlhVDZVZGxkWmFXelBVbGdmVUNMWWNodnZQRFFaSUlsWk1CQWFrVTEyRk9qOU5lQTFQSlMybjNaMV9SNk9wbXVaXzRRdDlxeV9wUjJxZ1ZUVjNTX3lOd3BWSnVXMkNmajZtMUdpM09yRGFwT3pyakU2VUZMdUtSVndsN2pOZktPR0FVbUZzSnAzeUhGV25hQjNkTVE?oc=5",
+      "why": "Замена меди алюминием меняет структуру спроса на цветные металлы, влияя на стратегию производителей."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "Ferrari and BMW join Tesla, China in switch from copper to cheaper aluminium",
+      "desc": "Ferrari and BMW join Tesla, China in switch from copper to cheaper aluminium &nbsp;&nbsp; Reuters",
+      "domain": "reuters.com",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNZ2lPRHR2cWFNZDNkUldYQlBkWnNnU0dZU1VMQmZGMHZIWW1YamNpLU9SNktDc1htRnJIVF9QcFVlY1pzNkdOYjZlckduODlyZFdrVXRpSWNHNnEzWW5PblV3ZWFZV3NOUkFoRlZkRnZUS2FabGNvM2xqRXBjZFhOblI4LVRlaEItTmlkclpFbmdBXy10M21ZT25ITXZ5NW1xTkI3ZVcyV1p6enBxQy1jcmEwZFlIYVdGdThGV2pzWV9jaU1L?oc=5",
+      "why": "Сдвиг в потреблении меди в пользу алюминия в автопроме меняет структуру спроса на цветные металлы."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "[SMM Analysis] Go-Global Advantages Intensify Alongside Patent Barriers Pressures: Analyzing the Industry Impact of the US 337 Investigation on Silicon Carbon Anodes",
+      "desc": "[SMM Analysis] Go-Global Advantages Intensify Alongside Patent Barriers Pressures: Analyzing the Industry Impact of the US 337 Investigation on Silicon Carbon Anodes &nbsp;&nbsp; SMM Metal",
+      "domain": "SMM Metal",
+      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPUUFZYTJXUHZYWkJXTF80WGhlU0Z2bDVreUVzUnlhQTZpNUpNekloR2hvUmtwdnJ4QnFxUFlGOHhySjJDTVpkS3hkc1g3UGk3YVFoX254V0lqdXIxY0RzM1d4SWFRSHpkMkdfX05vRTFpZEZxNk9uUVRUZXU0dGRhOXFkaVVfcHdHQzdKSjNmMF9LeGMwbGFGS2ZiYzhVaXVtSkVtUXplZWY2RGU0NmVBMDl3NVJxRFNOOGRIVGVQS1Y0bVNhVk9KZlZ0aEtNQmZPXzNDLXlBNDBfbVNaM1FSXzNhelp4Wl9Bb0pqUHdSTVcyZkJUWDB1QkdUMA?oc=5",
+      "why": "Расследование 337 в США по анодам Si-C угрожает экспорту и патентам, влияя на стратегию производителей."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "160-acre Alcoa site may finally be redeveloped after years of discussions",
+      "desc": "160-acre Alcoa site may finally be redeveloped after years of discussions &nbsp;&nbsp; AOL.com",
+      "domain": "AOL.com",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9hWXJVNS1vVXFvUHVhYmUyOWRMX2FMY2RGckRFZkIxY245c1d5Q09pNG5SVTdyN1FYNEJPZ3NhV0ltUmNpbGtQZmo4dnBGUjdMeXBzZ0RQOEZKamMzMm8wa1l0eEhDSzY4dGtFdEVPSExmeGVpd1ZwUE5n?oc=5",
+      "why": "Закрытие и редевелопмент площадки Alcoa влияет на предложение алюминия и стратегию активов."
+    },
+    {
+      "ts": "2026-06-30T08:33:09.364105+00:00",
+      "title": "Solis Minerals Extends Rio Tinto Brazil Lithium Transaction Deadline by 14 Days as Documentation Nears Completion",
+      "desc": "Solis Minerals Extends Rio Tinto Brazil Lithium Transaction Deadline by 14 Days as Documentation Nears Completion &nbsp;&nbsp; Kalkine",
+      "domain": "Kalkine",
+      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPZmZpU0RuczcwWDRiQml4U2xNZnliZUtnckg5QzJkYUNGYzVZOXBwVzBFdWNpVlVtWUJySU13NmNzUXY3dnNSUkhKd1QySHIzdUVTS3FWbDNCWlFNZTBzNjZpaEctM0w3cmNiOEhpcTRfQzhwc09VWXlaMGlCdnZaMktmRFFpQ0V5MEJhcVVGbUVRSGItaEpmLTR4VmpmVDY3WklxQTNIYkxHRzY1MHR1N1RWVWl2NWtRYjNmdEFFQnljbWVQRWQ0eWg1SEVVNV9IZjQ1WDdIZ0pQNFV2NDJLYV90WG9PSzZmdHhJ?oc=5",
+      "why": "Продление сделки по литию с Rio Tinto указывает на стратегический интерес к бразильским активам."
     }
   ]
 }
