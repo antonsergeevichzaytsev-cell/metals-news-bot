@@ -98,7 +98,7 @@ def msg_id_hash(msg):
 
 
 def fetch_emails(window_hours):
-    M = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+    M = imaplib.IMAP4_SSL("imap.gmail.com", 993, timeout=30)
     M.login(GMAIL_USER, GMAIL_APP_PASSWORD)
     M.select("INBOX", readonly=True)
     since = (datetime.now(timezone.utc) - timedelta(hours=window_hours)).strftime("%d-%b-%Y")
