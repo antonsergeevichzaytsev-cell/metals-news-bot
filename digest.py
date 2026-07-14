@@ -27,6 +27,8 @@ CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 DEEPSEEK_KEY = os.environ["DEEPSEEK_API_KEY"]
 
 MAX_ITEMS_PER_RUN = 12
+PRIORITY_RANK = {"high": 0, "medium": 1, "low": 2}
+PRIORITY_EMOJI = {"high": "\U0001f534", "medium": "\U0001f7e1", "low": "\u26aa"}
 MAX_AGE_HOURS = 48
 TG_BUDGET = 3900
 HISTORY_RETENTION_DAYS = 7
@@ -247,7 +249,7 @@ SYS_PROMPT = (
     "and mining (16 years across UC RUSAL, Norilsk Nickel, UMMC, ERG). For each news item, "
     "decide if it is relevant to his profile and, if relevant, produce ONE short Russian "
     "sentence (max 22 words) explaining why it matters for industry strategy. "
-    "Reply ONLY with valid JSON: {\"skip\": bool, \"why\": str}. "
+    "Reply ONLY with valid JSON: {\"skip\": bool, \"why\": str, \"priority\": str}. "
     "Set skip=true for: stock analyst ratings, ETF picks, EPS forecasts, financial blogs, "
     "macro-economy with no metals angle, political/military opinion without direct supply impact, "
     "celebrity/lifestyle, generic press releases without operational substance, "
@@ -257,7 +259,12 @@ SYS_PROMPT = (
     "Set skip=false for: production data and quarterly output, smelter/refinery operations, "
     "M&A deals with disclosed value, CapEx decisions, regulation (tariffs, sanctions, CBAM, "
     "Section 232), price/premia movements with cause, technology shifts (inert anode, H2 DRI, "
-    "HPAL, autonomous haulage), named operators' strategic moves with operational substance."
+    "HPAL, autonomous haulage), named operators' strategic moves with operational substance. "
+    "ALSO assign priority for ranking. "
+    "\"high\" = actionable for him: a problem, deal, or regulation at a specific CIS / Central Asia / Mongolia asset or a junior/mid miner; "
+    "and ALWAYS high for his orbit: Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, Nordgold, Steppe Gold, Erdene, and any CIS-exposed junior or mid miner. "
+    "\"medium\" = know-but-not-urgent: trends, technology, or moves of global majors (BHP, Rio Tinto, Glencore, Vale, Anglo American, Freeport, Codelco, Newmont, Barrick, Zijin), notable price moves. "
+    "\"low\" = general context."
 )
 
 
@@ -288,7 +295,7 @@ def deepseek_enrich(title, desc, source):
         return json.loads(content)
     except Exception as e:
         print(f"  ! deepseek error: {e}", file=sys.stderr)
-        return {"skip": False, "why": ""}
+        return {"skip": False, "why": "", "priority": "low"}
 
 
 def esc(s):
@@ -387,6 +394,7 @@ def main():
             seen.add(c["hash"])
             continue
         c["why"] = (verdict.get("why") or "").strip()
+        c["priority"] = (verdict.get("priority") or "low").lower()
         enriched.append(c)
         seen.add(c["hash"])
         # Append to history for F-block (CEO quote of the week)
@@ -408,6 +416,11 @@ def main():
         save_history(history)
         return 0
 
+    enriched.sort(key=lambda x: (
+        PRIORITY_RANK.get(x.get("priority", "low"), 2),
+        -((x["pubdate"] or datetime.now(timezone.utc)).timestamp()),
+    ))
+
     msk = timezone(timedelta(hours=3))
     now = datetime.now(msk).strftime("%d %b, %H:%M MSK")
     header = f"<b>\U0001f9e0 Metals &amp; Mining</b> \u2014 {now}\n\n"
@@ -418,7 +431,8 @@ def main():
         link = esc(c["link"])
         domain = esc(c["domain"])
         why = esc(c["why"])
-        block = f'<b>{i}.</b> <a href="{link}">{title}</a>\n'
+        dot = PRIORITY_EMOJI.get(c.get("priority", "low"), "\u26aa")
+        block = f'{dot} <b>{i}.</b> <a href="{link}">{title}</a>\n'
         if why:
             block += f"<i>{domain}</i> \u00b7 \U0001f4a1 {why}\n\n"
         else:
