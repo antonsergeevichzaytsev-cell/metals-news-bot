@@ -284,10 +284,10 @@ SYS_PROMPT = (
     "M&A deals with disclosed value, CapEx decisions, regulation (tariffs, sanctions, CBAM, "
     "Section 232), price/premia movements with cause, technology shifts (inert anode, H2 DRI, "
     "HPAL, autonomous haulage), named operators' strategic moves with operational substance. "
-    "ALSO assign priority for ranking, and be STRICT: most items are \"low\". "
-    "\"high\" = ONLY a concrete, actionable event at a specific NAMED asset or company in his orbit or region: an operational problem, shutdown, restart, turnaround, a disclosed M&A deal, or a sanction/regulation hitting a NAMED CIS / Central Asia / Mongolia asset or a named junior/mid miner, or his orbit specifically (Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, Nordgold, Steppe Gold, Erdene). A generic macro or price story that merely affects these is NOT high. "
-    "\"medium\" = a specific, material corporate or operational move of a global major (named production change, capacity expansion with numbers, supply-disrupting strike, disclosed M&A, or a price/premia move with a named cause). "
-    "\"low\" = everything else: general macro, market outlooks, carbon/CBAM/tax policy discussion, thematic or analytical pieces with no specific operational event. When unsure, choose \"low\"."
+    "ALSO assign priority for ranking. Be selective, but DO use \"high\" when it genuinely fits — do not leave high empty by default. "
+    "\"high\" = directly actionable or strategically important FOR HIM: any concrete event, deal, project, or regulation involving his orbit (Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, Nordgold, Steppe Gold, Erdene), or a CIS / Central Asia / Mongolia asset, or a named junior/mid miner; AND ALSO a major development that is a direct competitor, threat, or opportunity to his players — e.g., a large new nickel/copper/aluminium/gold project or capacity expansion that competes with them, or a deal he could realistically plug into. "
+    "\"medium\" = a specific, material corporate or operational move of a global major with NO direct line to his orbit (named production change, capacity expansion, supply-disrupting strike, disclosed M&A, or a price/premia move with a named cause). "
+    "\"low\" = general macro, market outlooks, carbon/CBAM/tax policy discussion, and thematic or analytical pieces with no specific operational event. When genuinely generic, choose \"low\"."
 )
 
 
