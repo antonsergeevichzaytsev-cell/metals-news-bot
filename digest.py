@@ -58,6 +58,8 @@ BLOCKED_SOURCES = {
     "hrtoday.in",
     "mshale.com",
     "discovermoosejaw.com",
+    "moomoo", "scanx.trade", "scanx",
+    "openpr.com", "openpr",
 }
 
 SOURCE_LABEL_TO_DOMAIN = {
@@ -240,6 +242,28 @@ def url_hash(url):
     return hashlib.md5(url.encode("utf-8")).hexdigest()
 
 
+TITLE_STOPWORDS = {
+    "the", "and", "for", "with", "after", "says", "amid", "from", "over",
+    "into", "its", "new", "will", "set", "market", "chatter", "faces",
+}
+
+
+def title_tokens(title):
+    toks = re.findall(r"[a-z0-9]+", (title or "").lower())
+    return {t for t in toks if len(t) >= 3 and t not in TITLE_STOPWORDS}
+
+
+def is_near_duplicate(sig, kept_sigs, threshold=0.5):
+    for other in kept_sigs:
+        if not sig or not other:
+            continue
+        inter = len(sig & other)
+        union = len(sig | other)
+        if union and inter / union >= threshold:
+            return True
+    return False
+
+
 # --- DeepSeek enrichment ----------------------------------------------------
 
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
@@ -260,11 +284,10 @@ SYS_PROMPT = (
     "M&A deals with disclosed value, CapEx decisions, regulation (tariffs, sanctions, CBAM, "
     "Section 232), price/premia movements with cause, technology shifts (inert anode, H2 DRI, "
     "HPAL, autonomous haulage), named operators' strategic moves with operational substance. "
-    "ALSO assign priority for ranking. "
-    "\"high\" = actionable for him: a problem, deal, or regulation at a specific CIS / Central Asia / Mongolia asset or a junior/mid miner; "
-    "and ALWAYS high for his orbit: Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, Nordgold, Steppe Gold, Erdene, and any CIS-exposed junior or mid miner. "
-    "\"medium\" = know-but-not-urgent: trends, technology, or moves of global majors (BHP, Rio Tinto, Glencore, Vale, Anglo American, Freeport, Codelco, Newmont, Barrick, Zijin), notable price moves. "
-    "\"low\" = general context."
+    "ALSO assign priority for ranking, and be STRICT: most items are \"low\". "
+    "\"high\" = ONLY a concrete, actionable event at a specific NAMED asset or company in his orbit or region: an operational problem, shutdown, restart, turnaround, a disclosed M&A deal, or a sanction/regulation hitting a NAMED CIS / Central Asia / Mongolia asset or a named junior/mid miner, or his orbit specifically (Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, Nordgold, Steppe Gold, Erdene). A generic macro or price story that merely affects these is NOT high. "
+    "\"medium\" = a specific, material corporate or operational move of a global major (named production change, capacity expansion with numbers, supply-disrupting strike, disclosed M&A, or a price/premia move with a named cause). "
+    "\"low\" = everything else: general macro, market outlooks, carbon/CBAM/tax policy discussion, thematic or analytical pieces with no specific operational event. When unsure, choose \"low\"."
 )
 
 
@@ -380,6 +403,17 @@ def main():
     candidates = list(by_hash.values())
 
     candidates.sort(key=lambda x: x["pubdate"] or datetime.now(timezone.utc), reverse=True)
+
+    # Drop near-duplicate stories (same event from different sources)
+    deduped = []
+    kept_sigs = []
+    for c in candidates:
+        sig = title_tokens(c["title"])
+        if is_near_duplicate(sig, kept_sigs):
+            continue
+        deduped.append(c)
+        kept_sigs.append(sig)
+    candidates = deduped
 
     print(f"Candidates after filter: {len(candidates)}")
 
