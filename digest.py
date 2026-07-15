@@ -273,7 +273,7 @@ SYS_PROMPT = (
     "and mining (16 years across UC RUSAL, Norilsk Nickel, UMMC, ERG). For each news item, "
     "decide if it is relevant to his profile and, if relevant, produce ONE short Russian "
     "sentence (max 22 words) explaining why it matters for industry strategy. "
-    "Reply ONLY with valid JSON: {\"skip\": bool, \"why\": str, \"priority\": str}. "
+    "Reply ONLY with valid JSON: {\"skip\": bool, \"why\": str, \"priority\": str, \"company\": str}. "
     "Set skip=true for: stock analyst ratings, ETF picks, EPS forecasts, financial blogs, "
     "macro-economy with no metals angle, political/military opinion without direct supply impact, "
     "celebrity/lifestyle, generic press releases without operational substance, "
@@ -287,7 +287,8 @@ SYS_PROMPT = (
     "ALSO assign priority for ranking. Be selective, but DO use \"high\" when it genuinely fits — do not leave high empty by default. "
     "\"high\" = directly actionable or strategically important FOR HIM: any concrete event, deal, project, or regulation involving his orbit (Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, Nordgold, Steppe Gold, Erdene), or a CIS / Central Asia / Mongolia asset, or a named junior/mid miner; AND ALSO a major development that is a direct competitor, threat, or opportunity to his players — e.g., a large new nickel/copper/aluminium/gold project or capacity expansion that competes with them, or a deal he could realistically plug into. "
     "\"medium\" = a specific, material corporate or operational move of a global major with NO direct line to his orbit (named production change, capacity expansion, supply-disrupting strike, disclosed M&A, or a price/premia move with a named cause). "
-    "\"low\" = general macro, market outlooks, carbon/CBAM/tax policy discussion, and thematic or analytical pieces with no specific operational event. When genuinely generic, choose \"low\"."
+    "\"low\" = general macro, market outlooks, carbon/CBAM/tax policy discussion, and thematic or analytical pieces with no specific operational event. When genuinely generic, choose \"low\". "
+    "FINALLY, set \"company\": the single named company or asset this item is about, as a short clean name usable as a research entry point (e.g. \"Kazzinc\", \"Almalyk MMC\", \"Nornickel / Talnakh\"). If the item is about a country, market, or policy with no single named company, set \"company\" to an empty string."
 )
 
 
@@ -318,7 +319,7 @@ def deepseek_enrich(title, desc, source):
         return json.loads(content)
     except Exception as e:
         print(f"  ! deepseek error: {e}", file=sys.stderr)
-        return {"skip": False, "why": "", "priority": "low"}
+        return {"skip": False, "why": "", "priority": "low", "company": ""}
 
 
 def esc(s):
@@ -429,6 +430,7 @@ def main():
             continue
         c["why"] = (verdict.get("why") or "").strip()
         c["priority"] = (verdict.get("priority") or "low").lower()
+        c["company"] = (verdict.get("company") or "").strip()
         enriched.append(c)
         seen.add(c["hash"])
         # Append to history for F-block (CEO quote of the week)
@@ -457,24 +459,54 @@ def main():
 
     msk = timezone(timedelta(hours=3))
     now = datetime.now(msk).strftime("%d %b, %H:%M MSK")
-    header = f"<b>\U0001f9e0 Metals &amp; Mining</b> \u2014 {now}\n\n"
 
-    blocks = []
-    for i, c in enumerate(enriched, 1):
-        title = esc(c["title"])
-        link = esc(c["link"])
-        domain = esc(c["domain"])
-        why = esc(c["why"])
-        dot = PRIORITY_EMOJI.get(c.get("priority", "low"), "\u26aa")
-        block = f'{dot} <b>{i}.</b> <a href="{link}">{title}</a>\n'
-        if why:
-            block += f"<i>{domain}</i> \u00b7 \U0001f4a1 {why}\n\n"
-        else:
-            block += f"<i>{domain}</i>\n\n"
-        blocks.append(block)
+    targets = [c for c in enriched if c.get("priority") == "high"]
+    rest = [c for c in enriched if c.get("priority") != "high"]
 
-    sent = tg_send_chunks(blocks, header)
-    print(f"Sent {len(enriched)} items in {sent} message(s).")
+    sent_total = 0
+
+    # --- Лента целей: только 🔴, отдельным сообщением, с входом для агента ---
+    if targets:
+        t_header = f"<b>\U0001f3af Цели \u2014 в разработку</b> \u2014 {now}\n\n"
+        t_blocks = []
+        for i, c in enumerate(targets, 1):
+            title = esc(c["title"])
+            link = esc(c["link"])
+            domain = esc(c["domain"])
+            why = esc(c["why"])
+            company = esc(c.get("company", ""))
+            block = f'\U0001f534 <b>{i}.</b> <a href="{link}">{title}</a>\n'
+            if why:
+                block += f"<i>{domain}</i> \u00b7 \U0001f4a1 {why}\n"
+            else:
+                block += f"<i>{domain}</i>\n"
+            if company:
+                block += f"\u2192 <code>asset-to-hook: {company}</code>\n\n"
+            else:
+                block += "\n"
+            t_blocks.append(block)
+        sent_total += tg_send_chunks(t_blocks, t_header)
+        time.sleep(1.2)
+
+    # --- Остальное: контекст, ниже ---
+    if rest:
+        r_header = f"<b>\U0001f9e0 Metals &amp; Mining \u2014 контекст</b> \u2014 {now}\n\n"
+        r_blocks = []
+        for i, c in enumerate(rest, 1):
+            title = esc(c["title"])
+            link = esc(c["link"])
+            domain = esc(c["domain"])
+            why = esc(c["why"])
+            dot = PRIORITY_EMOJI.get(c.get("priority", "low"), "\u26aa")
+            block = f'{dot} <b>{i}.</b> <a href="{link}">{title}</a>\n'
+            if why:
+                block += f"<i>{domain}</i> \u00b7 \U0001f4a1 {why}\n\n"
+            else:
+                block += f"<i>{domain}</i>\n\n"
+            r_blocks.append(block)
+        sent_total += tg_send_chunks(r_blocks, r_header)
+
+    print(f"Sent {len(targets)} target(s) + {len(rest)} context item(s) in {sent_total} message(s).")
 
     state["seen"] = list(seen)
     save_state(state)
