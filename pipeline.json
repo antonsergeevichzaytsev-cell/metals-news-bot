@@ -51,14 +51,16 @@
       "channel": "direct_outreach",
       "type": "speaking_opportunity",
       "topic": "ALUMINIUM 2026 Conference Dusseldorf speaking slot",
-      "status": "reply_received",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-05-11",
       "last_activity": "2026-06-09",
       "silence_days": 37,
-      "next_action": "ПРОСРОЧЕНО 37 дн: прочитать ответ в Gmail (rxglobal.com) и ответить сегодня",
+      "next_action": "none — closed",
       "notes": "Patrick Herman intro 11 May, Sophia direct follow-up 6 Jun, paper proposal 8 Jun (paper format = compliance-clean, no travel). Reply received 9 Jun morning — re: Speaker Proposal subject preserved (CIS Smelter CapEx & Turnaround Benchmarks).",
-      "touches": 1
+      "touches": 1,
+      "closed_date": "2026-07-17",
+      "closed_reason": "глухо — подтверждено Антоном 17.07.26. Запись 'reply_received' была ложной: файл не обновлялся с 08.06"
     },
     {
       "id": "outreach_cwa_caline",
