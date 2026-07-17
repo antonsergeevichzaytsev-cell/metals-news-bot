@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Pipeline sync v3 — заводит лиды из SENT, ловит живые ответы, глушит автоматику."""
+"""Pipeline sync v4 — заводит лиды из SENT, ловит живые ответы, кладёт черновики follow-up."""
 import imaplib, email, json, os, re, hashlib, sys, time
 from datetime import datetime, timedelta, timezone
 from email.header import decode_header
+from email.message import EmailMessage
 import urllib.request, urllib.parse
 
 GMAIL_USER = os.environ["GMAIL_USER"]
@@ -21,6 +22,8 @@ MAX_FETCH = 200
 # Каденция — единственный источник правды, дублируется в mission_control.is_dead()
 CADENCE_FOLLOWUP_DAYS = "4-7"
 CADENCE_MAX_TOUCHES = 3
+CADENCE_DUE_MIN = 4      # раньше 4 дн долбить рано
+CADENCE_MAX_SILENCE = 21  # позже лид мёртв, черновик бессмыслен
 
 # Домены, на которые Антон пишет не по делу. Лид из них не заводим никогда.
 NO_TRACK_DOMAINS = {
@@ -306,6 +309,7 @@ def process_sent(pipeline, msgs, seen):
                 lead["last_activity"] = today
                 lead["silence_days"] = 0
                 lead.setdefault("to_domain", d)
+                lead.setdefault("to_addr", addr)
                 lead["next_action"] = (
                     f"Касание {lead['touches']}/{CADENCE_MAX_TOUCHES}. "
                     f"Следующее через {CADENCE_FOLLOWUP_DAYS} дн, потом dead."
@@ -325,6 +329,7 @@ def process_sent(pipeline, msgs, seen):
                     "last_activity": today,
                     "silence_days": 0,
                     "to_domain": d,
+                    "to_addr": addr,
                     "touches": 1,
                     "next_action": f"Касание 1/{CADENCE_MAX_TOUCHES}. Следующее через {CADENCE_FOLLOWUP_DAYS} дн, потом dead.",
                     "notes": f"Авто-заведён из SENT {today}. Кому: {addr}",
@@ -332,6 +337,120 @@ def process_sent(pipeline, msgs, seen):
                 pipeline["leads"].append(lead)
                 created.append({"topic": subject[:60], "domain": d, "to": addr})
     return created, touched
+
+
+# --- Черновики follow-up ------------------------------------------------------
+# ГРАНИЦА, КОТОРУЮ НЕ ПЕРЕХОДИМ: скрипт НИКОГДА не отправляет письмо.
+# Только кладёт в Черновики через IMAP APPEND. Отправляет всегда Антон руками.
+# Причина простая: отправка необратима, а бот сегодня уже врал шесть недель подряд.
+
+RU_TLD = (".ru", ".kz", ".kg", ".tj", ".uz", ".by", ".am", ".az")
+
+
+def addr_of_lead(lead):
+    if lead.get("to_addr"):
+        return lead["to_addr"]
+    m = re.search(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+", json.dumps(lead, ensure_ascii=False))
+    return m.group(0).lower() if m else None
+
+
+def is_ru_target(addr):
+    d = domain_of(addr)
+    return any(d.endswith(t) for t in RU_TLD)
+
+
+def due_for_followup(lead):
+    """Созрел по каденции: 4-7 дн тишины, касаний меньше трёх, ещё не труп."""
+    if lead.get("status") != "sent_no_reply":
+        return False
+    s = lead.get("silence_days", 0)
+    return CADENCE_DUE_MIN <= s <= CADENCE_MAX_SILENCE and lead.get("touches", 1) < CADENCE_MAX_TOUCHES
+
+
+def make_draft(lead, addr):
+    """Скелет в голосе Антона: без воды, один вопрос, лёгкий выход для адресата.
+    Последнее касание прямо говорит, что оно последнее — так каденция
+    перестаёт быть счётчиком в файле и становится словами в письме."""
+    touch = lead.get("touches", 1) + 1
+    last = touch >= CADENCE_MAX_TOUCHES
+    topic = lead.get("topic", "").strip()
+    subj = topic if topic.lower().startswith("re:") else f"Re: {topic}"
+
+    if is_ru_target(addr):
+        body = f"Здравствуйте,\n\nВозвращаюсь к письму от {lead.get('last_activity', '')} — {topic}.\n\n"
+        body += ("Это моё последнее письмо по теме. Не ответите — пойму, что неактуально, "
+                 "и больше беспокоить не буду.\n\n") if last else \
+                ("Если сейчас не актуально — скажите прямо, я закрою вопрос и не буду писать снова.\n"
+                 "Если актуально — пришлю одну страницу с тем, как бы к этому подошёл.\n\n")
+        body += "С уважением,\nАнтон Зайцев"
+    else:
+        body = f"Hello,\n\nFollowing up on my note from {lead.get('last_activity', '')} regarding {topic}.\n\n"
+        body += ("This is my last note on this. If I don't hear back, I'll assume it's not relevant "
+                 "and won't follow up again.\n\n") if last else \
+                ("If this isn't a priority right now, just say so — I'll close it out and won't write again.\n"
+                 "If it is, I'll send a one-pager on how I'd approach it.\n\n")
+        body += "Best regards,\nAnton Zaytsev"
+    return subj, body
+
+
+def find_drafts_folder(M):
+    typ, data = M.list()
+    if typ != "OK" or not data:
+        return None
+    for raw in data:
+        line = raw.decode("utf-8", errors="replace") if isinstance(raw, bytes) else str(raw)
+        if "\\Drafts" in line:
+            m = re.search(r'"([^"]+)"\s*$', line)
+            if m:
+                return m.group(1)
+    return None
+
+
+def put_drafts(pipeline, state):
+    """Кладёт по одному черновику на каждое созревшее касание. Один раз на касание."""
+    drafted = state.setdefault("drafted", {})
+    due = [l for l in pipeline["leads"] if due_for_followup(l)]
+    todo = []
+    for lead in due:
+        key = f"{lead['id']}:{lead.get('touches', 1)}"
+        if key in drafted:
+            continue
+        addr = addr_of_lead(lead)
+        if not addr:
+            continue
+        todo.append((lead, addr, key))
+    if not todo:
+        return []
+
+    made = []
+    try:
+        M = imaplib.IMAP4_SSL("imap.gmail.com", 993, timeout=30)
+        M.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+        folder = find_drafts_folder(M)
+        if not folder:
+            print("Drafts folder not found", file=sys.stderr)
+            M.logout()
+            return []
+        for lead, addr, key in todo:
+            subj, body = make_draft(lead, addr)
+            msg = EmailMessage()
+            msg["From"] = GMAIL_USER
+            msg["To"] = addr
+            msg["Subject"] = subj
+            msg.set_content(body)
+            try:
+                M.append(f'"{folder}"', "\\Draft", None, msg.as_bytes())
+                drafted[key] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                made.append({"topic": lead.get("topic", "")[:50], "addr": addr,
+                             "touch": lead.get("touches", 1) + 1,
+                             "silence": lead.get("silence_days", 0)})
+            except Exception as e:
+                print(f"draft append failed for {addr}: {e}", file=sys.stderr)
+        try: M.logout()
+        except Exception: pass
+    except Exception as e:
+        print(f"Drafts error: {e}", file=sys.stderr)
+    return made
 
 
 def recompute_silence_days(pipeline):
@@ -418,6 +537,7 @@ def main():
             new_other.append({"sender": sender_email, "domain": sender_domain, "subject": subject[:140] if subject else "(no subject)"})
 
     recompute_silence_days(pipeline)
+    drafts = put_drafts(pipeline, state)
     save_pipeline(pipeline)
     state["seen"] = list(seen)
     save_state(state)
@@ -448,6 +568,14 @@ def main():
             lines.append(f"\n⚠️ Каденция превышена у {len(over)}: больше {CADENCE_MAX_TOUCHES} касаний — это уже не настойчивость.")
         tg_send("\n".join(lines))
 
+    if drafts:
+        lines = ["✍️ <b>Черновики follow-up готовы</b>", "<i>Лежат в Черновиках. Открой, поправь, отправь — сам я не отправляю.</i>", ""]
+        for d in drafts:
+            tag = " · ПОСЛЕДНЕЕ" if d["touch"] >= CADENCE_MAX_TOUCHES else ""
+            lines.append(f"• Касание {d['touch']}/{CADENCE_MAX_TOUCHES}{tag} · молчат {d['silence']} дн\n  <i>{esc(d['addr'])}</i> — {esc(d['topic'])}")
+        lines.append('\n<a href="https://mail.google.com/mail/u/0/#drafts">Открыть Черновики</a>')
+        tg_send("\n".join(lines))
+
     if new_other:
         lines = ["📬 <b>Tracked domain — new human contact?</b>"]
         for o in new_other[:5]:
@@ -458,7 +586,8 @@ def main():
         tg_send("\n".join(lines))
 
     print(f"Done. Real replies: {len(new_replies)}, new contacts: {len(new_other)}, "
-          f"auto suppressed: {len(auto_notifications)}, leads created: {len(created)}, touched: {len(touched)}")
+          f"auto suppressed: {len(auto_notifications)}, leads created: {len(created)}, "
+          f"touched: {len(touched)}, drafts: {len(drafts)}")
 
 
 if __name__ == "__main__":
