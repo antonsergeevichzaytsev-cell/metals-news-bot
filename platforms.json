@@ -1,10 +1,11 @@
 {
+  "_comment": "Domains verified against real Gmail 2026-07-17, not assumed. Atheneum had ZERO correct domains until then; Coleman was missing entirely.",
   "platforms": [
     {
       "name": "GLG",
       "domains": [
-        "glg.it",
         "glgroup.com",
+        "glg.it",
         "glg.com",
         "glgresearch.com",
         "glginsights.com",
@@ -12,55 +13,75 @@
         "glgevents.com",
         "glgexpert.com",
         "glg-research.com"
-      ]
+      ],
+      "_verified": "glgroup.com confirmed live 2026-07-17: gmatthews@, networkmembersupport@, annabelle.thompson@"
     },
     {
       "name": "Guidepoint",
       "domains": [
         "guidepoint.com"
-      ]
+      ],
+      "_verified": "guidepoint.com confirmed live: advisor.experience@, advisor.relations@. NOTE: Anton has NO advisor profile here (confirmed by them 2026-06-10)"
     },
     {
       "name": "AlphaSights",
       "domains": [
         "alphasights.com"
-      ]
+      ],
+      "_verified": "UNVERIFIED - no mail in 200d"
     },
     {
       "name": "Dialectica",
       "domains": [
         "dialecticanet.com",
-        "dialectica.com"
-      ]
+        "dialectica.com",
+        "dialectica.net"
+      ],
+      "_verified": "UNVERIFIED - no mail in 200d"
     },
     {
       "name": "ProSapient",
       "domains": [
         "prosapient.com"
-      ]
+      ],
+      "_verified": "UNVERIFIED - no mail in 200d"
     },
     {
       "name": "Atheneum",
       "domains": [
+        "atheneum-partners.net",
+        "atheneum.ai",
         "atheneum-partners.com",
         "atheneum.io"
-      ]
+      ],
+      "_verified": "FIXED 2026-07-17. Real: atheneum-partners.net (talha.saqib@, system@), atheneum.ai (expert.relations@). The two originally listed domains never existed - Atheneum was 100% invisible, incl. the 15 May dispatch."
+    },
+    {
+      "name": "Coleman",
+      "domains": [
+        "colemanrg.com",
+        "visasq.com"
+      ],
+      "_verified": "ADDED 2026-07-17. colemanrg.com confirmed live: MemberServices@. Was missing from this file entirely."
     },
     {
       "name": "Tegus",
       "domains": [
         "tegus.co",
         "tegus.com"
-      ]
+      ],
+      "_verified": "UNVERIFIED - no mail in 200d"
     },
     {
       "name": "Glasford",
       "domains": [
         "glasfordglobal.com",
         "glasford.com"
-      ]
+      ],
+      "_verified": "UNVERIFIED - no mail in 200d"
     }
   ],
+  "_urgent_comment": "Both REAL dispatches (GLG 22 May, Atheneum 15 May) were checked against this list on 2026-07-17. GLG's would NOT have fired: 'We Think You are a Fit to Discuss' matched nothing. Phrases below were added from the actual wording platforms use.",
   "urgent_keywords": [
     "screener",
     "screening",
@@ -82,6 +103,16 @@
     "asap",
     "deadline",
     "by eod",
-    "by end of day"
+    "by end of day",
+    "we think you",
+    "a fit to discuss",
+    "great fit",
+    "good fit",
+    "advisory engagement",
+    "project opportunity",
+    "introduce the below",
+    "reaching out with a new",
+    "provide your availability",
+    "availability and time slot"
   ]
 }
