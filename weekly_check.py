@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Weekly Check — Sunday 19:00 MSK.
-One ping with Strategy v3.1 metrics + reset-point countdown.
-Static reminder only (cron-based, no data reads). Real review = Sunday Weekly Review
-against live files (decisions_log, client_pipeline, outreach_tracker).
+Сторож (проверка самих ботов по живым файлам) + метрики Strategy v3.1 + reset-точки.
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
 import urllib.error
@@ -16,10 +15,23 @@ from datetime import datetime, timezone, timedelta
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 
+ROOT = os.path.dirname(os.path.abspath(__file__))
+PIPELINE_PATH = os.path.join(ROOT, "pipeline.json")
+HISTORY_PATH = os.path.join(ROOT, "history.json")
+
 MSK = timezone(timedelta(hours=3))
 Y1_START = datetime(2026, 5, 29, tzinfo=MSK)
 Y1_END = datetime(2027, 5, 29, tzinfo=MSK)
 Y1_TOTAL_WEEKS = 52
+
+# --- Сторож: пороги ---------------------------------------------------------
+# Проверка идёт в воскресенье, а боты бегают Пн-Пт. Значит в норме данные
+# уже двое суток как не обновлялись — пороги это учитывают.
+STALE_HOURS = 72          # pipeline.json / history.json не трогали дольше -> бот не бежит
+FOSSIL_DAYS = 14          # ни одного нового лида дольше -> пайплайн окаменел
+CADENCE_MAX_SILENCE = 21  # синхронно с mission_control.is_dead()
+STALE_REPLY_DAYS = 7      # ответ лежит дольше -> гниющие деньги
+DEAD_STATUSES = {"dead", "closed", "declined", "done", "channel_failed"}
 
 # Strategy v3.1 reset points (decisions_log 2026-06-09)
 RESET_POINTS = [
@@ -27,6 +39,120 @@ RESET_POINTS = [
     (datetime(2026, 8, 9, tzinfo=MSK),  "cash flow не восстановился → fulltime/vahta переходит в primary"),
     (datetime(2026, 9, 9, tzinfo=MSK),  "dispatch стабильно 5+/мес → план возврата к $250 на 2 платформах"),
 ]
+
+
+def load_json(path, default):
+    if not os.path.exists(path):
+        return None  # None = файла нет вообще, это отдельная тревога
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def parse_dt(s):
+    if not s:
+        return None
+    try:
+        return datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+    except (ValueError, TypeError):
+        return None
+
+
+def parse_date(s):
+    try:
+        return datetime.strptime(str(s), "%Y-%m-%d").date()
+    except (ValueError, TypeError):
+        return None
+
+
+def watchdog(now):
+    """Проверяет БОТОВ, а не бизнес.
+
+    Смысл один: поймать момент, когда бот бодро рапортует, а данные под ним
+    окаменели. Именно так пайплайн простоял с 8 июня, а Mission Control
+    каждое утро уверенно докладывал по трупам.
+
+    Всё считается из полей самих файлов — состояния сторож не хранит
+    (у воркфлоу права contents: read).
+    """
+    alarms, facts = [], []
+
+    pipeline = load_json(PIPELINE_PATH, None)
+    if pipeline is None:
+        alarms.append("pipeline.json не читается или отсутствует — pipeline_sync мёртв")
+        return alarms, facts
+
+    leads = pipeline.get("leads", [])
+    today = now.date()
+
+    # 1. Файл вообще обновляется?
+    upd = parse_dt(pipeline.get("last_updated"))
+    if upd:
+        h = (now - upd.astimezone(MSK)).total_seconds() / 3600
+        if h > STALE_HOURS:
+            alarms.append(f"pipeline.json не обновлялся {h/24:.1f} дн — pipeline_sync не бежит")
+    else:
+        alarms.append("в pipeline.json нет last_updated — не могу проверить свежесть")
+
+    # 2. ГЛАВНАЯ ПРОВЕРКА: пайплайн растёт?
+    #    Именно её отсутствие стоило шести недель молчаливой лжи.
+    firsts = [d for d in (parse_date(l.get("first_contact")) for l in leads) if d]
+    if firsts:
+        age = (today - max(firsts)).days
+        if age > FOSSIL_DAYS:
+            alarms.append(
+                f"ни одного нового лида {age} дн. Либо ты не пишешь, либо SENT не читается. "
+                f"Пайплайн окаменел — всё, что он рапортует, недостоверно"
+            )
+        facts.append(f"новых лидов за 7 дн: {sum(1 for d in firsts if (today - d).days <= 7)}")
+    else:
+        alarms.append("в лидах нет ни одной даты first_contact — считать нечем")
+
+    # 3. Живые/мёртвые
+    live = [l for l in leads if l.get("status") not in DEAD_STATUSES]
+    facts.append(f"живых лидов: {len(live)} из {len(leads)}")
+    if leads and not live:
+        alarms.append("живых лидов ноль — воронка пуста")
+
+    # 4. Каденция реально работает или лиды бессмертны?
+    zombies = [l for l in live
+               if l.get("status") in ("sent_no_reply", "follow_up_overdue")
+               and l.get("silence_days", 0) > CADENCE_MAX_SILENCE]
+    if zombies:
+        alarms.append(f"каденция исчерпана у {len(zombies)}, а статус живой — не закрыты в файле")
+
+    # 5. Ответы, которые гниют
+    stale = [l for l in live if l.get("status") == "reply_received"
+             and l.get("silence_days", 0) >= STALE_REPLY_DAYS]
+    if stale:
+        worst = max(stale, key=lambda x: x.get("silence_days", 0))
+        alarms.append(
+            f"ответов лежит без действия: {len(stale)}, худший {worst.get('silence_days')} дн "
+            f"— {worst.get('topic', '')[:40]}"
+        )
+
+    # 6. Активность за неделю — отвечает на вопрос, который раньше задавали тебе
+    acts = [d for d in (parse_date(l.get("last_activity")) for l in leads) if d]
+    facts.append(f"лидов с активностью за 7 дн: {sum(1 for d in acts if (today - d).days <= 7)}")
+    facts.append(f"касаний всего в работе: {sum(l.get('touches', 0) for l in live)}")
+
+    # 7. Новостной бот жив?
+    history = load_json(HISTORY_PATH, None)
+    if history is None:
+        alarms.append("history.json не читается — digest мёртв")
+    else:
+        items = history.get("items", []) if isinstance(history, dict) else history
+        ts = [t for t in (parse_dt(i.get("ts")) for i in items) if t]
+        if not ts:
+            alarms.append("в history.json нет свежих меток времени — digest не пишет")
+        else:
+            h = (now - max(ts).astimezone(MSK)).total_seconds() / 3600
+            if h > STALE_HOURS:
+                alarms.append(f"history.json не пополнялся {h/24:.1f} дн — digest не бежит")
+
+    return alarms, facts
 
 
 def esc(s):
@@ -67,11 +193,22 @@ def main():
     out = f"<b>\U0001f4ca Weekly Check</b> \u2014 неделя {week_in_y1} / {Y1_TOTAL_WEEKS}, Y1\n"
     out += f"<i>{week_range}</i>\n\n"
 
+    # --- Сторож: первым, потому что он решает, верить ли остальному ---
+    alarms, facts = watchdog(now)
+    out += "<b>\U0001f415 Сторож</b>\n"
+    if alarms:
+        for a in alarms:
+            out += f"\u26a0\ufe0f {esc(a)}\n"
+        out += "<i>Пока это не закрыто — цифрам ботов не верь.</i>\n"
+    else:
+        out += "\u2705 Боты честны: файлы свежие, пайплайн растёт\n"
+    if facts:
+        out += "<i>" + esc(" \u00b7 ".join(facts)) + "</i>\n"
+    out += "\n"
+
     out += "<b>Метрики недели (v3.1):</b>\n"
+    out += "<i>Что видно из данных — выше, у сторожа. Ниже только то, чего в файлах нет:</i>\n"
     out += "\u2610 Диспатчей платформ за неделю? (главная)\n"
-    out += "\u2610 Outreach отправлено (cold + follow-up + регистрации)?\n"
-    out += "\u2610 Партнёрские firms — ответы / follow-up сделан?\n"
-    out += "\u2610 Прямой DD-диалог хотя бы с одним?\n"
     out += "\u2610 Часов работы (cap = 50)?\n\n"
 
     out += "<b>\U0001f6a8 Gating item:</b>\n"
