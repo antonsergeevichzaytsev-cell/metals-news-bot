@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Filings watcher -> Telegram.
 
-Источник — первичные корпоративные релизы с вайра TMX Newsfile, не журналистика.
+Источник — первичные корпоративные релизы (TMX Newsfile + GlobeNewswire), не журналистика.
 Сигнал операционный: CapEx, ramp-up, металлургия, EPC, рестарт — с весом на CIS.
 Выход — не новость, а повод написать: что сломано + чем Антон закрывает.
+
+Главное правило отбора — СТАДИЯ проекта. Навык продаётся только на своей стадии:
+началась стройка — FEL и оценка затрат уже позади, предлагать их — ошибка.
 """
 from __future__ import annotations
 
@@ -28,12 +31,23 @@ BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 DEEPSEEK_KEY = os.environ["DEEPSEEK_API_KEY"]
 
-MAX_ITEMS_PER_RUN = 14
+MAX_ITEMS_PER_RUN = 22
 MAX_AGE_HOURS = 36
 TG_BUDGET = 3900
 HISTORY_RETENTION_DAYS = 30
 PRIORITY_RANK = {"high": 0, "medium": 1, "low": 2}
 PRIORITY_EMOJI = {"high": "\U0001f534", "medium": "\U0001f7e1", "low": "\u26aa"}
+
+# Стадия решает, какой из навыков вообще продаётся. На стройке FEL уже кончился.
+STAGE_RU = {
+    "exploration": "\u0440\u0430\u0437\u0432\u0435\u0434\u043a\u0430",
+    "study": "\u0438\u0437\u0443\u0447\u0435\u043d\u0438\u0435",
+    "financing": "\u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435",
+    "construction": "\u0441\u0442\u0440\u043e\u0439\u043a\u0430",
+    "commissioning": "\u043f\u0443\u0441\u043a\u043e\u043d\u0430\u043b\u0430\u0434\u043a\u0430",
+    "operating": "\u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442",
+    "care_maintenance": "\u043a\u043e\u043d\u0441\u0435\u0440\u0432\u0430\u0446\u0438\u044f",
+}
 
 QUIET_START_MSK = 23
 QUIET_END_MSK = 8
@@ -85,6 +99,7 @@ NOISE_WORDS = [
     r"accounting firm", r"\bauditor\b",
     r"\bOTCQB\b", r"uplisting", r"\bDTC\b eligib\w*",
     r"reverse takeover", r"\bRTO\b", r"semi-?annual reporting",
+    r"CEO Clips", r"video -", r"interview",
 ]
 
 # Экспозиция, ради которой всё затевалось.
@@ -94,7 +109,8 @@ ORBIT_WORDS = [
     r"russia\w*", r"siberia\w*", r"\bural\w*", r"central asia\w*",
     r"caspian", r"\bgobi\b", r"altai", r"tien shan", r"tian shan",
     r"almaty", r"astana", r"tashkent", r"ulaanbaatar", r"bishkek",
-    r"oyu tolgoi", r"steppe gold", r"erdene", r"kazatomprom",
+    r"oyu tolgoi", r"steppe gold", r"erdene", r"bayan khundii", r"zuun mod",
+    r"kazatomprom",
     r"\bCIS\b", r"\bERG\b", r"nornickel", r"norilsk", r"rusal", r"polyus",
 ]
 
@@ -234,43 +250,67 @@ DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 
 SYS_PROMPT = (
     "You screen PRIMARY corporate news releases from junior and mid-tier mining companies "
-    "for a senior independent consultant in mining and non-ferrous metals. His sellable skills: "
-    "owner-side CapEx project direction (FEL 1-3, $550M project at UMMC), operational turnaround "
-    "(Norilsk Nickel, foundry-forge shop, 305 people, 0 LTI), metallurgy and process technology "
-    "(RUSAL, 7 patents in aluminium alloys), EPC/EPCM contractor control and cost estimate review. "
-    "His target market: junior/mid miners with CIS, Central Asia, Mongolia, Caucasus exposure. "
-    "Your job is NOT to summarise news. It is to decide whether this release is a REASON TO CONTACT "
-    "the company, and if so, give him the angle. "
-    "Reply ONLY with valid JSON: "
-    "{\"skip\": bool, \"signal\": str, \"company\": str, \"project\": str, \"region\": str, "
+    "to decide whether each one is a REASON FOR A SPECIFIC CONSULTANT TO CONTACT the company. "
+    "You are NOT summarising news. "
+    "\n\n"
+    "THE CONSULTANT: 16 years owner-side in mining and non-ferrous metals. "
+    "Each of his skills is sellable ONLY at a specific project stage: "
+    "(a) cost estimate review, CapEx benchmarking, FEL 1-3 owner-side project direction ($550M project at UMMC) "
+    "-> ONLY at study or financing stage, i.e. BEFORE the investment decision. "
+    "(b) EPC/EPCM contractor control, owner-side cost and schedule control -> ONLY at construction stage. "
+    "(c) operational turnaround, throughput vs nameplate, shop-floor productivity "
+    "(Norilsk Nickel foundry-forge shop, 305 people, 0 LTI) -> ONLY at commissioning, operating or restart. "
+    "(d) metallurgy, flowsheet, alloys, process technology (RUSAL, 7 patents) -> at study, commissioning or operating. "
+    "Target market: junior/mid miners with CIS, Central Asia, Mongolia, Caucasus exposure. "
+    "\n\n"
+    "STEP 1 - read the release and fix the project \"stage\". Exactly one of: "
+    "exploration, study, financing, construction, commissioning, operating, care_maintenance. "
+    "STEP 2 - choose the hook ONLY from the skills valid at that stage. "
+    "A hook that contradicts the stage is a WRONG ANSWER even if it sounds plausible. "
+    "Once construction has started, FEL and cost estimation are OVER - never offer them. "
+    "Once the plant is operating, CapEx benchmarking is OVER. "
+    "If no skill is valid at that stage, set skip=true. "
+    "\n\n"
+    "CONTRASTIVE EXAMPLE. Release: Sixty North Gold begins road construction and site preparation "
+    "at the Mon Gold Mine, targeting production this year. "
+    "WRONG -> stage: construction, hook: \"Может потребоваться контроль строительства и оценка затрат на этапе FEL.\" "
+    "Wrong twice: FEL ended when construction began, and \"может потребоваться\" is a guess, not an offer. "
+    "RIGHT -> stage: construction, hook: \"Owner-side контроль подрядчика и графика: не дать стройке съесть бюджет до первого золота.\" "
+    "Matches the stage, names one concrete thing he does, states it as a fact. "
+    "Every hook must read like the RIGHT one: no \"может\", no \"возможно\", no \"предложить экспертизу\", "
+    "no restating his CV back at the reader. "
+    "\n\n"
+    "Reply ONLY with valid JSON, keys in exactly this order: "
+    "{\"skip\": bool, \"stage\": str, \"signal\": str, \"company\": str, \"project\": str, \"region\": str, "
     "\"why\": str, \"hook\": str, \"priority\": str}. "
+    "\n\n"
     "Set skip=true for anything with no operational or engineering substance: equity financings, "
     "private placements, warrants, option grants, personnel and board changes, AGM results, "
     "conference appearances, investor-awareness deals, share consolidations, listing housekeeping, "
-    "auditor changes, pure exploration drill assays with no development or engineering decision, "
+    "auditor changes, third-party items (insider buying, interviews, video clips) where the company is only "
+    "the subject, pure exploration drill assays with no development or engineering decision, "
     "and generic corporate updates. When in doubt and there is no number and no engineering event, skip. "
-    "Set skip=false ONLY when the release contains a concrete operational, technical or capital event: "
-    "feasibility study / PEA / PFS / DFS results, a technical report, a stated CapEx or cost estimate "
-    "or a change to one, cost overrun, construction or investment decision, commissioning or ramp-up "
-    "status, throughput or recovery vs nameplate, metallurgical or flowsheet results, EPC/EPCM award "
-    "or scope change or dispute, schedule slip, restart, suspension, care and maintenance, "
-    "force majeure, production guidance change, permit or licence milestone for a development project, "
-    "or an offtake tied to a plant. "
-    "\"signal\" = the event type in Russian, 2-4 words (e.g. \"CapEx вырос\", \"срыв ramp-up\", "
-    "\"EPCM меняют scope\", \"FS опубликован\", \"рестарт актива\", \"металлургия не вышла\"). "
-    "\"company\" = clean company name. \"project\" = named asset or project, empty string if none. "
-    "\"region\" = country or region of the asset, empty string if unclear. "
-    "\"why\" = ONE Russian sentence, max 20 words: what is actually broken or at stake here, with the "
-    "number if there is one. No marketing language, no company adjectives. "
-    "\"hook\" = ONE Russian sentence, max 18 words: what HE specifically sells into this situation. "
-    "Be concrete about his skill, not generic. "
-    "\"priority\": "
-    "\"high\" = operational or CapEx signal AND the asset sits in CIS / Central Asia / Mongolia / Caucasus, "
-    "OR the company is in his orbit (Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, "
-    "Steppe Gold, Erdene). This is an outbound target. "
-    "\"medium\" = a strong operational signal his skills fit (CapEx overrun, ramp-up failure, EPC dispute, "
-    "FS with a CapEx number) but the asset is outside that geography. Sellable, weaker. "
-    "\"low\" = substantive but not actionable for him. Use \"high\" when it genuinely fits."
+    "\n\n"
+    "Set skip=false ONLY for a concrete operational, technical or capital event: feasibility study / PEA / PFS / DFS "
+    "results, technical report, a stated CapEx or cost estimate or a change to one, cost overrun, construction or "
+    "investment decision, commissioning or ramp-up status, throughput or recovery vs nameplate, metallurgical or "
+    "flowsheet results, EPC/EPCM award or scope change or dispute, schedule slip, restart, suspension, "
+    "care and maintenance, force majeure, production guidance change, permit or licence milestone for a "
+    "development project, or an offtake tied to a plant. "
+    "\n\n"
+    "\"signal\" = event type in Russian, 2-4 words (\"CapEx вырос\", \"срыв ramp-up\", \"EPCM меняют scope\", "
+    "\"FS опубликован\", \"рестарт актива\", \"металлургия не вышла\"). "
+    "\"company\" = clean name. \"project\" = named asset, empty string if none. \"region\" = country of the asset. "
+    "\"why\" = ONE Russian sentence, max 20 words: what is broken or at stake, with the number if there is one. "
+    "No marketing language. "
+    "\"hook\" = ONE Russian sentence, max 18 words, per the CONTRASTIVE EXAMPLE above. "
+    "\n\n"
+    "\"priority\": \"high\" = valid stage-matched hook AND the asset is in CIS / Central Asia / Mongolia / Caucasus, "
+    "OR the company is in his orbit (Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, Steppe Gold, "
+    "Erdene). Outbound target. "
+    "\"medium\" = strong stage-matched signal (CapEx overrun, ramp-up failure, EPC dispute, FS with a CapEx number) "
+    "but outside that geography. "
+    "\"low\" = substantive but not actionable for him."
 )
 
 
@@ -282,7 +322,7 @@ def deepseek_screen(title, desc):
             {"role": "user", "content": f"TITLE: {title}\nBODY: {desc[:900]}"},
         ],
         "temperature": 0.2,
-        "max_tokens": 260,
+        "max_tokens": 300,
         "response_format": {"type": "json_object"},
     }
     data = json.dumps(payload).encode("utf-8")
@@ -354,7 +394,9 @@ def render(c, idx):
     head = " \u00b7 ".join(x for x in [c.get("company", ""), c.get("project", ""), c.get("region", "")] if x)
     block = f'{dot} <b>{idx}. {esc(head)}</b>\n'
     if c.get("signal"):
-        block += f"<b>{esc(c['signal'])}</b>\n"
+        stage = c.get("stage", "")
+        tail = f" \u00b7 <i>{esc(STAGE_RU.get(stage, stage))}</i>" if stage else ""
+        block += f"<b>{esc(c['signal'])}</b>{tail}\n"
     if c.get("why"):
         block += f"{esc(c['why'])}\n"
     if c.get("hook"):
@@ -386,7 +428,7 @@ def main():
 
     raw = []
     for url in sources:
-        print(f"- {url}")
+        print(f"- {url[:70]}")
         xml = fetch(url)
         if not xml:
             continue
@@ -435,6 +477,7 @@ def main():
         rec = {
             "link": c["link"],
             "title": c["title"],
+            "stage": (v.get("stage") or "").strip(),
             "signal": (v.get("signal") or "").strip(),
             "company": (v.get("company") or "").strip(),
             "project": (v.get("project") or "").strip(),
@@ -443,15 +486,20 @@ def main():
             "hook": (v.get("hook") or "").strip(),
             "priority": (v.get("priority") or "low").lower(),
         }
-        kept.append(rec)
         history.setdefault("items", []).append(dict(rec, ts=now_iso))
+        # low не шлём: это инструмент для исходящих, а не лента для чтения.
+        # В history оно остаётся — будет на чём калибровать порог.
+        if rec["priority"] not in ("high", "medium"):
+            print(f"  . low -> history only: {c['title'][:60]}")
+            continue
+        kept.append(rec)
 
     print(f"Kept: {len(kept)}")
 
     # Ночной улов не пингует — ждёт утра.
     queue = list(state.get("pending", [])) + kept
     if in_quiet_hours(now_msk):
-        print(f"Quiet hours ({now_msk:%H:%M} MSK) — queued {len(queue)}, not sending.")
+        print(f"Quiet hours ({now_msk:%H:%M} MSK) - queued {len(queue)}, not sending.")
         state["pending"] = queue
         state["seen"] = list(seen)
         save_state(state)
