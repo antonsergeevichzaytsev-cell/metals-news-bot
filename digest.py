@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Metals & Mining news digest -> Telegram.
-v7: persist enriched items to history.json (rolling 7-day window) for F-block use.
+v8: persist priority + company to history.json — чтобы F-блок не ранжировал заново.
 """
 from __future__ import annotations
 
@@ -434,6 +434,9 @@ def main():
         enriched.append(c)
         seen.add(c["hash"])
         # Append to history for F-block (CEO quote of the week)
+        # priority и company уже посчитаны DeepSeek выше. Не сохранить их —
+        # значит выбросить оплаченную работу: пятничный F-блок гонял бы
+        # ранжирование заново по тем же самым новостям.
         history.setdefault("items", []).append({
             "ts": now_iso,
             "title": c["title"],
@@ -441,6 +444,8 @@ def main():
             "domain": c["domain"],
             "link": c["link"],
             "why": c["why"],
+            "priority": c["priority"],
+            "company": c.get("company", ""),
         })
 
     print(f"Enriched: {len(enriched)}")
@@ -465,7 +470,7 @@ def main():
 
     sent_total = 0
 
-    # --- Лента целей: только 🔴, отдельным сообщением, с входом для агента ---
+    # --- Лента целей: только \U0001f534, отдельным сообщением, с входом для агента ---
     if targets:
         t_header = f"<b>\U0001f3af Цели \u2014 в разработку</b> \u2014 {now}\n\n"
         t_blocks = []
