@@ -11,6 +11,342 @@
       "hook": "Может потребоваться контроль строительства и оценка затрат на этапе FEL.",
       "priority": "low",
       "ts": "2026-07-17T16:21:42.941267+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/09/3324611/0/en/Sandfire-Resources-America-Delivers-Black-Butte-Copper-PFS-Upgrade-with-New-Lowry-Reserves-12-Year-Mine-Life-High-Grade-Production-Profile-and-Stronger-Project-Economics.html",
+      "title": "Sandfire Resources America Delivers Black Butte Copper PFS Upgrade with New Lowry Reserves, 12-Year Mine Life, High-Grade Production Profile and Stronger Project Economics",
+      "stage": "study",
+      "signal": "PFS обновлён",
+      "company": "Sandfire Resources America Inc.",
+      "project": "Black Butte Copper",
+      "region": "USA",
+      "why": "Обновлён PFS с включением Lowry, 12 лет, высокое содержание.",
+      "hook": "Owner-side review PFS: не дать CapEx уйти вверх на стадии FS.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/09/3325238/0/en/Golconda-Gold-Releases-Q2-2026-Production-Update-at-Galaxy-And-Announces-Mobilisation-of-Mining-Contractor-at-Summit.html",
+      "title": "Golconda Gold Releases Q2 2026 Production Update at Galaxy And Announces Mobilisation of Mining Contractor at Summit",
+      "stage": "operating",
+      "signal": "производственный отчет",
+      "company": "Golconda Gold Ltd.",
+      "project": "Galaxy Gold Mine",
+      "region": "South Africa",
+      "why": "Производство 3648 унций, рост 20% к Q2 2025, но стабильно к Q1.",
+      "hook": "Пропускная способность vs проектная: не дать плато стать потолком.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/13/3326005/0/en/Cerrado-Gold-Reports-Strong-Q2-2026-Production-Results-at-Its-Minera-Don-Nicolas-Mine-in-Argentina.html",
+      "title": "Cerrado Gold Reports Strong Q2 2026 Production Results at Its Minera Don Nicolas Mine in Argentina",
+      "stage": "operating",
+      "signal": "производство Q2",
+      "company": "Cerrado Gold",
+      "project": "Minera Don Nicolas",
+      "region": "Argentina",
+      "why": "Производственные результаты за квартал, возможны отклонения от плана.",
+      "hook": "Пропускная способность против проектной: не дать падению извлечения съесть маржу.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3327523/0/en/Cerrado-Gold-Elects-to-Revise-Timing-for-Completion-of-the-Mont-Sorcier-Feasibility-Study-to-Undertake-Optimization-Initiatives.html",
+      "title": "Cerrado Gold Elects to Revise Timing for Completion of the Mont Sorcier Feasibility Study to Undertake Optimization Initiatives",
+      "stage": "study",
+      "signal": "FS отложен",
+      "company": "Cerrado Gold",
+      "project": "Mont Sorcier",
+      "region": "Canada",
+      "why": "FS задерживается для оптимизации, что может указывать на проблемы с проектом.",
+      "hook": "Оптимизация FS: не дайте CapEx уйти вверх на стадии изучения.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328296/0/en/Blossom-Gold-Announces-the-Reopening-of-Portal-2-Underway-at-Rosebud.html",
+      "title": "Blossom Gold Announces the Reopening of Portal #2 Underway at Rosebud",
+      "stage": "care_maintenance",
+      "signal": "рестарт портала",
+      "company": "Blossom Gold Inc.",
+      "project": "Rosebud",
+      "region": "USA",
+      "why": "Портал #2 открывается после консервации, начало подземных работ.",
+      "hook": "Реабилитация портала: контроль графика и стоимости подземных работ.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328334/0/fr/Mines-Abcourt-pr%C3%A9sente-un-d%C3%A9veloppement-record-pour-le-T4-2026-%C3%A0-sa-mine-G%C3%A9ant-Dormant-suivi-d-une-hausse-de-160-du-tonnage-trait%C3%A9.html",
+      "title": "Mines Abcourt présente un développement record pour le T4 2026 à sa mine Géant Dormant, suivi d’une hausse de 160% du tonnage traité",
+      "stage": "operating",
+      "signal": "рост переработки",
+      "company": "Mines Abcourt Inc.",
+      "project": "Géant Dormant",
+      "region": "Canada",
+      "why": "Тоннаж вырос на 160% в T4, но это не CIS.",
+      "hook": "Операционный turnaround: throughput вырос на 160% — нужен контроль загрузки и извлечения.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328334/0/en/Abcourt-Mines-Reports-Record-Development-for-Q4-2026-at-Its-Sleeping-Giant-Mine-Followed-by-a-160-Increase-in-Tonnage-Processed.html",
+      "title": "Abcourt Mines Reports Record Development for Q4 2026 at Its Sleeping Giant Mine, Followed by a 160% Increase in Tonnage Processed",
+      "stage": "operating",
+      "signal": "рост переработки",
+      "company": "Abcourt Mines Inc.",
+      "project": "Sleeping Giant gold mine",
+      "region": "Canada",
+      "why": "Переработка выросла на 160%, но неясно, достигнут ли nameplate.",
+      "hook": "Выход на проектную мощность: не дать переработке съесть маржу.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/13/3326062/0/en/Premier-American-Uranium-Successfully-Completes-Drilling-Program-at-Cebolleta-Project-New-Mexico-and-Delivers-Samples-for-Advanced-Metallurgical-Testing.html",
+      "title": "Premier American Uranium Successfully Completes Drilling Program at Cebolleta Project, New Mexico and Delivers Samples for Advanced Metallurgical Testing",
+      "stage": "study",
+      "signal": "металлургические испытания",
+      "company": "Premier American Uranium Inc.",
+      "project": "Cebolleta Uranium Project",
+      "region": "USA",
+      "why": "Металлургические испытания для оптимизации кучного выщелачивания урана.",
+      "hook": "Металлургия и оптимизация flowsheet: не дать тестам затянуться без результата.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3327504/0/en/West-Red-Lake-Gold-Reports-Strong-Q2-Operating-Progress-with-73-Increase-in-Mined-Ounces-and-51-Higher-Gold-Production-over-Q1-at-Madsen-Mine.html",
+      "title": "West Red Lake Gold Reports Strong Q2 Operating Progress with 73% Increase in Mined Ounces and 51% Higher Gold Production over Q1 at Madsen Mine",
+      "stage": "commissioning",
+      "signal": "рост производства",
+      "company": "West Red Lake Gold Mines Ltd.",
+      "project": "Madsen Mine",
+      "region": "Canada",
+      "why": "Рост добычи на 73% и производства на 51% за квартал.",
+      "hook": "Ramp-up идёт, но до проектной мощности ещё далеко: нужен owner-side контроль выхода на проектную производительность.",
+      "priority": "low",
+      "ts": "2026-07-17T20:02:56.112338+00:00"
+    }
+  ],
+  "skipped": [
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Nyrstar NV – Verzoekschrift voor voorlopige maatregelen ontvangen op 26 juni 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/06/26/3318081/0/nl/Nyrstar-NV-Verzoekschrift-voor-voorlopige-maatregelen-ontvangen-op-26-juni-2026.html",
+      "reason": "судебный иск",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Nyrstar NV – Petition for interim measures received on 26 June 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/06/26/3318081/0/en/Nyrstar-NV-Petition-for-interim-measures-received-on-26-June-2026.html",
+      "reason": "судебный иск",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Nyrstar NV – Resultaten van de gewone en buitengewone algemene aandeelhoudersvergaderingen gehouden op 30 juni 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/01/3320312/0/nl/Nyrstar-NV-Resultaten-van-de-gewone-en-buitengewone-algemene-aandeelhoudersvergaderingen-gehouden-op-30-juni-2026.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Nyrstar NV – Results of the annual and extraordinary general shareholders' meetings held on 30 June 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/01/3320312/0/en/Nyrstar-NV-Results-of-the-annual-and-extraordinary-general-shareholders-meetings-held-on-30-June-2026.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Eramet : Informations relatives au nombre total de droits de vote et d’actions au 30 juin 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/17/3329222/0/fr/Eramet-Informations-relatives-au-nombre-total-de-droits-de-vote-et-d-actions-au-30-juin-2026.html",
+      "reason": "корпоративная отчётность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Osisko Development Extends Gold Mineralization at Cariboo Gold Project Beyond 700 m Vertical Depth in Previously Untested Areas; I",
+      "link": "https://www.globenewswire.com/news-release/2026/07/08/3324482/0/en/Osisko-Development-Extends-Gold-Mineralization-at-Cariboo-Gold-Project-Beyond-700-m-Vertical-Depth-in-Previously-Untested-Areas-Intercepts-Include-13-19-g-t-Gold-Over-3-60-m-at-596.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Asia Broadband Accelerates Technology-Driven Mining Strategy With AI-Assisted Exploration and Mine Optimization Licensing Agreemen",
+      "link": "https://www.globenewswire.com/news-release/2026/07/09/3324681/0/en/Asia-Broadband-Accelerates-Technology-Driven-Mining-Strategy-With-AI-Assisted-Exploration-and-Mine-Optimization-Licensing-Agreement.html",
+      "reason": "лицензионное соглашение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Xali Gold Announces Community Agreement for Advancing the Pico Machay Gold Project",
+      "link": "https://www.globenewswire.com/news-release/2026/07/09/3324666/0/en/Xali-Gold-Announces-Community-Agreement-for-Advancing-the-Pico-Machay-Gold-Project.html",
+      "reason": "общинное соглашение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Barrick to Report Second Quarter 2026 Results on August 10",
+      "link": "https://www.globenewswire.com/news-release/2026/07/10/3325418/0/en/Barrick-to-Report-Second-Quarter-2026-Results-on-August-10.html",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Miata Intersects 30 m at 4.06 g/t Au at Jons Trend, Sela Creek, Suriname",
+      "link": "https://www.globenewswire.com/news-release/2026/07/13/3326078/0/en/Miata-Intersects-30-m-at-4-06-g-t-Au-at-Jons-Trend-Sela-Creek-Suriname.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "G Mining and G2 Goldfields Provide Update on Arrangement with G Mining and Spin-Out of G3 Goldfields",
+      "link": "https://www.globenewswire.com/news-release/2026/07/13/3326058/0/en/G-Mining-and-G2-Goldfields-Provide-Update-on-Arrangement-with-G-Mining-and-Spin-Out-of-G3-Goldfields.html",
+      "reason": "корпоративная реструктуризация",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Montage Gold provides exploration update at its Didievi project in Côte d’Ivoire which is poised to be its next development asset",
+      "link": "https://www.globenewswire.com/news-release/2026/07/14/3326660/0/en/Montage-Gold-provides-exploration-update-at-its-Didievi-project-in-C%C3%B4te-d-Ivoire-which-is-poised-to-be-its-next-development-asset.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Wallbridge Reports Latest Results from 2026 Martiniere Drill Program, Mineralization Continues to Expand Along Bug Lake Corridor",
+      "link": "https://www.globenewswire.com/news-release/2026/07/14/3326705/0/en/Wallbridge-Reports-Latest-Results-from-2026-Martiniere-Drill-Program-Mineralization-Continues-to-Expand-Along-Bug-Lake-Corridor.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Xali Gold Strengthens Technical Team at Pico Machay",
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3327590/0/en/Xali-Gold-Strengthens-Technical-Team-at-Pico-Machay.html",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Winshear Portsoy Project – Downhole Electromagnetic Survey Outlines Strong Conductor in the South Zone Close to Recent Drilling",
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3327604/0/en/Winshear-Portsoy-Project-Downhole-Electromagnetic-Survey-Outlines-Strong-Conductor-in-the-South-Zone-Close-to-Recent-Drilling.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Centerra Gold Announces Extension and Increase of its Corporate Credit Facility",
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3328145/0/en/Centerra-Gold-Announces-Extension-and-Increase-of-its-Corporate-Credit-Facility.html",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Comstock Inc. to Host Q2 2026 Earnings Call and Business Update",
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328815/0/en/Comstock-Inc-to-Host-Q2-2026-Earnings-Call-and-Business-Update.html",
+      "reason": "финансовый отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Troilus recoupe 157,5 mètres titrant 0,95 g/t équ.-or en ciblant des matériaux présumés à l’intérieur de la fosse de reserves de l",
+      "link": "https://www.globenewswire.com/news-release/2026/06/25/3317412/0/fr/Troilus-recoupe-157-5-m%C3%A8tres-titrant-0-95-g-t-%C3%A9qu-or-en-ciblant-des-mat%C3%A9riaux-pr%C3%A9sum%C3%A9s-%C3%A0-l-int%C3%A9rieur-de-la-fosse-de-reserves-de-la-zone-Z87.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Troilus Drills 157.5 Metres Grading 0.95 g/t AuEq While Targeting Inferred Material Within the Z87 Reserve Pit",
+      "link": "https://www.globenewswire.com/news-release/2026/06/25/3317412/0/en/Troilus-Drills-157-5-Metres-Grading-0-95-g-t-AuEq-While-Targeting-Inferred-Material-Within-the-Z87-Reserve-Pit.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Premier American Uranium Reports Results Following Annual General and Special Meeting of Shareholders",
+      "link": "https://www.globenewswire.com/news-release/2026/06/26/3318146/0/en/Premier-American-Uranium-Reports-Results-Following-Annual-General-and-Special-Meeting-of-Shareholders.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "LIFT Reports Drill Results from Yellowknife Lithium Project, NWT",
+      "link": "https://www.globenewswire.com/news-release/2026/06/30/3319415/0/en/LIFT-Reports-Drill-Results-from-Yellowknife-Lithium-Project-NWT.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Labrador Gold Closes First Tranche of Option Agreement with Pacific Ridge and Updates Exploration at the Mariposa and Eureka Dome ",
+      "link": "https://www.globenewswire.com/news-release/2026/07/02/3321243/0/en/Labrador-Gold-Closes-First-Tranche-of-Option-Agreement-with-Pacific-Ridge-and-Updates-Exploration-at-the-Mariposa-and-Eureka-Dome-Projects-White-Gold-District-Yukon.html",
+      "reason": "опцион и пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "West Red Lake Gold Reports 43.38 g/t Au over 3.85m, 53.87 g/t Au over 3.1m and 10.22 g/t Au over 13.35m from Austin 955 and 904 Co",
+      "link": "https://www.globenewswire.com/news-release/2026/07/07/3322923/0/en/West-Red-Lake-Gold-Reports-43-38-g-t-Au-over-3-85m-53-87-g-t-Au-over-3-1m-and-10-22-g-t-Au-over-13-35m-from-Austin-955-and-904-Complexes-Madsen-Mine.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Troilus recoupe 164 m titrant 0,95 g/t AuEq en testant des intervalles de forages historiques non échantillonnés dans la fosse de ",
+      "link": "https://www.globenewswire.com/news-release/2026/07/07/3323034/0/fr/Troilus-recoupe-164-m-titrant-0-95-g-t-AuEq-en-testant-des-intervalles-de-forages-historiques-non-%C3%A9chantillonn%C3%A9s-dans-la-fosse-de-r%C3%A9serve-Z87.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Troilus Drills 164 m Grading 0.95 g/t AuEq While Testing Unsampled Historic Drillhole Intervals in the Z87 Reserve Pit",
+      "link": "https://www.globenewswire.com/news-release/2026/07/07/3323034/0/en/Troilus-Drills-164-m-Grading-0-95-g-t-AuEq-While-Testing-Unsampled-Historic-Drillhole-Intervals-in-the-Z87-Reserve-Pit.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Falco annonce l’exercice anticipé de bons de souscription par Osisko Développement Corp. ainsi que d’autres exercices de bons de s",
+      "link": "https://www.globenewswire.com/news-release/2026/07/07/3323066/0/fr/Falco-annonce-l-exercice-anticip%C3%A9-de-bons-de-souscription-par-Osisko-D%C3%A9veloppement-Corp-ainsi-que-d-autres-exercices-de-bons-de-souscription-totalisant-environ-1-25-million-de-doll.html",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Mustang Closes Sale of El Cobre Copper-Gold Porphyry Project",
+      "link": "https://www.globenewswire.com/news-release/2026/07/13/3326475/0/en/Mustang-Closes-Sale-of-El-Cobre-Copper-Gold-Porphyry-Project.html",
+      "reason": "продажа актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Court Approves Option to Acquire the Renard Mine Site",
+      "link": "https://www.globenewswire.com/news-release/2026/07/14/3326588/0/en/Court-Approves-Option-to-Acquire-the-Renard-Mine-Site.html",
+      "reason": "судебное утверждение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Issue of Shares and Cleansing Notice",
+      "link": "https://www.globenewswire.com/news-release/2026/07/14/3326987/0/en/Issue-of-Shares-and-Cleansing-Notice.html",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "Brazil Potash Provides Update on Autazes Project Regarding Brazilian Court Filing",
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328313/0/en/Brazil-Potash-Provides-Update-on-Autazes-Project-Regarding-Brazilian-Court-Filing.html",
+      "reason": "судебное дело",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T20:02:56.112338+00:00",
+      "title": "BRAZIL POTASH DIVULGA ATUALIZAÇÃO SOBRE O PROJETO AUTAZES EM RELAÇÃO A PETIÇÃO APRESENTADA PERANTE A JUSTIÇA BRASILEIRA",
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328312/0/pt/BRAZIL-POTASH-DIVULGA-ATUALIZA%C3%87%C3%83O-SOBRE-O-PROJETO-AUTAZES-EM-RELA%C3%87%C3%83O-A-PETI%C3%87%C3%83O-APRESENTADA-PERANTE-A-JUSTI%C3%87A-BRASILEIRA.html",
+      "reason": "processo judicial",
+      "orbit": false
     }
   ]
 }
