@@ -2,6 +2,10 @@
 """
 Inbox consolidator for 8 expert platforms.
 Reads Gmail via IMAP, groups by platform, classifies urgent items, posts to Telegram.
+
+v2: молчит, когда нечего сказать. Пустая сводка 5 раз в день отучает читать
+    Telegram — и тогда пропускается настоящее. Молчание безопасно, потому что
+    каждый прогон пишет last_run в state: сторож (weekly_check) видит, жив ли бот.
 """
 import imaplib
 import email
@@ -45,6 +49,9 @@ def load_state():
 def save_state(state):
     state["seen"] = state["seen"][-500:]
     state["urgent_seen"] = state["urgent_seen"][-200:]
+    # Отметка живости: бот теперь может молчать, значит тишину надо уметь
+    # отличить от смерти. Это читает watchdog в weekly_check.
+    state["last_run"] = datetime.now(timezone.utc).isoformat()
     with open(STATE_PATH, "w") as f:
         json.dump(state, f, indent=2)
 
@@ -187,15 +194,21 @@ def main():
             new_urgent.append(item)
             urgent_seen.add(mid)
 
+    # Нечего сказать — молчим. Раньше здесь уходила пустая сводка каждый прогон:
+    # 5 раз в день "нет новых писем" = шум, который отучает открывать Telegram.
+    # Живость видна сторожу по last_run, а не по пустым сообщениям.
+    if total_new == 0:
+        save_state(state)
+        print(f"Nothing new (window {WINDOW_HOURS}h) - silent by design, last_run written")
+        return
+
     lines = [f"📥 <b>Inbox {msk_time()} MSK</b>"]
     lines.append("─" * 18)
-    any_content = False
     for p in cfg["platforms"]:
         name = p["name"]
         items = by_platform[name]
         count = len(items)
         if count > 0:
-            any_content = True
             icon = "🔥" if any(i["urgent"] for i in items) else "•"
             lines.append(f"{icon} <b>{esc(name)}</b> ({count})")
             for it in items[:3]:
@@ -203,8 +216,6 @@ def main():
                 lines.append(f"    {esc(it['subject'])}{u}")
             if count > 3:
                 lines.append(f"    +{count - 3} more")
-    if not any_content:
-        lines.append("✓ Нет новых писем с платформ")
     lines.append("─" * 18)
     lines.append(f"Total new: <b>{total_new}</b>")
     lines.append('<a href="https://mail.google.com/mail/u/0/#inbox">Open Gmail</a>')
