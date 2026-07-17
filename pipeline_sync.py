@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Pipeline sync v4 — заводит лиды из SENT, ловит живые ответы, кладёт черновики follow-up."""
+"""Pipeline sync v5 — лиды из SENT, живые ответы, черновики follow-up, счёт диспатчей."""
 import imaplib, email, json, os, re, hashlib, sys, time
 from datetime import datetime, timedelta, timezone
 from email.header import decode_header
 from email.message import EmailMessage
+from email.utils import parsedate_to_datetime
 import urllib.request, urllib.parse
 
 GMAIL_USER = os.environ["GMAIL_USER"]
@@ -24,6 +25,33 @@ CADENCE_FOLLOWUP_DAYS = "4-7"
 CADENCE_MAX_TOUCHES = 3
 CADENCE_DUE_MIN = 4      # раньше 4 дн долбить рано
 CADENCE_MAX_SILENCE = 21  # позже лид мёртв, черновик бессмыслен
+
+# --- Диспатчи платформ: ГЛАВНАЯ метрика Strategy v3.1 -------------------------
+# От неё зависит reset 09.08 (cash flow не восстановился -> vahta в primary).
+# До сих пор это была галочка, которую бот задавал Антону. Теперь считаем сами.
+DISPATCH_WINDOW_HOURS = 96  # синк бежит Пн-Пт 10:00-18:30 -> окно должно крыть выходные
+
+PLATFORM_MARKERS = {
+    "glgroup": "GLG", "glginsights": "GLG", "glg.it": "GLG",
+    "guidepoint": "Guidepoint",
+    "alphasights": "AlphaSights",
+    "dialectica": "Dialectica",
+    "prosapient": "ProSapient",
+    "atheneum": "Atheneum",
+    "tegus": "Tegus",
+    "glasford": "Glasford",
+    "capvision": "Capvision",
+    "thirdbridge": "Third Bridge", "third-bridge": "Third Bridge",
+}
+
+# Классификация грубая и честная: три корзины, ни одна не молчит.
+# Если классификатор ошибается — Антон это увидит в отчёте, а не примет на веру.
+DISPATCH_HINTS = ("project", "consultation", "expert call", "opportunity", "advisor",
+                  "new request", "invitation", "screening", "engagement", "survey",
+                  "проект", "консультац", "звонок", "запрос")
+NOT_DISPATCH_HINTS = ("newsletter", "webinar", "payment", "invoice", "receipt",
+                      "password", "terms of", "privacy", "unsubscribe", "profile",
+                      "welcome", "рассылк", "вебинар")
 
 # Домены, на которые Антон пишет не по делу. Лид из них не заводим никогда.
 NO_TRACK_DOMAINS = {
@@ -453,6 +481,65 @@ def put_drafts(pipeline, state):
     return made
 
 
+# --- Счёт диспатчей -----------------------------------------------------------
+
+def platform_of(domain):
+    for marker, name in PLATFORM_MARKERS.items():
+        if marker in domain:
+            return name
+    return None
+
+
+def classify_platform_mail(subject):
+    s = (subject or "").lower()
+    for h in NOT_DISPATCH_HINTS:
+        if h in s:
+            return "other"
+    for h in DISPATCH_HINTS:
+        if h in s:
+            return "dispatch"
+    return "unknown"
+
+
+def msg_date(msg):
+    try:
+        return parsedate_to_datetime(msg.get("Date")).astimezone(timezone.utc).strftime("%Y-%m-%d")
+    except Exception:
+        return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+def count_dispatches(msgs, state):
+    """ВАЖНО: тут НЕ зовём is_auto_notification.
+    Диспатчи приходят с noreply@glgroup.com и подобных — та эвристика выбросила бы
+    ровно главную метрику Антона. Ровно та же ошибка, что резала info@ в исходящих.
+    Считаем ВСЮ почту с доменов платформ и раскладываем на три корзины."""
+    log = state.setdefault("dispatches", {})
+    new = []
+    for msg in msgs:
+        sender = extract_email(msg.get("From", ""))
+        plat = platform_of(domain_of(sender))
+        if not plat:
+            continue
+        h = msg_id_hash(msg)
+        if h in log:
+            continue
+        subject = decode_subject(msg.get("Subject", "")) or "(no subject)"
+        rec = {"date": msg_date(msg), "platform": plat,
+               "kind": classify_platform_mail(subject), "subject": subject[:120]}
+        log[h] = rec
+        new.append(rec)
+    if len(log) > 300:
+        for k in sorted(log, key=lambda k: log[k].get("date", ""))[:len(log) - 300]:
+            del log[k]
+    return new
+
+
+def dispatches_last_days(state, days=7):
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
+    out = [r for r in state.get("dispatches", {}).values() if r.get("date", "") >= cutoff]
+    return out
+
+
 def recompute_silence_days(pipeline):
     today = datetime.now(timezone.utc).date()
     for lead in pipeline["leads"]:
@@ -498,6 +585,14 @@ def main():
     domains = tracked_domains(pipeline, load_outreach_domains())
     msgs = fetch_emails(WINDOW_HOURS)
     print(f"Fetched {len(msgs)} inbox headers, tracking {len(domains)} domains")
+
+    # 3) диспатчи: отдельный проход, окно шире (выходные), дедуп свой
+    try:
+        wide = fetch_emails(DISPATCH_WINDOW_HOURS)
+        new_dispatches = count_dispatches(wide, state)
+    except Exception as e:
+        print(f"Dispatch scan error: {e}", file=sys.stderr)
+        new_dispatches = []
 
     new_replies = []
     new_other = []
@@ -576,6 +671,15 @@ def main():
         lines.append('\n<a href="https://mail.google.com/mail/u/0/#drafts">Открыть Черновики</a>')
         tg_send("\n".join(lines))
 
+    fresh = [d for d in new_dispatches if d["kind"] == "dispatch"]
+    if fresh:
+        week = [d for d in dispatches_last_days(state, 7) if d["kind"] == "dispatch"]
+        lines = ["🎯 <b>ДИСПАТЧ ПЛАТФОРМЫ</b>", "<i>Главная метрика Strategy v3.1</i>", ""]
+        for d in fresh[:5]:
+            lines.append(f"• <b>{esc(d['platform'])}</b> · {esc(d['date'])}\n  {esc(d['subject'])}")
+        lines.append(f"\n<b>За 7 дней: {len(week)}</b>")
+        tg_send("\n".join(lines))
+
     if new_other:
         lines = ["📬 <b>Tracked domain — new human contact?</b>"]
         for o in new_other[:5]:
@@ -587,7 +691,7 @@ def main():
 
     print(f"Done. Real replies: {len(new_replies)}, new contacts: {len(new_other)}, "
           f"auto suppressed: {len(auto_notifications)}, leads created: {len(created)}, "
-          f"touched: {len(touched)}, drafts: {len(drafts)}")
+          f"touched: {len(touched)}, drafts: {len(drafts)}, dispatches: {len(new_dispatches)}")
 
 
 if __name__ == "__main__":
