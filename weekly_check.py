@@ -19,6 +19,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 PIPELINE_PATH = os.path.join(ROOT, "pipeline.json")
 HISTORY_PATH = os.path.join(ROOT, "history.json")
 SYNC_STATE_PATH = os.path.join(ROOT, "state_pipeline_sync.json")
+INBOX_STATE_PATH = os.path.join(ROOT, "state_inbox.json")
 
 MSK = timezone(timedelta(hours=3))
 Y1_START = datetime(2026, 5, 29, tzinfo=MSK)
@@ -160,7 +161,26 @@ def watchdog(now):
     facts.append(f"лидов с активностью за 7 дн: {sum(1 for d in acts if (today - d).days <= 7)}")
     facts.append(f"касаний всего в работе: {sum(l.get('touches', 0) for l in live)}")
 
-    # 7. Новостной бот жив?
+    # 7. Inbox молчит по делу или сдох?
+    #    С 17.07 inbox.py не шлёт пустые сводки — раньше его живость была видна
+    #    по пяти сообщениям в день. Теперь тишина штатна, и отличить её от смерти
+    #    можно только по last_run. Без этой проверки молчание стало бы новой ложью.
+    inbox_state = load_json(INBOX_STATE_PATH, None)
+    if inbox_state is None:
+        alarms.append("state_inbox.json не читается — inbox.py мёртв, платформы не слушает никто")
+    else:
+        lr = parse_dt(inbox_state.get("last_run"))
+        if not lr:
+            alarms.append("в state_inbox.json нет last_run — inbox.py ни разу не отработал после правки 17.07")
+        else:
+            h = (now - lr.astimezone(MSK)).total_seconds() / 3600
+            if h > STALE_HOURS:
+                alarms.append(f"inbox.py не бежал {h/24:.1f} дн — тишина на платформах может быть его смертью, а не рынком")
+        # Счётчик-улика: до 17.07 тут было 2 письма за месяцы, потому что
+        # platforms.json не знал glgroup.com. Если снова замрёт — фильтр опять слеп.
+        facts.append(f"писем с платформ в памяти inbox: {len(inbox_state.get('seen', []))}")
+
+    # 8. Новостной бот жив?
     history = load_json(HISTORY_PATH, None)
     if history is None:
         alarms.append("history.json не читается — digest мёртв")
