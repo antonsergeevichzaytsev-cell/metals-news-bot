@@ -7,6 +7,10 @@
 
 Главное правило отбора — СТАДИЯ проекта. Навык продаётся только на своей стадии:
 началась стройка — FEL и оценка затрат уже позади, предлагать их — ошибка.
+
+Второе правило — слепота хуже поломки. Лента, которая тихо умерла, выглядит как
+лента без новостей. Поэтому fetch называет причину, а смена статуса ленты
+уезжает в Telegram — один раз, по фронту.
 """
 from __future__ import annotations
 
@@ -145,10 +149,11 @@ def load_state():
                 s = json.load(f)
                 s.setdefault("seen", [])
                 s.setdefault("pending", [])
+                s.setdefault("feed_health", {})
                 return s
         except Exception:
             pass
-    return {"seen": [], "pending": []}
+    return {"seen": [], "pending": [], "feed_health": {}}
 
 
 def save_state(state):
@@ -175,14 +180,34 @@ def save_history(history):
         json.dump(history, f, ensure_ascii=False, indent=2)
 
 
+def feed_name(url):
+    """Короткое имя ленты для отчёта."""
+    if "newsfilecorp" in url:
+        return "NF:" + url.rstrip("/").rsplit("/", 1)[-1]
+    m = re.search(r"/industry/[\w]+-([^/]+)/", url)
+    if m and "globenewswire" in url:
+        return "GNW:" + urllib.parse.unquote(m.group(1))
+    return url[:38]
+
+
 def fetch(url, timeout=20):
+    """Возвращает (text, status). status == "ok" либо причина отказа.
+
+    Молчаливый None здесь недопустим. Лента, которая тихо умерла, выглядит
+    ровно как лента без новостей: тишина и зелёный прогон. Причину надо знать.
+    """
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.read().decode("utf-8", errors="replace")
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
-        print(f"  ! fetch error: {e}", file=sys.stderr)
-        return None
+            return r.read().decode("utf-8", errors="replace"), "ok"
+    except urllib.error.HTTPError as e:
+        return None, f"HTTP {e.code}"
+    except urllib.error.URLError as e:
+        return None, f"URL error: {e.reason}"
+    except TimeoutError:
+        return None, "timeout"
+    except Exception as e:
+        return None, f"{type(e).__name__}: {e}"
 
 
 def parse_pubdate(s):
@@ -410,6 +435,17 @@ def render(c, idx):
     return block
 
 
+def render_health(changes):
+    lines = []
+    for name, was, now in changes:
+        if now == "ok":
+            lines.append(f"\u2705 <b>{esc(name)}</b> \u2014 \u043e\u0436\u0438\u043b\u0430 (\u0431\u044b\u043b\u043e: {esc(was or '?')})")
+        else:
+            tail = " \u2014 \u0440\u0430\u043d\u044c\u0448\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u043b\u0430" if was == "ok" else ""
+            lines.append(f"\u26a0\ufe0f <b>{esc(name)}</b>: {esc(now)}{tail}")
+    return "<b>\U0001f6e0 \u041b\u0435\u043d\u0442\u044b \u2014 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0441\u0442\u0430\u0442\u0443\u0441\u0430</b>\n\n" + "\n".join(lines)
+
+
 def in_quiet_hours(now_msk):
     h = now_msk.hour
     if QUIET_START_MSK > QUIET_END_MSK:
@@ -427,14 +463,23 @@ def main():
     print(f"Sources: {len(sources)}, seen: {len(seen)}, pending: {len(state.get('pending', []))}")
 
     raw = []
+    health = {}
     for url in sources:
-        print(f"- {url[:70]}")
-        xml = fetch(url)
-        if not xml:
+        name = feed_name(url)
+        xml, status = fetch(url)
+        if xml is None:
+            health[name] = status
+            print(f"- {name}: {status}")
             continue
         items = parse_feed(xml)
-        print(f"  parsed: {len(items)}")
+        # Ответила 200, но 0 элементов — это тоже поломка (сменился формат),
+        # а не «новостей нет». Помечаем отдельно.
+        health[name] = "ok" if items else "0 items"
+        print(f"- {name}: {status}, parsed {len(items)}")
         raw.extend(items)
+
+    broken = {k: v for k, v in health.items() if v != "ok"}
+    print(f"Feeds: {len(health)} ok={len(health) - len(broken)} broken={len(broken)} {broken if broken else ''}")
 
     # Один релиз лежит и в mining-metals, и в precious-metals — режем по ссылке.
     by_hash = {}
@@ -498,13 +543,26 @@ def main():
 
     # Ночной улов не пингует — ждёт утра.
     queue = list(state.get("pending", [])) + kept
+
     if in_quiet_hours(now_msk):
+        # feed_health НЕ трогаем: не отчитались — значит переход не съеден,
+        # утренний прогон обнаружит его заново и доложит.
         print(f"Quiet hours ({now_msk:%H:%M} MSK) - queued {len(queue)}, not sending.")
         state["pending"] = queue
         state["seen"] = list(seen)
         save_state(state)
         save_history(history)
         return 0
+
+    # Докладываем по ФРОНТУ, а не по уровню: сломанная лента должна крикнуть
+    # один раз, а не ныть пять раз в день.
+    prev = state.get("feed_health", {})
+    changes = [(n, prev.get(n), s) for n, s in health.items() if prev.get(n) != s]
+    if changes:
+        print(f"Feed health changed: {changes}")
+        tg_send(render_health(changes))
+        time.sleep(1.0)
+    state["feed_health"] = health
 
     if not queue:
         print("Nothing to send.")
