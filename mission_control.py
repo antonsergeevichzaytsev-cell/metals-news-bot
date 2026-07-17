@@ -93,6 +93,9 @@ def compute_strategy_metrics(anton_state):
 
 DEAD_STATUSES = {"dead", "closed", "declined", "done", "channel_failed"}
 CADENCE_MAX_SILENCE = 21  # каденция 4-7 дн x макс 3 касания -> дольше жить лид не может
+CADENCE_EXPIRY_WINDOW = 7  # столько дней напоминаем закрыть лид в файле, потом молчим
+# ^ у mission_control права contents:read, состояние "уже сказал" хранить негде.
+#   Поэтому окно, а не флаг: иначе лид долбит каждое утро вечно и сам становится зомби.
 
 
 def is_dead(l):
@@ -110,8 +113,11 @@ def is_dead(l):
 def analyze_pipeline(pipeline):
     leads = pipeline.get("leads", [])
     live = [l for l in leads if not is_dead(l)]
-    # каденция убила, но в файле ещё числится живым — сказать один раз и закрыть
-    just_expired = [l for l in leads if l.get("status") not in DEAD_STATUSES and is_dead(l)]
+    # каденция убила, но в файле ещё числится живым. Напоминаем ТОЛЬКО пока свежее:
+    # умер давно и не закрыт — значит решение принято молчанием, не долбим.
+    just_expired = [l for l in leads
+                    if l.get("status") not in DEAD_STATUSES and is_dead(l)
+                    and l.get("silence_days", 0) <= CADENCE_MAX_SILENCE + CADENCE_EXPIRY_WINDOW]
     active_calls = [l for l in live if l.get("type") == "expert_call"]
     outreach_active = [l for l in live if l.get("type") == "partnership"]
     # лид с ответом уже поднят как stale_reply — второй раз в overdue не дублируем
