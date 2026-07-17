@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""Anton Daily — morning brief at 08:30 MSK Mon-Fri.
-v3: + Friday F-block (CEO quote / top story of the week from history.json).
+"""Anton Daily — вооружение на день, 08:00 MSK Пн-Пт.
+Фраза дня из phrases.json (48 шт, 13 категорий, ротация по дням) + пятничный F-блок.
+
+Разделение труда с Mission Control (07:45):
+  MC    — деньги и действия: urgent, pipeline, strategy, цены Al/Cu
+  Daily — вооружение: фраза дня, топ-новость недели
+Два сообщения — ноль пересечения.
 """
 from __future__ import annotations
 
@@ -68,73 +73,6 @@ def http_get(url, timeout=10):
     })
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read().decode("utf-8")
-
-
-def fetch_yahoo(symbol, timeout=10):
-    urls = [
-        f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d",
-        f"https://query2.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d",
-        f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
-    ]
-    last_err = None
-    for url in urls:
-        try:
-            body = http_get(url, timeout=timeout)
-            data = json.loads(body)
-            result = data.get("chart", {}).get("result")
-            if not result:
-                last_err = f"empty result"
-                continue
-            meta = result[0]["meta"]
-            cur = meta.get("regularMarketPrice")
-            prev = meta.get("previousClose") or meta.get("chartPreviousClose")
-            if cur is None:
-                last_err = "no regularMarketPrice"
-                continue
-            chg = ((cur - prev) / prev * 100.0) if (prev and prev > 0) else None
-            return cur, chg
-        except urllib.error.HTTPError as e:
-            last_err = f"HTTP {e.code}"
-        except Exception as e:
-            last_err = f"{type(e).__name__}: {e}"
-    raise RuntimeError(last_err or "all failed")
-
-
-def fetch_stooq(symbol_stooq, timeout=10):
-    url = f"https://stooq.com/q/l/?s={symbol_stooq}&i=d"
-    body = http_get(url, timeout=timeout)
-    lines = body.strip().split("\n")
-    if len(lines) < 2:
-        raise RuntimeError(f"stooq empty")
-    parts = lines[1].split(",")
-    if len(parts) < 7 or parts[6] in ("", "N/D"):
-        raise RuntimeError(f"stooq no close: {lines[1][:80]}")
-    return float(parts[6]), None
-
-
-def fetch_prices():
-    prices = {}
-    try:
-        p, c = fetch_yahoo("ALI=F")
-        prices["Al"] = (p, c, "CME")
-    except Exception as e:
-        print(f"  ! yahoo ALI=F: {e}", file=sys.stderr)
-        try:
-            p, c = fetch_stooq("ali.f")
-            prices["Al"] = (p, c, "stooq")
-        except Exception as e2:
-            print(f"  ! stooq ali.f: {e2}", file=sys.stderr)
-    try:
-        p, c = fetch_yahoo("HG=F")
-        prices["Cu"] = (p * 2204.62, c, "CME")
-    except Exception as e:
-        print(f"  ! yahoo HG=F: {e}", file=sys.stderr)
-        try:
-            p, c = fetch_stooq("hg.f")
-            prices["Cu"] = (p * 2204.62, c, "stooq")
-        except Exception as e2:
-            print(f"  ! stooq hg.f: {e2}", file=sys.stderr)
-    return prices
 
 
 # --- F-block: top story of the week ----------------------------------------
@@ -262,19 +200,8 @@ def main():
         if p.get("use"):
             out += f"\U0001f4aa <i>{esc(p['use'])}</i>\n\n"
 
-    prices = fetch_prices()
-    if prices:
-        out += f"<b>\U0001f4ca Markets</b>\n"
-        parts = []
-        for sym, (price, chg, src) in prices.items():
-            if chg is None:
-                parts.append(f"{sym} ${price:,.0f}/t <i>({src})</i>")
-            else:
-                arrow = "\u25b2" if chg > 0 else ("\u25bc" if chg < 0 else "\u00b7")
-                parts.append(f"{sym} ${price:,.0f}/t {arrow}{abs(chg):.1f}% <i>({src})</i>")
-        out += " \u00b7 ".join(parts) + "\n"
-    else:
-        out += "<i>\U0001f4ca Markets: \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d</i>\n"
+    # Цены Al/Cu живут в Mission Control (07:45, блок MARKETS).
+    # Здесь они были бы дублем через 15 минут — убраны осознанно.
 
     # --- F-block on Fridays ---
     if weekday == 4:
@@ -297,7 +224,7 @@ def main():
 
     tg_send(out)
     cat_label = p["cat"] if p else "none"
-    print(f"Sent: weekday={weekday}, cat={cat_label}, week_idx={iso_week}, prices={len(prices)}")
+    print(f"Sent: weekday={weekday}, cat={cat_label}, week_idx={iso_week}")
     return 0
 
 
