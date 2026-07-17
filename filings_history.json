@@ -1,3 +1,16 @@
 {
-  "items": []
+  "items": [
+    {
+      "link": "https://www.newsfilecorp.com/release/305438/Sixty-North-Gold-Advances-Development-at-Mon-Gold-Mine-NWT",
+      "title": "Sixty North Gold Advances Development at Mon Gold Mine, NWT",
+      "signal": "строительство начато",
+      "company": "Sixty North Gold Mining Ltd.",
+      "project": "Mon Gold Mine",
+      "region": "Canada",
+      "why": "Начало строительства дорог и подготовка площадки для запуска производства в этом году.",
+      "hook": "Может потребоваться контроль строительства и оценка затрат на этапе FEL.",
+      "priority": "low",
+      "ts": "2026-07-17T16:21:42.941267+00:00"
+    }
+  ]
 }
