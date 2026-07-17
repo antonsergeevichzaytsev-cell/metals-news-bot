@@ -128,6 +128,19 @@
       "hook": "Ramp-up идёт, но до проектной мощности ещё далеко: нужен owner-side контроль выхода на проектную производительность.",
       "priority": "low",
       "ts": "2026-07-17T20:02:56.112338+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/305649/District-Files-NI-43101-PEA-Technical-Report-for-the-Viken-Deposit",
+      "title": "District Files NI 43-101 PEA Technical Report for the Viken Deposit",
+      "stage": "study",
+      "signal": "PEA опубликован",
+      "company": "District Metals Corp.",
+      "project": "Viken Deposit",
+      "region": "Sweden",
+      "why": "PEA для Viken в Швеции, но вне целевого региона.",
+      "hook": "Owner-side review PEA: не дать CapEx уйти в космос до финального решения.",
+      "priority": "medium",
+      "ts": "2026-07-17T22:42:48.017988+00:00"
     }
   ],
   "skipped": [
@@ -346,6 +359,83 @@
       "title": "BRAZIL POTASH DIVULGA ATUALIZAÇÃO SOBRE O PROJETO AUTAZES EM RELAÇÃO A PETIÇÃO APRESENTADA PERANTE A JUSTIÇA BRASILEIRA",
       "link": "https://www.globenewswire.com/news-release/2026/07/16/3328312/0/pt/BRAZIL-POTASH-DIVULGA-ATUALIZA%C3%87%C3%83O-SOBRE-O-PROJETO-AUTAZES-EM-RELA%C3%87%C3%83O-A-PETI%C3%87%C3%83O-APRESENTADA-PERANTE-A-JUSTI%C3%87A-BRASILEIRA.html",
       "reason": "processo judicial",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "Sandfire comments on recent trading activity",
+      "link": "https://www.globenewswire.com/news-release/2026/07/17/3329288/0/en/Sandfire-comments-on-recent-trading-activity.html",
+      "reason": "нет события",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "Nobel Provides Update on Cuprita Project, Chile",
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328320/0/en/Nobel-Provides-Update-on-Cuprita-Project-Chile.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "LIFT Announces Commencement of Drilling at the Adina-Galinée Lithium Project, Québec",
+      "link": "https://www.globenewswire.com/news-release/2026/07/17/3328924/0/en/LIFT-Announces-Commencement-of-Drilling-at-the-Adina-Galin%C3%A9e-Lithium-Project-Qu%C3%A9bec.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "Goldgroup Mining and Gold Resource Corporation Announce Closing of Business Combination and Goldgroup's Anticipated Listing on the",
+      "link": "https://www.newsfilecorp.com/release/305656/Goldgroup-Mining-and-Gold-Resource-Corporation-Announce-Closing-of-Business-Combination-and-Goldgroups-Anticipated-Listing-on-the-NYSE-American",
+      "reason": "слияние",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "Voyageur Pharmaceuticals Announces the Engagement of Red Cloud Securities as Market Maker",
+      "link": "https://www.newsfilecorp.com/release/305654/Voyageur-Pharmaceuticals-Announces-the-Engagement-of-Red-Cloud-Securities-as-Market-Maker",
+      "reason": "маркет-мейкер",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "Champion Electric Announces Return of Jonathan Buick as President and CEO",
+      "link": "https://www.newsfilecorp.com/release/305618/Champion-Electric-Announces-Return-of-Jonathan-Buick-as-President-and-CEO",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "Gold Strike Awards Options",
+      "link": "https://www.newsfilecorp.com/release/305655/Gold-Strike-Awards-Options",
+      "reason": "опционы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "QcX Gold Announces Receipt of Interim Order",
+      "link": "https://www.newsfilecorp.com/release/305611/QcX-Gold-Announces-Receipt-of-Interim-Order",
+      "reason": "корпоративное событие",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "Galloper Gold Completes the Kettle Pond Camp Construction",
+      "link": "https://www.newsfilecorp.com/release/305549/Galloper-Gold-Completes-the-Kettle-Pond-Camp-Construction",
+      "reason": "лагерь построен",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "Leeward Capital Corp. and Burton Growers Ltd. Enter Into Formal Share Exchange Agreement",
+      "link": "https://www.newsfilecorp.com/release/305648/Leeward-Capital-Corp.-and-Burton-Growers-Ltd.-Enter-Into-Formal-Share-Exchange-Agreement",
+      "reason": "корпоративная сделка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-17T22:42:48.017988+00:00",
+      "title": "F4 Uranium Confirms Termination of Hearty Bay Option Agreement by Traction Uranium",
+      "link": "https://www.newsfilecorp.com/release/305623/F4-Uranium-Confirms-Termination-of-Hearty-Bay-Option-Agreement-by-Traction-Uranium",
+      "reason": "отказ от опциона",
       "orbit": false
     }
   ]
