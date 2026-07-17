@@ -91,14 +91,41 @@ def compute_strategy_metrics(anton_state):
     return {"week_n": max(1, week_n), "y1_days_remaining": days_remaining, "y1_critical_success": sv3.get("y1_critical_success", "")}
 
 
+DEAD_STATUSES = {"dead", "closed", "declined", "done", "channel_failed"}
+CADENCE_MAX_SILENCE = 21  # каденция 4-7 дн x макс 3 касания -> дольше жить лид не может
+
+
+def is_dead(l):
+    """Мёртв, если помечен мёртвым ИЛИ каденция исчерпана.
+    Полученный ответ не умирает никогда — он и есть деньги."""
+    if l.get("status") in DEAD_STATUSES:
+        return True
+    if l.get("status") == "reply_received":
+        return False
+    if l.get("status") in ("sent_no_reply", "follow_up_overdue"):
+        return l.get("silence_days", 0) > CADENCE_MAX_SILENCE
+    return False
+
+
 def analyze_pipeline(pipeline):
     leads = pipeline.get("leads", [])
-    active_calls = [l for l in leads if l.get("type") == "expert_call" and l.get("status") not in ("done", "declined")]
-    outreach_active = [l for l in leads if l.get("type") == "partnership" and l.get("status") in ("sent_no_reply", "follow_up_overdue", "reply_received")]
-    overdue_followup = [l for l in leads if l.get("silence_days", 0) >= 7 and l.get("type") == "partnership"]
-    silent_speakings = [l for l in leads if l.get("type") == "speaking_opportunity" and l.get("silence_days", 0) >= 14]
-    new_replies = [l for l in leads if l.get("status") == "reply_received"]
-    return {"total_leads": len(leads), "active_calls": active_calls, "outreach_active_count": len(outreach_active), "overdue_followup": overdue_followup, "silent_speakings": silent_speakings, "new_replies": new_replies}
+    live = [l for l in leads if not is_dead(l)]
+    # каденция убила, но в файле ещё числится живым — сказать один раз и закрыть
+    just_expired = [l for l in leads if l.get("status") not in DEAD_STATUSES and is_dead(l)]
+    active_calls = [l for l in live if l.get("type") == "expert_call"]
+    outreach_active = [l for l in live if l.get("type") == "partnership"]
+    # лид с ответом уже поднят как stale_reply — второй раз в overdue не дублируем
+    overdue_followup = [l for l in live if l.get("type") == "partnership"
+                        and l.get("silence_days", 0) >= 7 and l.get("status") != "reply_received"]
+    silent_speakings = [l for l in live if l.get("type") == "speaking_opportunity" and l.get("silence_days", 0) >= 14]
+    new_replies = [l for l in live if l.get("status") == "reply_received"]
+    # ответ, который лежит неделю — это не "новый ответ", это гниющие деньги
+    stale_replies = sorted([l for l in new_replies if l.get("silence_days", 0) >= 7],
+                           key=lambda x: -x.get("silence_days", 0))
+    return {"total_leads": len(leads), "live_leads": len(live), "dead_leads": len(leads) - len(live),
+            "active_calls": active_calls, "outreach_active_count": len(outreach_active),
+            "overdue_followup": overdue_followup, "silent_speakings": silent_speakings,
+            "new_replies": new_replies, "stale_replies": stale_replies, "just_expired": just_expired}
 
 
 def top_news_overnight(history, since_hours=24):
@@ -129,17 +156,96 @@ def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+# --- цены: перенесено из daily_brief.py, чтобы утреннее сообщение было одно -----
+
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
+
+
+def _http_get(url, timeout=10):
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json, text/plain, */*"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read().decode("utf-8")
+
+
+def fetch_yahoo(symbol, timeout=10):
+    urls = [
+        f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d",
+        f"https://query2.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range=5d",
+        f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
+    ]
+    last_err = None
+    for url in urls:
+        try:
+            result = json.loads(_http_get(url, timeout)).get("chart", {}).get("result")
+            if not result:
+                last_err = "empty result"
+                continue
+            meta = result[0]["meta"]
+            cur = meta.get("regularMarketPrice")
+            prev = meta.get("previousClose") or meta.get("chartPreviousClose")
+            if cur is None:
+                last_err = "no regularMarketPrice"
+                continue
+            chg = ((cur - prev) / prev * 100.0) if (prev and prev > 0) else None
+            return cur, chg
+        except Exception as e:
+            last_err = f"{type(e).__name__}: {e}"
+    raise RuntimeError(last_err or "all failed")
+
+
+def fetch_stooq(symbol, timeout=10):
+    lines = _http_get(f"https://stooq.com/q/l/?s={symbol}&i=d", timeout).strip().split("\n")
+    if len(lines) < 2:
+        raise RuntimeError("stooq empty")
+    parts = lines[1].split(",")
+    if len(parts) < 7 or parts[6] in ("", "N/D"):
+        raise RuntimeError("stooq no close")
+    return float(parts[6]), None
+
+
+def fetch_prices():
+    prices = {}
+    for sym, yf, sq, mult in (("Al", "ALI=F", "ali.f", 1.0), ("Cu", "HG=F", "hg.f", 2204.62)):
+        for name, fn, arg in (("yahoo", fetch_yahoo, yf), ("stooq", fetch_stooq, sq)):
+            try:
+                p, c = fn(arg)
+                prices[sym] = (p * mult, c, "CME" if name == "yahoo" else "stooq")
+                break
+            except Exception as e:
+                print(f"  ! {name} {arg}: {e}", file=sys.stderr)
+    return prices
+
+
+def format_prices(prices):
+    if not prices:
+        return ""
+    parts = []
+    for sym, (price, chg, src) in prices.items():
+        if chg is None:
+            parts.append(f"{sym} ${price:,.0f}/t ({src})")
+        else:
+            arrow = "\u25b2" if chg > 0 else ("\u25bc" if chg < 0 else "\u00b7")
+            parts.append(f"{sym} ${price:,.0f}/t {arrow}{abs(chg):.1f}% ({src})")
+    return " \u00b7 ".join(parts)
+
+
 def deepseek_synthesize(context, max_tokens=900):
     if not DEEPSEEK_KEY: return None
     url = "https://api.deepseek.com/chat/completions"
     prompt = (
         "Ты — Chief of Staff Антона Зайцева. Утренний briefing на русском.\n\n"
-        "Правила:\n- Никакой воды, никаких 'отличного утра' и преамбул\n- Только факты из переданного контекста, ничего не выдумывай\n- HTML теги Telegram: <b>, <i>, <code>, без других\n- Эмодзи только в заголовках секций\n- Максимум 2500 символов всего\n\n"
+        "Правила:\n- Никакой воды, никаких 'отличного утра' и преамбул\n- Только факты из переданного контекста, ничего не выдумывай\n- HTML теги Telegram: <b>, <i>, <code>, без других\n- Эмодзи только в заголовках секций\n- Максимум 2500 символов всего\n"
+        "- Мёртвые лиды в контекст не попадают. Не додумывай их и не проси по ним follow-up.\n"
+        "- Полученный ответ, который лежит >7 дней (stale_replies) — ВСЕГДА первый пункт URGENT. "
+        "Это не 'новый ответ', это деньги, которые гниют. Пиши, сколько дней лежит.\n"
+        "- Каждый пункт URGENT — бинарное действие с глаголом. Не 'проработать', а 'ответить/отправить/закрыть'.\n\n"
         "Секции (в этом порядке):\n"
         "🎯 <b>MISSION CONTROL — {weekday} {date}</b>\n\n"
-        "⚡ <b>URGENT</b>\n[2-4 пункта что требует действия СЕГОДНЯ. Если нет — 'ничего критичного']\n\n"
-        "💼 <b>PIPELINE</b>\n[1-3 строки: воронка, overdue, изменения]\n\n"
+        "⚡ <b>URGENT</b>\n[2-4 пункта что требует действия СЕГОДНЯ. Сначала stale_replies с числом дней. Если нет — 'ничего критичного']\n\n"
+        "💼 <b>PIPELINE</b>\n[1-3 строки: только живые. Формат 'живых N (мёртвых M отброшено)'. Если just_expired непусто — одна строка: что каденция убила и надо закрыть в файле]\n\n"
         "📊 <b>STRATEGY v3</b>\n[Week N/52, days remaining, ключевая метрика]\n\n"
+        "📈 <b>MARKETS</b>\n[строка prices_line дословно. Если пусто — секцию пропустить]\n\n"
         "🗞️ <b>TOP NEWS</b>\n[1-2 ключевых события overnight с угла Anton'а]\n\n"
         "🗣️ <b>ФРАЗА ДНЯ</b>\n[фраза дословно из контекста]\n\n"
         "⚠️ <b>HARD TRUTH</b>\n[ОДНА честная строка если есть проблема. Иначе пропустить.]\n\n"
@@ -162,18 +268,28 @@ def format_fallback(context):
     lines = [f"🎯 <b>MISSION CONTROL — {context['weekday']} {context['date_str']}</b>", ""]
     lines.append("⚡ <b>URGENT</b>")
     n = 0
+    for l in p["stale_replies"][:3]:
+        lines.append(f"• ОТВЕТ ЛЕЖИТ {l.get('silence_days', 0)} ДН — прочитать и ответить: {esc(l.get('topic', ''))}"); n += 1
     for l in p["new_replies"][:3]:
+        if l in p["stale_replies"]: continue
         lines.append(f"• REPLY: {esc(l.get('topic', ''))}"); n += 1
     for l in p["overdue_followup"][:3]:
         lines.append(f"• Follow-up overdue ({l.get('silence_days', 0)}d): {esc(l.get('topic', ''))}"); n += 1
     if n == 0: lines.append("• Ничего критичного")
     lines.append("")
     lines.append("💼 <b>PIPELINE</b>")
+    lines.append(f"• Живых: {p['live_leads']} (мёртвых отброшено: {p['dead_leads']})")
     lines.append(f"• Active expert calls: {len(p['active_calls'])}")
     lines.append(f"• Outreach in flight: {p['outreach_active_count']}")
     if p["overdue_followup"]:
         lines.append(f"• Overdue follow-ups: {len(p['overdue_followup'])}")
+    for l in p["just_expired"][:3]:
+        lines.append(f"• Каденция исчерпана ({l.get('silence_days', 0)}d) — закрыть в файле: {esc(l.get('topic', ''))}")
     lines.append("")
+    if context.get("prices_line"):
+        lines.append("📈 <b>MARKETS</b>")
+        lines.append(esc(context["prices_line"]))
+        lines.append("")
     lines.append("📊 <b>STRATEGY v3</b>")
     lines.append(f"• Week {s['week_n']}/52 Y1, {s['y1_days_remaining']} дней до close")
     lines.append(f"• Critical: {esc(s['y1_critical_success'])}")
@@ -219,18 +335,25 @@ def main():
     try: overnight = fetch_overnight_emails(OVERNIGHT_HOURS)
     except Exception as e:
         print(f"Gmail error: {e}", file=sys.stderr); overnight = []
+    try: prices_line = format_prices(fetch_prices())
+    except Exception as e:
+        print(f"Prices error: {e}", file=sys.stderr); prices_line = ""
     context = {
         "date_str": date_str, "weekday": weekday,
         "strategy_metrics": sm,
         "pipeline_analysis": {
-            "total_leads": pa["total_leads"],
+            "live_leads": pa["live_leads"],
+            "dead_leads_excluded": pa["dead_leads"],
             "active_calls_count": len(pa["active_calls"]),
             "outreach_active_count": pa["outreach_active_count"],
+            "stale_replies": [{"topic": l.get("topic", "")[:80], "silence_days": l.get("silence_days", 0), "next_action": l.get("next_action", "")[:100]} for l in pa["stale_replies"][:3]],
             "overdue_followup": [{"topic": l.get("topic", "")[:80], "silence_days": l.get("silence_days", 0)} for l in pa["overdue_followup"][:5]],
             "silent_speakings": [{"topic": l.get("topic", "")[:80], "silence_days": l.get("silence_days", 0)} for l in pa["silent_speakings"][:3]],
             "new_replies": [{"topic": l.get("topic", "")[:80], "status": l.get("status", "")} for l in pa["new_replies"][:5]],
             "active_calls_status": [{"topic": l.get("topic", "")[:60], "silence_days": l.get("silence_days", 0)} for l in pa["active_calls"][:3]],
+            "just_expired": [{"topic": l.get("topic", "")[:80], "silence_days": l.get("silence_days", 0)} for l in pa["just_expired"][:3]],
         },
+        "prices_line": prices_line,
         "overnight_emails_count": len(overnight),
         "top_news": [{"title": n.get("title", "")[:120], "why": n.get("why", "")[:120]} for n in news],
         "phrase": phrase, "phrase_text": phrase[1],
