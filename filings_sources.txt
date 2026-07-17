@@ -1,0 +1,14 @@
+# Первичные корпоративные релизы, не журналистика.
+# TMX Newsfile — регуляторный вайр TSX/TSXV/CSE. Через него канадские юниоры
+# гонят релизы и подают на SEDAR+. RSS открытый, ключ не нужен.
+#
+# ВАЖНО: каждая лента отдаёт ТОЛЬКО последние 10 релизов. Поэтому берём
+# несколько узких срезов вместо одного широкого — так объём делится и
+# в 10 позиций влезает больше. И поэтому же прогон частый, а не 1 раз в день.
+
+https://feeds.newsfilecorp.com/industry/mining-metals
+https://feeds.newsfilecorp.com/industry/non-ferrous-metals
+https://feeds.newsfilecorp.com/industry/precious-metals
+https://feeds.newsfilecorp.com/industry/energy-metals
+https://feeds.newsfilecorp.com/industry/rare-earths
+https://feeds.newsfilecorp.com/industry/diamonds
