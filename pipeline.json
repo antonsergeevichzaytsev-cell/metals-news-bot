@@ -7,14 +7,16 @@
       "channel": "GLG",
       "type": "expert_call",
       "topic": "Aluminium Smelting Middle East fund",
-      "status": "accepted_waiting",
+      "status": "dead",
       "value_usd": 400,
       "first_contact": "2026-05-22",
       "last_activity": "2026-05-23",
       "silence_days": 55,
-      "next_action": "Wait for client scheduling",
+      "next_action": "none — closed",
       "notes": "Project #5191288, accepted, no schedule yet",
-      "touches": 1
+      "touches": 1,
+      "closed_date": "2026-07-17",
+      "closed_reason": "запрос не рабочий — подтверждено Антоном 17.07.26. Проект #5191288 висел accepted_waiting 55 дн; статус в файле был гипотезой"
     },
     {
       "id": "atheneum_agreement",
