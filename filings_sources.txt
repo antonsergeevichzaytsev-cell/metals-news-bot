@@ -1,14 +1,23 @@
 # Первичные корпоративные релизы, не журналистика.
-# TMX Newsfile — регуляторный вайр TSX/TSXV/CSE. Через него канадские юниоры
-# гонят релизы и подают на SEDAR+. RSS открытый, ключ не нужен.
 #
-# ВАЖНО: каждая лента отдаёт ТОЛЬКО последние 10 релизов. Поэтому берём
-# несколько узких срезов вместо одного широкого — так объём делится и
-# в 10 позиций влезает больше. И поэтому же прогон частый, а не 1 раз в день.
+# Два вайра, потому что одного мало: проверено на Erdene — его боевые релизы
+# (ramp-up, nameplate, Bayan Khundii) идут через GlobeNewswire, а на Newsfile про него
+# падает только шум от третьих лиц: покупки Спротта, интервью TMX, CEO Clips.
+# Одна лента = одна слепая зона.
 
+# --- TMX Newsfile: регуляторный вайр TSX/TSXV/CSE (оттуда же подают на SEDAR+).
+# ВАЖНО: каждая лента отдаёт ТОЛЬКО последние 10 релизов — поэтому берём
+# узкие срезы вместо одного широкого и частим прогон.
 https://feeds.newsfilecorp.com/industry/mining-metals
 https://feeds.newsfilecorp.com/industry/non-ferrous-metals
 https://feeds.newsfilecorp.com/industry/precious-metals
 https://feeds.newsfilecorp.com/industry/energy-metals
 https://feeds.newsfilecorp.com/industry/rare-earths
 https://feeds.newsfilecorp.com/industry/diamonds
+
+# --- GlobeNewswire: тут сидит орбита (Erdene и прочие CIS/Монголия-юниоры).
+https://www.globenewswire.com/RssFeed/industry/1775-General%20Mining/feedTitle/GlobeNewswire%20-%20Industry%20News%20on%20General%20Mining
+https://www.globenewswire.com/RssFeed/industry/1777-Gold%20Mining/feedTitle/GlobeNewswire%20-%20Industry%20News%20on%20Gold%20Mining
+https://www.globenewswire.com/RssFeed/industry/1755-Nonferrous%20Metals/feedTitle/GlobeNewswire%20-%20Industry%20News%20on%20Nonferrous%20Metals
+https://www.globenewswire.com/RssFeed/industry/1753-Aluminum/feedTitle/GlobeNewswire%20-%20Industry%20News%20on%20Aluminum
+https://www.globenewswire.com/RssFeed/industry/55102040-Copper/feedTitle/GlobeNewswire%20-%20Industry%20News%20on%20Copper
