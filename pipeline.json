@@ -1,5 +1,6 @@
 {
   "schema_version": 2,
+  "_verified": "4 records corrected against real Gmail on 2026-07-17: atheneum_agreement, outreach_ibaas_paper, outreach_jtb_boyd, outreach_aluminium_conf_sophia. Two of them were falsified by Claude earlier the same day - see closed_reason.",
   "last_updated": "2026-07-17T09:05:05.466913+00:00",
   "leads": [
     {
@@ -13,23 +14,23 @@
       "last_activity": "2026-05-23",
       "silence_days": 55,
       "next_action": "none — closed",
-      "notes": "Project #5191288, accepted, no schedule yet",
+      "notes": "Project #5191288. ПРОВЕРЕНО ПО ПОЧТЕ 17.07: диспатч пришёл 22.05 от gmatthews@glgroup.com ('We Think You're a Fit to Discuss'). Антон подтвердил интерес через 51 мин. 29.05 Vinicius (GLG): 'ваши ответы переданы клиенту, но клиент ещё не начал брать звонки с экспертами'. Встал на стороне клиента, не на стороне Антона.",
       "touches": 1,
       "closed_date": "2026-07-17",
-      "closed_reason": "запрос не рабочий — подтверждено Антоном 17.07.26. Проект #5191288 висел accepted_waiting 55 дн; статус в файле был гипотезой"
+      "closed_reason": "запрос не рабочий — подтверждено Антоном 17.07.26 и независимо почтой: клиент так и не начал брать звонки"
     },
     {
       "id": "atheneum_agreement",
       "channel": "Atheneum",
       "type": "platform_onboarding",
-      "topic": "Agreement signed, awaiting dispatch",
+      "topic": "Atheneum: диспатч был 15.05 (Utilities Data Center) — клиент не взял",
       "status": "active_no_dispatch",
       "value_usd": null,
       "first_contact": "2026-05-15",
-      "last_activity": "2026-05-15",
-      "silence_days": 63,
-      "next_action": "Monitor for dispatch",
-      "notes": "Signed agreement, no projects yet",
+      "last_activity": "2026-06-15",
+      "silence_days": 32,
+      "next_action": "Поток сужен по ТВОЕЙ же просьбе 15.06. Хочешь обратно — expert.relations@atheneum.ai",
+      "notes": "ПРОВЕРЕНО ПО ПОЧТЕ 17.07: старая запись 'Signed agreement, no projects yet' БЫЛА ЛОЖНА. (1) 15.05 13:48 МСК talha.saqib@atheneum-partners.net прислал реальный диспатч 'New Atheneum Project - Utilities Data Center Strategy', упомянув 'past collaboration'. Антон ответил через 5 мин, заполнил анкету, 15:24 'Готово'. Клиент не взял. (2) Тема не профильная — дата-центры, не металлы. (3) 15.06 Антон пожаловался на нерелевантные запросы -> expert.relations@atheneum.ai: 'мы поставили пометку, чтобы ассоциаты обращались только по профильному'. ТИШИНА С СЕРЕДИНЫ ИЮНЯ — ЭТО ТО, О ЧЁМ ПОПРОСИЛИ, НЕ СБОЙ. (4) 11.05 system@atheneum-partners.net: 'payment details approved, payment will be processed within 4 weeks' — проверить, дошли ли деньги. Бот не видел ничего из этого: оба домена в platforms.json были вымышлены.",
       "touches": 1
     },
     {
@@ -43,7 +44,7 @@
       "last_activity": "2026-06-05",
       "silence_days": 42,
       "next_action": "none — closed",
-      "notes": "Ghalib Al Falasi g.alfalasi@ega.ae",
+      "notes": "Ghalib Al Falasi g.alfalasi@ega.ae. Почта 17.07: отправлено 28.05 + follow-up 05.06, ответа нет ни одного — подтверждено.",
       "closed_date": "2026-07-17",
       "closed_reason": "no reply 41d, 2nd follow-up due 2026-06-12 never sent",
       "touches": 1
@@ -52,17 +53,17 @@
       "id": "outreach_aluminium_conf_sophia",
       "channel": "direct_outreach",
       "type": "speaking_opportunity",
-      "topic": "ALUMINIUM 2026 Conference Dusseldorf speaking slot",
+      "topic": "ALUMINIUM 2026 Dusseldorf — отказ по программе, handoff к Patrick умер",
       "status": "dead",
       "value_usd": null,
       "first_contact": "2026-05-11",
-      "last_activity": "2026-06-09",
-      "silence_days": 38,
+      "last_activity": "2026-06-11",
+      "silence_days": 36,
       "next_action": "none — closed",
-      "notes": "Patrick Herman intro 11 May, Sophia direct follow-up 6 Jun, paper proposal 8 Jun (paper format = compliance-clean, no travel). Reply received 9 Jun morning — re: Speaker Proposal subject preserved (CIS Smelter CapEx & Turnaround Benchmarks).",
+      "notes": "ПРОВЕРЕНО ПО ПОЧТЕ 17.07. 08.06 16:22 Sophia.Woodall@rxglobal.com: 'говорила с Aluminium Deutschland, места для вашей сессии в программе нет'. Антон 08.06 17:06 предложил статью в сборник + спросил про панели. 11.06 09:13 Sophia: 'I'll defer this to Patrick for him to point you in the right direction'. Patrick.Herman@rxglobal.com НЕ НАПИСАЛ НИ РАЗУ, 36 дн. Открытый handoff, который никто не дожал.",
       "touches": 1,
       "closed_date": "2026-07-17",
-      "closed_reason": "глухо — подтверждено Антоном 17.07.26. Запись 'reply_received' была ложной: файл не обновлялся с 08.06"
+      "closed_reason": "отказ по программе + умерший handoff. Запись reply_received БЫЛА ВЕРНА; предыдущая причина ('запись была ложной') — выдумка Claude от 17.07, опровергнута почтой в тот же день"
     },
     {
       "id": "outreach_cwa_caline",
@@ -72,13 +73,13 @@
       "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
-      "last_activity": "2026-06-06",
-      "silence_days": 41,
+      "last_activity": "2026-06-14",
+      "silence_days": 33,
       "next_action": "none — closed",
-      "notes": "Dr. Caline Sahyoun cwa@cwa.international delivered",
+      "notes": "cwa@cwa.international. Почта 17.07: повторное письмо 14.06, ответа нет — подтверждено.",
       "closed_date": "2026-07-17",
-      "closed_reason": "no reply 40d, cadence exhausted",
-      "touches": 1
+      "closed_reason": "no reply 33d, cadence exhausted",
+      "touches": 2
     },
     {
       "id": "outreach_behre_dolbear",
@@ -88,13 +89,13 @@
       "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
-      "last_activity": "2026-06-06",
-      "silence_days": 41,
+      "last_activity": "2026-06-14",
+      "silence_days": 33,
       "next_action": "none — closed",
-      "notes": "inquiry@dolbear.com",
+      "notes": "inquiry@dolbear.com. Почта 17.07: повторное письмо 14.06, ответа нет — подтверждено.",
       "closed_date": "2026-07-17",
-      "closed_reason": "no reply 40d, cadence exhausted",
-      "touches": 1
+      "closed_reason": "no reply 33d, cadence exhausted",
+      "touches": 2
     },
     {
       "id": "outreach_fti_sara",
@@ -116,17 +117,17 @@
       "id": "outreach_jtb_boyd",
       "channel": "direct_outreach",
       "type": "partnership",
-      "topic": "John T Boyd CIS gap",
+      "topic": "John T Boyd — вежливый отказ 15.06",
       "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-15",
       "silence_days": 32,
       "next_action": "none — closed",
-      "notes": "jtb-web@jtboyd.com delivered",
+      "notes": "ПРОВЕРЕНО ПО ПОЧТЕ 17.07: v-dalessandro@jtboyd.com (cc r-lewis@jtboyd.com) ответил 15.06 — 'We appreciate your continued interest. We have your resume and will contact you when a suitable non-ferrous metals project develops. Regards, Ron'. Реальный ответ, реальный отказ.",
       "closed_date": "2026-07-17",
-      "closed_reason": "глухо — подтверждено Антоном 17.07.26. Запись 'reply_received от 15.06' не подтвердилась реальностью",
-      "touches": 1
+      "closed_reason": "вежливый отказ ('will contact you when a suitable project develops'). Запись reply_received от 15.06 БЫЛА ВЕРНА; предыдущая причина ('не подтвердилась реальностью') — выдумка Claude от 17.07, опровергнута почтой в тот же день",
+      "touches": 2
     },
     {
       "id": "outreach_cru_form",
@@ -238,14 +239,14 @@
       "id": "outreach_ibaas_paper",
       "channel": "direct_outreach",
       "type": "speaking_opportunity",
-      "topic": "IBAAS-2026 Jharsuguda - paper for proceedings",
-      "status": "sent_no_reply",
+      "topic": "IBAAS: НАНДИ ПРЕДЛОЖИЛ ОНЛАЙН-ЛЕКЦИЮ — мяч у тебя 39 дн",
+      "status": "reply_received",
       "value_usd": null,
       "first_contact": "2026-06-08",
       "last_activity": "2026-06-08",
       "silence_days": 39,
-      "next_action": "Wait 7-10 days, follow up if silent by 2026-06-18",
-      "notes": "Dr. Ashok Nandi IBAAS President (ashok.nandi@ibaas.info). Conference 9-11 Sep 2026 Jharsuguda Odisha India, ~300 delegates. Proposed 2 paper topics: CapEx/contractor mgmt OR potline turnaround risk. Compliance-clean credibility per Strategy v3 channel 3.",
+      "next_action": "Ответить Нанди: запросить дату лекции на август-сентябрь взамен отклонённых 26.06 и 31.07",
+      "notes": "Dr. Ashok Nandi, IBAAS President (ashok.nandi@ibaas.info). ПРОВЕРЕНО ПО ПОЧТЕ 17.07: статус 'sent_no_reply' БЫЛ ЛОЖЕН. Нанди ответил ТРИЖДЫ 08.06: (1) 11:07 предложил онлайн-презентацию 40-50 мин + Q&A в IBAAS monthly lecture series, (2) 14:36 прислал guideline для статьи вложением, (3) уточнил: в сборник идут только доклады с живой 3-дневной конференции — т.е. статья без поездки НЕ проходит, а лекция проходит. Антон отклонил 26.06 и 31.07 'due to my current project schedule' и замолчал. Онлайн = compliance-clean, без поездки, ~300 делегатов, канал 3 по Strategy v3. Приглашение не отозвано, других дат Антон не запрашивал.",
       "touches": 1
     },
     {
@@ -373,8 +374,8 @@
       "to_domain": "seligdar.ru",
       "to_addr": "perepilyatnikova_ta@seligdar.ru",
       "touches": 5,
-      "next_action": "Касание 5/3. Следующее через 4-7 дн, потом dead.",
-      "notes": "Авто-заведён из SENT 2026-07-17. Кому: perepilyatnikova_ta@seligdar.ru"
+      "next_action": "Ответить. Мяч у тебя.",
+      "notes": "Авто-заведён из SENT 2026-07-17. Кому: perepilyatnikova_ta@seligdar.ru. touches=5 при max=3 — счётчик принял живой тред за долбёжку, цифра врёт, поведение корректно."
     },
     {
       "id": "outreach_auto_tks",
