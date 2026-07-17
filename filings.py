@@ -8,9 +8,12 @@
 Главное правило отбора — СТАДИЯ проекта. Навык продаётся только на своей стадии:
 началась стройка — FEL и оценка затрат уже позади, предлагать их — ошибка.
 
-Второе правило — слепота хуже поломки. Лента, которая тихо умерла, выглядит как
-лента без новостей. Поэтому fetch называет причину, а смена статуса ленты
-уезжает в Telegram — один раз, по фронту.
+Второе правило — слепота хуже поломки, на всех этажах:
+- лента, которая тихо умерла, выглядит как лента без новостей -> fetch называет причину,
+  смена статуса уезжает в Telegram один раз, по фронту;
+- модель, которая режет лишнее, выглядит как чистая выдача -> отказы пишутся
+  в history["skipped"] с причиной;
+- лог Actions без токена не читается -> цифры прогона ложатся в state["last_run"].
 """
 from __future__ import annotations
 
@@ -35,10 +38,11 @@ BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 DEEPSEEK_KEY = os.environ["DEEPSEEK_API_KEY"]
 
-MAX_ITEMS_PER_RUN = 22
+MAX_ITEMS_PER_RUN = 40
 MAX_AGE_HOURS = 36
 TG_BUDGET = 3900
 HISTORY_RETENTION_DAYS = 30
+SKIPPED_RETENTION_DAYS = 7
 PRIORITY_RANK = {"high": 0, "medium": 1, "low": 2}
 PRIORITY_EMOJI = {"high": "\U0001f534", "medium": "\U0001f7e1", "low": "\u26aa"}
 
@@ -176,6 +180,8 @@ def save_history(history):
     cutoff = (datetime.now(timezone.utc) - timedelta(days=HISTORY_RETENTION_DAYS)).isoformat()
     history["items"] = [it for it in history.get("items", []) if it.get("ts", "") >= cutoff]
     history["items"] = history["items"][-400:]
+    sk_cutoff = (datetime.now(timezone.utc) - timedelta(days=SKIPPED_RETENTION_DAYS)).isoformat()
+    history["skipped"] = [it for it in history.get("skipped", []) if it.get("ts", "") >= sk_cutoff][-500:]
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
@@ -315,6 +321,9 @@ SYS_PROMPT = (
     "auditor changes, third-party items (insider buying, interviews, video clips) where the company is only "
     "the subject, pure exploration drill assays with no development or engineering decision, "
     "and generic corporate updates. When in doubt and there is no number and no engineering event, skip. "
+    "WHEN skip=true you MUST still fill \"signal\" with a 2-4 word Russian reason for skipping "
+    "(\"размещение\", \"назначение\", \"буровые пробы\", \"конференция\", \"третьи лица\") "
+    "and leave the other fields empty. Without a reason the decision cannot be audited. "
     "\n\n"
     "Set skip=false ONLY for a concrete operational, technical or capital event: feasibility study / PEA / PFS / DFS "
     "results, technical report, a stated CapEx or cost estimate or a change to one, cost overrun, construction or "
@@ -510,14 +519,28 @@ def main():
     ))
 
     kept = []
+    n_skipped = 0
+    n_screened = 0
     now_iso = datetime.now(timezone.utc).isoformat()
     for c in candidates[:MAX_ITEMS_PER_RUN]:
         v = deepseek_screen(c["title"], c["desc"])
         if v is None:
             continue
+        n_screened += 1
         seen.add(c["hash"])
         if v.get("skip"):
-            print(f"  . skip: {c['title'][:70]}")
+            reason = (v.get("signal") or "").strip() or "?"
+            # Отказ модели — тоже решение. Не залогируешь — не узнаешь,
+            # режет она мусор или твою орбиту.
+            history.setdefault("skipped", []).append({
+                "ts": now_iso,
+                "title": c["title"][:130],
+                "link": c["link"],
+                "reason": reason,
+                "orbit": bool(any_hit(f"{c['title']} {c['desc']}", ORBIT_RE)),
+            })
+            n_skipped += 1
+            print(f"  . skip [{reason}]: {c['title'][:60]}")
             continue
         rec = {
             "link": c["link"],
@@ -540,6 +563,23 @@ def main():
         kept.append(rec)
 
     print(f"Kept: {len(kept)}")
+
+    # Счётчики в state: лог Actions без токена не читается, а это — читается.
+    # Заодно видно, упирается ли прогон в потолок.
+    state["last_run"] = {
+        "ts": now_iso,
+        "raw": len(raw),
+        "fresh": len(fresh),
+        "candidates": len(candidates),
+        "prefiltered_out": len(fresh) - len(candidates),
+        "screened": n_screened,
+        "skipped_by_model": n_skipped,
+        "kept": len(kept),
+        "cap": MAX_ITEMS_PER_RUN,
+        "cap_hit": len(candidates) > MAX_ITEMS_PER_RUN,
+        "feeds_broken": len(broken),
+    }
+    print(f"last_run: {state['last_run']}")
 
     # Ночной улов не пингует — ждёт утра.
     queue = list(state.get("pending", [])) + kept
