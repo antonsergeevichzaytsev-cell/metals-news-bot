@@ -81,7 +81,9 @@ DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 
 F_BLOCK_PROMPT = (
     "You receive a list of metals and mining news from the past week, indexed by NUMBER. "
-    "Each item has a title, source domain, and a Russian 'why it matters' note. "
+    "Each item has a title, source domain, a priority tag already assigned at ingest "
+    "(high/medium, or '?' for older entries), and a Russian 'why it matters' note. "
+    "Treat the priority tag as a strong prior - it was assigned by the same analysis. "
     "Pick THE SINGLE most strategically significant item for a senior independent consultant "
     "in non-ferrous metals and mining (16y at UC RUSAL, Norilsk Nickel, UMMC, ERG). "
     "Strong picks: (1) executive quote from named CEO/COO of a major operator, "
@@ -114,13 +116,27 @@ def pick_top_of_week(history):
         return None, ""
     # Trim to last 30 items max (most recent first)
     recent = items[-30:]
+
+    # Утренний digest уже разметил приоритет через DeepSeek. Гонять ранжирование
+    # заново — платить дважды за одну работу. Отсекаем явный low.
+    # Записи без priority (до 17.07) ОСТАВЛЯЕМ: иначе первую неделю после
+    # правки F-блок останется без материала. Ретеншн 7 дней вымоет их сам.
+    pool = [it for it in recent if (it.get("priority") or "") != "low"]
+    if not pool:
+        pool = recent  # неделя вся low — пусть модель сама решит, есть ли там что-то
+
     # Build user message: numbered list
     lines = []
-    for i, it in enumerate(recent):
+    for i, it in enumerate(pool):
         title = (it.get("title") or "")[:200]
         src = (it.get("domain") or "")[:40]
         why = (it.get("why") or "")[:200]
-        lines.append(f"[{i}] {title} | src={src} | why={why}")
+        pr = (it.get("priority") or "?")
+        co = (it.get("company") or "")[:60]
+        line = f"[{i}] {title} | src={src} | priority={pr} | why={why}"
+        if co:
+            line += f" | company={co}"
+        lines.append(line)
     user_msg = "\n".join(lines)
 
     payload = {
@@ -149,9 +165,9 @@ def pick_top_of_week(history):
         verdict = json.loads(content)
         pick = verdict.get("pick", -1)
         for_call = (verdict.get("for_call") or "").strip()
-        if pick is None or pick < 0 or pick >= len(recent):
+        if pick is None or pick < 0 or pick >= len(pool):
             return None, ""
-        return recent[pick], for_call
+        return pool[pick], for_call
     except Exception as e:
         print(f"  ! deepseek F-block error: {e}", file=sys.stderr)
         return None, ""
