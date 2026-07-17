@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "last_updated": "2026-07-16T16:47:30.008889+00:00",
+  "schema_version": 2,
+  "last_updated": "2026-07-17T05:21:43.233000+00:00",
   "leads": [
     {
       "id": "glg_5191288",
@@ -13,7 +13,8 @@
       "last_activity": "2026-05-23",
       "silence_days": 54,
       "next_action": "Wait for client scheduling",
-      "notes": "Project #5191288, accepted, no schedule yet"
+      "notes": "Project #5191288, accepted, no schedule yet",
+      "touches": 1
     },
     {
       "id": "atheneum_agreement",
@@ -26,20 +27,24 @@
       "last_activity": "2026-05-15",
       "silence_days": 62,
       "next_action": "Monitor for dispatch",
-      "notes": "Signed agreement, no projects yet"
+      "notes": "Signed agreement, no projects yet",
+      "touches": 1
     },
     {
       "id": "outreach_ega_ghalib",
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "EGA RUSAL potline/casting/alloy credentials",
-      "status": "follow_up_overdue",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-05-28",
       "last_activity": "2026-06-05",
       "silence_days": 41,
-      "next_action": "Send 2nd follow-up if no reply by 2026-06-12",
-      "notes": "Ghalib Al Falasi g.alfalasi@ega.ae"
+      "next_action": "none — closed",
+      "notes": "Ghalib Al Falasi g.alfalasi@ega.ae",
+      "closed_date": "2026-07-17",
+      "closed_reason": "no reply 41d, 2nd follow-up due 2026-06-12 never sent",
+      "touches": 1
     },
     {
       "id": "outreach_aluminium_conf_sophia",
@@ -51,47 +56,57 @@
       "first_contact": "2026-05-11",
       "last_activity": "2026-06-09",
       "silence_days": 37,
-      "next_action": "READ REPLY in Gmail (rxglobal.com thread). Classify: A) accepted → send bio/abstract/slot; B) clarification needed → respond; C) rejection → close + lessons; D) logistics → confirm. Update status after action.",
-      "notes": "Patrick Herman intro 11 May, Sophia direct follow-up 6 Jun, paper proposal 8 Jun (paper format = compliance-clean, no travel). Reply received 9 Jun morning — re: Speaker Proposal subject preserved (CIS Smelter CapEx & Turnaround Benchmarks)."
+      "next_action": "ПРОСРОЧЕНО 37 дн: прочитать ответ в Gmail (rxglobal.com) и ответить сегодня",
+      "notes": "Patrick Herman intro 11 May, Sophia direct follow-up 6 Jun, paper proposal 8 Jun (paper format = compliance-clean, no travel). Reply received 9 Jun morning — re: Speaker Proposal subject preserved (CIS Smelter CapEx & Turnaround Benchmarks).",
+      "touches": 1
     },
     {
       "id": "outreach_cwa_caline",
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "CWA International CIS gap coverage",
-      "status": "sent_no_reply",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
       "silence_days": 40,
-      "next_action": "Wait 5-7 days before follow-up",
-      "notes": "Dr. Caline Sahyoun cwa@cwa.international delivered"
+      "next_action": "none — closed",
+      "notes": "Dr. Caline Sahyoun cwa@cwa.international delivered",
+      "closed_date": "2026-07-17",
+      "closed_reason": "no reply 40d, cadence exhausted",
+      "touches": 1
     },
     {
       "id": "outreach_behre_dolbear",
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "Behre Dolbear CIS gap",
-      "status": "sent_no_reply",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
       "silence_days": 40,
-      "next_action": "Wait 5-7 days",
-      "notes": "inquiry@dolbear.com"
+      "next_action": "none — closed",
+      "notes": "inquiry@dolbear.com",
+      "closed_date": "2026-07-17",
+      "closed_reason": "no reply 40d, cadence exhausted",
+      "touches": 1
     },
     {
       "id": "outreach_fti_sara",
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "FTI Consulting Global Mining Metals",
-      "status": "sent_no_reply",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
       "silence_days": 40,
-      "next_action": "Wait 5-7 days",
-      "notes": "Sara Powell Senior MD"
+      "next_action": "none — closed",
+      "notes": "Sara Powell Senior MD",
+      "closed_date": "2026-07-17",
+      "closed_reason": "no reply 40d, cadence exhausted",
+      "touches": 1
     },
     {
       "id": "outreach_jtb_boyd",
@@ -103,60 +118,73 @@
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-15",
       "silence_days": 31,
-      "next_action": "Wait 5-7 days",
-      "notes": "jtb-web@jtboyd.com delivered"
+      "next_action": "ПРОСРОЧЕНО 31 дн: ответ получен, прочитать и ответить — не 'wait 5-7 days'",
+      "notes": "jtb-web@jtboyd.com delivered",
+      "touches": 1
     },
     {
       "id": "outreach_cru_form",
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "CRU Group web form bounced",
-      "status": "channel_failed",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
       "silence_days": 40,
-      "next_action": "Find alternative contact via LinkedIn",
-      "notes": "Web form only email bounced"
+      "next_action": "none — closed",
+      "notes": "Web form only email bounced",
+      "closed_date": "2026-07-17",
+      "closed_reason": "channel failed (web form bounced), no alternative found in 40d",
+      "touches": 1
     },
     {
       "id": "outreach_dentons_rola",
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "Dentons Rola Takieddine",
-      "status": "sent_no_reply",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
       "silence_days": 40,
-      "next_action": "Wait 5-7 days",
-      "notes": "Sent 6 Jun"
+      "next_action": "none — closed",
+      "notes": "Sent 6 Jun",
+      "closed_date": "2026-07-17",
+      "closed_reason": "no reply 40d, cadence exhausted",
+      "touches": 1
     },
     {
       "id": "outreach_expert_institute",
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "Expert Institute",
-      "status": "sent_no_reply",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
       "silence_days": 40,
-      "next_action": "Wait 5-7 days",
-      "notes": "Sent 6 Jun"
+      "next_action": "none — closed",
+      "notes": "Sent 6 Jun",
+      "closed_date": "2026-07-17",
+      "closed_reason": "no reply 40d, cadence exhausted",
+      "touches": 1
     },
     {
       "id": "outreach_ims_legal",
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "IMS Legal Strategies",
-      "status": "sent_no_reply",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
       "silence_days": 40,
-      "next_action": "Wait 5-7 days",
-      "notes": "Sent 6 Jun"
+      "next_action": "none — closed",
+      "notes": "Sent 6 Jun",
+      "closed_date": "2026-07-17",
+      "closed_reason": "no reply 40d, cadence exhausted",
+      "touches": 1
     },
     {
       "id": "job_sberbank_ai_interview",
@@ -169,7 +197,8 @@
       "last_activity": "2026-06-06",
       "silence_days": 40,
       "next_action": "Complete AI interview",
-      "notes": "Received 6 Jun 18:18. Auto-notification from hrplatform@ on 8 Jun reclassified as AUTO by pipeline_sync v2 - status reverted."
+      "notes": "Received 6 Jun 18:18. Auto-notification from hrplatform@ on 8 Jun reclassified as AUTO by pipeline_sync v2 - status reverted.",
+      "touches": 1
     },
     {
       "id": "job_rt_inzhiniring_udokan",
@@ -182,7 +211,8 @@
       "last_activity": "2026-05-29",
       "silence_days": 48,
       "next_action": "Follow up after 14 days",
-      "notes": "Two positions submitted 29 May"
+      "notes": "Two positions submitted 29 May",
+      "touches": 1
     },
     {
       "id": "job_hh_unread_5",
@@ -195,7 +225,8 @@
       "last_activity": "2026-06-07",
       "silence_days": 39,
       "next_action": "Open hh.ru review messages",
-      "notes": "5 unread 2 confirmed responses"
+      "notes": "5 unread 2 confirmed responses",
+      "touches": 1
     },
     {
       "id": "outreach_ibaas_paper",
@@ -208,7 +239,16 @@
       "last_activity": "2026-06-08",
       "silence_days": 38,
       "next_action": "Wait 7-10 days, follow up if silent by 2026-06-18",
-      "notes": "Dr. Ashok Nandi IBAAS President (ashok.nandi@ibaas.info). Conference 9-11 Sep 2026 Jharsuguda Odisha India, ~300 delegates. Proposed 2 paper topics: CapEx/contractor mgmt OR potline turnaround risk. Compliance-clean credibility per Strategy v3 channel 3."
+      "notes": "Dr. Ashok Nandi IBAAS President (ashok.nandi@ibaas.info). Conference 9-11 Sep 2026 Jharsuguda Odisha India, ~300 delegates. Proposed 2 paper topics: CapEx/contractor mgmt OR potline turnaround risk. Compliance-clean credibility per Strategy v3 channel 3.",
+      "touches": 1
     }
-  ]
+  ],
+  "cadence_rule": {
+    "follow_up_days": [
+      4,
+      7
+    ],
+    "max_touches": 3,
+    "then": "dead"
+  }
 }
