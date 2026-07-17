@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Weekly Check — Sunday 19:00 MSK.
-Сторож (проверка самих ботов по живым файлам) + метрики Strategy v3.1 + reset-точки.
+Сторож (проверка самих ботов) + диспатчи за неделю + метрики v3.1 + reset-точки.
 """
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PIPELINE_PATH = os.path.join(ROOT, "pipeline.json")
 HISTORY_PATH = os.path.join(ROOT, "history.json")
+SYNC_STATE_PATH = os.path.join(ROOT, "state_pipeline_sync.json")
 
 MSK = timezone(timedelta(hours=3))
 Y1_START = datetime(2026, 5, 29, tzinfo=MSK)
@@ -65,6 +66,27 @@ def parse_date(s):
         return datetime.strptime(str(s), "%Y-%m-%d").date()
     except (ValueError, TypeError):
         return None
+
+
+def dispatch_stats(now, days=7):
+    """Главную метрику считает pipeline_sync (у него Gmail), пишет в state.
+    Здесь только читаем: у weekly_check в воркфлоу нет доступа к почте вообще."""
+    st = load_json(SYNC_STATE_PATH, None)
+    if st is None:
+        return None
+    log = st.get("dispatches")
+    if log is None:
+        return None  # счётчик ещё не отработал ни разу
+    cutoff = (now - timedelta(days=days)).strftime("%Y-%m-%d")
+    recent = [r for r in log.values() if r.get("date", "") >= cutoff]
+    by_kind = {"dispatch": [], "unknown": [], "other": []}
+    for r in recent:
+        by_kind.setdefault(r.get("kind", "unknown"), []).append(r)
+    plats = {}
+    for r in by_kind["dispatch"]:
+        plats[r.get("platform", "?")] = plats.get(r.get("platform", "?"), 0) + 1
+    return {"dispatch": len(by_kind["dispatch"]), "unknown": len(by_kind["unknown"]),
+            "other": len(by_kind["other"]), "by_platform": plats}
 
 
 def watchdog(now):
@@ -206,9 +228,24 @@ def main():
         out += "<i>" + esc(" \u00b7 ".join(facts)) + "</i>\n"
     out += "\n"
 
+    # --- ГЛАВНАЯ метрика: больше не вопрос, а число ---
+    ds = dispatch_stats(now, 7)
+    out += "<b>\U0001f3af Диспатчи платформ за неделю</b>\n"
+    if ds is None:
+        out += "<i>Счётчик ещё не отработал — pipeline_sync не писал dispatches в state</i>\n\n"
+    else:
+        out += f"<b>{ds['dispatch']}</b>"
+        if ds["by_platform"]:
+            out += " \u2014 " + esc(", ".join(f"{k}: {v}" for k, v in sorted(ds["by_platform"].items())))
+        out += "\n"
+        if ds["unknown"]:
+            out += f"<i>+{ds['unknown']} писем с платформ не классифицированы \u2014 глянь, если цифра кажется низкой</i>\n"
+        if ds["dispatch"] == 0 and ds["other"] == 0 and ds["unknown"] == 0:
+            out += "<i>С платформ вообще ничего не пришло. Это либо тишина, либо фильтр.</i>\n"
+        out += "\n"
+
     out += "<b>Метрики недели (v3.1):</b>\n"
-    out += "<i>Что видно из данных — выше, у сторожа. Ниже только то, чего в файлах нет:</i>\n"
-    out += "\u2610 Диспатчей платформ за неделю? (главная)\n"
+    out += "<i>Что видно из данных — выше. Ниже только то, чего в файлах нет:</i>\n"
     out += "\u2610 Часов работы (cap = 50)?\n\n"
 
     out += "<b>\U0001f6a8 Gating item:</b>\n"
