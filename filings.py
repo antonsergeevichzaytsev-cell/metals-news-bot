@@ -9,11 +9,15 @@
 началась стройка — FEL и оценка затрат уже позади, предлагать их — ошибка.
 
 Второе правило — слепота хуже поломки, на всех этажах:
-- лента, которая тихо умерла, выглядит как лента без новостей -> fetch называет причину,
-  смена статуса уезжает в Telegram один раз, по фронту;
-- модель, которая режет лишнее, выглядит как чистая выдача -> отказы пишутся
-  в history["skipped"] с причиной;
-- лог Actions без токена не читается -> цифры прогона ложатся в state["last_run"].
+- лента, умершая тихо, выглядит как лента без новостей -> fetch называет причину,
+  алерт по фронту;
+- модель, режущая лишнее, выглядит как чистая выдача -> отказы в history["skipped"];
+- лог Actions без токена не читается -> цифры прогона в state["last_run"];
+- бот, который не знает, годится ли его выдача, не проверяем вообще -> Антон отвечает
+  на хук "+"/"−", ответ ложится в history["labels"].
+
+Бот себя НЕ правит. Метки — сырьё для человека, который крутит промпт осознанно.
+Суждение — всегда за Антоном.
 """
 from __future__ import annotations
 
@@ -40,9 +44,9 @@ DEEPSEEK_KEY = os.environ["DEEPSEEK_API_KEY"]
 
 MAX_ITEMS_PER_RUN = 40
 MAX_AGE_HOURS = 36
-TG_BUDGET = 3900
 HISTORY_RETENTION_DAYS = 30
 SKIPPED_RETENTION_DAYS = 7
+MSG_MAP_KEEP = 300
 PRIORITY_RANK = {"high": 0, "medium": 1, "low": 2}
 PRIORITY_EMOJI = {"high": "\U0001f534", "medium": "\U0001f7e1", "low": "\u26aa"}
 
@@ -154,10 +158,12 @@ def load_state():
                 s.setdefault("seen", [])
                 s.setdefault("pending", [])
                 s.setdefault("feed_health", {})
+                s.setdefault("msg_map", {})
+                s.setdefault("tg_offset", 0)
                 return s
         except Exception:
             pass
-    return {"seen": [], "pending": [], "feed_health": {}}
+    return {"seen": [], "pending": [], "feed_health": {}, "msg_map": {}, "tg_offset": 0}
 
 
 def save_state(state):
@@ -182,6 +188,8 @@ def save_history(history):
     history["items"] = history["items"][-400:]
     sk_cutoff = (datetime.now(timezone.utc) - timedelta(days=SKIPPED_RETENTION_DAYS)).isoformat()
     history["skipped"] = [it for it in history.get("skipped", []) if it.get("ts", "") >= sk_cutoff][-500:]
+    # Метки не чистим по времени: это самое ценное, что есть у бота.
+    history["labels"] = history.get("labels", [])[-1000:]
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
@@ -395,32 +403,91 @@ def tg_send(text):
     req = urllib.request.Request(url, data=data)
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
-            r.read()
+            resp = json.loads(r.read().decode("utf-8"))
+        return (resp.get("result") or {}).get("message_id")
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
         print(f"  ! telegram error {e.code}: {body}", file=sys.stderr)
         raise
 
 
-def tg_send_chunks(blocks, header):
-    msgs = []
-    cur = header
-    for b in blocks:
-        if len(cur) + len(b) > TG_BUDGET:
-            msgs.append(cur.rstrip())
-            cur = b
+GOOD_WORDS = {"+", "++", "\u0434\u0430", "\u0433\u043e\u0434\u0438\u0442\u0441\u044f", "\u0431\u0435\u0440\u0443", "\u043e\u043a", "\u043e\u043a\u0435\u0439", "\u0445\u043e\u0440\u043e\u0448\u043e", "\u043f\u0438\u0448\u0443", "\u0442\u043e\u043f", "yes"}
+BAD_WORDS = {"-", "--", "\u2212", "\u2014", "\u043d\u0435\u0442", "\u043c\u0438\u043c\u043e", "\u0448\u0443\u043c", "\u043c\u0443\u0441\u043e\u0440", "no"}
+
+
+def parse_verdict(text):
+    """Разбор дословный и тупой намеренно: угадывать смысл ответа —
+    значит выдумывать метку. Непонятное честно кладём как note."""
+    t = (text or "").strip().lower().rstrip(".!?)")
+    if t in GOOD_WORDS:
+        return "good"
+    if t in BAD_WORDS:
+        return "bad"
+    first = t.split()[0] if t.split() else ""
+    if first in GOOD_WORDS:
+        return "good"
+    if first in BAD_WORDS:
+        return "bad"
+    return "note"
+
+
+def tg_get_updates(offset):
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/getUpdates"
+    params = {"timeout": 0, "allowed_updates": json.dumps(["message"])}
+    if offset:
+        params["offset"] = offset
+    try:
+        with urllib.request.urlopen(url + "?" + urllib.parse.urlencode(params), timeout=20) as r:
+            resp = json.loads(r.read().decode("utf-8"))
+        return resp.get("result", [])
+    except Exception as e:
+        print(f"  ! getUpdates error: {e}", file=sys.stderr)
+        return []
+
+
+def collect_labels(state, history):
+    """Ответы Антона на хуки -> размеченная выборка.
+
+    Это единственная настоящая проверка бота: не «прогнал, вроде норм»,
+    а вердикт человека по конкретному элементу. Суждение остаётся за ним.
+    """
+    offset = state.get("tg_offset") or 0
+    updates = tg_get_updates(offset + 1 if offset else None)
+    msg_map = state.get("msg_map", {})
+    n = 0
+    for u in updates:
+        state["tg_offset"] = max(state.get("tg_offset") or 0, u.get("update_id", 0))
+        msg = u.get("message") or {}
+        rep = msg.get("reply_to_message") or {}
+        mid = str(rep.get("message_id") or "")
+        if not mid or mid not in msg_map:
+            continue  # ответ не на наш хук (или на старый, выпавший из карты)
+        item = msg_map[mid]
+        text = msg.get("text", "")
+        history.setdefault("labels", []).append({
+            "ts": datetime.now(timezone.utc).isoformat(),
+            "verdict": parse_verdict(text),
+            "raw": text[:200],
+            "link": item.get("link"),
+            "company": item.get("company"),
+            "priority": item.get("priority"),
+            "stage": item.get("stage"),
+        })
+        n += 1
+    if n:
+        print(f"Labels collected: {n}")
+    return n
+
+
+def render_health(changes):
+    lines = []
+    for name, was, now in changes:
+        if now == "ok":
+            lines.append(f"\u2705 <b>{esc(name)}</b> \u2014 \u043e\u0436\u0438\u043b\u0430 (\u0431\u044b\u043b\u043e: {esc(was or '?')})")
         else:
-            cur += b
-    if cur.strip():
-        msgs.append(cur.rstrip())
-    total = len(msgs)
-    for i, m in enumerate(msgs, 1):
-        if total > 1:
-            m = m + f"\n\n<i>({i}/{total})</i>"
-        tg_send(m)
-        if i < total:
-            time.sleep(1.2)
-    return total
+            tail = " \u2014 \u0440\u0430\u043d\u044c\u0448\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u043b\u0430" if was == "ok" else ""
+            lines.append(f"\u26a0\ufe0f <b>{esc(name)}</b>: {esc(now)}{tail}")
+    return "<b>\U0001f6e0 \u041b\u0435\u043d\u0442\u044b \u2014 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0441\u0442\u0430\u0442\u0443\u0441\u0430</b>\n\n" + "\n".join(lines)
 
 
 def render(c, idx):
@@ -438,21 +505,9 @@ def render(c, idx):
     link = esc(c["link"])
     block += f'<a href="{link}">релиз</a>\n'
     if c.get("company"):
-        block += f"<code>asset-to-hook: {esc(c['company'])}</code>\n\n"
-    else:
-        block += "\n"
+        block += f"<code>asset-to-hook: {esc(c['company'])}</code>\n"
+    block += "<i>\u21a9\ufe0f \u043e\u0442\u0432\u0435\u0442\u044c\u0442\u0435 \u043d\u0430 \u044d\u0442\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435: + \u0433\u043e\u0434\u0438\u0442\u0441\u044f / \u2212 \u043c\u0438\u043c\u043e</i>"
     return block
-
-
-def render_health(changes):
-    lines = []
-    for name, was, now in changes:
-        if now == "ok":
-            lines.append(f"\u2705 <b>{esc(name)}</b> \u2014 \u043e\u0436\u0438\u043b\u0430 (\u0431\u044b\u043b\u043e: {esc(was or '?')})")
-        else:
-            tail = " \u2014 \u0440\u0430\u043d\u044c\u0448\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u043b\u0430" if was == "ok" else ""
-            lines.append(f"\u26a0\ufe0f <b>{esc(name)}</b>: {esc(now)}{tail}")
-    return "<b>\U0001f6e0 \u041b\u0435\u043d\u0442\u044b \u2014 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0441\u0442\u0430\u0442\u0443\u0441\u0430</b>\n\n" + "\n".join(lines)
 
 
 def in_quiet_hours(now_msk):
@@ -594,6 +649,9 @@ def main():
         save_history(history)
         return 0
 
+    n_labels = collect_labels(state, history)
+    state["last_run"]["labels_collected"] = n_labels
+
     # Докладываем по ФРОНТУ, а не по уровню: сломанная лента должна крикнуть
     # один раз, а не ныть пять раз в день.
     prev = state.get("feed_health", {})
@@ -613,12 +671,23 @@ def main():
         return 0
 
     queue.sort(key=lambda x: PRIORITY_RANK.get(x.get("priority", "low"), 2))
-    stamp = now_msk.strftime("%d %b, %H:%M MSK")
-    header = f"<b>\U0001f4dc Filings \u2014 сигнал</b> \u2014 {stamp}\n\n"
-    blocks = [render(c, i) for i, c in enumerate(queue, 1)]
-    n = tg_send_chunks(blocks, header)
+    # Одно сообщение = один хук. Telegram привязывает ответ к message_id,
+    # а не к «пункту 2 из пяти» — иначе метку не к чему прицепить.
+    msg_map = state.get("msg_map", {})
+    for i, c in enumerate(queue, 1):
+        mid = tg_send(render(c, i))
+        if mid:
+            msg_map[str(mid)] = {
+                "link": c["link"],
+                "company": c.get("company"),
+                "priority": c.get("priority"),
+                "stage": c.get("stage"),
+            }
+        if i < len(queue):
+            time.sleep(1.0)
+    state["msg_map"] = dict(list(msg_map.items())[-MSG_MAP_KEEP:])
     highs = sum(1 for c in queue if c.get("priority") == "high")
-    print(f"Sent {len(queue)} item(s) ({highs} high) in {n} message(s).")
+    print(f"Sent {len(queue)} item(s) ({highs} high), map size {len(state['msg_map'])}.")
 
     state["pending"] = []
     state["seen"] = list(seen)
