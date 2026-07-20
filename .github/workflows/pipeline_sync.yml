@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   sync:
@@ -24,11 +25,13 @@ jobs:
         with:
           python-version: '3.11'
       - name: Run pipeline sync
+        id: sync
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python pipeline_sync.py
       - name: Commit pipeline + state
         run: |
@@ -44,3 +47,14 @@ jobs:
             echo "retry $i"; sleep $((RANDOM % 10 + 5))
           done
           echo "push failed after 8 retries"; exit 1
+      - name: Trigger account watch if new leads appeared
+        if: steps.sync.outputs.new_leads != '' && steps.sync.outputs.new_leads != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "New leads this run: ${{ steps.sync.outputs.new_leads }} - dispatching account_watch now instead of waiting for its own schedule"
+          curl -s -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/account_watch.yml/dispatches" \
+            -d '{"ref":"main"}'

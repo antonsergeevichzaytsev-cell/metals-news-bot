@@ -99,7 +99,12 @@ def company_name_guess(domain):
 
 def watch_targets(pipeline, overrides):
     """Живые direct_outreach лиды с доменом. Мёртвые не следим -
-    решение закрыть канал уже принято, новостной шум по нему не нужен."""
+    решение закрыть канал уже принято, новостной шум по нему не нужен.
+
+    Приоритет имени: company_name из лида (DeepSeek, проставлено при заведении
+    pipeline_sync'ом) -> ручной override -> грубая эвристика из домена.
+    Первый источник закрывает проблему на входе — override нужен только
+    для старых лидов, заведённых до этого поля, или если DeepSeek ошибся."""
     targets = []
     for lead in pipeline.get("leads", []):
         if lead.get("status") in DEAD_STATUSES:
@@ -109,7 +114,7 @@ def watch_targets(pipeline, overrides):
         domain = lead.get("to_domain")
         if not domain:
             continue
-        name = overrides.get(domain) or company_name_guess(domain)
+        name = lead.get("company_name") or overrides.get(domain) or company_name_guess(domain)
         targets.append({"lead_id": lead["id"], "domain": domain,
                          "name": name, "topic": lead.get("topic", "")})
     return targets

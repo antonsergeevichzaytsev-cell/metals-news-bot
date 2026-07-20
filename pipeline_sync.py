@@ -11,6 +11,7 @@ GMAIL_USER = os.environ["GMAIL_USER"]
 GMAIL_APP_PASSWORD = os.environ["GMAIL_APP_PASSWORD"]
 TG_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 TG_CHAT = os.environ["TELEGRAM_CHAT_ID"]
+DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "")  # опционально: без него — грубая эвристика имени
 
 PIPELINE_PATH = "pipeline.json"
 OUTREACH_DOMAINS_PATH = "outreach_domains.txt"
@@ -148,6 +149,59 @@ def extract_email(addr):
 
 def domain_of(addr):
     return addr.split("@", 1)[1].lower() if "@" in addr else ""
+
+
+DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
+
+COMPANY_NAME_SYS_PROMPT = (
+    "Given an email domain and an email subject line, output the real-world company "
+    "or organisation name as it would appear in a Google News search — the way press "
+    "and industry outlets actually write it, not a literal transcription of the domain. "
+    "Prefer the name in its most common public form; keep Cyrillic names in Cyrillic "
+    "if the company is Russian/CIS, keep Latin names in Latin otherwise. "
+    "Reply ONLY with valid JSON: {\"name\": str}. If you cannot confidently identify "
+    "a company (e.g. domain looks like a personal or generic mailbox), reply {\"name\": \"\"}."
+)
+
+
+def guess_company_name_crude(domain):
+    """Тот же грубый фоллбэк, что в account_watch.py — держим синхронно вручную,
+    это ~3 строки, не стоит городить общий модуль ради них."""
+    root = domain.split(".")[0]
+    root = re.sub(r"[-_]", " ", root)
+    return root.strip().title()
+
+
+def guess_company_name(domain, subject):
+    """Вызывается РЕДКО — только при заведении нового лида, не на каждый синк.
+    Если DeepSeek недоступен или не уверен — падаем на грубую эвристику,
+    никогда не блокируем создание лида из-за этого вызова."""
+    if not DEEPSEEK_KEY:
+        return guess_company_name_crude(domain)
+    payload = {
+        "model": "deepseek-chat",
+        "messages": [
+            {"role": "system", "content": COMPANY_NAME_SYS_PROMPT},
+            {"role": "user", "content": f"DOMAIN: {domain}\nSUBJECT: {subject[:150]}"},
+        ],
+        "temperature": 0.1,
+        "max_tokens": 60,
+        "response_format": {"type": "json_object"},
+    }
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        DEEPSEEK_URL, data=data,
+        headers={"Authorization": f"Bearer {DEEPSEEK_KEY}", "Content-Type": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            resp = json.loads(r.read().decode("utf-8"))
+        verdict = json.loads(resp["choices"][0]["message"]["content"])
+        name = (verdict.get("name") or "").strip()
+        return name if name else guess_company_name_crude(domain)
+    except Exception as e:
+        print(f"  ! company name guess failed for {domain}: {e}", file=sys.stderr)
+        return guess_company_name_crude(domain)
 
 
 def domain_matches(sender_domain, domains):
@@ -346,6 +400,7 @@ def process_sent(pipeline, msgs, seen):
                                 "touches": lead["touches"], "was": was})
             else:
                 root = re.sub(r"[^a-z0-9]", "", d.split(".")[0])[:20] or "x"
+                company_name = guess_company_name(d, subject)
                 lead = {
                     "id": f"outreach_auto_{root}",
                     "channel": "direct_outreach",
@@ -358,6 +413,7 @@ def process_sent(pipeline, msgs, seen):
                     "silence_days": 0,
                     "to_domain": d,
                     "to_addr": addr,
+                    "company_name": company_name,
                     "touches": 1,
                     "next_action": f"Касание 1/{CADENCE_MAX_TOUCHES}. Следующее через {CADENCE_FOLLOWUP_DAYS} дн, потом dead.",
                     "notes": f"Авто-заведён из SENT {today}. Кому: {addr}",
@@ -692,6 +748,17 @@ def main():
     print(f"Done. Real replies: {len(new_replies)}, new contacts: {len(new_other)}, "
           f"auto suppressed: {len(auto_notifications)}, leads created: {len(created)}, "
           f"touched: {len(touched)}, drafts: {len(drafts)}, dispatches: {len(new_dispatches)}")
+
+    # Сигнал воркфлоу: появились ли новые лиды в этом прогоне. account_watch
+    # бежит по расписанию (13:15/17:15 MSK) — без этого свежий лид попадёт
+    # под дозор только на следующий плановый прогон, а не сразу.
+    gh_output = os.environ.get("GITHUB_OUTPUT")
+    if gh_output:
+        try:
+            with open(gh_output, "a") as f:
+                f.write(f"new_leads={len(created)}\n")
+        except Exception as e:
+            print(f"  ! could not write GITHUB_OUTPUT: {e}", file=sys.stderr)
 
 
 if __name__ == "__main__":
