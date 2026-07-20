@@ -154,6 +154,32 @@
       "hook": "Свежий NI 43-101: проверить CapEx и FEL до инвестрешения.",
       "priority": "low",
       "ts": "2026-07-20T15:17:25.432683+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/20/3330132/0/en/Eldorado-Gold-Announces-Key-Milestone-First-Ore-Crushed-at-Skouries.html",
+      "title": "Eldorado Gold Announces Key Milestone: First Ore Crushed at Skouries",
+      "stage": "commissioning",
+      "signal": "первая руда на Skouries",
+      "company": "Eldorado Gold",
+      "project": "Skouries",
+      "region": "Greece",
+      "why": "Запуск дробилки, выход на концентрат в Q3 2026.",
+      "hook": "Owner-side контроль пуска: не дать ramp-up съесть маржу.",
+      "priority": "low",
+      "ts": "2026-07-20T22:54:02.146157+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/305877/Namibia-Critical-Metals-Launches-Next-Phase-of-Lofdal-Definitive-Feasibility-Study-Including-Further-Value-Addition-in-Namibia",
+      "title": "Namibia Critical Metals Launches Next Phase of Lofdal Definitive Feasibility Study Including Further Value Addition in Namibia",
+      "stage": "study",
+      "signal": "DFS продолжается",
+      "company": "Namibia Critical Metals Inc.",
+      "project": "Lofdal Heavy Rare Earth Project",
+      "region": "Namibia",
+      "why": "DFS с бюджетом C$11 млн, требуется контроль затрат и FEL.",
+      "hook": "Owner-side контроль FEL и CapEx: не дать DFS раздуть бюджет.",
+      "priority": "medium",
+      "ts": "2026-07-20T22:54:02.146157+00:00"
     }
   ],
   "skipped": [
@@ -533,6 +559,20 @@
       "title": "Eramet and the Gabonese Republic sign a structured memorandum of understanding to sustainably transform the manganese value chain ",
       "link": "https://www.globenewswire.com/news-release/2026/07/20/3330016/0/en/Eramet-and-the-Gabonese-Republic-sign-a-structured-memorandum-of-understanding-to-sustainably-transform-the-manganese-value-chain-in-Gabon.html",
       "reason": "меморандум",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T22:54:02.146157+00:00",
+      "title": "Aurelius Announces Closing of Debt Financing",
+      "link": "https://www.newsfilecorp.com/release/305839/Aurelius-Announces-Closing-of-Debt-Financing",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T22:54:02.146157+00:00",
+      "title": "Western Copper and Gold Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/305860/Western-Copper-and-Gold-Provides-Corporate-Update",
+      "reason": "корпоративное обновление",
       "orbit": false
     }
   ],
