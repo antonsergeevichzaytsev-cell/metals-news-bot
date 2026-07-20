@@ -437,6 +437,14 @@
       "link": "https://www.newsfilecorp.com/release/305623/F4-Uranium-Confirms-Termination-of-Hearty-Bay-Option-Agreement-by-Traction-Uranium",
       "reason": "отказ от опциона",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-20T08:21:05.766953+00:00",
+      "title": "Clearly Defined Anomaly Interpreted by Makenita Resources Inc on the 'Sisson West Tungsten Project' Directly Bordering the Sisson ",
+      "link": "https://www.newsfilecorp.com/release/305749/Clearly-Defined-Anomaly-Interpreted-by-Makenita-Resources-Inc-on-the-Sisson-West-Tungsten-Project-Directly-Bordering-the-Sisson-Tungsten-Deposit-in-New-Brunswick",
+      "reason": "буровые пробы",
+      "orbit": false
     }
-  ]
+  ],
+  "labels": []
 }
