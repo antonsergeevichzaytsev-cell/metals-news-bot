@@ -198,42 +198,48 @@
       "channel": "job_application",
       "type": "fulltime_opportunity",
       "topic": "Sberbank Project Manager AI interview",
-      "status": "ai_interview_active",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-06",
       "last_activity": "2026-06-06",
       "silence_days": 44,
       "next_action": "Complete AI interview",
       "notes": "Received 6 Jun 18:18. Auto-notification from hrplatform@ on 8 Jun reclassified as AUTO by pipeline_sync v2 - status reverted.",
-      "touches": 1
+      "touches": 1,
+      "closed_date": "2026-07-20",
+      "closed_reason": "Закрыто решением Антона 20.07.26 — собственная заметка бота уже фиксировала ложный сигнал (auto-notification от hrplatform@), 44 дня тишины подтверждают неактуальность."
     },
     {
       "id": "job_rt_inzhiniring_udokan",
       "channel": "job_application",
       "type": "fulltime_opportunity",
       "topic": "RT-Inzhiniring Udokan Construction Director",
-      "status": "submitted",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-05-29",
       "last_activity": "2026-05-29",
       "silence_days": 52,
       "next_action": "Follow up after 14 days",
       "notes": "Two positions submitted 29 May",
-      "touches": 1
+      "touches": 1,
+      "closed_date": "2026-07-20",
+      "closed_reason": "Закрыто решением Антона 20.07.26 — 52 дня тишины после подачи, follow-up просрочен, неактуально."
     },
     {
       "id": "job_hh_unread_5",
       "channel": "job_application",
       "type": "fulltime_opportunity",
       "topic": "hh.ru 5 unread employer messages",
-      "status": "needs_review",
+      "status": "dead",
       "value_usd": null,
       "first_contact": "2026-06-07",
       "last_activity": "2026-06-07",
       "silence_days": 43,
       "next_action": "Open hh.ru review messages",
       "notes": "5 unread 2 confirmed responses",
-      "touches": 1
+      "touches": 1,
+      "closed_date": "2026-07-20",
+      "closed_reason": "Закрыто решением Антона 20.07.26 — запись устарела (внутренние сообщения hh.ru, не email), ничего не найдено в почте за 43 дня."
     },
     {
       "id": "outreach_ibaas_paper",
@@ -426,6 +432,22 @@
       "touches": 1,
       "next_action": "Касание 1/3. Следующее через 4-7 дн, потом dead.",
       "notes": "Авто-заведён из SENT 2026-07-20. Кому: natalya.plokhikh@uzcopper.uz"
+    },
+    {
+      "id": "job_suek_kovdor",
+      "channel": "job_application",
+      "type": "fulltime_opportunity",
+      "topic": "СУЭК — Руководитель ОП Ковдор",
+      "status": "dead",
+      "value_usd": null,
+      "first_contact": "2026-06-18",
+      "last_activity": "2026-07-10",
+      "silence_days": 10,
+      "closed_date": "2026-07-20",
+      "closed_reason": "Закрыто решением Антона 20.07.26 — 3 follow-up (18.06, 24.06, 10.07), последний ответ Марии Кудрявцевой 24.06 \"жду обратную связь от руководителей\", далее тишина 10 дней. Решено не продолжать.",
+      "notes": "Не был в трекере ранее — переписка шла мимо pipeline_sync (job_application не покрывается ботом). Добавлен задним числом при разборе job-track 20.07, сразу закрыт.",
+      "touches": 3,
+      "next_action": "none — closed"
     }
   ],
   "cadence_rule": {
