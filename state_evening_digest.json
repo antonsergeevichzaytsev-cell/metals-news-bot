@@ -1,0 +1,140 @@
+{
+  "day_start_snapshot": {
+    "glg_5191288": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-05-23"
+    },
+    "atheneum_agreement": {
+      "status": "active_no_dispatch",
+      "touches": 1,
+      "last_activity": "2026-06-15"
+    },
+    "outreach_ega_ghalib": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-06-05"
+    },
+    "outreach_aluminium_conf_sophia": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-06-11"
+    },
+    "outreach_cwa_caline": {
+      "status": "dead",
+      "touches": 2,
+      "last_activity": "2026-06-14"
+    },
+    "outreach_behre_dolbear": {
+      "status": "dead",
+      "touches": 2,
+      "last_activity": "2026-06-14"
+    },
+    "outreach_fti_sara": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-06-06"
+    },
+    "outreach_jtb_boyd": {
+      "status": "dead",
+      "touches": 2,
+      "last_activity": "2026-06-15"
+    },
+    "outreach_cru_form": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-06-06"
+    },
+    "outreach_dentons_rola": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-06-06"
+    },
+    "outreach_expert_institute": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-06-06"
+    },
+    "outreach_ims_legal": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-06-06"
+    },
+    "job_sberbank_ai_interview": {
+      "status": "ai_interview_active",
+      "touches": 1,
+      "last_activity": "2026-06-06"
+    },
+    "job_rt_inzhiniring_udokan": {
+      "status": "submitted",
+      "touches": 1,
+      "last_activity": "2026-05-29"
+    },
+    "job_hh_unread_5": {
+      "status": "needs_review",
+      "touches": 1,
+      "last_activity": "2026-06-07"
+    },
+    "outreach_ibaas_paper": {
+      "status": "dead",
+      "touches": 1,
+      "last_activity": "2026-06-08"
+    },
+    "outreach_auto_steppegold": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_solidcoreresources": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_talcos": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_azeraluminium": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_etialuminyum": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_silvercorp": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_kumtor": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_seligdar": {
+      "status": "sent_no_reply",
+      "touches": 7,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_tks": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-17"
+    },
+    "outreach_auto_districtmetals": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-20"
+    },
+    "outreach_auto_uzcopper": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-07-20"
+    }
+  },
+  "day_start_date": "2026-07-20"
+}
