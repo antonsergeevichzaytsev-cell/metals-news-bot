@@ -1,0 +1,14 @@
+{
+  "_comment": "domain -> company name used in the Google News search query. Only needed when company_name_guess() in account_watch.py would produce a bad query (merged words, wrong casing, non-Latin brand). Edit this file, not the code.",
+  "steppegold.com": "Steppe Gold",
+  "solidcore-resources.kz": "Solidcore Resources",
+  "talco-s.tj": "ТАЛКО",
+  "azeraluminium.com": "Azerbaijan Aluminium",
+  "etialuminyum.com": "Eti Aluminyum",
+  "silvercorp.ca": "Silvercorp Metals",
+  "kumtor.kg": "Kumtor Gold",
+  "seligdar.ru": "Селигдар",
+  "tks.kz": "ТОО ТКС Шалкия",
+  "districtmetals.com": "District Metals",
+  "uzcopper.uz": "Uzbekistan Copper"
+}
