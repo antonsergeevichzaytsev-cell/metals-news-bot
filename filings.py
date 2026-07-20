@@ -188,6 +188,7 @@ def save_history(history):
     history["items"] = history["items"][-400:]
     sk_cutoff = (datetime.now(timezone.utc) - timedelta(days=SKIPPED_RETENTION_DAYS)).isoformat()
     history["skipped"] = [it for it in history.get("skipped", []) if it.get("ts", "") >= sk_cutoff][-500:]
+    history["prefilter_dropped"] = [it for it in history.get("prefilter_dropped", []) if it.get("ts", "") >= sk_cutoff][-300:]
     # Метки не чистим по времени: это самое ценное, что есть у бота.
     history["labels"] = history.get("labels", [])[-1000:]
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
@@ -559,12 +560,27 @@ def main():
     print(f"Fresh & unseen: {len(fresh)}")
 
     candidates = []
+    n_prefilter_dropped = 0
     for it in fresh:
         if prefilter(it["title"], it["desc"]):
             candidates.append(it)
         else:
             seen.add(it["hash"])
-    print(f"After noise prefilter: {len(candidates)} (dropped {len(fresh) - len(candidates)} free)")
+            n_prefilter_dropped += 1
+            # Regex режет ДО DeepSeek — значит его ошибка не попадает ни в
+            # candidates, ни в history["skipped"] (та ветка — только отказы модели).
+            # Без этого лога слепая зона prefilter не проверяема вообще.
+            # Сэмплируем каждый 5-й, а не все: полный список раздует историю
+            # без выигрыша — паттерн виден и по выборке.
+            if n_prefilter_dropped % 5 == 1:
+                matched = next((w for w in NOISE_WORDS if re.search(w, it["title"], re.IGNORECASE)), "?")
+                history.setdefault("prefilter_dropped", []).append({
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                    "title": it["title"][:130],
+                    "matched_noise_word": matched,
+                    "orbit": bool(any_hit(f"{it['title']} {it['desc']}", ORBIT_RE)),
+                })
+    print(f"After noise prefilter: {len(candidates)} (dropped {n_prefilter_dropped} free)")
 
     # Орбита первой: если бюджет прогона кончится, он кончится на юниоре
     # из Аризоны, а не на монгольском активе.

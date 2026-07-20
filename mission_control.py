@@ -228,13 +228,29 @@ def fetch_stooq(symbol, timeout=10):
     return float(parts[6]), None
 
 
+# Диапазоны за последние годы с запасом на волатильность, не биржевой лимит.
+# Смысл не «поймать реальный ценовой шок», а «отличить реальную цену от мусора»:
+# смена единиц (за фунт вместо за тонну), битый парсинг, зависший кэш источника —
+# всё это выглядит как нормальный float, просто не в этом диапазоне.
+PRICE_SANITY = {"Al": (1500, 5000), "Cu": (5000, 15000)}
+
+
+def is_plausible_price(sym, price):
+    lo, hi = PRICE_SANITY.get(sym, (0, float("inf")))
+    return lo <= price <= hi
+
+
 def fetch_prices():
     prices = {}
     for sym, yf, sq, mult in (("Al", "ALI=F", "ali.f", 1.0), ("Cu", "HG=F", "hg.f", 2204.62)):
         for name, fn, arg in (("yahoo", fetch_yahoo, yf), ("stooq", fetch_stooq, sq)):
             try:
                 p, c = fn(arg)
-                prices[sym] = (p * mult, c, "CME" if name == "yahoo" else "stooq")
+                val = p * mult
+                if not is_plausible_price(sym, val):
+                    print(f"  ! {name} {arg}: {val:.0f} outside sanity range for {sym} - treating as bad data", file=sys.stderr)
+                    continue
+                prices[sym] = (val, c, "CME" if name == "yahoo" else "stooq")
                 break
             except Exception as e:
                 print(f"  ! {name} {arg}: {e}", file=sys.stderr)

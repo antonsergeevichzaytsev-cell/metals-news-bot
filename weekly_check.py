@@ -14,6 +14,11 @@ from datetime import datetime, timezone, timedelta
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
+GH_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+GH_REPO = os.environ.get("GITHUB_REPOSITORY", "")
+# ^ сторож сам шлёт через Telegram. Если протухнет TELEGRAM_BOT_TOKEN —
+#   сторож замолчит вместе со всеми, и никто не узнает, что все замолчали.
+#   GitHub Issue — единственный канал, который не зависит от того, что проверяем.
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PIPELINE_PATH = os.path.join(ROOT, "pipeline.json")
@@ -201,6 +206,60 @@ def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def telegram_is_alive():
+    """Лёгкая проверка ДО основной работы: жив ли бот вообще, отдельно от того,
+    дойдёт ли конкретное сообщение. getMe не требует chat_id и не шлёт ничего —
+    это про токен, не про доставку."""
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/getMe"
+    try:
+        with urllib.request.urlopen(url, timeout=10) as r:
+            resp = json.loads(r.read().decode("utf-8"))
+        return bool(resp.get("ok"))
+    except Exception as e:
+        print(f"Telegram getMe failed: {e}", file=sys.stderr)
+        return False
+
+
+def github_issue_alert(title, body):
+    """Единственный запасной канал, не зависящий от Telegram.
+    Ищет открытый issue с тем же title (по метке) — не плодит дубликаты
+    при повторных недельных сбоях, комментирует существующий вместо нового."""
+    if not GH_TOKEN or not GH_REPO:
+        print("No GITHUB_TOKEN/GITHUB_REPOSITORY - cannot raise GitHub Issue fallback", file=sys.stderr)
+        return False
+    api = f"https://api.github.com/repos/{GH_REPO}/issues"
+    headers = {
+        "Authorization": f"Bearer {GH_TOKEN}",
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json",
+    }
+
+    def _req(method, url, payload=None):
+        data = json.dumps(payload).encode() if payload is not None else None
+        req = urllib.request.Request(url, data=data, headers=headers, method=method)
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.loads(r.read().decode("utf-8"))
+
+    try:
+        existing = _req("GET", api + "?state=open&labels=bot-alert&per_page=20")
+        match = next((i for i in existing if i.get("title") == title), None)
+        if match:
+            _req("POST", match["comments_url"], {"body": body})
+            print(f"Commented on existing issue #{match['number']}")
+            return True
+        try:
+            created = _req("POST", api, {"title": title, "body": body, "labels": ["bot-alert"]})
+        except Exception:
+            # Лейбл не смог примениться (не существует, нет прав) — это не повод
+            # терять единственный запасной канал. Issue важнее ярлыка на нём.
+            created = _req("POST", api, {"title": title, "body": body})
+        print(f"Opened issue #{created.get('number')}")
+        return True
+    except Exception as e:
+        print(f"GitHub Issue fallback failed: {e}", file=sys.stderr)
+        return False
+
+
 def tg_send(text):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {
@@ -222,6 +281,20 @@ def tg_send(text):
 
 def main():
     now = datetime.now(MSK)
+
+    # Первым делом — жив ли сам канал оповещений. Если нет, дальше нет смысла
+    # готовить сообщение, которое некуда будет доставить: сразу бьём тревогу
+    # там, куда точно дойдёт.
+    if not telegram_is_alive():
+        github_issue_alert(
+            "🔴 Telegram bot unreachable — weekly_check cannot report",
+            f"getMe failed at {now.isoformat()}. TELEGRAM_BOT_TOKEN may be revoked/expired, "
+            f"or the bot was blocked/deleted. Every bot in this repo posts through this same "
+            f"token — if this is broken, all of them are silently failing to notify, not just "
+            f"weekly_check. Check the token in Telegram (@BotFather → /mybots) and the repo secret."
+        )
+        print("Telegram unreachable - raised GitHub Issue instead, skipping normal report", file=sys.stderr)
+        return 1
 
     days_since_start = (now.date() - Y1_START.date()).days
     week_in_y1 = 0 if days_since_start < 0 else (days_since_start // 7) + 1
@@ -284,8 +357,19 @@ def main():
 
     out += f"<i>\U0001f4c5 До конца Y1 (29 мая 2027): {days_to_end} дней</i>"
 
-    tg_send(out)
-    print(f"Sent weekly check: week {week_in_y1}/{Y1_TOTAL_WEEKS}, days_to_end={days_to_end}")
+    try:
+        tg_send(out)
+        print(f"Sent weekly check: week {week_in_y1}/{Y1_TOTAL_WEEKS}, days_to_end={days_to_end}")
+    except Exception as e:
+        # getMe прошёл (бот жив), но конкретная отправка упала — например,
+        # чат заблокировал бота или CHAT_ID больше не тот. Раз добрались
+        # досюда, сторож уже посчитал реальные тревоги — не терять их молча.
+        github_issue_alert(
+            "🔴 Telegram sendMessage failed — weekly_check report undelivered",
+            f"getMe succeeded but sendMessage raised: {e}\n\n"
+            f"The report was generated but never reached Telegram. Full text below:\n\n{out}"
+        )
+        print(f"tg_send failed, raised GitHub Issue with full report as fallback: {e}", file=sys.stderr)
     return 0
 
 
