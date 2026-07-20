@@ -64,6 +64,14 @@
 - **Слепота хуже поломки.** Лента, умершая тихо, выглядела как лента без новостей: тишина + зелёный прогон. Теперь fetch называет причину, алерт по фронту.
 - **Мой собственный промах (17.07):** заявил, что GlobeNewswire рубит раннер по IP (403). **Неверно** — все 11 лент `ok`. Диагноз был построен на кэшированном чтении CDN. Урок: сначала приборы, потом версии.
 
+## Outreach: District Metals Corp — отправлено 20.07.26
+
+Хук из filings-scan: PEA Viken (Швеция, урановое месторождение — крупнейшее неразработанное в мире, не типовой полиметаллик). CEO Garrett Ainsworth (специалист по урану, Athabasca Basin, Triple R с NexGen/Alpha Minerals). Верифицированного личного email не нашлось — только `info@districtmetals.com` (generic inbox, по Стандарту это canonically низкий шанс дойти до адресата лично).
+
+**Отправлено:** 20.07.26, Gmail draft → sent, с приложением CV. Предложение — DD Lite (document review + risk map), не DD Standard: PEA-стадия оправдывает суженный scope, не скидку.
+
+**Не зафиксировано в `outreach_tracker`** — его физическое расположение не нашлось ни в `metals-news-bot`, ни в `docs` репо (токен туда не даёт доступа к `Ai-office`/`dd-engine`, где он может быть). Antон should confirm location so this touch gets logged centrally; до этого — только здесь.
+
 ## pipeline_sync / inbox молчали с 17.07 (диагноз 20.07, с токеном) — НЕ Gmail, а сам GitHub-планировщик
 
 **Симптом:** Mission Control 20.07 показал "39 дней тишины" по лиду IBAAS/Нанди — число застыло. `recompute_silence_days` в `pipeline_sync.py` реализован верно, но не запускался: последний авто-коммит `pipeline_sync` — 17.07 15:55 UTC, `inbox` — 17.07 16:05 UTC. Три дня тишины, включая рабочий понедельник 20.07.
