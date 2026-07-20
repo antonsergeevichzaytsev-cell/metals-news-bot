@@ -141,6 +141,19 @@
       "hook": "Owner-side review PEA: не дать CapEx уйти в космос до финального решения.",
       "priority": "medium",
       "ts": "2026-07-17T22:42:48.017988+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/305748/Goldgroup-Files-Updated-Technical-Report",
+      "title": "Goldgroup Files Updated Technical Report",
+      "stage": "study",
+      "signal": "технический отчет",
+      "company": "Goldgroup Mining Inc.",
+      "project": "San Francisco Project",
+      "region": "Mexico",
+      "why": "Обновлен технический отчет по проекту, возможны изменения в оценке.",
+      "hook": "Свежий NI 43-101: проверить CapEx и FEL до инвестрешения.",
+      "priority": "low",
+      "ts": "2026-07-20T15:17:25.432683+00:00"
     }
   ],
   "skipped": [
@@ -442,6 +455,69 @@
       "ts": "2026-07-20T08:21:05.766953+00:00",
       "title": "Clearly Defined Anomaly Interpreted by Makenita Resources Inc on the 'Sisson West Tungsten Project' Directly Bordering the Sisson ",
       "link": "https://www.newsfilecorp.com/release/305749/Clearly-Defined-Anomaly-Interpreted-by-Makenita-Resources-Inc-on-the-Sisson-West-Tungsten-Project-Directly-Bordering-the-Sisson-Tungsten-Deposit-in-New-Brunswick",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "Cerrado Gold Announces 100% Repurchase of Stream Agreements Over Its Minera Don Nicolas and Lagoa Salgada Projects Held by Sprott",
+      "link": "https://www.globenewswire.com/news-release/2026/07/20/3329535/0/en/Cerrado-Gold-Announces-100-Repurchase-of-Stream-Agreements-Over-Its-Minera-Don-Nicolas-and-Lagoa-Salgada-Projects-Held-by-Sprott.html",
+      "reason": "финансовая сделка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "Evolve Royalties Secures Revolving Credit Facility for Up to US$75 Million",
+      "link": "https://www.globenewswire.com/news-release/2026/07/20/3329657/0/en/Evolve-Royalties-Secures-Revolving-Credit-Facility-for-Up-to-US-75-Million.html",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "QIMC Reports Record 24.3% Clean Natural Hydrogen at Bennett Hill DDH-26-04 and Begins Technical Evaluation of Pilot-Scale Developm",
+      "link": "https://www.newsfilecorp.com/release/305760/QIMC-Reports-Record-24.3-Clean-Natural-Hydrogen-at-Bennett-Hill-DDH2604-and-Begins-Technical-Evaluation-of-PilotScale-Development-Pathway-and-Clean-Energy-Generation",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "Tajiri to Commence IP Survey at the Yono Gold Project to Follow up on Trench Results of 32m at 1.1g/t Au and 19m at 4.6g/t Au",
+      "link": "https://www.newsfilecorp.com/release/305738/Tajiri-to-Commence-IP-Survey-at-the-Yono-Gold-Project-to-Follow-up-on-Trench-Results-of-32m-at-1.1gt-Au-and-19m-at-4.6gt-Au",
+      "reason": "геофизическая съемка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "Thistle Resources Uncovers High Grade Stibnite in New 2026 Trench Program at Its Brunswick Antimony Project",
+      "link": "https://www.newsfilecorp.com/release/305742/Thistle-Resources-Uncovers-High-Grade-Stibnite-in-New-2026-Trench-Program-at-Its-Brunswick-Antimony-Project",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "Apex Resources Grants Options",
+      "link": "https://www.newsfilecorp.com/release/305763/Apex-Resources-Grants-Options",
+      "reason": "опционы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "Graphene Manufacturing Group to Host Live Fireside Chat on Scaling Production and Expanding Global Markets",
+      "link": "https://www.newsfilecorp.com/release/305761/Graphene-Manufacturing-Group-to-Host-Live-Fireside-Chat-on-Scaling-Production-and-Expanding-Global-Markets",
+      "reason": "конференция",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "Orestone Advances Exploration at Tom East and Kelly Gold Zones on the Francisca Gold Silver Property in Salta Province Argentina",
+      "link": "https://www.newsfilecorp.com/release/305506/Orestone-Advances-Exploration-at-Tom-East-and-Kelly-Gold-Zones-on-the-Francisca-Gold-Silver-Property-in-Salta-Province-Argentina",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-20T15:17:25.432683+00:00",
+      "title": "Awalé Hits 43.7 g/t Gold Equivalent Below the BBM Open Pit with Initial Deeper Holes Pointing to Underground Growth",
+      "link": "https://www.newsfilecorp.com/release/305733/Awal-Hits-43.7-gt-Gold-Equivalent-Below-the-BBM-Open-Pit-with-Initial-Deeper-Holes-Pointing-to-Underground-Growth",
       "reason": "буровые пробы",
       "orbit": false
     }
