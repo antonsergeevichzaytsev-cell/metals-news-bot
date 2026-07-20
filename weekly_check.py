@@ -280,7 +280,7 @@ def main():
         out += f"\u2022 <b>{dt.strftime('%d.%m')}</b> ({tag}) — {label}\n"
     out += "\n"
 
-    out += "<b>Настоящий разбор:</b> воскресный Weekly Review по живым файлам (decisions_log / client_pipeline / outreach_tracker). Этот пинг — только напоминание.\n\n"
+    out += "<b>Настоящий разбор:</b> воскресный Weekly Review по живым файлам (pipeline.json — он же трекер лидов/outreach, decisions_log, client_pipeline). Этот пинг — только напоминание.\n\n"
 
     out += f"<i>\U0001f4c5 До конца Y1 (29 мая 2027): {days_to_end} дней</i>"
 
