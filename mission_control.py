@@ -97,6 +97,24 @@ CADENCE_EXPIRY_WINDOW = 7  # столько дней напоминаем зак
 # ^ у mission_control права contents:read, состояние "уже сказал" хранить негде.
 #   Поэтому окно, а не флаг: иначе лид долбит каждое утро вечно и сам становится зомби.
 
+PIPELINE_STALE_HOURS = 20
+# ^ pipeline_sync бежит каждые 30 мин Пн-Пт 7-15 UTC. 20ч перекрывает ночь и
+#   утро без ложных срабатываний, но ловит "коммит встал и молчит" за один день —
+#   ровно то, что произошло 17-20.07 и не было видно, пока не проверили руками.
+
+
+def pipeline_staleness_hours(pipeline):
+    """None если last_updated нет или битый — тогда staleness не проверяем,
+    а не выдаём произвольное число. Отсутствие метки — не то же самое, что 0ч."""
+    raw = pipeline.get("last_updated")
+    if not raw:
+        return None
+    try:
+        ts = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        return (datetime.now(timezone.utc) - ts).total_seconds() / 3600
+    except (ValueError, TypeError):
+        return None
+
 
 def is_dead(l):
     """Мёртв, если помечен мёртвым ИЛИ каденция исчерпана.
@@ -243,7 +261,10 @@ def deepseek_synthesize(context, max_tokens=900):
         "Ты — Chief of Staff Антона Зайцева. Утренний briefing на русском.\n\n"
         "Правила:\n- Никакой воды, никаких 'отличного утра' и преамбул\n- Только факты из переданного контекста, ничего не выдумывай\n- HTML теги Telegram: <b>, <i>, <code>, без других\n- Эмодзи только в заголовках секций\n- Максимум 2500 символов всего\n"
         "- Мёртвые лиды в контекст не попадают. Не додумывай их и не проси по ним follow-up.\n"
-        "- Полученный ответ, который лежит >7 дней (stale_replies) — ВСЕГДА первый пункт URGENT. "
+        "- Если pipeline_stale=true — ЭТО ПЕРВЫЙ пункт URGENT, перед всем остальным: "
+        "'⚠️ Pipeline не обновлялся {pipeline_stale_hours}ч — цифры ниже могут быть устаревшими. Проверь Actions.' "
+        "PIPELINE и остальные секции всё равно показывай как есть, но с этим предупреждением наверху.\n"
+        "- Полученный ответ, который лежит >7 дней (stale_replies) — ВСЕГДА первый пункт URGENT (после pipeline_stale, если он есть). "
         "Это не 'новый ответ', это деньги, которые гниют. Пиши, сколько дней лежит.\n"
         "- Каждый пункт URGENT — бинарное действие с глаголом. Не 'проработать', а 'ответить/отправить/закрыть'.\n\n"
         "Секции (в этом порядке):\n"
@@ -274,6 +295,8 @@ def format_fallback(context):
     lines = [f"🎯 <b>MISSION CONTROL — {context['weekday']} {context['date_str']}</b>", ""]
     lines.append("⚡ <b>URGENT</b>")
     n = 0
+    if context.get("pipeline_stale"):
+        lines.append(f"• ⚠️ Pipeline не обновлялся {context.get('pipeline_stale_hours')}ч — цифры ниже могут быть устаревшими. Проверь Actions."); n += 1
     for l in p["stale_replies"][:3]:
         lines.append(f"• ОТВЕТ ЛЕЖИТ {l.get('silence_days', 0)} ДН — прочитать и ответить: {esc(l.get('topic', ''))}"); n += 1
     for l in p["new_replies"][:3]:
@@ -338,6 +361,8 @@ def main():
     sm = compute_strategy_metrics(anton_state)
     news = top_news_overnight(history)
     phrase = get_phrase_of_day(anton_state)
+    stale_h = pipeline_staleness_hours(pipeline)
+    pipeline_stale = stale_h is not None and stale_h > PIPELINE_STALE_HOURS
     try: overnight = fetch_overnight_emails(OVERNIGHT_HOURS)
     except Exception as e:
         print(f"Gmail error: {e}", file=sys.stderr); overnight = []
@@ -366,6 +391,8 @@ def main():
         "signature_cases": anton_state.get("signature_cases", [])[:3],
         "icp_tier_1": anton_state.get("icp", {}).get("tier_1", ""),
         "constraints_note": "Russia-resident. Compliance filter at platforms. B2 English.",
+        "pipeline_stale": pipeline_stale,
+        "pipeline_stale_hours": round(stale_h) if stale_h is not None else None,
     }
     text = deepseek_synthesize(context)
     if not text:
