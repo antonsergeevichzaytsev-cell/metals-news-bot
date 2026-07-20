@@ -47,6 +47,17 @@ RESET_POINTS = [
     (datetime(2026, 9, 9, tzinfo=MSK),  "dispatch стабильно 5+/мес → план возврата к $250 на 2 платформах"),
 ]
 
+# Воркфлоу, которые коммитят в main через тот же concurrency-group
+# (repo-writes) и потому подвержены гонке push: два прогона стартуют близко
+# по времени, оба проходят git fetch до того, как другой запушил — и один
+# исчерпывает ретраи. Обнаружено 20.07 на filings (два прогона за 7 сек),
+# найдено вручную по письму GitHub, не автоматически. Список — файлы
+# workflow, не их "имена" (display name), т.к. API работает по filename.
+WRITE_WORKFLOW_FILES = [
+    "account_watch.yml", "digest.yml", "evening_digest.yml",
+    "filings.yml", "inbox.yml", "pipeline_sync.yml",
+]
+
 
 def load_json(path, default):
     if not os.path.exists(path):
@@ -93,6 +104,35 @@ def dispatch_stats(now, days=7):
         plats[r.get("platform", "?")] = plats.get(r.get("platform", "?"), 0) + 1
     return {"dispatch": len(by_kind["dispatch"]), "unknown": len(by_kind["unknown"]),
             "other": len(by_kind["other"]), "by_platform": plats}
+
+
+def push_conflict_stats(now, days=7):
+    """Считает failed-прогоны у write-воркфлоу за неделю — почти всегда это
+    гонка push (два прогона стартовали близко, кто-то не уложился в ретраи),
+    не логическая ошибка бота: сам код в каждом commit-шаге уже ретраит
+    8 раз. Обнаруживали такое раньше только вручную по письму от GitHub -
+    без этой проверки сторож о них не знал вообще.
+
+    Возвращает None если нет токена (тихо пропускаем секцию), иначе список
+    {workflow, failed_count} только для тех, где failed > 0 за период."""
+    if not GH_TOKEN or not GH_REPO:
+        return None
+    cutoff_iso = (now.astimezone(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    headers = {"Authorization": f"Bearer {GH_TOKEN}", "Accept": "application/vnd.github+json"}
+    out = []
+    for wf in WRITE_WORKFLOW_FILES:
+        url = (f"https://api.github.com/repos/{GH_REPO}/actions/workflows/{wf}/runs"
+               f"?status=failure&created=%3E{cutoff_iso}&per_page=20")
+        req = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                data = json.loads(r.read().decode("utf-8"))
+            n = data.get("total_count", 0)
+            if n > 0:
+                out.append({"workflow": wf, "failed": n})
+        except Exception as e:
+            print(f"  ! push_conflict_stats {wf}: {e}", file=sys.stderr)
+    return out
 
 
 def watchdog(now):
@@ -320,6 +360,16 @@ def main():
     if facts:
         out += "<i>" + esc(" \u00b7 ".join(facts)) + "</i>\n"
     out += "\n"
+
+    # --- Гонки push: находили раньше только вручную по письму от GitHub ---
+    pc = push_conflict_stats(now, 7)
+    if pc:
+        out += "<b>\u26a1 Гонки push за неделю</b>\n"
+        for r in pc:
+            out += f"\u2022 <code>{esc(r['workflow'])}</code>: {r['failed']} неудачных прогона\n"
+        out += "<i>Обычно это гонка commit-push между ботами, не логическая ошибка — данные, скорее всего, не потеряны (следующий прогон досылает). Если цифра растёт неделя к неделе — стоит развести расписания плотнее.</i>\n\n"
+    elif pc is not None:
+        out += "<b>\u26a1 Гонки push за неделю</b>\n\u2705 Без конфликтов\n\n"
 
     # --- ГЛАВНАЯ метрика: больше не вопрос, а число ---
     ds = dispatch_stats(now, 7)
