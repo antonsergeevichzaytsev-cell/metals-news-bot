@@ -75,14 +75,21 @@ def load_state():
             with open(STATE_PATH, encoding="utf-8") as f:
                 s = json.load(f)
                 s.setdefault("seen", [])
+                s.setdefault("hits", [])
                 return s
         except Exception:
             pass
-    return {"seen": []}
+    return {"seen": [], "hits": []}
 
 
 def save_state(state):
     state["seen"] = state["seen"][-1500:]
+    # hits — не только хэши, а компания+заголовок+дата: другие боты
+    # (evening_digest, mission_control) читают это, чтобы показать ПО КАКОЙ
+    # компании было движение, не только "account_watch жив". Retention
+    # короче, чем seen (7 дней хватает для дневного/недельного свода).
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
+    state["hits"] = [h for h in state.get("hits", []) if h.get("ts", "") >= cutoff][-200:]
     state["last_run"] = datetime.now(timezone.utc).isoformat()
     with open(STATE_PATH, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
@@ -247,6 +254,7 @@ def main():
 
     n_sent = 0
     n_errors = 0
+    hits = state.get("hits", [])
     for target in targets:
         url = build_query_url(target["name"])
         xml, status = fetch(url)
@@ -269,10 +277,19 @@ def main():
             mid = tg_send(render(target, it))
             if mid:
                 n_sent += 1
+                hits.append({
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                    "lead_id": target["lead_id"],
+                    "company": target["name"],
+                    "title": it["title"][:150],
+                    "link": it["link"],
+                    "src_domain": it["src_domain"],
+                })
             time.sleep(1.0)
         time.sleep(0.5)  # вежливая пауза между запросами к Google News
 
     state["seen"] = list(seen)
+    state["hits"] = hits
     state["last_run_targets"] = len(targets)
     state["last_run_sent"] = n_sent
     save_state(state)

@@ -136,6 +136,28 @@ def bot_liveness(now, pipeline):
     return out
 
 
+def account_watch_hits_today(now, hours=13):
+    """Хиты account_watch за последние N часов (по умолчанию — с утра,
+    примерно с начала рабочего дня до вечернего дайджеста). Без этого
+    evening_digest знал только «account_watch жив», не «по какой компании
+    было движение» — та же информация терялась между Telegram-сообщением
+    и сводкой дня."""
+    st = load_json(os.path.join(ROOT, "state_account_watch.json"), None)
+    if st is None:
+        return []
+    cutoff = now - timedelta(hours=hours)
+    out = []
+    for h in st.get("hits", []):
+        ts = h.get("ts", "")
+        try:
+            dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+        except (ValueError, TypeError):
+            continue
+        if dt >= cutoff:
+            out.append(h)
+    return out
+
+
 def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -157,12 +179,13 @@ def tg_send(text):
         return False
 
 
-def render(diff, liveness, now_msk):
+def render(diff, liveness, hits, now_msk):
     date_str = now_msk.strftime("%d %b")
     lines = [f"<b>\U0001f307 Итог дня</b> \u2014 {date_str}", ""]
 
     total_events = (len(diff["new_leads"]) + len(diff["new_replies"])
-                     + len(diff["newly_dead"]) + len(diff["touched_again"]))
+                     + len(diff["newly_dead"]) + len(diff["touched_again"])
+                     + len(hits))
 
     if diff["new_replies"]:
         lines.append("\U0001f525 <b>Ответили:</b>")
@@ -182,6 +205,14 @@ def render(diff, liveness, now_msk):
         lines.append(f"\u270d\ufe0f <b>Касаний отправлено: {len(diff['touched_again'])}</b>")
         for t in diff["touched_again"][:5]:
             lines.append(f"\u2022 {esc(t['topic'])}")
+        lines.append("")
+
+    if hits:
+        lines.append(f"\U0001f440 <b>Движение по счетам: {len(hits)}</b>")
+        for h in hits[:5]:
+            lines.append(f"\u2022 <b>{esc(h['company'])}</b> \u2014 {esc(h['title'][:70])}")
+        if len(hits) > 5:
+            lines.append(f"+{len(hits) - 5} ещё")
         lines.append("")
 
     if diff["newly_dead"]:
@@ -230,8 +261,9 @@ def main():
     # даже если это первый прогон нового календарного дня.
     diff = diff_leads(snap, snapshot_leads(pipeline), pipeline)
     liveness = bot_liveness(now_utc, pipeline)
+    hits = account_watch_hits_today(now_utc)
 
-    text = render(diff, liveness, now_msk)
+    text = render(diff, liveness, hits, now_msk)
     tg_send(text)
 
     # Снэпшот переезжает на СЕЙЧАС после каждой отправки - следующий прогон
@@ -240,7 +272,8 @@ def main():
     state["day_start_snapshot"] = snapshot_leads(pipeline)
     state["day_start_date"] = today_str
     save_state(state)
-    print(f"Sent evening digest: {sum(len(v) for v in diff.values())} total changes, "
+    print(f"Sent evening digest: {sum(len(v) for v in diff.values())} pipeline changes, "
+          f"{len(hits)} account_watch hit(s), "
           f"{len([b for b in liveness.values() if b != 'ok'])} bot(s) not reporting")
     return 0
 
