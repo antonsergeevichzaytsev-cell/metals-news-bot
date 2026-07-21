@@ -49,12 +49,26 @@ DIGEST_WINDOW_HOURS = 30
 
 # --- Канон голоса, дословно из /mnt/skills/user/linkedin/SKILL.md 21.07.26 ---
 LINKEDIN_VOICE_FACTS = (
-    "UMMC $550M CapEx program director / ~50 млрд руб, FEL 1-3. "
-    "RUSAL CapEx 1+ млрд руб (НЕ $350M), 7 patents (aluminium alloys). "
-    "Norilsk Nickel foundry-forge shop turnaround, 305 staff, 0 LTI. "
+    "UMMC $550M CapEx program director / ~50 млрд руб, FEL 1-3, gold-from-tailings greenfield. "
+    "RUSAL CapEx 1+ млрд руб (НЕ $350M), 7 patents (aluminium alloys), Head of Technology. "
+    "Norilsk Nickel foundry-forge shop turnaround, 305 staff, 0 LTI, $4.2M savings. "
     "RUSAL casting expansion 40 ktpa, 18% below industry benchmark. "
-    "Voice anchors: 'both seats — who decides and who carries it for three years' / "
-    "'red flags are still fixable'. Never opens with 'Меня зовут Антон Зайцев, 16 лет...'."
+    "Never opens with 'Меня зовут Антон Зайцев, 16 лет...'."
+)
+
+# Примеры ТОНА, не готовые строки для копирования. Найдено 21.07: модель
+# вставляла 'Red flags are still fixable' буквально в пост про South32/Alcoa,
+# где речь вообще не шла о red flags — фраза сработала как чек-бокс, не как
+# мысль. Anchor описывает КАК он формулирует мысли этого типа, а не что
+# писать всегда. Если тема поста не про решения/риск-разделение — эти
+# анкоры вообще не должны появиться, ни в каком виде.
+VOICE_TONE_NOTE = (
+    "Two recurring THEMES in his voice (use only when the post is actually about that theme, "
+    "never as a decorative closing line): (a) distinguishing the person who decides from the "
+    "person who lives with the consequences for years — comes up when discussing accountability "
+    "or decision-making structure specifically; (b) technical/operational risk being addressable "
+    "if caught early in due diligence — comes up when discussing DD, risk assessment, or red "
+    "flags specifically. If today's topic is neither of those, don't reach for either theme."
 )
 
 LINKEDIN_RULES = (
@@ -65,10 +79,16 @@ LINKEDIN_RULES = (
     "- English only, first person.\n"
     "- No greetings. Never 'Great post / Thanks for sharing / Interesting perspective'.\n"
     "- First sentence is the hook: a sharp insight, counter-take, concrete number, or direct challenge.\n"
-    "- At least one of: a real metric, a case reference, a concrete consequence.\n"
     "- Banned words: insightful, fascinating, truly, incredible, game-changer, revolutionary.\n"
-    "- 3-5 short paragraphs: hook -> one idea -> case with a number -> takeaway/opinion. "
-    "No CTA-begging, no hashtag spam.\n"
+    "- 3-5 short paragraphs: hook -> develop the idea -> takeaway/opinion.\n"
+    "- A personal case reference (UMMC/RUSAL/Norilsk Nickel) is a BONUS, not a requirement. "
+    "Include one ONLY if it is genuinely, specifically relevant to this exact topic — same "
+    "commodity, same type of decision, or a directly comparable situation. A case that needs "
+    "'would have', 'this reminds me of', or any hedge to connect it to the topic is NOT genuinely "
+    "relevant — leave it out entirely rather than force it. A post with zero case references but "
+    "a sharp, well-argued opinion is a fully successful output.\n"
+    f"- {VOICE_TONE_NOTE}\n"
+    "- No CTA-begging, no hashtag spam.\n"
     "- Domain: mining, non-ferrous, aluminium, CapEx, FEL, turnaround, equipment, commodity markets. "
     "If the material doesn't genuinely fit, say so plainly instead of forcing a post.\n\n"
     f"FACTS (only use these, never invent numbers or cases): {LINKEDIN_VOICE_FACTS}"
