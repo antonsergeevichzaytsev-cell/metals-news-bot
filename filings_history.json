@@ -754,6 +754,12 @@
       "title": "Red Lake Gold Inc. Provides Corporate Update, Proposes Conditional Share Consolidation and Private Placement",
       "matched_noise_word": "private placement",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-21T19:00:50.056155+00:00",
+      "title": "Antioquia Gold Inc. Announces Appointment of New Auditor",
+      "matched_noise_word": "appoint\\w*",
+      "orbit": false
     }
   ]
 }
