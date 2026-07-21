@@ -740,6 +740,20 @@
       "link": "https://www.newsfilecorp.com/release/305989/Golden-Age-Exploration-Ltd.-Announces-Adoption-of-SemiAnnual-Reporting",
       "reason": "отчётность",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-21T22:00:50.199586+00:00",
+      "title": "Mogotes Metals Provides Update on Exercise of Rights",
+      "link": "https://www.newsfilecorp.com/release/305999/Mogotes-Metals-Provides-Update-on-Exercise-of-Rights",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T22:00:50.199586+00:00",
+      "title": "New Found Gold Continues to Deliver High-Grade Gold at Queensway",
+      "link": "https://www.newsfilecorp.com/release/306002/New-Found-Gold-Continues-to-Deliver-HighGrade-Gold-at-Queensway",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -771,6 +785,12 @@
     {
       "ts": "2026-07-21T20:17:08.439871+00:00",
       "title": "Critical One Energy Announces CDN$5,565,000 Flow-Through Private Placement",
+      "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T22:00:50.197549+00:00",
+      "title": "CleanTech Closes First Tranche of Non-Brokered Private Placement for Gross Proceeds of $433,033",
       "matched_noise_word": "private placement",
       "orbit": false
     }
