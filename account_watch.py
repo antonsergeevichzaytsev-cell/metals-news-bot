@@ -271,13 +271,25 @@ def tg_send(text):
         return None
 
 
+def truncate_at_word(s, max_len):
+    """Режет по границе слова, не посреди него. Топики уже приходят
+    обрезанными на 100 симв. из pipeline_sync.py (subject[:100]) — жёсткая
+    обрезка здесь поверх той обрезки давала слова типа 'topi' на конце,
+    как в реальном хите 21.07 ('...three topi'). Многоточие в конце
+    сигнализирует урезание явно, вместо тихого обрыва слова."""
+    if len(s) <= max_len:
+        return s
+    cut = s[:max_len].rsplit(" ", 1)[0]
+    return cut + "\u2026" if cut else s[:max_len]
+
+
 def render(target, item):
     title = esc(item["title"])
     link = esc(item["link"])
     src = esc(item["src_domain"])
     block = f"\U0001f4f0 <b>Новость: {esc(target['name'])}</b>\n"
     if target["topic"]:
-        block += f"<i>{esc(target['topic'][:60])}</i>\n"
+        block += f"<i>{esc(truncate_at_word(target['topic'], 70))}</i>\n"
     block += f'<a href="{link}">{title}</a>\n'
     block += f"<i>{src}</i>\n"
     block += f"<code>lead: {esc(target['lead_id'])}</code>"
