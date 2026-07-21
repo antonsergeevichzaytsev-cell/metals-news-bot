@@ -180,6 +180,32 @@
       "hook": "Owner-side контроль FEL и CapEx: не дать DFS раздуть бюджет.",
       "priority": "medium",
       "ts": "2026-07-20T22:54:02.146157+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/305923/Lion-One-Announces-Start-of-Phase-1-Plant-Expansion-from-300-TPD-to-400-TPD-with-Filter-Press-Upgrade",
+      "title": "Lion One Announces Start of Phase 1 Plant Expansion from 300 TPD to 400 TPD with Filter Press Upgrade",
+      "stage": "construction",
+      "signal": "расширение мощностей",
+      "company": "Lion One Metals Limited",
+      "project": "Tuvatu Gold Mine",
+      "region": "Fiji",
+      "why": "Расширение завода с 300 до 400 т/сут, риск срыва графика и бюджета.",
+      "hook": "Owner-side контроль подрядчика и графика: не дать расширению съесть бюджет.",
+      "priority": "low",
+      "ts": "2026-07-21T13:02:01.085084+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/305921/Champion-Bear-Resources-Ltd.-Secures-Drilling-Contract-for-Plomp-Farm-Pit-Study-and-Announces-Planned-NI-43101-Technical-Disclosure-Update",
+      "title": "Champion Bear Resources Ltd. Secures Drilling Contract for Plomp Farm Pit Study and Announces Planned NI 43-101 Technical Disclosure Update",
+      "stage": "study",
+      "signal": "пит-стади",
+      "company": "Champion Bear Resources Ltd.",
+      "project": "Plomp Farm",
+      "region": "Canada",
+      "why": "Начало пит-стади, требуется обновление NI 43-101.",
+      "hook": "Owner-side контроль затрат и FEL: не дать пит-стади уйти в завышенный CapEx.",
+      "priority": "low",
+      "ts": "2026-07-21T13:02:01.085084+00:00"
     }
   ],
   "skipped": [
@@ -581,6 +607,104 @@
       "link": "https://www.newsfilecorp.com/release/305918/U92-Announces-Filing-of-Corrective-Disclosure-and-Provides-Corporate-Update",
       "reason": "корпоративное обновление",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Ferroglobe PLC Schedules Second Quarter 2026 Earnings Call for August 5, 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/21/3330406/11914/en/Ferroglobe-PLC-Schedules-Second-Quarter-2026-Earnings-Call-for-August-5-2026.html",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Comstock Metals and Illuminate USA Sign Service Agreement for Recycling Solar Panel Manufacturing Materials",
+      "link": "https://www.globenewswire.com/news-release/2026/07/21/3330266/0/en/Comstock-Metals-and-Illuminate-USA-Sign-Service-Agreement-for-Recycling-Solar-Panel-Manufacturing-Materials.html",
+      "reason": "сервисный контракт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Barrick Announces Investment in Kingfisher Metals",
+      "link": "https://www.globenewswire.com/news-release/2026/07/21/3330299/0/en/Barrick-Announces-Investment-in-Kingfisher-Metals.html",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Trinity One Metals Identifies Historic High Grade Silver Intercepts at Silver-1 Including 2.60 m at 1,240 g/t Silver",
+      "link": "https://www.newsfilecorp.com/release/305929/Trinity-One-Metals-Identifies-Historic-High-Grade-Silver-Intercepts-at-Silver1-Including-2.60-m-at-1240-gt-Silver",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Metalsource Mining Accelerates Silver Hill Exploration with Second Drill Rig and Threefold Increase in Drilling Capacity",
+      "link": "https://www.newsfilecorp.com/release/305909/Metalsource-Mining-Accelerates-Silver-Hill-Exploration-with-Second-Drill-Rig-and-Threefold-Increase-in-Drilling-Capacity",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "GMG Executes MOU to Co-Develop Exclusive Graphene Products with Alstom for Rail Industry",
+      "link": "https://www.newsfilecorp.com/release/305938/GMG-Executes-MOU-to-CoDevelop-Exclusive-Graphene-Products-with-Alstom-for-Rail-Industry",
+      "reason": "MOU без инжиниринга",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Puma Exploration's Inaugural Drilling Confirms High-Grade Gold System at McKenzie",
+      "link": "https://www.newsfilecorp.com/release/305936/Puma-Explorations-Inaugural-Drilling-Confirms-HighGrade-Gold-System-at-McKenzie",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Big Gold Identifies High-Priority Gold Exploration Targets at Martin Kenty Following Completion of Historical Data Compilation",
+      "link": "https://www.newsfilecorp.com/release/305903/Big-Gold-Identifies-HighPriority-Gold-Exploration-Targets-at-Martin-Kenty-Following-Completion-of-Historical-Data-Compilation",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Atlas Critical Minerals Intersects High-Grade Graphite; All 20 Drill Holes Confirm Mineralization, with Intercepts up to 33.78 Met",
+      "link": "https://www.newsfilecorp.com/release/305786/Atlas-Critical-Minerals-Intersects-HighGrade-Graphite-All-20-Drill-Holes-Confirm-Mineralization-with-Intercepts-up-to-33.78-Meters-at-7.97-Graphitic-Carbon",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Viscount Mining Initiates Targeted Tungsten Evaluation Program at Cherry Creek, Nevada",
+      "link": "https://www.newsfilecorp.com/release/305882/Viscount-Mining-Initiates-Targeted-Tungsten-Evaluation-Program-at-Cherry-Creek-Nevada",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "StrikePoint Announces Final Results of Drilling at Hercules Gold Project, H26005 Cut 67.06m Grading 0.53 g/t Au and 11.69 g/t Ag I",
+      "link": "https://www.newsfilecorp.com/release/305894/StrikePoint-Announces-Final-Results-of-Drilling-at-Hercules-Gold-Project-H26005-Cut-67.06m-Grading-0.53-gt-Au-and-11.69-gt-Ag-Including-7.62m-of-2.93-gt-Au-with-54.48-gt-Ag",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Canstar Resources Receives $2.0 Million VMSC Advance, Bringing Total VMSC Funding to $4.0 Million to Advance Mary March Drilling",
+      "link": "https://www.newsfilecorp.com/release/305904/Canstar-Resources-Receives-2.0-Million-VMSC-Advance-Bringing-Total-VMSC-Funding-to-4.0-Million-to-Advance-Mary-March-Drilling",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Searchlight Begins Airborne Surveys on the Mari Lake Gold Project in Saskatchewan",
+      "link": "https://www.newsfilecorp.com/release/305910/Searchlight-Begins-Airborne-Surveys-on-the-Mari-Lake-Gold-Project-in-Saskatchewan",
+      "reason": "аэрогеофизика",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.085084+00:00",
+      "title": "Cabral Gold Announces Additional Drill Results from Pre-Production Infill Drilling at the MG Gold Deposit, Cuiú Cuiú Gold District",
+      "link": "https://www.newsfilecorp.com/release/305924/Cabral-Gold-Announces-Additional-Drill-Results-from-PreProduction-Infill-Drilling-at-the-MG-Gold-Deposit-Cui-Cui-Gold-District-Brazil",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -595,6 +719,12 @@
       "ts": "2026-07-21T05:55:19.673670+00:00",
       "title": "Cross River Announces Proposed Name Change and Consolidation",
       "matched_noise_word": "name change",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T13:02:01.074850+00:00",
+      "title": "Red Lake Gold Inc. Provides Corporate Update, Proposes Conditional Share Consolidation and Private Placement",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
