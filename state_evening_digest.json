@@ -61,17 +61,17 @@
       "last_activity": "2026-06-06"
     },
     "job_sberbank_ai_interview": {
-      "status": "ai_interview_active",
+      "status": "dead",
       "touches": 1,
       "last_activity": "2026-06-06"
     },
     "job_rt_inzhiniring_udokan": {
-      "status": "submitted",
+      "status": "dead",
       "touches": 1,
       "last_activity": "2026-05-29"
     },
     "job_hh_unread_5": {
-      "status": "needs_review",
+      "status": "dead",
       "touches": 1,
       "last_activity": "2026-06-07"
     },
@@ -134,7 +134,12 @@
       "status": "sent_no_reply",
       "touches": 1,
       "last_activity": "2026-07-20"
+    },
+    "job_suek_kovdor": {
+      "status": "dead",
+      "touches": 3,
+      "last_activity": "2026-07-10"
     }
   },
-  "day_start_date": "2026-07-20"
+  "day_start_date": "2026-07-21"
 }
