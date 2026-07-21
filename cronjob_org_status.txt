@@ -1,9 +1,15 @@
-Total jobs: 7
+Total jobs: 13
 
+[8132049] Account watch            enabled=True  hours=[13, 17] minutes=[15] wdays=[1, 2, 3, 4, 5]
 [8132022] Anton Daily brief        enabled=True  hours=[8] minutes=[30] wdays=[1, 2, 3, 4, 5]
 [8132025] Metals digest            enabled=True  hours=[8, 20] minutes=[0] wdays=[1, 2, 3, 4, 5]
+[8132050] Evening digest           enabled=True  hours=[18] minutes=[30] wdays=[1, 2, 3, 4, 5]
 [8132026] Filings watcher #1       enabled=True  hours=[8] minutes=[30] wdays=[1, 2, 3, 4, 5]
 [8132027] Filings watcher #2       enabled=True  hours=[16] minutes=[0] wdays=[1, 2, 3, 4, 5]
 [8132028] Filings watcher #3       enabled=True  hours=[19] minutes=[0] wdays=[1, 2, 3, 4, 5]
 [8132029] Filings watcher #4       enabled=True  hours=[22] minutes=[0] wdays=[1, 2, 3, 4, 5]
+[8132046] Filings watcher #5       enabled=True  hours=[1] minutes=[0] wdays=[1, 2, 3, 4, 5]
+[8132047] Inbox consolidator       enabled=True  hours=[10, 12, 14, 16, 18] minutes=[0] wdays=[1, 2, 3, 4, 5]
 [8132021] Mission Control          enabled=True  hours=[7] minutes=[45] wdays=[1, 2, 3, 4, 5]
+[8132048] Pipeline sync            enabled=True  hours=[10, 11, 12, 13, 14, 15, 16, 17, 18] minutes=[0, 30] wdays=[1, 2, 3, 4, 5]
+[8132057] Weekly Check             enabled=True  hours=[19] minutes=[0] wdays=[0]
