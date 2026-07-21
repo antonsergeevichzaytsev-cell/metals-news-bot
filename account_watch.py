@@ -203,6 +203,24 @@ def strip_html(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
+def title_mentions_company(title, company_name):
+    """Google News 'exact phrase' matching оказался мягче, чем ожидалось на
+    практике 21.07: статьи с финансовых агрегаторов (Финам, Альфа-Банк)
+    попадали в выдачу по 'Селигдар', хотя сам заголовок был про индекс
+    МосБиржи или конкурента ('Полюс') — совпадение, видимо, шло по
+    боковым спискам тикеров/related-links на странице, не по телу статьи.
+    В реальной выборке 4 из 5 таких хитов вообще не содержали имя компании
+    в заголовке. Самая надёжная проверка релевантности после этого — само
+    название явно встречается в ЗАГОЛОВКЕ, не только где-то в фиде.
+    Для многословных имён ('District Metals') требуем оба слова; для
+    односложных ('Селигдар', 'ТАЛКО') — просто вхождение без учёта регистра."""
+    title_lower = title.lower()
+    words = [w for w in company_name.lower().split() if len(w) > 2]
+    if not words:
+        return company_name.lower() in title_lower
+    return all(w in title_lower for w in words)
+
+
 def parse_feed(xml_text):
     items = []
     try:
@@ -303,6 +321,8 @@ def main():
             if it["src_domain"] in GENERIC_NOISE_DOMAINS:
                 continue
             if not is_recent(it["pubdate"]):
+                continue
+            if not title_mentions_company(it["title"], target["name"]):
                 continue
             h = url_hash(it["link"])
             if h in seen:
