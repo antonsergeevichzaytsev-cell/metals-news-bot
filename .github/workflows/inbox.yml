@@ -3,6 +3,11 @@ name: Inbox consolidator
 concurrency:
   group: repo-writes
   cancel-in-progress: false
+  # queue: max — без этого GitHub по умолчанию отменяет все PENDING прогоны
+  # в группе кроме последнего (даже с cancel-in-progress: false, который
+  # защищает только уже ЗАПУЩЕННЫЙ прогон). Найдено 21.07: 4 из 8 ручных
+  # dispatch отменились именно так — не гонка пуша, а вытеснение из очереди.
+  queue: max
 
 on:
   schedule:
