@@ -574,6 +574,13 @@
       "link": "https://www.newsfilecorp.com/release/305860/Western-Copper-and-Gold-Provides-Corporate-Update",
       "reason": "корпоративное обновление",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-21T05:55:19.674060+00:00",
+      "title": "U92 Announces Filing of Corrective Disclosure and Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/305918/U92-Announces-Filing-of-Corrective-Disclosure-and-Provides-Corporate-Update",
+      "reason": "корпоративное обновление",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -582,6 +589,12 @@
       "ts": "2026-07-20T20:18:08.897039+00:00",
       "title": "Pelangio Exploration Grants Stock Options",
       "matched_noise_word": "stock option\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T05:55:19.673670+00:00",
+      "title": "Cross River Announces Proposed Name Change and Consolidation",
+      "matched_noise_word": "name change",
       "orbit": false
     }
   ]
