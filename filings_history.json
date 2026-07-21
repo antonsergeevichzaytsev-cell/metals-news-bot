@@ -733,6 +733,13 @@
       "link": "https://www.newsfilecorp.com/release/305963/Phenom-Participates-in-Strategic-Resources-in-Competition-Conference-in-Virginia",
       "reason": "конференция",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-21T20:17:08.440626+00:00",
+      "title": "Golden Age Exploration Ltd. Announces Adoption of Semi-Annual Reporting",
+      "link": "https://www.newsfilecorp.com/release/305989/Golden-Age-Exploration-Ltd.-Announces-Adoption-of-SemiAnnual-Reporting",
+      "reason": "отчётность",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -759,6 +766,12 @@
       "ts": "2026-07-21T19:00:50.056155+00:00",
       "title": "Antioquia Gold Inc. Announces Appointment of New Auditor",
       "matched_noise_word": "appoint\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-21T20:17:08.439871+00:00",
+      "title": "Critical One Energy Announces CDN$5,565,000 Flow-Through Private Placement",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
