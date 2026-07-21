@@ -34,12 +34,11 @@ CRONJOB_ENDPOINT = "https://api.cron-job.org"
 # wdays: [-1] = каждый день недели (мы всё равно фильтруем через 1-5 в
 # самом расписании GitHub, здесь используем 1,2,3,4,5 = Пн-Пт где нужно;
 # 0 = воскресенье для weekly_check).
+# 21.07.26: первый прогон создал только 7 из 13 заданий (упёрся в rate limit
+# 5/мин cron-job.org, throttle тогда был неверный). Список ниже урезан до
+# оставшихся 6 для второго прогона - не пересоздавать уже созданные.
 JOBS = [
-    ("Mission Control", "mission_control.yml", [(7, 45)], [1, 2, 3, 4, 5]),
-    ("Anton Daily brief", "daily_brief.yml", [(8, 30)], [1, 2, 3, 4, 5]),
-    ("Metals digest", "digest.yml", [(8, 0), (20, 0)], [1, 2, 3, 4, 5]),
-    ("Filings watcher", "filings.yml",
-     [(8, 30), (16, 0), (19, 0), (22, 0), (1, 0)], [1, 2, 3, 4, 5]),
+    ("Filings watcher #5", "filings.yml", [(1, 0)], [1, 2, 3, 4, 5]),
     ("Inbox consolidator", "inbox.yml",
      [(10, 0), (12, 0), (14, 0), (16, 0), (18, 0)], [1, 2, 3, 4, 5]),
     ("Pipeline sync", "pipeline_sync.yml",
@@ -63,7 +62,8 @@ def cronjob_request(method, path, payload=None):
             return json.loads(body) if body else {}
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
-        print(f"  ! HTTP {e.code} for {method} {path}: {body}", file=sys.stderr)
+        tag = "RATE LIMIT" if e.code == 429 else "HTTP ERROR"
+        print(f"  ! {tag} {e.code} for {method} {path}: {body}", file=sys.stderr)
         return None
 
 
@@ -115,23 +115,42 @@ def needs_split(slots):
 
 def main():
     created = []
+    request_count = 0
+
+    def throttled_create(payload):
+        nonlocal request_count
+        # Лимит cron-job.org для создания задания: 1/сек И 5/мин. После
+        # каждых 5 запросов ждём остаток минуты, не только 1.2с между
+        # соседними — иначе 6-й+ запрос получает 429 и теряется молча
+        # (обнаружено 21.07: из 13 ожидаемых создалось только 7 - ровно
+        # столько, сколько успело пройти до упора в 5/мин лимит).
+        if request_count > 0 and request_count % 5 == 0:
+            print(f"  rate limit pause (created {request_count} so far, waiting 65s)...")
+            time.sleep(65)
+        else:
+            time.sleep(1.5)
+        request_count += 1
+        return cronjob_request("PUT", "/jobs", payload)
+
     for title, wf_file, slots, wdays in JOBS:
         if needs_split(slots):
             print(f"{title}: slots don't form a clean grid, creating {len(slots)} separate jobs")
             for i, (h, m) in enumerate(slots, 1):
                 payload = build_job_payload(f"{title} #{i}", wf_file, [(h, m)], wdays)
-                result = cronjob_request("PUT", "/jobs", payload)
+                result = throttled_create(payload)
                 if result and "jobId" in result:
                     created.append((f"{title} #{i}", result["jobId"]))
                     print(f"  created jobId={result['jobId']} at {h:02d}:{m:02d} MSK")
-                time.sleep(1.2)  # rate limit: 1 req/sec, 5/min for job creation
+                else:
+                    print(f"  ! FAILED to create {title} #{i} at {h:02d}:{m:02d} MSK", file=sys.stderr)
         else:
             payload = build_job_payload(title, wf_file, slots, wdays)
-            result = cronjob_request("PUT", "/jobs", payload)
+            result = throttled_create(payload)
             if result and "jobId" in result:
                 created.append((title, result["jobId"]))
                 print(f"{title}: created jobId={result['jobId']}, slots={slots}")
-            time.sleep(1.2)
+            else:
+                print(f"  ! FAILED to create {title}", file=sys.stderr)
 
     print(f"\nDone. Created {len(created)} job(s):")
     for title, job_id in created:
