@@ -15,8 +15,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Create cron-job.org jobs
+      - name: Create cron-job.org jobs (SKIPPED - already ran)
+        if: false
         env:
           CRONJOB_ORG_API_KEY: ${{ secrets.CRONJOB_ORG_API_KEY }}
           DISPATCH_PAT: ${{ secrets.DISPATCH_PAT }}
         run: python setup_cronjob_org.py
+      - name: Verify jobs were created
+        env:
+          CRONJOB_ORG_API_KEY: ${{ secrets.CRONJOB_ORG_API_KEY }}
+        run: python verify_cronjob_org.py
