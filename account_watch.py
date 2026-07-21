@@ -275,11 +275,9 @@ def render(target, item):
     title = esc(item["title"])
     link = esc(item["link"])
     src = esc(item["src_domain"])
-    block = f"\U0001f440 <b>Движение по счёту</b>\n"
-    block += f"<b>{esc(target['name'])}</b>"
+    block = f"\U0001f4f0 <b>Новость: {esc(target['name'])}</b>\n"
     if target["topic"]:
-        block += f" \u00b7 <i>{esc(target['topic'][:60])}</i>"
-    block += "\n"
+        block += f"<i>{esc(target['topic'][:60])}</i>\n"
     block += f'<a href="{link}">{title}</a>\n'
     block += f"<i>{src}</i>\n"
     block += f"<code>lead: {esc(target['lead_id'])}</code>"
