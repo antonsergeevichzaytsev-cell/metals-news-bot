@@ -104,6 +104,32 @@ def company_name_guess(domain):
     return root.strip().title()
 
 
+# Общеупотребимые английские слова, которые technically валидны как "имя
+# компании" по форме, но как поисковый запрос дают чистый спам — совпадают
+# с любым заголовком, где слово встречается в обычном смысле. Найдено 21.07:
+# домен example.com дал имя "Example", поиск наловил десятки нерелевантных
+# новостей (Buffett "90/10 rule example", "leading by example" и т.д.).
+# Список не претендует на полноту — это подстраховка, не основной фильтр
+# (основной — PLACEHOLDER_DOMAINS в pipeline_sync.py, на входе).
+GENERIC_WORDS = {
+    "example", "test", "sample", "demo", "company", "corporation",
+    "group", "holdings", "international", "global", "mining", "metals",
+}
+
+
+def is_plausible_company_name(name):
+    """Второй эшелон защиты: если имя — одно общеупотребимое слово без
+    цифр/заглавных-в-середине/явной специфики, поиск по нему будет мусорным.
+    Не блокирует многословные имена ("Steppe Gold") — те специфичны сами
+    по себе, даже если один из токенов общий."""
+    if not name or len(name.strip()) < 3:
+        return False
+    words = name.strip().split()
+    if len(words) == 1 and words[0].lower() in GENERIC_WORDS:
+        return False
+    return True
+
+
 def watch_targets(pipeline, overrides):
     """Живые direct_outreach лиды с доменом. Мёртвые не следим -
     решение закрыть канал уже принято, новостной шум по нему не нужен.
@@ -111,8 +137,12 @@ def watch_targets(pipeline, overrides):
     Приоритет имени: company_name из лида (DeepSeek, проставлено при заведении
     pipeline_sync'ом) -> ручной override -> грубая эвристика из домена.
     Первый источник закрывает проблему на входе — override нужен только
-    для старых лидов, заведённых до этого поля, или если DeepSeek ошибся."""
+    для старых лидов, заведённых до этого поля, или если DeepSeek ошибся.
+
+    Имена, не прошедшие is_plausible_company_name, пропускаются целиком —
+    лучше не следить за компанией, чем спамить нерелевантными хитами."""
     targets = []
+    skipped_implausible = []
     for lead in pipeline.get("leads", []):
         if lead.get("status") in DEAD_STATUSES:
             continue
@@ -122,8 +152,14 @@ def watch_targets(pipeline, overrides):
         if not domain:
             continue
         name = lead.get("company_name") or overrides.get(domain) or company_name_guess(domain)
+        if not is_plausible_company_name(name):
+            skipped_implausible.append({"lead_id": lead["id"], "domain": domain, "name": name})
+            continue
         targets.append({"lead_id": lead["id"], "domain": domain,
                          "name": name, "topic": lead.get("topic", "")})
+    if skipped_implausible:
+        print(f"Skipped {len(skipped_implausible)} lead(s) with implausible company name "
+              f"(would produce spammy search): {skipped_implausible}", file=sys.stderr)
     return targets
 
 

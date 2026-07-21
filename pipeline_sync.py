@@ -63,6 +63,18 @@ NO_TRACK_DOMAINS = {
     "amazon.com", "notion.so", "slack.com", "zoom.us", "dropbox.com",
 }
 
+# RFC 2606 зарезервированные домены + частые опечатки-плейсхолдеры. Найдено
+# 21.07: письмо на mari.tuyakova@example.com (опечатка автозаполнения вместо
+# gmail.com) прошло is_trackable_recipient, DeepSeek назвал компанию
+# "Example", account_watch начал искать это слово в новостях -> десятки
+# нерелевантных заголовков в Telegram (любой заголовок с "example" в тексте).
+# Эти домены никогда не бывают реальной компанией, в отличие от
+# NO_TRACK_DOMAINS (личная почта, которая технически валидна).
+PLACEHOLDER_DOMAINS = {
+    "example.com", "example.org", "example.net", "example.edu",
+    "test.com", "test.org", "localhost", "invalid",
+}
+
 AUTO_NOTIFY_PREFIXES = [
     "noreply", "no-reply", "no_reply", "donotreply", "do-not-reply",
     "notification", "notifications", "notify", "notifier",
@@ -343,7 +355,7 @@ def is_trackable_recipient(addr, own_domain):
     if not addr or "@" not in addr:
         return False
     d = domain_of(addr)
-    if d in NO_TRACK_DOMAINS or d == own_domain:
+    if d in NO_TRACK_DOMAINS or d in PLACEHOLDER_DOMAINS or d == own_domain:
         return False
     local = addr.split("@", 1)[0].lower()
     for s in ("noreply", "no-reply", "no_reply", "donotreply", "do-not-reply",
