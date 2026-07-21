@@ -1,20 +1,85 @@
 {
   "seen": [
-    "a9711a22da681c74ee81c6aab9fe2962",
-    "f81f9a01fda8228330f7fa33e2ebde31",
-    "a10743726ba276ccf7443adb63c7a3d2",
-    "333816ceac1d9afb18b21cb22b2a1640",
-    "f64049e341e5267bceb351b96a4d7f0e",
-    "2e164d8c9b2ec9e77c74021bd10013e2",
     "50e0b192715aac46264f0bcf5cee262e",
-    "300f2cfaaa05a3ebb03f36c67f6c0307",
+    "f678bb5fea23970d815fe49b2e4e88b8",
     "9ca81c6edcc69d2ca794f1fc71e37be7",
-    "580028af9af39899c1773a735896a276",
+    "f81f9a01fda8228330f7fa33e2ebde31",
+    "180a3a347f044fd2586c3ec4f5949208",
+    "f64049e341e5267bceb351b96a4d7f0e",
+    "b1eff60bd0112c1f4311860472adf9a6",
     "6e28cbf152fcc0c26ea773f502a3c1a9",
+    "a9711a22da681c74ee81c6aab9fe2962",
+    "b70eb22ceea730acccfc4cfe640e32f1",
+    "9f3f577a40eac4c8230d0694aeb034a2",
+    "cbe8402e30e70730c450961e9c60ecdb",
+    "7368c1ccee860a6237dfe1577bff0ce2",
+    "300f2cfaaa05a3ebb03f36c67f6c0307",
     "79eeeb1b0d3c9c9e25388ac553518cfe",
-    "180a3a347f044fd2586c3ec4f5949208"
+    "333816ceac1d9afb18b21cb22b2a1640",
+    "c2729713563bb6a7ffea3bfc9a452b1c",
+    "580028af9af39899c1773a735896a276",
+    "2e164d8c9b2ec9e77c74021bd10013e2",
+    "a10743726ba276ccf7443adb63c7a3d2"
   ],
   "last_run_targets": 11,
-  "last_run_sent": 0,
-  "last_run": "2026-07-20T17:59:56.067204+00:00"
+  "last_run_sent": 7,
+  "last_run": "2026-07-21T05:56:41.399484+00:00",
+  "hits": [
+    {
+      "ts": "2026-07-21T05:56:28.769084+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "The authorities and the investor have agreed to speed up the development of the Chaarat gold deposit on Akchabar - Акчабар",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTXdlXy1oNFZoWW9MSENzeU1ld3ZfRzJlamxOSGxEWnZpWWR4UHNPb1FFdk5iQ09RNm0ySDFaZnRvNU14dURnUU1OM3Z5Xy1rWW5tblhKd05JQndoR2V0Yk9KRUphRVFXX2g1eTNXU3RTU3daTWVJNmVSNTRGRVVSdzFmeEpkNkVxbVJLSzBQajBJb2cyN2NGMDEwRmZoVHVBWnNxaVpHZ25RZmY4MTJQYjVlZGFCcENOZlItNmJ0d3d3TmZyS3AzU3RRalhsZw?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-07-21T05:56:31.478511+00:00",
+      "lead_id": "outreach_auto_seligdar",
+      "company": "Селигдар",
+      "title": "Минфин приостановил аукционы по размещению облигаций федерального займа - The World Inform",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOajNuSGMxSTAzNUlfbzZaa2pWM3FPc2MyRkZZTmhDSUZQVW53TE1ITWRyT2djb2VzUWZ1VURyVzh3dkdSWFBkRTRjRmRrTTZVaTRtcnZBTFlvXy1pQTE5S0NPRlVhSDlKck5RME9ZOTF0eGZnOEFFWDV2TnRpbm9xX0ZXX0JvY3dORXRNbXdCYlpOY2RSaHZQZjB3dEIyLVctRFM2Q2stNkU1eGZIbVFIVnB1bw?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-07-21T05:56:32.769050+00:00",
+      "lead_id": "outreach_auto_seligdar",
+      "company": "Селигдар",
+      "title": "Трек «Росатома» на форуме «Форсаж-2026» создал гид по коммуникациям в зонах экотехногенных рисков - Атомная энергия 2.0",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE81UENmSTRGRExHUXMwUXp0aG9sU1I3RkRZb0FKMHE1QjRGMUdVWDh6OFZOTDNjY1Z0YnhvRDFnMk1xWHJISkZXRWlzSjJlSTk2WlV3SFZlTGlkTnIwandsWg?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-07-21T05:56:35.376639+00:00",
+      "lead_id": "outreach_auto_districtmetals",
+      "company": "District Metals",
+      "title": "Economic assessment filed for Swedish uranium project as law comes into force - World Nuclear News",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdld1aVJfNjZCM2hXQVl0ZHIta1RXOVB2NHZ3TUZZNXFRSGpxX0lIVmNnUEJFSUxxSlFIcjRLd2ZQbl9EV1hNODJmRk5OYm9Kc3RjRkR1Z0Y2eW1oSlRnckZCZ2QtajBHanVTYVlIelk5c3lvY3dzM2t0ZUpHRUVHVUtqZGVIRDczOU53bWpZWGlMZS1WcjdlaUFLcUhuaHdrUng0cWtMNENzZFpjYkxXYS1idkx2U3ZY?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-07-21T05:56:36.661255+00:00",
+      "lead_id": "outreach_auto_districtmetals",
+      "company": "District Metals",
+      "title": "Gold, Silver, Rare Earth & Copper Companies Present at July 22-23 Virtual Investor Conference - EIN News",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPUDlVNXFwbnhVTGRFNEIzckNiYXVoOF9FSklhaEZzMDM1X0V4TTZ6MUNGZVdxLUxKSnR0N0N0X0x6U0FrYkYzNFBZVnh5Q25JQkxPX0FMM2xTV3gzMDlyNmlkSGtRNzdHb3J6UlJ5aS15djFadmtraG1KNHVLLW83bVdfRFJHczhUZTdNNnpBV3FtbDdDTUtYSC1sWUd6SE1FVzUtUnJPUDdsb3JKbU15d0hEUGhtZ1BoblBvOEJOU3hGTWJlZDZpTU5zMA?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-07-21T05:56:37.950998+00:00",
+      "lead_id": "outreach_auto_districtmetals",
+      "company": "District Metals",
+      "title": "EDM Resources gets amended approval for Nova Scotia zinc mine restart - Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQS1I3WUczVWhRMzdLdkpDS21td2RaV29yQkIxRjI0WEZydnJMNE1Ec1NxeUZ4SkhFUEVKTV9KRl95eGNfUHp2MHNTOGthdHEzbXpJNmVrVjQ4b3FNNjVIN0FDdDVaLS1Sam9GQ2Y3ZHlWNGlvWVVBYm95SFAtVi1aZ1VqcnVBbGxaSl8wQQ?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-07-21T05:56:39.237234+00:00",
+      "lead_id": "outreach_auto_districtmetals",
+      "company": "District Metals",
+      "title": "Sweden’s Uranium Mining Law Reform and the Viken Project Explained - Discovery Alert",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQjBkX1FRMTloS3dqMnFYMDFPdUYwSUp5aHpUVVZsWURCc2NnOW5Ocll6XzAyZmZuUWEwTm5rRHlYVEdIb0JaeFJjTFVtR0VrRkVaYXY1S194OXRoUFFoTzZiRy0yelhXZFVXeGdfOXkxQVdPZFp6b1NkTW14U1ZBbFk5M2doMUl4ZnV1Ng?oc=5",
+      "src_domain": "news.google.com"
+    }
+  ]
 }
