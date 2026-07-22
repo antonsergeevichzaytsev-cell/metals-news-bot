@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "_verified": "4 records corrected against real Gmail on 2026-07-17: atheneum_agreement, outreach_ibaas_paper, outreach_jtb_boyd, outreach_aluminium_conf_sophia. Two of them were falsified by Claude earlier the same day - see closed_reason.",
-  "last_updated": "2026-07-22T08:00:55.774554+00:00",
+  "last_updated": "2026-07-22T08:30:44.844343+00:00",
   "leads": [
     {
       "id": "glg_5191288",
