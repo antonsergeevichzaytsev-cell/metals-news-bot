@@ -789,6 +789,20 @@
       "link": "https://www.newsfilecorp.com/release/305998/Lahontan-Provides-Corporate-Update",
       "reason": "судебный иск",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-22T07:45:12.319868+00:00",
+      "title": "Sienna Resources Inc. Engages Driller for the Esmeralda County Gold Project in Nevada",
+      "link": "https://www.newsfilecorp.com/release/306007/Sienna-Resources-Inc.-Engages-Driller-for-the-Esmeralda-County-Gold-Project-in-Nevada",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T07:45:12.319868+00:00",
+      "title": "District Reports on Viken Deposit Economic Impact Study that Delivers US$7.66 Billion (74.33 Billion SEK) Economic Contribution",
+      "link": "https://www.newsfilecorp.com/release/306070/District-Reports-on-Viken-Deposit-Economic-Impact-Study-that-Delivers-US7.66-Billion-74.33-Billion-SEK-Economic-Contribution",
+      "reason": "экономическое исследование",
+      "orbit": false
     }
   ],
   "labels": [],
