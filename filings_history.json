@@ -761,6 +761,34 @@
       "link": "https://www.newsfilecorp.com/release/306029/Americas-Uranium-Corp.-Obtains-DTC-FAST-Eligibility",
       "reason": "листинг",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-22T05:30:36.270131+00:00",
+      "title": "Norsk Hydro: God drift ga solide resultater",
+      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331070/0/no/Norsk-Hydro-God-drift-ga-solide-resultater.html",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T05:30:36.270131+00:00",
+      "title": "Norsk Hydro: Operational strength delivering solid results",
+      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331070/0/en/Norsk-Hydro-Operational-strength-delivering-solid-results.html",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T05:30:36.270131+00:00",
+      "title": "Silver One Resources Announces Restart of Drilling Program at Candelaria",
+      "link": "https://www.newsfilecorp.com/release/306030/Silver-One-Resources-Announces-Restart-of-Drilling-Program-at-Candelaria",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T05:30:36.270131+00:00",
+      "title": "Lahontan Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/305998/Lahontan-Provides-Corporate-Update",
+      "reason": "судебный иск",
+      "orbit": false
     }
   ],
   "labels": [],
