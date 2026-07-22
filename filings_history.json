@@ -206,6 +206,19 @@
       "hook": "Owner-side контроль затрат и FEL: не дать пит-стади уйти в завышенный CapEx.",
       "priority": "low",
       "ts": "2026-07-21T13:02:01.085084+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331219/0/en/NOVAGOLD-Enters-Into-Definitive-Agreements-to-Acquire-100-of-Donlin-Gold.html",
+      "title": "NOVAGOLD Enters Into Definitive Agreements to Acquire 100% of Donlin Gold",
+      "stage": "study",
+      "signal": "приобретение актива",
+      "company": "NOVAGOLD",
+      "project": "Donlin Gold",
+      "region": "USA",
+      "why": "Приобретение 100% крупного золоторудного проекта на стадии изучения.",
+      "hook": "Owner-side контроль на FEL: не дать CapEx уйти за пределы оценки.",
+      "priority": "low",
+      "ts": "2026-07-22T13:00:54.392550+00:00"
     }
   ],
   "skipped": [
@@ -803,6 +816,90 @@
       "link": "https://www.newsfilecorp.com/release/306070/District-Reports-on-Viken-Deposit-Economic-Impact-Study-that-Delivers-US7.66-Billion-74.33-Billion-SEK-Economic-Contribution",
       "reason": "экономическое исследование",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "Great Atlantic Resources Partner Confirms Significant Mineralization at Pilley's Island Project",
+      "link": "https://www.newsfilecorp.com/release/306009/Great-Atlantic-Resources-Partner-Confirms-Significant-Mineralization-at-Pilleys-Island-Project",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "First Atlas Resources Commences Field Exploration Program on Cumberland Basin Hydrogen Properties Following Extension of Technical",
+      "link": "https://www.newsfilecorp.com/release/306059/First-Atlas-Resources-Commences-Field-Exploration-Program-on-Cumberland-Basin-Hydrogen-Properties-Following-Extension-of-Technical-Advisory-Agreement-with-QIMC",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "Forge Resources Completes Phase 1 and Targets the Core of the Commission Zone Porphyry with Phase 2, Alotta Project, Yukon",
+      "link": "https://www.newsfilecorp.com/release/306044/Forge-Resources-Completes-Phase-1-and-Targets-the-Core-of-the-Commission-Zone-Porphyry-with-Phase-2-Alotta-Project-Yukon",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "Kingsmen Extends High-Grade Soledad System at Depth, with a 1.4m Intercept of 641 g/t Silver Equivalent, Confirming Continuity ove",
+      "link": "https://www.newsfilecorp.com/release/306040/Kingsmen-Extends-HighGrade-Soledad-System-at-Depth-with-a-1.4m-Intercept-of-641-gt-Silver-Equivalent-Confirming-Continuity-over-135-Meters-of-Vertical-Depth-at-Its-Las-Coloradas-Silver-Project-Chihuahua-Mexico",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "Torr Metals Intersects Extensive Hydrothermal Brecciation and Multi-Stage Veining at Bertha North, Advancing Cu-Au Porphyry Model",
+      "link": "https://www.newsfilecorp.com/release/306021/Torr-Metals-Intersects-Extensive-Hydrothermal-Brecciation-and-MultiStage-Veining-at-Bertha-North-Advancing-CuAu-Porphyry-Model",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "Element One's Magnesium Project Supports the Onshoring of North American Critical Mineral Supply Chains",
+      "link": "https://www.newsfilecorp.com/release/306068/Element-Ones-Magnesium-Project-Supports-the-Onshoring-of-North-American-Critical-Mineral-Supply-Chains",
+      "reason": "общая информация",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "TNR Gold Announces Altius' Boost of Its Strategic Stake",
+      "link": "https://www.newsfilecorp.com/release/306053/TNR-Gold-Announces-Altius-Boost-of-Its-Strategic-Stake",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "Buffalo Potash Commences Drilling at Initial Production Module",
+      "link": "https://www.newsfilecorp.com/release/306071/Buffalo-Potash-Commences-Drilling-at-Initial-Production-Module",
+      "reason": "бурение начато",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "Perseverance Metals Launches Summer 2026 Drill Program at the Lac Gayot Project, Québec",
+      "link": "https://www.newsfilecorp.com/release/306062/Perseverance-Metals-Launches-Summer-2026-Drill-Program-at-the-Lac-Gayot-Project-Qubec",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "SAGA Metals Reports Assays from R-0050 to R-0054 with Intercepts Including 53.07% Fe2O3, 7.68% TiO2, 0.384% V2O5 from 2026 Drillin",
+      "link": "https://www.newsfilecorp.com/release/306034/SAGA-Metals-Reports-Assays-from-R0050-to-R0054-with-Intercepts-Including-53.07-Fe2O3-7.68-TiO2-0.384-V2O5-from-2026-Drilling-at-Trapper-South-Radar-Critical-Minerals-Project-in-Labrador",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "NeoTerrex Minerals Receives Greenlight to Advance 2026 Exploration at the Strange Lake West Project",
+      "link": "https://www.newsfilecorp.com/release/306011/NeoTerrex-Minerals-Receives-Greenlight-to-Advance-2026-Exploration-at-the-Strange-Lake-West-Project",
+      "reason": "разрешение на бурение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.392550+00:00",
+      "title": "Silver Acadia Reports Additional High-Grade Silver-Gold Results and Completed a Geological Study for Future Drill Targets",
+      "link": "https://www.newsfilecorp.com/release/306074/Silver-Acadia-Reports-Additional-HighGrade-SilverGold-Results-and-Completed-a-Geological-Study-for-Future-Drill-Targets",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -841,6 +938,12 @@
       "ts": "2026-07-21T22:00:50.197549+00:00",
       "title": "CleanTech Closes First Tranche of Non-Brokered Private Placement for Gross Proceeds of $433,033",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T13:00:54.384641+00:00",
+      "title": "Mayo Lake Minerals Announces LIFE Financing Up To $1.89 Million Closing to Coincide with Deferred Share Consolidation on August 14",
+      "matched_noise_word": "share consolidation",
       "orbit": false
     }
   ]
