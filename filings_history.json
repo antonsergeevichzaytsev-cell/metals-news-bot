@@ -232,6 +232,19 @@
       "hook": "Owner-side review PEA и CapEx: не дать завысить бюджет на следующей стадии.",
       "priority": "low",
       "ts": "2026-07-22T15:09:22.936033+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306131/Sigma-Lithium-Negotiating-Agreement-with-Minas-Gerais-State-Government-to-Settle-Notification-by-Regional-Environmental-State-Body-Coincides-with-2Q-Production-Target-Beat",
+      "title": "Sigma Lithium Negotiating Agreement with Minas Gerais State Government to Settle Notification by Regional Environmental State Body; Coincides with 2Q Production Target Beat",
+      "stage": "operating",
+      "signal": "экологический спор",
+      "company": "Sigma Lithium Corporation",
+      "project": "",
+      "region": "Brazil",
+      "why": "Производственный рекорд, но экологический спор с властями штата.",
+      "hook": "Экологический спор грозит остановкой: нужен owner-side контроль производства.",
+      "priority": "low",
+      "ts": "2026-07-22T22:00:51.334772+00:00"
     }
   ],
   "skipped": [
@@ -927,6 +940,27 @@
       "link": "https://www.newsfilecorp.com/release/306114/Stria-Provides-Update-on-Change-of-Business-Transaction-Announces-Board-Appointment",
       "reason": "корпоративная сделка",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-22T22:00:51.334772+00:00",
+      "title": "West Red Lake Gold Files NI 43-101 Technical Report for Updated Rowan Mineral Resource Estimate",
+      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331764/0/en/West-Red-Lake-Gold-Files-NI-43-101-Technical-Report-for-Updated-Rowan-Mineral-Resource-Estimate.html",
+      "reason": "технический отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T22:00:51.334772+00:00",
+      "title": "Battery Mineral Resources' ESI Subsidiary Secures Strategic Financing with JPMorgan Chase",
+      "link": "https://www.newsfilecorp.com/release/306170/Battery-Mineral-Resources-ESI-Subsidiary-Secures-Strategic-Financing-with-JPMorgan-Chase",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T22:00:51.334772+00:00",
+      "title": "NovaRed Amends Trojan-Condor Corridor Option Agreement",
+      "link": "https://www.newsfilecorp.com/release/306153/NovaRed-Amends-TrojanCondor-Corridor-Option-Agreement",
+      "reason": "опцион на участки",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -977,6 +1011,12 @@
       "ts": "2026-07-22T17:07:37.374314+00:00",
       "title": "Ivanhoe Mines to Issue Q2 2026 Financial Results After Market Close on July 29 and Host a Conference Call for Investors on July 30",
       "matched_noise_word": "conference",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-22T22:00:51.330929+00:00",
+      "title": "Signature Resources Provides Clarification Regarding Private Placement Closing",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
