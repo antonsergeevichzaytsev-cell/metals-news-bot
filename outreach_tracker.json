@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "purpose": "Единый источник правды по outreach-касаниям. Сверяться сюда перед любым новым касанием — не предлагать отправку того, что уже есть здесь.",
+    "cadence_rule": "4-7 дней между касаниями, макс 2-3 касания, затем статус dead",
+    "statuses": ["active", "awaiting_reply", "dead", "converted"],
+    "created": "2026-07-22",
+    "created_reason": "Файл ссылался в filings_NOTES.md и других заметках с 20.07.26, но физически не существовал ни в одном из репо/Drive — проверено 22.07.26 (Google Drive, docs, Ai-office, dd-engine, корень metals-news-bot). Создан здесь, так как commit-инфраструктура уже настроена и авторизована именно в этом репо."
+  },
+  "touches": [
+    {
+      "company": "District Metals Corp",
+      "contact_name": "Garrett Ainsworth",
+      "contact_role": "CEO",
+      "contact_email": "info@districtmetals.com",
+      "contact_email_type": "generic_inbox",
+      "source": "filings-scan",
+      "hook": "PEA Viken (Швеция, урановое месторождение, крупнейшее неразработанное в мире)",
+      "proposal": "DD Lite (document review + risk map)",
+      "touches_log": [
+        {"date": "2026-07-20", "channel": "email", "direction": "outbound", "note": "Gmail draft -> sent, с приложением CV"}
+      ],
+      "status": "awaiting_reply",
+      "next_touch_earliest": "2026-07-24",
+      "notes": "Generic inbox -> canonically низкий шанс дойти до адресата лично. Верифицированного личного email не нашлось."
+    },
+    {
+      "company": "IBAAS / Нанди",
+      "contact_name": null,
+      "contact_role": null,
+      "contact_email": null,
+      "contact_email_type": null,
+      "source": "unknown_pre_20.07",
+      "hook": null,
+      "proposal": null,
+      "touches_log": [],
+      "status": "dead",
+      "next_touch_earliest": null,
+      "notes": "Закрыт 20.07.26 по решению Антона (коммит 21b2412 в metals-news-bot). Mission Control до этого показывал ошибочные '39 дней тишины' из-за остановившегося cron в pipeline_sync -- цифра была технически неверна, но решение закрыть канал принято независимо от этой ошибки."
+    }
+  ]
+}
