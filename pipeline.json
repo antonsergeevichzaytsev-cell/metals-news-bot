@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "_verified": "4 records corrected against real Gmail on 2026-07-17: atheneum_agreement, outreach_ibaas_paper, outreach_jtb_boyd, outreach_aluminium_conf_sophia. Two of them were falsified by Claude earlier the same day - see closed_reason.",
-  "last_updated": "2026-07-23T08:30:47.232840+00:00",
+  "last_updated": "2026-07-23T09:01:01.619560+00:00",
   "leads": [
     {
       "id": "glg_5191288",
@@ -467,6 +467,40 @@
       "notes": "Авто-заведён из SENT 2026-07-21. Кому: mari.tuyakova@example.com",
       "closed_date": "2026-07-21",
       "closed_reason": "Закрыто немедленно 21.07.26 — это была опечатка Антона (example.com вместо gmail.com, письмо повторно отправлено на верный адрес в том же треде). Ложно попало в pipeline_sync как новый лид, DeepSeek назвал компанию \"Example\", account_watch начал искать это слово в новостях -> спам десятков нерелевантных заголовков в Telegram."
+    },
+    {
+      "id": "outreach_auto_masterxoloda",
+      "channel": "direct_outreach",
+      "type": "partnership",
+      "topic": "Запрос на подбор мульти-сплит системы — кв. 516, ЖК «Первый Нагатинский»",
+      "status": "sent_no_reply",
+      "value_usd": null,
+      "first_contact": "2026-07-23",
+      "last_activity": "2026-07-23",
+      "silence_days": 0,
+      "to_domain": "masterxoloda.ru",
+      "to_addr": "info@masterxoloda.ru",
+      "company_name": "Мастер Холода",
+      "touches": 1,
+      "next_action": "Касание 1/3. Следующее через 4-7 дн, потом dead.",
+      "notes": "Авто-заведён из SENT 2026-07-23. Кому: info@masterxoloda.ru"
+    },
+    {
+      "id": "outreach_auto_perm",
+      "channel": "direct_outreach",
+      "type": "partnership",
+      "topic": "Резюме — от Надежды Бирюковой (профиль CapEx/turnaround, ГМК)",
+      "status": "reply_received",
+      "value_usd": null,
+      "first_contact": "2026-07-23",
+      "last_activity": "2026-07-23",
+      "silence_days": 0,
+      "to_domain": "perm.ancor.ru",
+      "to_addr": "popova.on@perm.ancor.ru",
+      "company_name": "Анкор",
+      "touches": 2,
+      "next_action": "Касание 2/3. Следующее через 4-7 дн, потом dead.",
+      "notes": "Авто-заведён из SENT 2026-07-23. Кому: popova.on@perm.ancor.ru"
     }
   ],
   "cadence_rule": {
