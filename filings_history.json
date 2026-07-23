@@ -1139,6 +1139,41 @@
       "link": "https://www.newsfilecorp.com/release/306223/Focus-Graphite-Highlights-Strategic-Alignment-with-White-House-Executive-Order-to-Secure-U.S.-Defense-Supply-Chains",
       "reason": "политическое заявление",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-23T15:17:53.529277+00:00",
+      "title": "Osisko Gold Reports Final Results from its Lowhee Zone Infill Program at the Cariboo Gold Project",
+      "link": "https://www.globenewswire.com/news-release/2026/07/23/3332012/0/en/Osisko-Gold-Reports-Final-Results-from-its-Lowhee-Zone-Infill-Program-at-the-Cariboo-Gold-Project.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T15:17:53.529277+00:00",
+      "title": "Troilus recoupe 1,10 g/t d’équ.-or sur 103 mètres alors que le programme d'optimisation de Z87 continue de renforcer la planificat",
+      "link": "https://www.globenewswire.com/news-release/2026/07/23/3332023/0/fr/Troilus-recoupe-1-10-g-t-d-%C3%A9qu-or-sur-103-m%C3%A8tres-alors-que-le-programme-d-optimisation-de-Z87-continue-de-renforcer-la-planification-mini%C3%A8re.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T15:17:53.529277+00:00",
+      "title": "Troilus Drills 1.10 g/t AuEq Over 103 m as Z87 Optimization Program Continues to Strengthen Mine Planning",
+      "link": "https://www.globenewswire.com/news-release/2026/07/23/3332023/0/en/Troilus-Drills-1-10-g-t-AuEq-Over-103-m-as-Z87-Optimization-Program-Continues-to-Strengthen-Mine-Planning.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T15:17:53.529277+00:00",
+      "title": "Canagold Successfully Completes Taku River Landing Craft Trials for the New Polaris Project",
+      "link": "https://www.newsfilecorp.com/release/306217/Canagold-Successfully-Completes-Taku-River-Landing-Craft-Trials-for-the-New-Polaris-Project",
+      "reason": "логистические испытания",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T15:17:53.529277+00:00",
+      "title": "Scorpio Gold Announces Closing of Public Offering for Gross Proceeds of $10,800,000",
+      "link": "https://www.newsfilecorp.com/release/306238/Scorpio-Gold-Announces-Closing-of-Public-Offering-for-Gross-Proceeds-of-10800000",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
