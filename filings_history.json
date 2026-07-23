@@ -1174,6 +1174,20 @@
       "link": "https://www.newsfilecorp.com/release/306238/Scorpio-Gold-Announces-Closing-of-Public-Offering-for-Gross-Proceeds-of-10800000",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-23T17:09:32.697549+00:00",
+      "title": "Aquitaine Metals Drills 16.48 g/t Au over 7.50 m, within 3.73 g/t Au over 34.90 m at Laurieras Target",
+      "link": "https://www.newsfilecorp.com/release/306224/Aquitaine-Metals-Drills-16.48-gt-Au-over-7.50-m-within-3.73-gt-Au-over-34.90-m-at-Laurieras-Target",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T17:09:32.697549+00:00",
+      "title": "Abitibi Greenstone Gold Corp. Announces Listing of Class A Common Voting Shares on the Canadian Securities Exchange",
+      "link": "https://www.newsfilecorp.com/release/306297/Abitibi-Greenstone-Gold-Corp.-Announces-Listing-of-Class-A-Common-Voting-Shares-on-the-Canadian-Securities-Exchange",
+      "reason": "листинг",
+      "orbit": false
     }
   ],
   "labels": [],
