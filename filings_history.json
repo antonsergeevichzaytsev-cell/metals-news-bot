@@ -1002,6 +1002,20 @@
       "link": "https://www.newsfilecorp.com/release/306180/Irruptive-Metals-Corp.-Announces-Completion-of-GoPublic-Transaction",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-23T07:54:22.712989+00:00",
+      "title": "Group Eleven Drills 15m of New Mineralization (incl. 2.8m of 8.3% Zn+Pb) in 550m Step-Out from Stonepark MRE, 20km NNW of Ballywir",
+      "link": "https://www.newsfilecorp.com/release/306195/Group-Eleven-Drills-15m-of-New-Mineralization-incl.-2.8m-of-8.3-ZnPb-in-550m-StepOut-from-Stonepark-MRE-20km-NNW-of-Ballywire-Discovery",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T07:54:22.712989+00:00",
+      "title": "Primary Hydrogen Announces Marketing Services Agreement",
+      "link": "https://www.newsfilecorp.com/release/306225/Primary-Hydrogen-Announces-Marketing-Services-Agreement",
+      "reason": "маркетинговый контракт",
+      "orbit": false
     }
   ],
   "labels": [],
