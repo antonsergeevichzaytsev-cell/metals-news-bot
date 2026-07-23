@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "_verified": "4 records corrected against real Gmail on 2026-07-17: atheneum_agreement, outreach_ibaas_paper, outreach_jtb_boyd, outreach_aluminium_conf_sophia. Two of them were falsified by Claude earlier the same day - see closed_reason.",
-  "last_updated": "2026-07-23T13:31:52.596082+00:00",
+  "last_updated": "2026-07-23T14:01:15.028839+00:00",
   "leads": [
     {
       "id": "glg_5191288",
@@ -481,8 +481,8 @@
       "to_domain": "masterxoloda.ru",
       "to_addr": "info@masterxoloda.ru",
       "company_name": "Мастер Холода",
-      "touches": 4,
-      "next_action": "Касание 4/3. Следующее через 4-7 дн, потом dead.",
+      "touches": 6,
+      "next_action": "Касание 6/3. Следующее через 4-7 дн, потом dead.",
       "notes": "Авто-заведён из SENT 2026-07-23. Кому: info@masterxoloda.ru"
     },
     {
@@ -501,6 +501,23 @@
       "touches": 2,
       "next_action": "Касание 2/3. Следующее через 4-7 дн, потом dead.",
       "notes": "Авто-заведён из SENT 2026-07-23. Кому: popova.on@perm.ancor.ru"
+    },
+    {
+      "id": "outreach_auto_ddxfitness",
+      "channel": "direct_outreach",
+      "type": "partnership",
+      "topic": "Заявление о расторжении договора — DDX Бутово",
+      "status": "sent_no_reply",
+      "value_usd": null,
+      "first_contact": "2026-07-23",
+      "last_activity": "2026-07-23",
+      "silence_days": 0,
+      "to_domain": "ddxfitness.ru",
+      "to_addr": "ddxhelp@ddxfitness.ru",
+      "company_name": "DDX Fitness",
+      "touches": 1,
+      "next_action": "Касание 1/3. Следующее через 4-7 дн, потом dead.",
+      "notes": "Авто-заведён из SENT 2026-07-23. Кому: ddxhelp@ddxfitness.ru"
     }
   ],
   "cadence_rule": {
