@@ -258,6 +258,45 @@
       "hook": "Owner-side review: не завышен ли CapEx в новом ТЭО Guanaco?",
       "priority": "medium",
       "ts": "2026-07-23T05:30:34.575580+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306231/Phenom-Files-U.S.-Provisional-Application-to-Protect-New-VanadiumNickel-Flowsheet",
+      "title": "Phenom Files U.S. Provisional Application to Protect New Vanadium-Nickel Flowsheet",
+      "stage": "study",
+      "signal": "металлургический патент",
+      "company": "Phenom Resources Corp.",
+      "project": "High-Grade Vanadium-Nickel Opportunity",
+      "region": "USA",
+      "why": "Новый флоушит для ванадия-никеля запатентован, но не внедрён.",
+      "hook": "Металлургия запатентована: нужна верификация флоушита на пилоте.",
+      "priority": "low",
+      "ts": "2026-07-23T13:02:48.844292+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306237/Clinch-Resources-Ltd.-Announces-First-Production-Train-Sold-from-Lanes-Branch-Property-First-Vessel-to-Be-Shipped-in-Early-September",
+      "title": "Clinch Resources Ltd. Announces First Production Train Sold from Lanes Branch Property; First Vessel to Be Shipped in Early September",
+      "stage": "operating",
+      "signal": "первая продажа угля",
+      "company": "Clinch Resources Ltd.",
+      "project": "Lanes Branch Property",
+      "region": "USA",
+      "why": "Первая продажа угля и отгрузка судна, выход на рынок.",
+      "hook": "Выход на проектную мощность: не дать операционным потерям съесть маржу первого угля.",
+      "priority": "low",
+      "ts": "2026-07-23T13:02:48.844292+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306194/Americas-Gold-and-Silver-Corporation-Announces-Second-Quarter-Production",
+      "title": "Americas Gold and Silver Corporation Announces Second Quarter Production",
+      "stage": "operating",
+      "signal": "производство серебра",
+      "company": "Americas Gold and Silver Corporation",
+      "project": "",
+      "region": "North America",
+      "why": "Производство 665 тыс. унций серебра, продажи 624 тыс. унций.",
+      "hook": "Операционная эффективность: как выжать больше из действующего актива.",
+      "priority": "low",
+      "ts": "2026-07-23T13:02:48.844292+00:00"
     }
   ],
   "skipped": [
@@ -1016,6 +1055,90 @@
       "link": "https://www.newsfilecorp.com/release/306225/Primary-Hydrogen-Announces-Marketing-Services-Agreement",
       "reason": "маркетинговый контракт",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "CEO.CA's Inside the Boardroom: 5.65 g/t Gold at Surface: GoldInxs Prepares to Drill at Fishpot Project in BC",
+      "link": "https://www.newsfilecorp.com/release/306242/CEO.CAs-Inside-the-Boardroom-5.65-gt-Gold-at-Surface-GoldInxs-Prepares-to-Drill-at-Fishpot-Project-in-BC",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Athos Metals Shareholders Unanimously Approve Qualifying Transaction with Meed Growth Corp.",
+      "link": "https://www.newsfilecorp.com/release/306164/Athos-Metals-Shareholders-Unanimously-Approve-Qualifying-Transaction-with-Meed-Growth-Corp.",
+      "reason": "корпоративная сделка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Lion One Announces Forbearance Agreement with Senior Lender Including Extension of Repayment Date",
+      "link": "https://www.newsfilecorp.com/release/306241/Lion-One-Announces-Forbearance-Agreement-with-Senior-Lender-Including-Extension-of-Repayment-Date",
+      "reason": "финансовое соглашение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "RZOLV and Alkemio Bioscience Forge Strategic Collaboration to Advance Rare Earth and Critical Minerals Commercialization",
+      "link": "https://www.newsfilecorp.com/release/306173/RZOLV-and-Alkemio-Bioscience-Forge-Strategic-Collaboration-to-Advance-Rare-Earth-and-Critical-Minerals-Commercialization",
+      "reason": "сотрудничество",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Altamira Gold Expands Mineralized Porphyry System at Maria Bonita Gold Deposit, Cajueiro District, Brazil",
+      "link": "https://www.newsfilecorp.com/release/306236/Altamira-Gold-Expands-Mineralized-Porphyry-System-at-Maria-Bonita-Gold-Deposit-Cajueiro-District-Brazil",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Element 29 Extends Mineralization in ELID035 with Longest Intercept of 1,534.6 m Grading 0.58% CuEq2 at its Elida Porphyry Cu-Mo-A",
+      "link": "https://www.newsfilecorp.com/release/306235/Element-29-Extends-Mineralization-in-ELID035-with-Longest-Intercept-of-1534.6-m-Grading-0.58-CuEq2-at-its-Elida-Porphyry-CuMoAg-Deposit-Peru",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Bold Ventures Receives Final Results of Spring Drilling at Burchell, Confirms Moss Gold Trend",
+      "link": "https://www.newsfilecorp.com/release/306206/Bold-Ventures-Receives-Final-Results-of-Spring-Drilling-at-Burchell-Confirms-Moss-Gold-Trend",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Volt Carbon, Solid Ultrabattery and TensorOne Enter Strategic Collaboration to Advance Next-Generation Autonomous Aircraft Technol",
+      "link": "https://www.newsfilecorp.com/release/306197/Volt-Carbon-Solid-Ultrabattery-and-TensorOne-Enter-Strategic-Collaboration-to-Advance-NextGeneration-Autonomous-Aircraft-Technologies",
+      "reason": "MOU о сотрудничестве",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Gold Runner Exploration Receives 5 Year Drilling Permit at Golden Girl Property, Golden Triangle B.C.",
+      "link": "https://www.newsfilecorp.com/release/306183/Gold-Runner-Exploration-Receives-5-Year-Drilling-Permit-at-Golden-Girl-Property-Golden-Triangle-B.C.",
+      "reason": "разрешение на бурение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Metatek Signs New Contract with Global Energy Company for North African Survey",
+      "link": "https://www.newsfilecorp.com/release/306179/Metatek-Signs-New-Contract-with-Global-Energy-Company-for-North-African-Survey",
+      "reason": "контракт на съемку",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "T2 Metals Provides Exploration Update at Aurora Project, Yukon, Canada",
+      "link": "https://www.newsfilecorp.com/release/306219/T2-Metals-Provides-Exploration-Update-at-Aurora-Project-Yukon-Canada",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.844292+00:00",
+      "title": "Focus Graphite Highlights Strategic Alignment with White House Executive Order to Secure U.S. Defense Supply Chains",
+      "link": "https://www.newsfilecorp.com/release/306223/Focus-Graphite-Highlights-Strategic-Alignment-with-White-House-Executive-Order-to-Secure-U.S.-Defense-Supply-Chains",
+      "reason": "политическое заявление",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1072,6 +1195,12 @@
       "ts": "2026-07-22T22:00:51.330929+00:00",
       "title": "Signature Resources Provides Clarification Regarding Private Placement Closing",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T13:02:48.839828+00:00",
+      "title": "Aurania Appoints Thomas Ullrich as Special Advisor to Support Advancement of Strategic Projects",
+      "matched_noise_word": "appoint\\w*",
       "orbit": false
     }
   ]
