@@ -1487,6 +1487,126 @@
       "why": "Квартальные данные Vale влияют на глобальный баланс никеля и меди.",
       "priority": "medium",
       "company": "Vale"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "According to SMM data, on July 23, the SMM battery-grade nickel sulpha",
+      "desc": "According to SMM data, on July 23, the SMM battery-grade nickel sulpha &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQXdiNk5kRmJTR1c4OFRfczU0NFV3a1h0ckpXa3NSWUluYWlwMThFWDRWT19Qc1Q1Y2ZyRHRaRG50TEZwSmQ2Q1ltNzBVbW9GY2RBUmRIQzkxenRUcWdjY2JadHNVRHhGV2NjS0ZqbkxDSmhnNVhwNVJTalJsNWk4b05JVEZIYWxPRDlVYkFXb3p0MnI5QV9IZ2ZwOEZ0UDdpZV9jek5PdVdsaXBmRnN3cjhQelFTQQ?oc=5",
+      "why": "Цена сульфата никеля влияет на себестоимость катодов для EV, что важно для стратегии Норникеля.",
+      "priority": "medium",
+      "company": "Nornickel"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "According to SMM data, on July 23, the FOB price of Indonesia MHP nick",
+      "desc": "According to SMM data, on July 23, the FOB price of Indonesia MHP nick &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPR0luRFV4dHdudmgzQWlHR21jMkxRQUtuTGFkT0lrNTdEYkFOeFJmazVPVGVudEprbDBIR1NwVHREUVNXYUZkQ1c3MmswV1hRRWNEVEtRYXhka0Z6eUJ3Y2tqQXVtSkRYOV92YXM5N1lSY2ZBYUN2c2taXzN2S2pBUUEwd3hGckJZNk9Oa2RpMFNNb0NPU1lJaUNBamszTmFFNXNpTURYYmp0ekhVUVhTYnpiMEdPVzkxNk5TOUNB?oc=5",
+      "why": "Цена MHP из Индонезии влияет на рынок никеля, где работает Норникель.",
+      "priority": "high",
+      "company": "Nornickel"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "SMM Visits Xingfa Aluminium’s Vietnam Factory to Jointly Explore Establishment of Vietnam Aluminium Pricing Benchmark",
+      "desc": "SMM Visits Xingfa Aluminium’s Vietnam Factory to Jointly Explore Establishment of Vietnam Aluminium Pricing Benchmark &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPdzd1LXhCcUtCVDRRU1E5bk5oNUttNWRla3BDVjRGX2hkdWQ2VVNIVzFnM2dVSXowNXdZV1N3YWNfUHZnVEptVDhjejhiYllEdWdtVHhqalp0Z203dFh1ZS1kZm9OcFRfbXRIYjdpYTRJNFN5TnB0ZzhCUjRWMlJxX2Vwa0pibHhaYjgwWTJBcXBaM0VneEd0SlY0Ulh4UHlscDlsbTZFdDBOYlROZU9Wbl9YaUE3RTNDbkNyWkxHdlJtZFVabjVIaEZuNHBhbW5qWDNlMWpWeVcwMlFPbl9EY29NUkFoal9GM3QtYV8tNDF3VDkxVUxz?oc=5",
+      "why": "Создание ценового бенчмарка для алюминия во Вьетнаме может повлиять на региональные премии и конкуренцию для RUSAL.",
+      "priority": "medium",
+      "company": "Xingfa Aluminium"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "BHP joins global trial to trace lower-emissions copper supply chain",
+      "desc": "BHP joins global trial to trace lower-emissions copper supply chain &nbsp;&nbsp; Australian Mining",
+      "domain": "Australian Mining",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQR1J6Wmw4dHQxRUhoVXR5RzFzRnBRVDBlWXhQUTRYOTZnV0E5eWhQQmNEcldsbEc0VDJDMnVMQkRTRWVvdGNUQ2otS0xFUEVlLVlCTEh5aE1nWkhhR2ZOZHFfRXFzRGtXc0xiZjVYS2ZielhxczUyRE9ET0ZPMXd4WE9YSTl6NC1WTHNaUHYwS2E5b3BSRVotbTVDRkt6ZDlXTjdhekpYWQ?oc=5",
+      "why": "BHP's trial affects copper supply chain transparency, relevant for RUSAL and Nornickel.",
+      "priority": "medium",
+      "company": "BHP"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "Chile plans to attract around US$100 billion in copper investment over",
+      "desc": "Chile plans to attract around US$100 billion in copper investment over &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNUVFyZlF6SnhncVV3RHRHRVNFUDMzNGNibEF5UWtaOXRnQjhWMHJ0VnN6b0tlUjRiNFVSTUR3TmtPVV84RzRkcUMxN0lQRTFvYnNrTFc4OTJuQU10bHFidUdSaHhTb1l4WGJwVkJIbVpKenlkYUVBOEFzR2RVT0R2bTlFWG94MjAtdjlYOExLSnhZU2djNG9CdUloSUF1NksyVjhNSF9LWnE1NkFjM05PWkVtSGtGb0FsQXdJSWlOTGtpdUw2bWNaV0NITXlZb2FFWl9rOVVYSGRQYlFzdm52d2ZvY0NRVkpfTUswUFN6WQ?oc=5",
+      "why": "Крупные инвестиции в медь в Чили влияют на глобальное предложение и конкуренцию для его клиентов.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "BHP’s Lower Chile Copper Output Narrows Gap With Codelco",
+      "desc": "BHP’s Lower Chile Copper Output Narrows Gap With Codelco &nbsp;&nbsp; Discovery Alert",
+      "domain": "Discovery Alert",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUnJOOFYtamRucTczdWFmTG5WYmljeTlpcUhHR2lRRW4zdjFJNmZRb1oya0VrbEhUYS02RUh4cDhBX1NCaHlqZjFjc0JTQ2dTeDJJYlQ1Y0RFdmxUdzF0YkhKcWZJOTNYd1ZWVEFMbTE5Nll2Yy1tMVBWazdXX3dUZVNSZWtoQU1yOFE?oc=5",
+      "why": "Снижение добычи BHP в Чили меняет баланс сил среди мировых производителей меди.",
+      "priority": "medium",
+      "company": "BHP"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "Alcoa to acquire South 32",
+      "desc": "Alcoa to acquire South 32 &nbsp;&nbsp; Your Local Examiner",
+      "domain": "Your Local Examiner",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5EcTMtUXQ5LUhnLUZOS0d0UFlhdENhbThZdmhkZzR3UDlqVm9TRTEyYS00NUZ3RnJNSVExSGtlT3dnaUhIY3F2SmxIbXU2S0NBRmxJTnV1SjdnTDhUMi01WGhKRW44SlhyQjNPQ3Nla1k?oc=5",
+      "why": "Крупная сделка M&A в алюминии, меняет рыночную расстановку сил.",
+      "priority": "high",
+      "company": "Alcoa"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "Rio Tinto signs bio pellet deal to cut coal at Gladstone refineries",
+      "desc": "Rio Tinto signs bio pellet deal to cut coal at Gladstone refineries &nbsp;&nbsp; Australian Mining",
+      "domain": "Australian Mining",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMVRURWVhYnZaOVk3OVRnREF3ZTd3RGJhRHo4cVJPYlhZRkhteXlGZ19jZGEtbGJXTV9uVEl2X2ZPVkJuX0tsel9sVjEtcDlhZkR0SDhuazRDLS1hcVc2Y2JQVU52cW10cDNoNGlwS0VJTWN4ZnFHOV9yMmtDa2lxdmtoZmtkUlJwQ1Q5VDRWOWtJQ1hzTEg5MFhITTRwenhNeXVXSURoWQ?oc=5",
+      "why": "Снижение угля в глиноземном производстве Rio Tinto меняет энергобаланс, влияя на конкурентоспособность RUSAL.",
+      "priority": "medium",
+      "company": "Rio Tinto"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "Cymat takes over Rio Tinto customers",
+      "desc": "Cymat takes over Rio Tinto customers &nbsp;&nbsp; Mining.com.au",
+      "domain": "Mining.com.au",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9KZWNIYjFxcU1vQUlFTWFBWnB2YTBKMHJjcXkyVTRybkZ2SjUyM2ZSU0xWQm9lelFKcDN5MFhyZE9QN3pFRXJsZndXellZc1pmQk90d3hxLThOekNYeWc4aGduNUhPOFZzRDJz?oc=5",
+      "why": "Cymat перехватывает клиентов Rio Tinto, что меняет рыночные доли в алюминии.",
+      "priority": "medium",
+      "company": "Cymat"
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "Kazakhstan and China may develop cross-border deposits",
+      "desc": "Kazakhstan and China may develop cross-border deposits &nbsp;&nbsp; Qazinform",
+      "domain": "Qazinform",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOFg5aW9CUC1GN0Frem16SUNIbW9GMlRMUWk4Rk11aTN3YVFGMFQzdlAyRVNxUzRsci01c012M1dGUTJ0akZPbUEzb29ZUnF5aXBldjA0YS01REstMXhDT2tvbGFkdDUzSVM1RV9wdVY2bjBWR1JMM1ZaS2Vzd1dCVkdlNjNjUHVKNWhzaTVlRGVwQdIBkgFBVV95cUxQbWV3TUVkeTZ5SVBJOTJEUHZNVy1vXzhjQVZ1TDAwZ09oMlZoQy1BM2c2cGJUTEdYSHl5eW01ZnBiWjFxY3ZqcVNJalA2ZWRCcnF2SmZ2eGJKcUdybHMtT0dNNWxlU3J2aGZON3VkR2ppM0hzN0xWMDh6cjk2TGdSbDdVYndvd1h0dnlzV1JLZS1BZw?oc=5",
+      "why": "Совместная разработка месторождений на границе с Китаем открывает доступ к новым ресурсам для казахстанских металлургов.",
+      "priority": "high",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "Lithium sinks to five-month low amid 2027 glut fears",
+      "desc": "Lithium sinks to five-month low amid 2027 glut fears &nbsp;&nbsp; The Northern Miner",
+      "domain": "northernminer.com",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdXBPTUt6bjdSQi1aakxZUF9ScU1OWEtyLVlLdVBRZl8zNU91dWI3elJHbFBMMHZEdkI2b1VGS2E2R0ZFTllOc0MwSTNMUVpmYVVoNmdqdHRKUDVQZnBIOWFOXzdIUnY2dEFpVkExQzU4SU1uOVY5bUE2MHBMUWJjQzVCcG5wQzRoQjhFMWdzSmVIcXl3RnFfaHZ1cXdfRm1D?oc=5",
+      "why": "Цены на литий влияют на стратегию диверсификации в цветных металлах.",
+      "priority": "low",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-23T05:00:53.665011+00:00",
+      "title": "Chile plans $100 billion copper push to find buyers beyond China",
+      "desc": "Chile plans $100 billion copper push to find buyers beyond China &nbsp;&nbsp; Mining.com",
+      "domain": "mining.com",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQczdvMUdvelNqWmtEMHVDU1VxLVhvdmk5Z0wzRndHSWFVY3VlRFJaQVhtYXB1Vm1veFVjOFRpLUVRWkZwejZGZWlCb2xjVVdGUzB0S3FUUFZhQV8wM2xESE9helphQllMQTBhWTd2M1BFWXJrSkJ4VEl3dDVmYV9HLUg1VmtyeDVSakM0MXV1MF8tQ0VpdlE?oc=5",
+      "why": "Крупнейший производитель меди диверсифицирует сбыт, что изменит глобальные потоки и конкуренцию.",
+      "priority": "medium",
+      "company": "Codelco"
     }
   ]
 }
