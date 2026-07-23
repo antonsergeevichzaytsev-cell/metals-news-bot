@@ -1202,6 +1202,13 @@
       "link": "https://www.newsfilecorp.com/release/306337/Geomorphic-AI-Offers-Pora-RaaheLadoga-Gold-Project-for-Joint-Venture-Finlands-1-GoldInTill-Anomaly-Ostrobothnia-Finland",
       "reason": "совместное предприятие",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-23T22:02:25.383469+00:00",
+      "title": "Axion Minerals Announces Receipt of Prospectus and Canadian Securities Exchange Listing Date",
+      "link": "https://www.newsfilecorp.com/release/306336/Axion-Minerals-Announces-Receipt-of-Prospectus-and-Canadian-Securities-Exchange-Listing-Date",
+      "reason": "листинг и проспект",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1264,6 +1271,12 @@
       "ts": "2026-07-23T13:02:48.839828+00:00",
       "title": "Aurania Appoints Thomas Ullrich as Special Advisor to Support Advancement of Strategic Projects",
       "matched_noise_word": "appoint\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T22:02:25.381734+00:00",
+      "title": "Argyle Announces Commencement of New LIFE Offering",
+      "matched_noise_word": "\\bLIFE offering\\b",
       "orbit": false
     }
   ]
