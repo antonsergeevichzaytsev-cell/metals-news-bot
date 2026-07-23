@@ -245,6 +245,19 @@
       "hook": "Экологический спор грозит остановкой: нужен owner-side контроль производства.",
       "priority": "low",
       "ts": "2026-07-22T22:00:51.334772+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306181/Austral-Gold-Announces-Updated-Guanaco-Technical-Report",
+      "title": "Austral Gold Announces Updated Guanaco Technical Report",
+      "stage": "study",
+      "signal": "технический отчет",
+      "company": "Austral Gold",
+      "project": "Guanaco",
+      "region": "Chile",
+      "why": "Новый ТЭО с NPV $192 млн, но вне целевого региона.",
+      "hook": "Owner-side review: не завышен ли CapEx в новом ТЭО Guanaco?",
+      "priority": "medium",
+      "ts": "2026-07-23T05:30:34.575580+00:00"
     }
   ],
   "skipped": [
@@ -960,6 +973,34 @@
       "title": "NovaRed Amends Trojan-Condor Corridor Option Agreement",
       "link": "https://www.newsfilecorp.com/release/306153/NovaRed-Amends-TrojanCondor-Corridor-Option-Agreement",
       "reason": "опцион на участки",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T05:30:34.575580+00:00",
+      "title": "Osisko Gold Enters Support and Benefits Agreement with the District of Wells for the Cariboo Gold Project",
+      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331807/0/en/Osisko-Gold-Enters-Support-and-Benefits-Agreement-with-the-District-of-Wells-for-the-Cariboo-Gold-Project.html",
+      "reason": "соглашение с муниципалитетом",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T05:30:34.575580+00:00",
+      "title": "Reports Q2-2026 Production & Operational Highlights",
+      "link": "https://www.globenewswire.com/news-release/2026/07/23/3331858/0/en/Reports-Q2-2026-Production-Operational-Highlights.html",
+      "reason": "производственный отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T05:30:34.575580+00:00",
+      "title": "Defiance Silver Drilling Returns up to 1,470 g/t Ag from San Acacio Diamond Drill Program",
+      "link": "https://www.newsfilecorp.com/release/306130/Defiance-Silver-Drilling-Returns-up-to-1470-gt-Ag-from-San-Acacio-Diamond-Drill-Program",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-23T05:30:34.575580+00:00",
+      "title": "Irruptive Metals Corp. Announces Completion of Go-Public Transaction",
+      "link": "https://www.newsfilecorp.com/release/306180/Irruptive-Metals-Corp.-Announces-Completion-of-GoPublic-Transaction",
+      "reason": "размещение",
       "orbit": false
     }
   ],
