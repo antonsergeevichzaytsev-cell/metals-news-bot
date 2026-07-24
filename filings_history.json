@@ -301,83 +301,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "Sandfire comments on recent trading activity",
-      "link": "https://www.globenewswire.com/news-release/2026/07/17/3329288/0/en/Sandfire-comments-on-recent-trading-activity.html",
-      "reason": "нет события",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "Nobel Provides Update on Cuprita Project, Chile",
-      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328320/0/en/Nobel-Provides-Update-on-Cuprita-Project-Chile.html",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "LIFT Announces Commencement of Drilling at the Adina-Galinée Lithium Project, Québec",
-      "link": "https://www.globenewswire.com/news-release/2026/07/17/3328924/0/en/LIFT-Announces-Commencement-of-Drilling-at-the-Adina-Galin%C3%A9e-Lithium-Project-Qu%C3%A9bec.html",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "Goldgroup Mining and Gold Resource Corporation Announce Closing of Business Combination and Goldgroup's Anticipated Listing on the",
-      "link": "https://www.newsfilecorp.com/release/305656/Goldgroup-Mining-and-Gold-Resource-Corporation-Announce-Closing-of-Business-Combination-and-Goldgroups-Anticipated-Listing-on-the-NYSE-American",
-      "reason": "слияние",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "Voyageur Pharmaceuticals Announces the Engagement of Red Cloud Securities as Market Maker",
-      "link": "https://www.newsfilecorp.com/release/305654/Voyageur-Pharmaceuticals-Announces-the-Engagement-of-Red-Cloud-Securities-as-Market-Maker",
-      "reason": "маркет-мейкер",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "Champion Electric Announces Return of Jonathan Buick as President and CEO",
-      "link": "https://www.newsfilecorp.com/release/305618/Champion-Electric-Announces-Return-of-Jonathan-Buick-as-President-and-CEO",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "Gold Strike Awards Options",
-      "link": "https://www.newsfilecorp.com/release/305655/Gold-Strike-Awards-Options",
-      "reason": "опционы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "QcX Gold Announces Receipt of Interim Order",
-      "link": "https://www.newsfilecorp.com/release/305611/QcX-Gold-Announces-Receipt-of-Interim-Order",
-      "reason": "корпоративное событие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "Galloper Gold Completes the Kettle Pond Camp Construction",
-      "link": "https://www.newsfilecorp.com/release/305549/Galloper-Gold-Completes-the-Kettle-Pond-Camp-Construction",
-      "reason": "лагерь построен",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "Leeward Capital Corp. and Burton Growers Ltd. Enter Into Formal Share Exchange Agreement",
-      "link": "https://www.newsfilecorp.com/release/305648/Leeward-Capital-Corp.-and-Burton-Growers-Ltd.-Enter-Into-Formal-Share-Exchange-Agreement",
-      "reason": "корпоративная сделка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-17T22:42:48.017988+00:00",
-      "title": "F4 Uranium Confirms Termination of Hearty Bay Option Agreement by Traction Uranium",
-      "link": "https://www.newsfilecorp.com/release/305623/F4-Uranium-Confirms-Termination-of-Hearty-Bay-Option-Agreement-by-Traction-Uranium",
-      "reason": "отказ от опциона",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-20T08:21:05.766953+00:00",
       "title": "Clearly Defined Anomaly Interpreted by Makenita Resources Inc on the 'Sisson West Tungsten Project' Directly Bordering the Sisson ",
       "link": "https://www.newsfilecorp.com/release/305749/Clearly-Defined-Anomaly-Interpreted-by-Makenita-Resources-Inc-on-the-Sisson-West-Tungsten-Project-Directly-Bordering-the-Sisson-Tungsten-Deposit-in-New-Brunswick",
@@ -1147,6 +1070,12 @@
       "ts": "2026-07-24T17:21:02.945103+00:00",
       "title": "Critical One Energy Announces Upsized CDN$6,875,000 Flow-Through Private Placement",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-24T22:56:42.783546+00:00",
+      "title": "Valkea Grants Stock Options",
+      "matched_noise_word": "stock option\\w*",
       "orbit": false
     }
   ]
