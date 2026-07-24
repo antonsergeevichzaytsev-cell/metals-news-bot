@@ -1209,6 +1209,27 @@
       "link": "https://www.newsfilecorp.com/release/306336/Axion-Minerals-Announces-Receipt-of-Prospectus-and-Canadian-Securities-Exchange-Listing-Date",
       "reason": "листинг и проспект",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-24T05:30:36.027979+00:00",
+      "title": "Comstock Announces Second Quarter 2026 Business Results and Outlook",
+      "link": "https://www.globenewswire.com/news-release/2026/07/23/3332585/0/en/Comstock-Announces-Second-Quarter-2026-Business-Results-and-Outlook.html",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-24T05:30:36.027979+00:00",
+      "title": "Prism Resources Announces Shareholder Approval for Royalty Sale to Agnico Eagle",
+      "link": "https://www.newsfilecorp.com/release/306394/Prism-Resources-Announces-Shareholder-Approval-for-Royalty-Sale-to-Agnico-Eagle",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-24T05:30:36.027979+00:00",
+      "title": "Goldgroup Accelerates Growth Strategy Following Transformational Merger; Company Advances Multi-Asset Drill Programs, Mine Develop",
+      "link": "https://www.newsfilecorp.com/release/306393/Goldgroup-Accelerates-Growth-Strategy-Following-Transformational-Merger-Company-Advances-MultiAsset-Drill-Programs-Mine-Development-and-Expansion-Plans",
+      "reason": "корпоративное обновление",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1283,6 +1304,12 @@
       "ts": "2026-07-23T22:51:52.960690+00:00",
       "title": "Nio Métaux Stratégiques maintenant accessible sur le marché OTCQB",
       "matched_noise_word": "\\bOTCQB\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-24T05:30:36.027216+00:00",
+      "title": "DRC Gold Corp. Announces Grant of Stock Options",
+      "matched_noise_word": "stock option\\w*",
       "orbit": false
     }
   ]
