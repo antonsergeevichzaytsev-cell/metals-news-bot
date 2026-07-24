@@ -466,27 +466,49 @@ def due_for_followup(lead):
 def make_draft(lead, addr):
     """Скелет в голосе Антона: без воды, один вопрос, лёгкий выход для адресата.
     Последнее касание прямо говорит, что оно последнее — так каденция
-    перестаёт быть счётчиком в файле и становится словами в письме."""
+    перестаёт быть счётчиком в файле и становится словами в письме.
+
+    Тон меняется по lead['type']: 'one-pager on how I'd approach it' звучит
+    нормально для partnership-лида, но странно как follow-up на отклик по
+    вакансии (job_application/fulltime_opportunity) - там нет "подхода",
+    есть кандидат, ждущий решения. Найдено 24.07: ЕГМК-лид (job_application)
+    получал бы partnership-текст без этой ветки."""
     touch = lead.get("touches", 1) + 1
     last = touch >= CADENCE_MAX_TOUCHES
     topic = lead.get("topic", "").strip()
     subj = topic if topic.lower().startswith("re:") else f"Re: {topic}"
+    is_job = lead.get("type") in ("job_application", "fulltime_opportunity")
+    ru = is_ru_target(addr)
 
-    if is_ru_target(addr):
+    if ru:
         body = f"Здравствуйте,\n\nВозвращаюсь к письму от {lead.get('last_activity', '')} — {topic}.\n\n"
-        body += ("Это моё последнее письмо по теме. Не ответите — пойму, что неактуально, "
-                 "и больше беспокоить не буду.\n\n") if last else \
-                ("Если сейчас не актуально — скажите прямо, я закрою вопрос и не буду писать снова.\n"
-                 "Если актуально — пришлю одну страницу с тем, как бы к этому подошёл.\n\n")
+        if is_job:
+            body += ("Это моё последнее письмо по теме. Если позиция уже закрыта или профиль не подошёл — "
+                     "буду благодарен за пару слов, чтобы не ждать впустую.\n\n") if last else \
+                    ("Уточняю статус по рассмотрению. Если решение ещё не принято — не тороплю, "
+                     "просто на связи, если появятся вопросы по опыту.\n\n")
+        else:
+            body += ("Это моё последнее письмо по теме. Не ответите — пойму, что неактуально, "
+                     "и больше беспокоить не буду.\n\n") if last else \
+                    ("Если сейчас не актуально — скажите прямо, я закрою вопрос и не буду писать снова.\n"
+                     "Если актуально — пришлю одну страницу с тем, как бы к этому подошёл.\n\n")
         body += "С уважением,\nАнтон Зайцев"
     else:
         body = f"Hello,\n\nFollowing up on my note from {lead.get('last_activity', '')} regarding {topic}.\n\n"
-        body += ("This is my last note on this. If I don't hear back, I'll assume it's not relevant "
-                 "and won't follow up again.\n\n") if last else \
-                ("If this isn't a priority right now, just say so — I'll close it out and won't write again.\n"
-                 "If it is, I'll send a one-pager on how I'd approach it.\n\n")
+        if is_job:
+            body += ("This is my last note on this. If the role is filled or it's not a fit, a quick line "
+                     "would save us both the wait.\n\n") if last else \
+                    ("Checking in on where things stand. No rush - happy to answer anything on my background "
+                     "in the meantime.\n\n")
+        else:
+            body += ("This is my last note on this. If I don't hear back, I'll assume it's not relevant "
+                     "and won't follow up again.\n\n") if last else \
+                    ("If this isn't a priority right now, just say so — I'll close it out and won't write again.\n"
+                     "If it is, I'll send a one-pager on how I'd approach it.\n\n")
         body += "Best regards,\nAnton Zaytsev"
     return subj, body
+
+
 
 
 def find_drafts_folder(M):
@@ -608,6 +630,65 @@ def dispatches_last_days(state, days=7):
     return out
 
 
+def platform_silence_status(state):
+    """Для каждой известной платформы: последняя дата любого письма с её домена
+    (по всей истории dispatches, не только 'dispatch'-классифицированных -
+    молчание есть молчание, неважно newsletter это или реальный запрос) и
+    статус relative к порогу. Платформа без единой записи - silence=None,
+    считаем её 'unverified' (не 'silent'): не с чем сравнивать дни."""
+    today = datetime.now(timezone.utc).date()
+    last_seen = {}
+    for rec in state.get("dispatches", {}).values():
+        plat = rec.get("platform")
+        d = rec.get("date", "")
+        if not plat or not d:
+            continue
+        if plat not in last_seen or d > last_seen[plat]:
+            last_seen[plat] = d
+
+    status = {}
+    for plat in KNOWN_PLATFORMS:
+        d = last_seen.get(plat)
+        if d is None:
+            status[plat] = "unverified"
+            continue
+        try:
+            last_date = datetime.strptime(d, "%Y-%m-%d").date()
+            silence = (today - last_date).days
+        except ValueError:
+            status[plat] = "unverified"
+            continue
+        status[plat] = f"silent {silence}d" if silence >= PLATFORM_SILENCE_DAYS else "live"
+    return status
+
+
+def seed_platform_baseline(state):
+    """Переносит то, что уже было вручную выяснено 17.07.26 (см. platforms.json
+    _verified), в state['dispatches'] ОДИН раз - синтетической записью. Без
+    этого молодой счётчик dispatches (обнулился недавно, записей 0) считал бы
+    молчащие каналы 'unverified' месяцами, хотя факт молчания уже известен и
+    подтверждён вручную. Идемпотентно: если платформа уже встречалась в
+    dispatches (baseline или реальная запись - неважно), повторно не сеет."""
+    seeded = state.setdefault("platform_baseline_seeded", [])
+    log = state.setdefault("dispatches", {})
+    existing_platforms = {rec.get("platform") for rec in log.values()}
+    # Известно на 17.07.26 из platforms.json: эти четверо подтверждены живыми
+    # недавно, эти пятеро - молчат ~200д. Baseline фиксирует факт на дату
+    # находки, дальше live-каналы обновит сам count_dispatches при письме.
+    KNOWN_LIVE_ASOF = {"GLG": "2026-07-17", "Guidepoint": "2026-07-17",
+                        "Atheneum": "2026-07-17", "Coleman": "2026-07-17"}
+    KNOWN_SILENT_ASOF = {"AlphaSights": "2025-12-29", "Dialectica": "2025-12-29",
+                          "ProSapient": "2025-12-29", "Tegus": "2025-12-29",
+                          "Glasford": "2025-12-29"}
+    for plat, d in {**KNOWN_LIVE_ASOF, **KNOWN_SILENT_ASOF}.items():
+        if plat in existing_platforms or plat in seeded:
+            continue
+        h = f"baseline_{plat}"
+        log[h] = {"date": d, "platform": plat, "kind": "baseline",
+                   "subject": "(seed from platforms.json manual audit 17.07.26)"}
+        seeded.append(plat)
+
+
 def recompute_silence_days(pipeline):
     today = datetime.now(timezone.utc).date()
     for lead in pipeline["leads"]:
@@ -618,8 +699,16 @@ def recompute_silence_days(pipeline):
             pass
 
 
-def esc(s):
-    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+# --- Тишина платформ: тот же принцип, что и feed_health в filings.py ---------
+# platforms.json годами копил статус "UNVERIFIED - no mail in 200d" как ручной
+# комментарий. Данные для этого уже были в state["dispatches"] - просто никто
+# их не читал. Считаем сами, докладываем по ФРОНТУ (переход в тишину / ожила),
+# не по уровню - иначе бот ныл бы про AlphaSights каждый будний день.
+PLATFORM_SILENCE_DAYS = 60      # порог, после которого канал считаем молчащим
+PLATFORM_REPORT_WEEKDAY = 0     # 0=понедельник (datetime.weekday()) - раз в неделю с прогоном
+KNOWN_PLATFORMS = sorted(set(PLATFORM_MARKERS.values()))
+
+
 
 
 def tg_send(text):
@@ -638,6 +727,7 @@ def main():
     pipeline = load_pipeline()
     state = load_state()
     seen = set(state["seen"])
+    seed_platform_baseline(state)
 
     # 1) SENT первым: лид должен существовать ДО того, как придёт ответ на него,
     #    иначе ответ упадёт в "new human contact?" и снова потеряется.
@@ -703,6 +793,10 @@ def main():
     drafts = put_drafts(pipeline, state)
     save_pipeline(pipeline)
     state["seen"] = list(seen)
+    silence_now = platform_silence_status(state)
+    silence_prev = state.get("platform_silence_prev", {})
+    silence_changes = [(p, silence_prev.get(p), s) for p, s in silence_now.items() if silence_prev.get(p) != s]
+    state["platform_silence_prev"] = silence_now
     save_state(state)
 
     for r in new_replies:
@@ -755,6 +849,22 @@ def main():
         if len(new_other) > 5:
             lines.append(f"+{len(new_other) - 5} more")
         lines.append("\nUpdate pipeline.json if relevant.")
+        tg_send("\n".join(lines))
+
+    # Тишина платформ: та же логика "доклад по фронту", что и feed_health в
+    # filings.py. platforms.json годами держал эти статусы как текст, который
+    # никто не пересчитывал - теперь считает сам pipeline_sync на реальных
+    # датах писем. Не спамим: сообщение только когда платформа СМЕНИЛА статус
+    # относительно прошлого прогона (ожила / замолчала), не каждый раз.
+    if silence_changes:
+        lines = ["📡 <b>Платформы — изменение статуса</b>"]
+        for plat, old, new in silence_changes:
+            if new == "live" and old not in (None, "unverified"):
+                lines.append(f"✅ <b>{esc(plat)}</b> — ожила")
+            elif new.startswith("silent") and old != "unverified":
+                lines.append(f"⚠️ <b>{esc(plat)}</b> — {esc(new)}")
+            else:
+                lines.append(f"• <b>{esc(plat)}</b>: {esc(str(old))} → {esc(new)}")
         tg_send("\n".join(lines))
 
     print(f"Done. Real replies: {len(new_replies)}, new contacts: {len(new_other)}, "
