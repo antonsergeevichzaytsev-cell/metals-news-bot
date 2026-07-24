@@ -48,6 +48,10 @@ HISTORY_RETENTION_DAYS = 30
 SKIPPED_RETENTION_DAYS = 7
 MSG_MAP_KEEP = 300
 PRIORITY_RANK = {"high": 0, "medium": 1, "low": 2}
+# Лента должна продержаться в новом статусе N прогонов подряд, прежде чем
+# об этом доложат. Гасит однопрогонный флап (GlobeNewswire timeout/503 сам
+# отпускает к следующему прогону) и не даёт пропустить реальную поломку.
+FEED_STATUS_CONFIRM_RUNS = 2
 PRIORITY_EMOJI = {"high": "\U0001f534", "medium": "\U0001f7e1", "low": "\u26aa"}
 
 # Стадия решает, какой из навыков вообще продаётся. На стройке FEL уже кончился.
@@ -158,12 +162,13 @@ def load_state():
                 s.setdefault("seen", [])
                 s.setdefault("pending", [])
                 s.setdefault("feed_health", {})
+                s.setdefault("feed_health_track", {})
                 s.setdefault("msg_map", {})
                 s.setdefault("tg_offset", 0)
                 return s
         except Exception:
             pass
-    return {"seen": [], "pending": [], "feed_health": {}, "msg_map": {}, "tg_offset": 0}
+    return {"seen": [], "pending": [], "feed_health": {}, "feed_health_track": {}, "msg_map": {}, "tg_offset": 0}
 
 
 def save_state(state):
@@ -669,13 +674,29 @@ def main():
     state["last_run"]["labels_collected"] = n_labels
 
     # Докладываем по ФРОНТУ, а не по уровню: сломанная лента должна крикнуть
-    # один раз, а не ныть пять раз в день.
-    prev = state.get("feed_health", {})
-    changes = [(n, prev.get(n), s) for n, s in health.items() if prev.get(n) != s]
+    # один раз, а не ныть пять раз в день. Но фронт репортим не сразу, а
+    # только когда новый статус продержался FEED_STATUS_CONFIRM_RUNS
+    # прогонов подряд: однопрогонный timeout/503 - это флап, не поломка,
+    # и следующий прогон его чаще всего сам гасит.
+    prev_track = state.get("feed_health_track", {})
+    new_track = {}
+    changes = []
+    for name, status in health.items():
+        prior = prev_track.get(name, {})
+        if prior.get("status") == status:
+            streak = prior.get("streak", 0) + 1
+        else:
+            streak = 1
+        new_track[name] = {"status": status, "streak": streak, "reported": prior.get("reported") if prior.get("status") == status else None}
+        if streak >= FEED_STATUS_CONFIRM_RUNS and new_track[name]["reported"] != status:
+            reported_before = prior.get("reported")
+            changes.append((name, reported_before, status))
+            new_track[name]["reported"] = status
     if changes:
-        print(f"Feed health changed: {changes}")
+        print(f"Feed health changed (confirmed x{FEED_STATUS_CONFIRM_RUNS}): {changes}")
         tg_send(render_health(changes))
         time.sleep(1.0)
+    state["feed_health_track"] = new_track
     state["feed_health"] = health
 
     if not queue:
