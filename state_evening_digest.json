@@ -140,26 +140,16 @@
       "touches": 3,
       "last_activity": "2026-07-10"
     },
-    "outreach_auto_example": {
-      "status": "dead",
-      "touches": 1,
-      "last_activity": "2026-07-21"
-    },
-    "outreach_auto_masterxoloda": {
-      "status": "reply_received",
-      "touches": 6,
-      "last_activity": "2026-07-23"
-    },
-    "outreach_auto_perm": {
+    "job_ancor_perm": {
       "status": "reply_received",
       "touches": 2,
       "last_activity": "2026-07-23"
     },
-    "outreach_auto_ddxfitness": {
+    "outreach_auto_uzairways": {
       "status": "sent_no_reply",
-      "touches": 1,
-      "last_activity": "2026-07-23"
+      "touches": 2,
+      "last_activity": "2026-07-27"
     }
   },
-  "day_start_date": "2026-07-24"
+  "day_start_date": "2026-07-27"
 }
