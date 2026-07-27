@@ -366,69 +366,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "Cerrado Gold Announces 100% Repurchase of Stream Agreements Over Its Minera Don Nicolas and Lagoa Salgada Projects Held by Sprott",
-      "link": "https://www.globenewswire.com/news-release/2026/07/20/3329535/0/en/Cerrado-Gold-Announces-100-Repurchase-of-Stream-Agreements-Over-Its-Minera-Don-Nicolas-and-Lagoa-Salgada-Projects-Held-by-Sprott.html",
-      "reason": "финансовая сделка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "Evolve Royalties Secures Revolving Credit Facility for Up to US$75 Million",
-      "link": "https://www.globenewswire.com/news-release/2026/07/20/3329657/0/en/Evolve-Royalties-Secures-Revolving-Credit-Facility-for-Up-to-US-75-Million.html",
-      "reason": "финансирование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "QIMC Reports Record 24.3% Clean Natural Hydrogen at Bennett Hill DDH-26-04 and Begins Technical Evaluation of Pilot-Scale Developm",
-      "link": "https://www.newsfilecorp.com/release/305760/QIMC-Reports-Record-24.3-Clean-Natural-Hydrogen-at-Bennett-Hill-DDH2604-and-Begins-Technical-Evaluation-of-PilotScale-Development-Pathway-and-Clean-Energy-Generation",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "Tajiri to Commence IP Survey at the Yono Gold Project to Follow up on Trench Results of 32m at 1.1g/t Au and 19m at 4.6g/t Au",
-      "link": "https://www.newsfilecorp.com/release/305738/Tajiri-to-Commence-IP-Survey-at-the-Yono-Gold-Project-to-Follow-up-on-Trench-Results-of-32m-at-1.1gt-Au-and-19m-at-4.6gt-Au",
-      "reason": "геофизическая съемка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "Thistle Resources Uncovers High Grade Stibnite in New 2026 Trench Program at Its Brunswick Antimony Project",
-      "link": "https://www.newsfilecorp.com/release/305742/Thistle-Resources-Uncovers-High-Grade-Stibnite-in-New-2026-Trench-Program-at-Its-Brunswick-Antimony-Project",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "Apex Resources Grants Options",
-      "link": "https://www.newsfilecorp.com/release/305763/Apex-Resources-Grants-Options",
-      "reason": "опционы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "Graphene Manufacturing Group to Host Live Fireside Chat on Scaling Production and Expanding Global Markets",
-      "link": "https://www.newsfilecorp.com/release/305761/Graphene-Manufacturing-Group-to-Host-Live-Fireside-Chat-on-Scaling-Production-and-Expanding-Global-Markets",
-      "reason": "конференция",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "Orestone Advances Exploration at Tom East and Kelly Gold Zones on the Francisca Gold Silver Property in Salta Province Argentina",
-      "link": "https://www.newsfilecorp.com/release/305506/Orestone-Advances-Exploration-at-Tom-East-and-Kelly-Gold-Zones-on-the-Francisca-Gold-Silver-Property-in-Salta-Province-Argentina",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T15:17:25.432683+00:00",
-      "title": "Awalé Hits 43.7 g/t Gold Equivalent Below the BBM Open Pit with Initial Deeper Holes Pointing to Underground Growth",
-      "link": "https://www.newsfilecorp.com/release/305733/Awal-Hits-43.7-gt-Gold-Equivalent-Below-the-BBM-Open-Pit-with-Initial-Deeper-Holes-Pointing-to-Underground-Growth",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-20T20:18:08.897787+00:00",
       "title": "Eramet et la République gabonaise signent un protocole d'accord structuré pour transformer durablement la chaîne de valeur du mang",
       "link": "https://www.globenewswire.com/news-release/2026/07/20/3330016/0/fr/Eramet-et-la-R%C3%A9publique-gabonaise-signent-un-protocole-d-accord-structur%C3%A9-pour-transformer-durablement-la-cha%C3%AEne-de-valeur-du-mangan%C3%A8se-au-Gabon.html",
@@ -1167,6 +1104,20 @@
       "ts": "2026-07-27T13:01:06.866957+00:00",
       "title": "Medaro Mining Advances Clay Howells West Project with Completion of Airborne Geophysical Survey and Phase 1 Exploration Program",
       "link": "https://www.newsfilecorp.com/release/306597/Medaro-Mining-Advances-Clay-Howells-West-Project-with-Completion-of-Airborne-Geophysical-Survey-and-Phase-1-Exploration-Program",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T15:48:22.562515+00:00",
+      "title": "Benton Plans to Spin Out Great Burnt Copper-Gold Project to Shareholders for $15.0 M Valuation in Conjunction with Concurrent $10.",
+      "link": "https://www.newsfilecorp.com/release/306633/Benton-Plans-to-Spin-Out-Great-Burnt-CopperGold-Project-to-Shareholders-for-15.0-M-Valuation-in-Conjunction-with-Concurrent-10.0-M-Financing",
+      "reason": "корпоративная реструктуризация",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T15:48:22.562515+00:00",
+      "title": "Silver Hammer Commences Surface Exploration Program at the Eliza High-Grade Silver Project in Nevada",
+      "link": "https://www.newsfilecorp.com/release/306591/Silver-Hammer-Commences-Surface-Exploration-Program-at-the-Eliza-HighGrade-Silver-Project-in-Nevada",
       "reason": "буровые пробы",
       "orbit": false
     }
