@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Pipeline sync v5 — лиды из SENT, живые ответы, черновики follow-up, счёт диспатчей."""
-import imaplib, email, json, os, re, hashlib, sys, time
+import imaplib, email, json, os, re, hashlib, sys, time, html
 from datetime import datetime, timedelta, timezone
 from email.header import decode_header
 from email.message import EmailMessage
 from email.utils import parsedate_to_datetime
 import urllib.request, urllib.parse
+
+
+def esc(value):
+    """Экранирует текст перед вставкой в HTML-разметку Telegram-сообщений."""
+    return html.escape(str(value))
 
 GMAIL_USER = os.environ["GMAIL_USER"]
 GMAIL_APP_PASSWORD = os.environ["GMAIL_APP_PASSWORD"]
