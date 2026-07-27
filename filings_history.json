@@ -310,6 +310,58 @@
       "hook": "Металлургия на стадии изучения: нужен взгляд на технологию и патенты.",
       "priority": "low",
       "ts": "2026-07-27T08:51:33.529860+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333401/0/en/Winshear-Portsoy-Project-Successful-Metallurgical-Testwork-Produces-Marketable-Copper-and-Highly-Attractive-Nickel-Concentrates.html",
+      "title": "Winshear Portsoy Project – Successful Metallurgical Testwork Produces Marketable Copper and Highly Attractive Nickel Concentrates",
+      "stage": "study",
+      "signal": "металлургия успешна",
+      "company": "Winshear",
+      "project": "Portsoy",
+      "region": "Canada",
+      "why": "Металлургические тесты дали товарные концентраты Cu и Ni.",
+      "hook": "Металлургия вышла на товарные концентраты: нужен аудит flowsheet.",
+      "priority": "low",
+      "ts": "2026-07-27T13:01:06.866957+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333468/0/fr/Falco-d%C3%A9pose-la-mise-%C3%A0-jour-de-l-%C3%A9tude-de-faisabilit%C3%A9-pour-son-projet-Horne-5.html",
+      "title": "Falco dépose la mise à jour de l’étude de faisabilité pour son projet Horne 5",
+      "stage": "study",
+      "signal": "FS déposée",
+      "company": "Ressources Falco Ltée",
+      "project": "Horne 5",
+      "region": "Canada",
+      "why": "FS déposée avec CapEx et métallurgie à vérifier.",
+      "hook": "Owner-side review of FS CapEx and metallurgy before investment decision.",
+      "priority": "low",
+      "ts": "2026-07-27T13:01:06.866957+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333468/0/en/Falco-Files-Updated-Feasibility-Study-for-Its-Horne-5-Project.html",
+      "title": "Falco Files Updated Feasibility Study for Its Horne 5 Project",
+      "stage": "study",
+      "signal": "FS опубликован",
+      "company": "Falco Resources Ltd.",
+      "project": "Horne 5 Gold Project",
+      "region": "Canada",
+      "why": "Обновлённое ТЭО с CapEx и сроками, но проект в Канаде.",
+      "hook": "Owner-side review CapEx и графика: не дать ТЭО устареть до финального решения.",
+      "priority": "medium",
+      "ts": "2026-07-27T13:01:06.866957+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306542/Critical-One-Energy-Announces-Positive-Lab-Results-from-Howells-Lake-Preliminary-Metallurgical-Study",
+      "title": "Critical One Energy Announces Positive Lab Results from Howells Lake Preliminary Metallurgical Study",
+      "stage": "study",
+      "signal": "металлургия предварительная",
+      "company": "Critical One Energy Inc.",
+      "project": "Howells Lake Antimony-Gold Project",
+      "region": "Canada",
+      "why": "Предварительные металлургические тесты положительны, но не указаны цифры.",
+      "hook": "Металлургия на старте: нужен взгляд на флоушит и извлечение.",
+      "priority": "low",
+      "ts": "2026-07-27T13:01:06.866957+00:00"
     }
   ],
   "skipped": [
@@ -1005,6 +1057,118 @@
       "link": "https://www.newsfilecorp.com/release/306553/Starcore-Reports-Year-End-2026-Results",
       "reason": "годовой отчёт",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Asante Gold Announces Management Change",
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333330/0/en/Asante-Gold-Announces-Management-Change.html",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "TROILUS SÉLECTIONNÉE PAR LE GOUVERNEMENT DU QUÉBEC POUR BÉNÉFICIER DE L’ACCOMPAGNEMENT SPÉCIALISÉ FILON EN APPUI À L'AVANCEMENT DE",
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333377/0/fr/TROILUS-S%C3%89LECTIONN%C3%89E-PAR-LE-GOUVERNEMENT-DU-QU%C3%89BEC-POUR-B%C3%89N%C3%89FICIER-DE-L-ACCOMPAGNEMENT-SP%C3%89CIALIS%C3%89-FILON-EN-APPUI-%C3%80-L-AVANCEMENT-DES-PROJETS-MINIERS-STRAT%C3%89GIQUES.html",
+      "reason": "accompagnement gouvernemental",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Troilus Selected by the Government of Quebec to Receive Specialized Support Through the New Filon Initiative for Strategic Mining ",
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333377/0/en/Troilus-Selected-by-the-Government-of-Quebec-to-Receive-Specialized-Support-Through-the-New-Filon-Initiative-for-Strategic-Mining-Projects.html",
+      "reason": "господдержка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Phenom Commences Drilling at Dobbin Gold Project, Nevada",
+      "link": "https://www.newsfilecorp.com/release/306618/Phenom-Commences-Drilling-at-Dobbin-Gold-Project-Nevada",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Lion One Acquires New LM90 Drill to Target Zone 500 and West Zone from Underground",
+      "link": "https://www.newsfilecorp.com/release/306615/Lion-One-Acquires-New-LM90-Drill-to-Target-Zone-500-and-West-Zone-from-Underground",
+      "reason": "оборудование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "GMG's G(R) LUBRICANT and THERMAL-XR(R) to be Distributed by Blackwoods in Australia",
+      "link": "https://www.newsfilecorp.com/release/306628/GMGs-GR-LUBRICANT-and-THERMALXRR-to-be-Distributed-by-Blackwoods-in-Australia",
+      "reason": "дистрибуция",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Silver Elephant Channel Sampling Returns 539 g/t Silver Over 10 Meters at Apuradita",
+      "link": "https://www.newsfilecorp.com/release/306609/Silver-Elephant-Channel-Sampling-Returns-539-gt-Silver-Over-10-Meters-at-Apuradita",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Dinero Announces Completion of Phase I Drilling on High Grade REE Property",
+      "link": "https://www.newsfilecorp.com/release/306601/Dinero-Announces-Completion-of-Phase-I-Drilling-on-High-Grade-REE-Property",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Barksdale Meets Technical Milestones for Phase II Earn-In and Updates SUN26-013R Assay Result of 65.5 Metres of 0.47% Cu and 1.24 ",
+      "link": "https://www.newsfilecorp.com/release/306610/Barksdale-Meets-Technical-Milestones-for-Phase-II-EarnIn-and-Updates-SUN26013R-Assay-Result-of-65.5-Metres-of-0.47-Cu-and-1.24-gt-Ag-Including-7.6-Metres-of-1.93-Cu-and-1.96-gt-Ag",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Talon Metals Announces Leadership Transition",
+      "link": "https://www.newsfilecorp.com/release/306599/Talon-Metals-Announces-Leadership-Transition",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Powermax Minerals Commenced 2026 Exploration Work at the Cameron Rare Earth Element Project, British Columbia",
+      "link": "https://www.newsfilecorp.com/release/306411/Powermax-Minerals-Commenced-2026-Exploration-Work-at-the-Cameron-Rare-Earth-Element-Project-British-Columbia",
+      "reason": "полевые работы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "First Phosphate s'ajoute au service d'accompagnement spécialisé « Filon » du ministère des Ressources naturelles et des Forêts du ",
+      "link": "https://www.newsfilecorp.com/release/306578/First-Phosphate-sajoute-au-service-daccompagnement-spcialis-Filon-du-ministre-des-Ressources-naturelles-et-des-Forts-du-Qubec",
+      "reason": "сопровождение проекта",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "First Phosphate Selected for \"Filon\" Fastrack Status with the Québec Ministry of Natural Resources and Forests",
+      "link": "https://www.newsfilecorp.com/release/306577/First-Phosphate-Selected-for-Filon-Fastrack-Status-with-the-Qubec-Ministry-of-Natural-Resources-and-Forests",
+      "reason": "статус Filon",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Zodiac Gold Commences Inaugural Drilling of up to 5,000m at Lewis Target, Todi Gold Project, Liberia",
+      "link": "https://www.newsfilecorp.com/release/306587/Zodiac-Gold-Commences-Inaugural-Drilling-of-up-to-5000m-at-Lewis-Target-Todi-Gold-Project-Liberia",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Goldgroup Announces Leadership Transition as Company Advances Next Phase of Growth",
+      "link": "https://www.newsfilecorp.com/release/306604/Goldgroup-Announces-Leadership-Transition-as-Company-Advances-Next-Phase-of-Growth",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.866957+00:00",
+      "title": "Medaro Mining Advances Clay Howells West Project with Completion of Airborne Geophysical Survey and Phase 1 Exploration Program",
+      "link": "https://www.newsfilecorp.com/release/306597/Medaro-Mining-Advances-Clay-Howells-West-Project-with-Completion-of-Airborne-Geophysical-Survey-and-Phase-1-Exploration-Program",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1109,6 +1273,12 @@
       "ts": "2026-07-27T08:51:33.527739+00:00",
       "title": "iMetal Resources Provides Update on Private Placement",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T13:01:06.856212+00:00",
+      "title": "Primary Hydrogen Appoints Christopher Longton as Vice President, Exploration",
+      "matched_noise_word": "appoint\\w*",
       "orbit": false
     }
   ]
