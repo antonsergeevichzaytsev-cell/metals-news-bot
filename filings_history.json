@@ -366,20 +366,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-20T22:54:02.146157+00:00",
-      "title": "Aurelius Announces Closing of Debt Financing",
-      "link": "https://www.newsfilecorp.com/release/305839/Aurelius-Announces-Closing-of-Debt-Financing",
-      "reason": "финансирование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T22:54:02.146157+00:00",
-      "title": "Western Copper and Gold Provides Corporate Update",
-      "link": "https://www.newsfilecorp.com/release/305860/Western-Copper-and-Gold-Provides-Corporate-Update",
-      "reason": "корпоративное обновление",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-21T05:55:19.674060+00:00",
       "title": "U92 Announces Filing of Corrective Disclosure and Provides Corporate Update",
       "link": "https://www.newsfilecorp.com/release/305918/U92-Announces-Filing-of-Corrective-Disclosure-and-Provides-Corporate-Update",
@@ -1133,6 +1119,20 @@
       "title": "Geomorphic AI Offers Koivuniemi Flake-Graphite Project for Joint Venture - a Drilled, Metallurgically Tested Coarse-flake Camp, No",
       "link": "https://www.newsfilecorp.com/release/306773/Geomorphic-AI-Offers-Koivuniemi-FlakeGraphite-Project-for-Joint-Venture-a-Drilled-Metallurgically-Tested-Coarseflake-Camp-North-Savo-Finland",
       "reason": "совместное предприятие",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T22:55:43.141717+00:00",
+      "title": "Bayhorse Silver Underground Drilling Operations Suspended Due to Wildfires",
+      "link": "https://www.newsfilecorp.com/release/306814/Bayhorse-Silver-Underground-Drilling-Operations-Suspended-Due-to-Wildfires",
+      "reason": "форс-мажор",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T22:55:43.141717+00:00",
+      "title": "NSJ Gold Corp. (NSJ) (9PZ) Announces Flow-Thru Financing for Exploration on Its Antimony 2.0 Property",
+      "link": "https://www.newsfilecorp.com/release/306816/NSJ-Gold-Corp.-NSJ-9PZ-Announces-FlowThru-Financing-for-Exploration-on-Its-Antimony-2.0-Property",
+      "reason": "размещение",
       "orbit": false
     }
   ],
