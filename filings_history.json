@@ -366,20 +366,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-20T20:18:08.897787+00:00",
-      "title": "Eramet et la République gabonaise signent un protocole d'accord structuré pour transformer durablement la chaîne de valeur du mang",
-      "link": "https://www.globenewswire.com/news-release/2026/07/20/3330016/0/fr/Eramet-et-la-R%C3%A9publique-gabonaise-signent-un-protocole-d-accord-structur%C3%A9-pour-transformer-durablement-la-cha%C3%AEne-de-valeur-du-mangan%C3%A8se-au-Gabon.html",
-      "reason": "accord politique",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-20T20:18:08.897787+00:00",
-      "title": "Eramet and the Gabonese Republic sign a structured memorandum of understanding to sustainably transform the manganese value chain ",
-      "link": "https://www.globenewswire.com/news-release/2026/07/20/3330016/0/en/Eramet-and-the-Gabonese-Republic-sign-a-structured-memorandum-of-understanding-to-sustainably-transform-the-manganese-value-chain-in-Gabon.html",
-      "reason": "меморандум",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-20T22:54:02.146157+00:00",
       "title": "Aurelius Announces Closing of Debt Financing",
       "link": "https://www.newsfilecorp.com/release/305839/Aurelius-Announces-Closing-of-Debt-Financing",
@@ -1120,16 +1106,17 @@
       "link": "https://www.newsfilecorp.com/release/306591/Silver-Hammer-Commences-Surface-Exploration-Program-at-the-Eliza-HighGrade-Silver-Project-in-Nevada",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-27T20:19:26.089705+00:00",
+      "title": "Winchester Equity Corporation Announces New Loan Agreement",
+      "link": "https://www.newsfilecorp.com/release/306771/Winchester-Equity-Corporation-Announces-New-Loan-Agreement",
+      "reason": "финансовая операция",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-20T20:18:08.897039+00:00",
-      "title": "Pelangio Exploration Grants Stock Options",
-      "matched_noise_word": "stock option\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-07-21T05:55:19.673670+00:00",
       "title": "Cross River Announces Proposed Name Change and Consolidation",
