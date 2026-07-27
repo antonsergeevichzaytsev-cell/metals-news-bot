@@ -297,16 +297,22 @@
       "hook": "Операционная эффективность: как выжать больше из действующего актива.",
       "priority": "low",
       "ts": "2026-07-23T13:02:48.844292+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306558/Neotech-Metals-Commences-Metallurgical-Process-Development-Program-with-Dorfner-Anzaplan",
+      "title": "Neotech Metals Commences Metallurgical Process Development Program with Dorfner Anzaplan",
+      "stage": "study",
+      "signal": "металлургическая программа",
+      "company": "Neotech Metals Corp.",
+      "project": "Hecla-Kilmer",
+      "region": "Canada",
+      "why": "Разработка предварительной технологической схемы для редкоземельного проекта.",
+      "hook": "Металлургия на стадии изучения: нужен взгляд на технологию и патенты.",
+      "priority": "low",
+      "ts": "2026-07-27T08:51:33.529860+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-20T08:21:05.766953+00:00",
-      "title": "Clearly Defined Anomaly Interpreted by Makenita Resources Inc on the 'Sisson West Tungsten Project' Directly Bordering the Sisson ",
-      "link": "https://www.newsfilecorp.com/release/305749/Clearly-Defined-Anomaly-Interpreted-by-Makenita-Resources-Inc-on-the-Sisson-West-Tungsten-Project-Directly-Bordering-the-Sisson-Tungsten-Deposit-in-New-Brunswick",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
     {
       "ts": "2026-07-20T15:17:25.432683+00:00",
       "title": "Cerrado Gold Announces 100% Repurchase of Stream Agreements Over Its Minera Don Nicolas and Lagoa Salgada Projects Held by Sprott",
@@ -978,6 +984,27 @@
       "link": "https://www.newsfilecorp.com/release/306395/Silver-Pony-Announces-Final-CSE-Approval-Resumption-of-Trading-and-the-Official-Launch-of-2026-Drilling-Having-Commenced-at-the-Companys-Primary-HighGrade-Silver-Targets",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-27T08:51:33.529860+00:00",
+      "title": "Makenita Resources Significantly Increases Land Position on Sisson West Tungsten Deposit in New Brunswick",
+      "link": "https://www.newsfilecorp.com/release/306595/Makenita-Resources-Significantly-Increases-Land-Position-on-Sisson-West-Tungsten-Deposit-in-New-Brunswick",
+      "reason": "увеличение участка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T08:51:33.529860+00:00",
+      "title": "Rokmaster Options Undrilled Porphyry Copper Target in Northern Chile",
+      "link": "https://www.newsfilecorp.com/release/306611/Rokmaster-Options-Undrilled-Porphyry-Copper-Target-in-Northern-Chile",
+      "reason": "опцион на участок",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T08:51:33.529860+00:00",
+      "title": "Starcore Reports Year End 2026 Results",
+      "link": "https://www.newsfilecorp.com/release/306553/Starcore-Reports-Year-End-2026-Results",
+      "reason": "годовой отчёт",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1076,6 +1103,12 @@
       "ts": "2026-07-24T22:56:42.783546+00:00",
       "title": "Valkea Grants Stock Options",
       "matched_noise_word": "stock option\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-27T08:51:33.527739+00:00",
+      "title": "iMetal Resources Provides Update on Private Placement",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
