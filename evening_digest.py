@@ -244,7 +244,6 @@ def main():
 
     today_str = now_msk.strftime("%Y-%m-%d")
     snap = state.get("day_start_snapshot")
-    snap_date = state.get("day_start_date")
 
     if snap is None:
         # Бот никогда раньше не запускался - сравнивать не с чем вообще.
