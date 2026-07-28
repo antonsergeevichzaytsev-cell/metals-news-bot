@@ -22,6 +22,7 @@ on:
       - "Mission Control"
       - "Pipeline sync"
       - "Weekly Check"
+      - "TEST fail probe"
     types:
       - completed
 
