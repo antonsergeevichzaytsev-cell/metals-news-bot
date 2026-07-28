@@ -375,6 +375,32 @@
       "hook": "Owner-side контроль подрядчика и графика: не дать стройке съесть бюджет до первого золота.",
       "priority": "low",
       "ts": "2026-07-28T07:57:54.824302+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306810/Homerun-Resources-Inc.-Advances-Solar-Glass-Project-Financing-with-Letter-of-Intent-from-Leading-European-Project-Finance-Bank-for-up-to-170-Million-Euros",
+      "title": "Homerun Resources Inc. Advances Solar Glass Project Financing with Letter of Intent from Leading European Project Finance Bank for up to 170 Million Euros",
+      "stage": "financing",
+      "signal": "финансирование проекта",
+      "company": "Homerun Resources Inc.",
+      "project": "Solar Glass Project",
+      "region": "Brazil",
+      "why": "LOI на €170 млн, но проект ещё не в CIS/ЦА.",
+      "hook": "Owner-side контроль затрат и FEL: не дать банку переоценить CapEx.",
+      "priority": "low",
+      "ts": "2026-07-28T13:01:05.044349+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306887/Focus-Graphite-Achieves-up-to-98.7-Carbon-Concentrate-Through-Mechanical-Processing-and-Activates-Downstream-Qualification-Platform",
+      "title": "Focus Graphite Achieves up to 98.7% Carbon Concentrate Through Mechanical Processing and Activates Downstream Qualification Platform",
+      "stage": "study",
+      "signal": "металлургия подтверждена",
+      "company": "Focus Graphite",
+      "project": "Lac Knife",
+      "region": "Canada",
+      "why": "Концентрат 98.7% C без химии, но проект в Канаде, не в СНГ.",
+      "hook": "Металлургия Lac Knife: 98.7% C без химобработки, но нужен ли CapEx на очистку?",
+      "priority": "low",
+      "ts": "2026-07-28T13:01:05.044349+00:00"
     }
   ],
   "skipped": [
@@ -1161,6 +1187,83 @@
       "link": "https://www.newsfilecorp.com/release/306672/Grit-Metals-Identifies-New-SpodumeneBoulder-Targets-and-Confirms-Highly-Fractionated-Pegmatite-System-Through-Recent-Drill-Program-at-Central-Finland-Lithium-Project",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Xali Gold Continues to Demonstrate the Scale and Grade of Gold Mineralization at Pico Machay",
+      "link": "https://www.globenewswire.com/news-release/2026/07/28/3334121/0/en/Xali-Gold-Continues-to-Demonstrate-the-Scale-and-Grade-of-Gold-Mineralization-at-Pico-Machay.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Scandium Canada : l'étude EY-Parthenon mise à jour projette un triplement de la demande mondiale de scandium d'ici 2035",
+      "link": "https://www.newsfilecorp.com/release/306878/Scandium-Canada-ltude-EYParthenon-mise-jour-projette-un-triplement-de-la-demande-mondiale-de-scandium-dici-2035",
+      "reason": "исследование рынка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Stakeholder Accelerates the Loki Copper Corridor: 3D Geophysical Inversions Nearing Completion Ahead of High-Impact 1,250-Sample S",
+      "link": "https://www.newsfilecorp.com/release/306668/Stakeholder-Accelerates-the-Loki-Copper-Corridor-3D-Geophysical-Inversions-Nearing-Completion-Ahead-of-HighImpact-1250Sample-Soil-and-Prospecting-Programs-Across-Loki-West-and-Newly-Staked-Loki-East",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Scandium Canada: Updated EY-Parthenon Study Projects Global Scandium Demand to Triple By 2035",
+      "link": "https://www.newsfilecorp.com/release/306880/Scandium-Canada-Updated-EYParthenon-Study-Projects-Global-Scandium-Demand-to-Triple-By-2035",
+      "reason": "рыночное исследование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Noble Plains Uranium Commences Confirmation Drill Program at Shirley Central Project",
+      "link": "https://www.newsfilecorp.com/release/306868/Noble-Plains-Uranium-Commences-Confirmation-Drill-Program-at-Shirley-Central-Project",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Minaurum Engages Dr. Paula Montoya and Launches Down-Hole Imagery Program to Enhance Geological Modeling of the Alamos Silver Proj",
+      "link": "https://www.newsfilecorp.com/release/304865/Minaurum-Engages-Dr.-Paula-Montoya-and-Launches-DownHole-Imagery-Program-to-Enhance-Geological-Modeling-of-the-Alamos-Silver-Project",
+      "reason": "геологическое моделирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Sitka Gold to Accelerate Acquisition of 100% Interest in the Clear Creek Property at Its RC Gold Project, Yukon",
+      "link": "https://www.newsfilecorp.com/release/306854/Sitka-Gold-to-Accelerate-Acquisition-of-100-Interest-in-the-Clear-Creek-Property-at-Its-RC-Gold-Project-Yukon",
+      "reason": "приобретение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Nations Royalty Reports Fiscal 2026 Year-End Results and Provides Portfolio Update",
+      "link": "https://www.newsfilecorp.com/release/306845/Nations-Royalty-Reports-Fiscal-2026-YearEnd-Results-and-Provides-Portfolio-Update",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Glenstar Provides Review and Update of the Wildhorse Project Following Completion of Phase 1 Drill Program",
+      "link": "https://www.newsfilecorp.com/release/306881/Glenstar-Provides-Review-and-Update-of-the-Wildhorse-Project-Following-Completion-of-Phase-1-Drill-Program",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "Transition Metals Commences 2026 Exploration Program at Pike Warden Epithermal Gold-Silver and Porphyry Copper Project, Yukon",
+      "link": "https://www.newsfilecorp.com/release/306905/Transition-Metals-Commences-2026-Exploration-Program-at-Pike-Warden-Epithermal-GoldSilver-and-Porphyry-Copper-Project-Yukon",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.044349+00:00",
+      "title": "SAGA Metals Reports Assays from R-0055 to R-0057 with Intercepts Including 53.72% Fe2O3, 8.24% TiO2, 0.377% V2O5 from 2026 Drillin",
+      "link": "https://www.newsfilecorp.com/release/306862/SAGA-Metals-Reports-Assays-from-R0055-to-R0057-with-Intercepts-Including-53.72-Fe2O3-8.24-TiO2-0.377-V2O5-from-2026-Drilling-at-Radar-Critical-Minerals-Project-in-Labrador",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1265,6 +1368,12 @@
       "ts": "2026-07-27T22:00:45.056755+00:00",
       "title": "BRS Resources Announces Marketing Agreement with IRPub",
       "matched_noise_word": "marketing agreement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T13:01:05.038260+00:00",
+      "title": "RZOLV Technologies Achieves DTC Eligibility, Enabling Electronic Settlement of Trades in the United States",
+      "matched_noise_word": "\\bDTC\\b eligib\\w*",
       "orbit": false
     }
   ]
