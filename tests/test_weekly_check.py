@@ -172,3 +172,71 @@ def test_watchdog_alarms_when_inbox_dead():
                      side_effect=_mock_load_json(pipeline=pipeline, inbox_state=None, history={"items": []})):
         alarms, facts = wc.watchdog(now)
     assert any("inbox.py мёртв" in a for a in alarms)
+
+
+# --- secrets_rotation_check -------------------------------------------------
+# НЕ читает реальные секреты GitHub (требует отдельный PAT — заводить его
+# ради мониторинга секретов увеличивает поверхность атаки). Сверяет
+# ручной трекер secrets_rotation.json.
+
+def test_secrets_rotation_no_overdue_when_all_fresh():
+    now = datetime.now(MSK)
+    recent = (now.date() - timedelta(days=10)).strftime("%Y-%m-%d")
+    data = {"rotation_threshold_days": 90, "secrets": {"FOO_KEY": recent}}
+    with mock.patch("weekly_check.load_json", return_value=data):
+        overdue = wc.secrets_rotation_check(now)
+    assert overdue == []
+
+
+def test_secrets_rotation_flags_overdue_secret():
+    now = datetime.now(MSK)
+    old = (now.date() - timedelta(days=100)).strftime("%Y-%m-%d")
+    data = {"rotation_threshold_days": 90, "secrets": {"FOO_KEY": old}}
+    with mock.patch("weekly_check.load_json", return_value=data):
+        overdue = wc.secrets_rotation_check(now)
+    assert len(overdue) == 1
+    assert overdue[0][0] == "FOO_KEY"
+    assert overdue[0][1] == 100
+
+
+def test_secrets_rotation_exactly_at_threshold_counts_as_overdue():
+    now = datetime.now(MSK)
+    exactly = (now.date() - timedelta(days=90)).strftime("%Y-%m-%d")
+    data = {"rotation_threshold_days": 90, "secrets": {"FOO_KEY": exactly}}
+    with mock.patch("weekly_check.load_json", return_value=data):
+        overdue = wc.secrets_rotation_check(now)
+    assert len(overdue) == 1
+
+
+def test_secrets_rotation_sorted_by_most_overdue_first():
+    now = datetime.now(MSK)
+    d100 = (now.date() - timedelta(days=100)).strftime("%Y-%m-%d")
+    d200 = (now.date() - timedelta(days=200)).strftime("%Y-%m-%d")
+    data = {"rotation_threshold_days": 90, "secrets": {"NEWER": d100, "OLDER": d200}}
+    with mock.patch("weekly_check.load_json", return_value=data):
+        overdue = wc.secrets_rotation_check(now)
+    assert [name for name, _ in overdue] == ["OLDER", "NEWER"]
+
+
+def test_secrets_rotation_missing_file_returns_empty_not_crash():
+    now = datetime.now(MSK)
+    with mock.patch("weekly_check.load_json", return_value=None):
+        overdue = wc.secrets_rotation_check(now)
+    assert overdue == []
+
+
+def test_secrets_rotation_malformed_date_skipped_not_crash():
+    now = datetime.now(MSK)
+    data = {"rotation_threshold_days": 90, "secrets": {"BAD": "not-a-date"}}
+    with mock.patch("weekly_check.load_json", return_value=data):
+        overdue = wc.secrets_rotation_check(now)
+    assert overdue == []
+
+
+def test_secrets_rotation_uses_default_threshold_if_missing():
+    now = datetime.now(MSK)
+    old = (now.date() - timedelta(days=95)).strftime("%Y-%m-%d")
+    data = {"secrets": {"FOO_KEY": old}}  # без rotation_threshold_days
+    with mock.patch("weekly_check.load_json", return_value=data):
+        overdue = wc.secrets_rotation_check(now)
+    assert len(overdue) == 1  # дефолт 90 -> 95 дней просрочено
