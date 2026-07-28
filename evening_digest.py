@@ -20,6 +20,8 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+
+import net
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -170,7 +172,7 @@ def tg_send(text):
     }).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             r.read()
         return True
     except urllib.error.HTTPError as e:

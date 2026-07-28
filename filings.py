@@ -31,6 +31,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+
+import net
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -218,7 +220,7 @@ def fetch(url, timeout=20):
     """
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with net.urlopen_retry(req, timeout=timeout) as r:
             return r.read().decode("utf-8", errors="replace"), "ok"
     except urllib.error.HTTPError as e:
         return None, f"HTTP {e.code}"
@@ -383,7 +385,7 @@ def deepseek_screen(title, desc):
         },
     )
     try:
-        with urllib.request.urlopen(req, timeout=40) as r:
+        with net.urlopen_retry(req, timeout=40) as r:
             resp = json.loads(r.read().decode("utf-8"))
         return json.loads(resp["choices"][0]["message"]["content"])
     except Exception as e:
@@ -410,7 +412,7 @@ def tg_send(text, reply_markup=None):
     data = urllib.parse.urlencode(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             resp = json.loads(r.read().decode("utf-8"))
         return (resp.get("result") or {}).get("message_id")
     except urllib.error.HTTPError as e:
@@ -426,7 +428,7 @@ def tg_answer_callback(callback_id, text=""):
     data = urllib.parse.urlencode(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             r.read()
     except Exception as e:
         print(f"  ! answerCallbackQuery error: {e}", file=sys.stderr)
@@ -470,7 +472,7 @@ def tg_get_updates(offset):
     if offset:
         params["offset"] = offset
     try:
-        with urllib.request.urlopen(url + "?" + urllib.parse.urlencode(params), timeout=20) as r:
+        with net.urlopen_retry(url + "?" + urllib.parse.urlencode(params), timeout=20) as r:
             resp = json.loads(r.read().decode("utf-8"))
         return resp.get("result", [])
     except Exception as e:

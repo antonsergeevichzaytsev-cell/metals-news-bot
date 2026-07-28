@@ -10,6 +10,8 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+
+import net
 from datetime import datetime, timezone, timedelta
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
@@ -125,7 +127,7 @@ def push_conflict_stats(now, days=7):
                f"?status=failure&created=%3E{cutoff_iso}&per_page=20")
         req = urllib.request.Request(url, headers=headers)
         try:
-            with urllib.request.urlopen(req, timeout=15) as r:
+            with net.urlopen_retry(req, timeout=15) as r:
                 data = json.loads(r.read().decode("utf-8"))
             n = data.get("total_count", 0)
             if n > 0:
@@ -252,7 +254,7 @@ def telegram_is_alive():
     это про токен, не про доставку."""
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/getMe"
     try:
-        with urllib.request.urlopen(url, timeout=10) as r:
+        with net.urlopen_retry(url, timeout=10) as r:
             resp = json.loads(r.read().decode("utf-8"))
         return bool(resp.get("ok"))
     except Exception as e:
@@ -277,7 +279,7 @@ def github_issue_alert(title, body):
     def _req(method, url, payload=None):
         data = json.dumps(payload).encode() if payload is not None else None
         req = urllib.request.Request(url, data=data, headers=headers, method=method)
-        with urllib.request.urlopen(req, timeout=15) as r:
+        with net.urlopen_retry(req, timeout=15) as r:
             return json.loads(r.read().decode("utf-8"))
 
     try:
@@ -311,7 +313,7 @@ def tg_send(text):
     data = urllib.parse.urlencode(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             r.read()
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
