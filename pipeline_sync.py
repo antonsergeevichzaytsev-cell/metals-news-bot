@@ -642,6 +642,38 @@ def dispatches_last_days(state, days=7):
     return out
 
 
+def days_since_last_dispatch(state):
+    """Дней с последнего РЕАЛЬНОГО диспатча (kind='dispatch', не baseline/
+    newsletter) по всем платформам сразу — агрегированная метрика, в отличие
+    от platform_silence_status (та смотрит на каждую платформу отдельно).
+    None, если диспатчей в истории вообще нет — не с чем сравнивать дни,
+    это не то же самое, что 0 (которое означало бы 'сегодня был')."""
+    dates = [r.get("date", "") for r in state.get("dispatches", {}).values()
+             if r.get("kind") == "dispatch" and r.get("date")]
+    if not dates:
+        return None
+    last = datetime.strptime(max(dates), "%Y-%m-%d").date()
+    return (datetime.now(timezone.utc).date() - last).days
+
+
+def days_since_last_won(pipeline):
+    """Дней с последнего lead, ставшего won — использует last_activity как
+    прокси даты закрытия (won статус пока не несёт отдельного closed_date
+    поля; last_activity обновляется при каждом касании, для won-лида это
+    по факту последний раз, когда его редактировали — обычно совпадает
+    с моментом смены статуса). None, если won-лидов вообще ни разу не
+    было — не с чем сравнивать, это не то же самое, что 0."""
+    dates = [l.get("last_activity", "") for l in pipeline.get("leads", [])
+             if l.get("status") == "won" and l.get("last_activity")]
+    if not dates:
+        return None
+    try:
+        last = datetime.strptime(max(dates), "%Y-%m-%d").date()
+    except ValueError:
+        return None
+    return (datetime.now(timezone.utc).date() - last).days
+
+
 def platform_silence_status(state):
     """Для каждой известной платформы: последняя дата любого письма с её домена
     (по всей истории dispatches, не только 'dispatch'-классифицированных -
@@ -719,6 +751,16 @@ def recompute_silence_days(pipeline):
 PLATFORM_SILENCE_DAYS = 60      # порог, после которого канал считаем молчащим
 PLATFORM_REPORT_WEEKDAY = 0     # 0=понедельник (datetime.weekday()) - раз в неделю с прогоном
 KNOWN_PLATFORMS = sorted(set(PLATFORM_MARKERS.values()))
+
+# --- Бизнес-алерты: та же логика "по фронту", что и тишина платформ выше ----
+# Технический алертинг (Alert on failure, 27.07) ловит "бот упал". Эти два
+# ловят "бот работает исправно, но результат — ноль" — то, что технический
+# слой в принципе не видит, потому что зелёный прогон и есть проблема, а не
+# симптом поломки. 28.07: 0 диспатчей за 34+ дн уже фиксировалось в диагнозе
+# как факт, но никто не узнавал об этом СРАЗУ — только когда кто-то спросил.
+DISPATCH_SILENCE_ALERT_DAYS = 21  # 3 недели без единого диспатча по системе
+WON_SILENCE_ALERT_DAYS = 60       # 2 месяца без выигранной сделки
+
 
 
 
@@ -816,6 +858,22 @@ def main():
     silence_prev = state.get("platform_silence_prev", {})
     silence_changes = [(p, silence_prev.get(p), s) for p, s in silence_now.items() if silence_prev.get(p) != s]
     state["platform_silence_prev"] = silence_now
+
+    # Бизнес-алерты: по фронту, не по уровню — та же логика, что и тишина
+    # платформ выше. Флаг взводится один раз при пересечении порога, снимается,
+    # если метрика восстановилась (новый диспатч / новый won), чтобы при
+    # повторном падении алерт снова сработал, а не молчал навсегда после
+    # первого срабатывания.
+    dispatch_days = days_since_last_dispatch(state)
+    dispatch_alert_due = dispatch_days is not None and dispatch_days >= DISPATCH_SILENCE_ALERT_DAYS
+    dispatch_alert_was_sent = state.get("dispatch_silence_alerted", False)
+
+    won_days = days_since_last_won(pipeline)
+    won_alert_due = won_days is not None and won_days >= WON_SILENCE_ALERT_DAYS
+    won_alert_was_sent = state.get("won_silence_alerted", False)
+
+    state["dispatch_silence_alerted"] = dispatch_alert_due
+    state["won_silence_alerted"] = won_alert_due
     save_state(state)
 
     for r in new_replies:
@@ -898,6 +956,20 @@ def main():
             else:
                 lines.append(f"• <b>{esc(plat)}</b>: {esc(str(old))} → {esc(new)}")
         tg_send("\n".join(lines))
+
+    if dispatch_alert_due and not dispatch_alert_was_sent:
+        tg_send(
+            f"🔴 <b>0 диспатчей {dispatch_days} дн подряд</b>\n"
+            f"Главная метрика Strategy v3.1 стоит. Не техническая поломка — "
+            f"боты зелёные, просто платформы не присылают запросы."
+        )
+
+    if won_alert_due and not won_alert_was_sent:
+        tg_send(
+            f"🔴 <b>{won_days} дн без выигранной сделки</b>\n"
+            f"Ни одного won за {WON_SILENCE_ALERT_DAYS}+ дн. Не техническая "
+            f"поломка — воронка работает, просто ничего не закрывается."
+        )
 
     print(f"Done. Real replies: {len(new_replies)}, new contacts: {len(new_other)}, "
           f"auto suppressed: {len(auto_notifications)}, leads created: {len(created)}, "

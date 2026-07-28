@@ -6,6 +6,7 @@ pipeline_sync.py на верхнем уровне читает os.environ — п
 """
 import os
 import sys
+from datetime import datetime, timedelta, timezone
 
 os.environ.setdefault("GMAIL_USER", "test@example.com")
 os.environ.setdefault("GMAIL_APP_PASSWORD", "test")
@@ -127,3 +128,67 @@ def test_find_lead_by_domain_matches_via_searchable_content():
     ]}
     lead = ps.find_lead_by_domain(pipeline, "talco.tj", "talco.tj")
     assert lead["id"] == "a"
+
+
+# --- days_since_last_dispatch / days_since_last_won -------------------------
+# Бизнес-алерты 28.07: технический alert_on_failure.yml ловит "бот упал",
+# эти две функции ловят "бот работает исправно, но результат — ноль" —
+# зелёный прогон и есть проблема, техническому слою тут нечего показать.
+
+def test_days_since_last_dispatch_none_when_empty():
+    assert ps.days_since_last_dispatch({"dispatches": {}}) is None
+
+
+def test_days_since_last_dispatch_computes_days():
+    old_date = (datetime.now(timezone.utc) - timedelta(days=25)).strftime("%Y-%m-%d")
+    state = {"dispatches": {"a": {"kind": "dispatch", "date": old_date}}}
+    assert ps.days_since_last_dispatch(state) == 25
+
+
+def test_days_since_last_dispatch_ignores_baseline_records():
+    # baseline-записи (seed_platform_baseline) не должны считаться реальным
+    # диспатчем — иначе алерт никогда не сработает после первого сидирования
+    recent = (datetime.now(timezone.utc) - timedelta(days=3)).strftime("%Y-%m-%d")
+    old = (datetime.now(timezone.utc) - timedelta(days=100)).strftime("%Y-%m-%d")
+    state = {"dispatches": {
+        "a": {"kind": "dispatch", "date": recent},
+        "b": {"kind": "baseline", "date": old},
+    }}
+    assert ps.days_since_last_dispatch(state) == 3
+
+
+def test_days_since_last_dispatch_takes_most_recent():
+    d1 = (datetime.now(timezone.utc) - timedelta(days=10)).strftime("%Y-%m-%d")
+    d2 = (datetime.now(timezone.utc) - timedelta(days=2)).strftime("%Y-%m-%d")
+    state = {"dispatches": {
+        "a": {"kind": "dispatch", "date": d1},
+        "b": {"kind": "dispatch", "date": d2},
+    }}
+    assert ps.days_since_last_dispatch(state) == 2
+
+
+def test_days_since_last_won_none_when_no_won_leads():
+    assert ps.days_since_last_won({"leads": []}) is None
+    assert ps.days_since_last_won({"leads": [{"status": "sent_no_reply", "last_activity": "2026-07-01"}]}) is None
+
+
+def test_days_since_last_won_computes_days():
+    old_date = (datetime.now(timezone.utc) - timedelta(days=25)).strftime("%Y-%m-%d")
+    pipeline = {"leads": [{"status": "won", "last_activity": old_date}]}
+    assert ps.days_since_last_won(pipeline) == 25
+
+
+def test_days_since_last_won_takes_most_recent_among_multiple_won():
+    old = (datetime.now(timezone.utc) - timedelta(days=50)).strftime("%Y-%m-%d")
+    recent = (datetime.now(timezone.utc) - timedelta(days=5)).strftime("%Y-%m-%d")
+    pipeline = {"leads": [
+        {"status": "won", "last_activity": old},
+        {"status": "won", "last_activity": recent},
+    ]}
+    assert ps.days_since_last_won(pipeline) == 5
+
+
+def test_days_since_last_won_none_for_malformed_date():
+    pipeline = {"leads": [{"status": "won", "last_activity": "not-a-date"}]}
+    assert ps.days_since_last_won(pipeline) is None
+
