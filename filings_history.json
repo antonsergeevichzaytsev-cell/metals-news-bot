@@ -362,16 +362,22 @@
       "hook": "Металлургия на старте: нужен взгляд на флоушит и извлечение.",
       "priority": "low",
       "ts": "2026-07-27T13:01:06.866957+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/306840/Lake-Victoria-Gold-Commences-Phase-1-Earthworks-at-Fully-Permitted-Imwelo-Gold-Project",
+      "title": "Lake Victoria Gold Commences Phase 1 Earthworks at Fully Permitted Imwelo Gold Project",
+      "stage": "construction",
+      "signal": "начало земляных работ",
+      "company": "Lake Victoria Gold Ltd.",
+      "project": "Imwelo Gold Project",
+      "region": "Tanzania",
+      "why": "Строительство началось, но бюджет и сроки не раскрыты.",
+      "hook": "Owner-side контроль подрядчика и графика: не дать стройке съесть бюджет до первого золота.",
+      "priority": "low",
+      "ts": "2026-07-28T07:57:54.824302+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-21T05:55:19.674060+00:00",
-      "title": "U92 Announces Filing of Corrective Disclosure and Provides Corporate Update",
-      "link": "https://www.newsfilecorp.com/release/305918/U92-Announces-Filing-of-Corrective-Disclosure-and-Provides-Corporate-Update",
-      "reason": "корпоративное обновление",
-      "orbit": false
-    },
     {
       "ts": "2026-07-21T13:02:01.085084+00:00",
       "title": "Ferroglobe PLC Schedules Second Quarter 2026 Earnings Call for August 5, 2026",
@@ -1148,16 +1154,17 @@
       "link": "https://www.newsfilecorp.com/release/306859/Silicon-Metals-Corp.-Provides-Corporate-Update",
       "reason": "корпоративное обновление",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-28T07:57:54.824302+00:00",
+      "title": "Grit Metals Identifies New Spodumene-Boulder Targets and Confirms Highly Fractionated Pegmatite System Through Recent Drill Progra",
+      "link": "https://www.newsfilecorp.com/release/306672/Grit-Metals-Identifies-New-SpodumeneBoulder-Targets-and-Confirms-Highly-Fractionated-Pegmatite-System-Through-Recent-Drill-Program-at-Central-Finland-Lithium-Project",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-21T05:55:19.673670+00:00",
-      "title": "Cross River Announces Proposed Name Change and Consolidation",
-      "matched_noise_word": "name change",
-      "orbit": false
-    },
     {
       "ts": "2026-07-21T13:02:01.074850+00:00",
       "title": "Red Lake Gold Inc. Provides Corporate Update, Proposes Conditional Share Consolidation and Private Placement",
