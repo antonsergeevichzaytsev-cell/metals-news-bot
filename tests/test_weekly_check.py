@@ -240,3 +240,33 @@ def test_secrets_rotation_uses_default_threshold_if_missing():
     with mock.patch("weekly_check.load_json", return_value=data):
         overdue = wc.secrets_rotation_check(now)
     assert len(overdue) == 1  # дефолт 90 -> 95 дней просрочено
+
+
+# --- filings_labeling_status -------------------------------------------------
+# 28.07: единственная проверка DeepSeek-гейта — разметка Антона. Функция
+# переиспользует eval_filings.summarize_labels, не дублирует логику.
+
+def test_filings_labeling_status_zero_labels():
+    with mock.patch("eval_filings.load_history",
+                     return_value={"items": [{"link": "a"}] * 28, "labels": []}):
+        total, msg = wc.filings_labeling_status()
+    assert total == 0
+    assert "0 размечено" in msg
+    assert "👍/👎" in msg
+
+
+def test_filings_labeling_status_below_threshold_warns():
+    labels = [{"link": f"l{i}", "verdict": "good"} for i in range(5)]
+    with mock.patch("eval_filings.load_history", return_value={"items": [], "labels": labels}):
+        total, msg = wc.filings_labeling_status()
+    assert total == 5
+    assert "ещё мало" in msg
+
+
+def test_filings_labeling_status_sufficient_data_silent():
+    import eval_filings
+    labels = [{"link": f"l{i}", "verdict": "good"} for i in range(eval_filings.MIN_LABELS_FOR_VERDICT)]
+    with mock.patch("eval_filings.load_history", return_value={"items": [], "labels": labels}):
+        total, msg = wc.filings_labeling_status()
+    assert total == eval_filings.MIN_LABELS_FOR_VERDICT
+    assert msg is None  # достаточно данных — не докучаем в еженедельном отчёте

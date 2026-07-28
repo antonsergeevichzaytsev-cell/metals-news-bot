@@ -26,6 +26,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 PIPELINE_PATH = os.path.join(ROOT, "pipeline.json")
 SECRETS_ROTATION_PATH = os.path.join(ROOT, "secrets_rotation.json")
 HISTORY_PATH = os.path.join(ROOT, "history.json")
+FILINGS_HISTORY_PATH = os.path.join(ROOT, "filings_history.json")
 SYNC_STATE_PATH = os.path.join(ROOT, "state_pipeline_sync.json")
 INBOX_STATE_PATH = os.path.join(ROOT, "state_inbox.json")
 
@@ -272,6 +273,40 @@ def secrets_rotation_check(now):
     return sorted(overdue, key=lambda x: -x[1])
 
 
+def filings_labeling_status():
+    """Раз в неделю напоминает о состоянии разметки filings — единственной
+    проверки, работает ли DeepSeek-гейт (28.07: инфраструктура кнопок
+    готова с 27.07, но 0 labels за всю историю репозитория, с 17.07).
+
+    Переиспользует eval_filings.summarize_labels — не дублирует логику
+    подсчёта, weekly_check только решает, показывать ли это в отчёте.
+    Возвращает (total_labels, message) или (None, None) при недоступном
+    файле — тихо, не критичная проверка.
+    """
+    try:
+        sys.path.insert(0, ROOT)
+        import eval_filings
+    except ImportError:
+        return None, None
+    try:
+        history = eval_filings.load_history()
+    except (FileNotFoundError, OSError, ValueError):
+        return None, None
+    summary = eval_filings.summarize_labels(history)
+    total = summary["total_labels"]
+    if total == 0:
+        return 0, (
+            f"{summary['total_items']} хуков отправлено, 0 размечено. "
+            f"Единственная проверка гейта — твои 👍/👎 в Telegram."
+        )
+    if total < eval_filings.MIN_LABELS_FOR_VERDICT:
+        return total, (
+            f"{total} labels — ещё мало для выводов "
+            f"(нужно {eval_filings.MIN_LABELS_FOR_VERDICT}+)."
+        )
+    return total, None  # достаточно данных — не докучаем, можно смотреть eval_filings.py вручную
+
+
 def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -441,6 +476,12 @@ def main():
         for name, age in overdue_secrets:
             out += f"\u26a0\ufe0f <code>{esc(name)}</code>: не менялся {age} дн\n"
         out += "<i>Смени в GitHub Settings → Secrets, потом обнови дату в secrets_rotation.json.</i>\n\n"
+
+    # --- Разметка filings: единственная проверка DeepSeek-гейта, молчит
+    # только когда данных уже достаточно для выводов ---
+    _, filings_msg = filings_labeling_status()
+    if filings_msg:
+        out += f"<b>\U0001f3f7\ufe0f Разметка filings</b>\n<i>{esc(filings_msg)}</i>\n\n"
 
     out += "<b>Настоящий разбор:</b> воскресный Weekly Review по живым файлам (pipeline.json — он же трекер лидов/outreach, decisions_log, client_pipeline). Этот пинг — только напоминание.\n\n"
 
