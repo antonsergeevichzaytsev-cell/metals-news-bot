@@ -15,6 +15,8 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+
+import net
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -71,7 +73,7 @@ def http_get(url, timeout=10):
         "User-Agent": USER_AGENT,
         "Accept": "application/json, text/plain, */*",
     })
-    with urllib.request.urlopen(req, timeout=timeout) as r:
+    with net.urlopen_retry(req, timeout=timeout) as r:
         return r.read().decode("utf-8")
 
 
@@ -159,7 +161,7 @@ def pick_top_of_week(history):
         },
     )
     try:
-        with urllib.request.urlopen(req, timeout=30) as r:
+        with net.urlopen_retry(req, timeout=30) as r:
             resp = json.loads(r.read().decode("utf-8"))
         content = resp["choices"][0]["message"]["content"]
         verdict = json.loads(content)
@@ -188,7 +190,7 @@ def tg_send(text):
     data = urllib.parse.urlencode(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             r.read()
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")

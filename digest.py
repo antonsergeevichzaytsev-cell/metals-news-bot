@@ -14,6 +14,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+
+import net
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -174,7 +176,7 @@ def is_blocked(pub_label, domain):
 def fetch_feed(url, timeout=20):
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with net.urlopen_retry(req, timeout=timeout) as r:
             return r.read().decode("utf-8", errors="replace")
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
         print(f"  ! fetch error: {e}", file=sys.stderr)
@@ -313,7 +315,7 @@ def deepseek_enrich(title, desc, source):
         },
     )
     try:
-        with urllib.request.urlopen(req, timeout=30) as r:
+        with net.urlopen_retry(req, timeout=30) as r:
             resp = json.loads(r.read().decode("utf-8"))
         content = resp["choices"][0]["message"]["content"]
         return json.loads(content)
@@ -337,7 +339,7 @@ def tg_send(text):
     data = urllib.parse.urlencode(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             r.read()
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")

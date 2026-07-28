@@ -32,6 +32,8 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+
+import net
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -168,7 +170,7 @@ def deepseek_call(system, user, max_tokens, temperature=0.3):
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(DEEPSEEK_URL, data=data, headers={
         "Authorization": f"Bearer {DEEPSEEK_KEY}", "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=45) as r:
+    with net.urlopen_retry(req, timeout=45) as r:
         resp = json.loads(r.read().decode("utf-8"))
     return json.loads(resp["choices"][0]["message"]["content"])
 
@@ -206,7 +208,7 @@ def tg_send(text):
     }).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             r.read()
         return True
     except urllib.error.HTTPError as e:

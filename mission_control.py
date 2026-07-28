@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Mission Control — daily morning briefing aggregator."""
-import imaplib, email, json, os, re, sys
+import email, json, os, re, sys
 from datetime import datetime, timedelta, timezone
 from email.header import decode_header
 import urllib.request, urllib.parse
+import net
 
 GMAIL_USER = os.environ["GMAIL_USER"]
 GMAIL_APP_PASSWORD = os.environ["GMAIL_APP_PASSWORD"]
@@ -53,8 +54,7 @@ def domain_of(addr):
 
 
 def fetch_overnight_emails(hours):
-    M = imaplib.IMAP4_SSL("imap.gmail.com", 993, timeout=30)
-    M.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+    M = net.imap_connect_retry("imap.gmail.com", 993, GMAIL_USER, GMAIL_APP_PASSWORD)
     M.select("INBOX", readonly=True)
     since = (datetime.now(timezone.utc) - timedelta(hours=hours)).strftime("%d-%b-%Y")
     typ, data = M.search(None, f'(SINCE "{since}")')
@@ -188,7 +188,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 
 def _http_get(url, timeout=10):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json, text/plain, */*"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
+    with net.urlopen_retry(req, timeout=timeout) as r:
         return r.read().decode("utf-8")
 
 
@@ -297,7 +297,7 @@ def deepseek_synthesize(context, max_tokens=900):
     body = json.dumps({"model": "deepseek-chat", "messages": [{"role": "system", "content": "Ты sharp Chief of Staff. Direct, no fluff."}, {"role": "user", "content": prompt}], "max_tokens": max_tokens, "temperature": 0.3}).encode()
     req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "Authorization": f"Bearer {DEEPSEEK_KEY}"})
     try:
-        with urllib.request.urlopen(req, timeout=60) as r:
+        with net.urlopen_retry(req, timeout=60) as r:
             resp = json.loads(r.read())
             return resp["choices"][0]["message"]["content"].strip()
     except Exception as e:
@@ -357,7 +357,7 @@ def tg_send(text):
     data = urllib.parse.urlencode({"chat_id": TG_CHAT, "text": text[:TG_BUDGET], "parse_mode": "HTML", "disable_web_page_preview": "true"}).encode()
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             return r.status == 200
     except Exception as e:
         print(f"TG error: {e}", file=sys.stderr)

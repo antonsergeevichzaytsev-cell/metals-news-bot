@@ -7,7 +7,6 @@ v2: молчит, когда нечего сказать. Пустая свод�
     Telegram — и тогда пропускается настоящее. Молчание безопасно, потому что
     каждый прогон пишет last_run в state: сторож (weekly_check) видит, жив ли бот.
 """
-import imaplib
 import email
 import json
 import os
@@ -19,6 +18,7 @@ from datetime import datetime, timedelta, timezone
 from email.header import decode_header
 import urllib.request
 import urllib.parse
+import net
 
 GMAIL_USER = os.environ["GMAIL_USER"]
 GMAIL_APP_PASSWORD = os.environ["GMAIL_APP_PASSWORD"]
@@ -105,8 +105,7 @@ def msg_id_hash(msg):
 
 
 def fetch_emails(window_hours):
-    M = imaplib.IMAP4_SSL("imap.gmail.com", 993, timeout=30)
-    M.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+    M = net.imap_connect_retry("imap.gmail.com", 993, GMAIL_USER, GMAIL_APP_PASSWORD)
     M.select("INBOX", readonly=True)
     since = (datetime.now(timezone.utc) - timedelta(hours=window_hours)).strftime("%d-%b-%Y")
     typ, data = M.search(None, f'(SINCE "{since}")')
@@ -146,7 +145,7 @@ def tg_send(text):
     }).encode()
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             return r.status == 200
     except Exception as e:
         print(f"TG error: {e}", file=sys.stderr)
