@@ -24,6 +24,7 @@ GH_REPO = os.environ.get("GITHUB_REPOSITORY", "")
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PIPELINE_PATH = os.path.join(ROOT, "pipeline.json")
+SECRETS_ROTATION_PATH = os.path.join(ROOT, "secrets_rotation.json")
 HISTORY_PATH = os.path.join(ROOT, "history.json")
 SYNC_STATE_PATH = os.path.join(ROOT, "state_pipeline_sync.json")
 INBOX_STATE_PATH = os.path.join(ROOT, "state_inbox.json")
@@ -243,6 +244,34 @@ def watchdog(now):
     return alarms, facts
 
 
+def secrets_rotation_check(now):
+    """Проверяет, не просрочена ли ручная ротация секретов.
+
+    НЕ читает реальные секреты GitHub (эндпоинт /actions/secrets отдаёт
+    updated_at, но требует PAT с правом repo — заводить ещё один
+    долгоживущий токен ради мониторинга секретов увеличивает поверхность
+    атаки, а не уменьшает). Вместо этого сверяет даты из
+    secrets_rotation.json, обновляемого вручную при реальной смене.
+
+    Возвращает список overdue (secret_name, days_since_rotation) для
+    секретов старше rotation_threshold_days. Файл отсутствует/битый ->
+    пустой список, не падает (это напоминание, не критичная проверка).
+    """
+    data = load_json(SECRETS_ROTATION_PATH, None)
+    if not data:
+        return []
+    threshold = data.get("rotation_threshold_days", 90)
+    overdue = []
+    for name, date_str in data.get("secrets", {}).items():
+        d = parse_date(date_str)
+        if d is None:
+            continue
+        age = (now.date() - d).days
+        if age >= threshold:
+            overdue.append((name, age))
+    return sorted(overdue, key=lambda x: -x[1])
+
+
 def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
@@ -403,6 +432,15 @@ def main():
         tag = f"через {d} дн." if d > 0 else ("СЕГОДНЯ" if d == 0 else f"{-d} дн. назад — сделал?")
         out += f"\u2022 <b>{dt.strftime('%d.%m')}</b> ({tag}) — {label}\n"
     out += "\n"
+
+    # --- Ротация секретов: НЕ читает реальные секреты (нет доступа без
+    # отдельного PAT), сверяет ручной трекер secrets_rotation.json ---
+    overdue_secrets = secrets_rotation_check(now)
+    if overdue_secrets:
+        out += "<b>\U0001f511 Секреты — пора ротировать</b>\n"
+        for name, age in overdue_secrets:
+            out += f"\u26a0\ufe0f <code>{esc(name)}</code>: не менялся {age} дн\n"
+        out += "<i>Смени в GitHub Settings → Secrets, потом обнови дату в secrets_rotation.json.</i>\n\n"
 
     out += "<b>Настоящий разбор:</b> воскресный Weekly Review по живым файлам (pipeline.json — он же трекер лидов/outreach, decisions_log, client_pipeline). Этот пинг — только напоминание.\n\n"
 
