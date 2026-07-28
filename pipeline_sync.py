@@ -396,8 +396,14 @@ def process_sent(pipeline, msgs, seen):
 
             lead = find_lead_by_domain(pipeline, d, d)
             if lead:
-                # он ответил на их ответ -> мяч у них, тревога снимается сама
                 was = lead.get("status", "")
+                if was == "won":
+                    # Сделка закрыта — переписка по контракту не должна
+                    # тихо откатить статус обратно в воронку.
+                    lead["last_activity"] = today
+                    lead["silence_days"] = 0
+                    continue
+                # он ответил на их ответ -> мяч у них, тревога снимается сама
                 if was in ("dead", "closed", "channel_failed", "declined"):
                     lead["touches"] = 1  # осознанно вернулся -> новая кампания
                     for k in ("closed_date", "closed_reason"):
@@ -734,6 +740,12 @@ def main():
     seen = set(state["seen"])
     seed_platform_baseline(state)
 
+    # Снимок won ДО обработки: чтобы после увидеть, какие won — новые,
+    # и не слать напоминание повторно на каждом прогоне.
+    won_notified = set(state.get("won_notified", []))
+    won_now_ids = {l["id"] for l in pipeline["leads"] if l.get("status") == "won"}
+    newly_won = won_now_ids - won_notified
+
     # 1) SENT первым: лид должен существовать ДО того, как придёт ответ на него,
     #    иначе ответ упадёт в "new human contact?" и снова потеряется.
     try:
@@ -798,6 +810,7 @@ def main():
     drafts = put_drafts(pipeline, state)
     save_pipeline(pipeline)
     state["seen"] = list(seen)
+    state["won_notified"] = list(won_now_ids)
     silence_now = platform_silence_status(state)
     silence_prev = state.get("platform_silence_prev", {})
     silence_changes = [(p, silence_prev.get(p), s) for p, s in silence_now.items() if silence_prev.get(p) != s]
@@ -815,6 +828,19 @@ def main():
         )
         tg_send(text)
         time.sleep(0.5)
+
+    if newly_won:
+        won_leads = [l for l in pipeline["leads"] if l["id"] in newly_won]
+        for lead in won_leads:
+            text = (
+                f"🏆 <b>СДЕЛКА ЗАКРЫТА</b>\n"
+                f"<b>{esc(lead.get('topic', lead['id']))}</b>\n"
+                f"Канал: {esc(lead.get('channel', '?'))}\n\n"
+                f"Запиши в portfolio.md + lessons_learned.md, пока детали свежие "
+                f"(§9: завершён проект → фиксация обязательна)."
+            )
+            tg_send(text)
+            time.sleep(0.5)
 
     if created or touched:
         lines = ["🆕 <b>PIPELINE — из отправленных</b>"]
