@@ -91,8 +91,8 @@ def compute_strategy_metrics(anton_state):
     return {"week_n": max(1, week_n), "y1_days_remaining": days_remaining, "y1_critical_success": sv3.get("y1_critical_success", "")}
 
 
-DEAD_STATUSES = {"dead", "closed", "declined", "done", "channel_failed"}
-CADENCE_MAX_SILENCE = 21  # каденция 4-7 дн x макс 3 касания -> дольше жить лид не может
+from cadence import DEAD_STATUSES, CADENCE_MAX_SILENCE, is_dead  # noqa: F401 (CADENCE_MAX_SILENCE unused here but kept for backward compat in case other code reads it)
+
 CADENCE_EXPIRY_WINDOW = 7  # столько дней напоминаем закрыть лид в файле, потом молчим
 # ^ у mission_control права contents:read, состояние "уже сказал" хранить негде.
 #   Поэтому окно, а не флаг: иначе лид долбит каждое утро вечно и сам становится зомби.
@@ -114,18 +114,6 @@ def pipeline_staleness_hours(pipeline):
         return (datetime.now(timezone.utc) - ts).total_seconds() / 3600
     except (ValueError, TypeError):
         return None
-
-
-def is_dead(l):
-    """Мёртв, если помечен мёртвым ИЛИ каденция исчерпана.
-    Полученный ответ не умирает никогда — он и есть деньги."""
-    if l.get("status") in DEAD_STATUSES:
-        return True
-    if l.get("status") == "reply_received":
-        return False
-    if l.get("status") in ("sent_no_reply", "follow_up_overdue"):
-        return l.get("silence_days", 0) > CADENCE_MAX_SILENCE
-    return False
 
 
 def analyze_pipeline(pipeline):
