@@ -36,11 +36,11 @@ Y1_TOTAL_WEEKS = 52
 # --- Сторож: пороги ---------------------------------------------------------
 # Проверка идёт в воскресенье, а боты бегают Пн-Пт. Значит в норме данные
 # уже двое суток как не обновлялись — пороги это учитывают.
+from cadence import DEAD_STATUSES, is_cadence_exhausted
+
 STALE_HOURS = 72          # pipeline.json / history.json не трогали дольше -> бот не бежит
 FOSSIL_DAYS = 14          # ни одного нового лида дольше -> пайплайн окаменел
-CADENCE_MAX_SILENCE = 21  # синхронно с mission_control.is_dead()
 STALE_REPLY_DAYS = 7      # ответ лежит дольше -> гниющие деньги
-DEAD_STATUSES = {"dead", "closed", "declined", "done", "channel_failed"}
 
 # Strategy v3.1 reset points (decisions_log 2026-06-09)
 RESET_POINTS = [
@@ -188,8 +188,7 @@ def watchdog(now):
 
     # 4. Каденция реально работает или лиды бессмертны?
     zombies = [l for l in live
-               if l.get("status") in ("sent_no_reply", "follow_up_overdue")
-               and l.get("silence_days", 0) > CADENCE_MAX_SILENCE]
+               if is_cadence_exhausted(l.get("status"), l.get("silence_days", 0))]
     if zombies:
         alarms.append(f"каденция исчерпана у {len(zombies)}, а статус живой — не закрыты в файле")
 

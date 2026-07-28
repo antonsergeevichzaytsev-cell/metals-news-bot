@@ -27,11 +27,14 @@ SENT_WINDOW_HOURS = 48  # шире INBOX: письмо вечером/в пят�
                         # Дедуп по Message-ID делает повторный проход безопасным.
 MAX_FETCH = 200
 
-# Каденция — единственный источник правды, дублируется в mission_control.is_dead()
+# Каденция — CADENCE_MAX_SILENCE теперь общий источник (cadence.py, было
+# независимой копией, синхронизировалось вручную с mission_control.is_dead()
+# и weekly_check.watchdog — риск расхождения при правке одного файла).
+# Остальное здесь специфично для pipeline_sync: формирование текста
+# уведомлений и порог "сколько касаний до dead", больше нигде не нужны.
+from cadence import CADENCE_MAX_SILENCE, CADENCE_DUE_MIN
 CADENCE_FOLLOWUP_DAYS = "4-7"
 CADENCE_MAX_TOUCHES = 3
-CADENCE_DUE_MIN = 4      # раньше 4 дн долбить рано
-CADENCE_MAX_SILENCE = 21  # позже лид мёртв, черновик бессмыслен
 
 # --- Диспатчи платформ: ГЛАВНАЯ метрика Strategy v3.1 -------------------------
 # От неё зависит reset 09.08 (cash flow не восстановился -> vahta в primary).
