@@ -5,7 +5,10 @@ name: Static check
 # первые ~9 прогонов молча, потому что нужная ветка кода не исполнялась.
 # py_compile ловит только синтаксис. pyflakes ловит undefined-name уровня
 # "функция вызвана, но не определена/не импортирована" — статически,
-# без необходимости реально исполнить эту ветку кода.
+# без необходимости реально исполнить эту ветку кода. pytest (28.07)
+# добавляет третий слой — логическую регрессию в чистых функциях
+# (каденция follow-up, фильтрация адресатов/доменов, prefilter, retry) —
+# то, что синтаксис-чекеры в принципе не видят.
 #
 # Красный тут = чинить до следующего push, не после того как упадёт
 # в проде на непустых входных данных.
@@ -27,8 +30,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install pyflakes
-        run: pip install pyflakes
+      - name: Install pyflakes + pytest
+        run: pip install pyflakes pytest
 
       - name: Syntax check (py_compile)
         run: |
@@ -47,3 +50,8 @@ jobs:
             exit 1
           fi
           echo "Критичных ошибок нет (unused var/import — не блокирует)."
+
+      - name: Unit tests (pytest)
+        run: |
+          cd tests
+          python -m pytest -v
