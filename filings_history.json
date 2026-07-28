@@ -1152,16 +1152,17 @@
       "link": "https://www.newsfilecorp.com/release/306929/Lion-Copper-Gold-Announces-Management-Transition",
       "reason": "назначение",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-28T19:00:48.248984+00:00",
+      "title": "Bayhorse Silver Underground Drilling Operations to Recommence After Wildfire Contained",
+      "link": "https://www.newsfilecorp.com/release/306957/Bayhorse-Silver-Underground-Drilling-Operations-to-Recommence-After-Wildfire-Contained",
+      "reason": "пожар снят",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-21T19:00:50.056155+00:00",
-      "title": "Antioquia Gold Inc. Announces Appointment of New Auditor",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-07-21T20:17:08.439871+00:00",
       "title": "Critical One Energy Announces CDN$5,565,000 Flow-Through Private Placement",
