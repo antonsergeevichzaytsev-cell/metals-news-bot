@@ -397,7 +397,7 @@ def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def tg_send(text):
+def tg_send(text, reply_markup=None):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": CHAT_ID,
@@ -405,6 +405,8 @@ def tg_send(text):
         "parse_mode": "HTML",
         "disable_web_page_preview": True,
     }
+    if reply_markup:
+        payload["reply_markup"] = json.dumps(reply_markup)
     data = urllib.parse.urlencode(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data)
     try:
@@ -415,6 +417,31 @@ def tg_send(text):
         body = e.read().decode("utf-8", errors="replace")
         print(f"  ! telegram error {e.code}: {body}", file=sys.stderr)
         raise
+
+
+def tg_answer_callback(callback_id, text=""):
+    """Гасит спиннер на кнопке в телефоне — без этого Telegram крутит её вечно."""
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/answerCallbackQuery"
+    payload = {"callback_query_id": callback_id, "text": text}
+    data = urllib.parse.urlencode(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=data)
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            r.read()
+    except Exception as e:
+        print(f"  ! answerCallbackQuery error: {e}", file=sys.stderr)
+
+
+def label_keyboard():
+    """Один тап = один вердикт. Message_id, к которому привязан вердикт,
+    Telegram отдаёт сам в callback_query.message.message_id — в
+    callback_data достаточно нести только вердикт."""
+    return {
+        "inline_keyboard": [[
+            {"text": "\U0001f44d годится", "callback_data": "lbl:good"},
+            {"text": "\U0001f44e мимо", "callback_data": "lbl:bad"},
+        ]]
+    }
 
 
 GOOD_WORDS = {"+", "++", "\u0434\u0430", "\u0433\u043e\u0434\u0438\u0442\u0441\u044f", "\u0431\u0435\u0440\u0443", "\u043e\u043a", "\u043e\u043a\u0435\u0439", "\u0445\u043e\u0440\u043e\u0448\u043e", "\u043f\u0438\u0448\u0443", "\u0442\u043e\u043f", "yes"}
@@ -439,7 +466,7 @@ def parse_verdict(text):
 
 def tg_get_updates(offset):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/getUpdates"
-    params = {"timeout": 0, "allowed_updates": json.dumps(["message"])}
+    params = {"timeout": 0, "allowed_updates": json.dumps(["message", "callback_query"])}
     if offset:
         params["offset"] = offset
     try:
@@ -456,6 +483,10 @@ def collect_labels(state, history):
 
     Это единственная настоящая проверка бота: не «прогнал, вроде норм»,
     а вердикт человека по конкретному элементу. Суждение остаётся за ним.
+
+    Два пути закрытия одного и того же message_id:
+    1. Кнопка (callback_query) — основной путь, один тап.
+    2. Reply текстом (fallback) — если кнопка не пришла или клиент старый.
     """
     offset = state.get("tg_offset") or 0
     updates = tg_get_updates(offset + 1 if offset else None)
@@ -463,6 +494,27 @@ def collect_labels(state, history):
     n = 0
     for u in updates:
         state["tg_offset"] = max(state.get("tg_offset") or 0, u.get("update_id", 0))
+
+        cb = u.get("callback_query")
+        if cb:
+            data = cb.get("data", "")
+            mid = str((cb.get("message") or {}).get("message_id") or "")
+            if data.startswith("lbl:") and mid in msg_map:
+                verdict = data.split(":", 1)[1]  # "good" | "bad"
+                item = msg_map[mid]
+                history.setdefault("labels", []).append({
+                    "ts": datetime.now(timezone.utc).isoformat(),
+                    "verdict": verdict,
+                    "raw": f"[button] {verdict}",
+                    "link": item.get("link"),
+                    "company": item.get("company"),
+                    "priority": item.get("priority"),
+                    "stage": item.get("stage"),
+                })
+                n += 1
+            tg_answer_callback(cb.get("id", ""), "принято" if data.startswith("lbl:") else "")
+            continue
+
         msg = u.get("message") or {}
         rep = msg.get("reply_to_message") or {}
         mid = str(rep.get("message_id") or "")
@@ -708,11 +760,12 @@ def main():
         return 0
 
     queue.sort(key=lambda x: PRIORITY_RANK.get(x.get("priority", "low"), 2))
-    # Одно сообщение = один хук. Telegram привязывает ответ к message_id,
-    # а не к «пункту 2 из пяти» — иначе метку не к чему прицепить.
+    # Одно сообщение = один хук. Вердикт приходит либо кнопкой (callback_query,
+    # несёт message.message_id сам), либо старым способом — reply текстом
+    # (оставлено как fallback, вдруг кнопка не отрисуется на каком-то клиенте).
     msg_map = state.get("msg_map", {})
     for i, c in enumerate(queue, 1):
-        mid = tg_send(render(c, i))
+        mid = tg_send(render(c, i), reply_markup=label_keyboard())
         if mid:
             msg_map[str(mid)] = {
                 "link": c["link"],
