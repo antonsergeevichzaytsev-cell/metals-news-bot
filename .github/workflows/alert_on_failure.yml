@@ -1,0 +1,48 @@
+name: Alert on failure
+
+# Мета-слой: слушает завершение ЛЮБОГО другого воркфлоу в репо и, если
+# conclusion == failure, шлёт один короткий пинг в Telegram. Раньше
+# единственный способ узнать о падении бота — самому зайти в Actions
+# (так и было 27.07: pipeline_sync лежал 30+ часов, никто не знал).
+#
+# Не трогает код существующих ботов — подключается снаружи через
+# workflow_run. static_check.yml сюда НЕ входит намеренно: его failure
+# уже виден в PR/commit статусе на GitHub, дублировать шумно.
+
+on:
+  workflow_run:
+    workflows:
+      - "Account watch"
+      - "Anton Daily brief"
+      - "Metals & Mining digest"
+      - "Evening digest"
+      - "Filings watcher"
+      - "Inbox consolidator"
+      - "LinkedIn ideas"
+      - "Mission Control"
+      - "Pipeline sync"
+      - "Weekly Check"
+    types:
+      - completed
+
+jobs:
+  notify:
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          NAME="${{ github.event.workflow_run.name }}"
+          URL="${{ github.event.workflow_run.html_url }}"
+          SHA="${{ github.event.workflow_run.head_sha }}"
+          TEXT="🔴 <b>${NAME}</b> упал
+Коммит: <code>${SHA:0:7}</code>
+<a href=\"${URL}\">Логи</a>"
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${TEXT}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "disable_web_page_preview=true"
