@@ -87,14 +87,11 @@ def test_parse_verdict_bad_first_word_no_trailing_punct():
     assert fl.parse_verdict("мимо это не про CIS") == "bad"
 
 
-def test_parse_verdict_comma_after_first_word_breaks_match():
-    # НЮАНС (не баг для этого коммита, просто зафиксировано поведение):
-    # rstrip(".!?)") чистит пунктуацию только в конце ВСЕЙ строки, а
-    # запятая сразу после первого слова ("да, полезно...") не убирается.
-    # "да," не совпадает с "да" из GOOD_WORDS -> note вместо good.
-    # Если это нежелательно — отдельное решение поправить parse_verdict,
-    # не в рамках этого коммита.
-    assert fl.parse_verdict("да, полезно для брифа") == "note"
+def test_parse_verdict_comma_after_first_word_now_matches():
+    # Fix 28.07: было note (баг — запятая после первого слова не
+    # чистилась), теперь корректно распознаётся как good/bad.
+    assert fl.parse_verdict("да, полезно для брифа") == "good"
+    assert fl.parse_verdict("мимо, это не про CIS") == "bad"
 
 
 def test_parse_verdict_unclear_text_is_note():
