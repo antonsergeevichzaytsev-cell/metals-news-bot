@@ -1,126 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "Workforce Strife And Weakening Commodity Prices Test BHP",
-      "desc": "Workforce Strife And Weakening Commodity Prices Test BHP &nbsp;&nbsp; Forbes",
-      "domain": "Forbes",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNSmZ2eEowanZyTXB2Qkc0TDhmbUtrdEo0MlhXSGc0dUY1NVBhbXpPSlEwQmdiQ0FuclNrYzIyQTdiekpaZGU2T2V1dlR1Zmd1SkgzV2k1ZnA1QVVHX0hlQ29pV2xnSXUyajhWWTBYNUotMzhBNUdTODdKWUkwb2JWWWNvRTFlRU5XX2dNS3RYYk5fMEpNLWJYSXdmT3VYZm0zQ2RzaXJ5VFJWVEJYeTIw?oc=5",
-      "why": "Забастовки и слабые цены на сырьё угрожают производству BHP, прямому конкуренту его компаний.",
-      "priority": "medium",
-      "company": "BHP"
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "Mammoth regional tailings dam is centrepiece of DRDGOLD’s R10bn expansion",
-      "desc": "Mammoth regional tailings dam is centrepiece of DRDGOLD’s R10bn expansion &nbsp;&nbsp; Mining Weekly",
-      "domain": "miningweekly.com",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPM0xOVndKRWtOcTl3dnplaTdNN0tqWW1SNXNIY1BBVkI5Q1ZDdU56OXRLRFVDZE5BZ25QN0RPdTk0RWc0RVRTMHV1S0FLREhodllUT09wUVp4NG8wN09ZN0VTMzk2WmVpdEpuS09ieE5rYUVqTFZRbkw2UllXdnM1UUN4M1JnVXBlLS1Kb1ZIVTF5aWdJcTRyY24wV2VkWjNTVVpGVmZkNWJWOHRla09iSWczR0hUYldhXzNZcQ?oc=5",
-      "why": "Крупный проект DRDGOLD в ЮАР — потенциальный конкурент для золотодобывающих активов в СНГ.",
-      "priority": "medium",
-      "company": "DRDGOLD"
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "EC proposes extending free ETS allowances for CBAM sectors until 2038, EUROFER raises concerns",
-      "desc": "EC proposes extending free ETS allowances for CBAM sectors until 2038, EUROFER raises concerns &nbsp;&nbsp; EUROMETAL",
-      "domain": "EUROMETAL",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMVVCSnJNU1JBZ3A4WS0ySE1JbUZaYjZxYjM0NmpDdGxKamRVMGlTVVRlOFdJZGhJc1BOQjctYXoyRWpmYXkySXBRbE9IOXg2ZzctNEJRd3F2LVh3T05fcDZwaURyYTB4ZTRfdDNUR19HZ3hjaERDckhXLWR4MERKWEUxaEdleHl0NmdreGxTLWRZOGl5Q29oanJyREZfelB3M1dRSHJNSjliWTVmZ3NRNVFPcHVJakk?oc=5",
-      "why": "Продление бесплатных квот ETS до 2038 года снижает давление на металлургов, но CBAM остаётся угрозой для экспорта.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "US offers to halve aluminum duties for firms building in US",
-      "desc": "US offers to halve aluminum duties for firms building in US &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVWZrZXE3MEI0MUFmZ2lDMFFFOFFPdWlIT0gxWDFCNFJBYzBxRHBVcGpVU2hULXlFWVJlaUJnaVZDWS1DY3huUFhxRVB0aVZVMlBCNmwxSzNNc2gyQ3JScElud1BrSFBuN2J1N056NnJtN3V1UkdnNTFTTW9oZkozSWZ3REtqTlZrTmFleFFrMXk?oc=5",
-      "why": "Снижение пошлин на алюминий стимулирует строительство заводов в США, влияя на стратегию РУСАЛа.",
-      "priority": "high",
-      "company": "RUSAL"
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "BHP, Port Hedland union make progress, talks to resume next week",
-      "desc": "BHP, Port Hedland union make progress, talks to resume next week &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMDdrVXdadHhOZkFJUnRPRG5DZVNBTFZYTm0tUWNxUldKbm9JWVNMOUxuNWRpcVVtb3JnX1pBREs2b283emhlTXpHOXFhLUx1WG1acXhBVE1hRnpRa2xBaHFmUUZkVFZnOUZJaTJIWmlDVERtZzRMb3ExQW03dkkxaGhuRHUtdGdhZVcxZFE5VEpNYWhI?oc=5",
-      "why": "Потенциальная забастовка в Порт-Хедленд угрожает экспорту железной руды, что влияет на рынок сырья для металлургии.",
-      "priority": "medium",
-      "company": "BHP"
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "UK CBAM Is Coming in 2027 – Is Your Business Prepared?",
-      "desc": "UK CBAM Is Coming in 2027 – Is Your Business Prepared? &nbsp;&nbsp; Beckchoice",
-      "domain": "Beckchoice",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOU250dzVVTk5MZHVFTl9QblA2c1JxUFJHSEt6em1FdmU0Q0tJT0xQWjRoQ1JPUGhKa0dzNHQ4OVVHSzI5S09tT2ozbEVBRXlabW5tMF90SDd5QU5KdW1NLTVHMWVqMUhiOEVTZ2ZsMnp1MUJHR1AtN0c3bmR1MTFiVGNsS3lha25VMVdQdDZR?oc=5",
-      "why": "CBAM повышает затраты на экспорт металлов в UK, влияет на стратегию сбыта.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "Lundin keeps forecast despite Chile winter storm shutting Caserones",
-      "desc": "Lundin keeps forecast despite Chile winter storm shutting Caserones &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPRWx5R0EyaWUza3RaYUwydFlITEtwMV9mVG5BcG9LTXo1X0tyVzV2NFV1SDRLZUhRTWhJSV9tS2U2VWFpQkxLWVBMa250YU1QaTByd1cxVFUwdVhDVDRHVWZjZmRhUEVWMUgxUHNOM2h5X2lRRDMzaEtGWkUyZU4zak5ybGNPRHBZWThBM0lXWWROUDQtWmc?oc=5",
-      "why": "Стратегически важно: сбой на медном руднике Caserones влияет на мировые поставки меди.",
-      "priority": "medium",
-      "company": "Lundin Mining / Caserones"
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "Zimbabwe adds freight rail option to lithium export gateway",
-      "desc": "Zimbabwe adds freight rail option to lithium export gateway &nbsp;&nbsp; Mining Weekly",
-      "domain": "miningweekly.com",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSG1rUmFXNkRRUnM0QW9IV24xNW91aUpSSW1Gam51SkJMYjJJNUVGYWZhaXdhemJMVDRUVnV2UG1hRUNGb0NjbnZ4OU00c29CSU9TNllVNGpwZFhrZUpoZHNsenlPWTA3RUNYTFFRSzE4Q3ZWU2ZfbmJLc2VrR2JsVUp5U2FDSnphTHNBOGoyTzh1ME5oTlN0ZDRubEk2bUplWF9VSk1tbkdKRFE?oc=5",
-      "why": "Улучшение логистики литиевого экспорта из Зимбабве снижает риски для конкурентов из СНГ.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "BHP (ASX: BHP): Copper Output Set to Slip as Potash Project Costs Climb",
-      "desc": "BHP (ASX: BHP): Copper Output Set to Slip as Potash Project Costs Climb &nbsp;&nbsp; Kalkine",
-      "domain": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNd0ZLN0VxMnJJT19tS3paanRFRG1NYmlCazRsUWs2eXVtMzd6MW85eW9GY09oQmhXLXQ3R1lWbWkxSGQtRTVuV0o3RDd4bGZTOTJCckctNmxrN0Z2ZDN2NDZUZ0RkbGNFSWE3Sk40b3hzdHpSRW5rRGhjWE1TUnBXc0dKUno5bEtBWHZKc0Z2NzZZTHR2d05JN0YxakE1QmFJRXRySw?oc=5",
-      "why": "BHP снижает выпуск меди, что может поддержать цены и выгоду конкурентов.",
-      "priority": "medium",
-      "company": "BHP"
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "Amarc Announces 2026 Joy District Budget Increased to $20 Million to Advance Important Gold-Copper Discoveries",
-      "desc": "Amarc Announces 2026 Joy District Budget Increased to $20 Million to Advance Important Gold-Copper Discoveries &nbsp;&nbsp; The Globe and Mail",
-      "domain": "The Globe and Mail",
-      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxQU2tUeGpUeXhWalRUZFhkZERSTHVQX1l3M3dQYUQ2bmM2OGg3czZLcllRcVM2U0FVX2hXMlZ5OFd4N0lrYXpOT0ptTHFOMkcyNGszcFpad05PTXh0WGxnaFVSY1VSMERGOVhKTlh5MkpRNHZtUGR3NGpyU3VGUUU3WUFNamVPOUlmQ0tMSENGNlNwa1BXTkZ4b3drdUp6SlJ4MTBQbjlMejFaUWJ4dG9ENXF5YlhFbWNSX1BuYkxMX3NwN2dOb2x6cVJ1cHlhZjVwUUE0bTVWV2o3RUUzd21TNU1wUHVRU0lsU0gzTFpza1lWNXNrZmdpZnA0R0NIUjBuUDhFOGN6cXNScFFGZDd0TnN6RUpUMDU4eUVETExxVzA?oc=5",
-      "why": "Крупный бюджет на золото-медный проект в BC — возможный актив для партнерства.",
-      "priority": "medium",
-      "company": "Amarc Resources"
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "Mota-Engil and ERG enter the final stage of negotiations for an agreement on mining and infrastructure assets in Brazil",
-      "desc": "Mota-Engil and ERG enter the final stage of negotiations for an agreement on mining and infrastructure assets in Brazil &nbsp;&nbsp; BNamericas",
-      "domain": "bnamericas.com",
-      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNbEZqUmNadlZYNkNPd0FUeV90OUxCOU5wRUxZMUZvenhjZXVLUmVmbFh6SktVVjNfeng4LWdJWkd3Y1JBcUdCZjFXdENDcndEdjBEM2szR2dEX0tUOVV0NU5WYmNlOUpSZ0o1T0pXZkkxckVuVHEwMlNkRURvcjNLVnI3UTNNdWR2ZFBVM3NwenJqYThHTXBsWjRUUXF6dWdyTFc5NGpDTUIxa21KRzlEMHRvdHVzRnBoSVRTN2RrVUtKZDh4TU5HMHRFTFlGTXpnX0Q2ajdOa0JkaUc2OGJPaEY4TUpkeUZOV1RWYjZNYw?oc=5",
-      "why": "ERG расширяется в Бразилии, что может изменить глобальные потоки сырья.",
-      "priority": "high",
-      "company": "ERG"
-    },
-    {
-      "ts": "2026-07-21T17:01:01.426315+00:00",
-      "title": "Sibanye fights to save US palladium output from ‘dumped’ Russian metal",
-      "desc": "Sibanye fights to save US palladium output from ‘dumped’ Russian metal &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPaTZJWFNmWlNOY0dyQTFSbUFmZHVmQXdkdFplWG5mUXJqQldhS0s1alI1Zzh3WkR6SWpYaFFzNGo3akV4d2lYQm85eXMyeFZYX0U0TGYtMXJDTFNMMjVUNVJpLWZUeC1fLTBYbkQ3ZllOa21Da29GOHZYczVrbWFJS3NaMWRVaXJkb2ZmYl9YRi0xTEFSZktv?oc=5",
-      "why": "Затрагивает рынок палладия, где Норникель — ключевой игрок, и может повлиять на цены.",
-      "priority": "high",
-      "company": "Nornickel"
-    },
-    {
       "ts": "2026-07-21T18:07:41.050431+00:00",
       "title": "Zimbabwe adds freight rail option to lithium export gateway",
       "desc": "Zimbabwe adds freight rail option to lithium export gateway &nbsp;&nbsp; Mining.com",
@@ -2159,6 +2039,126 @@
       "why": "Продажа опреснительного завода может снизить затраты Rio Tinto, конкурента его компаний.",
       "priority": "medium",
       "company": "Rio Tinto"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Evolution to buy copper-gold miner Carnaby in $149M deal",
+      "desc": "Evolution to buy copper-gold miner Carnaby in $149M deal &nbsp;&nbsp; Mining.com",
+      "domain": "mining.com",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPWklpX0NNcDladlZ3SThKV250Rk4tZk5DWm91WDJDMVpvUnJKb1Flb2tNcjV4cUNDWlRMWU1iRC1aSWxLVk91dHRpaVJ5UUxZb05EQ2NRZFFSOWNmUjYyWlc2TjJiWG1uSDR2X3RIZlZ5c1I5V2RtUlBTZXR1c20tOW90eXR2QQ?oc=5",
+      "why": "Сделка Evolution Mining за $149M за Carnaby — сигнал консолидации в золото-медном секторе, конкурент для CIS-игроков.",
+      "priority": "medium",
+      "company": "Evolution Mining"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "BHP, unions fail to reach Port Hedland wage deal",
+      "desc": "BHP, unions fail to reach Port Hedland wage deal &nbsp;&nbsp; The Northern Miner",
+      "domain": "northernminer.com",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOT21veWE4TnhrZmdoQkxQdVVEQVhwdlJkLWR6TkJjMmZZdFJNRm9mV3k2TkQzZFZYdkRjSU41Qlk1WnVUQm5XTm1pWVFidTlMODh4Q2pCZkZGSVFrcmtHTFBDN21hdGhtdjRBYmpTb3NiR21JTTFTWmsyTlN4d1hIMTlRVUlEckI3VGhhckpfS2FDZGx4NVJFTjV3?oc=5",
+      "why": "Порт Хедленд — ключевой порт BHP; срыв сделки грозит забастовкой и сбоем поставок железной руды, что влияет на рынок сырья для металлургии.",
+      "priority": "medium",
+      "company": "BHP"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "US struggles to secure lithium for strategic stockpile",
+      "desc": "US struggles to secure lithium for strategic stockpile &nbsp;&nbsp; Mining.com",
+      "domain": "mining.com",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcDhaMWNKVjN0M19LS2NrWWxZUlp5dXV3T0RHb2NaYVljT2Q1OVNiZUdHUXRHamxrclhLMndYM05SRXJmeGpXYTd6YkE5ZmFMMW9zWkRqd1NkYVF5aUJ1ejBMNGQ5cDFma0c2WC1sdWw5SmZnRW1yV3Q1X1FFQUI2MUFKeXk?oc=5",
+      "why": "Литий стратегически важен для аккумуляторов, конкуренция с цветными металлами.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Akfa Aluminium LLC Outlook Revised To Positive On Reduction Of Related Party Guarantees; 'B+' Rating Affirmed",
+      "desc": "Akfa Aluminium LLC Outlook Revised To Positive On Reduction Of Related Party Guarantees; 'B+' Rating Affirmed &nbsp;&nbsp; S&P Global",
+      "domain": "spglobal.com",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZ1JKY2pEMURrT2Fuc29ialJ3YWdrSC1veDFfN3dhOElSb3F3LUQ3QlAzRU56QjMzck53N3VkSm1xQUVIMUhxYnRDZzlha19wS1ExQjI0Mlc1LUVTZnQ1OFpNZ3V5T2FwSDhIVTYxUE8xMkJfRVp0SkN3RGJZdmloRzM5QTVpRGtnTGc?oc=5",
+      "why": "Рейтинг Akfa Aluminium улучшен — сигнал для стратегии в алюминиевом секторе СНГ.",
+      "priority": "medium",
+      "company": "Akfa Aluminium"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Chile’s deadly storm adds growing pressure to copper prices",
+      "desc": "Chile’s deadly storm adds growing pressure to copper prices &nbsp;&nbsp; Mining.com",
+      "domain": "mining.com",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPY09OZjFNTVVpcFRuWncyenRGTFBRdlo0TW1SYllKSVZUTzg3Wk9HM0dqSm9HU0dURVpiY1hxNmNaWE9yeG9LZnNiZDJsX01vWTBVWGVfNmJoUEtPbE1mZWtla0VaM290SXhZTkhHWlEzTG1aaXlPWTUxZHpDSWg5YTN4dFdPakdPTnc?oc=5",
+      "why": "Чили — ключевой поставщик меди, перебои из-за шторма давят на цены и рынок.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Coca-Cola, battling high aluminium costs, loses market share in India",
+      "desc": "Coca-Cola, battling high aluminium costs, loses market share in India &nbsp;&nbsp; Reuters",
+      "domain": "reuters.com",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNOGhuMHdtQTFhaE1JcFVCS1R4MkNiZDhjRGFJcFRYbU5GX0dhWXRVOEpRLTZrckF2MGlnNVpkcGRZd0NWdWlER2NKM2JwbldaOG1PZGlaTXplNHZqOGhmR2EzanNRd05Rc05LOEFMbzF5OU96cDVxekZVMG1xaGZ3c25sR0U2SFJMTnRNdmc3dS12VTdoT1JLajhUUFdZXzNIYm4yNnpvVVRIMWVVN3ZSSE5n?oc=5",
+      "why": "Рост затрат на алюминий у крупного потребителя сигнализирует о высоких ценах, что выгодно для RUSAL.",
+      "priority": "medium",
+      "company": "RUSAL"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Zambia bets on pan-Africa metals exchange to boost mining wealth",
+      "desc": "Zambia bets on pan-Africa metals exchange to boost mining wealth &nbsp;&nbsp; Mining.com",
+      "domain": "mining.com",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNOG54bzhEeTg3NjM0RzR3UXJFdVNaTklzSHVhckNra3QwQXg0TUdySHJ3TUxMVGF5NkhjcTRaNFpGZzVxRXBnRHNLdlp6M0phWDBieTI4X0xyZmw4ZkJobHFfNzV2WXZpVHMya21ndTN0UXFCRDdXOHl2UDl3LUgxR3FoYnpQa3FsbkpoYnNYZjhwbGZ1alFj?oc=5",
+      "why": "Создание биржи может изменить маршруты сбыта и ценообразование для африканских активов его клиентов.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Andrada reports sizable mineralised extension of Lithium Ridge project",
+      "desc": "Andrada reports sizable mineralised extension of Lithium Ridge project &nbsp;&nbsp; Mining Weekly",
+      "domain": "miningweekly.com",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUThRZWdZWUF1Zms3ZXMzZ19YdU15MnZXSDZCZDZqTzRlT3cwbEY1eU5vUzVoaXR6Ync3RXlhNWtYRGNmYWhKWWFoRkE4YjhGaG5HZWZGUVdXNkhNWXh3cEpFV0RZZURDWTRqMHJTalRXVGFwcm1UejVFNW1HdjFJbHdaald1MVpzcExiYjRWVVFIamdhMENUMmxuWGt0QnoxZ1Q1S3lpcDBDdnFIdXkwZzFkV0drbW9uN0E?oc=5",
+      "why": "Расширение литиевого проекта в Намибии — потенциальный новый источник сырья для аккумуляторов.",
+      "priority": "medium",
+      "company": "Andrada Mining"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Silver Storm Mining announced the first shipment of lead-silver and zi",
+      "desc": "Silver Storm Mining announced the first shipment of lead-silver and zi &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOUkhpN1IydkpaUERxd0paTTlscXdiRDB6bzZfOUVMX2xqMXZrWl9VcFNZdWc0d1Z2cjA3aEU3b0xCbXVtd1JPMEpqTVpnVEp6bnBzVUNBSUlKNnFHS2hLdnlXTUxVTkdYdmpjaUZfbDE3NGRhYkZURzJjV1FHUGNFOWl5TlZtWmVKNmVNOWZTRDdwQXktZWNmX1E1cGcweTVjM3NFMEhVR3phQ0w2S29seFZ5eXUzYWFZa1hjWjdhRTlHZnFUUkJqaVR0VGdLWVY0bnQ0djdFeEJTbGo1eHVyMWlZWXZONzdw?oc=5",
+      "why": "Первая отгрузка свинцово-серебряного и цинкового концентрата — операционная веха для юниора.",
+      "priority": "medium",
+      "company": "Silver Storm Mining"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "BHP and Port Hedland Union wage talks end without agreement, more talks are planned",
+      "desc": "BHP and Port Hedland Union wage talks end without agreement, more talks are planned &nbsp;&nbsp; Marine News Magazine",
+      "domain": "Marine News Magazine",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOQ0ZtSlpFVm5uSnpiclRWLTRNajNoaTh3OWtCWXJEeWR1LUxYX3ZTQl9fV2pySVpzRWVJLUZQLVp3emMzd3JFZEVKTEFwWTBlOGV0NC1QSjkwcnAwbGkxWjVaSWRGaE9IN04xSlpDekVIM2RFa1M1RlRCUko0aTBSU1Z3OC1RaFhDZW5kZjZUSms2S3FnY3NVMXhkbVF6a2N4cEhJUm90ZWlKaEpNSEE?oc=5",
+      "why": "Потенциальная забастовка в порту BHP может нарушить экспорт сырья, влияя на рынки металлов.",
+      "priority": "medium",
+      "company": "BHP"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Groundwater sufficient for EVelution's cobalt processing facility needs",
+      "desc": "Groundwater sufficient for EVelution's cobalt processing facility needs &nbsp;&nbsp; Mining Weekly",
+      "domain": "miningweekly.com",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQOWtOSm90U0ZidXRQeFFyS2phTlktSkEybXFqdjB5Z1B5VHpmUHlZVm0wTkRBSGtXd0U2ek9RSDNqVkJIWjhlSjVTcXBLcGRoWlBfMFJzWnZpXzZ4ek0xUGNfOENLRlo3WUxxUm1sY19sSmRJTnduUTZmVEdTaE5mcjhsYTg4VUZfYWNQUnE0SGpucDJrOENIcHFybGZ3N2ozMk1BVjRiU1lEc2RPOE1BcXBSMktRTmVjMHJtUEFiQklrTVU?oc=5",
+      "why": "EVelution's cobalt processing в США — новый источник сырья, потенциальный конкурент для ERG и Норникеля.",
+      "priority": "medium",
+      "company": "EVelution"
+    },
+    {
+      "ts": "2026-07-28T17:01:03.170261+00:00",
+      "title": "Mercedes-Benz and Norsk Hydro have solidified their long-term partners",
+      "desc": "Mercedes-Benz and Norsk Hydro have solidified their long-term partners &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxObF9zUmphZjQ5Wm8tQ2Q1R0VjV1pFVFUxUV9VNkluLURYM1pWRjJjT0tkaEpYY2NFTXd6R3V6MjF6M3M4VjBJZkZvUWllVUcza0lNX2VUSWc5WDZyLTVDQ2JYZmhhVUw5X2I1R3VPaXYtVER0S1IxUVpuMjdWdExobzNBN1phdkQzelViTTctRUNJRlA4RkpHLTF5czN4OWtaRVZLOTJ5Y2hUMGoxcFpwNUg0MHBIWXRwUG1GVHJodmhnN1o1MlJ0YkJKRjJPVnRGQ2oxRzdTMGR4TnVKMkREZS12aVI2Zw?oc=5",
+      "why": "Стратегическое партнёрство автопроизводителя и алюминиевого гиганта влияет на спрос и цепочки поставок алюминия.",
+      "priority": "medium",
+      "company": "Norsk Hydro"
     }
   ]
 }
