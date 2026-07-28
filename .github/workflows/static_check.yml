@@ -1,0 +1,49 @@
+name: Static check
+
+# Ловит то, что вчера (27.07.2026) сломало pipeline_sync на 30+ часов:
+# esc() вызывалась 17 раз, нигде не определена — код прошёл git push и
+# первые ~9 прогонов молча, потому что нужная ветка кода не исполнялась.
+# py_compile ловит только синтаксис. pyflakes ловит undefined-name уровня
+# "функция вызвана, но не определена/не импортирована" — статически,
+# без необходимости реально исполнить эту ветку кода.
+#
+# Красный тут = чинить до следующего push, не после того как упадёт
+# в проде на непустых входных данных.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.py'
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pyflakes
+        run: pip install pyflakes
+
+      - name: Syntax check (py_compile)
+        run: |
+          for f in *.py; do
+            python -m py_compile "$f" || exit 1
+          done
+
+      - name: Undefined names / unused imports (pyflakes)
+        run: |
+          # Падаем только на настоящих ошибках (undefined name и т.п.),
+          # не на "unused variable/import" — это шум, не риск.
+          OUTPUT=$(python -m pyflakes *.py || true)
+          echo "$OUTPUT"
+          if echo "$OUTPUT" | grep -qE "undefined name|is not defined"; then
+            echo "::error::Найдены неопределённые имена — см. вывод выше"
+            exit 1
+          fi
+          echo "Критичных ошибок нет (unused var/import — не блокирует)."
