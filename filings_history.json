@@ -1134,6 +1134,20 @@
       "link": "https://www.newsfilecorp.com/release/306816/NSJ-Gold-Corp.-NSJ-9PZ-Announces-FlowThru-Financing-for-Exploration-on-Its-Antimony-2.0-Property",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-28T05:05:54.314624+00:00",
+      "title": "CDN Maverick Engages 1353656 BC Ltd. for Marketing and Management Consulting Services",
+      "link": "https://www.newsfilecorp.com/release/306865/CDN-Maverick-Engages-1353656-BC-Ltd.-for-Marketing-and-Management-Consulting-Services",
+      "reason": "маркетинговый контракт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T05:05:54.314624+00:00",
+      "title": "Silicon Metals Corp. Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/306859/Silicon-Metals-Corp.-Provides-Corporate-Update",
+      "reason": "корпоративное обновление",
+      "orbit": false
     }
   ],
   "labels": [],
