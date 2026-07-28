@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Mission Control — daily morning briefing aggregator."""
-import imaplib, email, json, os, re, sys, time
+import imaplib, email, json, os, re, sys
 from datetime import datetime, timedelta, timezone
 from email.header import decode_header
 import urllib.request, urllib.parse
