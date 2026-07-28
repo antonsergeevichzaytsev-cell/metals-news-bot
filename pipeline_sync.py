@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Pipeline sync v5 — лиды из SENT, живые ответы, черновики follow-up, счёт диспатчей."""
-import imaplib, email, json, os, re, hashlib, sys, time, html
+import email, json, os, re, hashlib, sys, time, html
 from datetime import datetime, timedelta, timezone
 from email.header import decode_header
 from email.message import EmailMessage
 from email.utils import parsedate_to_datetime
 import urllib.request, urllib.parse
+import net
 
 
 def esc(value):
@@ -211,7 +212,7 @@ def guess_company_name(domain, subject):
         headers={"Authorization": f"Bearer {DEEPSEEK_KEY}", "Content-Type": "application/json"},
     )
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             resp = json.loads(r.read().decode("utf-8"))
         verdict = json.loads(resp["choices"][0]["message"]["content"])
         name = (verdict.get("name") or "").strip()
@@ -237,8 +238,7 @@ def msg_id_hash(msg):
 
 
 def fetch_emails(window_hours):
-    M = imaplib.IMAP4_SSL("imap.gmail.com", 993, timeout=30)
-    M.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+    M = net.imap_connect_retry("imap.gmail.com", 993, GMAIL_USER, GMAIL_APP_PASSWORD)
     M.select("INBOX", readonly=True)
     since = (datetime.now(timezone.utc) - timedelta(hours=window_hours)).strftime("%d-%b-%Y")
     typ, data = M.search(None, f'(SINCE "{since}")')
@@ -309,8 +309,7 @@ def find_sent_folder(M):
 
 
 def fetch_sent(window_hours):
-    M = imaplib.IMAP4_SSL("imap.gmail.com", 993, timeout=30)
-    M.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+    M = net.imap_connect_retry("imap.gmail.com", 993, GMAIL_USER, GMAIL_APP_PASSWORD)
     folder = find_sent_folder(M)
     if not folder:
         print("SENT folder not found — пропускаю заведение лидов", file=sys.stderr)
@@ -553,8 +552,7 @@ def put_drafts(pipeline, state):
 
     made = []
     try:
-        M = imaplib.IMAP4_SSL("imap.gmail.com", 993, timeout=30)
-        M.login(GMAIL_USER, GMAIL_APP_PASSWORD)
+        M = net.imap_connect_retry("imap.gmail.com", 993, GMAIL_USER, GMAIL_APP_PASSWORD)
         folder = find_drafts_folder(M)
         if not folder:
             print("Drafts folder not found", file=sys.stderr)
@@ -727,7 +725,7 @@ def tg_send(text):
     data = urllib.parse.urlencode({"chat_id": TG_CHAT, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"}).encode()
     req = urllib.request.Request(url, data=data)
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with net.urlopen_retry(req, timeout=20) as r:
             return r.status == 200
     except Exception as e:
         print(f"TG error: {e}", file=sys.stderr)
