@@ -405,125 +405,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Ferroglobe PLC Schedules Second Quarter 2026 Earnings Call for August 5, 2026",
-      "link": "https://www.globenewswire.com/news-release/2026/07/21/3330406/11914/en/Ferroglobe-PLC-Schedules-Second-Quarter-2026-Earnings-Call-for-August-5-2026.html",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Comstock Metals and Illuminate USA Sign Service Agreement for Recycling Solar Panel Manufacturing Materials",
-      "link": "https://www.globenewswire.com/news-release/2026/07/21/3330266/0/en/Comstock-Metals-and-Illuminate-USA-Sign-Service-Agreement-for-Recycling-Solar-Panel-Manufacturing-Materials.html",
-      "reason": "сервисный контракт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Barrick Announces Investment in Kingfisher Metals",
-      "link": "https://www.globenewswire.com/news-release/2026/07/21/3330299/0/en/Barrick-Announces-Investment-in-Kingfisher-Metals.html",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Trinity One Metals Identifies Historic High Grade Silver Intercepts at Silver-1 Including 2.60 m at 1,240 g/t Silver",
-      "link": "https://www.newsfilecorp.com/release/305929/Trinity-One-Metals-Identifies-Historic-High-Grade-Silver-Intercepts-at-Silver1-Including-2.60-m-at-1240-gt-Silver",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Metalsource Mining Accelerates Silver Hill Exploration with Second Drill Rig and Threefold Increase in Drilling Capacity",
-      "link": "https://www.newsfilecorp.com/release/305909/Metalsource-Mining-Accelerates-Silver-Hill-Exploration-with-Second-Drill-Rig-and-Threefold-Increase-in-Drilling-Capacity",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "GMG Executes MOU to Co-Develop Exclusive Graphene Products with Alstom for Rail Industry",
-      "link": "https://www.newsfilecorp.com/release/305938/GMG-Executes-MOU-to-CoDevelop-Exclusive-Graphene-Products-with-Alstom-for-Rail-Industry",
-      "reason": "MOU без инжиниринга",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Puma Exploration's Inaugural Drilling Confirms High-Grade Gold System at McKenzie",
-      "link": "https://www.newsfilecorp.com/release/305936/Puma-Explorations-Inaugural-Drilling-Confirms-HighGrade-Gold-System-at-McKenzie",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Big Gold Identifies High-Priority Gold Exploration Targets at Martin Kenty Following Completion of Historical Data Compilation",
-      "link": "https://www.newsfilecorp.com/release/305903/Big-Gold-Identifies-HighPriority-Gold-Exploration-Targets-at-Martin-Kenty-Following-Completion-of-Historical-Data-Compilation",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Atlas Critical Minerals Intersects High-Grade Graphite; All 20 Drill Holes Confirm Mineralization, with Intercepts up to 33.78 Met",
-      "link": "https://www.newsfilecorp.com/release/305786/Atlas-Critical-Minerals-Intersects-HighGrade-Graphite-All-20-Drill-Holes-Confirm-Mineralization-with-Intercepts-up-to-33.78-Meters-at-7.97-Graphitic-Carbon",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Viscount Mining Initiates Targeted Tungsten Evaluation Program at Cherry Creek, Nevada",
-      "link": "https://www.newsfilecorp.com/release/305882/Viscount-Mining-Initiates-Targeted-Tungsten-Evaluation-Program-at-Cherry-Creek-Nevada",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "StrikePoint Announces Final Results of Drilling at Hercules Gold Project, H26005 Cut 67.06m Grading 0.53 g/t Au and 11.69 g/t Ag I",
-      "link": "https://www.newsfilecorp.com/release/305894/StrikePoint-Announces-Final-Results-of-Drilling-at-Hercules-Gold-Project-H26005-Cut-67.06m-Grading-0.53-gt-Au-and-11.69-gt-Ag-Including-7.62m-of-2.93-gt-Au-with-54.48-gt-Ag",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Canstar Resources Receives $2.0 Million VMSC Advance, Bringing Total VMSC Funding to $4.0 Million to Advance Mary March Drilling",
-      "link": "https://www.newsfilecorp.com/release/305904/Canstar-Resources-Receives-2.0-Million-VMSC-Advance-Bringing-Total-VMSC-Funding-to-4.0-Million-to-Advance-Mary-March-Drilling",
-      "reason": "финансирование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Searchlight Begins Airborne Surveys on the Mari Lake Gold Project in Saskatchewan",
-      "link": "https://www.newsfilecorp.com/release/305910/Searchlight-Begins-Airborne-Surveys-on-the-Mari-Lake-Gold-Project-in-Saskatchewan",
-      "reason": "аэрогеофизика",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T13:02:01.085084+00:00",
-      "title": "Cabral Gold Announces Additional Drill Results from Pre-Production Infill Drilling at the MG Gold Deposit, Cuiú Cuiú Gold District",
-      "link": "https://www.newsfilecorp.com/release/305924/Cabral-Gold-Announces-Additional-Drill-Results-from-PreProduction-Infill-Drilling-at-the-MG-Gold-Deposit-Cui-Cui-Gold-District-Brazil",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T15:10:10.306184+00:00",
-      "title": "CEO.CA's Inside the Boardroom: MetalQuest Mining is Moving a Massive Iron Ore Project Forward",
-      "link": "https://www.newsfilecorp.com/release/305945/CEO.CAs-Inside-the-Boardroom-MetalQuest-Mining-is-Moving-a-Massive-Iron-Ore-Project-Forward",
-      "reason": "третьи лица",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T15:10:10.306184+00:00",
-      "title": "Lode Gold Engages Contractor to Initiate Drilling at Fremont Gold Mine",
-      "link": "https://www.newsfilecorp.com/release/305941/Lode-Gold-Engages-Contractor-to-Initiate-Drilling-at-Fremont-Gold-Mine",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-21T15:10:10.306184+00:00",
-      "title": "Talamore Completes C$149.5 Million Equity Offering",
-      "link": "https://www.newsfilecorp.com/release/305905/Talamore-Completes-C149.5-Million-Equity-Offering",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-21T17:06:43.042304+00:00",
       "title": "Phenom Participates in Strategic Resources in Competition Conference in Virginia",
       "link": "https://www.newsfilecorp.com/release/305963/Phenom-Participates-in-Strategic-Resources-in-Competition-Conference-in-Virginia",
@@ -1269,12 +1150,6 @@
   "labels": [],
   "prefilter_dropped": [
     {
-      "ts": "2026-07-21T13:02:01.074850+00:00",
-      "title": "Red Lake Gold Inc. Provides Corporate Update, Proposes Conditional Share Consolidation and Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-21T19:00:50.056155+00:00",
       "title": "Antioquia Gold Inc. Announces Appointment of New Auditor",
       "matched_noise_word": "appoint\\w*",
@@ -1374,6 +1249,12 @@
       "ts": "2026-07-28T13:01:05.038260+00:00",
       "title": "RZOLV Technologies Achieves DTC Eligibility, Enabling Electronic Settlement of Trades in the United States",
       "matched_noise_word": "\\bDTC\\b eligib\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-28T15:27:21.706674+00:00",
+      "title": "Mining Americas Schedules Q2 2026 Results and Conference Call",
+      "matched_noise_word": "conference",
       "orbit": false
     }
   ]
