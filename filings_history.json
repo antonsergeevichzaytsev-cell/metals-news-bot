@@ -1200,6 +1200,20 @@
       "link": "https://www.newsfilecorp.com/release/306998/Geomorphic-AI-Welcomes-Endeavour-Financial-as-a-Strategic-Investor",
       "reason": "стратегическое инвестирование",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-29T17:04:34.668798+00:00",
+      "title": "Rebond de l’EBITDA au S1 2026 ; réalisation en cours du plan de financement, essentiel pour le Groupe au S2",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335473/0/fr/Rebond-de-l-EBITDA-au-S1-2026-r%C3%A9alisation-en-cours-du-plan-de-financement-essentiel-pour-le-Groupe-au-S2.html",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T17:04:34.668798+00:00",
+      "title": "EBITDA rebound in H1 2026; execution of the funding plan underway, essential for the Group in H2",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335473/0/en/EBITDA-rebound-in-H1-2026-execution-of-the-funding-plan-underway-essential-for-the-Group-in-H2.html",
+      "reason": "финансовый отчет",
+      "orbit": false
     }
   ],
   "labels": [],
