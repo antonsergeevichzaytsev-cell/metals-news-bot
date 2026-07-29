@@ -427,30 +427,22 @@
       "hook": "Owner-side контроль запуска: не дать ramp-up съесть маржу.",
       "priority": "low",
       "ts": "2026-07-29T20:09:28.177166+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335644/0/en/Kinross-provides-update-on-Lobo-Marte-project.html",
+      "title": "Kinross provides update on Lobo-Marte project",
+      "stage": "study",
+      "signal": "обновление проекта",
+      "company": "Kinross Gold Corporation",
+      "project": "Lobo-Marte",
+      "region": "Chile",
+      "why": "Проект на стадии разрешений и детального проектирования, NPV $4.3 млрд.",
+      "hook": "Owner-side контроль FEL и CapEx: не дать бюджету уйти в песок.",
+      "priority": "low",
+      "ts": "2026-07-29T22:00:52.772169+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-22T22:00:51.334772+00:00",
-      "title": "West Red Lake Gold Files NI 43-101 Technical Report for Updated Rowan Mineral Resource Estimate",
-      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331764/0/en/West-Red-Lake-Gold-Files-NI-43-101-Technical-Report-for-Updated-Rowan-Mineral-Resource-Estimate.html",
-      "reason": "технический отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-22T22:00:51.334772+00:00",
-      "title": "Battery Mineral Resources' ESI Subsidiary Secures Strategic Financing with JPMorgan Chase",
-      "link": "https://www.newsfilecorp.com/release/306170/Battery-Mineral-Resources-ESI-Subsidiary-Secures-Strategic-Financing-with-JPMorgan-Chase",
-      "reason": "финансирование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-22T22:00:51.334772+00:00",
-      "title": "NovaRed Amends Trojan-Condor Corridor Option Agreement",
-      "link": "https://www.newsfilecorp.com/release/306153/NovaRed-Amends-TrojanCondor-Corridor-Option-Agreement",
-      "reason": "опцион на участки",
-      "orbit": false
-    },
     {
       "ts": "2026-07-23T05:30:34.575580+00:00",
       "title": "Osisko Gold Enters Support and Benefits Agreement with the District of Wells for the Cariboo Gold Project",
@@ -1220,16 +1212,73 @@
       "link": "https://www.newsfilecorp.com/release/307108/Ivanhoe-Mines-Issues-2026-SecondQuarter-Financial-Results-Overview-of-Operations-and-Exploration-Activities",
       "reason": "финансовый отчет",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "Kinross reports strong 2026 second-quarter results",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335652/0/en/Kinross-reports-strong-2026-second-quarter-results.html",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "Alamos Gold Reports Second Quarter 2026 Results",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335649/0/en/Alamos-Gold-Reports-Second-Quarter-2026-Results.html",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "Kinross declares quarterly dividend",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335646/0/en/Kinross-declares-quarterly-dividend.html",
+      "reason": "дивиденды",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "Green Canada and MAACKK Capital Files TSXV Listing Application on SEDAR+",
+      "link": "https://www.newsfilecorp.com/release/307209/Green-Canada-and-MAACKK-Capital-Files-TSXV-Listing-Application-on-SEDAR",
+      "reason": "листинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "Elemental Royalty Notes 32% Increase in Reserves at Karlawinda with Expansion Commissioning on Track for Q3 2026",
+      "link": "https://www.newsfilecorp.com/release/307166/Elemental-Royalty-Notes-32-Increase-in-Reserves-at-Karlawinda-with-Expansion-Commissioning-on-Track-for-Q3-2026",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "Greenheart Gold Announces Results from the Maiden Drill Program at Igab, Including Hole D-007 Intersecting 7.0 m @ 5.82 g/t Au, an",
+      "link": "https://www.newsfilecorp.com/release/307192/Greenheart-Gold-Announces-Results-from-the-Maiden-Drill-Program-at-Igab-Including-Hole-D007-Intersecting-7.0-m-5.82-gt-Au-and-Results-at-Majorodam",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "Valhalla Engages Independent Trading Group for Automated Market Making Services",
+      "link": "https://www.newsfilecorp.com/release/307177/Valhalla-Engages-Independent-Trading-Group-for-Automated-Market-Making-Services",
+      "reason": "маркет-мейкинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "J2 Metals Reports Fiscal 2026 Year-End Financial Results and Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/307182/J2-Metals-Reports-Fiscal-2026-YearEnd-Financial-Results-and-Provides-Corporate-Update",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.772169+00:00",
+      "title": "Dakota Gold Announces Leadership Changes as It Advances Its Richmond Hill Gold Project",
+      "link": "https://www.newsfilecorp.com/release/307167/Dakota-Gold-Announces-Leadership-Changes-as-It-Advances-Its-Richmond-Hill-Gold-Project",
+      "reason": "назначение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-22T22:00:51.330929+00:00",
-      "title": "Signature Resources Provides Clarification Regarding Private Placement Closing",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-07-23T13:02:48.839828+00:00",
       "title": "Aurania Appoints Thomas Ullrich as Special Advisor to Support Advancement of Strategic Projects",
@@ -1336,6 +1385,12 @@
       "ts": "2026-07-29T20:09:28.176031+00:00",
       "title": "Canadian Gold Resources Closes Non-Brokered Private Placement of Flow Through Shares",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T22:00:52.770315+00:00",
+      "title": "Big Sky Industrial Schedules Second Quarter 2026 Conference Call for August 11, 2026 at 9:00 a.m. ET",
+      "matched_noise_word": "conference",
       "orbit": false
     }
   ]
