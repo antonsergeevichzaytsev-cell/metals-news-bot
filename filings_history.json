@@ -418,13 +418,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-22T19:00:48.877813+00:00",
-      "title": "Zentek retient les services d'IMPAQ Capital inc. afin d'accroître sa visibilité auprès des investisseurs en Amérique du Nord",
-      "link": "https://www.newsfilecorp.com/release/306107/Zentek-retient-les-services-dIMPAQ-Capital-inc.-afin-daccrotre-sa-visibilit-auprs-des-investisseurs-en-Amrique-du-Nord",
-      "reason": "конференция",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-22T20:09:19.604419+00:00",
       "title": "Stria Provides Update on Change of Business Transaction & Announces Board Appointment",
       "link": "https://www.newsfilecorp.com/release/306114/Stria-Provides-Update-on-Change-of-Business-Transaction-Announces-Board-Appointment",
@@ -1218,12 +1211,6 @@
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-22T17:07:37.374314+00:00",
-      "title": "Ivanhoe Mines to Issue Q2 2026 Financial Results After Market Close on July 29 and Host a Conference Call for Investors on July 30",
-      "matched_noise_word": "conference",
-      "orbit": false
-    },
     {
       "ts": "2026-07-22T22:00:51.330929+00:00",
       "title": "Signature Resources Provides Clarification Regarding Private Placement Closing",
