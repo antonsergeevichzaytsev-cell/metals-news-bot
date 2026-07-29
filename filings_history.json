@@ -414,16 +414,22 @@
       "hook": "Owner-side review CapEx и FEL: не дать PFS-цифрам устареть до финального решения.",
       "priority": "medium",
       "ts": "2026-07-29T05:30:35.648538+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307156/PL-Gold-Mine-Restart-Update-High-Grade-Gold-Results-Resource-Expansion-Potential-and-Operational-Readiness-Update",
+      "title": "PL Gold Mine Restart Update High Grade Gold Results, Resource Expansion Potential and Operational Readiness Update",
+      "stage": "commissioning",
+      "signal": "рестарт актива",
+      "company": "Minnova Corp.",
+      "project": "PL Gold Mine",
+      "region": "Canada",
+      "why": "Рестарт рудника с обновлением по готовности к эксплуатации.",
+      "hook": "Owner-side контроль запуска: не дать ramp-up съесть маржу.",
+      "priority": "low",
+      "ts": "2026-07-29T20:09:28.177166+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-22T20:09:19.604419+00:00",
-      "title": "Stria Provides Update on Change of Business Transaction & Announces Board Appointment",
-      "link": "https://www.newsfilecorp.com/release/306114/Stria-Provides-Update-on-Change-of-Business-Transaction-Announces-Board-Appointment",
-      "reason": "корпоративная сделка",
-      "orbit": false
-    },
     {
       "ts": "2026-07-22T22:00:51.334772+00:00",
       "title": "West Red Lake Gold Files NI 43-101 Technical Report for Updated Rowan Mineral Resource Estimate",
@@ -1207,6 +1213,13 @@
       "link": "https://www.globenewswire.com/news-release/2026/07/29/3335473/0/en/EBITDA-rebound-in-H1-2026-execution-of-the-funding-plan-underway-essential-for-the-Group-in-H2.html",
       "reason": "финансовый отчет",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-29T20:09:28.177166+00:00",
+      "title": "Ivanhoe Mines Issues 2026 Second-Quarter Financial Results, Overview of Operations and Exploration Activities",
+      "link": "https://www.newsfilecorp.com/release/307108/Ivanhoe-Mines-Issues-2026-SecondQuarter-Financial-Results-Overview-of-Operations-and-Exploration-Activities",
+      "reason": "финансовый отчет",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1317,6 +1330,12 @@
       "ts": "2026-07-29T15:13:05.051664+00:00",
       "title": "Legacy Gold Announces Change of Auditor",
       "matched_noise_word": "\\bauditor\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T20:09:28.176031+00:00",
+      "title": "Canadian Gold Resources Closes Non-Brokered Private Placement of Flow Through Shares",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
