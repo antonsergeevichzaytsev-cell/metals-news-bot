@@ -418,20 +418,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-22T07:45:12.319868+00:00",
-      "title": "Sienna Resources Inc. Engages Driller for the Esmeralda County Gold Project in Nevada",
-      "link": "https://www.newsfilecorp.com/release/306007/Sienna-Resources-Inc.-Engages-Driller-for-the-Esmeralda-County-Gold-Project-in-Nevada",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-22T07:45:12.319868+00:00",
-      "title": "District Reports on Viken Deposit Economic Impact Study that Delivers US$7.66 Billion (74.33 Billion SEK) Economic Contribution",
-      "link": "https://www.newsfilecorp.com/release/306070/District-Reports-on-Viken-Deposit-Economic-Impact-Study-that-Delivers-US7.66-Billion-74.33-Billion-SEK-Economic-Contribution",
-      "reason": "экономическое исследование",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-22T13:00:54.392550+00:00",
       "title": "Great Atlantic Resources Partner Confirms Significant Mineralization at Pilley's Island Project",
       "link": "https://www.newsfilecorp.com/release/306009/Great-Atlantic-Resources-Partner-Confirms-Significant-Mineralization-at-Pilleys-Island-Project",
@@ -1269,6 +1255,12 @@
       "ts": "2026-07-29T05:30:35.647538+00:00",
       "title": "Argentina Metals Announces OTCQB Listing",
       "matched_noise_word": "\\bOTCQB\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T08:01:42.693406+00:00",
+      "title": "Graphano Energy Appoints Andrew Gainsbury as CFO and Director, Announces Passing of Director Jay Richardson, and Provides Update o",
+      "matched_noise_word": "appoint\\w*",
       "orbit": false
     }
   ]
