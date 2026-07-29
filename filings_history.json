@@ -1186,6 +1186,20 @@
       "link": "https://www.newsfilecorp.com/release/307066/AME-Calls-on-Federal-Government-to-Expand-Canadian-Exploration-Expenses-Tax-Eligibility-Backed-by-Growing-Industry-Support",
       "reason": "политическая инициатива",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-29T16:00:52.270881+00:00",
+      "title": "Cygnus Metals Limited: Granting of ASX Waiver",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335430/0/en/Cygnus-Metals-Limited-Granting-of-ASX-Waiver.html",
+      "reason": "схема сделки",
+      "orbit": true
+    },
+    {
+      "ts": "2026-07-29T16:00:52.270881+00:00",
+      "title": "Geomorphic AI Welcomes Endeavour Financial as a Strategic Investor",
+      "link": "https://www.newsfilecorp.com/release/306998/Geomorphic-AI-Welcomes-Endeavour-Financial-as-a-Strategic-Investor",
+      "reason": "стратегическое инвестирование",
+      "orbit": false
     }
   ],
   "labels": [],
