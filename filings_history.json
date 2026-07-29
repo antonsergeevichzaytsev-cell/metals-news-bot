@@ -1172,6 +1172,20 @@
       "link": "https://www.newsfilecorp.com/release/307048/Maverick-Gold-And-Silver-Prepares-For-Drill-Program-at-Silver-Vista-Property-British-Columbia",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-29T15:13:05.052279+00:00",
+      "title": "InZinc Discovers \"Strongest to Date\" Zinc and Silver in Shallow Zones at Indy:",
+      "link": "https://www.newsfilecorp.com/release/307096/InZinc-Discovers-Strongest-to-Date-Zinc-and-Silver-in-Shallow-Zones-at-Indy",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T15:13:05.052279+00:00",
+      "title": "AME Calls on Federal Government to Expand Canadian Exploration Expenses Tax Eligibility, Backed by Growing Industry Support",
+      "link": "https://www.newsfilecorp.com/release/307066/AME-Calls-on-Federal-Government-to-Expand-Canadian-Exploration-Expenses-Tax-Eligibility-Backed-by-Growing-Industry-Support",
+      "reason": "политическая инициатива",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1282,6 +1296,12 @@
       "ts": "2026-07-29T13:01:16.986738+00:00",
       "title": "Comstock Announces Results of Annual and Special Meeting and Grant of Stock Options",
       "matched_noise_word": "stock option\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-29T15:13:05.051664+00:00",
+      "title": "Legacy Gold Announces Change of Auditor",
+      "matched_noise_word": "\\bauditor\\b",
       "orbit": false
     }
   ]
