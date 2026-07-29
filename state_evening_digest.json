@@ -131,9 +131,9 @@
       "last_activity": "2026-07-20"
     },
     "outreach_auto_uzcopper": {
-      "status": "sent_no_reply",
-      "touches": 1,
-      "last_activity": "2026-07-20"
+      "status": "reply_received",
+      "touches": 2,
+      "last_activity": "2026-07-29"
     },
     "job_suek_kovdor": {
       "status": "dead",
@@ -151,5 +151,5 @@
       "last_activity": "2026-07-27"
     }
   },
-  "day_start_date": "2026-07-28"
+  "day_start_date": "2026-07-29"
 }
