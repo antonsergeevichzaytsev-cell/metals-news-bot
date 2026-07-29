@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "_verified": "4 records corrected against real Gmail on 2026-07-17: atheneum_agreement, outreach_ibaas_paper, outreach_jtb_boyd, outreach_aluminium_conf_sophia. Two of them were falsified by Claude earlier the same day - see closed_reason.",
-  "last_updated": "2026-07-29T11:01:08.992250+00:00",
+  "last_updated": "2026-07-29T11:30:39.660533+00:00",
   "leads": [
     {
       "id": "glg_5191288",
@@ -422,15 +422,15 @@
       "channel": "direct_outreach",
       "type": "partnership",
       "topic": "Zaytsev Anton",
-      "status": "sent_no_reply",
+      "status": "reply_received",
       "value_usd": null,
       "first_contact": "2026-07-20",
-      "last_activity": "2026-07-20",
-      "silence_days": 9,
+      "last_activity": "2026-07-29",
+      "silence_days": 0,
       "to_domain": "uzcopper.uz",
       "to_addr": "natalya.plokhikh@uzcopper.uz",
-      "touches": 1,
-      "next_action": "Касание 1/3. Следующее через 4-7 дн, потом dead.",
+      "touches": 2,
+      "next_action": "Касание 2/3. Следующее через 4-7 дн, потом dead.",
       "notes": "Авто-заведён из SENT 2026-07-20. Кому: natalya.plokhikh@uzcopper.uz"
     },
     {
