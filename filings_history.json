@@ -1325,12 +1325,6 @@
   "labels": [],
   "prefilter_dropped": [
     {
-      "ts": "2026-07-23T22:51:52.960690+00:00",
-      "title": "Nio Métaux Stratégiques maintenant accessible sur le marché OTCQB",
-      "matched_noise_word": "\\bOTCQB\\b",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-24T05:30:36.027216+00:00",
       "title": "DRC Gold Corp. Announces Grant of Stock Options",
       "matched_noise_word": "stock option\\w*",
