@@ -479,16 +479,22 @@
       "hook": "Металлургия подтверждена: нужен owner-side взгляд на flowsheet и пилот.",
       "priority": "low",
       "ts": "2026-07-30T13:01:29.448724+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336495/0/en/Eldorado-Gold-Reports-Solid-Q2-2026-Financial-and-Operational-Results-Skouries-On-Track-for-Q3-2026.html",
+      "title": "Eldorado Gold Reports Solid Q2 2026 Financial and Operational Results; Skouries On Track for Q3 2026",
+      "stage": "construction",
+      "signal": "строительство Skouries",
+      "company": "Eldorado Gold",
+      "project": "Skouries",
+      "region": "Greece",
+      "why": "Строительство Skouries на финише, запуск в Q3 2026.",
+      "hook": "Owner-side контроль графика и бюджета: не дать стройке Skouries выйти за рамки.",
+      "priority": "medium",
+      "ts": "2026-07-30T22:05:47.032708+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-23T22:02:25.383469+00:00",
-      "title": "Axion Minerals Announces Receipt of Prospectus and Canadian Securities Exchange Listing Date",
-      "link": "https://www.newsfilecorp.com/release/306336/Axion-Minerals-Announces-Receipt-of-Prospectus-and-Canadian-Securities-Exchange-Listing-Date",
-      "reason": "листинг и проспект",
-      "orbit": false
-    },
     {
       "ts": "2026-07-24T05:30:36.027979+00:00",
       "title": "Comstock Announces Second Quarter 2026 Business Results and Outlook",
@@ -1265,16 +1271,59 @@
       "link": "https://www.newsfilecorp.com/release/307325/Anquiro-Ventures-Provides-Further-Update-on-Its-Concurrent-Financing",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-30T22:05:47.032708+00:00",
+      "title": "Eldorado Gold Provides Update on Executive Leadership Transition",
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336496/0/en/Eldorado-Gold-Provides-Update-on-Executive-Leadership-Transition.html",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T22:05:47.032708+00:00",
+      "title": "Eldorado Gold Announces Board Leadership Transition",
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336498/0/en/Eldorado-Gold-Announces-Board-Leadership-Transition.html",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T22:05:47.032708+00:00",
+      "title": "Eldorado Gold Announces Renewal of Normal Course Issuer Bid",
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336501/0/en/Eldorado-Gold-Announces-Renewal-of-Normal-Course-Issuer-Bid.html",
+      "reason": "выкуп акций",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T22:05:47.032708+00:00",
+      "title": "Volta Metals Announces Closing of Acquisition of Remaining 20% Interest of Its Flagship Springer Rare Earth and Gallium Deposit an",
+      "link": "https://www.newsfilecorp.com/release/307391/Volta-Metals-Announces-Closing-of-Acquisition-of-Remaining-20-Interest-of-Its-Flagship-Springer-Rare-Earth-and-Gallium-Deposit-and-Contiguous-Claim",
+      "reason": "приобретение доли",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T22:05:47.032708+00:00",
+      "title": "Namibia Critical Metals Announces Completion of Japan's C$23 Million Earn-In and Formation of Strategic Joint Venture Company for ",
+      "link": "https://www.newsfilecorp.com/release/307381/Namibia-Critical-Metals-Announces-Completion-of-Japans-C23-Million-EarnIn-and-Formation-of-Strategic-Joint-Venture-Company-for-the-Lofdal-Heavy-Rare-Earth-Project",
+      "reason": "совместное предприятие",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T22:05:47.032708+00:00",
+      "title": "Atlantico Announces Marketing Program Update, Director Resignation, and Stock Option Grant",
+      "link": "https://www.newsfilecorp.com/release/307362/Atlantico-Announces-Marketing-Program-Update-Director-Resignation-and-Stock-Option-Grant",
+      "reason": "корпоративные изменения",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T22:05:47.032708+00:00",
+      "title": "Sixty North Gold Updates Activities at Mon Gold Mine, NWT",
+      "link": "https://www.newsfilecorp.com/release/307370/Sixty-North-Gold-Updates-Activities-at-Mon-Gold-Mine-NWT",
+      "reason": "собрание акционеров",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-23T22:02:25.381734+00:00",
-      "title": "Argyle Announces Commencement of New LIFE Offering",
-      "matched_noise_word": "\\bLIFE offering\\b",
-      "orbit": false
-    },
     {
       "ts": "2026-07-23T22:51:52.960690+00:00",
       "title": "Nio Métaux Stratégiques maintenant accessible sur le marché OTCQB",
@@ -1399,6 +1448,12 @@
       "ts": "2026-07-30T20:12:35.421834+00:00",
       "title": "Canadian Gold Resources Strengthens Technical Leadership with Appointment of Chief Geologist and Announces Stock Option Grants",
       "matched_noise_word": "stock option\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T22:05:47.028835+00:00",
+      "title": "Gold Hunter Announces Change of Auditor",
+      "matched_noise_word": "\\bauditor\\b",
       "orbit": false
     }
   ]
