@@ -1,126 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Canada Nickel’s ninth resource lifts holdings to 4.3B tonnes in Timmins district",
-      "desc": "Canada Nickel’s ninth resource lifts holdings to 4.3B tonnes in Timmins district &nbsp;&nbsp; The Northern Miner",
-      "domain": "northernminer.com",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPUUJ4WGFUV2N0em5DR2hndFFzUllnM1Jhc2V2X2RCWEl2UFdTUnpkRE1ybHpxVlh5ZWt2NkxDRG5sQ2VIY196QkhEYzlWWkF1dXlBTmRTTWExOGpHb2EzTkpTcFVVMDNBcVl6MXhPRGhlaG5wNXBjQUhQVEw2VHVIalc0WDM3dHNFeENQY2RLMGkxcDFGQ29BbWZrTXdhZmU2N3JseEg3U2NQTDEwWjdld3Y3cHNvOXBrYjMyc3l5M21SOVMz?oc=5",
-      "why": "Крупный ресурс никеля в Канаде — потенциальный конкурент для Норникеля и ERG.",
-      "priority": "high",
-      "company": "Canada Nickel"
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Kazakhstan launches strategic digital mining rules, tying cheap electricity to crypto reserve contributions",
-      "desc": "Kazakhstan launches strategic digital mining rules, tying cheap electricity to crypto reserve contributions &nbsp;&nbsp; Crypto Briefing",
-      "domain": "Crypto Briefing",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUG1TakVvdnJKZTBXTnd6ejJBejd1VzF5LWdEelBzRnNYdkJhc2djSHVfZ3g5dHdlMUtyNDh4REVYaEtJSXZ0VFQxazlpN0lqRi1LX0UxZzBtVTdqXzR1NGl2TlJ3cHh6QmRKTGlFRmhXMUprQTVkZzlNRVZvUTRCTFpGd0c?oc=5",
-      "why": "Энерготарифы для майнинга влияют на энергобаланс и цены для промпотребителей в Казахстане.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Anglo American reports strong Q2 copper and iron ore operational performance",
-      "desc": "Anglo American reports strong Q2 copper and iron ore operational performance &nbsp;&nbsp; businessreport.co.za",
-      "domain": "businessreport.co.za",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNaXRWa095UVdjaHZGMEg5clZCSDBMV2dWRVZNSjZhM2o0TUF0VnVadmRhVTlpc3VCVFFEdk8zc2JVeEFpLUpSci1TWDMxcFdqVElnemE0VEg4Y2prX3ZYeE9VM0hyNEUwWk16Q19kVEQyVWstckt1M2Qza05uclJHV1JqUXRZd2htcFM2TjExR2JqU2l3Wk9SV3NIczhDaU1jbXhjRkM2djFkSDNWSWJjZGpLOGt6UHlSenJyVGlEOW9vODBsVnhXUkVMYVVjcUozdlNpTV80YmFwbUE?oc=5",
-      "why": "Anglo American — прямой конкурент его компаний по меди, данные Q2 важны для стратегии.",
-      "priority": "medium",
-      "company": "Anglo American"
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "During Freeport-McMoRan’s Q2 earnings call, the company disclosed that",
-      "desc": "During Freeport-McMoRan’s Q2 earnings call, the company disclosed that &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOWm9TZmFlOE1OZ09zX1NPT3V5WHE4bmlHRUwtZzVrWndZZWxpSFN0N0Z1SldQdGJmUWFpXzhSMnBVUy0wZ2Y4VlNaSjBsTzNvYlRaOUlLSjFNOWt2S2ozTzV2TmVFYjBaSTFhTmFFTHl3MnpTZEczaFpXYXlfZ3RjOEtaWnJpd3lHTHg5SkJSc0h0RzVwN01NbVFJUEstbW93UzlHbWFTVFdERHRfd1BXSUpudkZZV3JHSUFHYW5BbXBIXzJ1aFhYclROQ04yMGtxNUhSeE1fd2VVbWJfcFpzMUlUajE2M3U2VUtYb2o5cWVqbGE4MGhicWYzcms?oc=5",
-      "why": "Freeport-McMoRan output data affects copper supply, key for his metals strategy.",
-      "priority": "medium",
-      "company": "Freeport-McMoRan"
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Kazakhstan Approves Strategic Bitcoin Mining Program With State Crypto Reserve",
-      "desc": "Kazakhstan Approves Strategic Bitcoin Mining Program With State Crypto Reserve &nbsp;&nbsp; CoinCentral",
-      "domain": "CoinCentral",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQZXZRQ0hneEFQT0p3dC01VWU4bWs0TlZ5d05Zbmltc1hiaUpGYmVwQnQ2RGNPSHh5LXlTWkZmUzd5NmtKTkJyREZrdzh1N2VtZ29zMXpnbjE5NS1pVHFpaE9ZX2hjWmV6bWlRemxhTzJEV0Z0Y3JaaHFqU2h0U0p2MEk1bEZybnJTS1pKQVZ4aXV0aGJWNlRta1c3VW9vdVpPRjNYdEh3?oc=5",
-      "why": "Kazakhstan — крупный регион для его клиентов (ERG, KAZ Minerals), новая госпрограмма влияет на энергопотребление и затраты.",
-      "priority": "high",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Kazakhstan ties crypto miners’ electricity access to state reserve contributions",
-      "desc": "Kazakhstan ties crypto miners’ electricity access to state reserve contributions &nbsp;&nbsp; Crypto Briefing",
-      "domain": "Crypto Briefing",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkQ3OVFrU3lCNE1GNEF4Vlc4eGpSZm1zcVc4MGx3dDl0MENLTDR0cVpYNkxDcEZvOGNfLW9FczJ1VDRObUl1Z3JITGZHdWJwVThYX0VGRlR5M3BKOWN6bVpOR0dodEtXRmtBMkZDd2JRWlVVZUVFdUFnNDFBVnNUNVVVSXhpX0M4bU1kUEJ5cG9GdWJDd2JOeGRYemNubTJyX3pJMHRiMVB6bms?oc=5",
-      "why": "Регулирование майнинга криптовалют влияет на энергопотребление и цены на электроэнергию в Казахстане.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Teck Resources tops profit estimates on stronger copper production and prices",
-      "desc": "Teck Resources tops profit estimates on stronger copper production and prices &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOaV9Bc3M2MXgtd0RldG9lZWhVNElvcXBGckc2dzItZk1oNkNEX1hyMU5zTU1Ld3R6RjhRUkY5MjdCZzhFVVdjd1lQbEwwSkh4V2dxcnFhcXRXWUxQTzRfNG9pYTNsQWhPUkhqa3VyeF9YNzcxTWZFLU0wSWV2NXFpWXdjWHJUcEtvV1RYYnZZNFhzeUt5VUN5UGs2emtMRzkyT1dVS2ZUdDU?oc=5",
-      "why": "Рост прибыли Teck на фоне роста производства и цен на медь — сигнал для рынка меди.",
-      "priority": "medium",
-      "company": "Teck Resources"
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Hindalco Plans Rs 1 Lakh Cr Investment in India Expansion",
-      "desc": "Hindalco Plans Rs 1 Lakh Cr Investment in India Expansion &nbsp;&nbsp; Rediff MoneyWiz",
-      "domain": "Rediff MoneyWiz",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNQm9KUlZEYWpiQkxiMkRGR3k0bnRaRF9nLWdJeno5akpOZ09xZklMdERRZ0F6eHNTTF9qb2tRcENENE1HYzNxckZ6ZkpEcUdsdnhpdWZOQzRXSEtxRFZDUG5nOVVpdFVhdl9nR1N3SlN4V2tuaW9DUzVZbUZjR3g4bElLclM3ZXlVdTAyaU9DeVRJUFB1Y2V3STJBWWhhYWFfMVY1Mk9WR1dINDdUanVET3BkVdIBswFBVV95cUxNQm9KUlZEYWpiQkxiMkRGR3k0bnRaRF9nLWdJeno5akpOZ09xZklMdERRZ0F6eHNTTF9qb2tRcENENE1HYzNxckZ6ZkpEcUdsdnhpdWZOQzRXSEtxRFZDUG5nOVVpdFVhdl9nR1N3SlN4V2tuaW9DUzVZbUZjR3g4bElLclM3ZXlVdTAyaU9DeVRJUFB1Y2V3STJBWWhhYWFfMVY1Mk9WR1dINDdUanVET3BkVQ?oc=5",
-      "why": "Крупные капзатраты Hindalco усилят конкуренцию на рынке алюминия, затрагивая RUSAL.",
-      "priority": "high",
-      "company": "Hindalco"
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "South32 agrees to sell aluminum assets to Alcoa for $5.6 billion",
-      "desc": "South32 agrees to sell aluminum assets to Alcoa for $5.6 billion &nbsp;&nbsp; Yieh Corp.",
-      "domain": "Yieh Corp.",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNRldYUkNoRFNkcGV0TU1icXUxZE1NdHVBbGxSMGRjNXBHT2xhUXc3WnljMm1ldXl1WkhFRVZKdWxLWWNZV0ZOWGViQXE1QXNQYzVEcVlkb0o3RzlzWVJCbG5zSnFxX05OUkNlMkk0eGdlXzQwX2k0MDNURU1seDh4Q3cwNnJaa0MtQ1d6aGlYU2hTT2V4TXNOUmN2aHVOT1k?oc=5",
-      "why": "Крупная сделка M&A в алюминии меняет расстановку сил среди конкурентов RUSAL.",
-      "priority": "high",
-      "company": "Alcoa"
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Kazakhstan Moves To Build A National Crypto Reserve Funded By Bitcoin Miners",
-      "desc": "Kazakhstan Moves To Build A National Crypto Reserve Funded By Bitcoin Miners &nbsp;&nbsp; Bitcoin Magazine",
-      "domain": "Bitcoin Magazine",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE02YVRUTGk2aXNIZG55NEh1RHJITWw4X3Zjc2E0Q3ZjYXV6a1Vvb3VDdG4wZ0h1d0VuS0kwZm9jYzJNOEtEaVIzSE5FWC02Sk1laWhxQlR2dGZPVXpqY1BOcHA0QzJBcU96Q0ZsdWZjd0Y5MDltOUtjTVp3?oc=5",
-      "why": "Kazakhstan crypto reserve may affect energy supply for miners, impacting local metals producers.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Anglo American Flags First-Half Loss at De Beers",
-      "desc": "Anglo American Flags First-Half Loss at De Beers &nbsp;&nbsp; Rapaport",
-      "domain": "Rapaport",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZHM5Q2NQWGE0eDBPYkhkZ0VSYm5LX2JNc2NoMUZlb21QR2JyWDFyRVIxdkpwd2t4UjZFWTFRVTlES2pBS29LVFVBRzl1RXF1OG5PUGY5UUlGTXVoSXZLVUxWVE9iMmwtWHZrQVBScFZRWWpnc3ZxdzJIc1BxaGw0dA?oc=5",
-      "why": "De Beers loss сигнализирует о слабости алмазного рынка, что косвенно влияет на стратегию Nornickel.",
-      "priority": "low",
-      "company": "De Beers"
-    },
-    {
-      "ts": "2026-07-23T18:06:18.465292+00:00",
-      "title": "Kazakhstan Approves Strategic Mining Regulations",
-      "desc": "Kazakhstan Approves Strategic Mining Regulations &nbsp;&nbsp; ForkLog",
-      "domain": "ForkLog",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9KRl96SWtWMDJSS29LUFExdEVPeHE5bHpiUmtCVTkxSWJvd3FOQnBaY2E3NC16by02UUlCMEoybmg2NGItVDlvRUZMTmZQckRGUEdJdkRiTXUyaEhHTFlubzFmVTJwbTRLeGdaVl8zdUpvLWtuX01JbWplNHU?oc=5",
-      "why": "Регуляция стратегических минералов в Казахстане влияет на его горнодобывающие компании.",
-      "priority": "high",
-      "company": ""
-    },
-    {
       "ts": "2026-07-24T07:35:25.425979+00:00",
       "title": "CBAM pushes Brazilian aluminium and steel exporters to accelerate emissions certification",
       "desc": "CBAM pushes Brazilian aluminium and steel exporters to accelerate emissions certification &nbsp;&nbsp; AL Circle",
@@ -2399,6 +2279,126 @@
       "why": "Возможный допуск частного капитала в Codelco изменит глобальный рынок меди, затронув конкурентов из СНГ.",
       "priority": "high",
       "company": "Codelco"
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "Anglo American says CEO Wanblad to lead combined Anglo Teck group",
+      "desc": "Anglo American says CEO Wanblad to lead combined Anglo Teck group &nbsp;&nbsp; marketscreener.com",
+      "domain": "marketscreener.com",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMFhMcTBoVG84UHVPTW1fTmRzT3VwVGlXa3p1UmpNOTMzREZRTHUzUkI4bmdVa2ttcTFRYjZSYkYwR1NyN1ZWbHlqWURqSy1ncGdfc0tQZDM1VURyWXdzTXd1dWxialdWeGVQWVZWdzBoWFhaSTJGOXFoT1o5VEFvSmhwazBld2RSOFZyM09PUUhFRVp5R0JpYjNfaUlCSm12eE0zWEttM2JkeFVDeFowU0swQUJUX3BCRmc?oc=5",
+      "why": "Слияние Anglo American и Teck меняет расстановку сил на рынке цветных металлов.",
+      "priority": "high",
+      "company": "Anglo American"
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "Kazakhstan among world's top 5 gold buyers",
+      "desc": "Kazakhstan among world's top 5 gold buyers &nbsp;&nbsp; Qazinform",
+      "domain": "Qazinform",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQcVBvUzN1emVabHZHX1BMTXJ6STVNa1d0MTRuaU5EeXcwcmF0QnRiTnl1WUpmeGZKUFRwYlQwNV82ZkNRd0ltei1xT2lwM1VvQnJvaHJoVFl3V3VwLXVYMXRrWjZGM204c2xQbEFjTnRYNkY4Vm80UmhuN3UyVzR0SNIBgAFBVV95cUxOSFpjWm12VllyQ1B6RFA4Y0k0Z3hickJvblpwbVB2a0U2SFl6cE1hVXRGR3ZXUVUxZ2VkS3lIRkY5Vk1sWGlhdkp6bHBoQnRWUTBhczBYRzVDdnk2dHlMcnhId1FIeXVvTjdCWWNxX0dreGk2X1JXeWFZYjVVYktQSQ?oc=5",
+      "why": "Указывает на стратегический спрос на золото в Казахстане, что важно для производителей.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "Chile Finance Minister Floats Idea of Private Capital at Codelco",
+      "desc": "Chile Finance Minister Floats Idea of Private Capital at Codelco &nbsp;&nbsp; bloomberg.com",
+      "domain": "bloomberg.com",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPcWdOZlNMd2RpbEs1dWpjbzBXREduZ0V6V0xjLWZpdENOM1JUeXdWRncxa0pmZFAtR1BZc0JhMm10dkMtcFdIUHN3WWhXRFU0YTNTdnFDYkZjd2dKYmhLR3NlVzloRXMxekI3YjZlU3pqNV9SSDVkQXVNbGVVS3BhaTRrVmVISDFVbVhpU3I4T1hXYmhadW9UZ3AtVDZObUp5ZS11cXYtMkdsX2VRX2JTdndGeE1IQQ?oc=5",
+      "why": "Возможное привлечение частного капитала в Codelco изменит глобальный баланс на рынке меди.",
+      "priority": "medium",
+      "company": "Codelco"
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "Codelco: No Chance of Hitting 1.7 Million-Tonne Copper Target by 2030",
+      "desc": "Codelco: No Chance of Hitting 1.7 Million-Tonne Copper Target by 2030 &nbsp;&nbsp; Industrial Info Resources",
+      "domain": "Industrial Info Resources",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPRE9nTnYzalROeUh4cjR4UzdJT0ZvUkxnUjBRVWRvLWtTcXlIdk51MkRLNkZueU5QdkV0MjdEaElKQ2RCaUZWcnlpdUdaWUpMd2RRZ2NCT2hBcmY1VTJjT2REVndiNEVlRGNkeWdjNzYtaTN5bS13dzBSR3V5YXE4MmhlYVhaYnhtUEdrakQxeU5FS0xsZFhjblZ6T08wYk45bnpNSnRFV0d0YlRPcnpJdEVnZEdGQkcwbTRHUVpnMENGZHB4MnY0bHY0dXdPOWZhbFI3WQ?oc=5",
+      "why": "Крупнейший производитель меди снижает прогноз, что влияет на глобальный баланс и цены.",
+      "priority": "high",
+      "company": "Codelco"
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "India's gold tariff hike boosts grey market, hurts organised trade, says WGC",
+      "desc": "India's gold tariff hike boosts grey market, hurts organised trade, says WGC &nbsp;&nbsp; KITCO",
+      "domain": "kitco.com",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPU2dHVEVTNjJoVFBLS004SjdxckZTVUxycVpKWWdzTmFmUU9YUGI4Y3ZoR1ZQTUt5Wm1sZndGMnBNRFlFY0V5YzN3clh5eTd0clFGcU5QNTRiSFg5dmVWVzNfTVVMNERYUWxMX0hGTjR5cng2U0IwVzdIWDlmM003LWJsYXRKU0o3aUl3T1hOTEJ5OVdFMUlydXhGTFBCN2doU2RZRDFVUkcyZ1dnZE15Mm8xaklBd0FTT2t3cw?oc=5",
+      "why": "Рост серого рынка золота в Индии из-за пошлин влияет на спрос и стратегию сбыта для производителей.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "Anglo American releases operational and financial results for the first half of 2026. - IBRAM",
+      "desc": "Anglo American releases operational and financial results for the first half of 2026. &nbsp;&nbsp; IBRAM - Mineração do Brasil",
+      "domain": "Mineração do Brasil",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1yRW9td3NIU0pQWEdTUjlkQjIwMkR3TzdHX05tZEZqY2c0WFp4VEVXMDFJV1BJTlFNckNEdGhHU1RaOVo3aW1KQjJsTFE5MWF3RGw5OGcwNkVvRnhtdU41R0c4SGZYZlRvbnRhNUE2MmoyeDBvdlpLVlRpZ2E?oc=5",
+      "why": "Результаты Anglo American влияют на глобальные рынки никеля и меди, конкурируя с Норникелем.",
+      "priority": "medium",
+      "company": "Anglo American"
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "Valterra profit leaps on higher prices, sees AI driving future platinum demand",
+      "desc": "Valterra profit leaps on higher prices, sees AI driving future platinum demand &nbsp;&nbsp; KITCO",
+      "domain": "kitco.com",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNZEdmQUdtRnQ1YWREcjJlWUtYQ3VneVE2QTZQbTU2Z0EzOVBSYUM4ZGNqZEItUHdqRWYtbklIdXZIbWNqUzlYeG5MOC1XbVdHalBGRVVsT3Y1MTY5ci16YS1jam9iODJfb2c3MmtfVVRJR0tta1VoN3l1eUFiSngtSnlOcVVhQ0RFWmNzYUFkR3VheVY0MlU5cl9WaDkzY3N6WW96UTVoQVpUV2RZTVhzZVdkZ3hOZjhxZFE?oc=5",
+      "why": "Рост прибыли Valterra и прогноз спроса на платину от ИИ важны для стратегии в цветных металлах.",
+      "priority": "medium",
+      "company": "Valterra"
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "India-EU trade deal to help small businesses tackle EU carbon tax rules, says commerce official",
+      "desc": "India-EU trade deal to help small businesses tackle EU carbon tax rules, says commerce official &nbsp;&nbsp; CNBC TV18",
+      "domain": "CNBC TV18",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOeTdGMWd3WnNiT19MZGJOZWNkTFlqMXBUamNuN0c3dDlwSE9kTkhva2FWWW02b2g3TEg0aENWd18yUk5OcWFkTl9Zd1FtbjZGSE1wY1ByM2hPTzJrZ1lKbW9acEJpRDF6VnhLckdOTGdUNkdUNXdNWFd4VmtwdXZDSXJnOEU5TEt5XzQySjhhaXlaUkxtTUlyZ2w2MGtPcDRTWnNMVVJvUEVvenh1TERxakZCQzJmUUdUa0RlWFdKN3BDc3lBSmcxcXh2dlNnUlZtdVZWSVZFUdIB3AFBVV95cUxQQ3d4OE01c0JyUk1DaDdxTnVNOHZEbUVhbklHUFk1MHRLcE40YXdPbVI4alRTXzkwVHNmbU1yenh0VDlJMHhGbXlsMHRXWnZDOU9BeG55ZkUtRGV3Y21YclpST3BfUGRqdlVKNlBuT2hfcEFlZGVPXzdDOWhpMy1qNEFVc0pmLUQ1dHNONmFUWmZfRzBVbzA5RG9RWlktZ3A0c3ZsQzZ4cW1UU3ZfVEtkX2JjS09ab2ZwZ3pqM2tJWngtYjdET2trS01uNkhHeFRBTTZFamVKQnpwdkk2?oc=5",
+      "why": "CBAM затрагивает экспорт алюминия из Индии, что влияет на стратегию RUSAL и других производителей.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "India-EU FTA has work plan to address CBAM concerns: Official",
+      "desc": "India-EU FTA has work plan to address CBAM concerns: Official &nbsp;&nbsp; BusinessLine",
+      "domain": "BusinessLine",
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTHk5RzJpSDdEbU9peVAybVhxZ1ZTaGtnMVpjeUdEalVMbnd0SjYwdWk5OUVBc0k1ODZlYk5ic0VQQW5MbDlibnc2YlAwbEZZZ3ppT25jN0xpWnBOREVlUEt5NjIwTXhqaVltbjcyalhWNDNFMURESUlOUGpNektnY3JsaUo4bHdCaGNla2ZTajVFNE04NjRIZm5YYlpFdklEMkpyNndzcUlxWmtadkVrcjlNNTFSZnJjWUNIVmFFUXpkd0HSAcoBQVVfeXFMTmtHeU9jLW1yQ3BuMnhrTE0tbndHYzBxMFR2MFpwTmM4eGdSOXdrUFVOSjRqdlRmQllFVTJXRlpfX2Z4NHJja1pyckhaSXZkQl9lSVZDODFGaWJOVmRWdWhXaUh1d1NiQVpEWFdYU3RJZTZaa1hmd0pqcVBFd2lkbWtZRFdVc2lKUFRaUXZMZldWeDdUWDR4VHFTVkVNd1lMcmVBTV9aYUFDUXU0N2hxZ3htZlozOEtzeFo0cm5nRnh5SFRrT09LSVAwZw?oc=5",
+      "why": "CBAM затрагивает экспорт алюминия и металлов из РФ в ЕС, влияя на стратегию РУСАЛа.",
+      "priority": "high",
+      "company": "RUSAL"
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "Selkirk Copper announced an updated Mineral Resource Estimate for its",
+      "desc": "Selkirk Copper announced an updated Mineral Resource Estimate for its &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPeVNyMVZsT2k4Vm1PUThoVC0zaHEzdU5za0VacHc5djdfSDJnMHp2OGZrU1RDYXplbEpRLU9MUkt4a2o2dFB2ckF4Vnh5VFR6VERfWk5TSkE2U0Q3QlZrTE5GN2VkMkQ3R2VkZWliT0dqWWcyWUl1a2V0SDF3UlRYZGFrYUxPdG54bE9UYmVKSk1LWTVGRGYzaXI1Q25Kekg4Ym9oZUxSdFJIeE53aUg5R0VsUXZXall1OHl3UHN2bHFycDBDSmxQaW5LRkc5bnpwU2c?oc=5",
+      "why": "Обновление ресурсной базы Selkirk Copper может повлиять на рынок меди в СНГ.",
+      "priority": "high",
+      "company": "Selkirk Copper"
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "How the emerging BESS sector is shaping lithium demand",
+      "desc": "How the emerging BESS sector is shaping lithium demand &nbsp;&nbsp; Fastmarkets",
+      "domain": "fastmarkets.com",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcUdlbXVSS2dZdnFWblVzaVdLMGg2MlhUTWlfM2hpQkdCdF9wYmR2bXZFNGx5dlNvc1FOSzNHN0VMSHQ4eGxoSUc4TVN2ZGpCcXBhekMzMlp3RTl1SWY5Vzl6R2oybjlGbGFsekRHX0MzRnMwS3p4dE8yZEpiSHcwMjRPNDk5Rm1EdWZDMzUycEdiX2VvaDlv?oc=5",
+      "why": "Формирует спрос на литий, ключевой для стратегии в цветных металлах.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-30T18:08:42.391433+00:00",
+      "title": "CBAM compliance obstacles risk millions in lost revenue for regional renewable firms",
+      "desc": "CBAM compliance obstacles risk millions in lost revenue for regional renewable firms &nbsp;&nbsp; Balkan Green Energy News",
+      "domain": "Balkan Green Energy News",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMDFESDNqTlRlZUwzaFlETnhDVHRaY0RqbzVvRDBuaTh0RWc5U3JRVlpHN2o0aWpiZHdkX1BWblRwSllGNmJ3VkFXOEVDZFZzeEtvU2hBdnNZVk9IUVJwQmpBdk9GV0pOdGloZjhjUG9WSHZMUE9SSG40ck1ZZTVzMVhod194andzNF81STdiX0l4YzhyZzJSa040VTBuYzVMQzFEQ0Jpb09SanZXRXVYSWF2WHE0bEZIdTAw?oc=5",
+      "why": "CBAM затрагивает экспорт металлов из Балкан, что влияет на стратегию клиента.",
+      "priority": "medium",
+      "company": ""
     }
   ]
 }
