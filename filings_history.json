@@ -483,20 +483,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-23T17:09:32.697549+00:00",
-      "title": "Aquitaine Metals Drills 16.48 g/t Au over 7.50 m, within 3.73 g/t Au over 34.90 m at Laurieras Target",
-      "link": "https://www.newsfilecorp.com/release/306224/Aquitaine-Metals-Drills-16.48-gt-Au-over-7.50-m-within-3.73-gt-Au-over-34.90-m-at-Laurieras-Target",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T17:09:32.697549+00:00",
-      "title": "Abitibi Greenstone Gold Corp. Announces Listing of Class A Common Voting Shares on the Canadian Securities Exchange",
-      "link": "https://www.newsfilecorp.com/release/306297/Abitibi-Greenstone-Gold-Corp.-Announces-Listing-of-Class-A-Common-Voting-Shares-on-the-Canadian-Securities-Exchange",
-      "reason": "листинг",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-23T19:00:54.314491+00:00",
       "title": "New Aurora Metals Corp. Completes Initial Public Offering and Lists on CSE",
       "link": "https://www.newsfilecorp.com/release/306338/New-Aurora-Metals-Corp.-Completes-Initial-Public-Offering-and-Lists-on-CSE",
@@ -1271,6 +1257,13 @@
       "title": "Purepoint Intersects 5.6 Metres of Continuous Radioactivity at Nova, Peaking at 53,300 CPS",
       "link": "https://www.newsfilecorp.com/release/307284/Purepoint-Intersects-5.6-Metres-of-Continuous-Radioactivity-at-Nova-Peaking-at-53300-CPS",
       "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T17:14:57.763570+00:00",
+      "title": "Stria Provides Update on Change of Business Transaction",
+      "link": "https://www.newsfilecorp.com/release/307306/Stria-Provides-Update-on-Change-of-Business-Transaction",
+      "reason": "смена бизнеса",
       "orbit": false
     }
   ],
