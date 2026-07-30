@@ -440,6 +440,19 @@
       "hook": "Owner-side контроль FEL и CapEx: не дать бюджету уйти в песок.",
       "priority": "low",
       "ts": "2026-07-29T22:00:52.772169+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307178/Meridian-Smelter-Tests-Deliver-High-Quality-Blister-Copper-from-Cabaal-Copper-Concentrates",
+      "title": "Meridian Smelter Tests Deliver High Quality Blister Copper from Cabaçal Copper Concentrates",
+      "stage": "study",
+      "signal": "металлургические тесты",
+      "company": "Meridian Mining",
+      "project": "Cabaçal",
+      "region": "Brazil",
+      "why": "Тесты подтвердили качество концентрата, но проект на стадии изучения.",
+      "hook": "Металлургия подтверждена: пора переходить к ТЭО и CapEx.",
+      "priority": "low",
+      "ts": "2026-07-30T07:44:26.171814+00:00"
     }
   ],
   "skipped": [
@@ -1260,6 +1273,13 @@
       "title": "Adex Mining Appeals Regulatory Action",
       "link": "https://www.newsfilecorp.com/release/307235/Adex-Mining-Appeals-Regulatory-Action",
       "reason": "апелляция",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T07:44:26.171814+00:00",
+      "title": "Endeavour Reports Strong H1-2026 Results",
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3335783/0/en/Endeavour-Reports-Strong-H1-2026-Results.html",
+      "reason": "финрезультаты",
       "orbit": false
     }
   ],
