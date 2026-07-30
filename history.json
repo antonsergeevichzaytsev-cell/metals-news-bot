@@ -1,126 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "According to SMM data, on July 23, the SMM battery-grade nickel sulpha",
-      "desc": "According to SMM data, on July 23, the SMM battery-grade nickel sulpha &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQXdiNk5kRmJTR1c4OFRfczU0NFV3a1h0ckpXa3NSWUluYWlwMThFWDRWT19Qc1Q1Y2ZyRHRaRG50TEZwSmQ2Q1ltNzBVbW9GY2RBUmRIQzkxenRUcWdjY2JadHNVRHhGV2NjS0ZqbkxDSmhnNVhwNVJTalJsNWk4b05JVEZIYWxPRDlVYkFXb3p0MnI5QV9IZ2ZwOEZ0UDdpZV9jek5PdVdsaXBmRnN3cjhQelFTQQ?oc=5",
-      "why": "Цена сульфата никеля влияет на себестоимость катодов для EV, что важно для стратегии Норникеля.",
-      "priority": "medium",
-      "company": "Nornickel"
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "According to SMM data, on July 23, the FOB price of Indonesia MHP nick",
-      "desc": "According to SMM data, on July 23, the FOB price of Indonesia MHP nick &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPR0luRFV4dHdudmgzQWlHR21jMkxRQUtuTGFkT0lrNTdEYkFOeFJmazVPVGVudEprbDBIR1NwVHREUVNXYUZkQ1c3MmswV1hRRWNEVEtRYXhka0Z6eUJ3Y2tqQXVtSkRYOV92YXM5N1lSY2ZBYUN2c2taXzN2S2pBUUEwd3hGckJZNk9Oa2RpMFNNb0NPU1lJaUNBamszTmFFNXNpTURYYmp0ekhVUVhTYnpiMEdPVzkxNk5TOUNB?oc=5",
-      "why": "Цена MHP из Индонезии влияет на рынок никеля, где работает Норникель.",
-      "priority": "high",
-      "company": "Nornickel"
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "SMM Visits Xingfa Aluminium’s Vietnam Factory to Jointly Explore Establishment of Vietnam Aluminium Pricing Benchmark",
-      "desc": "SMM Visits Xingfa Aluminium’s Vietnam Factory to Jointly Explore Establishment of Vietnam Aluminium Pricing Benchmark &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPdzd1LXhCcUtCVDRRU1E5bk5oNUttNWRla3BDVjRGX2hkdWQ2VVNIVzFnM2dVSXowNXdZV1N3YWNfUHZnVEptVDhjejhiYllEdWdtVHhqalp0Z203dFh1ZS1kZm9OcFRfbXRIYjdpYTRJNFN5TnB0ZzhCUjRWMlJxX2Vwa0pibHhaYjgwWTJBcXBaM0VneEd0SlY0Ulh4UHlscDlsbTZFdDBOYlROZU9Wbl9YaUE3RTNDbkNyWkxHdlJtZFVabjVIaEZuNHBhbW5qWDNlMWpWeVcwMlFPbl9EY29NUkFoal9GM3QtYV8tNDF3VDkxVUxz?oc=5",
-      "why": "Создание ценового бенчмарка для алюминия во Вьетнаме может повлиять на региональные премии и конкуренцию для RUSAL.",
-      "priority": "medium",
-      "company": "Xingfa Aluminium"
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "BHP joins global trial to trace lower-emissions copper supply chain",
-      "desc": "BHP joins global trial to trace lower-emissions copper supply chain &nbsp;&nbsp; Australian Mining",
-      "domain": "Australian Mining",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQR1J6Wmw4dHQxRUhoVXR5RzFzRnBRVDBlWXhQUTRYOTZnV0E5eWhQQmNEcldsbEc0VDJDMnVMQkRTRWVvdGNUQ2otS0xFUEVlLVlCTEh5aE1nWkhhR2ZOZHFfRXFzRGtXc0xiZjVYS2ZielhxczUyRE9ET0ZPMXd4WE9YSTl6NC1WTHNaUHYwS2E5b3BSRVotbTVDRkt6ZDlXTjdhekpYWQ?oc=5",
-      "why": "BHP's trial affects copper supply chain transparency, relevant for RUSAL and Nornickel.",
-      "priority": "medium",
-      "company": "BHP"
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "Chile plans to attract around US$100 billion in copper investment over",
-      "desc": "Chile plans to attract around US$100 billion in copper investment over &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNUVFyZlF6SnhncVV3RHRHRVNFUDMzNGNibEF5UWtaOXRnQjhWMHJ0VnN6b0tlUjRiNFVSTUR3TmtPVV84RzRkcUMxN0lQRTFvYnNrTFc4OTJuQU10bHFidUdSaHhTb1l4WGJwVkJIbVpKenlkYUVBOEFzR2RVT0R2bTlFWG94MjAtdjlYOExLSnhZU2djNG9CdUloSUF1NksyVjhNSF9LWnE1NkFjM05PWkVtSGtGb0FsQXdJSWlOTGtpdUw2bWNaV0NITXlZb2FFWl9rOVVYSGRQYlFzdm52d2ZvY0NRVkpfTUswUFN6WQ?oc=5",
-      "why": "Крупные инвестиции в медь в Чили влияют на глобальное предложение и конкуренцию для его клиентов.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "BHP’s Lower Chile Copper Output Narrows Gap With Codelco",
-      "desc": "BHP’s Lower Chile Copper Output Narrows Gap With Codelco &nbsp;&nbsp; Discovery Alert",
-      "domain": "Discovery Alert",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUnJOOFYtamRucTczdWFmTG5WYmljeTlpcUhHR2lRRW4zdjFJNmZRb1oya0VrbEhUYS02RUh4cDhBX1NCaHlqZjFjc0JTQ2dTeDJJYlQ1Y0RFdmxUdzF0YkhKcWZJOTNYd1ZWVEFMbTE5Nll2Yy1tMVBWazdXX3dUZVNSZWtoQU1yOFE?oc=5",
-      "why": "Снижение добычи BHP в Чили меняет баланс сил среди мировых производителей меди.",
-      "priority": "medium",
-      "company": "BHP"
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "Alcoa to acquire South 32",
-      "desc": "Alcoa to acquire South 32 &nbsp;&nbsp; Your Local Examiner",
-      "domain": "Your Local Examiner",
-      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5EcTMtUXQ5LUhnLUZOS0d0UFlhdENhbThZdmhkZzR3UDlqVm9TRTEyYS00NUZ3RnJNSVExSGtlT3dnaUhIY3F2SmxIbXU2S0NBRmxJTnV1SjdnTDhUMi01WGhKRW44SlhyQjNPQ3Nla1k?oc=5",
-      "why": "Крупная сделка M&A в алюминии, меняет рыночную расстановку сил.",
-      "priority": "high",
-      "company": "Alcoa"
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "Rio Tinto signs bio pellet deal to cut coal at Gladstone refineries",
-      "desc": "Rio Tinto signs bio pellet deal to cut coal at Gladstone refineries &nbsp;&nbsp; Australian Mining",
-      "domain": "Australian Mining",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQMVRURWVhYnZaOVk3OVRnREF3ZTd3RGJhRHo4cVJPYlhZRkhteXlGZ19jZGEtbGJXTV9uVEl2X2ZPVkJuX0tsel9sVjEtcDlhZkR0SDhuazRDLS1hcVc2Y2JQVU52cW10cDNoNGlwS0VJTWN4ZnFHOV9yMmtDa2lxdmtoZmtkUlJwQ1Q5VDRWOWtJQ1hzTEg5MFhITTRwenhNeXVXSURoWQ?oc=5",
-      "why": "Снижение угля в глиноземном производстве Rio Tinto меняет энергобаланс, влияя на конкурентоспособность RUSAL.",
-      "priority": "medium",
-      "company": "Rio Tinto"
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "Cymat takes over Rio Tinto customers",
-      "desc": "Cymat takes over Rio Tinto customers &nbsp;&nbsp; Mining.com.au",
-      "domain": "Mining.com.au",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9KZWNIYjFxcU1vQUlFTWFBWnB2YTBKMHJjcXkyVTRybkZ2SjUyM2ZSU0xWQm9lelFKcDN5MFhyZE9QN3pFRXJsZndXellZc1pmQk90d3hxLThOekNYeWc4aGduNUhPOFZzRDJz?oc=5",
-      "why": "Cymat перехватывает клиентов Rio Tinto, что меняет рыночные доли в алюминии.",
-      "priority": "medium",
-      "company": "Cymat"
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "Kazakhstan and China may develop cross-border deposits",
-      "desc": "Kazakhstan and China may develop cross-border deposits &nbsp;&nbsp; Qazinform",
-      "domain": "Qazinform",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOOFg5aW9CUC1GN0Frem16SUNIbW9GMlRMUWk4Rk11aTN3YVFGMFQzdlAyRVNxUzRsci01c012M1dGUTJ0akZPbUEzb29ZUnF5aXBldjA0YS01REstMXhDT2tvbGFkdDUzSVM1RV9wdVY2bjBWR1JMM1ZaS2Vzd1dCVkdlNjNjUHVKNWhzaTVlRGVwQdIBkgFBVV95cUxQbWV3TUVkeTZ5SVBJOTJEUHZNVy1vXzhjQVZ1TDAwZ09oMlZoQy1BM2c2cGJUTEdYSHl5eW01ZnBiWjFxY3ZqcVNJalA2ZWRCcnF2SmZ2eGJKcUdybHMtT0dNNWxlU3J2aGZON3VkR2ppM0hzN0xWMDh6cjk2TGdSbDdVYndvd1h0dnlzV1JLZS1BZw?oc=5",
-      "why": "Совместная разработка месторождений на границе с Китаем открывает доступ к новым ресурсам для казахстанских металлургов.",
-      "priority": "high",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "Lithium sinks to five-month low amid 2027 glut fears",
-      "desc": "Lithium sinks to five-month low amid 2027 glut fears &nbsp;&nbsp; The Northern Miner",
-      "domain": "northernminer.com",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdXBPTUt6bjdSQi1aakxZUF9ScU1OWEtyLVlLdVBRZl8zNU91dWI3elJHbFBMMHZEdkI2b1VGS2E2R0ZFTllOc0MwSTNMUVpmYVVoNmdqdHRKUDVQZnBIOWFOXzdIUnY2dEFpVkExQzU4SU1uOVY5bUE2MHBMUWJjQzVCcG5wQzRoQjhFMWdzSmVIcXl3RnFfaHZ1cXdfRm1D?oc=5",
-      "why": "Цены на литий влияют на стратегию диверсификации в цветных металлах.",
-      "priority": "low",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-23T05:00:53.665011+00:00",
-      "title": "Chile plans $100 billion copper push to find buyers beyond China",
-      "desc": "Chile plans $100 billion copper push to find buyers beyond China &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQczdvMUdvelNqWmtEMHVDU1VxLVhvdmk5Z0wzRndHSWFVY3VlRFJaQVhtYXB1Vm1veFVjOFRpLUVRWkZwejZGZWlCb2xjVVdGUzB0S3FUUFZhQV8wM2xESE9helphQllMQTBhWTd2M1BFWXJrSkJ4VEl3dDVmYV9HLUg1VmtyeDVSakM0MXV1MF8tQ0VpdlE?oc=5",
-      "why": "Крупнейший производитель меди диверсифицирует сбыт, что изменит глобальные потоки и конкуренцию.",
-      "priority": "medium",
-      "company": "Codelco"
-    },
-    {
       "ts": "2026-07-23T17:01:04.638963+00:00",
       "title": "Southern Copper maps route to over 1M tonnes by 2029",
       "desc": "Southern Copper maps route to over 1M tonnes by 2029 &nbsp;&nbsp; The Northern Miner",
@@ -2279,6 +2159,126 @@
       "why": "CBAM затрагивает экспорт алюминия и металлов из Боснии, влияя на конкурентную среду для клиентов RUSAL.",
       "priority": "low",
       "company": ""
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "CBAM: Default emission factors restricting energy exports",
+      "desc": "CBAM: Default emission factors restricting energy exports &nbsp;&nbsp; Table.Briefings",
+      "domain": "Table.Briefings",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPMVVuYWU5bFh3T3RrMHVUZ19jWnNTV0FiSVVDXzlLVk9zOENqNHd4a1FrbTBqRWltU1Bod2s5ckk1cjNKSlZzaTY2bjlYOHl0ZXNWNFNGRk9pYTJTeVRvWFIyVXJSWS1mQlYtU1VCeDI2TkFOcC1yR0JDT1AwUzl2bHBHNzNUWmJfSzhaVGItcE9qOF9FMk5J?oc=5",
+      "why": "CBAM влияет на экспорт энергоёмких металлов из РФ, ограничивая конкурентоспособность RUSAL и Норникеля.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "Kazakhstan’s ERG weighs sale of Brazilian assets to Portuguese investor",
+      "desc": "Kazakhstan’s ERG weighs sale of Brazilian assets to Portuguese investor &nbsp;&nbsp; Kursiv Media",
+      "domain": "Kursiv Media",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNU09iaW5tSkJDNGVlT2U4cXBaQ1h6aS1Ud1hYdWM3VFVSdlVsVjN6bjNqdFNkQjc3cUtDWjNMbVBSU3lZWW05Zl9BT2tLZ2NhcWwzMWNVc0MwT0tBY2F0UjlvYUlBYm9TbVhWLWRTYUZqank1S3dYY1IwRGV2cGxSN2xTUEVINFE1aVFFWnp3dzdhUjQ4QUFUZ0tzRGVNTlUta1R4c0V1VlRMOFp2MTRvNTB4OS16eTN0QUFB0gHAAUFVX3lxTE1idllac0xpbk5aS3V4U3FKSEVDdFlYajdkRXRUSGw3bjNuNDZXSl94OElIT05hX2xDTTE5MWRNN3FLdHo5YUV5aFlKZ3RDMTVMUDB1a2lxQzEyTWZfOG41RTVrTkhyVnF5b3N1ckxZLUI4bzc0SHdFZXZwMFNzT3lBbEtaVS15VDF0Q1drYkdWU1VRTC1mOVVjWXJUQjUwbGZ4WmhVME5ta2kxR3ZWLXp0SEUtODFrT042dmlQcmxiRg?oc=5",
+      "why": "ERG продаёт бразильские активы — это стратегический шаг для казахстанского горно-металлургического холдинга.",
+      "priority": "high",
+      "company": "ERG"
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "[SMM Aluminum Express News] Rio Tinto has signed a five-year offtake a",
+      "desc": "[SMM Aluminum Express News] Rio Tinto has signed a five-year offtake a &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOcE5TdEpVbGRUNVVXenpYSXVzSnVJbXVlS3VPVlVrNTcxZTlYRHhtV3YwejV0RFJXQ0lHVlo2VXdKWDNLT2FQRkE2dEdQakNLZ2JOWW5yWHdDbGpYNnRWYjBqVTZOTGEycElyZWtaZ1NyU2ZSZlZ2U1JMU01zaGJwdS1OMHpXOEQyU0daRjh1UGJNMjJmMHJfaW9NVFo1WTBSLS1VMnEwcnNlX3A4NTJIY1VNRnA4ZXFUOHNHc1h5ZUVhSVpwUWx5a1hwelNkRmt6eXNEVkVzYw?oc=5",
+      "why": "Rio Tinto — прямой конкурент RUSAL на рынке алюминия, сделка влияет на сырьевую базу.",
+      "priority": "high",
+      "company": "Rio Tinto"
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "[SMM Aluminum Express News] Metro Mining shipped a record 1.8 million",
+      "desc": "[SMM Aluminum Express News] Metro Mining shipped a record 1.8 million &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZk5TVEZYWV91T0FPeXN1cGNJSFpHbEpfV0FpV2wwUHlOckpUeXpGZTFYUExnWTFUcXFJZkY5MTNQNk5pU0xDTjZYRkR1OVE3aDhMc25WY1V0ZnQ2aHZsVVZDUFA2dEQ1clFmS0RDcUpBSGVSeHRiaTF1eFJUMGVZUGtyZ3dSdDJqUklZZVdKV3Npa05sMzQtNDhFQXBpV1duZmJia0ViNUxEZVpDc3dwU1ZRN1AweTI3OWd6VkxoMnY0Y0VEYjRCamJkQkY5OEF5SGdnQS1aelg?oc=5",
+      "why": "Рекордные отгрузки бокситов Metro Mining влияют на рынок сырья для алюминия, конкурентная среда для RUSAL.",
+      "priority": "medium",
+      "company": "Metro Mining"
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "Default Values Widen CBAM Exposure Gaps for HS7601; Mozambique Leads Total Exposure While China Ranks High【SMM Analysis】",
+      "desc": "Default Values Widen CBAM Exposure Gaps for HS7601; Mozambique Leads Total Exposure While China Ranks High【SMM Analysis】 &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNb0RpR3BZVzgtd0pTMV9DZkRvQ3EwRVVDaV9xdFJxTDJ5TTlPT1I2cm5Dd3pkaEhLNC02RVBqcVZXUndJRHd0YUtmemdMTlExa1JTV0pvNnQtWHpBdmJkMGZacVBXa19EZ1gycnhraWpzOXBsVUx4UTJLU0U1eFdjTUlRd05BVWs2aVV4SGdjVjg4dVRLWERoM2V2aHRWNFFMZk5qaGhObGhiT1F3ZnFJOUpOT2dHcHJJbGFYem5ueUFvVWRzZWxRX2oxUHhtSUlCNlhWYVRIc0t4YWl2WERnYmZZQ2ljN1U2Ml8yZDJNdnFReC1ta0Q4Vg?oc=5",
+      "why": "CBAM расширяет разрыв в углеродных издержках для алюминия, затрагивая экспорт из Мозамбика и Китая.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "Kazakhstan's gold export value rises despite lower shipments",
+      "desc": "Kazakhstan's gold export value rises despite lower shipments &nbsp;&nbsp; trend.az",
+      "domain": "trend.az",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBscFF4c1BXMG9WZXhwSWJzTUJlSGRyZ0ptYkZtbjFkbnJ6QnVIaWxlMDRXcUxTVVBzMGktZS1vMjlYX21wVDkwb1I4SUl2YkpTcjZnNm8yTk9VbWtEWG93?oc=5",
+      "why": "Рост стоимости экспорта золота из Казахстана важен для стратегии в регионе.",
+      "priority": "medium",
+      "company": "Kazakhstan"
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "Glencore lifts coal outlook on strong Australian output",
+      "desc": "Glencore lifts coal outlook on strong Australian output &nbsp;&nbsp; Australian Mining",
+      "domain": "Australian Mining",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPNkpBYlI1aWdoV3FXNTNZaFIxRnREdWlDemhQNmpsbm9kbk4xN29TT0FkOUVxOW83ckpOZmhac1JTVzQ5UGp4QzJNMVp1ZTg3S1lfcE5MYkpvVjZpWDJBV3h0R0R3Q1pWcW5lc3pBM1hmOFJSUGlHcXpJdUV2VndiYjdvWjBRU0ZYal91bWRmdTIxWlBDSGJV?oc=5",
+      "why": "Glencore — прямой конкурент его компаний по углю и металлам.",
+      "priority": "medium",
+      "company": "Glencore"
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "Copper mines in Peru and Chile drive Glencore’s first half",
+      "desc": "Copper mines in Peru and Chile drive Glencore’s first half &nbsp;&nbsp; BNamericas",
+      "domain": "bnamericas.com",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNOFl0bWNBTUdPUTBSbExucWd2eXEtR1RYaHRxYzlJREFXRTh6X09wNGdfYmFDM0FLQnZTaDRVd3FpN1c2RUFSSkdseUIzSUdkSFhMQ2RiWFc3T0c4UzIwLUMzbGRWSzBLcTVtWmVYbm5xb1REMUhXazN1U2ZyMVVRQXpBOFdjc0wyNnpEOEJsVWdIdGxNNHBF?oc=5",
+      "why": "Glencore — прямой конкурент его компаний по меди; данные о добыче важны для стратегии.",
+      "priority": "medium",
+      "company": "Glencore"
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "Public comment open for proposed BLM land exchange with Freeport in Southeast Arizona",
+      "desc": "Public comment open for proposed BLM land exchange with Freeport in Southeast Arizona &nbsp;&nbsp; GilaValleyCentral",
+      "domain": "GilaValleyCentral",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQlB3Q1YwTVJfVmpRQ0lrUzRqRDlvUjNNUnh1YmdCOVBXa2hDdy1WcXI5eDhfcXQzNU1iRGt3XzdDUnlLSFhkc1V4UFhGYVJNdnVuTTJYdGt1RlE4WVpWeFZjS2ctampwYUJVZHp6aEU4Vm5PajVZX293b19hTDNYWmhqVmdfajlmTGtxUENOY215NGowNDZpNjBkcHZCTDlldE1OY2t2X21jZ0otYnVBZGE2YXk4RVk?oc=5",
+      "why": "Земельный обмен Freeport в Аризоне может повлиять на доступ к меди и конкуренцию для CIS-производителей.",
+      "priority": "medium",
+      "company": "Freeport-McMoRan"
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "Chile accelerates mining reactivation after storms as fears of a copper deficit grow",
+      "desc": "Chile accelerates mining reactivation after storms as fears of a copper deficit grow &nbsp;&nbsp; BNamericas",
+      "domain": "bnamericas.com",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOVGZCV1F1Y3JFTkNLYTJVTjlXYXlJdjlBZW9PR0g5d291ODI4Um9zZUljTmVEQ2FPWnVEQ3d2ZTE1LU9zVUNpWGplbGxmZ3dScmlyaklaSjhHMVdveWkwWmJqaUM5N3VtdHNKMHhEMWxydGFVMl8tZGtJSndyeVZQVElYY0E3QWNSVEM3UjdFNkpwUlJ3WUdfRTZBbVc0T0poUHNENkZuS1R0c3BKcnRKXzRHX3VmQ3BVREdCUEVkMFU?oc=5",
+      "why": "Крупный производитель меди ускоряет восстановление, что влияет на глобальное предложение и цены.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "BLM seeks comment on Freeport land exchange in Graham, Greenlee, Cochise",
+      "desc": "BLM seeks comment on Freeport land exchange in Graham, Greenlee, Cochise &nbsp;&nbsp; Eastern Arizona Courier",
+      "domain": "Eastern Arizona Courier",
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQZ2FMY2pEY21tcklvbXJ4MFVKN2t5enhTd3BMV1dWTkZSeFh1dTd2VXBYU0REemc4Z1E1YjBNeldzSXh2QjRydlcxWld3U3NKMWFDWXl2eEU4bktjMndObWtpUndSQ2VBeXRaV3pLUE5CeVJlLVEtdXEtT3Z2TVhGQmVvUjNlSEtoRjI3bFBONmdtVFdOUkg1bDVmanY0Q29pV1BIdmZiQW0wTVFsM1NOSGhzN1lVR2NjSFVLMnRpdXJMUV9sTXZ0UTc4N1kzSzJXVUVXaDVNeTBtcU1tQVlySU1qZnVwQnFDcWdqbnVpdw?oc=5",
+      "why": "Земельный обмен Freeport-McMoRan может повлиять на доступ к ресурсам и логистику.",
+      "priority": "medium",
+      "company": "Freeport-McMoRan"
+    },
+    {
+      "ts": "2026-07-30T05:00:55.914184+00:00",
+      "title": "First Quantum adds 1,000 jobs as Cobre Panama restart nears",
+      "desc": "First Quantum adds 1,000 jobs as Cobre Panama restart nears &nbsp;&nbsp; northernminer.com",
+      "domain": "northernminer.com",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZThrbWdXWWk1N2RQQTMwWUdlMnhrVUkya0I0WWFTR2xDdVRaMjM2MjNiRzVNckRYcld4cjl1SnBfc0dKc1NzWGtfSWgzdHo2SXdkTWI3dHhYTjdTLW4xYkFwVTR6Z3VIOUZmWUVsRzhnM3JySFRmejdOTlNkTkg1THZkX0Y4bTJ1M0NZTFZhdThWQl9fd0FlOV9lZ2hSZUlXN1V4RUkzWE8?oc=5",
+      "why": "Cobre Panama restart увеличит предложение меди, конкурируя с проектами в СНГ.",
+      "priority": "high",
+      "company": "First Quantum / Cobre Panama"
     }
   ]
 }
