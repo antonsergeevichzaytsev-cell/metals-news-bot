@@ -483,125 +483,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "CEO.CA's Inside the Boardroom: 5.65 g/t Gold at Surface: GoldInxs Prepares to Drill at Fishpot Project in BC",
-      "link": "https://www.newsfilecorp.com/release/306242/CEO.CAs-Inside-the-Boardroom-5.65-gt-Gold-at-Surface-GoldInxs-Prepares-to-Drill-at-Fishpot-Project-in-BC",
-      "reason": "третьи лица",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Athos Metals Shareholders Unanimously Approve Qualifying Transaction with Meed Growth Corp.",
-      "link": "https://www.newsfilecorp.com/release/306164/Athos-Metals-Shareholders-Unanimously-Approve-Qualifying-Transaction-with-Meed-Growth-Corp.",
-      "reason": "корпоративная сделка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Lion One Announces Forbearance Agreement with Senior Lender Including Extension of Repayment Date",
-      "link": "https://www.newsfilecorp.com/release/306241/Lion-One-Announces-Forbearance-Agreement-with-Senior-Lender-Including-Extension-of-Repayment-Date",
-      "reason": "финансовое соглашение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "RZOLV and Alkemio Bioscience Forge Strategic Collaboration to Advance Rare Earth and Critical Minerals Commercialization",
-      "link": "https://www.newsfilecorp.com/release/306173/RZOLV-and-Alkemio-Bioscience-Forge-Strategic-Collaboration-to-Advance-Rare-Earth-and-Critical-Minerals-Commercialization",
-      "reason": "сотрудничество",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Altamira Gold Expands Mineralized Porphyry System at Maria Bonita Gold Deposit, Cajueiro District, Brazil",
-      "link": "https://www.newsfilecorp.com/release/306236/Altamira-Gold-Expands-Mineralized-Porphyry-System-at-Maria-Bonita-Gold-Deposit-Cajueiro-District-Brazil",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Element 29 Extends Mineralization in ELID035 with Longest Intercept of 1,534.6 m Grading 0.58% CuEq2 at its Elida Porphyry Cu-Mo-A",
-      "link": "https://www.newsfilecorp.com/release/306235/Element-29-Extends-Mineralization-in-ELID035-with-Longest-Intercept-of-1534.6-m-Grading-0.58-CuEq2-at-its-Elida-Porphyry-CuMoAg-Deposit-Peru",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Bold Ventures Receives Final Results of Spring Drilling at Burchell, Confirms Moss Gold Trend",
-      "link": "https://www.newsfilecorp.com/release/306206/Bold-Ventures-Receives-Final-Results-of-Spring-Drilling-at-Burchell-Confirms-Moss-Gold-Trend",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Volt Carbon, Solid Ultrabattery and TensorOne Enter Strategic Collaboration to Advance Next-Generation Autonomous Aircraft Technol",
-      "link": "https://www.newsfilecorp.com/release/306197/Volt-Carbon-Solid-Ultrabattery-and-TensorOne-Enter-Strategic-Collaboration-to-Advance-NextGeneration-Autonomous-Aircraft-Technologies",
-      "reason": "MOU о сотрудничестве",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Gold Runner Exploration Receives 5 Year Drilling Permit at Golden Girl Property, Golden Triangle B.C.",
-      "link": "https://www.newsfilecorp.com/release/306183/Gold-Runner-Exploration-Receives-5-Year-Drilling-Permit-at-Golden-Girl-Property-Golden-Triangle-B.C.",
-      "reason": "разрешение на бурение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Metatek Signs New Contract with Global Energy Company for North African Survey",
-      "link": "https://www.newsfilecorp.com/release/306179/Metatek-Signs-New-Contract-with-Global-Energy-Company-for-North-African-Survey",
-      "reason": "контракт на съемку",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "T2 Metals Provides Exploration Update at Aurora Project, Yukon, Canada",
-      "link": "https://www.newsfilecorp.com/release/306219/T2-Metals-Provides-Exploration-Update-at-Aurora-Project-Yukon-Canada",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T13:02:48.844292+00:00",
-      "title": "Focus Graphite Highlights Strategic Alignment with White House Executive Order to Secure U.S. Defense Supply Chains",
-      "link": "https://www.newsfilecorp.com/release/306223/Focus-Graphite-Highlights-Strategic-Alignment-with-White-House-Executive-Order-to-Secure-U.S.-Defense-Supply-Chains",
-      "reason": "политическое заявление",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T15:17:53.529277+00:00",
-      "title": "Osisko Gold Reports Final Results from its Lowhee Zone Infill Program at the Cariboo Gold Project",
-      "link": "https://www.globenewswire.com/news-release/2026/07/23/3332012/0/en/Osisko-Gold-Reports-Final-Results-from-its-Lowhee-Zone-Infill-Program-at-the-Cariboo-Gold-Project.html",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T15:17:53.529277+00:00",
-      "title": "Troilus recoupe 1,10 g/t d’équ.-or sur 103 mètres alors que le programme d'optimisation de Z87 continue de renforcer la planificat",
-      "link": "https://www.globenewswire.com/news-release/2026/07/23/3332023/0/fr/Troilus-recoupe-1-10-g-t-d-%C3%A9qu-or-sur-103-m%C3%A8tres-alors-que-le-programme-d-optimisation-de-Z87-continue-de-renforcer-la-planification-mini%C3%A8re.html",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T15:17:53.529277+00:00",
-      "title": "Troilus Drills 1.10 g/t AuEq Over 103 m as Z87 Optimization Program Continues to Strengthen Mine Planning",
-      "link": "https://www.globenewswire.com/news-release/2026/07/23/3332023/0/en/Troilus-Drills-1-10-g-t-AuEq-Over-103-m-as-Z87-Optimization-Program-Continues-to-Strengthen-Mine-Planning.html",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T15:17:53.529277+00:00",
-      "title": "Canagold Successfully Completes Taku River Landing Craft Trials for the New Polaris Project",
-      "link": "https://www.newsfilecorp.com/release/306217/Canagold-Successfully-Completes-Taku-River-Landing-Craft-Trials-for-the-New-Polaris-Project",
-      "reason": "логистические испытания",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T15:17:53.529277+00:00",
-      "title": "Scorpio Gold Announces Closing of Public Offering for Gross Proceeds of $10,800,000",
-      "link": "https://www.newsfilecorp.com/release/306238/Scorpio-Gold-Announces-Closing-of-Public-Offering-for-Gross-Proceeds-of-10800000",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-23T17:09:32.697549+00:00",
       "title": "Aquitaine Metals Drills 16.48 g/t Au over 7.50 m, within 3.73 g/t Au over 34.90 m at Laurieras Target",
       "link": "https://www.newsfilecorp.com/release/306224/Aquitaine-Metals-Drills-16.48-gt-Au-over-7.50-m-within-3.73-gt-Au-over-34.90-m-at-Laurieras-Target",
@@ -1370,16 +1251,31 @@
       "link": "https://www.newsfilecorp.com/release/307226/T2-Metals-Commences-Drilling-at-Aurora-GoldSilver-Project-Yukon-Canada",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-30T15:17:50.156652+00:00",
+      "title": "Boreal Gold Reports 15.54 g/t Gold over 2.41m in Drill Hole GR-26-149 Including 81.5 g/t Gold over 0.41m in the High-Grade Gold Ro",
+      "link": "https://www.newsfilecorp.com/release/307295/Boreal-Gold-Reports-15.54-gt-Gold-over-2.41m-in-Drill-Hole-GR26149-Including-81.5-gt-Gold-over-0.41m-in-the-HighGrade-Gold-Rock-Vein-West-of-Snow-Lake-Manitoba",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T15:17:50.156652+00:00",
+      "title": "Vantage Goldfields Corrects Misleading Announcements by Metals One Plc (MET1) and Lions Bay Capital Inc. (LBI)",
+      "link": "https://www.newsfilecorp.com/release/307282/Vantage-Goldfields-Corrects-Misleading-Announcements-by-Metals-One-Plc-MET1-and-Lions-Bay-Capital-Inc.-LBI",
+      "reason": "корпоративный спор",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T15:17:50.156652+00:00",
+      "title": "Purepoint Intersects 5.6 Metres of Continuous Radioactivity at Nova, Peaking at 53,300 CPS",
+      "link": "https://www.newsfilecorp.com/release/307284/Purepoint-Intersects-5.6-Metres-of-Continuous-Radioactivity-at-Nova-Peaking-at-53300-CPS",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-23T13:02:48.839828+00:00",
-      "title": "Aurania Appoints Thomas Ullrich as Special Advisor to Support Advancement of Strategic Projects",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-07-23T22:02:25.381734+00:00",
       "title": "Argyle Announces Commencement of New LIFE Offering",
@@ -1498,6 +1394,12 @@
       "ts": "2026-07-30T13:01:29.443096+00:00",
       "title": "Vinland Lithium Inc. Identifies High-Priority Tungsten Targets and Announces $300,000 Flow-Through Financing",
       "matched_noise_word": "flow-?through",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T15:17:50.154959+00:00",
+      "title": "Hercules Metals Announces the Appointment of Former Arizonan Sonoran Management Team Led by George Ogilvie",
+      "matched_noise_word": "appoint\\w*",
       "orbit": false
     }
   ]
