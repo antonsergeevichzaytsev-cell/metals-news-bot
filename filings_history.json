@@ -444,34 +444,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-23T05:30:34.575580+00:00",
-      "title": "Osisko Gold Enters Support and Benefits Agreement with the District of Wells for the Cariboo Gold Project",
-      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331807/0/en/Osisko-Gold-Enters-Support-and-Benefits-Agreement-with-the-District-of-Wells-for-the-Cariboo-Gold-Project.html",
-      "reason": "соглашение с муниципалитетом",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T05:30:34.575580+00:00",
-      "title": "Reports Q2-2026 Production & Operational Highlights",
-      "link": "https://www.globenewswire.com/news-release/2026/07/23/3331858/0/en/Reports-Q2-2026-Production-Operational-Highlights.html",
-      "reason": "производственный отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T05:30:34.575580+00:00",
-      "title": "Defiance Silver Drilling Returns up to 1,470 g/t Ag from San Acacio Diamond Drill Program",
-      "link": "https://www.newsfilecorp.com/release/306130/Defiance-Silver-Drilling-Returns-up-to-1470-gt-Ag-from-San-Acacio-Diamond-Drill-Program",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T05:30:34.575580+00:00",
-      "title": "Irruptive Metals Corp. Announces Completion of Go-Public Transaction",
-      "link": "https://www.newsfilecorp.com/release/306180/Irruptive-Metals-Corp.-Announces-Completion-of-GoPublic-Transaction",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-23T07:54:22.712989+00:00",
       "title": "Group Eleven Drills 15m of New Mineralization (incl. 2.8m of 8.3% Zn+Pb) in 550m Step-Out from Stonepark MRE, 20km NNW of Ballywir",
       "link": "https://www.newsfilecorp.com/release/306195/Group-Eleven-Drills-15m-of-New-Mineralization-incl.-2.8m-of-8.3-ZnPb-in-550m-StepOut-from-Stonepark-MRE-20km-NNW-of-Ballywire-Discovery",
@@ -1275,6 +1247,20 @@
       "link": "https://www.newsfilecorp.com/release/307167/Dakota-Gold-Announces-Leadership-Changes-as-It-Advances-Its-Richmond-Hill-Gold-Project",
       "reason": "назначение",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-30T05:30:34.993245+00:00",
+      "title": "Revival Gold Announces Closing of Sale of Non-Core Diamond Mountain Phosphate Property",
+      "link": "https://www.newsfilecorp.com/release/307261/Revival-Gold-Announces-Closing-of-Sale-of-NonCore-Diamond-Mountain-Phosphate-Property",
+      "reason": "продажа актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T05:30:34.993245+00:00",
+      "title": "Adex Mining Appeals Regulatory Action",
+      "link": "https://www.newsfilecorp.com/release/307235/Adex-Mining-Appeals-Regulatory-Action",
+      "reason": "апелляция",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1391,6 +1377,12 @@
       "ts": "2026-07-29T22:00:52.770315+00:00",
       "title": "Big Sky Industrial Schedules Second Quarter 2026 Conference Call for August 11, 2026 at 9:00 a.m. ET",
       "matched_noise_word": "conference",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T05:30:34.991520+00:00",
+      "title": "Manganese X Energy Announces Appointment of Andrew Gainsbury as Chief Financial Officer and the Passing of Director Jay Richardson",
+      "matched_noise_word": "appoint\\w*",
       "orbit": false
     }
   ]
