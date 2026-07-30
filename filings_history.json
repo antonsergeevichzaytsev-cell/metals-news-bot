@@ -453,23 +453,35 @@
       "hook": "Металлургия подтверждена: пора переходить к ТЭО и CapEx.",
       "priority": "low",
       "ts": "2026-07-30T07:44:26.171814+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307270/Volt-Carbon-Receives-Initial-40000-Tonne-Toll-Processing-Purchase-Order-and-Provides-Northern-Ore-Commercialization-Update",
+      "title": "Volt Carbon Receives Initial 40,000 Tonne Toll Processing Purchase Order and Provides Northern Ore Commercialization Update",
+      "stage": "operating",
+      "signal": "толлинг-заказ получен",
+      "company": "Volt Carbon Technologies Inc.",
+      "project": "",
+      "region": "Canada",
+      "why": "Получен заказ на переработку 40 000 тонн, запуск коммерческой эксплуатации.",
+      "hook": "Толлинг-заказ на 40 000 тонн: контроль throughput и качества на старте.",
+      "priority": "low",
+      "ts": "2026-07-30T13:01:29.448724+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307228/SAGA-Metals-and-Temas-Resources-Successfully-Complete-Metallurgical-Scoping-Test-Achieving-Vanadium-Recoveries-of-97.4-and-Titanium-Recoveries-up-to-90.8-and-Announce-a-Pathway-Towards-a-Pilot-Plant-for-Radar-Critical-Minerals-Project",
+      "title": "SAGA Metals and Temas Resources Successfully Complete Metallurgical Scoping Test Achieving Vanadium Recoveries of 97.4% and Titanium Recoveries up to 90.8% and Announce a Pathway Towards a Pilot Plant for Radar Critical Minerals Project",
+      "stage": "study",
+      "signal": "металлургия успешна",
+      "company": "SAGA Metals Corp.",
+      "project": "Radar Critical Minerals Project",
+      "region": "Canada",
+      "why": "Высокие извлечения V (97.4%) и Ti (90.8%) в тестах.",
+      "hook": "Металлургия подтверждена: нужен owner-side взгляд на flowsheet и пилот.",
+      "priority": "low",
+      "ts": "2026-07-30T13:01:29.448724+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-23T07:54:22.712989+00:00",
-      "title": "Group Eleven Drills 15m of New Mineralization (incl. 2.8m of 8.3% Zn+Pb) in 550m Step-Out from Stonepark MRE, 20km NNW of Ballywir",
-      "link": "https://www.newsfilecorp.com/release/306195/Group-Eleven-Drills-15m-of-New-Mineralization-incl.-2.8m-of-8.3-ZnPb-in-550m-StepOut-from-Stonepark-MRE-20km-NNW-of-Ballywire-Discovery",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T07:54:22.712989+00:00",
-      "title": "Primary Hydrogen Announces Marketing Services Agreement",
-      "link": "https://www.newsfilecorp.com/release/306225/Primary-Hydrogen-Announces-Marketing-Services-Agreement",
-      "reason": "маркетинговый контракт",
-      "orbit": false
-    },
     {
       "ts": "2026-07-23T13:02:48.844292+00:00",
       "title": "CEO.CA's Inside the Boardroom: 5.65 g/t Gold at Surface: GoldInxs Prepares to Drill at Fishpot Project in BC",
@@ -1281,6 +1293,83 @@
       "link": "https://www.globenewswire.com/news-release/2026/07/30/3335783/0/en/Endeavour-Reports-Strong-H1-2026-Results.html",
       "reason": "финрезультаты",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Origen Announces Voluntary Adoption of Semi-Annual Financial Reporting Pilot",
+      "link": "https://www.newsfilecorp.com/release/307268/Origen-Announces-Voluntary-Adoption-of-SemiAnnual-Financial-Reporting-Pilot",
+      "reason": "финансовая отчетность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Red Metal Provides Operational Update Following Recent Rainfall Near Vallenar, Chile",
+      "link": "https://www.newsfilecorp.com/release/307266/Red-Metal-Provides-Operational-Update-Following-Recent-Rainfall-Near-Vallenar-Chile",
+      "reason": "погодная задержка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Grizzly Intersects 1.0% CuEq* over 13.68 m and 0.357% CuEq* over 44.55 m at Sappho Critical Minerals Target Greenwood, BC",
+      "link": "https://www.newsfilecorp.com/release/307264/Grizzly-Intersects-1.0-CuEq-over-13.68-m-and-0.357-CuEq-over-44.55-m-at-Sappho-Critical-Minerals-Target-Greenwood-BC",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Brasnova CEO and Technical Team Conduct Site Visit to the Capela Gold Project in Bahia, Brazil",
+      "link": "https://www.newsfilecorp.com/release/307229/Brasnova-CEO-and-Technical-Team-Conduct-Site-Visit-to-the-Capela-Gold-Project-in-Bahia-Brazil",
+      "reason": "технический визит",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Bold Ventures Identifies Widespread Rare Earth Element Anomalies at Burchell, Plans Next Phase of Exploration",
+      "link": "https://www.newsfilecorp.com/release/307241/Bold-Ventures-Identifies-Widespread-Rare-Earth-Element-Anomalies-at-Burchell-Plans-Next-Phase-of-Exploration",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Metalsource Mining Extends Strike Length of Mineralization at Silver Hill with 65m South Step Out from SH26-19",
+      "link": "https://www.newsfilecorp.com/release/307204/Metalsource-Mining-Extends-Strike-Length-of-Mineralization-at-Silver-Hill-with-65m-South-Step-Out-from-SH2619",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Pasinex Announces Audited Financial Results for the Fifteen-Month Period Ended March 31, 2026",
+      "link": "https://www.newsfilecorp.com/release/307183/Pasinex-Announces-Audited-Financial-Results-for-the-FifteenMonth-Period-Ended-March-31-2026",
+      "reason": "финансовый отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Anteros Announces Voluntary Filing of Technical Report",
+      "link": "https://www.newsfilecorp.com/release/307127/Anteros-Announces-Voluntary-Filing-of-Technical-Report",
+      "reason": "технический отчет",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "RUA GOLD's Auld Creek Project Qualifies for New Zealand's 6-Month Fast-Track Approvals Process",
+      "link": "https://www.newsfilecorp.com/release/307265/RUA-GOLDs-Auld-Creek-Project-Qualifies-for-New-Zealands-6Month-FastTrack-Approvals-Process",
+      "reason": "разрешение на ускорение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "Tower Engages Simone Capital for Investor Relations Services",
+      "link": "https://www.newsfilecorp.com/release/307227/Tower-Engages-Simone-Capital-for-Investor-Relations-Services",
+      "reason": "IR контракт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.448724+00:00",
+      "title": "T2 Metals Commences Drilling at Aurora Gold-Silver Project, Yukon, Canada",
+      "link": "https://www.newsfilecorp.com/release/307226/T2-Metals-Commences-Drilling-at-Aurora-GoldSilver-Project-Yukon-Canada",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1403,6 +1492,12 @@
       "ts": "2026-07-30T05:30:34.991520+00:00",
       "title": "Manganese X Energy Announces Appointment of Andrew Gainsbury as Chief Financial Officer and the Passing of Director Jay Richardson",
       "matched_noise_word": "appoint\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T13:01:29.443096+00:00",
+      "title": "Vinland Lithium Inc. Identifies High-Priority Tungsten Targets and Announces $300,000 Flow-Through Financing",
+      "matched_noise_word": "flow-?through",
       "orbit": false
     }
   ]
