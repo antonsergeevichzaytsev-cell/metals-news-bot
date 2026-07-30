@@ -483,20 +483,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-23T19:00:54.314491+00:00",
-      "title": "New Aurora Metals Corp. Completes Initial Public Offering and Lists on CSE",
-      "link": "https://www.newsfilecorp.com/release/306338/New-Aurora-Metals-Corp.-Completes-Initial-Public-Offering-and-Lists-on-CSE",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-23T20:11:50.221011+00:00",
-      "title": "Geomorphic AI Offers Pora (Raahe-Ladoga) Gold Project for Joint Venture - Finland's #1 Gold-In-Till Anomaly, Ostrobothnia, Finland",
-      "link": "https://www.newsfilecorp.com/release/306337/Geomorphic-AI-Offers-Pora-RaaheLadoga-Gold-Project-for-Joint-Venture-Finlands-1-GoldInTill-Anomaly-Ostrobothnia-Finland",
-      "reason": "совместное предприятие",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-23T22:02:25.383469+00:00",
       "title": "Axion Minerals Announces Receipt of Prospectus and Canadian Securities Exchange Listing Date",
       "link": "https://www.newsfilecorp.com/release/306336/Axion-Minerals-Announces-Receipt-of-Prospectus-and-Canadian-Securities-Exchange-Listing-Date",
@@ -1265,6 +1251,20 @@
       "link": "https://www.newsfilecorp.com/release/307306/Stria-Provides-Update-on-Change-of-Business-Transaction",
       "reason": "смена бизнеса",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-30T20:12:35.423184+00:00",
+      "title": "Emerita Files Management Information Circular for Annual and Special Meeting and Reminds Shareholders to Vote",
+      "link": "https://www.newsfilecorp.com/release/307329/Emerita-Files-Management-Information-Circular-for-Annual-and-Special-Meeting-and-Reminds-Shareholders-to-Vote",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T20:12:35.423184+00:00",
+      "title": "Anquiro Ventures Provides Further Update on Its Concurrent Financing",
+      "link": "https://www.newsfilecorp.com/release/307325/Anquiro-Ventures-Provides-Further-Update-on-Its-Concurrent-Financing",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1393,6 +1393,12 @@
       "ts": "2026-07-30T15:17:50.154959+00:00",
       "title": "Hercules Metals Announces the Appointment of Former Arizonan Sonoran Management Team Led by George Ogilvie",
       "matched_noise_word": "appoint\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-30T20:12:35.421834+00:00",
+      "title": "Canadian Gold Resources Strengthens Technical Leadership with Appointment of Chief Geologist and Announces Stock Option Grants",
+      "matched_noise_word": "stock option\\w*",
       "orbit": false
     }
   ]
