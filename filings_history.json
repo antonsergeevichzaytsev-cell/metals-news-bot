@@ -509,34 +509,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-24T13:02:49.543826+00:00",
-      "title": "GreenLight Metals Announces Grant of Deferred Share Units to Directors",
-      "link": "https://www.newsfilecorp.com/release/306361/GreenLight-Metals-Announces-Grant-of-Deferred-Share-Units-to-Directors",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-24T13:02:49.543826+00:00",
-      "title": "Sasquatch Resources Provides Mount Sicker Permitting Update and Early Exploration Results from Alberni Claims",
-      "link": "https://www.newsfilecorp.com/release/306360/Sasquatch-Resources-Provides-Mount-Sicker-Permitting-Update-and-Early-Exploration-Results-from-Alberni-Claims",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-24T13:02:49.543826+00:00",
-      "title": "Copper Fox Highlights Significant Porphyry Copper-Molybdenum Exploration Indicators at Sombrero Butte, Advancing Permitting Plans ",
-      "link": "https://www.newsfilecorp.com/release/306391/Copper-Fox-Highlights-Significant-Porphyry-CopperMolybdenum-Exploration-Indicators-at-Sombrero-Butte-Advancing-Permitting-Plans-for-Testing-Porphyry-Target",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-24T13:02:49.543826+00:00",
-      "title": "Silver Pony Announces Final CSE Approval, Resumption of Trading, and the Official Launch of 2026 Drilling Having Commenced at the ",
-      "link": "https://www.newsfilecorp.com/release/306395/Silver-Pony-Announces-Final-CSE-Approval-Resumption-of-Trading-and-the-Official-Launch-of-2026-Drilling-Having-Commenced-at-the-Companys-Primary-HighGrade-Silver-Targets",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-27T08:51:33.529860+00:00",
       "title": "Makenita Resources Significantly Increases Land Position on Sisson West Tungsten Deposit in New Brunswick",
       "link": "https://www.newsfilecorp.com/release/306595/Makenita-Resources-Significantly-Increases-Land-Position-on-Sisson-West-Tungsten-Deposit-in-New-Brunswick",
@@ -1365,12 +1337,6 @@
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-24T13:02:49.540826+00:00",
-      "title": "Metatek-Group to Host 2026 Second Quarter Results Conference Call",
-      "matched_noise_word": "conference",
-      "orbit": false
-    },
     {
       "ts": "2026-07-24T17:21:02.945103+00:00",
       "title": "Critical One Energy Announces Upsized CDN$6,875,000 Flow-Through Private Placement",
