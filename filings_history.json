@@ -496,27 +496,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-24T05:30:36.027979+00:00",
-      "title": "Comstock Announces Second Quarter 2026 Business Results and Outlook",
-      "link": "https://www.globenewswire.com/news-release/2026/07/23/3332585/0/en/Comstock-Announces-Second-Quarter-2026-Business-Results-and-Outlook.html",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-24T05:30:36.027979+00:00",
-      "title": "Prism Resources Announces Shareholder Approval for Royalty Sale to Agnico Eagle",
-      "link": "https://www.newsfilecorp.com/release/306394/Prism-Resources-Announces-Shareholder-Approval-for-Royalty-Sale-to-Agnico-Eagle",
-      "reason": "собрание акционеров",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-24T05:30:36.027979+00:00",
-      "title": "Goldgroup Accelerates Growth Strategy Following Transformational Merger; Company Advances Multi-Asset Drill Programs, Mine Develop",
-      "link": "https://www.newsfilecorp.com/release/306393/Goldgroup-Accelerates-Growth-Strategy-Following-Transformational-Merger-Company-Advances-MultiAsset-Drill-Programs-Mine-Development-and-Expansion-Plans",
-      "reason": "корпоративное обновление",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-24T07:43:47.020949+00:00",
       "title": "Makenita Resources More Than Doubles Land Position on Sisson West Tungsten Deposit in New Brunswick",
       "link": "https://www.newsfilecorp.com/release/306400/Makenita-Resources-More-Than-Doubles-Land-Position-on-Sisson-West-Tungsten-Deposit-in-New-Brunswick",
@@ -1320,16 +1299,31 @@
       "link": "https://www.newsfilecorp.com/release/307370/Sixty-North-Gold-Updates-Activities-at-Mon-Gold-Mine-NWT",
       "reason": "собрание акционеров",
       "orbit": false
+    },
+    {
+      "ts": "2026-07-31T05:30:40.502224+00:00",
+      "title": "Nyrstar NV – Buitengewone algemene aandeelhoudersvergadering gehouden op 30 juni 2026 – Update",
+      "link": "https://www.globenewswire.com/news-release/2026/07/31/3336589/0/nl/Nyrstar-NV-Buitengewone-algemene-aandeelhoudersvergadering-gehouden-op-30-juni-2026-Update.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-31T05:30:40.502224+00:00",
+      "title": "Nyrstar NV – Extraordinary general shareholders’ meeting held on 30 June 2026 – Update",
+      "link": "https://www.globenewswire.com/news-release/2026/07/31/3336589/0/en/Nyrstar-NV-Extraordinary-general-shareholders-meeting-held-on-30-June-2026-Update.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-31T05:30:40.502224+00:00",
+      "title": "Austral Gold Files Q2 2026 Quarterly Activities Report",
+      "link": "https://www.newsfilecorp.com/release/307414/Austral-Gold-Files-Q2-2026-Quarterly-Activities-Report",
+      "reason": "квартальный отчёт",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-24T05:30:36.027216+00:00",
-      "title": "DRC Gold Corp. Announces Grant of Stock Options",
-      "matched_noise_word": "stock option\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-07-24T13:02:49.540826+00:00",
       "title": "Metatek-Group to Host 2026 Second Quarter Results Conference Call",
@@ -1448,6 +1442,12 @@
       "ts": "2026-07-30T22:05:47.028835+00:00",
       "title": "Gold Hunter Announces Change of Auditor",
       "matched_noise_word": "\\bauditor\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-31T05:30:40.501633+00:00",
+      "title": "Fairchild Gold Announces Closing of Private Placement Financing and Early Warning Report",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
