@@ -1352,12 +1352,6 @@
   "labels": [],
   "prefilter_dropped": [
     {
-      "ts": "2026-07-24T17:21:02.945103+00:00",
-      "title": "Critical One Energy Announces Upsized CDN$6,875,000 Flow-Through Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-24T22:56:42.783546+00:00",
       "title": "Valkea Grants Stock Options",
       "matched_noise_word": "stock option\\w*",
@@ -1475,6 +1469,12 @@
       "ts": "2026-07-31T13:01:09.204821+00:00",
       "title": "Red Lake Gold Inc. Appoints Chief Executive Officer, Provides Corporate Updates",
       "matched_noise_word": "appoint\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-07-31T19:01:01.286804+00:00",
+      "title": "Metals Creek Resources Corp. Files for Final Approval of Private Placement",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
