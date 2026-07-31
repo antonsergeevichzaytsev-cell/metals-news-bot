@@ -1,126 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "CBAM pushes Brazilian aluminium and steel exporters to accelerate emissions certification",
-      "desc": "CBAM pushes Brazilian aluminium and steel exporters to accelerate emissions certification &nbsp;&nbsp; AL Circle",
-      "domain": "AL Circle",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUDlsOVNXcTh6cmVqbE14Sjh6UTRvQVJ4dTkyRzlQYVJCVkdMXzZnZGhuRHRJVThQMjAzb1FYbmNUNXpQX0dvWFpoWDhIU2FNc2FSZHIzZThnb3ZrNkw1MDJlb3hteUFYc05UTFRIZG4tdVRtOHZMMmEwZ1lzTFB5M1QxS1J2ODFMV1h2ZHpqZG9yN05JUHMxMGxyeXJlY2lvNVBEU0tvdnB2VDlPRk9sU0tqdC1TYnRZUDkxVmdscUpMc2hv?oc=5",
-      "why": "CBAM угрожает экспорту алюминия из Бразилии, что может изменить глобальные потоки и цены.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "Antofagasta restarts Los Pelambres after storms lead to shutdown",
-      "desc": "Antofagasta restarts Los Pelambres after storms lead to shutdown &nbsp;&nbsp; Proactive Investors",
-      "domain": "Proactive Investors",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQajJqVkRyQ25POXdmMzk0b0oybjg5NVJ1Nm5zeUVYX0ZzemREd3J6d2lweWIyY3ZJRjdrWm1NVEhWSG5ibXRVR3ZEM2ttaDhyaktLWDVxem81alBITEZLMlFjaFNxbWlHQkNGMUtPU3BJTFlUaFNkajlpSzM0RHNjSWhxNTFuRjRxWF85bzRuM01jNDBISXhqSHJVRXFqcXZReG1lSE4tV3FGa0U5U0RZbkE1ZWYzQ0oxMWh2U2FJWTg1UGNTbW9KNjR2aTdQQ3lKb2FJ?oc=5",
-      "why": "Перезапуск Los Pelambres влияет на мировые поставки меди, конкурент Nornickel.",
-      "priority": "medium",
-      "company": "Antofagasta"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "Cobalt Product Quotes in the Doldrums, Refined Cobalt Dropped Over 20,000 Yuan in a Single Week, Cobalt Sulphate Extends Losing Streak to Five Days [Weekly Observation]",
-      "desc": "Cobalt Product Quotes in the Doldrums, Refined Cobalt Dropped Over 20,000 Yuan in a Single Week, Cobalt Sulphate Extends Losing Streak to Five Days [Weekly Observation] &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNZV9tdUVXbW42MkxRVVo1NU1TQ3kwWjZOeHdocjg1NTI1a0pIUTZRazY1V21makhSUW1JdkR0VkpOQ1NNckpGV2pLVU1RNlBVZ0tlbTdUN0U4Z0xNQVZJTkxCci1QZlp5Y1c0cG9KNW5iQjRDc2JBOUFpN2RneXF3eW5XTW4yMFZVcWJKUWNjc2hZNjJweDhudU5mbC0wU3REZjVOdUN4VDFNdlBobWh2OVZveENhVjFEZlptb1Z3UThhTDBPT25EYlZWMzRpT3RNUkRwckRkaUMxT28tUUlOeW0wWTdldHFxblM4cmN2S3FsRTFDbWlES3hWQmI?oc=5",
-      "why": "Цены на кобальт резко падают, что влияет на стратегию Норникеля как крупного производителя.",
-      "priority": "high",
-      "company": "Nornickel"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "Chile investigates Antofagasta's Los Pelambres mine after water discharge from rains",
-      "desc": "Chile investigates Antofagasta's Los Pelambres mine after water discharge from rains &nbsp;&nbsp; Mining Weekly",
-      "domain": "miningweekly.com",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPaHltdUJPdHVPWFVsc0tCNjQxSENUN1N5VTc4YlB6M2NXZmMySkktc2tnR0piWGYyRzUwVW5VSWVXR3VFYXZORWIzaVpIci1HSlg4X092YVVvdndtSGhwQXU4QVpNNEJRX2E0ZFQwSGFaTERjVUhUUTk0bzMwc203S3I2TVIyekY5TnJwLWFoclVuWFZ6THNQX01pODRWbERnbGtSVFlualpTWHBULUMwa084VzkyM1o2amtJNHhmNGxqakF3YThRUDJrWQ?oc=5",
-      "why": "Расследование на Los Pelambres может нарушить поставки меди, что повлияет на рынок.",
-      "priority": "medium",
-      "company": "Antofagasta / Los Pelambres"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "June Aluminum Plate/Sheet and Strip Exports Set a 2026 Monthly High; Reclaimed Transferred Orders May Pressure H2",
-      "desc": "June Aluminum Plate/Sheet and Strip Exports Set a 2026 Monthly High; Reclaimed Transferred Orders May Pressure H2 &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQMEJwd0ttQW41T1c4OHZ1M05ZMlBrQURlSkhjQjZuUDR4YW9rd0FCelpDLWV2UTZXRlFtSDM4ZHNOZzRGZWNZbG5yY0dxdjZpRmdUalNJS0ltVEVGbzc0WXRIbzJkQVFSU2E4d1pYZjBIWTNQMXlTazN2NFZZZHFiYm5sRUNfQW5fTThhb0V1V0JqbmdnWExvWEIzQ3NvMVBqSXptemZjUjlpTFNKaG1wbXdOcGRUZ3hPTmVuemZXYW02UW5jdTFwSFRzS1JQUG81XzNmZTRlMHN2bVFrQm9mOGdwSHk5N2hUME1QQ1lXMnM?oc=5",
-      "why": "Экспорт алюминиевого листа из Китая растёт, что влияет на глобальные рынки и конкурентов RUSAL.",
-      "priority": "medium",
-      "company": "RUSAL"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "Antofagasta Says Los Pelambres Operations Affected By High Precipitation",
-      "desc": "Antofagasta Says Los Pelambres Operations Affected By High Precipitation &nbsp;&nbsp; TradingView",
-      "domain": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOZV9hVHgyaHVuRlB1cVhFU0tyNTk2WVpJdEMxRGt5bDdFX2RCeERIZ2N0NlVhekVOWkxQNF9Pd09OWnZOMXJURHFSR1MwbUU5MkJKSGk5dHNxS19oLUlrYTRCNkFhRUYtb2hoRHpTZHNUSUZmVUoybFl6YkxlS3FWdkNxdGF0ZXlTeDBXWC1rUW50MnJMdEV0UWZtYzlTZmpDalRlYTg0UENCcTd6MFBqWk9FdXpHU0hvSlJBb2JRMHVXWmF3QmxHaHB6ZnE2a1oxcG9SYTlkUG5yQQ?oc=5",
-      "why": "Перебои на Los Pelambres могут повлиять на мировые поставки меди, что важно для стратегии клиента.",
-      "priority": "medium",
-      "company": "Antofagasta / Los Pelambres"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "Rio Tinto signs bio pellet supply deal with SuperChar",
-      "desc": "Rio Tinto signs bio pellet supply deal with SuperChar &nbsp;&nbsp; Bioenergy Insight Magazine",
-      "domain": "Bioenergy Insight Magazine",
-      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOelJIekVBODZrOVJjWVBFWXE1c0tpOThQSk1WS1BURDIxeE00VThucjRvcnQ3SEoxVG1lRmJ5SmFpVW1zUnJzSTFVd2dkY3J1emNzaVZiTnQtUzIyNTZmdWJyR1kxUkszd1RMUlhLV3RHcEJES0NhM2FodVRneFZjcVBrOWd1SThiSTVfQ3c5djM0YkI4?oc=5",
-      "why": "Сделка Rio Tinto по биопеллетам может снизить углеродный след алюминия, влияя на конкуренцию с RUSAL.",
-      "priority": "medium",
-      "company": "Rio Tinto"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "REG - Antofagasta PLC - LOS PELAMBRES OPERATIONAL UPDATE",
-      "desc": "REG - Antofagasta PLC - LOS PELAMBRES OPERATIONAL UPDATE &nbsp;&nbsp; TradingView",
-      "domain": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNamdMQTRjc3l5cFJFQUZDaUFmcW55MUFSbklTVVRoMmRzOFpyRVNCdzJOcUw2MU5YZG9TZk9EbGRSVmRXTUlweWVmTThzUkJnM2VOSmJvVEZIWFBxWDFuU18wcG1rWFNscFVJNkNrNWR0YlNEYlRUWGwtVmtyYWNXcHUzeFNyNlg5bGxfbkg5Sk85b2E1bzFmaUhqSlY1WDJQMThURzJacndwXzZxSndEVTNpM1VfSy1JbWU1R082YVRCSVBsYkhj?oc=5",
-      "why": "Операционное обновление Los Pelambres — крупного медного рудника, влияет на рынок меди.",
-      "priority": "medium",
-      "company": "Antofagasta / Los Pelambres"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "[SMM Aluminum Express News] Rio Tinto has agreed to transfer customers",
-      "desc": "[SMM Aluminum Express News] Rio Tinto has agreed to transfer customers &nbsp;&nbsp; Shanghai Metals Market",
-      "domain": "metal.com",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOdEJUSXUxbGk5Q19ydGgwVEZkRjZPMjhOZjk5dk5mMDB2T0d1bEUtUV84Y1VfSGVoRGZFRmpJenRmeVhfdzlYYlluM2FZTlhIVUREaUpIM3VFeEttR1NiSzZtRFZkZUE0dlh4UU43aFc5Q19Bb1c3V1NWUVVNWmx5YkxmZUtBeE5IT1dpUUQzZUhZZGt1dEdUMG81NzBJcnluTXZ0VEFVNXpSSExSbFBfakVmMjU3T2FTZ3VSRlVRbWVQVm44ZEE?oc=5",
-      "why": "Перевод клиентов Rio Tinto может изменить потоки алюминия и повлиять на рынок СНГ.",
-      "priority": "medium",
-      "company": "Rio Tinto"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "Anglo and Teck to exceed 1Mt of copper between Chile and Peru in 2026 ahead of merger",
-      "desc": "Anglo and Teck to exceed 1Mt of copper between Chile and Peru in 2026 ahead of merger &nbsp;&nbsp; BNamericas",
-      "domain": "bnamericas.com",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPRVJyQXpiaDhqM2dNMWIweGkyRGlRanVGQ0xvX0RDQlBndUEtNXRvNFNqS3JxTjBzaGlmcURMN2dFbEQtcUNnbFVNOXFEa1o1UE9tcUJ1bkgtTHZob0xDOWVhTVpHVWtSWGRuYU1ySW5iNzB0WXZyVGRjUHBzckVLbU9TRWJtY2hNRTFJckdyc0xKQ3RWWnBETlhxQ1hTSXJ6WVZiZUhuV0N3LTdudkdUbjMyOWJuYW1UdXkwTnpHc2U1dw?oc=5",
-      "why": "Крупный рост добычи меди Anglo и Teck усилит конкуренцию для его портфеля.",
-      "priority": "high",
-      "company": "Anglo American / Teck Resources"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "Norsk Hydro posts strong Q2 2026 with 6% revenue growth and 15% EBITDA rise, leading in low-carbon aluminum.",
-      "desc": "Norsk Hydro posts strong Q2 2026 with 6% revenue growth and 15% EBITDA rise, leading in low-carbon aluminum. &nbsp;&nbsp; Pluang",
-      "domain": "Pluang",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUWlKZ2Rvc1lfc3lSMm5NUGxnXzdZTUo0MnRHZzh3OWEyaFFDM2RDWnVoWDhwTTlsRE5JRXRqWWNsdXFxMUxGa0h6WnFVa2o0VUZfbzd1SWVSUHdPOTE2TlhXY3FPVFM0bjlRNlo4QllPa1BKVnRWQTlVODhOTkVaNHd6Q1lBVGdxNDhSdHZCSjFROGhEVk93aFpJckIwZEtfT29VRXljSWZsVHcx?oc=5",
-      "why": "Сильный отчет Hydro сигнализирует о давлении на рынке алюминия, важном для RUSAL.",
-      "priority": "medium",
-      "company": "Norsk Hydro"
-    },
-    {
-      "ts": "2026-07-24T07:35:25.425979+00:00",
-      "title": "Teck publishes Q2 2026 investor presentation highlighting Anglo American merger of equals and copper growth options",
-      "desc": "Teck publishes Q2 2026 investor presentation highlighting Anglo American merger of equals and copper growth options &nbsp;&nbsp; Bitget",
-      "domain": "Bitget",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA5YkVabkh4NVFFOUtNSm1KX05CRE9vWlViNlc0UldjU3R5WlRHcVBvQ3gtOXRIQ1lHSGQ5cVpGc1ItelF4Y3Fickhoc3hlblpMNnpaQUFPSGFKRGFNSjVaUGtENNIBY0FVX3lxTFA5YkVabkh4NVFFOUtNSm1KX05CRE9vWlViNlc0UldjU3R5WlRHcVBvQ3gtOXRIQ1lHSGQ5cVpGc1ItelF4Y3Fickhoc3hlblpMNnpaQUFPSGFKRGFNSjVaUGtENA?oc=5",
-      "why": "Слияние Teck и Anglo American меняет структуру рынка меди, прямой конкурент для UC RUSAL и Норникеля.",
-      "priority": "high",
-      "company": "Teck / Anglo American"
-    },
-    {
       "ts": "2026-07-24T17:00:58.592264+00:00",
       "title": "Beef-a-Roo customers flock to locally owned Freeport location",
       "desc": "Beef-a-Roo customers flock to locally owned Freeport location &nbsp;&nbsp; WREX",
@@ -2519,6 +2399,126 @@
       "why": "Vedanta Aluminium резко нарастил прибыль и EBITDA, что сигнализирует о сильной конъюнктуре алюминия и усиливает конкуренцию для RUSAL.",
       "priority": "medium",
       "company": "Vedanta Aluminium"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Nickel mining in Indonesia's Raja Ampat continues despite protests, Greenpeace finds",
+      "desc": "Nickel mining in Indonesia's Raja Ampat continues despite protests, Greenpeace finds &nbsp;&nbsp; Reuters",
+      "domain": "reuters.com",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUTdQTENTMy1PSXdSS0lwZGdmVXZ2UG1zby12NFd4Y3pHenhsM1JCVm45YURBWFE3aV9kQmY5UEFYRjV1N1lRZ1hvYm9hUm56cW1JNWpvZmVIaVNVVUhzbEpjMVRLb05FS285QjduY21RWGwyRk8xa1FEd2pSR1huUGlITHdWckxfXzh0bllsWnBsWXkyTlppX1pPUloxMFBUNHBkNlRvNldKS0dSTW8xS3lSRjIyeTRITUc0c0RNUV9BbkNoUlBaUUVaQk9ERVhQTlE?oc=5",
+      "why": "Индонезийский никель — прямой конкурент Норникеля и ERG; продолжение добычи в Раджа-Ампат влияет на мировое предложение.",
+      "priority": "medium",
+      "company": "Indonesia nickel mining"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Kazakhstan Joins Top Five Gold Buyers Amid Reserve Strategy Shift",
+      "desc": "Kazakhstan Joins Top Five Gold Buyers Amid Reserve Strategy Shift &nbsp;&nbsp; The Astana Times",
+      "domain": "The Astana Times",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZ2twVm5VazBPY01RY01ndWE3UFRwU1J5WGRvNXZMc21heTFxQ1RHc1hCZExQeWlENGFoNE5iLVNlR3U1OVJ2R0IxTG1vVXZZVWt3cEo4YVZqcnVmWWFHVGducW40bU9uRzBveXBIaFM4dGFSMFFlSTA3eWJSaGEzM25DSEVSX2VLcEZQMUtEU3FjYkhHWVVoR3UwZXRrelU?oc=5",
+      "why": "Казахстан в топ-5 покупателей золота — сигнал для стратегии по золоту в регионе.",
+      "priority": "medium",
+      "company": "Kazakhstan"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Alcoa’s Western Australia Gallium Project: Allied Supply Chain Milestone 2026",
+      "desc": "Alcoa’s Western Australia Gallium Project: Allied Supply Chain Milestone 2026 &nbsp;&nbsp; discoveryalert.com.au",
+      "domain": "discoveryalert.com.au",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZ0pvamo0SElvRVppdjBWZVhpazFTVjRxVWtVcndHX0Vvd0VXMkV3d3JnTnFvaTYtVldfNVdvR191RDJha09rWEtjWkVLSDlrYmE1UDRoSkVkd1pHaTE4ak9ER05vVndjYWdaVWF5ekJFYVhtYXFyOVhiTWlTeUFvQ1A4S3RYY291Qlp2eTJhdjhKdTJGLVE?oc=5",
+      "why": "Alcoa запускает проект по галлию в Западной Австралии к 2026 году, что диверсифицирует цепочку поставок в обход Китая.",
+      "priority": "medium",
+      "company": "Alcoa"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Commerce Ministry to Rollout Outreach for CBAM MSMEs",
+      "desc": "Commerce Ministry to Rollout Outreach for CBAM MSMEs &nbsp;&nbsp; ESG News.earth",
+      "domain": "ESG News.earth",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUFBSeG1BOXMtOGloM2hjVVhhZWZOWmRLM0V0MEhDaU1ydXBjdTZxMVhvTTY1UEhWUkNsdF9UUDZWUXZsOWNmYTlpcVFBUVBSbG1oSG41dFBQTWYwMDlHdlFoN25OR3NrNkcxRGdMSFV2OVBVS3BkZDJCSjRCQWVLRWtrcW11X0wtajdycVF4N2NfWG9EWFBGdlRSTUhnelJ0d1VJ?oc=5",
+      "why": "CBAM-регулирование затрагивает экспорт металлов из СНГ, влияет на стратегию клиента.",
+      "priority": "medium",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "BHP Port Hedland iron-ore workers to strike August 8 and 9, if no pay deal reached",
+      "desc": "BHP Port Hedland iron-ore workers to strike August 8 and 9, if no pay deal reached &nbsp;&nbsp; Mining Weekly",
+      "domain": "miningweekly.com",
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObjRzTHQ2cnBPTC1jYjRFRm9NZ2pBVTd5SEt1OHgxX0pRWncxTzF0RTRyZmZBNEhWOHFiNGxZbFBTV3JqRnlncFNwSEFLUDMwNXBjZDFZaGdXdXE0WmlWNlZJWm4yZDIzaXpzTlhEQmc2a1V5eXcwTGhGMEJjdE9feVN6SW1YUlFlb2lCUXRMa20yenNqY0szcnQ4MmdtS0xWMGxVTlVRN2p2TUxkdnJVWUVveDR4SXdKbFdEM2ZtYm5EN19BaklPaQ?oc=5",
+      "why": "Забастовка в Порт-Хедленд может нарушить поставки железной руды, влияя на мировые цены и логистику.",
+      "priority": "medium",
+      "company": "BHP"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Cobalt Product Price Center Continues to Move Lower, Market Trading Sluggish; Market Stabilization and Recovery in Mid-to-Late August? [Weekly Observation]",
+      "desc": "Cobalt Product Price Center Continues to Move Lower, Market Trading Sluggish; Market Stabilization and Recovery in Mid-to-Late August? [Weekly Observation] &nbsp;&nbsp; news.metal.com",
+      "domain": "news.metal.com",
+      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQeDhPTTk0bEV4Zl9PanFPMld5U3k1eWJMVFJSTmM0RHM4ZWM2QXNqQ2hsamFRMUl6TXEza2llemtfY3pueUVWRUk2dzFrVjVLZnpPSWxFVER1akZJbnMxakVNN1FDZThFdXZMZjFPNXc0dFdkUU9PeGFEWWtQUFo0dkxLT0ZiSmxSY0dWaG1weS0xQ2FFTE9INl92Y2Q2T2gwczRRalVEb2l5LWFLYlU3VjI0VW1USXpoeHhkS1lWYlpaZENGTEVpSTJ1YVc5djhGc1c4UUVIcUlBeF9ZaFNXWW16Yk8wa3RHYWZHNW1SSVFTSUp2akNuODFhZw?oc=5",
+      "why": "Кобальт дешевеет, рынок вялый, что влияет на стратегию в никеле и аккумуляторных металлах.",
+      "priority": "low",
+      "company": ""
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "BHP Group Urges Unions to Focus on Bargaining Meetings Amid Fresh Threat of Industrial Action",
+      "desc": "BHP Group Urges Unions to Focus on Bargaining Meetings Amid Fresh Threat of Industrial Action &nbsp;&nbsp; marketscreener.com",
+      "domain": "marketscreener.com",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNSzBOaDlacGVHWE5VTnRTdjM4UWM5WlhVeHFfS2hjZnFqREFQX3A2NFBSRzdpRWFKRklwZ2g5dl9OeGlQWTZyWkQ1N1RYOXFGTG9Nc3puR2FRclpOVkstT0RnRFlQM3VIZVZEd0lVSHVZS0VYRHZ3elktM3E4WFJGRXZtNzVYNUNJaGlJTnA4azRUdG9lZWVreENFX2ExVU5zNVVrYTB3d0tXYXpGZ1hiM0QwWU9ZRUFJcnBiTVROLUVPU1NBRFZELVJIWWRqd3BWLWdhdk5HQ29LY2VOWWw4?oc=5",
+      "why": "BHP призывает профсоюзы к переговорам на фоне угрозы забастовки, что может нарушить поставки меди и никеля.",
+      "priority": "medium",
+      "company": "BHP"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Orion Minerals Nears Unconditional Glencore Financing After $15.4M Capital Raise",
+      "desc": "Orion Minerals Nears Unconditional Glencore Financing After $15.4M Capital Raise &nbsp;&nbsp; Kalkine",
+      "domain": "Kalkine",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOQW5GcmVqWDJQOF90LVNRN25SMlBzTEhldFF2Z1k4WnBRNzJDckJ0VVE3WDVVQ3dacTd5REJNbE1SNnF1UU1fcTItYzZvVnF4dzJCTmRRZERpSGhCWnptZGdEaUVZR05qNHJRTEl3bVJYZnBnTWtWRk5tdk5TSTVYMUpkTzRwQl9WVXc3RmtxQ05tOEszUHBxeFE3R3RrTXNUbjI2S3ZweUM2aDdrdldYSHF3YnZMdUxPaGhWSQ?oc=5",
+      "why": "Orion Minerals привлекает $15,4 млн и финансирование Glencore — сделка с раскрытой суммой, стратегический шаг для юниора.",
+      "priority": "medium",
+      "company": "Orion Minerals"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Australia’s BHP faces another iron ore port strike",
+      "desc": "Australia’s BHP faces another iron ore port strike &nbsp;&nbsp; Argus Media",
+      "domain": "argusmedia.com",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNU1NIVmM2TVBXX3ZPQ3lJY3o4aEZUR0hMM3ItWGVoazFwYlBUN1dVb2U2NjNfWjdLNzlJa3c5QWxNemVsVUZIczdOVmlNczZMYS1IR29fZHczb2tzZEplNWtQVTdUWVhRUHJlNENfTWsyTVQtbkNqbUZLVXhhQjlvNHczeVI5Q2htekpPek9LMk1kb0ZvQktuZmx1U2dwSUxLWXE1eHlUcDJlbTdyWkhsYndkUlBGMXBSamJOYlhWNA?oc=5",
+      "why": "BHP портовая забастовка угрожает поставкам железной руды, влияя на мировые цены и стратегию конкурентов.",
+      "priority": "medium",
+      "company": "BHP"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Unions’ plan: stop 16 iron ore ships and cost BHP $260m",
+      "desc": "Unions’ plan: stop 16 iron ore ships and cost BHP $260m &nbsp;&nbsp; The Australian",
+      "domain": "The Australian",
+      "link": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQSFBaS1RiT2xNby1vQk9yYTFBc2xuajJTSW8zWW9lWVNjZ3cybFhCdVRCWkxqMXcwZWc3WDdObUYtcDl4TzY3TW9tZWN5X2p0cTRvbV8xSDUxc25ORHF4MkYzTE55bVZkOEpXalg4WDhzWmplQ052RTZJd0swc3FBRmVlWkJsY0ozWFpjLWowUTBjTHMxT2Ntc2pGYzlINDhpODNpTmYycmtiTUtpQnZzMnI3LThzMk5sZ3pJTTEwWjVZNU1xNm5YVEpjNFp4YzNaRTlGMnhsbFY2d3R4bVFkNFZqSXJ4dmNEQTVMNmNKVkVEakxYN0k0eFRfTml6N2xiaWVzSURSNnhGR3k1T1VURzNNYlhwTk5BQXBfYzNZODFNY2c0ZFdZLdIBrgJBVV95cUxQWlc2bzl4MkktYVBzWFpydnFNVU1DYjhnNzRPZ1VkUzgtc0MxX2ZldW91aFVlZVYtc2UxWlJ0eDJHOURLWWdaS0c5NXVldGIydFBpbXZIemoyQnc1SnRncUdHTDUxeU13MXZtbDF0Z3BJalZzejU1TXpXTThDcjBfTUV2Q0tmazR6M1dnUzZCTUJodEtHMWJwSURTWnFFYUhRQjlWQnRVZmliWkFiVHJIblNCMGpZU2hhdWdlOHZOMkQ4T3Z5RG1pZ0JBY0RMd0lsaHc4STltVFI3WjJtODFwSU0yVjlOVW0zRVZfQVdzS2hQYlNqUTBqeHZTV004QUNjOGliMjdHTFpoT0ljVHh1ekdPWWdEU1hhMlJ6clB0cjMzMDRFTFl6VTJfZnpyZw?oc=5",
+      "why": "Забастовка в портах BHP грозит сбоями поставок железной руды, что влияет на рынок и стратегию конкурентов.",
+      "priority": "medium",
+      "company": "BHP"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "Orion Nears Tranche A Drawdown as South African Reserve Bank Approves Glencore Financing",
+      "desc": "Orion Nears Tranche A Drawdown as South African Reserve Bank Approves Glencore Financing &nbsp;&nbsp; Kalkine",
+      "domain": "Kalkine",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQU1kdEZJU0gxTW1pMFV5U1hpYnBVZU1MS3hUMzQ0S3BSdjM3dVdhdmN2Y0JOVlphX0hKMTEzaHpjWTdXSmlpMF9PWE53M3BLTTVSSUdKeTZxY2dhVDB0d0ZYRVRybXlHemhiLW9yTHNfcWFzVHpKc0NFNFNnSlZ3Z2FpaXRlQmNWQlM3UjJYRHZrT1NFOGlkUlJQT3hnTVIzZ2V1QldQVExoOXNlekV6NGs5NHZiWWtmdFZYamRvM3lyZ0pDWENiRzl3?oc=5",
+      "why": "Orion получает финансирование Glencore для проекта в ЮАР, что важно для стратегии в цветных металлах.",
+      "priority": "medium",
+      "company": "Orion Minerals"
+    },
+    {
+      "ts": "2026-07-31T07:53:49.775137+00:00",
+      "title": "BHP bracing for rolling strikes by Pilbara ore workers",
+      "desc": "BHP bracing for rolling strikes by Pilbara ore workers &nbsp;&nbsp; thesenior.com.au",
+      "domain": "thesenior.com.au",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPX1lfS1NCU0x6eGNkaTNpMldrVUxCdVRjSWpERTZXXzVoNE5Zc2UxYWt2eVNVMWZ6Zlp3d3ZZalNzYzJUVk5VVGVoQTFvcHdneUlwZzFENXdJRVo1ZU9lOGFsUXlrV254T1IwR19DYnZjZ2tILS0wbEF2T2dMMXRWZGZtQk5DXzhFelpjYzI0eG8yM1lncWNkWGU3V2hJYlU?oc=5",
+      "why": "Забастовки на Pilbara BHP угрожают поставкам железной руды, влияя на глобальный рынок и конкурентов.",
+      "priority": "medium",
+      "company": "BHP"
     }
   ]
 }
