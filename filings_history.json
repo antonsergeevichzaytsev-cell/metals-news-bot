@@ -492,23 +492,22 @@
       "hook": "Owner-side контроль графика и бюджета: не дать стройке Skouries выйти за рамки.",
       "priority": "medium",
       "ts": "2026-07-30T22:05:47.032708+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307382/Lake-Victoria-Gold-Commences-Phase-3-Land-Programme-to-Advance-Imwelo-Toward-Construction",
+      "title": "Lake Victoria Gold Commences Phase 3 Land Programme to Advance Imwelo Toward Construction",
+      "stage": "construction",
+      "signal": "землеотвод к стройке",
+      "company": "Lake Victoria Gold",
+      "project": "Imwelo",
+      "region": "Tanzania",
+      "why": "Землеотвод и компенсации — последний шаг перед началом строительства, задержки сдвинут график.",
+      "hook": "Контроль графика стройки: не дать землеотводу съесть время до первого золота.",
+      "priority": "medium",
+      "ts": "2026-07-31T08:14:15.094971+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-24T07:43:47.020949+00:00",
-      "title": "Makenita Resources More Than Doubles Land Position on Sisson West Tungsten Deposit in New Brunswick",
-      "link": "https://www.newsfilecorp.com/release/306400/Makenita-Resources-More-Than-Doubles-Land-Position-on-Sisson-West-Tungsten-Deposit-in-New-Brunswick",
-      "reason": "расширение участка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-24T07:43:47.020949+00:00",
-      "title": "Adelayde Exploration Engages Drill Contractor for the Clayton Ridge Gold Project in Nevada",
-      "link": "https://www.newsfilecorp.com/release/306399/Adelayde-Exploration-Engages-Drill-Contractor-for-the-Clayton-Ridge-Gold-Project-in-Nevada",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
     {
       "ts": "2026-07-24T13:02:49.543826+00:00",
       "title": "GreenLight Metals Announces Grant of Deferred Share Units to Directors",
