@@ -1380,12 +1380,6 @@
   "labels": [],
   "prefilter_dropped": [
     {
-      "ts": "2026-07-24T22:56:42.783546+00:00",
-      "title": "Valkea Grants Stock Options",
-      "matched_noise_word": "stock option\\w*",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-27T08:51:33.527739+00:00",
       "title": "iMetal Resources Provides Update on Private Placement",
       "matched_noise_word": "private placement",
