@@ -509,27 +509,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-27T08:51:33.529860+00:00",
-      "title": "Makenita Resources Significantly Increases Land Position on Sisson West Tungsten Deposit in New Brunswick",
-      "link": "https://www.newsfilecorp.com/release/306595/Makenita-Resources-Significantly-Increases-Land-Position-on-Sisson-West-Tungsten-Deposit-in-New-Brunswick",
-      "reason": "увеличение участка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-27T08:51:33.529860+00:00",
-      "title": "Rokmaster Options Undrilled Porphyry Copper Target in Northern Chile",
-      "link": "https://www.newsfilecorp.com/release/306611/Rokmaster-Options-Undrilled-Porphyry-Copper-Target-in-Northern-Chile",
-      "reason": "опцион на участок",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-27T08:51:33.529860+00:00",
-      "title": "Starcore Reports Year End 2026 Results",
-      "link": "https://www.newsfilecorp.com/release/306553/Starcore-Reports-Year-End-2026-Results",
-      "reason": "годовой отчёт",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-27T13:01:06.866957+00:00",
       "title": "Asante Gold Announces Management Change",
       "link": "https://www.globenewswire.com/news-release/2026/07/27/3333330/0/en/Asante-Gold-Announces-Management-Change.html",
@@ -1389,16 +1368,17 @@
       "link": "https://www.newsfilecorp.com/release/307645/SAGA-Metals-Mobilizes-Camp-Construction-Ahead-of-Drilling-at-Wolverine-Heavy-Rare-Earth-Element-Project-in-Labrador",
       "reason": "мобилизация на бурение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-03T13:00:58.620919+00:00",
+      "title": "NovaRed Mining to Evaluate Iron Carbonate-Silica Alteration Zones on the Plume Grid, Wilmac Copper-Gold Project",
+      "link": "https://www.newsfilecorp.com/release/307646/NovaRed-Mining-to-Evaluate-Iron-CarbonateSilica-Alteration-Zones-on-the-Plume-Grid-Wilmac-CopperGold-Project",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-27T08:51:33.527739+00:00",
-      "title": "iMetal Resources Provides Update on Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-07-27T13:01:06.856212+00:00",
       "title": "Primary Hydrogen Appoints Christopher Longton as Vice President, Exploration",
