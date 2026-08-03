@@ -509,13 +509,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-27T20:19:26.089705+00:00",
-      "title": "Winchester Equity Corporation Announces New Loan Agreement",
-      "link": "https://www.newsfilecorp.com/release/306771/Winchester-Equity-Corporation-Announces-New-Loan-Agreement",
-      "reason": "финансовая операция",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-27T22:00:45.058734+00:00",
       "title": "Avanti Gold Reports Assays from Previously Unsampled Core at Akyanga, Including 29.4 m at 1.43 g/t Au from Surface and 9.9 m at 4.",
       "link": "https://www.newsfilecorp.com/release/306759/Avanti-Gold-Reports-Assays-from-Previously-Unsampled-Core-at-Akyanga-Including-29.4-m-at-1.43-gt-Au-from-Surface-and-9.9-m-at-4.13-gt-Au",
@@ -1249,6 +1242,13 @@
       "link": "https://www.newsfilecorp.com/release/307646/NovaRed-Mining-to-Evaluate-Iron-CarbonateSilica-Alteration-Zones-on-the-Plume-Grid-Wilmac-CopperGold-Project",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-03T20:24:17.413830+00:00",
+      "title": "Lumina Metals Reports on 2026 Drilling at Its Three Projects in Poland",
+      "link": "https://www.newsfilecorp.com/release/307688/Lumina-Metals-Reports-on-2026-Drilling-at-Its-Three-Projects-in-Poland",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1370,6 +1370,12 @@
     {
       "ts": "2026-07-31T22:54:31.700865+00:00",
       "title": "AbraSilver Announces Closing of Concurrent Private Placement",
+      "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-03T20:24:17.413086+00:00",
+      "title": "Fairchild Gold Announces Update to Private Placement Financing and Early Warning Report",
       "matched_noise_word": "private placement",
       "orbit": false
     }
