@@ -509,27 +509,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-27T22:00:45.058734+00:00",
-      "title": "Avanti Gold Reports Assays from Previously Unsampled Core at Akyanga, Including 29.4 m at 1.43 g/t Au from Surface and 9.9 m at 4.",
-      "link": "https://www.newsfilecorp.com/release/306759/Avanti-Gold-Reports-Assays-from-Previously-Unsampled-Core-at-Akyanga-Including-29.4-m-at-1.43-gt-Au-from-Surface-and-9.9-m-at-4.13-gt-Au",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-27T22:00:45.058734+00:00",
-      "title": "Awalé Announces Exercise of Participation Rights by Fortuna Mining",
-      "link": "https://www.newsfilecorp.com/release/306636/Awal-Announces-Exercise-of-Participation-Rights-by-Fortuna-Mining",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-27T22:00:45.058734+00:00",
-      "title": "Geomorphic AI Offers Koivuniemi Flake-Graphite Project for Joint Venture - a Drilled, Metallurgically Tested Coarse-flake Camp, No",
-      "link": "https://www.newsfilecorp.com/release/306773/Geomorphic-AI-Offers-Koivuniemi-FlakeGraphite-Project-for-Joint-Venture-a-Drilled-Metallurgically-Tested-Coarseflake-Camp-North-Savo-Finland",
-      "reason": "совместное предприятие",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-27T22:55:43.141717+00:00",
       "title": "Bayhorse Silver Underground Drilling Operations Suspended Due to Wildfires",
       "link": "https://www.newsfilecorp.com/release/306814/Bayhorse-Silver-Underground-Drilling-Operations-Suspended-Due-to-Wildfires",
@@ -1253,12 +1232,6 @@
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-27T22:00:45.056755+00:00",
-      "title": "BRS Resources Announces Marketing Agreement with IRPub",
-      "matched_noise_word": "marketing agreement",
-      "orbit": false
-    },
     {
       "ts": "2026-07-28T13:01:05.038260+00:00",
       "title": "RZOLV Technologies Achieves DTC Eligibility, Enabling Electronic Settlement of Trades in the United States",
