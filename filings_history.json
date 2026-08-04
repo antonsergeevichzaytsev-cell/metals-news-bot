@@ -1346,6 +1346,34 @@
       "link": "https://www.newsfilecorp.com/release/307938/Elemental-Royalty-to-Release-Q2-2026-Results-on-August-11-2026",
       "reason": "финрезультаты",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-04T22:57:00.963556+00:00",
+      "title": "Cygnus Metals Limited : Mise à jour de la transaction relative au plan d'arrangement",
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338965/0/fr/Cygnus-Metals-Limited-Mise-%C3%A0-jour-de-la-transaction-relative-au-plan-d-arrangement.html",
+      "reason": "сделка/поглощение",
+      "orbit": true
+    },
+    {
+      "ts": "2026-08-04T22:57:00.963556+00:00",
+      "title": "Cygnus Metals Limited: Scheme Transaction Update",
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338965/0/en/Cygnus-Metals-Limited-Scheme-Transaction-Update.html",
+      "reason": "схема сделки",
+      "orbit": true
+    },
+    {
+      "ts": "2026-08-04T22:57:00.963556+00:00",
+      "title": "Bahia Metals Bolsters Geological Team to Advance Mangueiros Main",
+      "link": "https://www.newsfilecorp.com/release/308046/Bahia-Metals-Bolsters-Geological-Team-to-Advance-Mangueiros-Main",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T22:57:00.963556+00:00",
+      "title": "Lode Gold Completes Full Repayment of Fremont Gold Mine Property Secured Loan Ahead of Schedule",
+      "link": "https://www.newsfilecorp.com/release/308056/Lode-Gold-Completes-Full-Repayment-of-Fremont-Gold-Mine-Property-Secured-Loan-Ahead-of-Schedule",
+      "reason": "погашение долга",
+      "orbit": false
     }
   ],
   "labels": [],
