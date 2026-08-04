@@ -627,34 +627,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-28T22:00:51.471254+00:00",
-      "title": "Centerra Gold Reports Second Quarter 2026 Results; Strong Operational Performance Drives Increased Öksüt Production Guidance; The ",
-      "link": "https://www.globenewswire.com/news-release/2026/07/28/3334802/0/en/Centerra-Gold-Reports-Second-Quarter-2026-Results-Strong-Operational-Performance-Drives-Increased-%C3%96ks%C3%BCt-Production-Guidance-The-Company-Expands-Share-Buybacks-to-200-Million-in-202.html",
-      "reason": "финрезультаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T22:00:51.471254+00:00",
-      "title": "Centerra Gold Announces Quarterly Dividend of C$0.07 per Common Share",
-      "link": "https://www.globenewswire.com/news-release/2026/07/28/3334809/0/en/Centerra-Gold-Announces-Quarterly-Dividend-of-C-0-07-per-Common-Share.html",
-      "reason": "дивиденды",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T22:00:51.471254+00:00",
-      "title": "Auro Intersects 542m Grading 0.60 g/t Gold and 0.12% Copper at the Santa Barbara Gold-Copper Project, Ecuador",
-      "link": "https://www.newsfilecorp.com/release/306993/Auro-Intersects-542m-Grading-0.60-gt-Gold-and-0.12-Copper-at-the-Santa-Barbara-GoldCopper-Project-Ecuador",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T22:00:51.471254+00:00",
-      "title": "Kingfisher Announces Closing of Strategic Investment from Barrick",
-      "link": "https://www.newsfilecorp.com/release/306987/Kingfisher-Announces-Closing-of-Strategic-Investment-from-Barrick",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-29T05:30:35.648538+00:00",
       "title": "Euro Manganese Updates on Progress Across Key Business Activities",
       "link": "https://www.newsfilecorp.com/release/307057/Euro-Manganese-Updates-on-Progress-Across-Key-Business-Activities",
@@ -1353,16 +1325,31 @@
       "link": "https://www.newsfilecorp.com/release/307574/Kasis-Clean-Water-Technologies-Advances-Patented-Redox-Materials-for-Cleaner-Gold-Recovery",
       "reason": "технология в разработке",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-04T22:00:58.284814+00:00",
+      "title": "Ferroglobe Reports Second Quarter 2026 Financial Results",
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338901/11914/en/Ferroglobe-Reports-Second-Quarter-2026-Financial-Results.html",
+      "reason": "финансовые результаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T22:00:58.284814+00:00",
+      "title": "Wayfinder Announces Adoption of Semi-Annual Reporting, Changes to Management",
+      "link": "https://www.newsfilecorp.com/release/308055/Wayfinder-Announces-Adoption-of-SemiAnnual-Reporting-Changes-to-Management",
+      "reason": "отчётность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T22:00:58.284814+00:00",
+      "title": "Elemental Royalty to Release Q2 2026 Results on August 11, 2026",
+      "link": "https://www.newsfilecorp.com/release/307938/Elemental-Royalty-to-Release-Q2-2026-Results-on-August-11-2026",
+      "reason": "финрезультаты",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-28T22:00:51.468297+00:00",
-      "title": "Copper Fox Announces Closing of Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-07-29T05:30:35.647538+00:00",
       "title": "Argentina Metals Announces OTCQB Listing",
@@ -1481,6 +1468,12 @@
       "ts": "2026-08-04T20:21:39.244492+00:00",
       "title": "Slave Lake Zinc Announces Name Change and Private Placement Offering",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T22:00:58.283171+00:00",
+      "title": "Azincourt Energy Options High-Grade Sylvia Lake Uranium Project in Labrador",
+      "matched_noise_word": "high-?grade",
       "orbit": false
     }
   ]
