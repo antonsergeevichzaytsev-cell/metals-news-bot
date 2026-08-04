@@ -189,7 +189,12 @@ def load_state():
 
 
 def save_state(state):
-    state["seen"] = state["seen"][-800:]
+    # dict.fromkeys — дедуп С СОХРАНЕНИЕМ ПОРЯДКА. Раньше срезался список,
+    # собранный из set() — порядок вставки терялся, и [-800:] выбрасывал
+    # СЛУЧАЙНЫЕ хэши, включая свежие. Отправленный релиз мог вылететь
+    # из памяти и уйти повторно. У filings пока 457/800 — баг латентный,
+    # сработал бы при насыщении.
+    state["seen"] = list(dict.fromkeys(state.get("seen", [])))[-800:]
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
 
@@ -602,7 +607,14 @@ def main():
     sources = load_sources()
     state = load_state()
     history = load_history()
-    seen = set(state.get("seen", []))
+    seen_order = list(state.get("seen", []))   # порядок для вытеснения
+    seen = set(seen_order)                     # множество для проверки
+
+    def mark_seen(h):
+        if h not in seen:
+            seen.add(h)
+            seen_order.append(h)
+
     now_msk = datetime.now(MSK)
 
     print(f"Sources: {len(sources)}, seen: {len(seen)}, pending: {len(state.get('pending', []))}")
@@ -645,7 +657,7 @@ def main():
         if prefilter(it["title"], it["desc"]):
             candidates.append(it)
         else:
-            seen.add(it["hash"])
+            mark_seen(it["hash"])
             n_prefilter_dropped += 1
             # Regex режет ДО DeepSeek — значит его ошибка не попадает ни в
             # candidates, ни в history["skipped"] (та ветка — только отказы модели).
@@ -678,7 +690,7 @@ def main():
         if v is None:
             continue
         n_screened += 1
-        seen.add(c["hash"])
+        mark_seen(c["hash"])
         if v.get("skip"):
             reason = (v.get("signal") or "").strip() or "?"
             # Отказ модели — тоже решение. Не залогируешь — не узнаешь,
@@ -740,7 +752,7 @@ def main():
         # утренний прогон обнаружит его заново и доложит.
         print(f"Quiet hours ({now_msk:%H:%M} MSK) - queued {len(queue)}, not sending.")
         state["pending"] = queue
-        state["seen"] = list(seen)
+        state["seen"] = seen_order
         save_state(state)
         save_history(history)
         return 0
@@ -777,7 +789,7 @@ def main():
     if not queue:
         print("Nothing to send.")
         state["pending"] = []
-        state["seen"] = list(seen)
+        state["seen"] = seen_order
         save_state(state)
         save_history(history)
         return 0
@@ -803,7 +815,7 @@ def main():
     print(f"Sent {len(queue)} item(s) ({highs} high), map size {len(state['msg_map'])}.")
 
     state["pending"] = []
-    state["seen"] = list(seen)
+    state["seen"] = seen_order
     save_state(state)
     save_history(history)
     return 0
