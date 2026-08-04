@@ -91,17 +91,9 @@
     "2ea23c5a9bde889054a1ebd4b0b9142a"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 1,
-  "last_run": "2026-08-04T10:15:34.619100+00:00",
+  "last_run_sent": 0,
+  "last_run": "2026-08-04T12:16:08.066708+00:00",
   "hits": [
-    {
-      "ts": "2026-07-28T12:09:48.975142+00:00",
-      "lead_id": "outreach_auto_uzairways",
-      "company": "Uzbekistan Airways",
-      "title": "Etihad Airways Expands Network with Uzbekistan Airways Codeshare - safariindia.com",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9zZGR0TlBuWWQ4U1l6TjFvSUpDWTVUNjh2RzlQZE9tT2JaNG9JT3pCN0xYTXowQ0ZSV3dVT09ZYUpid1BrUWZFbE5wazViY1llX2QtaDhjVGxKYTVoQnJnaUtBcWNyNGtsOVNGV3ZCVUJsdFdIREhZ?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-28T14:15:34.692288+00:00",
       "lead_id": "outreach_auto_seligdar",
