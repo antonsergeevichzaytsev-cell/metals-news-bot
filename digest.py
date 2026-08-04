@@ -32,6 +32,9 @@ MAX_ITEMS_PER_RUN = 12
 # Окно возраста 48ч при ~50 публикациях в день + отказы модели: 500 хэшей
 # покрывали окно впритык. 1500 — запас, файл всё равно копеечный.
 SEEN_KEEP = 1500
+# Сигнатуры заголовков для дедупа МЕЖДУ прогонами. 400 ~ трое суток выдачи
+# при окне возраста 48ч — с запасом.
+TITLE_SIGS_KEEP = 400
 PRIORITY_RANK = {"high": 0, "medium": 1, "low": 2}
 PRIORITY_EMOJI = {"high": "\U0001f534", "medium": "\U0001f7e1", "low": "\u26aa"}
 MAX_AGE_HOURS = 48
@@ -156,7 +159,9 @@ def save_history(history):
     cutoff = (datetime.now(timezone.utc) - timedelta(days=HISTORY_RETENTION_DAYS)).isoformat()
     history["items"] = [it for it in history.get("items", []) if it.get("ts", "") >= cutoff]
     # Hard cap to prevent runaway file size
-    history["items"] = history["items"][-300:]
+    # 7 дней x ~50 элементов = ~350. Кап 300 обрезал раньше заявленного
+    # срока хранения — retention и cap противоречили друг другу.
+    history["items"] = history["items"][-400:]
     with open(HISTORY_FILE, "w", encoding="utf-8") as f:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
@@ -271,6 +276,28 @@ def matches_keywords(text, patterns):
 
 def url_hash(url):
     return hashlib.md5(url.encode("utf-8")).hexdigest()
+
+
+# Кап MAX_ITEMS_PER_RUN упирается КАЖДЫЙ прогон (21 из 21 за 28.07-03.08).
+# До 04.08 кандидаты сортировались только по дате — значит модель всегда
+# платила за 12 самых свежих, а всё остальное не просматривалось вообще.
+# Орбита идёт первой по тому же принципу, что в filings.py: если бюджет
+# прогона кончится, он должен кончиться на общей макро-заметке, а не на
+# активе, который Антона реально касается.
+ORBIT_WORDS = [
+    r"nornickel", r"norilsk", r"rusal", r"polyus", r"\bUMMC\b", r"\bERG\b",
+    r"kazatomprom", r"kaz minerals", r"nordgold", r"polymetal",
+    r"almalyk", r"uzcopper", r"navoi",
+    r"uzbek\w*", r"kazakh\w*", r"kyrgyz\w*", r"tajik\w*", r"turkmen\w*",
+    r"mongolia\w*", r"armenia\w*", r"azerbaijan\w*", r"georgia\w*",
+    r"russia\w*", r"siberia\w*", r"\bural\w*", r"central asia\w*",
+    r"\bCIS\b", r"caspian", r"oyu tolgoi", r"tashkent", r"almaty", r"astana",
+]
+ORBIT_RE = [re.compile(w, re.IGNORECASE) for w in ORBIT_WORDS]
+
+
+def in_orbit(text):
+    return any(p.search(text or "") for p in ORBIT_RE)
 
 
 TITLE_STOPWORDS = {
@@ -449,18 +476,35 @@ def main():
         by_hash.setdefault(c["hash"], c)
     candidates = list(by_hash.values())
 
-    candidates.sort(key=lambda x: x["pubdate"] or datetime.now(timezone.utc), reverse=True)
+    # Орбита первой, внутри группы — по свежести. Кап бьёт по хвосту,
+    # а хвост теперь — не "всё, что старше", а "всё, что дальше от Антона".
+    candidates.sort(key=lambda x: (
+        not in_orbit(f"{x['title']} {x['desc']}"),
+        -((x["pubdate"] or datetime.now(timezone.utc)).timestamp()),
+    ))
 
-    # Drop near-duplicate stories (same event from different sources)
+    # Near-dup работал только ВНУТРИ прогона: одна и та же история от двух
+    # источников в разные прогоны имеет разные ссылки -> разные хэши ->
+    # дедуп по хэшу её не видит. Факт за 28.07-03.08: 9 таких пар
+    # (First Quantum, Vale Q2, Vedanta, India gold tariff и др.).
+    # Сигнатуры заголовков теперь переживают прогон.
     deduped = []
-    kept_sigs = []
+    kept_sigs = [set(x) for x in state.get("title_sigs", [])]
+    n_cross_dup = 0
     for c in candidates:
         sig = title_tokens(c["title"])
         if is_near_duplicate(sig, kept_sigs):
+            n_cross_dup += 1
+            seen[c["hash"]] = None  # чтобы не пересчитывать её каждый прогон
             continue
         deduped.append(c)
         kept_sigs.append(sig)
     candidates = deduped
+    # Держим только последние TITLE_SIGS_KEEP — окно шире возраста заметки,
+    # но не растёт бесконечно.
+    state["title_sigs"] = [sorted(x) for x in kept_sigs[-TITLE_SIGS_KEEP:]]
+    if n_cross_dup:
+        print(f"Near-duplicates dropped: {n_cross_dup}")
 
     print(f"Candidates after filter: {len(candidates)}")
 
@@ -517,6 +561,7 @@ def main():
         "feeds_broken": len(broken),
         "broken": broken,
         "seen_size": len(seen),
+        "cross_dups": n_cross_dup,
     }
     state["feed_health"] = health
     if broken:
