@@ -1,48 +1,121 @@
-# Metals & Mining digest bot
+# metals-news-bot
 
-Дважды в день (Пн–Пт, 08:00 и 18:00 MSK) GitHub Actions запускает `digest.py`,
-который тянет новости из Google News RSS, фильтрует по ключевикам, прогоняет
-через DeepSeek для строки "почему важно", и постит дайджест в Telegram.
+Два независимых бота в одном репо, оба пишут в Telegram @antonmining_bot.
+Pure Python stdlib, без pip-зависимостей. Хостинг — GitHub Actions, публичный репо.
 
-Стоимость: $0 за GitHub Actions (публичный репо), ~$0.02/мес за DeepSeek.
+| | `digest.py` | `filings.py` |
+|---|---|---|
+| Что ловит | новости отрасли (Google News RSS) | первичные корпоративные релизы (TMX Newsfile + GlobeNewswire) |
+| Зачем | лента для чтения | повод написать: что сломано + чем Антон закрывает |
+| Источников | 32 запроса (`feeds.txt`) | 11 лент (`filings_sources.txt`) |
+| Прогонов | 2×/день Пн–Пт | 5×/день Пн–Пт |
+| Состояние | `state.json`, `history.json` | `state_filings.json`, `filings_history.json` |
 
-## Стек
+Общий модуль `net.py` — retry/backoff для HTTP и IMAP.
 
-- `digest.py` — основной скрипт. Pure Python stdlib, никаких pip-зависимостей.
-- `feeds.txt` — 14 Google News RSS-запросов по темам.
-- `keywords.txt` — ~90 ключевых слов (metals, companies, geo, CapEx, LME).
-- `state.json` — последние 1000 GUIDs для дедупликации.
-- `.github/workflows/digest.yml` — расписание и orchestration.
+---
+
+## digest.py — новостной дайджест
+
+Прогоны: 08:00 и 18:00 MSK, Пн–Пт (`.github/workflows/digest.yml`, cron в UTC).
+
+Конвейер: 32 RSS-запроса → отсечка старше 48 ч (`MAX_AGE_HOURS`) → чёрный список
+источников (`BLOCKED_SOURCES` — msn, yahoo, seekingalpha, motley fool и прочий
+инвест-мусор) → ключевики (`keywords.txt`, ~90 слов) → дедуп по URL-хэшу →
+отсечка near-duplicate по пересечению токенов заголовка (Jaccard ≥ 0.5) →
+DeepSeek: `skip` / `why` / `priority` / `company` → сортировка по приоритету →
+Telegram.
+
+Выдача разделена на два сообщения: **🎯 Цели — в разработку** (только `high`,
+с полем `asset-to-hook`) и **🧠 Контекст** (остальное). Кап — 12 элементов
+за прогон (`MAX_ITEMS_PER_RUN`), бюджет сообщения 3900 символов, длинное режется
+на части.
+
+`priority` и `company` пишутся в `history.json` вместе с элементом, чтобы
+пятничный F-блок не ранжировал те же новости заново.
+
+## filings.py — вахта по релизам
+
+Прогоны: 08:30, 16:00, 19:00, 22:00, 01:00 MSK, Пн–Пт.
+Ночной улов (23:00–08:00 MSK) копится в `pending` и уходит утром.
+
+Конвейер: 11 лент → дедуп → отсечка старше 36 ч → **бесплатный regex-префильтр**
+→ сортировка (орбита первой) → DeepSeek со стадийным гейтом → Telegram,
+одно сообщение на элемент.
+
+**Префильтр** (`SIGNAL_WORDS` / `NOISE_WORDS`): SIGNAL проверяется первым
+и по title+desc, NOISE — только по заголовку. Смысл порядка: релиз
+с feasibility / CapEx / металлургией переживает шумовые слова. Режет
+~26% потока до платного вызова: размещения, назначения, AGM, конференции,
+разведочные пробы.
+
+**Стадийный гейт** — главное в системном промпте. Каждый навык продаётся
+только на своей стадии: началась стройка — FEL и оценка затрат уже позади,
+предлагать их нельзя. В промпте лежит контрастный пример (неправильный ответ
+рядом с правильным). Стадия: exploration / study / financing / construction /
+commissioning / operating / care_maintenance.
+
+`low` в Telegram не уходит — только в `history`, чтобы было на чём калибровать порог.
+
+## Принцип: слепота хуже поломки
+
+Заложено на всех этажах, потому что тихий отказ выглядит как отсутствие новостей:
+
+- `fetch()` возвращает **причину** отказа, не `None` — плюс отдельный статус
+  `0 items` на случай, когда лента ответила 200, но сменила формат;
+- алерт по ленте — **по фронту** статуса и только после
+  `FEED_STATUS_CONFIRM_RUNS = 2` прогонов подряд, чтобы однопрогонный
+  timeout не ныл пять раз в день;
+- отказы модели пишутся в `filings_history["skipped"]` с причиной и флагом
+  `orbit` — иначе не узнать, режет она мусор или целевую географию;
+- срабатывания regex-префильтра сэмплируются (каждое 5-е)
+  в `prefilter_dropped` — это слепая зона до модели;
+- цифры прогона — в `state_filings["last_run"]`: raw / fresh / candidates /
+  screened / skipped / kept / cap_hit / feeds_broken. Лог Actions без токена
+  не читается, а это читается через raw.githubusercontent.
+
+## Почему бот себя не правит
+
+Решение от 17.07.26, не пересматривать без цифр. Причины: выборка меток
+слишком мала для правки промпта (подгонка под шум); суждение остаётся
+за человеком; самоправящийся фильтр может тихо съехать в «резать всё»
+при зелёном прогоне. Метки — сырьё для человека, который крутит промпт осознанно.
 
 ## Setup
 
-### 1. Secrets
+Secrets (Settings → Secrets and variables → Actions):
+`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `DEEPSEEK_API_KEY`.
 
-Settings → Secrets and variables → Actions → New repository secret:
-- `TELEGRAM_BOT_TOKEN` — токен от @BotFather для @antonmining_bot
-- `TELEGRAM_CHAT_ID` — `849676420`
-- `DEEPSEEK_API_KEY` — ключ с https://platform.deepseek.com
+Ручной запуск: Actions → нужный workflow → Run workflow.
 
-### 2. Запустить вручную
-
-Actions → "Metals & Mining digest" → Run workflow.
-
-## Как работает фильтрация
-
-1. **Источники.** 14 Google News RSS-запросов по темам (aluminium, copper, nickel, Russia/CIS, M&A, lithium, тарифы).
-2. **Возраст.** Откидываются новости старше 24 часов.
-3. **Ключевики.** Substring match, case-insensitive.
-4. **Дедуп.** Не повторяется то, что уже было в `state.json`.
-5. **AI-фильтр.** DeepSeek выносит SKIP для нерелевантных (политика без металлов, крипта, общий бизнес).
-6. **Лимит.** Максимум 10 новостей за запуск.
-
-Без DEEPSEEK_API_KEY — работает без AI, просто заголовки.
+Оба workflow сидят в одной concurrency-группе `repo-writes` с `queue: max` —
+без этого GitHub отменяет все pending-прогоны в группе кроме последнего
+(найдено 21.07: так потерялись 4 из 8 ручных dispatch). Пуш состояния —
+с rebase и повторами: 5 попыток у digest, 8 у filings.
 
 ## Тюнинг
 
-- **Темы:** `feeds.txt`. Google News RSS: `https://news.google.com/rss/search?q=ЗАПРОС+when:2d&hl=en-US&gl=US&ceid=US:en`
-- **Ключевики:** `keywords.txt`.
-- **Расписание:** cron в `.github/workflows/digest.yml` (UTC).
-- **Кап:** `MAX_ITEMS_PER_RUN` в `digest.py`.
-- **Возраст:** `MAX_AGE_HOURS` в `digest.py`.
-- **AI-промпт:** `DEEPSEEK_SYSTEM` и `DEEPSEEK_USER_TMPL` в `digest.py`.
+| Что | Где |
+|---|---|
+| Темы новостей | `feeds.txt` |
+| Ключевики | `keywords.txt` |
+| Ленты релизов | `filings_sources.txt` |
+| Шум/сигнал префильтра | `SIGNAL_WORDS`, `NOISE_WORDS` в `filings.py` |
+| Промпт новостей | `SYS_PROMPT` в `digest.py` |
+| Промпт релизов | `SYS_PROMPT` в `filings.py` |
+| Кап за прогон | `MAX_ITEMS_PER_RUN` (12 / 40) |
+| Возраст отсечки | `MAX_AGE_HOURS` (48 / 36) |
+| Тихие часы | `QUIET_START_MSK` / `QUIET_END_MSK` в `filings.py` |
+| Расписание | cron в `.github/workflows/*.yml` (UTC) |
+
+## Известное состояние на 04.08.2026
+
+- **Метки не собираются.** Механизм разметки прошёл апгрейд до inline-кнопок
+  (один тап вместо reply), `msg_map` наполняется, `tg_offset` живой —
+  `labels` по-прежнему **0**. Проблема не в удобстве вызова: цикл требует
+  остановиться и вынести суждение в момент, который выбирает бот.
+  Решение о судьбе механизма не принято.
+- **Выход filings близок к нулю.** 39 элементов за всё время, последний 31.07.
+  Бот строился как вход для direct-трека; трек закрыт — потребителя на выходе нет.
+- **Шкала приоритетов в digest перекошена.** На 252 элементах: high 62 /
+  medium 178 / low 12. Критерий `medium` ужесточён 04.08, эффект не измерен.
