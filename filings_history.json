@@ -627,13 +627,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-28T20:13:43.420209+00:00",
-      "title": "Nexa Reports 2026 First Half Exploration Results",
-      "link": "https://www.newsfilecorp.com/release/306958/Nexa-Reports-2026-First-Half-Exploration-Results",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-28T22:00:51.471254+00:00",
       "title": "Centerra Gold Reports Second Quarter 2026 Results; Strong Operational Performance Drives Increased Öksüt Production Guidance; The ",
       "link": "https://www.globenewswire.com/news-release/2026/07/28/3334802/0/en/Centerra-Gold-Reports-Second-Quarter-2026-Results-Strong-Operational-Performance-Drives-Increased-%C3%96ks%C3%BCt-Production-Guidance-The-Company-Expands-Share-Buybacks-to-200-Million-in-202.html",
@@ -1482,6 +1475,12 @@
       "ts": "2026-08-04T15:29:40.999172+00:00",
       "title": "Montero Completes Geological Logging of 625.25-Metre Drillhole at Elvira and Reports Pyrite-Bearing High-Sulphidation Alteration",
       "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T20:21:39.244492+00:00",
+      "title": "Slave Lake Zinc Announces Name Change and Private Placement Offering",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
