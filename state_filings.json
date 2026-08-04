@@ -458,7 +458,29 @@
     "76e7466d815b670a71252bde49f4d0fe",
     "5ef072d720ed2e7c84a0f3cb51f6d315",
     "a7e5ebf2ee89932af7c48ca764f5c0b8",
-    "066a4969493ce5cb0e432eab5c442535"
+    "066a4969493ce5cb0e432eab5c442535",
+    "52978e87cae498b375ccfb20af6fa90c",
+    "188955b57f045800e5cb3f16e616345c",
+    "6a85d70f7492aa507780f6891aca3c49",
+    "7ac1d34602548db7ab21009af3cf66b3",
+    "666db7a746e110324994cdccf9e1c232",
+    "2da33bd3ca6a80eb53c3dc2b8b13c557",
+    "f65fbdb62f833106be24776de0fe09e7",
+    "ee32f2cff842bde886fd5d7300340d1d",
+    "e90ca18bd591ef97561faca3495421d5",
+    "61f13cf97753699428131d461de155e1",
+    "7571ed434b261bdcd9e1c3f23f48bd80",
+    "985f31c8c8dbcd341f300fedc7d9388b",
+    "e9e124fec267b2e4527a382516c566f0",
+    "e5f7b2943dfabc7191d945e4c1845f83",
+    "e8705ab58eab3783af1e01831b5b9114",
+    "aab93f0bc96f2b0052ea860967b4198f",
+    "e92f47219253e9c9b444cf2f10dd2369",
+    "140d029888a81a0c680c65ea4b202038",
+    "2d36f873dd2c4ec3303b3bc8f13f4356",
+    "dc921ef7357d30c52a7e63ff05ecfb39",
+    "e09c45057f56b4470be4575aa7e2111a",
+    "1c937749999a216ce40d19be6becd7a1"
   ],
   "pending": [],
   "feed_health": {
@@ -475,14 +497,14 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-04T07:58:17.328898+00:00",
+    "ts": "2026-08-04T13:01:03.175382+00:00",
     "raw": 157,
-    "fresh": 2,
-    "candidates": 2,
-    "prefiltered_out": 0,
-    "screened": 2,
-    "skipped_by_model": 2,
-    "kept": 0,
+    "fresh": 22,
+    "candidates": 18,
+    "prefiltered_out": 4,
+    "screened": 18,
+    "skipped_by_model": 16,
+    "kept": 1,
     "cap": 40,
     "cap_hit": false,
     "feeds_broken": 0,
@@ -530,63 +552,69 @@
       "company": "Lake Victoria Gold",
       "priority": "medium",
       "stage": "construction"
+    },
+    "755": {
+      "link": "https://www.newsfilecorp.com/release/307689/Canadian-Copper-Inc.-Completes-Caribou-Complex-Transition",
+      "company": "Canadian Copper Inc.",
+      "priority": "medium",
+      "stage": "operating"
     }
   },
   "tg_offset": 96015226,
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 49,
+      "streak": 50,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 49,
+      "streak": 50,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 49,
+      "streak": 50,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 49,
+      "streak": 50,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 49,
+      "streak": 50,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 49,
+      "streak": 50,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "ok",
-      "streak": 49,
+      "streak": 50,
       "reported": "ok"
     },
     "GNW:Gold Mining": {
       "status": "ok",
-      "streak": 14,
+      "streak": 15,
       "reported": "ok"
     },
     "GNW:Nonferrous Metals": {
       "status": "ok",
-      "streak": 48,
+      "streak": 49,
       "reported": "ok"
     },
     "GNW:Aluminum": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     },
     "GNW:Copper": {
       "status": "ok",
-      "streak": 49,
+      "streak": 50,
       "reported": "ok"
     }
   }

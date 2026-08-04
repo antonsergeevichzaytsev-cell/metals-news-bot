@@ -505,86 +505,55 @@
       "hook": "Контроль графика стройки: не дать землеотводу съесть время до первого золота.",
       "priority": "medium",
       "ts": "2026-07-31T08:14:15.094971+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307865/Lion-Copper-Gold-Announces-Maiden-Mineral-Resource-Estimate-for-the-Bear-Deposit",
+      "title": "Lion Copper & Gold Announces Maiden Mineral Resource Estimate for the Bear Deposit",
+      "stage": "study",
+      "signal": "первый MRE",
+      "company": "Lion Copper & Gold Corp.",
+      "project": "Bear Deposit, Yerington Copper Project",
+      "region": "USA",
+      "why": "Maiden MRE с 6.71 млрд фунтов Cu, но актив вне целевого региона.",
+      "hook": "Оценка ресурса требует проверки металлургии и CapEx для FEL.",
+      "priority": "low",
+      "facts": {
+        "tonnage": [
+          {
+            "value": 6710000000.0,
+            "unit": "pounds"
+          },
+          {
+            "value": 8770000000.0,
+            "unit": "pounds"
+          }
+        ],
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-04T13:01:03.175382+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307689/Canadian-Copper-Inc.-Completes-Caribou-Complex-Transition",
+      "title": "Canadian Copper Inc. Completes Caribou Complex Transition",
+      "stage": "operating",
+      "signal": "переход актива",
+      "company": "Canadian Copper Inc.",
+      "project": "Caribou Complex",
+      "region": "Canada",
+      "why": "Компания приняла управление и эксплуатацию комплекса Caribou, что требует операционного контроля.",
+      "hook": "Контроль выхода на проектную мощность и производительность труда на новом активе.",
+      "priority": "medium",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-04T13:01:03.175382+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Xali Gold Continues to Demonstrate the Scale and Grade of Gold Mineralization at Pico Machay",
-      "link": "https://www.globenewswire.com/news-release/2026/07/28/3334121/0/en/Xali-Gold-Continues-to-Demonstrate-the-Scale-and-Grade-of-Gold-Mineralization-at-Pico-Machay.html",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Scandium Canada : l'étude EY-Parthenon mise à jour projette un triplement de la demande mondiale de scandium d'ici 2035",
-      "link": "https://www.newsfilecorp.com/release/306878/Scandium-Canada-ltude-EYParthenon-mise-jour-projette-un-triplement-de-la-demande-mondiale-de-scandium-dici-2035",
-      "reason": "исследование рынка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Stakeholder Accelerates the Loki Copper Corridor: 3D Geophysical Inversions Nearing Completion Ahead of High-Impact 1,250-Sample S",
-      "link": "https://www.newsfilecorp.com/release/306668/Stakeholder-Accelerates-the-Loki-Copper-Corridor-3D-Geophysical-Inversions-Nearing-Completion-Ahead-of-HighImpact-1250Sample-Soil-and-Prospecting-Programs-Across-Loki-West-and-Newly-Staked-Loki-East",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Scandium Canada: Updated EY-Parthenon Study Projects Global Scandium Demand to Triple By 2035",
-      "link": "https://www.newsfilecorp.com/release/306880/Scandium-Canada-Updated-EYParthenon-Study-Projects-Global-Scandium-Demand-to-Triple-By-2035",
-      "reason": "рыночное исследование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Noble Plains Uranium Commences Confirmation Drill Program at Shirley Central Project",
-      "link": "https://www.newsfilecorp.com/release/306868/Noble-Plains-Uranium-Commences-Confirmation-Drill-Program-at-Shirley-Central-Project",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Minaurum Engages Dr. Paula Montoya and Launches Down-Hole Imagery Program to Enhance Geological Modeling of the Alamos Silver Proj",
-      "link": "https://www.newsfilecorp.com/release/304865/Minaurum-Engages-Dr.-Paula-Montoya-and-Launches-DownHole-Imagery-Program-to-Enhance-Geological-Modeling-of-the-Alamos-Silver-Project",
-      "reason": "геологическое моделирование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Sitka Gold to Accelerate Acquisition of 100% Interest in the Clear Creek Property at Its RC Gold Project, Yukon",
-      "link": "https://www.newsfilecorp.com/release/306854/Sitka-Gold-to-Accelerate-Acquisition-of-100-Interest-in-the-Clear-Creek-Property-at-Its-RC-Gold-Project-Yukon",
-      "reason": "приобретение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Nations Royalty Reports Fiscal 2026 Year-End Results and Provides Portfolio Update",
-      "link": "https://www.newsfilecorp.com/release/306845/Nations-Royalty-Reports-Fiscal-2026-YearEnd-Results-and-Provides-Portfolio-Update",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Glenstar Provides Review and Update of the Wildhorse Project Following Completion of Phase 1 Drill Program",
-      "link": "https://www.newsfilecorp.com/release/306881/Glenstar-Provides-Review-and-Update-of-the-Wildhorse-Project-Following-Completion-of-Phase-1-Drill-Program",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "Transition Metals Commences 2026 Exploration Program at Pike Warden Epithermal Gold-Silver and Porphyry Copper Project, Yukon",
-      "link": "https://www.newsfilecorp.com/release/306905/Transition-Metals-Commences-2026-Exploration-Program-at-Pike-Warden-Epithermal-GoldSilver-and-Porphyry-Copper-Project-Yukon",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-28T13:01:05.044349+00:00",
-      "title": "SAGA Metals Reports Assays from R-0055 to R-0057 with Intercepts Including 53.72% Fe2O3, 8.24% TiO2, 0.377% V2O5 from 2026 Drillin",
-      "link": "https://www.newsfilecorp.com/release/306862/SAGA-Metals-Reports-Assays-from-R0055-to-R0057-with-Intercepts-Including-53.72-Fe2O3-8.24-TiO2-0.377-V2O5-from-2026-Drilling-at-Radar-Critical-Minerals-Project-in-Labrador",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
     {
       "ts": "2026-07-28T17:18:59.235061+00:00",
       "title": "Awalé Closes $19 Million Strategic Investment by Predictive Discovery and Fortuna Mining",
@@ -1207,16 +1176,122 @@
       "link": "https://www.newsfilecorp.com/release/307872/Allied-Critical-Metals-Announces-Update-on-the-Second-Tranche-of-Its-U.S.25-Million-Equity-Financing",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Golden Age Enters into Definitive Agreement to Acquire Australian Uranium Exploration Portfolio",
+      "link": "https://www.newsfilecorp.com/release/307886/Golden-Age-Enters-into-Definitive-Agreement-to-Acquire-Australian-Uranium-Exploration-Portfolio",
+      "reason": "приобретение портфеля",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Puma's Subsidiary Murray Brook Minerals Acquires Mount McInnes Project",
+      "link": "https://www.newsfilecorp.com/release/307859/Pumas-Subsidiary-Murray-Brook-Minerals-Acquires-Mount-McInnes-Project",
+      "reason": "приобретение проекта",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Tiger Gold Announces Vertical Amalgamation with Wholly-Owned Subsidiary",
+      "link": "https://www.newsfilecorp.com/release/307881/Tiger-Gold-Announces-Vertical-Amalgamation-with-WhollyOwned-Subsidiary",
+      "reason": "корпоративная реструктуризация",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Cosa Announces Results of Partner Funded Airborne Radiometric Survey at the Aurora Uranium Project, Athabasca Basin, Saskatchewan",
+      "link": "https://www.newsfilecorp.com/release/307861/Cosa-Announces-Results-of-Partner-Funded-Airborne-Radiometric-Survey-at-the-Aurora-Uranium-Project-Athabasca-Basin-Saskatchewan",
+      "reason": "аэрогеофизика",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "GMG's New Website and Revitalised Branding",
+      "link": "https://www.newsfilecorp.com/release/307862/GMGs-New-Website-and-Revitalised-Branding",
+      "reason": "ребрендинг сайта",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Lithium Africa Announces James Chabata as Chief Financial Officer",
+      "link": "https://www.newsfilecorp.com/release/307880/Lithium-Africa-Announces-James-Chabata-as-Chief-Financial-Officer",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Ridgeline Minerals Converts Exploration Success into All-Cash C$32.7 Million Sale of Carlin & Cortez Trend Gold Portfolio to Nevad",
+      "link": "https://www.newsfilecorp.com/release/307876/Ridgeline-Minerals-Converts-Exploration-Success-into-AllCash-C32.7-Million-Sale-of-Carlin-Cortez-Trend-Gold-Portfolio-to-Nevada-Gold-Mines",
+      "reason": "продажа активов",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "GreenLight Metals Executes Long-Form Documentation with Barrick for Staged Earn-In Joint Venture at Kalium Canyon Project in Nevad",
+      "link": "https://www.newsfilecorp.com/release/307852/GreenLight-Metals-Executes-LongForm-Documentation-with-Barrick-for-Staged-EarnIn-Joint-Venture-at-Kalium-Canyon-Project-in-Nevadas-Walker-Lane",
+      "reason": "опцион на разведку",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Great Pacific Gold Provides Management and Board Update",
+      "link": "https://www.newsfilecorp.com/release/307493/Great-Pacific-Gold-Provides-Management-and-Board-Update",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Metatek Awarded Department of Energy Contract in the Philippines",
+      "link": "https://www.newsfilecorp.com/release/307901/Metatek-Awarded-Department-of-Energy-Contract-in-the-Philippines",
+      "reason": "контракт на съёмку",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Nuvau Minerals renforce son conseil d'administration et son équipe technique avec la nomination de David Palmer au poste d'adminis",
+      "link": "https://www.newsfilecorp.com/release/307832/Nuvau-Minerals-renforce-son-conseil-dadministration-et-son-quipe-technique-avec-la-nomination-de-David-Palmer-au-poste-dadministrateur-et-de-Michael-Sutton-titre-de-conseiller-technique-auprs-du-conseil-dadministration",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "TriStar Gold Reaffirms Commitment to Indigenous Rights",
+      "link": "https://www.newsfilecorp.com/release/307860/TriStar-Gold-Reaffirms-Commitment-to-Indigenous-Rights",
+      "reason": "корпоративное заявление",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "West Point Gold Appoints Anthony Paterson as Executive Chairman",
+      "link": "https://www.newsfilecorp.com/release/307630/West-Point-Gold-Appoints-Anthony-Paterson-as-Executive-Chairman",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Scotia Metals Announces Resumption of Trading on the CSE",
+      "link": "https://www.newsfilecorp.com/release/307585/Scotia-Metals-Announces-Resumption-of-Trading-on-the-CSE",
+      "reason": "возобновление торгов",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Critical One Energy Engages Micon International for Howells Lake Antimony-Gold Project Resource Definition",
+      "link": "https://www.newsfilecorp.com/release/307583/Critical-One-Energy-Engages-Micon-International-for-Howells-Lake-AntimonyGold-Project-Resource-Definition",
+      "reason": "технический обзор",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.175382+00:00",
+      "title": "Buenos Aires and Mendoza Take Center Stage as Argentina Prepares to Host the 5th Argentina Critical Minerals Summit",
+      "link": "https://www.newsfilecorp.com/release/307900/Buenos-Aires-and-Mendoza-Take-Center-Stage-as-Argentina-Prepares-to-Host-the-5th-Argentina-Critical-Minerals-Summit",
+      "reason": "конференция",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-28T13:01:05.038260+00:00",
-      "title": "RZOLV Technologies Achieves DTC Eligibility, Enabling Electronic Settlement of Trades in the United States",
-      "matched_noise_word": "\\bDTC\\b eligib\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-07-28T15:27:21.706674+00:00",
       "title": "Mining Americas Schedules Q2 2026 Results and Conference Call",
@@ -1329,6 +1404,12 @@
       "ts": "2026-08-03T20:24:17.413086+00:00",
       "title": "Fairchild Gold Announces Update to Private Placement Financing and Early Warning Report",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T13:01:03.163288+00:00",
+      "title": "NexGen to Host Q2 2026 Conference Call",
+      "matched_noise_word": "conference",
       "orbit": false
     }
   ]
