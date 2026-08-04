@@ -231,7 +231,11 @@ def render(candidate, angle, post_text):
 
 def main():
     state = load_state()
-    posted = set(state.get("posted_hashes", []))
+    # dict, а не set: state[...] обрезается срезом [-N:], а у множества
+    # порядок произвольный — обрезка выбрасывала бы случайные записи
+    # вместо самых старых. В digest.py этот же дефект дал 5 повторных
+    # публикаций за неделю (28.07-03.08). Мембершип-тест не меняется.
+    posted = dict.fromkeys(state.get("posted_hashes", []))
 
     candidates = gather_candidates()
     print(f"Gathered {len(candidates)} candidate(s): "
@@ -295,7 +299,7 @@ def main():
         return 1
 
     tg_send(render(chosen, angle, post_text))
-    posted.add(h)
+    posted[h] = None
     state["posted_hashes"] = list(posted)
     save_state(state)
     print(f"Sent post idea from {chosen['source']}: {chosen['title'][:60]}")
