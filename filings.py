@@ -146,6 +146,12 @@ ORBIT_WORDS = [
     r"almaty", r"astana", r"tashkent", r"ulaanbaatar", r"bishkek",
     r"oyu tolgoi", r"steppe gold", r"erdene", r"bayan khundii", r"zuun mod",
     r"kazatomprom",
+    # Текущий рабочий контур (с 08.2026): медь и техногенное сырьё Узбекистана.
+    # Внимание: АГМК здесь = АЛМАЛЫКСКИЙ ГМК (Узбекистан), не Амурский ГМК
+    # (Полиметалл, РФ). Обе аббревиатуры латиницей дают "AGMK" — в англоязычных
+    # вайрах различать по Almalyk / Kalmakyr / Angren, а не по аббревиатуре.
+    r"almalyk\w*", r"uzcopper", r"navoi\w*", r"kalmakyr", r"angren",
+    r"muruntau", r"\bAMMC\b",
     r"\bCIS\b", r"\bERG\b", r"nornickel", r"norilsk", r"rusal", r"polyus",
 ]
 
@@ -379,7 +385,9 @@ SYS_PROMPT = (
     "\n\n"
     "\"priority\": \"high\" = valid stage-matched hook AND the asset is in CIS / Central Asia / Mongolia / Caucasus, "
     "OR the company is in his orbit (Nornickel, RUSAL, Polyus, UMMC, ERG, Kazatomprom, KAZ Minerals, Steppe Gold, "
-    "Erdene). Outbound target. "
+    "Erdene, Almalyk MMC / AGMK, UZCOPPER, Navoi MMC). Note: he now works owner-side in Uzbekistan on copper and "
+    "the reprocessing of off-balance ore and tailings, so Uzbek and Central Asian copper, tailings retreatment "
+    "and technogenic-feed projects are squarely in his orbit. Outbound target. "
     "\"medium\" = strong stage-matched signal (CapEx overrun, ramp-up failure, EPC dispute, FS with a CapEx number) "
     "but outside that geography. "
     "\"low\" = substantive but not actionable for him."
