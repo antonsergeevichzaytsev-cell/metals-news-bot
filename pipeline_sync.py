@@ -387,7 +387,7 @@ def process_sent(pipeline, msgs, seen):
         rcpts = [a for a in recipients_of(msg) if is_trackable_recipient(a, own_domain)]
         if not rcpts:
             continue
-        seen.add(mid)
+        seen[mid] = None
 
         done_domains = set()
         for addr in rcpts:
@@ -780,7 +780,11 @@ def tg_send(text):
 def main():
     pipeline = load_pipeline()
     state = load_state()
-    seen = set(state["seen"])
+    # dict, а не set: state[...] обрезается срезом [-N:], а у множества
+    # порядок произвольный — обрезка выбрасывала бы случайные записи
+    # вместо самых старых. В digest.py этот же дефект дал 5 повторных
+    # публикаций за неделю (28.07-03.08). Мембершип-тест не меняется.
+    seen = dict.fromkeys(state["seen"])
     seed_platform_baseline(state)
 
     # Снимок won ДО обработки: чтобы после увидеть, какие won — новые,
@@ -825,7 +829,7 @@ def main():
         mid = msg_id_hash(msg)
         if mid in seen:
             continue
-        seen.add(mid)
+        seen[mid] = None
         subject = decode_subject(msg.get("Subject", ""))
 
         if is_auto_notification(sender_email):
