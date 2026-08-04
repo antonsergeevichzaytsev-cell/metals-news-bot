@@ -84,6 +84,16 @@ SOURCE_LABEL_TO_DOMAIN = {
 }
 
 
+def feed_name(url):
+    """Короткое имя запроса для отчёта: сам поисковый запрос из RSS-URL."""
+    try:
+        q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query).get("q", [""])[0]
+        q = re.sub(r"\s*when:\d+[dh]\s*", "", q).strip()
+        return q[:40] if q else url[:40]
+    except Exception:
+        return url[:40]
+
+
 def load_feeds():
     feeds = []
     with open(FEEDS_FILE, encoding="utf-8") as f:
@@ -117,7 +127,12 @@ def load_state():
 
 
 def save_state(state):
-    state["seen"] = state["seen"][-500:]
+    # dict.fromkeys — дедуп С СОХРАНЕНИЕМ ПОРЯДКА. Раньше здесь резался
+    # список, собранный из set() — а set теряет порядок вставки, поэтому
+    # срез [-500:] выбрасывал СЛУЧАЙНЫЕ хэши, включая только что
+    # добавленные. Уже отправленная новость могла вылететь из памяти
+    # и уйти в Telegram повторно (окно MAX_AGE_HOURS = 48 ч).
+    state["seen"] = list(dict.fromkeys(state.get("seen", [])))[-500:]
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
 
@@ -174,13 +189,24 @@ def is_blocked(pub_label, domain):
 # --- Fetch & parse ----------------------------------------------------------
 
 def fetch_feed(url, timeout=20):
+    """Возвращает (text, status). status == "ok" либо причина отказа.
+
+    Молчаливый None недопустим: запрос Google News, который тихо умер,
+    выглядит ровно как запрос без новостей — тишина и зелёный прогон.
+    Тот же принцип уже работает в filings.py; здесь лент втрое больше.
+    """
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with net.urlopen_retry(req, timeout=timeout) as r:
-            return r.read().decode("utf-8", errors="replace")
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
-        print(f"  ! fetch error: {e}", file=sys.stderr)
-        return None
+            return r.read().decode("utf-8", errors="replace"), "ok"
+    except urllib.error.HTTPError as e:
+        return None, f"HTTP {e.code}"
+    except urllib.error.URLError as e:
+        return None, f"URL error: {e.reason}"
+    except TimeoutError:
+        return None, "timeout"
+    except Exception as e:
+        return None, f"{type(e).__name__}: {e}"
 
 
 def parse_pubdate(s):
@@ -374,18 +400,32 @@ def main():
     keywords = load_keywords()
     state = load_state()
     history = load_history()
-    seen = set(state.get("seen", []))
+    seen_order = list(state.get("seen", []))   # порядок для вытеснения
+    seen = set(seen_order)                     # множество для проверки
+
+    def mark_seen(h):
+        if h not in seen:
+            seen.add(h)
+            seen_order.append(h)
 
     print(f"Feeds: {len(feeds)}, keywords: {len(keywords)}, seen: {len(seen)}, history: {len(history.get('items', []))}")
 
     candidates = []
+    health = {}
+    n_raw = 0
     for url in feeds:
-        print(f"- {url[:80]}...")
-        xml = fetch_feed(url)
-        if not xml:
+        name = feed_name(url)
+        xml, status = fetch_feed(url)
+        if xml is None:
+            health[name] = status
+            print(f"- {name}: {status}")
             continue
         items = parse_feed(xml)
-        print(f"  parsed: {len(items)}")
+        # Ответила 200, но 0 элементов — тоже поломка (сменился формат
+        # или запрос перестал что-либо находить), а не "новостей нет".
+        health[name] = "ok" if items else "0 items"
+        n_raw += len(items)
+        print(f"- {name}: {status}, parsed {len(items)}")
         for it in items:
             h = url_hash(it["link"])
             if h in seen:
@@ -428,13 +468,13 @@ def main():
         verdict = deepseek_enrich(c["title"], c["desc"], c["domain"])
         if verdict.get("skip"):
             print(f"  . skip: {c['title'][:80]}")
-            seen.add(c["hash"])
+            mark_seen(c["hash"])
             continue
         c["why"] = (verdict.get("why") or "").strip()
         c["priority"] = (verdict.get("priority") or "low").lower()
         c["company"] = (verdict.get("company") or "").strip()
         enriched.append(c)
-        seen.add(c["hash"])
+        mark_seen(c["hash"])
         # Append to history for F-block (CEO quote of the week)
         # priority и company уже посчитаны DeepSeek выше. Не сохранить их —
         # значит выбросить оплаченную работу: пятничный F-блок гонял бы
@@ -452,9 +492,49 @@ def main():
 
     print(f"Enriched: {len(enriched)}")
 
+    broken = {k: v for k, v in health.items() if v != "ok"}
+    # Цифры прогона в state: лог Actions без токена не читается, а state
+    # читается через raw.githubusercontent откуда угодно. Видно и то,
+    # упёрся ли прогон в потолок MAX_ITEMS_PER_RUN.
+    state["last_run"] = {
+        "ts": now_iso,
+        "raw": n_raw,
+        "candidates": len(candidates),
+        "enriched": len(enriched),
+        "cap": MAX_ITEMS_PER_RUN,
+        "cap_hit": len(candidates) > MAX_ITEMS_PER_RUN,
+        "feeds_total": len(health),
+        "feeds_broken": len(broken),
+        "broken": broken,
+    }
+    print(f"last_run: {state['last_run']}")
+
+    # Докладываем по ФРОНТУ статуса, а не по уровню: сломанный запрос
+    # кричит один раз, а не дважды в день до скончания века.
+    prev = state.get("feed_health", {})
+    # Переход "неизвестно -> ok" не событие: иначе первый же прогон после
+    # выкатки отрапортует все 32 запроса разом.
+    changes = [(n, prev.get(n), s) for n, s in health.items()
+               if prev.get(n) != s and not (prev.get(n) is None and s == "ok")]
+    if changes:
+        lines = []
+        for name, was, now_s in changes:
+            if now_s == "ok":
+                lines.append(f"\u2705 <b>{esc(name)}</b> \u2014 \u043e\u0436\u0438\u043b (\u0431\u044b\u043b\u043e: {esc(was or '?')})")
+            else:
+                tail = " \u2014 \u0440\u0430\u043d\u044c\u0448\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u043b" if was == "ok" else ""
+                lines.append(f"\u26a0\ufe0f <b>{esc(name)}</b>: {esc(now_s)}{tail}")
+        print(f"Feed health changed: {changes}")
+        try:
+            tg_send("<b>\U0001f6e0 \u0417\u0430\u043f\u0440\u043e\u0441\u044b \u2014 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u0441\u0442\u0430\u0442\u0443\u0441\u0430</b>\n\n" + "\n".join(lines))
+            time.sleep(1.0)
+        except Exception as e:
+            print(f"  ! health alert failed: {e}", file=sys.stderr)
+    state["feed_health"] = health
+
     if not enriched:
         print("Nothing to send.")
-        state["seen"] = list(seen)
+        state["seen"] = seen_order
         save_state(state)
         save_history(history)
         return 0
@@ -515,7 +595,7 @@ def main():
 
     print(f"Sent {len(targets)} target(s) + {len(rest)} context item(s) in {sent_total} message(s).")
 
-    state["seen"] = list(seen)
+    state["seen"] = seen_order
     save_state(state)
     save_history(history)
     return 0
