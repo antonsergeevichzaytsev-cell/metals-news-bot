@@ -93,25 +93,9 @@
     "00449c1fffa3368a23b39259eed626a8"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 2,
-  "last_run": "2026-08-04T14:15:41.335996+00:00",
+  "last_run_sent": 0,
+  "last_run": "2026-08-04T16:23:52.786842+00:00",
   "hits": [
-    {
-      "ts": "2026-07-28T16:16:16.570003+00:00",
-      "lead_id": "outreach_auto_silvercorp",
-      "company": "Silvercorp Metals",
-      "title": "SVM|Silvercorp Metals Inc|Price:9.745|Chg%:+0.105 - TradingKey",
-      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1LM2RlRkY1Z1Uzdk51MW1OWXBsUTk4dUNsY0xKak01WHJoWUpEMnhlWjVWQUdYODNSMWttVE5VaU43NHF1UklwV3pqMHhHZ0xvSHR4MnU2emNrT2pyRUg5bkM0dDBqSnM?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-28T16:16:19.476627+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "Продукты Positive Technologies обеспечивают кибербезопасность «Селигдара» - TAdviser",
-      "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPWXNWczY5eE4tODEyZmhTX2t4cTRKSGVsWEJETU9nTS1PYmN2aEx4N3BzMGQ0MllsSzNpRllWV3ZCcVRqRE5ySE1UaEhiQTh3anJ3NEE4MnhzOEwyWjRod0RXRE5RUnBKOFlaMjNxQkZFN1hsMWdFOWhUbWJ0QzJLdm9jV3F0V09TbWl1TFNHMmlJX2dDTFVnZXhoeGVCNy10cHh6all1OURNYml4SkVhVmFxMUxBa3p1Rm9UWHRfalRIeDcwOW9BTXVGMk1uRDlTdEN0TXFjLVlVdm9fYmNCU20zWWNyQWphc1JFeno1ZmMzTFlJRGM2T3l4YUVCcV9IQUtGd3prTjU1MkVBQW54ZWNXWXdRZWphOUdPRElNdGh1Zw?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-29T10:15:37.718158+00:00",
       "lead_id": "outreach_auto_seligdar",
