@@ -473,7 +473,7 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-03T22:55:13.663710+00:00",
+    "ts": "2026-08-04T05:30:34.957960+00:00",
     "raw": 157,
     "fresh": 0,
     "candidates": 0,
@@ -483,7 +483,8 @@
     "kept": 0,
     "cap": 40,
     "cap_hit": false,
-    "feeds_broken": 0
+    "feeds_broken": 0,
+    "labels_collected": 0
   },
   "msg_map": {
     "382": {
@@ -533,57 +534,57 @@
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     },
     "GNW:Gold Mining": {
       "status": "ok",
-      "streak": 12,
+      "streak": 13,
       "reported": "ok"
     },
     "GNW:Nonferrous Metals": {
       "status": "ok",
-      "streak": 46,
+      "streak": 47,
       "reported": "ok"
     },
     "GNW:Aluminum": {
       "status": "ok",
-      "streak": 45,
+      "streak": 46,
       "reported": "ok"
     },
     "GNW:Copper": {
       "status": "ok",
-      "streak": 47,
+      "streak": 48,
       "reported": "ok"
     }
   }
