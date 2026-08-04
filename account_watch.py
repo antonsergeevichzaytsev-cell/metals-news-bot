@@ -302,7 +302,11 @@ def main():
     pipeline = load_pipeline()
     overrides = load_overrides()
     state = load_state()
-    seen = set(state.get("seen", []))
+    # dict, а не set: state[...] обрезается срезом [-N:], а у множества
+    # порядок произвольный — обрезка выбрасывала бы случайные записи
+    # вместо самых старых. В digest.py этот же дефект дал 5 повторных
+    # публикаций за неделю (28.07-03.08). Мембершип-тест не меняется.
+    seen = dict.fromkeys(state.get("seen", []))
     first_run = "last_run" not in state
     # Первый прогон: seen пуст -> без защиты улетело бы разом всё за 2 дня
     # по всем компаниям. Молча засеваем seen и ничего не шлём - дальше бот
@@ -339,7 +343,7 @@ def main():
             h = url_hash(it["link"])
             if h in seen:
                 continue
-            seen.add(h)
+            seen[h] = None
             if first_run:
                 continue
             mid = tg_send(render(target, it))
