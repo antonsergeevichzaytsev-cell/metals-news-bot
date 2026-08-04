@@ -118,6 +118,21 @@ NOISE_WORDS = [
     r"\bOTCQB\b", r"uplisting", r"\bDTC\b eligib\w*",
     r"reverse takeover", r"\bRTO\b", r"semi-?annual reporting",
     r"CEO Clips", r"video -", r"interview",
+    # --- Разведочная порода (добавлено 04.08.2026) ---
+    # Пробы, интервалы, геофизика, "начали бурить". Это самая массовая
+    # категория отказов модели: 28 из 103 в filings_history["skipped"]
+    # с reason="буровые пробы" — каждый четвёртый платный вызов уходил
+    # на то, что режется строкой.
+    # Проверено на этих же 28 заголовках перед заливкой: ловит 24/28,
+    # ложных срабатываний 0 на 39 ранее выданных элементах.
+    # Порядок спасает: SIGNAL проверяется ПЕРВЫМ и по title+desc, поэтому
+    # релиз с FS / CapEx / металлургией переживает эти слова и всё равно
+    # уходит модели. Режется только чистая разведка без инженерного события.
+    r"\bdrill\w*", r"\bassay\w*", r"intersect\w*", r"intercept\w*",
+    r"\bg/t\b", r"grading", r"high-?grade", r"mineraliz\w*",
+    r"exploration program", r"exploration results", r"geophysic\w*",
+    r"\banomal\w*", r"\bpegmatite\b", r"step out", r"step-?out",
+    r"strike length", r"commences? (drilling|exploration)",
 ]
 
 # Экспозиция, ради которой всё затевалось.
