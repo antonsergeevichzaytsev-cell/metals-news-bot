@@ -489,7 +489,15 @@
     "cae09b70f02e9922d7c103fe8a3fff34",
     "afa02347b4cebc254f95e65f65d1d0c3",
     "fcec2ed7fd3347e52372962ea81d5180",
-    "fe58ba29d2be1208d513a6b2365f6ec8"
+    "fe58ba29d2be1208d513a6b2365f6ec8",
+    "3d7c44a212d4ae8ece8908afefa64df0",
+    "b3923499e83efd810639d2fd4cfa2c23",
+    "c2f3d89189862381e4f852375f401b1a",
+    "010530ba6a6495c4da0fcdf384f36c5e",
+    "18a6313b925669182ec06bc24c89120d",
+    "2d754715c8c7e5cb97f13a2420f5477e",
+    "a7fc385a0d63104ce92269a917d2be04",
+    "5955ae07fdbe0419eb5864f891f2dfe5"
   ],
   "pending": [],
   "feed_health": {
@@ -506,13 +514,13 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-04T20:21:39.244767+00:00",
+    "ts": "2026-08-04T22:00:58.284814+00:00",
     "raw": 157,
-    "fresh": 1,
-    "candidates": 0,
-    "prefiltered_out": 1,
-    "screened": 0,
-    "skipped_by_model": 0,
+    "fresh": 8,
+    "candidates": 3,
+    "prefiltered_out": 5,
+    "screened": 3,
+    "skipped_by_model": 3,
     "kept": 0,
     "cap": 40,
     "cap_hit": false,
