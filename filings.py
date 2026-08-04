@@ -49,6 +49,8 @@ MAX_AGE_HOURS = 36
 HISTORY_RETENTION_DAYS = 30
 SKIPPED_RETENTION_DAYS = 7
 MSG_MAP_KEEP = 300
+# 5 прогонов в день по 11 лент: 800 хэшей покрывали окно 36ч впритык.
+SEEN_KEEP = 1500
 PRIORITY_RANK = {"high": 0, "medium": 1, "low": 2}
 # Лента должна продержаться в новом статусе N прогонов подряд, прежде чем
 # об этом доложат. Гасит однопрогонный флап (GlobeNewswire timeout/503 сам
@@ -189,12 +191,12 @@ def load_state():
 
 
 def save_state(state):
-    # dict.fromkeys — дедуп С СОХРАНЕНИЕМ ПОРЯДКА. Раньше срезался список,
-    # собранный из set() — порядок вставки терялся, и [-800:] выбрасывал
-    # СЛУЧАЙНЫЕ хэши, включая свежие. Отправленный релиз мог вылететь
-    # из памяти и уйти повторно. У filings пока 457/800 — баг латентный,
-    # сработал бы при насыщении.
-    state["seen"] = list(dict.fromkeys(state.get("seen", [])))[-800:]
+    # Обрезаем ХВОСТ по порядку добавления. Раньше сюда приходил
+    # list(set(...)) — у множества порядок произвольный, и обрезка
+    # выбрасывала случайные хэши вместо самых старых. У новостного бота
+    # тот же дефект дал 5 повторных публикаций за неделю (28.07-03.08).
+    # Порядок теперь держит dict (см. main).
+    state["seen"] = state["seen"][-SEEN_KEEP:]
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
 
@@ -607,14 +609,9 @@ def main():
     sources = load_sources()
     state = load_state()
     history = load_history()
-    seen_order = list(state.get("seen", []))   # порядок для вытеснения
-    seen = set(seen_order)                     # множество для проверки
-
-    def mark_seen(h):
-        if h not in seen:
-            seen.add(h)
-            seen_order.append(h)
-
+    # dict, а не set: нужен порядок добавления, иначе обрезка в save_state
+    # режет произвольные хэши. Мембершип-тест "h in seen" работает так же.
+    seen = dict.fromkeys(state.get("seen", []))
     now_msk = datetime.now(MSK)
 
     print(f"Sources: {len(sources)}, seen: {len(seen)}, pending: {len(state.get('pending', []))}")
@@ -657,7 +654,7 @@ def main():
         if prefilter(it["title"], it["desc"]):
             candidates.append(it)
         else:
-            mark_seen(it["hash"])
+            seen[it["hash"]] = None
             n_prefilter_dropped += 1
             # Regex режет ДО DeepSeek — значит его ошибка не попадает ни в
             # candidates, ни в history["skipped"] (та ветка — только отказы модели).
@@ -690,7 +687,7 @@ def main():
         if v is None:
             continue
         n_screened += 1
-        mark_seen(c["hash"])
+        seen[c["hash"]] = None
         if v.get("skip"):
             reason = (v.get("signal") or "").strip() or "?"
             # Отказ модели — тоже решение. Не залогируешь — не узнаешь,
@@ -752,7 +749,7 @@ def main():
         # утренний прогон обнаружит его заново и доложит.
         print(f"Quiet hours ({now_msk:%H:%M} MSK) - queued {len(queue)}, not sending.")
         state["pending"] = queue
-        state["seen"] = seen_order
+        state["seen"] = list(seen)
         save_state(state)
         save_history(history)
         return 0
@@ -789,7 +786,7 @@ def main():
     if not queue:
         print("Nothing to send.")
         state["pending"] = []
-        state["seen"] = seen_order
+        state["seen"] = list(seen)
         save_state(state)
         save_history(history)
         return 0
@@ -815,7 +812,7 @@ def main():
     print(f"Sent {len(queue)} item(s) ({highs} high), map size {len(state['msg_map'])}.")
 
     state["pending"] = []
-    state["seen"] = seen_order
+    state["seen"] = list(seen)
     save_state(state)
     save_history(history)
     return 0
