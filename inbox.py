@@ -159,8 +159,12 @@ def msk_time():
 def main():
     cfg = load_platforms()
     state = load_state()
-    seen = set(state["seen"])
-    urgent_seen = set(state["urgent_seen"])
+    # dict, а не set: state[...] обрезается срезом [-N:], а у множества
+    # порядок произвольный — обрезка выбрасывала бы случайные записи
+    # вместо самых старых. В digest.py этот же дефект дал 5 повторных
+    # публикаций за неделю (28.07-03.08). Мембершип-тест не меняется.
+    seen = dict.fromkeys(state["seen"])
+    urgent_seen = dict.fromkeys(state["urgent_seen"])
     msgs = fetch_emails(WINDOW_HOURS)
     print(f"Fetched {len(msgs)} message headers (window {WINDOW_HOURS}h)")
 
@@ -187,11 +191,11 @@ def main():
             "urgent": urgent,
         }
         by_platform[platform].append(item)
-        seen.add(mid)
+        seen[mid] = None
         total_new += 1
         if urgent and mid not in urgent_seen:
             new_urgent.append(item)
-            urgent_seen.add(mid)
+            urgent_seen[mid] = None
 
     # Нечего сказать — молчим. Раньше здесь уходила пустая сводка каждый прогон:
     # 5 раз в день "нет новых писем" = шум, который отучает открывать Telegram.
