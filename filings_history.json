@@ -509,13 +509,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-28T07:57:54.824302+00:00",
-      "title": "Grit Metals Identifies New Spodumene-Boulder Targets and Confirms Highly Fractionated Pegmatite System Through Recent Drill Progra",
-      "link": "https://www.newsfilecorp.com/release/306672/Grit-Metals-Identifies-New-SpodumeneBoulder-Targets-and-Confirms-Highly-Fractionated-Pegmatite-System-Through-Recent-Drill-Program-at-Central-Finland-Lithium-Project",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-28T13:01:05.044349+00:00",
       "title": "Xali Gold Continues to Demonstrate the Scale and Grade of Gold Mineralization at Pico Machay",
       "link": "https://www.globenewswire.com/news-release/2026/07/28/3334121/0/en/Xali-Gold-Continues-to-Demonstrate-the-Scale-and-Grade-of-Gold-Mineralization-at-Pico-Machay.html",
@@ -1199,6 +1192,20 @@
       "title": "Lumina Metals Reports on 2026 Drilling at Its Three Projects in Poland",
       "link": "https://www.newsfilecorp.com/release/307688/Lumina-Metals-Reports-on-2026-Drilling-at-Its-Three-Projects-in-Poland",
       "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T07:58:17.328898+00:00",
+      "title": "Total Voting Rights",
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338030/0/en/Total-Voting-Rights.html",
+      "reason": "корпоративная рутина",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T07:58:17.328898+00:00",
+      "title": "Allied Critical Metals Announces Update on the Second Tranche of Its U.S.$25 Million Equity Financing",
+      "link": "https://www.newsfilecorp.com/release/307872/Allied-Critical-Metals-Announces-Update-on-the-Second-Tranche-of-Its-U.S.25-Million-Equity-Financing",
+      "reason": "размещение",
       "orbit": false
     }
   ],
