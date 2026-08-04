@@ -32,6 +32,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
+import facts
 import net
 from datetime import datetime, timezone, timedelta
 
@@ -598,6 +599,18 @@ def render(c, idx):
         block += f"{esc(c['why'])}\n"
     if c.get("hook"):
         block += f"\u2192 {esc(c['hook'])}\n"
+    # Сдвиг против прошлого упоминания — самое ценное, что есть в сообщении:
+    # это единственная строка, показывающая движение, а не срез.
+    for sh in c.get("shifts", [])[:2]:
+        block += f"\U0001f4c8 <b>{esc(sh)}</b>\n"
+    # Масштаб теста рядом с извлечением. Bench-scale 90% и заводские 90% —
+    # разные факты под одним словом recovery, и путать их дорого.
+    f = c.get("facts") or {}
+    if f.get("percent_is_recovery"):
+        sc = f.get("test_scale", "\u041d\u0415 \u0423\u041a\u0410\u0417\u0410\u041d")
+        pct = f.get("percent", [None])[0]
+        if pct is not None:
+            block += f"\u2699\ufe0f \u0438\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u0435 {pct}% \u00b7 \u043c\u0430\u0441\u0448\u0442\u0430\u0431: <b>{esc(sc)}</b>\n"
     link = esc(c["link"])
     block += f'<a href="{link}">релиз</a>\n'
     if c.get("company"):
@@ -722,6 +735,17 @@ def main():
             "hook": (v.get("hook") or "").strip(),
             "priority": (v.get("priority") or "low").lower(),
         }
+        # Числа вынимаются регуляркой из сырого текста релиза, не из ответа
+        # модели: промпт не трогаем, поведение стадийного гейта не меняется,
+        # а извлечение проверяется офлайн на всей истории.
+        rec["facts"] = facts.extract_facts(f"{c['title']} {c['desc']}")
+        # Сравнение с прошлым упоминанием того же проекта — единственное
+        # место в системе, где видно движение во времени, а не срез.
+        shifts = facts.compare_facts(
+            rec["company"], rec["project"], rec["facts"],
+            history.get("items", []))
+        if shifts:
+            rec["shifts"] = shifts
         history.setdefault("items", []).append(dict(rec, ts=now_iso))
         # low не шлём: это инструмент для исходящих, а не лента для чтения.
         # В history оно остаётся — будет на чём калибровать порог.
