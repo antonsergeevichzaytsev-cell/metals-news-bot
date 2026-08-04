@@ -551,6 +551,78 @@
         ]
       },
       "ts": "2026-08-04T13:01:03.175382+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338402/0/fr/NioBay-obtient-99-6-en-oxyde-de-niobium-Nb-O-et-99-98-en-oxyde-de-tantale-Ta-O-dans-la-fabrication-de-ses-oxydes-finaux.html",
+      "title": "NioBay obtient ~99,6 % en oxyde de niobium (Nb₂O₅) et 99,98 % en oxyde de tantale (Ta₂O₅) dans la fabrication de ses oxydes finaux",
+      "stage": "study",
+      "signal": "металлургия не вышла",
+      "company": "NioBay Metals",
+      "project": "",
+      "region": "Canada",
+      "why": "Металлургические результаты по чистоте оксидов, но нет данных о затратах или масштабе.",
+      "hook": "Металлургия на уровне 99,6% Nb2O5: проверьте, не завышены ли затраты на очистку.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-04T15:29:41.003322+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338402/0/en/NioBay-Achieves-99-6-Niobium-Oxide-Nb-O-and-99-98-Tantalum-Oxide-Ta-O-in-the-manufacture-of-final-oxides-from-Crevier.html",
+      "title": "NioBay Achieves ~99.6% Niobium Oxide (Nb₂O₅) and 99.98% Tantalum Oxide (Ta₂O₅) in the manufacture of final oxides from Crevier",
+      "stage": "study",
+      "signal": "металлургия не вышла",
+      "company": "NioBay Metals Inc.",
+      "project": "Crevier",
+      "region": "Canada",
+      "why": "Металлургические испытания показали высокую чистоту оксидов, но это не связано с его регионом.",
+      "hook": "Металлургия подтверждена, но нужен контроль затрат на этапе исследования.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-04T15:29:41.003322+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307910/Ltude-dIGS-propose-un-dveloppement-innovant-et-durable-du-gisement-dOka",
+      "title": "L'étude d'IGS propose un développement innovant et durable du gisement d'Oka",
+      "stage": "study",
+      "signal": "металлургическое исследование",
+      "company": "Nio Métaux Stratégiques inc.",
+      "project": "Oka",
+      "region": "Canada",
+      "why": "Металлургическое исследование по ниобию и критическим минералам на месторождении Oka, но вне целевого региона.",
+      "hook": "Оценка технологической схемы и металлургии: не дать проекту уйти в неоптимальный флоушит.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-04T15:29:41.003322+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/307909/IGS-Study-Proposes-Innovative-and-Sustainable-Development-of-Oka-Deposit",
+      "title": "IGS Study Proposes Innovative and Sustainable Development of Oka Deposit",
+      "stage": "study",
+      "signal": "металлургическое исследование",
+      "company": "Nio Strategic Metals Inc.",
+      "project": "Oka deposit",
+      "region": "Canada",
+      "why": "Металлургическое исследование по ниобию и критическим минералам, но актив вне целевого региона.",
+      "hook": "Металлургия и флоушит: проверить, что извлечение ниобия не завышено в исследовании.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-04T15:29:41.003322+00:00"
     }
   ],
   "skipped": [
@@ -1288,16 +1360,31 @@
       "link": "https://www.newsfilecorp.com/release/307900/Buenos-Aires-and-Mendoza-Take-Center-Stage-as-Argentina-Prepares-to-Host-the-5th-Argentina-Critical-Minerals-Summit",
       "reason": "конференция",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-04T15:29:41.003322+00:00",
+      "title": "CEO.CA's Inside the Boardroom: How ICG Silver & Gold Plans to Make It in a Crowded Market",
+      "link": "https://www.newsfilecorp.com/release/307874/CEO.CAs-Inside-the-Boardroom-How-ICG-Silver-Gold-Plans-to-Make-It-in-a-Crowded-Market",
+      "reason": "интервью CEO",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T15:29:41.003322+00:00",
+      "title": "Skeleton Coast Uranium Files NI 43-101 Technical Reports for Namibia Exclusive Prospecting Licences 8208, 9727, and 8617",
+      "link": "https://www.newsfilecorp.com/release/307836/Skeleton-Coast-Uranium-Files-NI-43101-Technical-Reports-for-Namibia-Exclusive-Prospecting-Licences-8208-9727-and-8617",
+      "reason": "технические отчёты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T15:29:41.003322+00:00",
+      "title": "Kasis Clean Water Technologies Advances Patented Redox Materials for Cleaner Gold Recovery",
+      "link": "https://www.newsfilecorp.com/release/307574/Kasis-Clean-Water-Technologies-Advances-Patented-Redox-Materials-for-Cleaner-Gold-Recovery",
+      "reason": "технология в разработке",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-28T15:27:21.706674+00:00",
-      "title": "Mining Americas Schedules Q2 2026 Results and Conference Call",
-      "matched_noise_word": "conference",
-      "orbit": false
-    },
     {
       "ts": "2026-07-28T22:00:51.468297+00:00",
       "title": "Copper Fox Announces Closing of Private Placement",
@@ -1410,6 +1497,12 @@
       "ts": "2026-08-04T13:01:03.163288+00:00",
       "title": "NexGen to Host Q2 2026 Conference Call",
       "matched_noise_word": "conference",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-04T15:29:40.999172+00:00",
+      "title": "Montero Completes Geological Logging of 625.25-Metre Drillhole at Elvira and Reports Pyrite-Bearing High-Sulphidation Alteration",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
