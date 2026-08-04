@@ -87,28 +87,13 @@
     "b70eb22ceea730acccfc4cfe640e32f1",
     "7a0d7f64f06070ce9726d54f0bc5e85b",
     "2ffbba16af60a648ead632f912a5363b",
-    "de0b6f945e9921ca558466c863a35195"
+    "de0b6f945e9921ca558466c863a35195",
+    "2ea23c5a9bde889054a1ebd4b0b9142a"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 0,
-  "last_run": "2026-08-03T16:42:07.439168+00:00",
+  "last_run_sent": 1,
+  "last_run": "2026-08-04T10:15:34.619100+00:00",
   "hits": [
-    {
-      "ts": "2026-07-28T05:35:18.974463+00:00",
-      "lead_id": "outreach_auto_silvercorp",
-      "company": "Silvercorp Metals",
-      "title": "Silvercorp Metals (TSX:SVM) Operational Update Supports Smallcap Stocks - Kalkine Media",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRUNCYjdCVVhQOGJrMmthcmZ6V2d1MGVwenZTdmZ3MnY1Sl82c0RpUGxMLS15QzM3MzRTSHhpWlc2aTJVcVYtY3JyVGg4V2ZTX0RNR2RjNGpPSjFHYklMWEdjMjRYakl1blo3LTRBUkQxSkpvdjRsSEoyVWREZzhIRVZubnc3dU5yNWlhcV9lYklERk10MFpaU04wSEhwQjhORG44ZGdYUEk4RkxvNVRNOTVR?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-28T10:15:34.578059+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "Акции «Селигдар» тестируют уровень сопротивления: трейдеры ждут закрепления для входа в лонг - M O N D I A R A",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9BU2loTjFqdy1Sa1R5WXk4WTJWZjIzUWVYRUhiUDJZcXhURTFnakFybUw0UFRkSHlCaHlYa0V6Mkw0aDZJbWN4bW9uQkc5TjVadDhQal9Yb1BxRVhFRUpiVUxZNA?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-28T12:09:48.975142+00:00",
       "lead_id": "outreach_auto_uzairways",
@@ -283,6 +268,14 @@
       "company": "Селигдар",
       "title": "Какие перспективы у облигаций серии: 1Р10 золотодобывающей компании Селигдар (14 февраля 2026 г.) - M O N D I A R A",
       "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9WZ2RLQnVFQUNOd05TamxBQ2pCenlEd3BFMm9Nemc1b2t5bVpxZjd4X25nYmtjMlZkcFBuSDVjOWNkS1E2S3V4a1Vial9qZks5QlBsWHYyYUhXXzB4b3VFbWpRSQ?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-04T10:15:28.786431+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "Why Silvercorp Metals Inc stock is sliding today - Wealth Awesome",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUHBzb0NnS21QWEZURTVidjhHZDE5QkZsSldXUHdHY2FnWkVqQXQ0MGdGV0l3RWJuc2pvaWxMTC1GazQ4WWFwYjNNU19CQ2hmZXpJZFRhcHFCeDhpSzJJU29FSWZBVE5yM1pITkNxdHRuX044RU5BZlQ2X1FCcWNlQnBNWVRTNmtGaldN?oc=5",
       "src_domain": "news.google.com"
     }
   ]
