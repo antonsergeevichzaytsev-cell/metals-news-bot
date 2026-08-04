@@ -88,20 +88,14 @@
     "7a0d7f64f06070ce9726d54f0bc5e85b",
     "2ffbba16af60a648ead632f912a5363b",
     "de0b6f945e9921ca558466c863a35195",
-    "2ea23c5a9bde889054a1ebd4b0b9142a"
+    "2ea23c5a9bde889054a1ebd4b0b9142a",
+    "b6311e5514dc71f4c5e95f9afe78a209",
+    "00449c1fffa3368a23b39259eed626a8"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 0,
-  "last_run": "2026-08-04T12:16:08.066708+00:00",
+  "last_run_sent": 2,
+  "last_run": "2026-08-04T14:15:41.335996+00:00",
   "hits": [
-    {
-      "ts": "2026-07-28T14:15:34.692288+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "Продукты Positive Technologies обеспечивают кибербезопасность «Селигдара» - prospect.com.ru",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSXRsODNSMmNGbkxYUDdJaEZ4RklXbG5DaENJS3BZV1FRNjhkR2I1NHdRbDNPTWdFNkN6eUQ3Z0xaekRCUENtX0FtTEk4TGI1aVNlbUJ4cGZNMFF4OHNfbFZoa1R4T2tUZzdaZnNjLTlxUWVyZjdfZXpfSUJQYVdTTGNPTExtY2VFM2RfMjhoTmZLQnJORll6UUFtSlJpMDM0Z05PNnlhdEVjZnVfNTVFQmhQVFM?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-28T16:16:16.570003+00:00",
       "lead_id": "outreach_auto_silvercorp",
@@ -268,6 +262,22 @@
       "company": "Silvercorp Metals",
       "title": "Why Silvercorp Metals Inc stock is sliding today - Wealth Awesome",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPUHBzb0NnS21QWEZURTVidjhHZDE5QkZsSldXUHdHY2FnWkVqQXQ0MGdGV0l3RWJuc2pvaWxMTC1GazQ4WWFwYjNNU19CQ2hmZXpJZFRhcHFCeDhpSzJJU29FSWZBVE5yM1pITkNxdHRuX044RU5BZlQ2X1FCcWNlQnBNWVRTNmtGaldN?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-04T14:15:34.308791+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "Why Silvercorp Metals Inc stock is skyrocketing today - Wealth Awesome",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNMVlPNVZWNHF0SEtWdkplQ0g1ZDIyc2ZSanBhQnB2THpSeDBtUk9hMTRSY0R0REVVODZtNVhuNUVNcmFrT0JBQXZBdkRQaWI4OWFzX1NjcDFjZ1JtaEpnSTREVC1fcVVZaGs5M19DNWZLZzc1WjFfNTBONldEUDIxaEliSGFrQ1JPNElDX1RacDhmZw?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-04T14:15:37.078021+00:00",
+      "lead_id": "outreach_auto_seligdar",
+      "company": "Селигдар",
+      "title": "Прогноз по акциям Селигдар: растут шансы на рост котировок на бирже (4 августа 2026 г.) - M O N D I A R A",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE16QmFhTEh3VkVQTnl4NEhDU2FBZHBfUW9uaTcxYTNsTlVMZVJuaVRSNGFfdFlzSUFaM0FVaHYyWHhPS1EyeXI0WHQyTW1vaUhLRkZUek9QTkc3Vk9YTzNoQVl6bw?oc=5",
       "src_domain": "news.google.com"
     }
   ]
