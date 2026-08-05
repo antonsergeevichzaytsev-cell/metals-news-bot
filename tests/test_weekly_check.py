@@ -25,7 +25,7 @@ os.environ.setdefault("GITHUB_REPOSITORY", "test/test")
 sys.path.insert(0, "..")
 import weekly_check as wc
 
-MSK = wc.MSK
+TST = wc.TST
 
 
 # --- parse_dt / parse_date ---------------------------------------------
@@ -72,14 +72,14 @@ def _mock_load_json(pipeline=None, inbox_state=None, history=None):
 
 
 def test_watchdog_alarms_when_pipeline_missing():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     with mock.patch("weekly_check.load_json", side_effect=_mock_load_json(pipeline=None)):
         alarms, facts = wc.watchdog(now)
     assert any("pipeline.json не читается" in a for a in alarms)
 
 
 def test_watchdog_alarms_when_pipeline_stale():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     stale_ts = (now - timedelta(hours=100)).isoformat()
     pipeline = {"last_updated": stale_ts, "leads": []}
     with mock.patch("weekly_check.load_json",
@@ -91,7 +91,7 @@ def test_watchdog_alarms_when_pipeline_stale():
 def test_watchdog_alarms_when_no_new_leads_fossil():
     # Регрессия на инцидент "пайплайн простоял с 8 июня" (комментарий
     # в коде) — главная проверка watchdog, её отсутствие стоило 6 недель.
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     old_date = (now.date() - timedelta(days=20)).strftime("%Y-%m-%d")
     pipeline = {
         "last_updated": now.isoformat(),
@@ -104,7 +104,7 @@ def test_watchdog_alarms_when_no_new_leads_fossil():
 
 
 def test_watchdog_no_fossil_alarm_when_recent_lead_exists():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     recent_date = (now.date() - timedelta(days=2)).strftime("%Y-%m-%d")
     pipeline = {
         "last_updated": now.isoformat(),
@@ -117,7 +117,7 @@ def test_watchdog_no_fossil_alarm_when_recent_lead_exists():
 
 
 def test_watchdog_alarms_when_zero_live_leads():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     recent_date = (now.date() - timedelta(days=1)).strftime("%Y-%m-%d")
     pipeline = {
         "last_updated": now.isoformat(),
@@ -132,7 +132,7 @@ def test_watchdog_alarms_when_zero_live_leads():
 def test_watchdog_alarms_on_cadence_zombies():
     # Каденция исчерпана (silence_days > 21), но статус всё ещё "живой"
     # в файле — не закрыт. watchdog должен это поймать.
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     recent_date = (now.date() - timedelta(days=1)).strftime("%Y-%m-%d")
     pipeline = {
         "last_updated": now.isoformat(),
@@ -145,7 +145,7 @@ def test_watchdog_alarms_on_cadence_zombies():
 
 
 def test_watchdog_no_alarms_on_healthy_state():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     recent_date = (now.date() - timedelta(days=1)).strftime("%Y-%m-%d")
     pipeline = {
         "last_updated": now.isoformat(),
@@ -162,7 +162,7 @@ def test_watchdog_no_alarms_on_healthy_state():
 
 
 def test_watchdog_alarms_when_inbox_dead():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     recent_date = (now.date() - timedelta(days=1)).strftime("%Y-%m-%d")
     pipeline = {
         "last_updated": now.isoformat(),
@@ -180,7 +180,7 @@ def test_watchdog_alarms_when_inbox_dead():
 # ручной трекер secrets_rotation.json.
 
 def test_secrets_rotation_no_overdue_when_all_fresh():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     recent = (now.date() - timedelta(days=10)).strftime("%Y-%m-%d")
     data = {"rotation_threshold_days": 90, "secrets": {"FOO_KEY": recent}}
     with mock.patch("weekly_check.load_json", return_value=data):
@@ -189,7 +189,7 @@ def test_secrets_rotation_no_overdue_when_all_fresh():
 
 
 def test_secrets_rotation_flags_overdue_secret():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     old = (now.date() - timedelta(days=100)).strftime("%Y-%m-%d")
     data = {"rotation_threshold_days": 90, "secrets": {"FOO_KEY": old}}
     with mock.patch("weekly_check.load_json", return_value=data):
@@ -200,7 +200,7 @@ def test_secrets_rotation_flags_overdue_secret():
 
 
 def test_secrets_rotation_exactly_at_threshold_counts_as_overdue():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     exactly = (now.date() - timedelta(days=90)).strftime("%Y-%m-%d")
     data = {"rotation_threshold_days": 90, "secrets": {"FOO_KEY": exactly}}
     with mock.patch("weekly_check.load_json", return_value=data):
@@ -209,7 +209,7 @@ def test_secrets_rotation_exactly_at_threshold_counts_as_overdue():
 
 
 def test_secrets_rotation_sorted_by_most_overdue_first():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     d100 = (now.date() - timedelta(days=100)).strftime("%Y-%m-%d")
     d200 = (now.date() - timedelta(days=200)).strftime("%Y-%m-%d")
     data = {"rotation_threshold_days": 90, "secrets": {"NEWER": d100, "OLDER": d200}}
@@ -219,14 +219,14 @@ def test_secrets_rotation_sorted_by_most_overdue_first():
 
 
 def test_secrets_rotation_missing_file_returns_empty_not_crash():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     with mock.patch("weekly_check.load_json", return_value=None):
         overdue = wc.secrets_rotation_check(now)
     assert overdue == []
 
 
 def test_secrets_rotation_malformed_date_skipped_not_crash():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     data = {"rotation_threshold_days": 90, "secrets": {"BAD": "not-a-date"}}
     with mock.patch("weekly_check.load_json", return_value=data):
         overdue = wc.secrets_rotation_check(now)
@@ -234,7 +234,7 @@ def test_secrets_rotation_malformed_date_skipped_not_crash():
 
 
 def test_secrets_rotation_uses_default_threshold_if_missing():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
     old = (now.date() - timedelta(days=95)).strftime("%Y-%m-%d")
     data = {"secrets": {"FOO_KEY": old}}  # без rotation_threshold_days
     with mock.patch("weekly_check.load_json", return_value=data):
