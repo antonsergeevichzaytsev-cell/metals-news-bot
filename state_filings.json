@@ -521,7 +521,10 @@
     "4113a9555259734f5a74bdefc172c2cb",
     "64fbe10000054c737a86e4281e044163",
     "38ea125741214aed35962b573990c00c",
-    "73f07005e0eacc41bb8740b6d73bb344"
+    "73f07005e0eacc41bb8740b6d73bb344",
+    "1c6847dc89064cc66086680a562f1846",
+    "be9f1f90b2634e1880eb046189605b9e",
+    "a381dc0a7b658ed1d1bac76a14ebfa81"
   ],
   "pending": [],
   "feed_health": {
@@ -538,14 +541,14 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-05T12:53:14.340893+00:00",
+    "ts": "2026-08-05T13:01:18.832330+00:00",
     "raw": 157,
-    "fresh": 17,
-    "candidates": 9,
-    "prefiltered_out": 8,
-    "screened": 9,
-    "skipped_by_model": 4,
-    "kept": 1,
+    "fresh": 3,
+    "candidates": 0,
+    "prefiltered_out": 3,
+    "screened": 0,
+    "skipped_by_model": 0,
+    "kept": 0,
     "cap": 40,
     "cap_hit": false,
     "feeds_broken": 0,
@@ -611,57 +614,57 @@
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 57,
+      "streak": 58,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 57,
+      "streak": 58,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 57,
+      "streak": 58,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 57,
+      "streak": 58,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 57,
+      "streak": 58,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 57,
+      "streak": 58,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "ok",
-      "streak": 57,
+      "streak": 58,
       "reported": "ok"
     },
     "GNW:Gold Mining": {
       "status": "ok",
-      "streak": 22,
+      "streak": 23,
       "reported": "ok"
     },
     "GNW:Nonferrous Metals": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     },
     "GNW:Aluminum": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "GNW:Copper": {
       "status": "ok",
-      "streak": 57,
+      "streak": 58,
       "reported": "ok"
     }
   }
