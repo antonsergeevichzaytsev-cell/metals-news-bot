@@ -503,7 +503,8 @@
     "5ba4f4ac8d6205d274c0cf02e4857f7d",
     "2ee50ee2f515ec3995b901f22513937b",
     "6049fd3d25479d1ab04b809a37c97702",
-    "de8dc748c4a87195ddc51d72af6d19b6"
+    "de8dc748c4a87195ddc51d72af6d19b6",
+    "23429f5246daafb7b3ee89d45adeebf1"
   ],
   "pending": [],
   "feed_health": {
@@ -520,11 +521,11 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-05T05:30:39.345609+00:00",
+    "ts": "2026-08-05T06:06:12.939502+00:00",
     "raw": 157,
-    "fresh": 2,
+    "fresh": 1,
     "candidates": 1,
-    "prefiltered_out": 1,
+    "prefiltered_out": 0,
     "screened": 1,
     "skipped_by_model": 1,
     "kept": 0,
@@ -587,57 +588,57 @@
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "GNW:Gold Mining": {
       "status": "ok",
-      "streak": 20,
+      "streak": 21,
       "reported": "ok"
     },
     "GNW:Nonferrous Metals": {
       "status": "ok",
-      "streak": 54,
+      "streak": 55,
       "reported": "ok"
     },
     "GNW:Aluminum": {
       "status": "ok",
-      "streak": 53,
+      "streak": 54,
       "reported": "ok"
     },
     "GNW:Copper": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     }
   }
