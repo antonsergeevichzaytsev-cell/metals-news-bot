@@ -552,13 +552,13 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-05T18:13:41.567407+00:00",
+    "ts": "2026-08-05T19:00:50.128033+00:00",
     "raw": 157,
-    "fresh": 1,
-    "candidates": 1,
+    "fresh": 0,
+    "candidates": 0,
     "prefiltered_out": 0,
-    "screened": 1,
-    "skipped_by_model": 1,
+    "screened": 0,
+    "skipped_by_model": 0,
     "kept": 0,
     "cap": 40,
     "cap_hit": false,
