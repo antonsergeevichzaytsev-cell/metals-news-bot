@@ -731,111 +731,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Constellium Reports Strong Second Quarter and First Half 2026 Results, including Record Segment Adjusted EBITDA; Raises Full Year ",
-      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335016/0/en/Constellium-Reports-Strong-Second-Quarter-and-First-Half-2026-Results-including-Record-Segment-Adjusted-EBITDA-Raises-Full-Year-2026-Guidance.html",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Montage Gold confirms the prospectivity of its Wendé advanced greenfield exploration property in Côte d’Ivoire",
-      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335026/0/en/Montage-Gold-confirms-the-prospectivity-of-its-Wend%C3%A9-advanced-greenfield-exploration-property-in-C%C3%B4te-d-Ivoire.html",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "OptiSeis Solutions Ltd. Successfully Completes Innovative, Ultra-Low-Impact Seismic Survey along the McLaren Lake Fault Zone of Ca",
-      "link": "https://www.newsfilecorp.com/release/306916/OptiSeis-Solutions-Ltd.-Successfully-Completes-Innovative-UltraLowImpact-Seismic-Survey-along-the-McLaren-Lake-Fault-Zone-of-Canucs-ESP-East-Sudbury-Project-in-Greater-Sudbury-Ontario-Canada-Advancing-the-Future-of-Mineral-Exploration",
-      "reason": "сейсмическая съемка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Boreal Gold Reports Drill Results from the First Two Drill Holes in the High-Grade Gold Rock Vein West of Snow Lake, Manitoba",
-      "link": "https://www.newsfilecorp.com/release/307095/Boreal-Gold-Reports-Drill-Results-from-the-First-Two-Drill-Holes-in-the-HighGrade-Gold-Rock-Vein-West-of-Snow-Lake-Manitoba",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "AE Fuels Stakes Sadler Mine, Consolidating Fluorite Ridge's Two Largest Historic Fluorspar Producers",
-      "link": "https://www.newsfilecorp.com/release/307083/AE-Fuels-Stakes-Sadler-Mine-Consolidating-Fluorite-Ridges-Two-Largest-Historic-Fluorspar-Producers",
-      "reason": "размещение участка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Pacific Bay Starts Exploration at Weaver Gold Property",
-      "link": "https://www.newsfilecorp.com/release/307046/Pacific-Bay-Starts-Exploration-at-Weaver-Gold-Property",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Sankamap Resumes Drilling at Kuma; First Assays Pending",
-      "link": "https://www.newsfilecorp.com/release/307044/Sankamap-Resumes-Drilling-at-Kuma-First-Assays-Pending",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Emperor Metals Expands Near-Surface Gold with 21.3 m of 3.0 g/t Au at Duquesne West, Quebec",
-      "link": "https://www.newsfilecorp.com/release/307009/Emperor-Metals-Expands-NearSurface-Gold-with-21.3-m-of-3.0-gt-Au-at-Duquesne-West-Quebec",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Scandium Canada et l'Université de Windsor exploreront le potentiel des fils d'alliage aluminium-scandium dans les moteurs de trac",
-      "link": "https://www.newsfilecorp.com/release/307067/Scandium-Canada-et-lUniversit-de-Windsor-exploreront-le-potentiel-des-fils-dalliage-aluminiumscandium-dans-les-moteurs-de-traction-de-vhicules-lectriques",
-      "reason": "исследование материалов",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Scandium Canada and University of Windsor to Explore Aluminum-Scandium Alloy Wires for EV Traction Motors",
-      "link": "https://www.newsfilecorp.com/release/307065/Scandium-Canada-and-University-of-Windsor-to-Explore-AluminumScandium-Alloy-Wires-for-EV-Traction-Motors",
-      "reason": "исследование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Benton and Metals Creek Commence Hydrogen-Helium Soil Gas Sampling at Smoking Gun and Parson's Pond in Newfoundland",
-      "link": "https://www.newsfilecorp.com/release/307088/Benton-and-Metals-Creek-Commence-HydrogenHelium-Soil-Gas-Sampling-at-Smoking-Gun-and-Parsons-Pond-in-Newfoundland",
-      "reason": "газогеохимия",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Metals Creek and Benton Commence Hydrogen-Helium Soil Gas Sampling at Smoking Gun and Parson's Pond in Newfoundland",
-      "link": "https://www.newsfilecorp.com/release/307011/Metals-Creek-and-Benton-Commence-HydrogenHelium-Soil-Gas-Sampling-at-Smoking-Gun-and-Parsons-Pond-in-Newfoundland",
-      "reason": "газ-съемка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "West Point Gold Confirms High-Grade Continuity at NE Tyro; Intersecting 62.5m at 3.1 g/t Au, Including 38.1m at 4.66 g/t Au",
-      "link": "https://www.newsfilecorp.com/release/307052/West-Point-Gold-Confirms-HighGrade-Continuity-at-NE-Tyro-Intersecting-62.5m-at-3.1-gt-Au-Including-38.1m-at-4.66-gt-Au",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Western Exploration Initiates Drill Program at Doby George",
-      "link": "https://www.newsfilecorp.com/release/307039/Western-Exploration-Initiates-Drill-Program-at-Doby-George",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T13:01:16.995729+00:00",
-      "title": "Maverick Gold And Silver Prepares For Drill Program at Silver Vista Property, British Columbia",
-      "link": "https://www.newsfilecorp.com/release/307048/Maverick-Gold-And-Silver-Prepares-For-Drill-Program-at-Silver-Vista-Property-British-Columbia",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-29T15:13:05.052279+00:00",
       "title": "InZinc Discovers \"Strongest to Date\" Zinc and Silver in Shallow Zones at Indy:",
       "link": "https://www.newsfilecorp.com/release/307096/InZinc-Discovers-Strongest-to-Date-Zinc-and-Silver-in-Shallow-Zones-at-Indy",
@@ -1511,12 +1406,6 @@
   "labels": [],
   "prefilter_dropped": [
     {
-      "ts": "2026-07-29T13:01:16.986738+00:00",
-      "title": "Comstock Announces Results of Annual and Special Meeting and Grant of Stock Options",
-      "matched_noise_word": "stock option\\w*",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-29T15:13:05.051664+00:00",
       "title": "Legacy Gold Announces Change of Auditor",
       "matched_noise_word": "\\bauditor\\b",
@@ -1640,6 +1529,12 @@
       "ts": "2026-08-05T12:53:14.336156+00:00",
       "title": "Legacy Gold Intersects 1.44 g/t Gold over 80ft (24.4m) Starting 7ft (2.1m) Vertically Below Surface, Incl. 15.8 g/t over 5ft (1.5m",
       "matched_noise_word": "intersect\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T13:01:18.831035+00:00",
+      "title": "QIMC Defines Multiple New Hydrogen Hot Zones in Nova Scotia, Reports Stronger Preliminary DDH-26-05 Hydrogen Readings and Triples ",
+      "matched_noise_word": "exploration program",
       "orbit": false
     }
   ]
