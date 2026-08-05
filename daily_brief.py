@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Anton Daily — вооружение на день, 08:00 MSK Пн-Пт.
+"""Anton Daily — вооружение на день, Пн-Пт.
+
+Расписание задаётся cron в UTC. Целевое местное время — 08:00 Ташкент (UTC+5).
 Фраза дня из phrases.json (48 шт, 13 категорий, ротация по дням) + пятничный F-блок.
 
 Разделение труда с Mission Control (07:45):
@@ -199,8 +201,9 @@ def tg_send(text):
 
 
 def main():
-    msk = timezone(timedelta(hours=3))
-    now = datetime.now(msk)
+    # Ташкент, UTC+5 (переведено с MSK 05.08.2026).
+    tst = timezone(timedelta(hours=5))
+    now = datetime.now(tst)
     weekday = now.weekday()
     iso_year, iso_week, _ = now.isocalendar()
 
