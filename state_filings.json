@@ -504,7 +504,24 @@
     "2ee50ee2f515ec3995b901f22513937b",
     "6049fd3d25479d1ab04b809a37c97702",
     "de8dc748c4a87195ddc51d72af6d19b6",
-    "23429f5246daafb7b3ee89d45adeebf1"
+    "23429f5246daafb7b3ee89d45adeebf1",
+    "45982a912cde3bfa9aee280748ce0048",
+    "6a4b06862460e7e734545969f6d0f7f1",
+    "b41f9cf037fb02db689aa29c18cfe319",
+    "a209d0324f610ff2a21d07171396e39c",
+    "c4e1f12c37235ff82d65ddd30cf46c77",
+    "0170f4db04b90bef0264ca12e0eed09f",
+    "233447a93a12c4bdb7880d583d757387",
+    "52b14fe7e3dbcfbd8da5007ac9f50b00",
+    "a7c1100f23594604c05ab3a93fcfc8a7",
+    "16673ae4039551f2609ab0d009e47765",
+    "9d1ba7cf555e9b5a1dc73ad14d7082ab",
+    "991c08488203434da5efb1d23c14bbd2",
+    "81a39ae9510422451de38203455df6d2",
+    "4113a9555259734f5a74bdefc172c2cb",
+    "64fbe10000054c737a86e4281e044163",
+    "38ea125741214aed35962b573990c00c",
+    "73f07005e0eacc41bb8740b6d73bb344"
   ],
   "pending": [],
   "feed_health": {
@@ -521,14 +538,14 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-05T06:06:12.939502+00:00",
+    "ts": "2026-08-05T12:53:14.340893+00:00",
     "raw": 157,
-    "fresh": 1,
-    "candidates": 1,
-    "prefiltered_out": 0,
-    "screened": 1,
-    "skipped_by_model": 1,
-    "kept": 0,
+    "fresh": 17,
+    "candidates": 9,
+    "prefiltered_out": 8,
+    "screened": 9,
+    "skipped_by_model": 4,
+    "kept": 1,
     "cap": 40,
     "cap_hit": false,
     "feeds_broken": 0,
@@ -582,63 +599,69 @@
       "company": "Canadian Copper Inc.",
       "priority": "medium",
       "stage": "operating"
+    },
+    "778": {
+      "link": "https://www.newsfilecorp.com/release/308098/Excellon-Produces-First-Concentrate-at-Mallay",
+      "company": "Excellon Resources Inc.",
+      "priority": "medium",
+      "stage": "commissioning"
     }
   },
   "tg_offset": 96015226,
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     },
     "GNW:Gold Mining": {
       "status": "ok",
-      "streak": 21,
+      "streak": 22,
       "reported": "ok"
     },
     "GNW:Nonferrous Metals": {
       "status": "ok",
-      "streak": 55,
+      "streak": 56,
       "reported": "ok"
     },
     "GNW:Aluminum": {
       "status": "ok",
-      "streak": 54,
+      "streak": 55,
       "reported": "ok"
     },
     "GNW:Copper": {
       "status": "ok",
-      "streak": 56,
+      "streak": 57,
       "reported": "ok"
     }
   }
