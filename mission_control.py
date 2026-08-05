@@ -353,7 +353,8 @@ def tg_send(text):
 
 
 def main():
-    now = datetime.now(timezone.utc) + timedelta(hours=3)
+    # Ташкент, UTC+5 (переведено с MSK 05.08.2026).
+    now = datetime.now(timezone.utc) + timedelta(hours=5)
     weekdays_ru = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
     months_ru = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
     weekday = weekdays_ru[now.weekday()]
