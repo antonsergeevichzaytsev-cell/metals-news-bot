@@ -788,13 +788,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-29T20:09:28.177166+00:00",
-      "title": "Ivanhoe Mines Issues 2026 Second-Quarter Financial Results, Overview of Operations and Exploration Activities",
-      "link": "https://www.newsfilecorp.com/release/307108/Ivanhoe-Mines-Issues-2026-SecondQuarter-Financial-Results-Overview-of-Operations-and-Exploration-Activities",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-29T22:00:52.772169+00:00",
       "title": "Kinross reports strong 2026 second-quarter results",
       "link": "https://www.globenewswire.com/news-release/2026/07/29/3335652/0/en/Kinross-reports-strong-2026-second-quarter-results.html",
@@ -1465,16 +1458,24 @@
       "link": "https://www.newsfilecorp.com/release/308160/Sego-Resources-Announces-Options-for-Directors-Officers-Consultants-and-Employees",
       "reason": "опционы",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-05T20:55:39.465063+00:00",
+      "title": "Geomorphic AI Announces Njuggträskliden Polymetallic Project on Swedens Nickel Line for Joint Venture - Four Mineralised Zones Ove",
+      "link": "https://www.newsfilecorp.com/release/308233/Geomorphic-AI-Announces-Njuggtrskliden-Polymetallic-Project-on-Swedens-Nickel-Line-for-Joint-Venture-Four-Mineralised-Zones-Over-2-Km-of-Strike-Undrilled-Below-268-Metres",
+      "reason": "совместное предприятие",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T20:55:39.465063+00:00",
+      "title": "Atlas Salt ernennt Mark Stewart zum Chief Financial Officer und befördert Robert Booth zum Chief Operating Officer",
+      "link": "https://www.newsfilecorp.com/release/308252/Atlas-Salt-ernennt-Mark-Stewart-zum-Chief-Financial-Officer-und-befrdert-Robert-Booth-zum-Chief-Operating-Officer",
+      "reason": "назначение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-29T20:09:28.176031+00:00",
-      "title": "Canadian Gold Resources Closes Non-Brokered Private Placement of Flow Through Shares",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-07-29T22:00:52.770315+00:00",
       "title": "Big Sky Industrial Schedules Second Quarter 2026 Conference Call for August 11, 2026 at 9:00 a.m. ET",
@@ -1599,6 +1600,12 @@
       "ts": "2026-08-05T16:00:58.285944+00:00",
       "title": "Defiance Silver Receives Approval for up to 172 Drill Sites at Espiritu Copper Target, Sonora",
       "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T20:55:39.462890+00:00",
+      "title": "Pacific Booker Minerals Inc. Announces Final TSX Venture Approval and Receipt of Funds on Non-Brokered Private Placement",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
