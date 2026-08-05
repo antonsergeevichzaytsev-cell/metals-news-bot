@@ -152,8 +152,9 @@ def tg_send(text):
         return False
 
 
-def msk_time():
-    return (datetime.now(timezone.utc) + timedelta(hours=3)).strftime("%H:%M")
+def local_time():
+    # Ташкент, UTC+5 (переведено с MSK 05.08.2026).
+    return (datetime.now(timezone.utc) + timedelta(hours=5)).strftime("%H:%M")
 
 
 def main():
@@ -205,7 +206,7 @@ def main():
         print(f"Nothing new (window {WINDOW_HOURS}h) - silent by design, last_run written")
         return
 
-    lines = [f"📥 <b>Inbox {msk_time()} MSK</b>"]
+    lines = [f"📥 <b>Inbox {local_time()} TST</b>"]
     lines.append("─" * 18)
     for p in cfg["platforms"]:
         name = p["name"]
