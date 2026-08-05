@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Evening digest -> Telegram, 18:30 MSK будни.
+"""Evening digest -> Telegram, будни.
+
+Расписание задаётся cron в UTC. Целевое местное время — 18:30 Ташкент (UTC+5).
 
 Восемь ботов пишут в Telegram разрозненно весь день: filings хук отдельным
 сообщением, pipeline reply отдельным, account_watch отдельным. Ничего не
@@ -38,7 +40,9 @@ BOT_STATE_FILES = {
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 
-MSK = timezone(timedelta(hours=3))
+# Ташкент, UTC+5 (переведено с MSK 05.08.2026 вместе с переездом).
+# Узбекистан летнее время не применяет — сдвиг фиксированный круглый год.
+TST = timezone(timedelta(hours=5))
 DEAD_STATUSES = {"dead", "closed", "declined", "done", "channel_failed"}
 STALE_HOURS = 30  # бот считается «не отчитался сегодня», если last_run старше этого
 
@@ -181,8 +185,8 @@ def tg_send(text):
         return False
 
 
-def render(diff, liveness, hits, now_msk):
-    date_str = now_msk.strftime("%d %b")
+def render(diff, liveness, hits, now_tst):
+    date_str = now_tst.strftime("%d %b")
     lines = [f"<b>\U0001f307 Итог дня</b> \u2014 {date_str}", ""]
 
     total_events = (len(diff["new_leads"]) + len(diff["new_replies"])
@@ -239,12 +243,12 @@ def render(diff, liveness, hits, now_msk):
 
 def main():
     now_utc = datetime.now(timezone.utc)
-    now_msk = now_utc.astimezone(MSK)
+    now_tst = now_utc.astimezone(TST)
 
     pipeline = load_pipeline()
     state = load_state()
 
-    today_str = now_msk.strftime("%Y-%m-%d")
+    today_str = now_tst.strftime("%Y-%m-%d")
     snap = state.get("day_start_snapshot")
 
     if snap is None:
@@ -264,7 +268,7 @@ def main():
     liveness = bot_liveness(now_utc, pipeline)
     hits = account_watch_hits_today(now_utc)
 
-    text = render(diff, liveness, hits, now_msk)
+    text = render(diff, liveness, hits, now_tst)
     tg_send(text)
 
     # Снэпшот переезжает на СЕЙЧАС после каждой отправки - следующий прогон
