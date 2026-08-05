@@ -727,37 +727,66 @@
         ]
       },
       "ts": "2026-08-05T12:53:14.340893+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/308104/First-Phosphate-signe-des-ententes-prvoyant-des-contributions-non-remboursables-de-484-millions-de-dollars-du-gouvernement-du-Canada-pour-des-infrastructures-routires-et-une-ligne-de-transport-dlectricit",
+      "title": "First Phosphate signe des ententes prévoyant des contributions non remboursables de 4,84 millions de dollars du gouvernement du Canada pour des infrastructures routières et une ligne de transport d'électricité",
+      "stage": "financing",
+      "signal": "грант на инфраструктуру",
+      "company": "First Phosphate Corp.",
+      "project": "",
+      "region": "Canada",
+      "why": "Грант 4,84 млн CAD на дороги и ЛЭП, но проект на ранней стадии, без инженерных решений.",
+      "hook": "Грант на инфраструктуру не требует контроля затрат на этапе финансирования.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-05T16:00:58.290193+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/308103/First-Phosphate-Signs-Agreements-for-4.84-Million-NonRepayable-Contributions-with-the-Government-of-Canada-for-Road-Infrastructure-and-Power-Transmission-Line",
+      "title": "First Phosphate Signs Agreements for $4.84 Million Non-Repayable Contributions with the Government of Canada for Road Infrastructure and Power Transmission Line",
+      "stage": "construction",
+      "signal": "инфраструктурные гранты",
+      "company": "First Phosphate Corp.",
+      "project": "Bégin-Lamarche Phosphate Deposit",
+      "region": "Canada",
+      "why": "Гранты на дорогу и ЛЭП для фосфатного проекта, стадия строительства инфраструктуры.",
+      "hook": "Контроль затрат на инфраструктуру: не дать грантам уйти в перерасход до запуска.",
+      "priority": "low",
+      "facts": {
+        "money_musd": [
+          4.84
+        ],
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-05T16:00:58.290193+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/308111/Ucore-Verifies-Louisiana-RapidSXTM-Equipment-ScaleUp-Configurations",
+      "title": "Ucore Verifies Louisiana RapidSX(TM) Equipment Scale-Up Configurations",
+      "stage": "construction",
+      "signal": "масштабирование оборудования",
+      "company": "Ucore Rare Metals Inc.",
+      "project": "Louisiana Strategic Metals Complex",
+      "region": "USA",
+      "why": "Завершена верификация масштабирования оборудования RapidSX для строящегося комплекса, что критично для запуска.",
+      "hook": "Контроль сроков и бюджета на этапе строительства: не дать задержкам съесть маржу.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-05T16:00:58.290193+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-29T15:13:05.052279+00:00",
-      "title": "InZinc Discovers \"Strongest to Date\" Zinc and Silver in Shallow Zones at Indy:",
-      "link": "https://www.newsfilecorp.com/release/307096/InZinc-Discovers-Strongest-to-Date-Zinc-and-Silver-in-Shallow-Zones-at-Indy",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T15:13:05.052279+00:00",
-      "title": "AME Calls on Federal Government to Expand Canadian Exploration Expenses Tax Eligibility, Backed by Growing Industry Support",
-      "link": "https://www.newsfilecorp.com/release/307066/AME-Calls-on-Federal-Government-to-Expand-Canadian-Exploration-Expenses-Tax-Eligibility-Backed-by-Growing-Industry-Support",
-      "reason": "политическая инициатива",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T16:00:52.270881+00:00",
-      "title": "Cygnus Metals Limited: Granting of ASX Waiver",
-      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335430/0/en/Cygnus-Metals-Limited-Granting-of-ASX-Waiver.html",
-      "reason": "схема сделки",
-      "orbit": true
-    },
-    {
-      "ts": "2026-07-29T16:00:52.270881+00:00",
-      "title": "Geomorphic AI Welcomes Endeavour Financial as a Strategic Investor",
-      "link": "https://www.newsfilecorp.com/release/306998/Geomorphic-AI-Welcomes-Endeavour-Financial-as-a-Strategic-Investor",
-      "reason": "стратегическое инвестирование",
-      "orbit": false
-    },
     {
       "ts": "2026-07-29T17:04:34.668798+00:00",
       "title": "Rebond de l’EBITDA au S1 2026 ; réalisation en cours du plan de financement, essentiel pour le Groupe au S2",
@@ -1401,16 +1430,52 @@
       "link": "https://www.newsfilecorp.com/release/307982/Compass-Gold-Reports-Final-Diamond-Drilling-Assays-at-Massala-Prospect-Intersecting-8.35-M-2.82-gt-Au",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-05T16:00:58.290193+00:00",
+      "title": "Sigma Lithium to Release 2Q 26 Earnings Results on Aug 14; Exceeded 1H 26 Production Target",
+      "link": "https://www.newsfilecorp.com/release/308117/Sigma-Lithium-to-Release-2Q-26-Earnings-Results-on-Aug-14-Exceeded-1H-26-Production-Target",
+      "reason": "отчёт о прибыли",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T16:00:58.290193+00:00",
+      "title": "Prism Resources Announces Closing of Royalty Sale to Agnico Eagle",
+      "link": "https://www.newsfilecorp.com/release/308118/Prism-Resources-Announces-Closing-of-Royalty-Sale-to-Agnico-Eagle",
+      "reason": "продажа роялти",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T16:00:58.290193+00:00",
+      "title": "EV Minerals Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/308115/EV-Minerals-Provides-Corporate-Update",
+      "reason": "корпоративное обновление",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T16:00:58.290193+00:00",
+      "title": "Universal Digital Inc. Announces Definitive Share Exchange Agreement to Acquire PQCEE Pte. Ltd.",
+      "link": "https://www.newsfilecorp.com/release/308101/Universal-Digital-Inc.-Announces-Definitive-Share-Exchange-Agreement-to-Acquire-PQCEE-Pte.-Ltd.",
+      "reason": "сделка M&A",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T16:00:58.290193+00:00",
+      "title": "Independent Trading Group Engaged as Market Maker",
+      "link": "https://www.newsfilecorp.com/release/308109/Independent-Trading-Group-Engaged-as-Market-Maker",
+      "reason": "маркет-мейкер",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T16:00:58.290193+00:00",
+      "title": "North America Lithium and Gold Corp. Expands Multi-Commodity Discovery at Midnight Owl with Seven High-Priority Gold Exploration T",
+      "link": "https://www.newsfilecorp.com/release/308073/North-America-Lithium-and-Gold-Corp.-Expands-MultiCommodity-Discovery-at-Midnight-Owl-with-Seven-HighPriority-Gold-Exploration-Targets-Identified-Through-Advanced-Hyperspectral-Refinement",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-29T15:13:05.051664+00:00",
-      "title": "Legacy Gold Announces Change of Auditor",
-      "matched_noise_word": "\\bauditor\\b",
-      "orbit": false
-    },
     {
       "ts": "2026-07-29T20:09:28.176031+00:00",
       "title": "Canadian Gold Resources Closes Non-Brokered Private Placement of Flow Through Shares",
@@ -1535,6 +1600,12 @@
       "ts": "2026-08-05T13:01:18.831035+00:00",
       "title": "QIMC Defines Multiple New Hydrogen Hot Zones in Nova Scotia, Reports Stronger Preliminary DDH-26-05 Hydrogen Readings and Triples ",
       "matched_noise_word": "exploration program",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T16:00:58.285944+00:00",
+      "title": "Defiance Silver Receives Approval for up to 172 Drill Sites at Espiritu Copper Target, Sonora",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
