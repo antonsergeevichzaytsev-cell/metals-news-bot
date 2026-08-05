@@ -580,8 +580,12 @@ def main():
         -((x["pubdate"] or datetime.now(timezone.utc)).timestamp()),
     ))
 
-    msk = timezone(timedelta(hours=3))
-    now = datetime.now(msk).strftime("%d %b, %H:%M MSK")
+    # Ташкент, UTC+5. Переведено 05.08.2026 вместе с переездом: раньше
+    # штамп стоял в MSK (UTC+3), и время в шапке дайджеста расходилось
+    # с местным на два часа. Узбекистан переход на летнее время не
+    # применяет, поэтому фиксированный сдвиг корректен круглый год.
+    tst = timezone(timedelta(hours=5))
+    now = datetime.now(tst).strftime("%d %b, %H:%M TST")
 
     targets = [c for c in enriched if c.get("priority") == "high"]
     rest = [c for c in enriched if c.get("priority") != "high"]
