@@ -93,11 +93,13 @@
     "00449c1fffa3368a23b39259eed626a8",
     "b3a347914bb6bb1b8b74a8228e679047",
     "4dc00532e45ff1ec8986444e69726592",
-    "fccf56fbfdf844ea5a7897911299620d"
+    "fccf56fbfdf844ea5a7897911299620d",
+    "56591e1cc61b36ca8119e0421bc3fbce",
+    "9e217c8ccafe4b244c68844921799302"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 0,
-  "last_run": "2026-08-05T10:45:32.190915+00:00",
+  "last_run_sent": 2,
+  "last_run": "2026-08-05T14:15:36.297679+00:00",
   "hits": [
     {
       "ts": "2026-07-29T15:58:48.920998+00:00",
@@ -273,6 +275,22 @@
       "company": "Uzbekistan Airways",
       "title": "“Aviation.Direct”: Transformation of “Uzbekistan Airways” could increase company’s value by nearly 40% - Dunyo.info",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUTRSVnJLMnlVcGhNdkRVUmJON3pJaGVFM1FhVjFIdHBpd2FwaXBBLXpKZlJPUDhkY0gzaWdwZWFYU2o0cFdMX0J1ZGVsLVkzenJjOURXdUlieE9WNk1tQmNVRTJzbW9RMFlrQUVJZmtSeE53a2pJeEgxNndTSWtXZTBhcXZyNUlBQjlSUkdiUWdIMG1ya1FjdnJDZ0U1SGU4dzYzZU11akttaWM?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-05T14:15:28.968913+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "Silvercorp Metals Stock Surges as Silver Rally and Global Growth Pipeline Reinforce Bullish Momentum - kalkine.ca",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNRXRFaHprUC1BbXh2Q0h0Z0ViMkUtU3lvNjFIeW1aSi16U3hvaWQtSmdiY1QxWW1sMDBCd0F2QmZRd0dQeUo2ZU9naWVPaGFENUE2RDFhV0RobXRLMEE4TUdiQ0sxVUFQWFFuUDlVMlE5NVp1cXY2NnRxN3VfZnlMWXNDTVRtQUtuZ3dMSHQzeVhra3l3Zi1iOUdNM0VhMHJ4dHM1VUx2UmxWRDBJTEY2cjJ5RmxZbFJhMXBEZ3JyRkpDVUtFTXFDV1hkQQ?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-05T14:15:30.279516+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "Why Silvercorp Metals Inc stock surged yesterday - Wealth Awesome",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTjdhZ0xkZExSZzYzSHlpQTM2WEF6R0ppVHhfX3JGNWxWUWFHTmJQOUtUVlNLNVN3alZOOGNYQW1YbVRnTGNQOVYzTElsOTVCbW1mMmhpSjBmNnZNR0EtaWxiSkxiUUdlZGt4QjhPdzBpeHJFclFtVzNsNjkxTjhSQnhsTks2bGJxZkhj?oc=5",
       "src_domain": "news.google.com"
     }
   ]
