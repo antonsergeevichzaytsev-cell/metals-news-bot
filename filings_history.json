@@ -788,20 +788,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-29T17:04:34.668798+00:00",
-      "title": "Rebond de l’EBITDA au S1 2026 ; réalisation en cours du plan de financement, essentiel pour le Groupe au S2",
-      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335473/0/fr/Rebond-de-l-EBITDA-au-S1-2026-r%C3%A9alisation-en-cours-du-plan-de-financement-essentiel-pour-le-Groupe-au-S2.html",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T17:04:34.668798+00:00",
-      "title": "EBITDA rebound in H1 2026; execution of the funding plan underway, essential for the Group in H2",
-      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335473/0/en/EBITDA-rebound-in-H1-2026-execution-of-the-funding-plan-underway-essential-for-the-Group-in-H2.html",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-29T20:09:28.177166+00:00",
       "title": "Ivanhoe Mines Issues 2026 Second-Quarter Financial Results, Overview of Operations and Exploration Activities",
       "link": "https://www.newsfilecorp.com/release/307108/Ivanhoe-Mines-Issues-2026-SecondQuarter-Financial-Results-Overview-of-Operations-and-Exploration-Activities",
@@ -1471,6 +1457,13 @@
       "title": "North America Lithium and Gold Corp. Expands Multi-Commodity Discovery at Midnight Owl with Seven High-Priority Gold Exploration T",
       "link": "https://www.newsfilecorp.com/release/308073/North-America-Lithium-and-Gold-Corp.-Expands-MultiCommodity-Discovery-at-Midnight-Owl-with-Seven-HighPriority-Gold-Exploration-Targets-Identified-Through-Advanced-Hyperspectral-Refinement",
       "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T18:13:41.567407+00:00",
+      "title": "Sego Resources Announces Options for Directors, Officers, Consultants, and Employees",
+      "link": "https://www.newsfilecorp.com/release/308160/Sego-Resources-Announces-Options-for-Directors-Officers-Consultants-and-Employees",
+      "reason": "опционы",
       "orbit": false
     }
   ],
