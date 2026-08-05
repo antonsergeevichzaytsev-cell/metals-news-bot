@@ -627,20 +627,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-29T05:30:35.648538+00:00",
-      "title": "Euro Manganese Updates on Progress Across Key Business Activities",
-      "link": "https://www.newsfilecorp.com/release/307057/Euro-Manganese-Updates-on-Progress-Across-Key-Business-Activities",
-      "reason": "обновление статуса",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T05:30:35.648538+00:00",
-      "title": "Scotia Metals Announces Closing of Business Combination and Concurrent Financing",
-      "link": "https://www.newsfilecorp.com/release/307056/Scotia-Metals-Announces-Closing-of-Business-Combination-and-Concurrent-Financing",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-29T13:01:16.995729+00:00",
       "title": "Constellium Reports Strong Second Quarter and First Half 2026 Results, including Record Segment Adjusted EBITDA; Raises Full Year ",
       "link": "https://www.globenewswire.com/news-release/2026/07/29/3335016/0/en/Constellium-Reports-Strong-Second-Quarter-and-First-Half-2026-Results-including-Record-Segment-Adjusted-EBITDA-Raises-Full-Year-2026-Guidance.html",
@@ -1374,16 +1360,17 @@
       "link": "https://www.newsfilecorp.com/release/308056/Lode-Gold-Completes-Full-Repayment-of-Fremont-Gold-Mine-Property-Secured-Loan-Ahead-of-Schedule",
       "reason": "погашение долга",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-05T05:30:39.345609+00:00",
+      "title": "NSJ Gold Corp. (NSJ) (9PZ) Announces Financing for Exploration on Its Antimony 2.0 Property",
+      "link": "https://www.newsfilecorp.com/release/308083/NSJ-Gold-Corp.-NSJ-9PZ-Announces-Financing-for-Exploration-on-Its-Antimony-2.0-Property",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-29T05:30:35.647538+00:00",
-      "title": "Argentina Metals Announces OTCQB Listing",
-      "matched_noise_word": "\\bOTCQB\\b",
-      "orbit": false
-    },
     {
       "ts": "2026-07-29T08:01:42.693406+00:00",
       "title": "Graphano Energy Appoints Andrew Gainsbury as CFO and Director, Announces Passing of Director Jay Richardson, and Provides Update o",
@@ -1502,6 +1489,12 @@
       "ts": "2026-08-04T22:00:58.283171+00:00",
       "title": "Azincourt Energy Options High-Grade Sylvia Lake Uranium Project in Labrador",
       "matched_noise_word": "high-?grade",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T05:30:39.345205+00:00",
+      "title": "Focus Graphite Announces Grant of Stock Options and Restricted Share Units",
+      "matched_noise_word": "stock option\\w*",
       "orbit": false
     }
   ]
