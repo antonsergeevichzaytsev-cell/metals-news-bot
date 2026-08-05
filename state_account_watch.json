@@ -96,25 +96,9 @@
     "fccf56fbfdf844ea5a7897911299620d"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 3,
-  "last_run": "2026-08-05T10:15:36.074839+00:00",
+  "last_run_sent": 0,
+  "last_run": "2026-08-05T10:45:32.190915+00:00",
   "hits": [
-    {
-      "ts": "2026-07-29T10:15:37.718158+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "Продукты Positive Technologies обеспечивают кибербезопасность «Селигдара» - TAdviser",
-      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQcmdwNzBSQ0x1bnFaYTFzMDVXOW5fZXc2dndlM0djVldIUEM5MDhzZmQ1QzRRMXc0UkZFc3pDdjZYUENDV2VPb0FkZ3BVSHQyNGdKMEF2Q1VKOTlHQ2dRdl9PaF9abGVwSktydk85c292c3B3cGcydGY0cDV5NmVLZlQwUGlXQ2EwMDdPMHYzMU9DZG00TTRsVi1fcy03OTNxcDkyQU1hSW5DNnRBdFNaTTlwNWpHMTNvc0VNLVZ3bmZRNzB4UzVXR0VxVHJOV3IzRUlCZmlHQk9LSzlhZm52OWVvVEpCQ0NVZ243ZVdTRGJyd1pRVUViVG5LWkpFSHZVQ3BOWk5Qcmw5bDlPYjRJcG1R?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-29T10:15:41.967740+00:00",
-      "lead_id": "outreach_auto_uzairways",
-      "company": "Uzbekistan Airways",
-      "title": "Uzbekistan Airways pinned for $120mn loss in ops ineffciency - ch-aviation",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNVk1VUczdUJkN2d4akw2STQ3VGdsMlp6cFI4MFhjSHJ2c1BNZnYwd2c2c3dnekFSQXcwd2pOVjJaZFFxczNITVNNMmVlZktDNi1pX2dpVTgySE9aMF85YnFGbGx5WHduc3kzN1p3VE1DWERZRmdLUF9EWUNoWmRZN29LOG04Y3FVc1hKSHR4YWtQZElkbDNKQ1JyRlJtbEpV?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-29T15:58:48.920998+00:00",
       "lead_id": "outreach_auto_silvercorp",
