@@ -784,6 +784,29 @@
         ]
       },
       "ts": "2026-08-05T16:00:58.290193+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/308260/Nexa-Reports-2Q26-Net-Income-of-US98-Million-and-Adjusted-EBITDA-of-US286-Million",
+      "title": "Nexa Reports 2Q26 Net Income of US$98 Million and Adjusted EBITDA of US$286 Million",
+      "stage": "commissioning",
+      "signal": "запуск фильтра хвостов",
+      "company": "Nexa Resources",
+      "project": "Aripuanã",
+      "region": "Brazil",
+      "why": "Запущен четвёртый фильтр хвостов на Aripuanã, что критично для экологии и производительности.",
+      "hook": "Контроль запуска фильтра хвостов: не дать срыву графика съесть EBITDA.",
+      "priority": "low",
+      "facts": {
+        "money_musd": [
+          286.0,
+          98.0,
+          13.0
+        ],
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-05T22:00:47.760045+00:00"
     }
   ],
   "skipped": [
@@ -1472,6 +1495,13 @@
       "link": "https://www.newsfilecorp.com/release/308252/Atlas-Salt-ernennt-Mark-Stewart-zum-Chief-Financial-Officer-und-befrdert-Robert-Booth-zum-Chief-Operating-Officer",
       "reason": "назначение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-05T22:00:47.760045+00:00",
+      "title": "DynaResource Announces Favorable Ruling in Amparo Proceedings",
+      "link": "https://www.newsfilecorp.com/release/308253/DynaResource-Announces-Favorable-Ruling-in-Amparo-Proceedings",
+      "reason": "судебное решение",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1606,6 +1636,12 @@
       "ts": "2026-08-05T20:55:39.462890+00:00",
       "title": "Pacific Booker Minerals Inc. Announces Final TSX Venture Approval and Receipt of Funds on Non-Brokered Private Placement",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-05T22:00:47.758524+00:00",
+      "title": "Sage Potash Successfully Completes Peterson 1 Drill Program and Commences Core Analysis",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
