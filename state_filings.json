@@ -539,7 +539,11 @@
     "12eb6aece29b68aec3d96d6725ffdf48",
     "4671ac66530a2bc476b70418da6b3f55",
     "c66e8caef4948ad80eee58211f187167",
-    "1b9c5e0bb52795dc012f9599c62344a9"
+    "1b9c5e0bb52795dc012f9599c62344a9",
+    "7e1b0363e8d0912d47e7a58f7318333b",
+    "1383b14425ea4d1ac32cade25abef47f",
+    "2031e8115a038829608f0d40b3da1318",
+    "3ab8c81cd376abcf4f626a086dd5fb88"
   ],
   "pending": [],
   "feed_health": {
@@ -556,13 +560,13 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-05T20:55:39.465063+00:00",
+    "ts": "2026-08-05T22:00:47.760045+00:00",
     "raw": 157,
     "fresh": 4,
     "candidates": 2,
     "prefiltered_out": 2,
     "screened": 2,
-    "skipped_by_model": 2,
+    "skipped_by_model": 1,
     "kept": 0,
     "cap": 40,
     "cap_hit": false,
