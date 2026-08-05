@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Weekly Check — Sunday 19:00 MSK.
+"""Weekly Check — воскресенье.
+
+Расписание задаётся cron в UTC. Целевое местное время — 19:00 Ташкент (UTC+5).
 Сторож (проверка самих ботов) + диспатчи за неделю + метрики v3.1 + reset-точки.
 """
 from __future__ import annotations
@@ -30,9 +32,11 @@ FILINGS_HISTORY_PATH = os.path.join(ROOT, "filings_history.json")
 SYNC_STATE_PATH = os.path.join(ROOT, "state_pipeline_sync.json")
 INBOX_STATE_PATH = os.path.join(ROOT, "state_inbox.json")
 
-MSK = timezone(timedelta(hours=3))
-Y1_START = datetime(2026, 5, 29, tzinfo=MSK)
-Y1_END = datetime(2027, 5, 29, tzinfo=MSK)
+# Ташкент, UTC+5 (переведено с MSK 05.08.2026 вместе с переездом).
+# Узбекистан летнее время не применяет — сдвиг фиксированный круглый год.
+TST = timezone(timedelta(hours=5))
+Y1_START = datetime(2026, 5, 29, tzinfo=TST)
+Y1_END = datetime(2027, 5, 29, tzinfo=TST)
 Y1_TOTAL_WEEKS = 52
 
 # --- Сторож: пороги ---------------------------------------------------------
@@ -46,9 +50,9 @@ STALE_REPLY_DAYS = 7      # ответ лежит дольше -> гниющие
 
 # Strategy v3.1 reset points (decisions_log 2026-06-09)
 RESET_POINTS = [
-    (datetime(2026, 7, 9, tzinfo=MSK),  "проверка dispatch frequency (не вырос → диагностика payout/profile, НЕ понижать ставку)"),
-    (datetime(2026, 8, 9, tzinfo=MSK),  "cash flow не восстановился → fulltime/vahta переходит в primary"),
-    (datetime(2026, 9, 9, tzinfo=MSK),  "dispatch стабильно 5+/мес → план возврата к $250 на 2 платформах"),
+    (datetime(2026, 7, 9, tzinfo=TST),  "проверка dispatch frequency (не вырос → диагностика payout/profile, НЕ понижать ставку)"),
+    (datetime(2026, 8, 9, tzinfo=TST),  "cash flow не восстановился → fulltime/vahta переходит в primary"),
+    (datetime(2026, 9, 9, tzinfo=TST),  "dispatch стабильно 5+/мес → план возврата к $250 на 2 платформах"),
 ]
 
 # Воркфлоу, которые коммитят в main через тот же concurrency-group
@@ -162,7 +166,7 @@ def watchdog(now):
     # 1. Файл вообще обновляется?
     upd = parse_dt(pipeline.get("last_updated"))
     if upd:
-        h = (now - upd.astimezone(MSK)).total_seconds() / 3600
+        h = (now - upd.astimezone(TST)).total_seconds() / 3600
         if h > STALE_HOURS:
             alarms.append(f"pipeline.json не обновлялся {h/24:.1f} дн — pipeline_sync не бежит")
     else:
@@ -221,7 +225,7 @@ def watchdog(now):
         if not lr:
             alarms.append("в state_inbox.json нет last_run — inbox.py ни разу не отработал после правки 17.07")
         else:
-            h = (now - lr.astimezone(MSK)).total_seconds() / 3600
+            h = (now - lr.astimezone(TST)).total_seconds() / 3600
             if h > STALE_HOURS:
                 alarms.append(f"inbox.py не бежал {h/24:.1f} дн — тишина на платформах может быть его смертью, а не рынком")
         # Счётчик-улика: до 17.07 тут было 2 письма за месяцы, потому что
@@ -238,7 +242,7 @@ def watchdog(now):
         if not ts:
             alarms.append("в history.json нет свежих меток времени — digest не пишет")
         else:
-            h = (now - max(ts).astimezone(MSK)).total_seconds() / 3600
+            h = (now - max(ts).astimezone(TST)).total_seconds() / 3600
             if h > STALE_HOURS:
                 alarms.append(f"history.json не пополнялся {h/24:.1f} дн — digest не бежит")
 
@@ -385,7 +389,7 @@ def tg_send(text):
 
 
 def main():
-    now = datetime.now(MSK)
+    now = datetime.now(TST)
 
     # Первым делом — жив ли сам канал оповещений. Если нет, дальше нет смысла
     # готовить сообщение, которое некуда будет доставить: сразу бьём тревогу
