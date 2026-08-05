@@ -70,9 +70,11 @@ STAGE_RU = {
     "care_maintenance": "\u043a\u043e\u043d\u0441\u0435\u0440\u0432\u0430\u0446\u0438\u044f",
 }
 
-QUIET_START_MSK = 23
-QUIET_END_MSK = 8
-MSK = timezone(timedelta(hours=3))
+# Ташкент, UTC+5 (переведено с MSK 05.08.2026 вместе с переездом).
+# Узбекистан летнее время не применяет — сдвиг фиксированный круглый год.
+QUIET_START_TST = 23
+QUIET_END_TST = 8
+TST = timezone(timedelta(hours=5))
 
 USER_AGENT = (
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -619,11 +621,11 @@ def render(c, idx):
     return block
 
 
-def in_quiet_hours(now_msk):
-    h = now_msk.hour
-    if QUIET_START_MSK > QUIET_END_MSK:
-        return h >= QUIET_START_MSK or h < QUIET_END_MSK
-    return QUIET_START_MSK <= h < QUIET_END_MSK
+def in_quiet_hours(now_tst):
+    h = now_tst.hour
+    if QUIET_START_TST > QUIET_END_TST:
+        return h >= QUIET_START_TST or h < QUIET_END_TST
+    return QUIET_START_TST <= h < QUIET_END_TST
 
 
 def main():
@@ -633,7 +635,7 @@ def main():
     # dict, а не set: нужен порядок добавления, иначе обрезка в save_state
     # режет произвольные хэши. Мембершип-тест "h in seen" работает так же.
     seen = dict.fromkeys(state.get("seen", []))
-    now_msk = datetime.now(MSK)
+    now_tst = datetime.now(TST)
 
     print(f"Sources: {len(sources)}, seen: {len(seen)}, pending: {len(state.get('pending', []))}")
 
@@ -776,10 +778,10 @@ def main():
     # Ночной улов не пингует — ждёт утра.
     queue = list(state.get("pending", [])) + kept
 
-    if in_quiet_hours(now_msk):
+    if in_quiet_hours(now_tst):
         # feed_health НЕ трогаем: не отчитались — значит переход не съеден,
         # утренний прогон обнаружит его заново и доложит.
-        print(f"Quiet hours ({now_msk:%H:%M} MSK) - queued {len(queue)}, not sending.")
+        print(f"Quiet hours ({now_tst:%H:%M} TST) - queued {len(queue)}, not sending.")
         state["pending"] = queue
         state["seen"] = list(seen)
         save_state(state)
