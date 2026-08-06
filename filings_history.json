@@ -881,83 +881,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Origen Announces Voluntary Adoption of Semi-Annual Financial Reporting Pilot",
-      "link": "https://www.newsfilecorp.com/release/307268/Origen-Announces-Voluntary-Adoption-of-SemiAnnual-Financial-Reporting-Pilot",
-      "reason": "финансовая отчетность",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Red Metal Provides Operational Update Following Recent Rainfall Near Vallenar, Chile",
-      "link": "https://www.newsfilecorp.com/release/307266/Red-Metal-Provides-Operational-Update-Following-Recent-Rainfall-Near-Vallenar-Chile",
-      "reason": "погодная задержка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Grizzly Intersects 1.0% CuEq* over 13.68 m and 0.357% CuEq* over 44.55 m at Sappho Critical Minerals Target Greenwood, BC",
-      "link": "https://www.newsfilecorp.com/release/307264/Grizzly-Intersects-1.0-CuEq-over-13.68-m-and-0.357-CuEq-over-44.55-m-at-Sappho-Critical-Minerals-Target-Greenwood-BC",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Brasnova CEO and Technical Team Conduct Site Visit to the Capela Gold Project in Bahia, Brazil",
-      "link": "https://www.newsfilecorp.com/release/307229/Brasnova-CEO-and-Technical-Team-Conduct-Site-Visit-to-the-Capela-Gold-Project-in-Bahia-Brazil",
-      "reason": "технический визит",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Bold Ventures Identifies Widespread Rare Earth Element Anomalies at Burchell, Plans Next Phase of Exploration",
-      "link": "https://www.newsfilecorp.com/release/307241/Bold-Ventures-Identifies-Widespread-Rare-Earth-Element-Anomalies-at-Burchell-Plans-Next-Phase-of-Exploration",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Metalsource Mining Extends Strike Length of Mineralization at Silver Hill with 65m South Step Out from SH26-19",
-      "link": "https://www.newsfilecorp.com/release/307204/Metalsource-Mining-Extends-Strike-Length-of-Mineralization-at-Silver-Hill-with-65m-South-Step-Out-from-SH2619",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Pasinex Announces Audited Financial Results for the Fifteen-Month Period Ended March 31, 2026",
-      "link": "https://www.newsfilecorp.com/release/307183/Pasinex-Announces-Audited-Financial-Results-for-the-FifteenMonth-Period-Ended-March-31-2026",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Anteros Announces Voluntary Filing of Technical Report",
-      "link": "https://www.newsfilecorp.com/release/307127/Anteros-Announces-Voluntary-Filing-of-Technical-Report",
-      "reason": "технический отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "RUA GOLD's Auld Creek Project Qualifies for New Zealand's 6-Month Fast-Track Approvals Process",
-      "link": "https://www.newsfilecorp.com/release/307265/RUA-GOLDs-Auld-Creek-Project-Qualifies-for-New-Zealands-6Month-FastTrack-Approvals-Process",
-      "reason": "разрешение на ускорение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "Tower Engages Simone Capital for Investor Relations Services",
-      "link": "https://www.newsfilecorp.com/release/307227/Tower-Engages-Simone-Capital-for-Investor-Relations-Services",
-      "reason": "IR контракт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T13:01:29.448724+00:00",
-      "title": "T2 Metals Commences Drilling at Aurora Gold-Silver Project, Yukon, Canada",
-      "link": "https://www.newsfilecorp.com/release/307226/T2-Metals-Commences-Drilling-at-Aurora-GoldSilver-Project-Yukon-Canada",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-30T15:17:50.156652+00:00",
       "title": "Boreal Gold Reports 15.54 g/t Gold over 2.41m in Drill Hole GR-26-149 Including 81.5 g/t Gold over 0.41m in the High-Grade Gold Ro",
       "link": "https://www.newsfilecorp.com/release/307295/Boreal-Gold-Reports-15.54-gt-Gold-over-2.41m-in-Drill-Hole-GR26149-Including-81.5-gt-Gold-over-0.41m-in-the-HighGrade-Gold-Rock-Vein-West-of-Snow-Lake-Manitoba",
@@ -1565,16 +1488,24 @@
       "link": "https://www.newsfilecorp.com/release/308290/Tudor-Gold-Discovers-New-CopperGold-Porphyry-System-and-Confirms-GoldSilver-Epithermal-Trend-Within-Treaty-Creeks-Perfectstorm-Zone",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-06T13:01:31.769754+00:00",
+      "title": "Getty Copper Commences Trading on OTCQX Best Market",
+      "link": "https://www.newsfilecorp.com/release/308340/Getty-Copper-Commences-Trading-on-OTCQX-Best-Market",
+      "reason": "листинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T13:01:31.769754+00:00",
+      "title": "Highcliff Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/308319/Highcliff-Provides-Corporate-Update",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-30T13:01:29.443096+00:00",
-      "title": "Vinland Lithium Inc. Identifies High-Priority Tungsten Targets and Announces $300,000 Flow-Through Financing",
-      "matched_noise_word": "flow-?through",
-      "orbit": false
-    },
     {
       "ts": "2026-07-30T15:17:50.154959+00:00",
       "title": "Hercules Metals Announces the Appointment of Former Arizonan Sonoran Management Team Led by George Ogilvie",
@@ -1711,6 +1642,12 @@
       "ts": "2026-08-06T12:57:31.303046+00:00",
       "title": "Sorrento Resources Ltd. Intersects 31m of 0.42g/t Au, Rodgers Cove, Newfoundland",
       "matched_noise_word": "intersect\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T13:01:31.768538+00:00",
+      "title": "Dynasty Completes First Five Drill-Holes in South-Pelham Area",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
