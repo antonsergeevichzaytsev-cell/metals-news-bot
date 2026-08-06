@@ -877,51 +877,46 @@
         "test_scale": "НЕ УКАЗАН"
       },
       "ts": "2026-08-06T12:57:31.307762+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340870/0/en/B2Gold-Reports-Q2-2026-Results-Strong-Operating-Performance-at-the-Fekola-Masbate-and-Otjikoto-Mines-led-to-Higher-than-Expected-Gold-Production-and-Lower-than-Expected-All-In-Sust.html",
+      "title": "B2Gold Reports Q2 2026 Results; Strong Operating Performance at the Fekola, Masbate, and Otjikoto Mines led to Higher than Expected Gold Production and Lower than Expected All-In Sustaining Costs; Menankoto Exploitation Permit Expected to be Issued in the Near-Term by the State of Mali",
+      "stage": "operating",
+      "signal": "производство выше плана",
+      "company": "B2Gold Corp.",
+      "project": "Fekola, Masbate, Otjikoto",
+      "region": "Мали, Филиппины, Намибия",
+      "why": "Производство золота выше ожиданий, AISC ниже плана, но активы вне целевого региона.",
+      "hook": "Операционный контроль: удержать темпы и затраты на достигнутом уровне.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026",
+          "Q2 2026"
+        ]
+      },
+      "ts": "2026-08-06T22:00:57.286906+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/308443/Intrepid-Metals-Files-NI-43101-Technical-Report-for-the-Corral-Copper-Project-in-Arizona",
+      "title": "Intrepid Metals Files NI 43-101 Technical Report for the Corral Copper Project in Arizona",
+      "stage": "exploration",
+      "signal": "технический отчёт",
+      "company": "Intrepid Metals Corp.",
+      "project": "Corral Copper Project",
+      "region": "USA",
+      "why": "Технический отчёт по проекту на стадии разведки, без инженерных решений.",
+      "hook": "На стадии разведки нет задач для owner-side контроля.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-06T22:00:57.286906+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-30T15:17:50.156652+00:00",
-      "title": "Boreal Gold Reports 15.54 g/t Gold over 2.41m in Drill Hole GR-26-149 Including 81.5 g/t Gold over 0.41m in the High-Grade Gold Ro",
-      "link": "https://www.newsfilecorp.com/release/307295/Boreal-Gold-Reports-15.54-gt-Gold-over-2.41m-in-Drill-Hole-GR26149-Including-81.5-gt-Gold-over-0.41m-in-the-HighGrade-Gold-Rock-Vein-West-of-Snow-Lake-Manitoba",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T15:17:50.156652+00:00",
-      "title": "Vantage Goldfields Corrects Misleading Announcements by Metals One Plc (MET1) and Lions Bay Capital Inc. (LBI)",
-      "link": "https://www.newsfilecorp.com/release/307282/Vantage-Goldfields-Corrects-Misleading-Announcements-by-Metals-One-Plc-MET1-and-Lions-Bay-Capital-Inc.-LBI",
-      "reason": "корпоративный спор",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T15:17:50.156652+00:00",
-      "title": "Purepoint Intersects 5.6 Metres of Continuous Radioactivity at Nova, Peaking at 53,300 CPS",
-      "link": "https://www.newsfilecorp.com/release/307284/Purepoint-Intersects-5.6-Metres-of-Continuous-Radioactivity-at-Nova-Peaking-at-53300-CPS",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T17:14:57.763570+00:00",
-      "title": "Stria Provides Update on Change of Business Transaction",
-      "link": "https://www.newsfilecorp.com/release/307306/Stria-Provides-Update-on-Change-of-Business-Transaction",
-      "reason": "смена бизнеса",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T20:12:35.423184+00:00",
-      "title": "Emerita Files Management Information Circular for Annual and Special Meeting and Reminds Shareholders to Vote",
-      "link": "https://www.newsfilecorp.com/release/307329/Emerita-Files-Management-Information-Circular-for-Annual-and-Special-Meeting-and-Reminds-Shareholders-to-Vote",
-      "reason": "собрание акционеров",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T20:12:35.423184+00:00",
-      "title": "Anquiro Ventures Provides Further Update on Its Concurrent Financing",
-      "link": "https://www.newsfilecorp.com/release/307325/Anquiro-Ventures-Provides-Further-Update-on-Its-Concurrent-Financing",
-      "reason": "размещение",
-      "orbit": false
-    },
     {
       "ts": "2026-07-30T22:05:47.032708+00:00",
       "title": "Eldorado Gold Provides Update on Executive Leadership Transition",
@@ -1502,22 +1497,52 @@
       "link": "https://www.newsfilecorp.com/release/308319/Highcliff-Provides-Corporate-Update",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-06T22:00:57.286906+00:00",
+      "title": "Torex Gold Reports Q2 2026 Results",
+      "link": "https://www.newsfilecorp.com/release/308421/Torex-Gold-Reports-Q2-2026-Results",
+      "reason": "квартальный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T22:00:57.286906+00:00",
+      "title": "IAMGOLD annonce la nomination de Catherine McLeod-Seltzer au conseil d'administration",
+      "link": "https://www.newsfilecorp.com/release/308503/IAMGOLD-annonce-la-nomination-de-Catherine-McLeodSeltzer-au-conseil-dadministration",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T22:00:57.286906+00:00",
+      "title": "Firestone Adopts Semi-Annual Financial Reporting",
+      "link": "https://www.newsfilecorp.com/release/308496/Firestone-Adopts-SemiAnnual-Financial-Reporting",
+      "reason": "отчётность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T22:00:57.286906+00:00",
+      "title": "IAMGOLD Reports Second Quarter 2026 Results",
+      "link": "https://www.newsfilecorp.com/release/308480/IAMGOLD-Reports-Second-Quarter-2026-Results",
+      "reason": "квартальный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T22:00:57.286906+00:00",
+      "title": "Goldmoney Inc. Reports Results for the Quarter Ended June 30, 2026",
+      "link": "https://www.newsfilecorp.com/release/308415/Goldmoney-Inc.-Reports-Results-for-the-Quarter-Ended-June-30-2026",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T22:00:57.286906+00:00",
+      "title": "Awalé Completes $20.7 Million Strategic Financing with Closing of Final Tranche",
+      "link": "https://www.newsfilecorp.com/release/308349/Awal-Completes-20.7-Million-Strategic-Financing-with-Closing-of-Final-Tranche",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-30T15:17:50.154959+00:00",
-      "title": "Hercules Metals Announces the Appointment of Former Arizonan Sonoran Management Team Led by George Ogilvie",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T20:12:35.421834+00:00",
-      "title": "Canadian Gold Resources Strengthens Technical Leadership with Appointment of Chief Geologist and Announces Stock Option Grants",
-      "matched_noise_word": "stock option\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-07-30T22:05:47.028835+00:00",
       "title": "Gold Hunter Announces Change of Auditor",
@@ -1648,6 +1673,12 @@
       "ts": "2026-08-06T13:01:31.768538+00:00",
       "title": "Dynasty Completes First Five Drill-Holes in South-Pelham Area",
       "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T22:00:57.281785+00:00",
+      "title": "Sun Summit Announces Non-Brokered Private Placement of up to $4 Million to Expand the 2026 Drill Program at the JD Project to 15,0",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
