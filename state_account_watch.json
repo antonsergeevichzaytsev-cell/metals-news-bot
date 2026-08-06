@@ -101,20 +101,13 @@
     "9b253e33be6715f4ca0549f85cb479c4",
     "8d6d65c03efec77e7e46af27f00d0232",
     "0af47226c3bbe826e1f807e62c2d32df",
-    "49f627d171187d945a108f820a2ecef8"
+    "49f627d171187d945a108f820a2ecef8",
+    "5f319ce9fbca86c79cef443963051a64"
   ],
   "last_run_targets": 12,
   "last_run_sent": 1,
-  "last_run": "2026-08-06T10:48:18.644436+00:00",
+  "last_run": "2026-08-06T14:15:40.324114+00:00",
   "hits": [
-    {
-      "ts": "2026-07-30T12:02:07.407302+00:00",
-      "lead_id": "outreach_auto_steppegold",
-      "company": "Steppe Gold",
-      "title": "ETFs Investing in Steppe Gold Ltd. Stocks - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0tQXFiaEltX1FGb29JSmlldHE5VTZUN2JvU29YbnNrcmtlTG1HQ1JXSDlzZTU5RkU2THprQk5hZEJMMk8wT2VyYUhtclllemlJNTlYTGM2NTlfRmFRU1E?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-30T16:01:31.418822+00:00",
       "lead_id": "outreach_auto_seligdar",
@@ -321,6 +314,14 @@
       "company": "Селигдар",
       "title": "Апелляция вынесла решение по требованию «Селигдар» об арестах в Екатеринбурге на полмиллиарда - Правда УрФО",
       "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOQWdZZXBjV1lSWHZ3SzhuY2ZyZGtmYmxsMlhLLTJ3cGU4RkJTZVItdEE1bVJXeklhLVkyMGMzc3NWNGpmZ0dRdmlxOFdGLVltTVJMRkRPUVdaQ2dyTzBsMTIxTTlzbXVnVVFfem13V0lpckRNVW1BOFNvVG1JV25HaHZCWnJ5VkEtYTVXeFE0WGNOU1NiRGNiVmRLUVhWSHRqand5RE4wTE4tNE9KYmhZenRGQmR2ei1MYi1Feg?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-06T14:15:38.823618+00:00",
+      "lead_id": "outreach_auto_uzairways",
+      "company": "Uzbekistan Airways",
+      "title": "Uzbekistan Airways Launches Abu Dhabi Flights with Etihad Airways - UzDaily.uz",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQYTZQejAyU25nMXpWYlZsMGRpR3UzNDNPNm1WTm5Ba0h0enRsU0lZdlRCQXplUlMzN2NpRVNmYUhDR29iRWRhbGZYZk9SVW84dnIxRzBiOUZ5azhMQzlrOTZfZDdQaEJpb1k0d1JPc0NIb0hQTDdwNTE1U3V5My1WU205UEliY2dtcWgtYkc4X0owTGhxZ0JR?oc=5",
       "src_domain": "news.google.com"
     }
   ]
