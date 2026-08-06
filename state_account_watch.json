@@ -95,36 +95,17 @@
     "4dc00532e45ff1ec8986444e69726592",
     "fccf56fbfdf844ea5a7897911299620d",
     "56591e1cc61b36ca8119e0421bc3fbce",
-    "9e217c8ccafe4b244c68844921799302"
+    "9e217c8ccafe4b244c68844921799302",
+    "faf14c89a92d42202c82b8f83f5c1ec2",
+    "1fc7c0fc9d2007e3c003ed2d6c76ea76",
+    "9b253e33be6715f4ca0549f85cb479c4",
+    "8d6d65c03efec77e7e46af27f00d0232",
+    "0af47226c3bbe826e1f807e62c2d32df"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 0,
-  "last_run": "2026-08-05T14:33:07.574511+00:00",
+  "last_run_sent": 5,
+  "last_run": "2026-08-06T10:15:47.146135+00:00",
   "hits": [
-    {
-      "ts": "2026-07-29T15:58:48.920998+00:00",
-      "lead_id": "outreach_auto_silvercorp",
-      "company": "Silvercorp Metals",
-      "title": "Is the Options Market Predicting a Spike in Silvercorp Metals Stock? - Zacks Investment Research",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPa09rSVpPM203Wmw0WndFY0JYSkRTdXRLT0lETzFMcV91RnpXYmw4SXJfLVU1NXg4dFBZWlBpbnRENnJtX2lRSnFHVDNyZjB4c0psbTQ0NTNwb0pNS0pNRmVlYVpTZGZTTWw5eEwtZ0lHaFVTdXZ6alJVLXJQOWNkWUxuZmk5Zy1jOTZnMlhZZkRlVFVkeWh3aVgwZGotd2h5VU9PMUVWVWFxQUVq?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-30T10:15:38.545654+00:00",
-      "lead_id": "outreach_auto_silvercorp",
-      "company": "Silvercorp Metals",
-      "title": "Is the Options Market Predicting a Spike in Silvercorp Metals Stock? - Yahoo Finance UK",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZTJPWlpGNTR1dWFQUmUtM1gyMTBlemk0TUNUSEN2NkEteFVJV2JLOWxRRXYzZnJycmRrNGQ4aWFVZ3A3blBXeUxPb3pOVjlKU1FNWUVXcnhMaGxLOHVVUnd6Q2tfRlRoMUQ0ZGRqUjE4ZElsUWJ4eU5NNHR4VGdzekg1bDlVOHdVa3BiaUxwSDYwQmpwZkE?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-30T10:15:40.017993+00:00",
-      "lead_id": "outreach_auto_silvercorp",
-      "company": "Silvercorp Metals",
-      "title": "Silvercorp Metals Inc (SVM) Institutional Confidence - TradingKey",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9hNFpNWEU5RWFZQWM5UEJfNzJ0UlVOdjRYRDNtOWhGMUllcDk0bHdKcG5uUF9kU0MtSzRjZHFQYW1Xelh5NWFPRnV2b0ZSS294NFI1WHE0ZS1kU1FoVjFsT2hJbEE3UQ?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-30T12:02:07.407302+00:00",
       "lead_id": "outreach_auto_steppegold",
@@ -291,6 +272,46 @@
       "company": "Silvercorp Metals",
       "title": "Why Silvercorp Metals Inc stock surged yesterday - Wealth Awesome",
       "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTjdhZ0xkZExSZzYzSHlpQTM2WEF6R0ppVHhfX3JGNWxWUWFHTmJQOUtUVlNLNVN3alZOOGNYQW1YbVRnTGNQOVYzTElsOTVCbW1mMmhpSjBmNnZNR0EtaWxiSkxiUUdlZGt4QjhPdzBpeHJFclFtVzNsNjkxTjhSQnhsTks2bGJxZkhj?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-06T10:15:31.085329+00:00",
+      "lead_id": "outreach_auto_steppegold",
+      "company": "Steppe Gold",
+      "title": "Why Steppe Gold Ltd stock is skyrocketing today - Wealth Awesome",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOb2M2UUF2dmQtN1o4SDZ2Vl9BOGZaaVRXR1AwaTBlclhGMWc2WGlkeDRidnJfSUZtdmpQMmVpWHdRREpUVUUxdWRkVlF6YmM5bl9ERnRiQm9BcjZYYkxkck8wX0FjUHppT1pjRE9yZElaUTRLdlF5VGhYSDBvZHJBTC10OXdaRVk0OXc?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-06T10:15:35.952833+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "Silvercorp Metals Gears Up to Report Q1 Earnings: What's in Store? - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOMC03NFg1Y3hBX05WT0NPTV9qaE1uaE1EMUFRSjdTQXZCRm5RcTVIMGlWdUw5cXFWOHVlc3Z2VDlreUdLYUtYZVhCdWZNSnQ4anMtNWtGY1ZqQlc0RWRKTFUxclRzSXJGcEdqOS1qU294Vm11X3gwWWgwamk4QVNaNFY3MHo3cFBIZWNLOHpCaVNmb0ZfTGF1X093Qnh0TUE?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-06T10:15:37.465186+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "Do Lower 2026 Earnings Estimates Recast Silvercorp Metals’ (TSX:SVM) Cash Flow Story? - simplywall.st",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOU3h1TjM2V0NTbVBiYldQRUl3NXRNMEttdHYtS0JiVGd5aW5rcEd3M3JRWjljT3I0Z3laTGZOelotQmJsSFY5bkJlTDRSeG81MzJGRlJhTWRxbW9wb3hkZy0xZHJDOXQtQ1EwWEtGeENwM1JoNFpZMXYxZUhBd05VV1NidG9pejNjSElDMU9rSkVTY2EtYllIdW9OSWFONXN5NWpKaHNKZ3l6MDZyc2lpM09CeC1nM3gzcDg3aVRvNEpwdWE3SmpUcjhGZWFHdlFxZlBkWnBDNNIB3AFBVV95cUxQc1ZISFFZZktZV3FmT3pvUGx2R1g4VlB5a1k5dHBSbjk0NFV3SjVTZlVZd2hhR2pVWEpDcGVGcEpCZ1VqMVZZUVZkV1E4SXNORnMyY2JidUVOd3ppWWxfcXpFcWx3Q0pqd1RLTFpRNTVueThxZEZuQ0wwUkpjTi1xZEkzOXFFQ0JQUy1oQzRpNnZPTU44R2pfVUtHaldLUnk1TEVQamx4UkRSUndscVVHRV9RWjRpdV9tNmpzZUY0ZGQ2T056T1dMbm9LZTdoeXNxczNOUFkwSnd2ekpv?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-06T10:15:38.814711+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "Will Silvercorp Metals (TSX:SVM) Benefit From Rising Silver Demand? - Kalkine Media",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQMHVSQW5YU1ZxTHVWcDRCbHVrdFc0VWVUb21MeWRLRTBhR01EeDlMLVlsdGVZTUZHSFFxNEZZZFJEb1Z6TFRONHYtMVFmZzdPRDhZSV8wU1JDeG9vS01mTXNONXJ2bzF1U3YxNW91c0VQVDVRMmpNUFVrWXo2cUQ1M1dEam1ZSlJwTld1amJqYU5MNmFZbUp4OGpFbm9uX0ZkczRqRUlJaWR4aWRjVFVfSDNOMExldw?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-06T10:15:45.645707+00:00",
+      "lead_id": "outreach_auto_uzairways",
+      "company": "Uzbekistan Airways",
+      "title": "“Aviation.Direct”: Transformation of “Uzbekistan Airways” could increase company’s value by nearly 40% - Dunyo.info",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPRlY5amo1bFFrWUxoX0o5S1BZZzZMZUhhQTEyVS1paGFwSmo0RWhhUXhqaEd6MzJaNVEzdzhSems3RUZRMERjSFBFU3pBWUtBbGRRRll5MzZLUnZ4YU5jNHNxU0FzUzVMM2hmZENGdlNOS3QwNDZTOFJ0dm8xQVc2S1I1alNkeXRxYTNXU2ZpRmVKcTJub2dDd09KeFNwNGxvNElZ?oc=5",
       "src_domain": "news.google.com"
     }
   ]
