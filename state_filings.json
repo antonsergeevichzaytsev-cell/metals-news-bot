@@ -569,7 +569,20 @@
     "e3d6d4c0a489275ccd4ab39de5567efd",
     "8735aef3e45ed7778dc34b59f2046256",
     "f563134a92cc433d78a68388f7f78d7a",
-    "76f2c63e6ccf1f1e46ed3fb31706983d"
+    "76f2c63e6ccf1f1e46ed3fb31706983d",
+    "7c7e5e48ded0cc6f28a4615674e3d895",
+    "55badd1afcdd5cadcf33f9f58517c668",
+    "8f808b9d9b2111e5af3099cde10d0f44",
+    "b4eee97843053f6b4dfb52910a9beb70",
+    "8e04485351211b939fd7237deb04ca3e",
+    "446c63a114a09c664618a3bccb5614c4",
+    "a56b211a38aa0f06dca96e292c30d938",
+    "0fc4094f858d42819c925af58b752cbc",
+    "6e3dc365407086dc377b4a18f28216b5",
+    "529d3895dfec01ac1b7cb8216dac3f1d",
+    "05f3601f8c423d44119aa1446658d2ee",
+    "411f50943000623f1abdb4d336dd6554",
+    "57bf90040ca51dbbafbece25d55bbb37"
   ],
   "pending": [],
   "feed_health": {
@@ -586,18 +599,17 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-06T13:01:31.769754+00:00",
+    "ts": "2026-08-06T22:00:57.286906+00:00",
     "raw": 157,
-    "fresh": 3,
-    "candidates": 2,
-    "prefiltered_out": 1,
-    "screened": 2,
-    "skipped_by_model": 2,
+    "fresh": 13,
+    "candidates": 8,
+    "prefiltered_out": 5,
+    "screened": 8,
+    "skipped_by_model": 6,
     "kept": 0,
     "cap": 40,
     "cap_hit": false,
-    "feeds_broken": 0,
-    "labels_collected": 0
+    "feeds_broken": 0
   },
   "msg_map": {
     "382": {
