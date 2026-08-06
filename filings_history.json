@@ -1593,6 +1593,12 @@
       "title": "Sage Potash Successfully Completes Peterson 1 Drill Program and Commences Core Analysis",
       "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-06T06:10:02.245052+00:00",
+      "title": "Thor Explorations Announces Further High-Grade Mineralisation Intersected Below Segilola Open Pit",
+      "matched_noise_word": "intersect\\w*",
+      "orbit": false
     }
   ]
 }
