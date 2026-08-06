@@ -428,15 +428,15 @@
     "Glasford"
   ],
   "platform_silence_prev": {
-    "AlphaSights": "silent 219d",
+    "AlphaSights": "silent 220d",
     "Atheneum": "live",
     "Capvision": "unverified",
-    "Dialectica": "silent 219d",
+    "Dialectica": "silent 220d",
     "GLG": "live",
-    "Glasford": "silent 219d",
+    "Glasford": "silent 220d",
     "Guidepoint": "live",
-    "ProSapient": "silent 219d",
-    "Tegus": "silent 219d",
+    "ProSapient": "silent 220d",
+    "Tegus": "silent 220d",
     "Third Bridge": "unverified"
   },
   "won_notified": [],
