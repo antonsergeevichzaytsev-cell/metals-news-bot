@@ -807,86 +807,27 @@
         ]
       },
       "ts": "2026-08-05T22:00:47.760045+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/308297/Millennium-Silver-Engages-Robison-Engineering-for-Water-Infrastructure-Development-at-Silver-Peak",
+      "title": "Millennium Silver Engages Robison Engineering for Water Infrastructure Development at Silver Peak",
+      "stage": "study",
+      "signal": "инженерия для воды",
+      "company": "Millennium Silver Corp.",
+      "project": "Silver Peak",
+      "region": "USA",
+      "why": "Инженерия водной инфраструктуры на этапе изучения, но актив вне целевого региона.",
+      "hook": "Оценка затрат на водную инфраструктуру: сверить смету до инвестиционного решения.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-06T05:30:35.039413+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "Kinross reports strong 2026 second-quarter results",
-      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335652/0/en/Kinross-reports-strong-2026-second-quarter-results.html",
-      "reason": "финрезультаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "Alamos Gold Reports Second Quarter 2026 Results",
-      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335649/0/en/Alamos-Gold-Reports-Second-Quarter-2026-Results.html",
-      "reason": "финрезультаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "Kinross declares quarterly dividend",
-      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335646/0/en/Kinross-declares-quarterly-dividend.html",
-      "reason": "дивиденды",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "Green Canada and MAACKK Capital Files TSXV Listing Application on SEDAR+",
-      "link": "https://www.newsfilecorp.com/release/307209/Green-Canada-and-MAACKK-Capital-Files-TSXV-Listing-Application-on-SEDAR",
-      "reason": "листинг",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "Elemental Royalty Notes 32% Increase in Reserves at Karlawinda with Expansion Commissioning on Track for Q3 2026",
-      "link": "https://www.newsfilecorp.com/release/307166/Elemental-Royalty-Notes-32-Increase-in-Reserves-at-Karlawinda-with-Expansion-Commissioning-on-Track-for-Q3-2026",
-      "reason": "третьи лица",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "Greenheart Gold Announces Results from the Maiden Drill Program at Igab, Including Hole D-007 Intersecting 7.0 m @ 5.82 g/t Au, an",
-      "link": "https://www.newsfilecorp.com/release/307192/Greenheart-Gold-Announces-Results-from-the-Maiden-Drill-Program-at-Igab-Including-Hole-D007-Intersecting-7.0-m-5.82-gt-Au-and-Results-at-Majorodam",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "Valhalla Engages Independent Trading Group for Automated Market Making Services",
-      "link": "https://www.newsfilecorp.com/release/307177/Valhalla-Engages-Independent-Trading-Group-for-Automated-Market-Making-Services",
-      "reason": "маркет-мейкинг",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "J2 Metals Reports Fiscal 2026 Year-End Financial Results and Provides Corporate Update",
-      "link": "https://www.newsfilecorp.com/release/307182/J2-Metals-Reports-Fiscal-2026-YearEnd-Financial-Results-and-Provides-Corporate-Update",
-      "reason": "финансовый отчет",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-29T22:00:52.772169+00:00",
-      "title": "Dakota Gold Announces Leadership Changes as It Advances Its Richmond Hill Gold Project",
-      "link": "https://www.newsfilecorp.com/release/307167/Dakota-Gold-Announces-Leadership-Changes-as-It-Advances-Its-Richmond-Hill-Gold-Project",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T05:30:34.993245+00:00",
-      "title": "Revival Gold Announces Closing of Sale of Non-Core Diamond Mountain Phosphate Property",
-      "link": "https://www.newsfilecorp.com/release/307261/Revival-Gold-Announces-Closing-of-Sale-of-NonCore-Diamond-Mountain-Phosphate-Property",
-      "reason": "продажа актива",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T05:30:34.993245+00:00",
-      "title": "Adex Mining Appeals Regulatory Action",
-      "link": "https://www.newsfilecorp.com/release/307235/Adex-Mining-Appeals-Regulatory-Action",
-      "reason": "апелляция",
-      "orbit": false
-    },
     {
       "ts": "2026-07-30T07:44:26.171814+00:00",
       "title": "Endeavour Reports Strong H1-2026 Results",
@@ -1502,22 +1443,31 @@
       "link": "https://www.newsfilecorp.com/release/308253/DynaResource-Announces-Favorable-Ruling-in-Amparo-Proceedings",
       "reason": "судебное решение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-06T05:30:35.039413+00:00",
+      "title": "Kingman Adopts Semi-Annual Financial Reporting",
+      "link": "https://www.newsfilecorp.com/release/308333/Kingman-Adopts-SemiAnnual-Financial-Reporting",
+      "reason": "отчётность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T05:30:35.039413+00:00",
+      "title": "Ridgeline files Early Warning Report in Respect of Spartan Metals Corp.",
+      "link": "https://www.newsfilecorp.com/release/308321/Ridgeline-files-Early-Warning-Report-in-Respect-of-Spartan-Metals-Corp.",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-06T05:30:35.039413+00:00",
+      "title": "Rostislav Raykov Announces Filing of Early Warning Report Related to Lavras Gold Corp.",
+      "link": "https://www.newsfilecorp.com/release/308311/Rostislav-Raykov-Announces-Filing-of-Early-Warning-Report-Related-to-Lavras-Gold-Corp.",
+      "reason": "третьи лица",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-29T22:00:52.770315+00:00",
-      "title": "Big Sky Industrial Schedules Second Quarter 2026 Conference Call for August 11, 2026 at 9:00 a.m. ET",
-      "matched_noise_word": "conference",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T05:30:34.991520+00:00",
-      "title": "Manganese X Energy Announces Appointment of Andrew Gainsbury as Chief Financial Officer and the Passing of Director Jay Richardson",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-07-30T13:01:29.443096+00:00",
       "title": "Vinland Lithium Inc. Identifies High-Priority Tungsten Targets and Announces $300,000 Flow-Through Financing",
