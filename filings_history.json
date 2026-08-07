@@ -987,6 +987,221 @@
         ]
       },
       "ts": "2026-08-07T00:51:05.806713+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/09/3324611/0/en/sandfire-resources-america-delivers-black-butte-copper-pfs-upgrade-with-new-lowry-reserves-12-year-mine-life-high-grade-production-profile-and-stronger-project-economics.html",
+      "title": "Sandfire Resources America Delivers Black Butte Copper PFS Upgrade with New Lowry Reserves, 12-Year Mine Life, High-Grade Production Profile and Stronger Project Economics",
+      "stage": "study",
+      "signal": "PFS обновлён",
+      "company": "Sandfire Resources America",
+      "project": "Black Butte Copper",
+      "region": "USA",
+      "why": "Обновлённый PFS с новыми запасами Lowry, сроком 12 лет и улучшенной экономикой.",
+      "hook": "На этапе PFS возможна сверка оценки CapEx и FEL-анализ до инвестрешения.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3334925/0/en/sandfire-resources-america-files-black-butte-copper-project-preliminary-feasibility-study.html",
+      "title": "Sandfire Resources America Files Black Butte Copper Project Preliminary Feasibility Study",
+      "stage": "study",
+      "signal": "PFS опубликован",
+      "company": "Sandfire Resources America",
+      "project": "Black Butte Copper Project",
+      "region": "USA",
+      "why": "PFS по медному проекту опубликован, но актив вне целевого региона.",
+      "hook": "Owner-side проверка сметы и CapEx на этапе PFS: не дать бюджету уйти вверх.",
+      "priority": "medium",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338402/0/fr/niobay-obtient-99-6-en-oxyde-de-niobium-nb-o-et-99-98-en-oxyde-de-tantale-ta-o-dans-la-fabrication-de-ses-oxydes-finaux.html",
+      "title": "NioBay obtient ~99,6 % en oxyde de niobium (Nb₂O₅) et 99,98 % en oxyde de tantale (Ta₂O₅) dans la fabrication de ses oxydes finaux",
+      "stage": "study",
+      "signal": "металлургия не вышла",
+      "company": "NioBay Metals",
+      "project": "",
+      "region": "Canada",
+      "why": "Металлургические испытания показали высокую чистоту оксидов, но это не гарантирует экономическую эффективность.",
+      "hook": "Металлургия подтверждена, но нужен аудит затрат на этапе ТЭО.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338402/0/en/niobay-achieves-99-6-niobium-oxide-nb-o-and-99-98-tantalum-oxide-ta-o-in-the-manufacture-of-final-oxides-from-crevier.html",
+      "title": "NioBay Achieves ~99.6% Niobium Oxide (Nb₂O₅) and 99.98% Tantalum Oxide (Ta₂O₅) in the manufacture of final oxides from Crevier",
+      "stage": "study",
+      "signal": "металлургия не вышла",
+      "company": "NioBay Metals Inc.",
+      "project": "Crevier",
+      "region": "Canada",
+      "why": "Металлургические испытания показали высокую чистоту оксидов, но проект на ранней стадии.",
+      "hook": "Металлургия подтверждена, но нужен контроль затрат на этапе исследований.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335644/0/en/kinross-provides-update-on-lobo-marte-project.html",
+      "title": "Kinross provides update on Lobo-Marte project",
+      "stage": "study",
+      "signal": "проект продвигается",
+      "company": "Kinross",
+      "project": "Lobo-Marte",
+      "region": "Chile",
+      "why": "Проект на стадии разрешений и детального проектирования, NPV $4.3 млрд, но CapEx не указан.",
+      "hook": "На этапе проектирования нужен owner-side контроль стоимости и графика, чтобы уложиться в бюджет.",
+      "priority": "medium",
+      "facts": {
+        "money_musd": [
+          4300.0
+        ],
+        "tonnage": [
+          {
+            "value": 350000.0,
+            "unit": "oz"
+          }
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336495/0/en/eldorado-gold-reports-solid-q2-2026-financial-and-operational-results-skouries-on-track-for-q3-2026.html",
+      "title": "Eldorado Gold Reports Solid Q2 2026 Financial and Operational Results; Skouries On Track for Q3 2026",
+      "stage": "construction",
+      "signal": "стройка идёт по графику",
+      "company": "Eldorado Gold",
+      "project": "Skouries",
+      "region": "Greece",
+      "why": "Строительство Skouries идёт по графику, запуск в Q3 2026, нужен контроль подрядчика.",
+      "hook": "Owner-side контроль подрядчика и графика: не дать стройке съесть бюджет до первого золота.",
+      "priority": "medium",
+      "facts": {
+        "horizon": [
+          "2026",
+          "Q2 2026",
+          "Q3 2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/05/3339097/0/en/liberty-gold-advances-black-pine-permitting-with-submission-of-preliminary-cyanidation-design-report.html",
+      "title": "Liberty Gold Advances Black Pine Permitting with Submission of Preliminary Cyanidation Design Report",
+      "stage": "study",
+      "signal": "разрешение на проект",
+      "company": "Liberty Gold Corp.",
+      "project": "Black Pine Oxide Gold Project",
+      "region": "USA",
+      "why": "Подача отчета по цианированию для разрешения — ключевой этап, но проект вне географии.",
+      "hook": "На этапе разрешения и проектирования: контроль стоимости и графика FEL 1-3.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/05/3339173/0/en/asante-updates-m-i-resource-to-4-6-million-ounces-at-bibiani-and-chirano-gold-mines.html",
+      "title": "Asante Updates M&I Resource to 4.6 Million Ounces at Bibiani and Chirano Gold Mines",
+      "stage": "operating",
+      "signal": "ресурсы обновлены",
+      "company": "Asante Gold Corporation",
+      "project": "Bibiani and Chirano Gold Mines",
+      "region": "Ghana",
+      "why": "Обновлены ресурсы и запасы на действующих рудниках, но нет данных по добыче или переработке.",
+      "hook": "На действующих рудниках контроль извлечения и производительности может дать рост без CapEx.",
+      "priority": "low",
+      "facts": {
+        "tonnage": [
+          {
+            "value": 4600000.0,
+            "unit": "ounces"
+          }
+        ],
+        "horizon": [
+          "2023",
+          "2024",
+          "2025"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340870/0/en/b2gold-reports-q2-2026-results-strong-operating-performance-at-the-fekola-masbate-and-otjikoto-mines-led-to-higher-than-expected-gold-production-and-lower-than-expected-all-in-sust.html",
+      "title": "B2Gold Reports Q2 2026 Results; Strong Operating Performance at the Fekola, Masbate, and Otjikoto Mines led to Higher than Expected Gold Production and Lower than Expected All-In Sustaining Costs; Menankoto Exploitation Permit Expected to be Issued in the Near-Term by the State of Mali",
+      "stage": "operating",
+      "signal": "производство выше плана",
+      "company": "B2Gold Corp.",
+      "project": "Fekola, Masbate, Otjikoto",
+      "region": "Mali, Philippines, Namibia",
+      "why": "Производство выше ожиданий, AISC ниже плана, но активы вне целевого региона.",
+      "hook": "Операционный контроль и рост производительности: удержать темпы выше плана без потери безопасности.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026",
+          "Q2 2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333468/0/fr/falco-d%C3%A9pose-la-mise-%C3%A0-jour-de-l-%C3%A9tude-de-faisabilit%C3%A9-pour-son-projet-horne-5.html",
+      "title": "Falco dépose la mise à jour de l’étude de faisabilité pour son projet Horne 5",
+      "stage": "study",
+      "signal": "FS déposé",
+      "company": "Ressources Falco Ltée",
+      "project": "Horne 5",
+      "region": "Canada",
+      "why": "Étude de faisabilité déposée, étape clé avant décision d'investissement.",
+      "hook": "Revue des coûts en capital et benchmarking avant la décision finale d'investissement.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333468/0/en/falco-files-updated-feasibility-study-for-its-horne-5-project.html",
+      "title": "Falco Files Updated Feasibility Study for Its Horne 5 Project",
+      "stage": "study",
+      "signal": "FS опубликован",
+      "company": "Falco Resources Ltd.",
+      "project": "Horne 5 Gold Project",
+      "region": "Canada",
+      "why": "Обновлённое ТЭО подано, но актив вне целевого региона и без явных проблем.",
+      "hook": "Свежее ТЭО — время сверить CapEx и график до инвестрешения.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T05:13:17.769998+00:00"
     }
   ],
   "skipped": [
@@ -1815,6 +2030,209 @@
       "link": "https://www.globenewswire.com/news-release/2026/07/27/3333377/0/fr/troilus-s%C3%A9lectionn%C3%A9e-par-le-gouvernement-du-qu%C3%A9bec-pour-b%C3%A9n%C3%A9ficier-de-l-accompagnement-sp%C3%A9cialis%C3%A9-filon-en-appui-%C3%A0-l-avancement-des-projets-miniers-strat%C3%A9giques.html",
       "reason": "accompagnement gouvernemental",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Nyrstar NV - Publication of legal opinion",
+      "link": "https://www.globenewswire.com/news-release/2026/06/25/3317385/0/en/nyrstar-nv-publication-of-legal-opinion.html",
+      "reason": "юридическая публикация",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Nyrstar NV – Verzoekschrift voor voorlopige maatregelen ontvangen op 26 juni 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/06/26/3318081/0/nl/nyrstar-nv-verzoekschrift-voor-voorlopige-maatregelen-ontvangen-op-26-juni-2026.html",
+      "reason": "судебный иск",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Nyrstar NV – Petition for interim measures received on 26 June 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/06/26/3318081/0/en/nyrstar-nv-petition-for-interim-measures-received-on-26-june-2026.html",
+      "reason": "судебный иск",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Nyrstar NV – Resultaten van de gewone en buitengewone algemene aandeelhoudersvergaderingen gehouden op 30 juni 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/01/3320312/0/nl/nyrstar-nv-resultaten-van-de-gewone-en-buitengewone-algemene-aandeelhoudersvergaderingen-gehouden-op-30-juni-2026.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Nyrstar NV – Results of the annual and extraordinary general shareholders' meetings held on 30 June 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/01/3320312/0/en/nyrstar-nv-results-of-the-annual-and-extraordinary-general-shareholders-meetings-held-on-30-june-2026.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Eramet : Informations relatives au nombre total de droits de vote et d’actions au 30 juin 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/17/3329222/0/fr/eramet-informations-relatives-au-nombre-total-de-droits-de-vote-et-d-actions-au-30-juin-2026.html",
+      "reason": "корпоративная отчётность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Sandfire comments on recent trading activity",
+      "link": "https://www.globenewswire.com/news-release/2026/07/17/3329288/0/en/sandfire-comments-on-recent-trading-activity.html",
+      "reason": "торговая активность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Eramet et la République gabonaise signent un protocole d'accord structuré pour transformer durablement la chaîne de valeur du mang",
+      "link": "https://www.globenewswire.com/news-release/2026/07/20/3330016/0/fr/eramet-et-la-r%C3%A9publique-gabonaise-signent-un-protocole-d-accord-structur%C3%A9-pour-transformer-durablement-la-cha%C3%AEne-de-valeur-du-mangan%C3%A8se-au-gabon.html",
+      "reason": "соглашение о намерениях",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Eramet and the Gabonese Republic sign a structured memorandum of understanding to sustainably transform the manganese value chain ",
+      "link": "https://www.globenewswire.com/news-release/2026/07/20/3330016/0/en/eramet-and-the-gabonese-republic-sign-a-structured-memorandum-of-understanding-to-sustainably-transform-the-manganese-value-chain-in-gabon.html",
+      "reason": "меморандум",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Ferroglobe PLC Schedules Second Quarter 2026 Earnings Call for August 5, 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/21/3330406/11914/en/ferroglobe-plc-schedules-second-quarter-2026-earnings-call-for-august-5-2026.html",
+      "reason": "отчётность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Rebond de l’EBITDA au S1 2026 ; réalisation en cours du plan de financement, essentiel pour le Groupe au S2",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335473/0/fr/rebond-de-l-ebitda-au-s1-2026-r%C3%A9alisation-en-cours-du-plan-de-financement-essentiel-pour-le-groupe-au-s2.html",
+      "reason": "финансовый отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "EBITDA rebound in H1 2026; execution of the funding plan underway, essential for the Group in H2",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335473/0/en/ebitda-rebound-in-h1-2026-execution-of-the-funding-plan-underway-essential-for-the-group-in-h2.html",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Nyrstar NV – Buitengewone algemene aandeelhoudersvergadering gehouden op 30 juni 2026 – Update",
+      "link": "https://www.globenewswire.com/news-release/2026/07/31/3336589/0/nl/nyrstar-nv-buitengewone-algemene-aandeelhoudersvergadering-gehouden-op-30-juni-2026-update.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Nyrstar NV – Extraordinary general shareholders’ meeting held on 30 June 2026 – Update",
+      "link": "https://www.globenewswire.com/news-release/2026/07/31/3336589/0/en/nyrstar-nv-extraordinary-general-shareholders-meeting-held-on-30-june-2026-update.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Ferroglobe Reports Second Quarter 2026 Financial Results",
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338901/11914/en/ferroglobe-reports-second-quarter-2026-financial-results.html",
+      "reason": "финансовые результаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Alamos Gold Reports Second Quarter 2026 Results",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335649/0/en/alamos-gold-reports-second-quarter-2026-results.html",
+      "reason": "квартальный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Kinross declares quarterly dividend",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335646/0/en/kinross-declares-quarterly-dividend.html",
+      "reason": "дивиденды",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Endeavour Reports Strong H1-2026 Results",
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3335783/0/en/endeavour-reports-strong-h1-2026-results.html",
+      "reason": "финансовые результаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Eldorado Gold Provides Update on Executive Leadership Transition",
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336496/0/en/eldorado-gold-provides-update-on-executive-leadership-transition.html",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Eldorado Gold Announces Board Leadership Transition",
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336498/0/en/eldorado-gold-announces-board-leadership-transition.html",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Eldorado Gold Announces Renewal of Normal Course Issuer Bid",
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336501/0/en/eldorado-gold-announces-renewal-of-normal-course-issuer-bid.html",
+      "reason": "выкуп акций",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Holdings in Company",
+      "link": "https://www.globenewswire.com/news-release/2026/07/31/3336604/0/en/holdings-in-company.html",
+      "reason": "доли в компании",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Total Voting Rights",
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338030/0/en/total-voting-rights.html",
+      "reason": "корпоративная рутина",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Osisko Gold Confirms Presence of Mineralized System with Open Pit Potential at the Proserpine Target on the Cariboo Gold Project's",
+      "link": "https://www.globenewswire.com/news-release/2026/08/05/3339200/0/en/osisko-gold-confirms-presence-of-mineralized-system-with-open-pit-potential-at-the-proserpine-target-on-the-cariboo-gold-project-s-regional-property-exploration-drilling-highlights.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Kinross upgraded to ‘BBB’ Rating by S&P Global Ratings",
+      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340053/0/en/kinross-upgraded-to-bbb-rating-by-s-p-global-ratings.html",
+      "reason": "рейтинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Abcourt annonce une augmentation proposée de 10 M$ US de son financement par débenture avec Glencore",
+      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340244/0/fr/abcourt-annonce-une-augmentation-propos%C3%A9e-de-10-m-us-de-son-financement-par-d%C3%A9benture-avec-glencore.html",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Abcourt Announces Proposed US$10M Increase to Debenture Financing with Glencore",
+      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340244/0/en/abcourt-announces-proposed-us-10m-increase-to-debenture-financing-with-glencore.html",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Asia Broadband Continues Upward Production And Gross Profit Trend In Q2 Financial Results To Be Published Next Week",
+      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340272/0/en/asia-broadband-continues-upward-production-and-gross-profit-trend-in-q2-financial-results-to-be-published-next-week.html",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.769998+00:00",
+      "title": "Troilus Selected by the Government of Quebec to Receive Specialized Support Through the New Filon Initiative for Strategic Mining ",
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333377/0/en/troilus-selected-by-the-government-of-quebec-to-receive-specialized-support-through-the-new-filon-initiative-for-strategic-mining-projects.html",
+      "reason": "господдержка",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -1967,6 +2385,12 @@
       "ts": "2026-08-07T00:51:05.797928+00:00",
       "title": "King Copper Discovery Announces Private Placement",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T05:13:17.756873+00:00",
+      "title": "Winshear Reports Drill Results from the Rodburn Target, Portsoy Project, NE Scotland",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]

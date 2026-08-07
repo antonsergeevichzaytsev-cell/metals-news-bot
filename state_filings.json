@@ -636,7 +636,50 @@
     "ba55976f9fec52ca57a1f02326ffbfd2",
     "6cd2ad9d75e9b5ccb58e86cc6abbe006",
     "92c0504d02cd5f59868739ac87acbb14",
-    "6fb82472a36d5ec1c5deab1f469d99a8"
+    "6fb82472a36d5ec1c5deab1f469d99a8",
+    "e8207977bb7c70580cb45e6ffc9cafaa",
+    "8feaa137e7e220069eb8957c2a94f170",
+    "9706486da5c5bbf5aa54fe470ee16d0a",
+    "e3613c87d7ef2bc1ca86e413624bc324",
+    "41e94e8de01c5e07b37f748d2c4b2ba6",
+    "82da1f851e75d1b8b59de8ba14328b42",
+    "e0b32e1f059cfb69117dcd3bc96b45f0",
+    "d9d096e829490c4c7bb876c9cb69fdcd",
+    "803f90be6fc2bddda1d88b41d3641d01",
+    "1f8c67849583af44ef12479af8dfaf6f",
+    "bd699f6b8bda173524e638f203257aa7",
+    "6a5d205ec6581ae060ef077027c95abd",
+    "747a4f35358d53124530df165e583aee",
+    "1d8fa2c79e07edd3e02ba73dafbb30d3",
+    "5c5f774f3a5617a9e00a991736603e97",
+    "73ddf2dd6918fc5c6ddc3af8ad896141",
+    "4e4b11b0a0fbf16f3c65b328ce0c51da",
+    "6f0b2024b316f9d68d0144fe345df906",
+    "4c00612431389c6d6a490129b74e71a7",
+    "d3e3348e15a52abf52a40acc3679b6c8",
+    "a2a93f4e8c71a2ceef911db1bc0c5545",
+    "4cfa1936a310fdb60361c1b4ed187fb0",
+    "52f69c412cbac5a0b4f7a3dc56fa78ba",
+    "2fafbffac1bba0759811861be8b4529a",
+    "6d60e3ebaf2ffc2d2f40974eb7fd735a",
+    "a57086069c9c9fc8cd89a724c3f3f227",
+    "852c31f60e42f99d4dd33eb4ce854e64",
+    "ebde0f293cfd0523d98c736ca5f925b9",
+    "c3e1bc8d754f39710f357d0e622cd3ba",
+    "09d0c03120f73297c4f43640db12f0c4",
+    "5f69a955dac2ab2e0ff8d6c04225ed26",
+    "5571f5590c45c4ba0fa469a3066bf39e",
+    "3ce272b57a3ee0534b762e73011c62bd",
+    "803b24c0a443e91176d64e9353b035c9",
+    "9b63a75d5311799940d11ce7e9eae9ad",
+    "758d7dba3212c0339749bd9534440632",
+    "766533689e5fe5075137c7547d8e2fe6",
+    "28845c9fde0b3e3e9598f5fc45cd7998",
+    "bd96e428432e80fcd9303406b3b5a6a3",
+    "6a61919ca28ee80a7492ce1f9d925b2b",
+    "b2ddaa457db27e1b9470610b7f1440d9",
+    "8a34d9c1a36c08b5700417f4d8b6e4bd",
+    "7e054b2402c36f370713b7e9a9b96e64"
   ],
   "pending": [],
   "feed_health": {
@@ -653,17 +696,18 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-07T00:51:05.806713+00:00",
-    "raw": 117,
-    "fresh": 61,
-    "candidates": 47,
-    "prefiltered_out": 14,
+    "ts": "2026-08-07T05:13:17.769998+00:00",
+    "raw": 157,
+    "fresh": 47,
+    "candidates": 44,
+    "prefiltered_out": 3,
     "screened": 40,
-    "skipped_by_model": 36,
-    "kept": 0,
+    "skipped_by_model": 29,
+    "kept": 3,
     "cap": 40,
     "cap_hit": true,
-    "feeds_broken": 2
+    "feeds_broken": 0,
+    "labels_collected": 0
   },
   "msg_map": {
     "382": {
@@ -719,63 +763,81 @@
       "company": "Excellon Resources Inc.",
       "priority": "medium",
       "stage": "commissioning"
+    },
+    "813": {
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3334925/0/en/sandfire-resources-america-files-black-butte-copper-project-preliminary-feasibility-study.html",
+      "company": "Sandfire Resources America",
+      "priority": "medium",
+      "stage": "study"
+    },
+    "814": {
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335644/0/en/kinross-provides-update-on-lobo-marte-project.html",
+      "company": "Kinross",
+      "priority": "medium",
+      "stage": "study"
+    },
+    "815": {
+      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336495/0/en/eldorado-gold-reports-solid-q2-2026-financial-and-operational-results-skouries-on-track-for-q3-2026.html",
+      "company": "Eldorado Gold",
+      "priority": "medium",
+      "stage": "construction"
     }
   },
   "tg_offset": 96015226,
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     },
     "GNW:Gold Mining": {
       "status": "ok",
-      "streak": 29,
+      "streak": 30,
       "reported": "ok"
     },
     "GNW:Nonferrous Metals": {
       "status": "ok",
-      "streak": 63,
+      "streak": 64,
       "reported": "ok"
     },
     "GNW:Aluminum": {
       "status": "ok",
-      "streak": 62,
+      "streak": 63,
       "reported": "ok"
     },
     "GNW:Copper": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     }
   }
