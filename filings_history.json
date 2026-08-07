@@ -1268,48 +1268,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-31T13:01:09.207924+00:00",
-      "title": "Holdings in Company",
-      "link": "https://www.globenewswire.com/news-release/2026/07/31/3336604/0/en/Holdings-in-Company.html",
-      "reason": "доли владения",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T13:01:09.207924+00:00",
-      "title": "Admission of Shares and Total Voting Rights",
-      "link": "https://www.newsfilecorp.com/release/307443/Admission-of-Shares-and-Total-Voting-Rights",
-      "reason": "размещение акций",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T13:01:09.207924+00:00",
-      "title": "Visionary Metals Corp. Announces Closing of Share Repurchase",
-      "link": "https://www.newsfilecorp.com/release/307424/Visionary-Metals-Corp.-Announces-Closing-of-Share-Repurchase",
-      "reason": "выкуп акций",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T13:01:09.207924+00:00",
-      "title": "Besra Gold Announces: June 2026 Quarterly Activities Report",
-      "link": "https://www.newsfilecorp.com/release/307441/Besra-Gold-Announces-June-2026-Quarterly-Activities-Report",
-      "reason": "квартальный отчёт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T13:01:09.207924+00:00",
-      "title": "Besra Gold Updates ML 05/2012/1D Renewal Discussions Jugan Project - Bau Gold Project",
-      "link": "https://www.newsfilecorp.com/release/307439/Besra-Gold-Updates-ML-0520121D-Renewal-Discussions-Jugan-Project-Bau-Gold-Project",
-      "reason": "лицензионное обновление",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T13:01:09.207924+00:00",
-      "title": "American Tungsten Corp. Begins Trading on OTCQX Best Market",
-      "link": "https://www.newsfilecorp.com/release/307415/American-Tungsten-Corp.-Begins-Trading-on-OTCQX-Best-Market",
-      "reason": "листинг",
-      "orbit": false
-    },
-    {
       "ts": "2026-07-31T17:19:53.973168+00:00",
       "title": "New Manitoba Bonus Prize Clue Released for The Great Canadian Treasure Hunt",
       "link": "https://www.newsfilecorp.com/release/307468/New-Manitoba-Bonus-Prize-Clue-Released-for-The-Great-Canadian-Treasure-Hunt",
@@ -2316,16 +2274,17 @@
       "link": "https://www.newsfilecorp.com/release/308508/Santacruz-Silver-Announces-Equity-Incentive-Grants",
       "reason": "гранты акций",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-07T14:53:05.782902+00:00",
+      "title": "Golden Rapture Mining Acquires Ground Located Approximately 500 Metres South of NexGold's Proposed Goliath Open Pit",
+      "link": "https://www.newsfilecorp.com/release/308521/Golden-Rapture-Mining-Acquires-Ground-Located-Approximately-500-Metres-South-of-NexGolds-Proposed-Goliath-Open-Pit",
+      "reason": "приобретение лицензий",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-31T13:01:09.204821+00:00",
-      "title": "Red Lake Gold Inc. Appoints Chief Executive Officer, Provides Corporate Updates",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-07-31T19:01:01.286804+00:00",
       "title": "Metals Creek Resources Corp. Files for Final Approval of Private Placement",
@@ -2474,6 +2433,12 @@
       "ts": "2026-08-07T11:46:13.670130+00:00",
       "title": "Search Minerals Closes Initial Tranche of Non-Brokered Private Placement Financing and Announces Upsized Unit Financing",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T14:53:05.781044+00:00",
+      "title": "Stakeholder Gold Closes Flow-Through Financing",
+      "matched_noise_word": "flow-?through",
       "orbit": false
     }
   ]
