@@ -102,20 +102,17 @@
     "8d6d65c03efec77e7e46af27f00d0232",
     "0af47226c3bbe826e1f807e62c2d32df",
     "49f627d171187d945a108f820a2ecef8",
-    "5f319ce9fbca86c79cef443963051a64"
+    "5f319ce9fbca86c79cef443963051a64",
+    "b558d05baf7e3035425bd2055b174bd6",
+    "34c5b052b69590e81c429223a67f6c9a",
+    "bceed63016bdf8137d36e89ff5364427",
+    "88fc8839ec7260e7758c02d368e82cf9",
+    "4150125d935f5ebc4c9682b5e65046cd"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 0,
-  "last_run": "2026-08-06T14:34:56.572302+00:00",
+  "last_run_sent": 5,
+  "last_run": "2026-08-07T09:14:26.727461+00:00",
   "hits": [
-    {
-      "ts": "2026-07-30T16:01:31.418822+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "«Селигдар» защитил производство и ИТ-инфраструктуру с помощью решений Positive Technologies - RUБЕЖ",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxObllxLXh1blFya2p1SmQ5RXNscnZaXzBxdG92YUVGcUhHSjdLeHBSRnlidWw2WVNPbGh4elpfczFDUU95QnJYdjhBMFN6NlIxS0RlNnBBSGFYc3lWdVJNSWRZSFp2OF9Bc2UwMGZQWHRycUZNYkxmN0dYcmo4Mm1UemhrYXd4Vm01YkxBZFJ6QmVCYzJTMmRQZWRJOGpQN2VPeDB3OElJd3B4VWpoZHh4b0RoRVJDUQ?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-31T10:15:26.249626+00:00",
       "lead_id": "outreach_auto_azeraluminium",
@@ -322,6 +319,46 @@
       "company": "Uzbekistan Airways",
       "title": "Uzbekistan Airways Launches Abu Dhabi Flights with Etihad Airways - UzDaily.uz",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQYTZQejAyU25nMXpWYlZsMGRpR3UzNDNPNm1WTm5Ba0h0enRsU0lZdlRCQXplUlMzN2NpRVNmYUhDR29iRWRhbGZYZk9SVW84dnIxRzBiOUZ5azhMQzlrOTZfZDdQaEJpb1k0d1JPc0NIb0hQTDdwNTE1U3V5My1WU205UEliY2dtcWgtYkc4X0owTGhxZ0JR?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-07T09:14:11.977478+00:00",
+      "lead_id": "outreach_auto_steppegold",
+      "company": "Steppe Gold",
+      "title": "Why Steppe Gold Ltd stock is rising today - Wealth Awesome",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxORmhlTEkzOHNCV0M3VnhWZWFlVkhydW1ENGRkbmdZQ1hQRFVQTFJYUWVrSEtMSjFRa0JBQ0tmMk9Gcko2ZmgtU2c0MkR6eVF4YTFlMW5iRF9FSm1wR2VfWVBKZE9ZakJvcnNKeUN2WXBYUG5SVlhvcDRFQWxzNTZtN1BR?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-07T09:14:16.751720+00:00",
+      "lead_id": "outreach_auto_silvercorp",
+      "company": "Silvercorp Metals",
+      "title": "Silvercorp Stock And 2 Precious Metals Growth Picks - simplywall.st",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQeTNLeHFNb0N2TFdzbUJzblgxVlZaTTlLWEFhaGhOYktyNGFwWkN4NlVBUEVmWFljUXFZbE1PT2JZMk9Cb0h0Vk1KOW5VZVd4YkF2QzhfYUprY2pUN01KVTJlTzUtUTc2UG5fNkFKNTZXaTE4bHRmaklKR05KX2FYUkR4SEFfaVRiSkgtemVvMG1KNlFVWVBWYjlBTFctYmlQbGV3ZXppZktpV0NiYmxMMG5odTZSUU5YWWkwd2JMc3Zhak42Qm1kMkxFeGJveW1M0gHQAUFVX3lxTFB5M0t4cU1vQ3ZMV3NtQnNuWDFWVlpNOUtYQWFoaE5iS3I0YXBaQ3g2VUFQRWZYWWNRcVlsTU9PYlkyT0JvSHRWTUo5blVlV3hiQXZDOF9hSmtjalQ3TUpVMmVPNS1RNzZQbl82QUo1NldpMThsdGZqSUpHTkpfYVhSRHhIQV9pVGJKSC16ZW8wbUo2UVVZUFZiOUFMVy1iaVBsZXdlemlmS2lXQ2JibEwwbmh1NlJRTlhZaTB3YkxzdmFqTjZCbWQyTEV4Ym95bUw?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-07T09:14:19.604746+00:00",
+      "lead_id": "outreach_auto_seligdar",
+      "company": "Селигдар",
+      "title": "Форум акции Селигдар (SELG, SELGP), страница 193 - Smart-Lab",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9tVVNfTEFYeTF3R0lZWS1pNUR0WXJFclQ1MS1YY1E1UTVqM1pwVGFsUkRUdjdCYVVTQ1VUUDNLLWZIT2xISDhpSDk0N3BSRV9ZelE?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-07T09:14:21.125178+00:00",
+      "lead_id": "outreach_auto_seligdar",
+      "company": "Селигдар",
+      "title": "Акции «Селигдар»: возможен рывок к 44–44,5 руб. с последующей коррекцией — сигнал к лонгу (7 августа 2026 г.) - M O N D I A R A",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE02emZkZ056LXJUWEtjVFNIQlZZU2Q0N0h5WDlYMmczQlpqSUVZSTQwbW56VXdaS0FlaXdIXzJXWGRQOUl4bTF1cG94UUtQaldsTGprZ2lxRmc3NXBtSGJVWWxMVQ?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-07T09:14:22.579959+00:00",
+      "lead_id": "outreach_auto_seligdar",
+      "company": "Селигдар",
+      "title": "чт, 06.08 | 🏦 вынесли стопы , дали продажи — смотрим золото , селигдар и фск россети - Smart-Lab",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFAwZDBsMzZtYVB2ZXlTWkJ4VU9aRWtsVmxPZXpRSUtXQlM1YXc4LXdiUDM3MTVSd01UdS0zcDRNUFR4TUt3bVU2M0diSG96dw?oc=5",
       "src_domain": "news.google.com"
     }
   ]
