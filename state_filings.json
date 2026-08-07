@@ -679,7 +679,17 @@
     "6a61919ca28ee80a7492ce1f9d925b2b",
     "b2ddaa457db27e1b9470610b7f1440d9",
     "8a34d9c1a36c08b5700417f4d8b6e4bd",
-    "7e054b2402c36f370713b7e9a9b96e64"
+    "7e054b2402c36f370713b7e9a9b96e64",
+    "0972adec03c4d2d54485b8de21f70659",
+    "f51ddd19c303883e1137e99973a74b38",
+    "edd1998e537e42938aca04e90e00d359",
+    "b99142097d165a9d60ab698f1d683d6a",
+    "1d30ddca47908632f9681dd064370379",
+    "74f760751d8750111fa61128e8137ee6",
+    "5b843120980819eb0132054d2d07f58c",
+    "fb8f9234d5c7b918941ea19f99a5c06c",
+    "b773721f877e5dc77eb047e472225e24",
+    "5022e2fc3950f19d94d362780f503bab"
   ],
   "pending": [],
   "feed_health": {
@@ -696,16 +706,16 @@
     "GNW:Copper": "ok"
   },
   "last_run": {
-    "ts": "2026-08-07T05:13:17.769998+00:00",
+    "ts": "2026-08-07T11:46:13.675046+00:00",
     "raw": 157,
-    "fresh": 47,
-    "candidates": 44,
-    "prefiltered_out": 3,
-    "screened": 40,
-    "skipped_by_model": 29,
-    "kept": 3,
+    "fresh": 10,
+    "candidates": 9,
+    "prefiltered_out": 1,
+    "screened": 9,
+    "skipped_by_model": 6,
+    "kept": 1,
     "cap": 40,
-    "cap_hit": true,
+    "cap_hit": false,
     "feeds_broken": 0,
     "labels_collected": 0
   },
@@ -781,63 +791,69 @@
       "company": "Eldorado Gold",
       "priority": "medium",
       "stage": "construction"
+    },
+    "822": {
+      "link": "https://www.globenewswire.com/news-release/2026/08/07/3341029/0/en/asante-provides-2026-guidance-and-operating-update.html",
+      "company": "Asante Gold Corporation",
+      "priority": "medium",
+      "stage": "operating"
     }
   },
   "tg_offset": 96015226,
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 65,
+      "streak": 66,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 65,
+      "streak": 66,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 65,
+      "streak": 66,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 65,
+      "streak": 66,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 65,
+      "streak": 66,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 65,
+      "streak": 66,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "ok",
-      "streak": 65,
+      "streak": 66,
       "reported": "ok"
     },
     "GNW:Gold Mining": {
       "status": "ok",
-      "streak": 30,
+      "streak": 31,
       "reported": "ok"
     },
     "GNW:Nonferrous Metals": {
       "status": "ok",
-      "streak": 64,
+      "streak": 65,
       "reported": "ok"
     },
     "GNW:Aluminum": {
       "status": "ok",
-      "streak": 63,
+      "streak": 64,
       "reported": "ok"
     },
     "GNW:Copper": {
       "status": "ok",
-      "streak": 65,
+      "streak": 66,
       "reported": "ok"
     }
   }
