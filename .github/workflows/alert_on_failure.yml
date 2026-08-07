@@ -29,19 +29,24 @@ jobs:
   notify:
     if: github.event.workflow_run.conclusion == 'failure'
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
     steps:
-      - name: Ping Telegram
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # Вся логика — в alert_triage.py: он отсеивает инфраструктурные
+      # отмены GitHub (job cancelled, шагов ноль — код не выполнялся)
+      # и шлёт пинг только на реальные падения. Правится без токена
+      # со scope workflow, в отличие от этого файла.
+      - name: Triage and notify
         env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          WF_NAME: ${{ github.event.workflow_run.name }}
+          WF_URL: ${{ github.event.workflow_run.html_url }}
+          WF_SHA: ${{ github.event.workflow_run.head_sha }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        shell: bash
-        run: |
-          NAME="${{ github.event.workflow_run.name }}"
-          URL="${{ github.event.workflow_run.html_url }}"
-          SHA="${{ github.event.workflow_run.head_sha }}"
-          TEXT="🔴 <b>${NAME}</b> упал\nКоммит: <code>${SHA:0:7}</code>\n<a href=\"${URL}\">Логи</a>"
-          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=$(printf '%b' "$TEXT")" \
-            --data-urlencode "parse_mode=HTML" \
-            --data-urlencode "disable_web_page_preview=true"
+        run: python alert_triage.py
