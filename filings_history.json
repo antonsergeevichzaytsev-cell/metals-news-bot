@@ -2301,22 +2301,24 @@
       "link": "https://www.newsfilecorp.com/release/308551/U92-Energy-Announces-Filing-of-Final-Short-Form-Prospectus-in-Connection-with-Public-Offering",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-07T20:29:31.086174+00:00",
+      "title": "First Phosphate annonce l'inscription de ses certificats de dépôt américains (ADR) sur le Nasdaq Global Market sous le symbole bou",
+      "link": "https://www.newsfilecorp.com/release/308719/First-Phosphate-annonce-linscription-de-ses-certificats-de-dpt-amricains-ADR-sur-le-Nasdaq-Global-Market-sous-le-symbole-boursier-PHOS",
+      "reason": "листинг ADR",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T20:29:31.086174+00:00",
+      "title": "Stracon Group Holding Inc. Files New Preliminary Base Prep Prospectus for Initial Public Offering of Common Shares",
+      "link": "https://www.newsfilecorp.com/release/308522/Stracon-Group-Holding-Inc.-Files-New-Preliminary-Base-Prep-Prospectus-for-Initial-Public-Offering-of-Common-Shares",
+      "reason": "IPO проспект",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-31T19:01:01.286804+00:00",
-      "title": "Metals Creek Resources Corp. Files for Final Approval of Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T20:16:32.250484+00:00",
-      "title": "Critical One Energy Closes CDN$5.6 Million Tranche of Flow-Through Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-07-31T22:54:31.700865+00:00",
       "title": "AbraSilver Announces Closing of Concurrent Private Placement",
@@ -2465,6 +2467,12 @@
       "ts": "2026-08-07T17:37:51.182690+00:00",
       "title": "Drilling Underway at Pacific Ridge's RDP Copper-Gold Project",
       "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T20:29:31.084977+00:00",
+      "title": "First Phosphate Announces Uplisting of American Depositary Receipt (ADR) to Nasdaq Global Market Under Ticker Symbol PHOS",
+      "matched_noise_word": "uplisting",
       "orbit": false
     }
   ]
