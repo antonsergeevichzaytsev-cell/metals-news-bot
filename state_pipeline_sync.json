@@ -402,6 +402,12 @@
       "platform": "Glasford",
       "kind": "baseline",
       "subject": "(seed from platforms.json manual audit 17.07.26)"
+    },
+    "54fa4a9014f550c7": {
+      "date": "2026-08-07",
+      "platform": "GLG",
+      "kind": "unknown",
+      "subject": "What's New at GLG: Experience improvements and a special event for you"
     }
   },
   "drafted": {
