@@ -1264,23 +1264,29 @@
         ]
       },
       "ts": "2026-08-07T11:46:13.675046+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/08/07/3341245/0/en/b2gold-granted-fekola-regional-exploitation-permit-by-the-state-of-mali.html",
+      "title": "B2Gold Granted Fekola Regional Exploitation Permit by the State of Mali",
+      "stage": "construction",
+      "signal": "разрешение на разработку",
+      "company": "B2Gold Corp.",
+      "project": "Fekola Regional",
+      "region": "Mali",
+      "why": "Получено разрешение на эксплуатацию, но актив вне целевого региона, нет данных о CapEx.",
+      "hook": "Контроль графика строительства и затрат: не дать проекту выйти за бюджет.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2023",
+          "2024",
+          "2025"
+        ]
+      },
+      "ts": "2026-08-07T17:37:51.184711+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-31T17:19:53.973168+00:00",
-      "title": "New Manitoba Bonus Prize Clue Released for The Great Canadian Treasure Hunt",
-      "link": "https://www.newsfilecorp.com/release/307468/New-Manitoba-Bonus-Prize-Clue-Released-for-The-Great-Canadian-Treasure-Hunt",
-      "reason": "третьи лица",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T17:19:53.973168+00:00",
-      "title": "Early Warning News Release for Michael Wekerle Pursuant to National Instrument 62-103",
-      "link": "https://www.newsfilecorp.com/release/307463/Early-Warning-News-Release-for-Michael-Wekerle-Pursuant-to-National-Instrument-62103",
-      "reason": "третьи лица",
-      "orbit": false
-    },
     {
       "ts": "2026-07-31T22:54:31.702653+00:00",
       "title": "Lion Copper & Gold Expands Strategic Land Position Associated with the Bear Project Area in the Yerington Copper District",
@@ -2281,6 +2287,20 @@
       "link": "https://www.newsfilecorp.com/release/308521/Golden-Rapture-Mining-Acquires-Ground-Located-Approximately-500-Metres-South-of-NexGolds-Proposed-Goliath-Open-Pit",
       "reason": "приобретение лицензий",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-07T17:37:51.184711+00:00",
+      "title": "Eramet : Informations relatives au nombre total de droits de vote et d’actions au 31 juillet 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/08/07/3341270/0/fr/eramet-informations-relatives-au-nombre-total-de-droits-de-vote-et-d-actions-au-31-juillet-2026.html",
+      "reason": "корпоративная отчётность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T17:37:51.184711+00:00",
+      "title": "U92 Energy Announces Filing of Final Short Form Prospectus in Connection with Public Offering",
+      "link": "https://www.newsfilecorp.com/release/308551/U92-Energy-Announces-Filing-of-Final-Short-Form-Prospectus-in-Connection-with-Public-Offering",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -2439,6 +2459,12 @@
       "ts": "2026-08-07T14:53:05.781044+00:00",
       "title": "Stakeholder Gold Closes Flow-Through Financing",
       "matched_noise_word": "flow-?through",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T17:37:51.182690+00:00",
+      "title": "Drilling Underway at Pacific Ridge's RDP Copper-Gold Project",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
