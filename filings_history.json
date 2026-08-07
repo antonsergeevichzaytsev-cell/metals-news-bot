@@ -914,58 +914,82 @@
         ]
       },
       "ts": "2026-08-06T22:00:57.286906+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/14/3326588/0/en/court-approves-option-to-acquire-the-renard-mine-site.html",
+      "title": "Court Approves Option to Acquire the Renard Mine Site",
+      "stage": "care_maintenance",
+      "signal": "опцион на актив",
+      "company": "Li-FT Power Ltd.",
+      "project": "Renard Mine",
+      "region": "Canada",
+      "why": "Опцион на покупку рудника в Канаде, не в целевой географии.",
+      "hook": "Рестарт актива потребует owner-side контроля запуска и металлургии.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T00:51:05.806713+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3327504/0/en/west-red-lake-gold-reports-strong-q2-operating-progress-with-73-increase-in-mined-ounces-and-51-higher-gold-production-over-q1-at-madsen-mine.html",
+      "title": "West Red Lake Gold Reports Strong Q2 Operating Progress with 73% Increase in Mined Ounces and 51% Higher Gold Production over Q1 at Madsen Mine",
+      "stage": "operating",
+      "signal": "рост производства",
+      "company": "West Red Lake Gold Mines Ltd.",
+      "project": "Madsen Mine",
+      "region": "Canada",
+      "why": "Рампап продолжается: добыча выросла на 73%, производство золота на 51% к Q1.",
+      "hook": "Рампап идёт, но выход на проектную мощность требует контроля издержек и узких мест.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026",
+          "Q2 2026"
+        ]
+      },
+      "ts": "2026-08-07T00:51:05.806713+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328313/0/en/brazil-potash-provides-update-on-autazes-project-regarding-brazilian-court-filing.html",
+      "title": "Brazil Potash Provides Update on Autazes Project Regarding Brazilian Court Filing",
+      "stage": "financing",
+      "signal": "судебное разбирательство",
+      "company": "Brazil Potash Corp.",
+      "project": "Autazes",
+      "region": "Brazil",
+      "why": "Судебное разбирательство может задержать финансирование и строительство проекта.",
+      "hook": "Судебные риски могут сорвать график финансирования — нужен контроль сроков и затрат.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T00:51:05.806713+00:00"
+    },
+    {
+      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331764/0/en/west-red-lake-gold-files-ni-43-101-technical-report-for-updated-rowan-mineral-resource-estimate.html",
+      "title": "West Red Lake Gold Files NI 43-101 Technical Report for Updated Rowan Mineral Resource Estimate",
+      "stage": "study",
+      "signal": "технический отчёт",
+      "company": "West Red Lake Gold Mines Ltd.",
+      "project": "Rowan",
+      "region": "Canada",
+      "why": "Обновлённая оценка ресурсов Rowan и Mt. Jamie, но без CapEx и стадии.",
+      "hook": "Оценка ресурсов обновлена, но для инвестиционного решения нужен CapEx.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-07T00:51:05.806713+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-07-30T22:05:47.032708+00:00",
-      "title": "Eldorado Gold Provides Update on Executive Leadership Transition",
-      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336496/0/en/Eldorado-Gold-Provides-Update-on-Executive-Leadership-Transition.html",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T22:05:47.032708+00:00",
-      "title": "Eldorado Gold Announces Board Leadership Transition",
-      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336498/0/en/Eldorado-Gold-Announces-Board-Leadership-Transition.html",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T22:05:47.032708+00:00",
-      "title": "Eldorado Gold Announces Renewal of Normal Course Issuer Bid",
-      "link": "https://www.globenewswire.com/news-release/2026/07/30/3336501/0/en/Eldorado-Gold-Announces-Renewal-of-Normal-Course-Issuer-Bid.html",
-      "reason": "выкуп акций",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T22:05:47.032708+00:00",
-      "title": "Volta Metals Announces Closing of Acquisition of Remaining 20% Interest of Its Flagship Springer Rare Earth and Gallium Deposit an",
-      "link": "https://www.newsfilecorp.com/release/307391/Volta-Metals-Announces-Closing-of-Acquisition-of-Remaining-20-Interest-of-Its-Flagship-Springer-Rare-Earth-and-Gallium-Deposit-and-Contiguous-Claim",
-      "reason": "приобретение доли",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T22:05:47.032708+00:00",
-      "title": "Namibia Critical Metals Announces Completion of Japan's C$23 Million Earn-In and Formation of Strategic Joint Venture Company for ",
-      "link": "https://www.newsfilecorp.com/release/307381/Namibia-Critical-Metals-Announces-Completion-of-Japans-C23-Million-EarnIn-and-Formation-of-Strategic-Joint-Venture-Company-for-the-Lofdal-Heavy-Rare-Earth-Project",
-      "reason": "совместное предприятие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T22:05:47.032708+00:00",
-      "title": "Atlantico Announces Marketing Program Update, Director Resignation, and Stock Option Grant",
-      "link": "https://www.newsfilecorp.com/release/307362/Atlantico-Announces-Marketing-Program-Update-Director-Resignation-and-Stock-Option-Grant",
-      "reason": "корпоративные изменения",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-30T22:05:47.032708+00:00",
-      "title": "Sixty North Gold Updates Activities at Mon Gold Mine, NWT",
-      "link": "https://www.newsfilecorp.com/release/307370/Sixty-North-Gold-Updates-Activities-at-Mon-Gold-Mine-NWT",
-      "reason": "собрание акционеров",
-      "orbit": false
-    },
     {
       "ts": "2026-07-31T05:30:40.502224+00:00",
       "title": "Nyrstar NV – Buitengewone algemene aandeelhoudersvergadering gehouden op 30 juni 2026 – Update",
@@ -1539,16 +1563,262 @@
       "link": "https://www.newsfilecorp.com/release/308349/Awal-Completes-20.7-Million-Strategic-Financing-with-Closing-of-Final-Tranche",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Cygnus Metals Limited: Granting of ASX Waiver",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335430/0/en/cygnus-metals-limited-granting-of-asx-waiver.html",
+      "reason": "корпоративное событие",
+      "orbit": true
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Cygnus Metals Limited : Mise à jour de la transaction relative au plan d'arrangement",
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338965/0/fr/cygnus-metals-limited-mise-%C3%A0-jour-de-la-transaction-relative-au-plan-d-arrangement.html",
+      "reason": "сделка/поглощение",
+      "orbit": true
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Cygnus Metals Limited: Scheme Transaction Update",
+      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338965/0/en/cygnus-metals-limited-scheme-transaction-update.html",
+      "reason": "схема сделки",
+      "orbit": true
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Jiangxi Copper Files Early Warning Report",
+      "link": "https://www.globenewswire.com/news-release/2025/03/12/3041770/0/en/jiangxi-copper-files-early-warning-report.html",
+      "reason": "покупка акций",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "King Copper Discovery Corp. Enters Investor Relations Contract",
+      "link": "https://www.globenewswire.com/news-release/2025/04/11/3060345/0/en/king-copper-discovery-corp-enters-investor-relations-contract.html",
+      "reason": "IR-контракт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "King Copper Discovery Corp. Announces $15 Million Financing",
+      "link": "https://www.globenewswire.com/news-release/2025/09/04/3144328/0/en/king-copper-discovery-corp-announces-15-million-financing.html",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "King Copper Discovery Corp. Announces Closing of $15 Million Financing",
+      "link": "https://www.globenewswire.com/news-release/2025/09/15/3150323/0/en/king-copper-discovery-corp-announces-closing-of-15-million-financing.html",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "King Copper Discovery Corp. Ongoing Onsite Work Identifies Multiple New High Priority Targets",
+      "link": "https://www.globenewswire.com/news-release/2025/10/03/3161244/0/en/king-copper-discovery-corp-ongoing-onsite-work-identifies-multiple-new-high-priority-targets.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "King Copper Discovery Announces Closing of $15 Million Financing",
+      "link": "https://www.globenewswire.com/news-release/2026/01/19/3221262/0/en/king-copper-discovery-announces-closing-of-15-million-financing.html",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Panoro Minerals Ltd. Announces Update to Payment #3 for the Antilla Project Transaction",
+      "link": "https://www.globenewswire.com/news-release/2026/01/20/3222347/0/en/panoro-minerals-ltd-announces-update-to-payment-3-for-the-antilla-project-transaction.html",
+      "reason": "платёж по опциону",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Axo Copper Announces Filing of Final Short Form Prospectus",
+      "link": "https://www.globenewswire.com/news-release/2026/02/13/3238261/0/en/axo-copper-announces-filing-of-final-short-form-prospectus.html",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "King Copper Discovery Reports on Key Technical Team Additions and Participation at Upcoming 2026 PDAC Core Shack",
+      "link": "https://www.globenewswire.com/news-release/2026/02/27/3246702/0/en/king-copper-discovery-reports-on-key-technical-team-additions-and-participation-at-upcoming-2026-pdac-core-shack.html",
+      "reason": "назначение и конференция",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Wadoozie's CertiK-Audited Fair Launch Lands as Fartcoin-Era Attention Rotates",
+      "link": "https://www.globenewswire.com/news-release/2026/05/08/3291242/0/en/wadoozie-s-certik-audited-fair-launch-lands-as-fartcoin-era-attention-rotates.html",
+      "reason": "крипто-размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Protokoll fra ordinær generalforsamling 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/05/07/3289898/0/no/norsk-hydro-protokoll-fra-ordin%C3%A6r-generalforsamling-2026.html",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Valg av medlemmer til styret",
+      "link": "https://www.globenewswire.com/news-release/2026/05/07/3290199/0/no/norsk-hydro-valg-av-medlemmer-til-styret.html",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Eksklusive utbytte kr 3,0 i dag",
+      "link": "https://www.globenewswire.com/news-release/2026/05/08/3290821/0/no/norsk-hydro-eksklusive-utbytte-kr-3-0-i-dag.html",
+      "reason": "дивиденды",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Ex-dividend NOK 3.0 today",
+      "link": "https://www.globenewswire.com/news-release/2026/05/08/3290821/0/en/norsk-hydro-ex-dividend-nok-3-0-today.html",
+      "reason": "дивиденды",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Excimerlight Expands Into North America With Filter-Free 222nm Far-UVC Technology Platform",
+      "link": "https://www.globenewswire.com/news-release/2026/05/16/3296195/0/en/excimerlight-expands-into-north-america-with-filter-free-222nm-far-uvc-technology-platform.html",
+      "reason": "нерелевантная отрасль",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Hold av datoen – investordag i London 25. november 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/06/09/3308547/0/no/norsk-hydro-hold-av-datoen-investordag-i-london-25-november-2026.html",
+      "reason": "инвестдень",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Save the date – Investor Day to be held in London on November 25, 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/06/09/3308547/0/en/norsk-hydro-save-the-date-investor-day-to-be-held-in-london-on-november-25-2026.html",
+      "reason": "инвестдень",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Invitasjon til presentasjon av Hydros resultat for andre kvartal 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/06/24/3316587/0/no/norsk-hydro-invitasjon-til-presentasjon-av-hydros-resultat-for-andre-kvartal-2026.html",
+      "reason": "квартальный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Invitation to Hydro's second quarter results 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/06/24/3316587/0/en/norsk-hydro-invitation-to-hydro-s-second-quarter-results-2026.html",
+      "reason": "квартальный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Constellium Sells Automotive Structures Joint Venture in Changchun, China",
+      "link": "https://www.globenewswire.com/news-release/2026/06/29/3318754/0/en/constellium-sells-automotive-structures-joint-venture-in-changchun-china.html",
+      "reason": "продажа актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Constellium to Report Second Quarter 2026 Results on July 29, 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/10/3325395/0/en/constellium-to-report-second-quarter-2026-results-on-july-29-2026.html",
+      "reason": "отчёт о прибыли",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Påminnelse - Invitasjon til presentasjon av Hydros resultat for andre kvartal 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3327459/0/no/norsk-hydro-p%C3%A5minnelse-invitasjon-til-presentasjon-av-hydros-resultat-for-andre-kvartal-2026.html",
+      "reason": "квартальный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Reminder - Invitation to Hydro's second quarter results 2026",
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3327459/0/en/norsk-hydro-reminder-invitation-to-hydro-s-second-quarter-results-2026.html",
+      "reason": "квартальный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Constellium to Source Local Renewable Energy for its German Facilities",
+      "link": "https://www.globenewswire.com/news-release/2026/07/15/3327705/0/en/constellium-to-source-local-renewable-energy-for-its-german-facilities.html",
+      "reason": "энергоснабжение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: God drift ga solide resultater",
+      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331070/0/no/norsk-hydro-god-drift-ga-solide-resultater.html",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Norsk Hydro: Operational strength delivering solid results",
+      "link": "https://www.globenewswire.com/news-release/2026/07/22/3331070/0/en/norsk-hydro-operational-strength-delivering-solid-results.html",
+      "reason": "финансовые результаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Constellium Reports Strong Second Quarter and First Half 2026 Results, including Record Segment Adjusted EBITDA; Raises Full Year ",
+      "link": "https://www.globenewswire.com/news-release/2026/07/29/3335016/0/en/constellium-reports-strong-second-quarter-and-first-half-2026-results-including-record-segment-adjusted-ebitda-raises-full-year-2026-guidance.html",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Mustang Closes Sale of El Cobre Copper-Gold Porphyry Project",
+      "link": "https://www.globenewswire.com/news-release/2026/07/13/3326475/0/en/mustang-closes-sale-of-el-cobre-copper-gold-porphyry-project.html",
+      "reason": "продажа актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Issue of Shares and Cleansing Notice",
+      "link": "https://www.globenewswire.com/news-release/2026/07/14/3326987/0/en/issue-of-shares-and-cleansing-notice.html",
+      "reason": "размещение акций",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "BRAZIL POTASH DIVULGA ATUALIZAÇÃO SOBRE O PROJETO AUTAZES EM RELAÇÃO A PETIÇÃO APRESENTADA PERANTE A JUSTIÇA BRASILEIRA",
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328312/0/pt/brazil-potash-divulga-atualiza%C3%A7%C3%A3o-sobre-o-projeto-autazes-em-rela%C3%A7%C3%A3o-a-peti%C3%A7%C3%A3o-apresentada-perante-a-justi%C3%A7a-brasileira.html",
+      "reason": "судебная тяжба",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Nobel Provides Update on Cuprita Project, Chile",
+      "link": "https://www.globenewswire.com/news-release/2026/07/16/3328320/0/en/nobel-provides-update-on-cuprita-project-chile.html",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "Evolve Royalties Secures Revolving Credit Facility for Up to US$75 Million",
+      "link": "https://www.globenewswire.com/news-release/2026/07/20/3329657/0/en/evolve-royalties-secures-revolving-credit-facility-for-up-to-us-75-million.html",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.806713+00:00",
+      "title": "TROILUS SÉLECTIONNÉE PAR LE GOUVERNEMENT DU QUÉBEC POUR BÉNÉFICIER DE L’ACCOMPAGNEMENT SPÉCIALISÉ FILON EN APPUI À L'AVANCEMENT DE",
+      "link": "https://www.globenewswire.com/news-release/2026/07/27/3333377/0/fr/troilus-s%C3%A9lectionn%C3%A9e-par-le-gouvernement-du-qu%C3%A9bec-pour-b%C3%A9n%C3%A9ficier-de-l-accompagnement-sp%C3%A9cialis%C3%A9-filon-en-appui-%C3%A0-l-avancement-des-projets-miniers-strat%C3%A9giques.html",
+      "reason": "accompagnement gouvernemental",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-30T22:05:47.028835+00:00",
-      "title": "Gold Hunter Announces Change of Auditor",
-      "matched_noise_word": "\\bauditor\\b",
-      "orbit": false
-    },
     {
       "ts": "2026-07-31T05:30:40.501633+00:00",
       "title": "Fairchild Gold Announces Closing of Private Placement Financing and Early Warning Report",
@@ -1678,6 +1948,24 @@
     {
       "ts": "2026-08-06T22:00:57.281785+00:00",
       "title": "Sun Summit Announces Non-Brokered Private Placement of up to $4 Million to Expand the 2026 Drill Program at the JD Project to 15,0",
+      "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.788210+00:00",
+      "title": "Troilus Drills 1.10 g/t AuEq Over 103 m as Z87 Optimization Program Continues to Strengthen Mine Planning",
+      "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.795294+00:00",
+      "title": "Norsk Hydro: Election of members to the Board of Directors",
+      "matched_noise_word": "board of directors",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-07T00:51:05.797928+00:00",
+      "title": "King Copper Discovery Announces Private Placement",
       "matched_noise_word": "private placement",
       "orbit": false
     }
