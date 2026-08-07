@@ -107,68 +107,13 @@
     "34c5b052b69590e81c429223a67f6c9a",
     "bceed63016bdf8137d36e89ff5364427",
     "88fc8839ec7260e7758c02d368e82cf9",
-    "4150125d935f5ebc4c9682b5e65046cd"
+    "4150125d935f5ebc4c9682b5e65046cd",
+    "5acb7c9abbb25690980f2e4e79540737"
   ],
   "last_run_targets": 12,
-  "last_run_sent": 5,
-  "last_run": "2026-08-07T09:14:26.727461+00:00",
+  "last_run_sent": 1,
+  "last_run": "2026-08-07T13:38:39.686454+00:00",
   "hits": [
-    {
-      "ts": "2026-07-31T10:15:26.249626+00:00",
-      "lead_id": "outreach_auto_azeraluminium",
-      "company": "Azerbaijan Aluminium",
-      "title": "Azerbaijan’s H1’26 aluminium export value jumps 40%, outpaces total trade growth - AL Circle",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNbEl4LUQ3ZWhSQUItamcybFlXNlpnVzlrdnAxSUJyYlJqVHZFX3BTSldPeUJsZXE3dnhRUkhpSDVZZFpoV0Q3VzNiZlYwdnpnM1dqVnZQU0xvVC1qTnpvMHp0b3JIMDJQNGt1Qkt4djRWOV92dHpScWZXeDhJVGd3Q1JGd09BUXBqUkhhYnRFbVFSUENpUFF1d0FSWFRJWkhRXzhNOGUzREJnUQ?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-31T10:15:30.596705+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "«Селигдар» в первом полугодии получил чистый убыток в 4,29 млрд рублей по РСБУ - Ведомости",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOV3dzcE9XRkQycURJQ2ZVTXZ1VF9aVWlRUllDMkIzUkdBb0kySF9XRUZZSG4wWGRBQUdTUmdvcmtSQks4MFJjVjhseGlNYVhINHhvN1hRVEJVYW9QbUFicktNN1M5TVhHbXhIM1ZyZHpicnpLRnBLdXFZVng5cnNmUFFQRFd5bG44RGhKdnlpUQ?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-31T10:15:32.053416+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "Европлан нарастил прибыль втрое, Ютэйр и Селигдар в убытке - Investing.com",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE81bmtfaGpZbkpaSWZPWlVVQTlUelkzU1pCenVFYklMalRYOUtnbDF3UVBXcVp1aWVnUENQOE5xTzk4UmktejNub0tuSWhZNjJ3NGp0RTRkSkZkVG4zWnJiUGxfMjdGNnFIM0E?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-31T10:15:33.531822+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "Убыток Селигдара по РСБУ за 1п 2026г составил ₽4,29 млрд против прибыли ₽0,06 млрд годом ранее, выручка ₽1,64 млрд (+39,8% г/г) - Smart-Lab",
-      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5KZkk2RzFaUU9VSDJUNFJnWGMwTjI3c0tmR2ptNnJHdmJGM2E2aFFUbUVtMGprcVJIV185cTZDd1h2ZG5rQkRTSE9FaXY2Zw?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-31T10:15:35.060575+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "🔎Селигдар Отчет РСБУ - Smart-Lab",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE83N21qejhicE4xQmVwOFJPMklhOFdOR0xiZnhDVWVaT3JOMVo0QXl2YVdhaThpWnBGMzVGRGlUUVNqZkllelRzOUlvbWhUU0VjQ1hkUA?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-31T10:15:39.195192+00:00",
-      "lead_id": "outreach_auto_uzairways",
-      "company": "Uzbekistan Airways",
-      "title": "Restructuring at Uzbekistan Airways: Government figures on efficiency losses and delayed IPO plans - Aviation.Direct",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPS292M0hNUjJ3aTEtTGNHMDdqUnRVcl92eWFkTDJvZnNiYlcwaGRJcmRqZEZTNjBwM1BIemZIeFJEMHk0SUR1WjRGVVZLZkx0WTNRTnBLekY5cjlZb0llTFUzLTZZOGhmeEhRMmRTRElOQlM1bjJVMFhwUEdxdS1zd3NldVdRMnhhdWdDS1hUOHJ6b2NkOHpRUWZubE5WdFVBUkNySTZLSnFpV2kyTUJ6b0dEeTN2UEhSQldINlV6OU45MzBZTFA5Q0dSWjJuNkl2aUE?oc=5",
-      "src_domain": "news.google.com"
-    },
-    {
-      "ts": "2026-07-31T12:13:54.067498+00:00",
-      "lead_id": "outreach_auto_seligdar",
-      "company": "Селигдар",
-      "title": "Убыток «Селигдара» по РСБУ в 1 полугодии: причины, выручка, обязательства компании - finance.mail.ru",
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOS1JlX0xGSmpRVUJPOWsxTGlLT2p1Y2tRUTVkWG5qd1I4b2p0OWoxU2pPdGdOR1pDRkJEQkk4X0xoa0dCVl9hdHlGZFVmUFhTNWhTV0VrNjJ1UTdSMENWczVnaDlqeFVzekwxMDdURnVZNFR3Z2pyT2p3MDZZekM1bUpyTFhxVUFWSEpCd284UEZlbE9KNnJVZk40ZVRiVExrenlGZkQzMGJ4bmpSeVdlRXJvejE?oc=5",
-      "src_domain": "news.google.com"
-    },
     {
       "ts": "2026-07-31T14:15:28.986489+00:00",
       "lead_id": "outreach_auto_silvercorp",
@@ -359,6 +304,14 @@
       "company": "Селигдар",
       "title": "чт, 06.08 | 🏦 вынесли стопы , дали продажи — смотрим золото , селигдар и фск россети - Smart-Lab",
       "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFAwZDBsMzZtYVB2ZXlTWkJ4VU9aRWtsVmxPZXpRSUtXQlM1YXc4LXdiUDM3MTVSd01UdS0zcDRNUFR4TUt3bVU2M0diSG96dw?oc=5",
+      "src_domain": "news.google.com"
+    },
+    {
+      "ts": "2026-08-07T13:38:30.476493+00:00",
+      "lead_id": "outreach_auto_steppegold",
+      "company": "Steppe Gold",
+      "title": "Why Steppe Gold Ltd stock went up yesterday - Wealth Awesome",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZktyNjhMVXdac0RLbVN2TS1zdlU4MjRJc2g1T2RCdUV2QlpVdkx3ZzJtUmtoVmZBM0I2WU80VFZlYk52T2RtYnhYSWVRb3g3N1FxcFYtZ1lNeHZFOVNRZExycG9RTGlWWFJUdWlueEpNZHd0dlZVT0g0R2EyTkhUMVhfNlY?oc=5",
       "src_domain": "news.google.com"
     }
   ]
