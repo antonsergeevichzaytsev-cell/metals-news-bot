@@ -6,14 +6,14 @@ from unittest.mock import patch
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 os.environ.setdefault("TELEGRAM_BOT_TOKEN", "test-token")
-os.environ.setdefault("TELEGRAM_CHAT_ID", "12345")
+os.environ.setdefault("TELEGRAM_CHAT_ID", "test")
 os.environ.setdefault("DEEPSEEK_API_KEY", "test-key")
 
 import bot_commands as bc  # noqa: E402
 
 
-def make_update(text, chat_id="12345"):
-    return {"message": {"chat": {"id": int(chat_id)}, "text": text}}
+def make_update(text, chat_id="test"):
+    return {"message": {"chat": {"id": chat_id}, "text": text}}
 
 
 # --- Authorization -----------------------------------------------------------
