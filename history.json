@@ -1,246 +1,6 @@
 {
   "items": [
     {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Vitol, Cargill, Glencore cut ties with Radiant World",
-      "desc": "Vitol, Cargill, Glencore cut ties with Radiant World &nbsp;&nbsp; KITCO",
-      "domain": "kitco.com",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNRnFwUXNtQUFmUUlqWUNycXNtOUVDd3JMS1BLWmxWWUFMak8zdXJzbFdNU2hOZGNNb1ZpNDVjVVcxTzZiY3VlYXZ4QzhYaWxITjQyVXl1eEhySlhvckYwTmIyTlRaSEVHSC1yOWlSbTJyQ2QwT2xRQUVfTUllbXk4cUJST2FTdmYtb0xmOWVHdERsRFVINFhXVlJkaG8?oc=5",
-      "why": "Трейдеры разрывают связи с Radiant World, что сигнализирует о рисках в цепочках поставок металлов.",
-      "priority": "medium",
-      "company": "Radiant World"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Vale Q2 2026 slides: record output lifts EBITDA 19% despite cost pressures",
-      "desc": "Vale Q2 2026 slides: record output lifts EBITDA 19% despite cost pressures &nbsp;&nbsp; Investing.com Canada",
-      "domain": "Investing.com Canada",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNdHpqdHdncEVtQV9DY2c3Q1FsbjIwX2htLXBhb1d5TFJTbmxoSjhzMFFLakxEQ1lPRUN6ODRJcm9xT2tJUlUzdGlXSkRDZHNHU2ZVSzFpSzY5RjNmR3NGaTUzdi1rSC1ONWFrbXR1TTZTTDEtOGc0ZVNnTkdSRS1jSG93a3lwemx1ODV0c09zQTYyYmE2ZW5QeUR2Y3BNMlVOSWc3dE00ZXU3aWRIYk5iN3NmblZVSnJwY1NBTlBuc3o1RmlhYWVj?oc=5",
-      "why": "Vale рекордный выпуск и EBITDA +19% — прямой сигнал по конкуренции на рынке железной руды и никеля.",
-      "priority": "medium",
-      "company": "Vale"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Vale (VALE) starts Serra Sul +20 ramp-up to boost iron ore output",
-      "desc": "Vale (VALE) starts Serra Sul +20 ramp-up to boost iron ore output &nbsp;&nbsp; Stock Titan",
-      "domain": "Stock Titan",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbXkzc0M4Y0E2aXRyYmdnaFE2TFhreWJSNW40bHdTN2ZtYnFzdl93QUt0M1ViMHlRVFk2SWk4Y2xNUlo0TWwxb0ZsV3Z5QVNJanpBdTFjdG51VTdSd2Y3amNTbjB2QUdTT24zZ1ZEdl96VEhGMGVYMXhyM2J3QUQwVzBaNkNiV2s1ZE13UWplMzBBQklVb0R1ZTVIZVZjX1lxWmtaUmZkSQ?oc=5",
-      "why": "Vale наращивает добычу железной руды на Serra Sul, что усилит конкуренцию на рынке и повлияет на цены.",
-      "priority": "medium",
-      "company": "Vale"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "UNESID: Incorrect product classification may create an approximately EUR 300/mt difference in CBAM liability",
-      "desc": "UNESID: Incorrect product classification may create an approximately EUR 300/mt difference in CBAM liability &nbsp;&nbsp; EUROMETAL",
-      "domain": "EUROMETAL",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPVi1uMldnV2NlNGN2T1RuOFZBeEFHeTBIQ1YwLUVIR1FFeXZ4OWlETDF0dDFKaXVMc0NURVQ4blNzWXpGd2Q2N1BVeXNrX21RTUFJSlAwQ0xtUFJDTXhDSm0ydG5heDdFcS1KN2NMRUpBZVFNVlh3TWRCSVJReEdwN1haMUNGdGtoTjcwNjlSb2JCMEh6czJQclQtc2pzTHp5VG1DYm5qQjlJSFpUT3V5SGVReU9aOEtQVkJLUldLcTMtLUprbjYzVWRB?oc=5",
-      "why": "CBAM классификация влияет на затраты производителей металлов, включая клиентов Норникеля и Русала.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Freeport channel milestone expands vessel access, strengthens U.S. supply chains",
-      "desc": "Freeport channel milestone expands vessel access, strengthens U.S. supply chains &nbsp;&nbsp; American Journal of Transportation",
-      "domain": "American Journal of Transportation",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcWxtZVBTcEFPZ21CZEh6Qnd0MjUyaTBQR1hGaDU1dFZETnpKdEg2MlIycGRJTXZja3d6NGVpcTduSnppdFUtV082dW10RkpqLWRSaEI2WkFOMkRnSU9jekdDdC01aFdmQkMwSXFmM1RGUkY0enZtWDFCb3NEUkdzY2tCTHlVU182aXNzTFphaVh5N2JUb0ppbXN2MnQ5R0lnQkkwY1JLdw?oc=5",
-      "why": "Расширение доступа судов к порту Freeport укрепляет цепочки поставок металлов в США, влияя на логистику для игроков отрасли.",
-      "priority": "medium",
-      "company": "Freeport"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Chile US$700mn upstream project submitted for environmental review",
-      "desc": "Chile US$700mn upstream project submitted for environmental review &nbsp;&nbsp; BNamericas",
-      "domain": "bnamericas.com",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOTF9MdjNYbk5oRElFWW15Ym5FejFHNmxHVXJUci1XZmVWN0dXSElDWnZXV0hJb0NnYmNHd0w3dTh3WWhDeW5NX2k2eDIzYlVaN1lhRmhidl9UQXJER0RkNnpReDFwMUdIZ012T3VMOXN4YXlMU0xiNkRoMXRtTFFPOW5uNmNHeWZINzZzaUJWZmZTMW9CQnBEaHNBRmI2dE9CaXc?oc=5",
-      "why": "Крупный чилийский проект на $700 млн может изменить баланс на рынке меди, что важно для стратегии.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Chile’s copper output rises in June, manufacturing production down",
-      "desc": "Chile’s copper output rises in June, manufacturing production down &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMGVieG9tNm1nd1VhOGZMTGxGWEFuSTZGNEI1WDBmRU04Y3hkeEg0dUdrU09hUndVTmJsU09XWmEwWnYwSGFreEs0UUVCalBtVnpQdjlZZmx4UllIVXpScUpoLVR3S3RSenk3UjJjUFV0OXpsVkNHeHVFQ2pSVXQ4dG5ONFJmQXY1cDhyTGw5WnBDZHI2Z2RF?oc=5",
-      "why": "Чили — ключевой поставщик меди, рост добычи влияет на мировые цены и баланс рынка.",
-      "priority": "medium",
-      "company": "Chile copper"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "LME proposes faster listing process for new metal brands",
-      "desc": "LME proposes faster listing process for new metal brands &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNb1EwcTUtclBrd3V6NG55akVLandwQlZTQnZ3S1BEVk02S3lWOUNUV2YzSlBMSVEwbUJjb3VJeWZIdGxEM2I4eVBSbXl2Z2l4QUFMY2VwLVQ3THlOS3BKSG5VN1lEbGdXNk5mUG5vdDktdUlhN0dlRVJtdDByVE5Qazd4TmxJNDJuV0ZESw?oc=5",
-      "why": "Упрощение листинга брендов на LME ускорит вывод новых мощностей, что важно для стратегии сбыта металлов.",
-      "priority": "medium",
-      "company": "LME"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Nornickel H1 net profit doubled to $2 billion",
-      "desc": "Nornickel H1 net profit doubled to $2 billion &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9XUkJLNVNsclZzNk95akVZR1VwdXN4QnNhcnJOeng4ZExCQmJUZTZHTmNaZUprTmpVZWJxMmUyWGtXRTNkV240Q1lxQ2RIT0lDRHI4ZUJMSDU2anZiUkw3T18xRzdBQmpBQVJVSDByX0dNdV9zaDdLT1Uzbzg?oc=5",
-      "why": "Норникель удвоил прибыль за полугодие — прямое подтверждение финансовой устойчивости ключевого игрока в его орбите.",
-      "priority": "high",
-      "company": "Nornickel"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Brazil's Vale Confident Of Nearing $15 Billion Expanded Net Debt By Year-End - Exec",
-      "desc": "Brazil's Vale Confident Of Nearing $15 Billion Expanded Net Debt By Year-End - Exec &nbsp;&nbsp; TradingView",
-      "domain": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPTVc0WWwxajhBSGY4TzFKZEJJcUpvY0dZU2owZHFsQVRtUGc5bTJiSUFzMWFkY2hnXzM0eWk1Vk1uM2VQS3hNemItc1FwX2ZHTWo0ME1DX1FEcjhHV19XUExJcldQSzcxTnpaaWtDUmthWE5hQWZpeU42WTV2VFE4alhCUldVUnR4SElocV9idmd6X3BCUURjWFJxaEYzVEtZQTc3clVqZEItVU9iclJlS2djaXlqeWstVXVLUHFEYUF4S2tyRVRPSEZ2eDZiN1piY2lPTXI3N1Nvek9fczhWT1o2RTM?oc=5",
-      "why": "Vale — крупный игрок на рынке железной руды и никеля, снижение долга влияет на его стратегию и рынок.",
-      "priority": "medium",
-      "company": "Vale"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "ERG Q2 2026 slides: solid EBITDA growth despite weak European wind",
-      "desc": "ERG Q2 2026 slides: solid EBITDA growth despite weak European wind &nbsp;&nbsp; Investing.com",
-      "domain": "Investing.com",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPeDhVMWdjMnRWLVVoNGhybk82V3Nla3VVU1p3VFhrcGQ2a3p3amZMRnlqb1BFdUpmVTBnVnBDUzNmNlltOVFpVUVzNlJKRnFISmxLLWp6NkktenVYZmhaTzlxYVIxV3RrUHEzNWNKQmpmeTFkY0pNWDhCQk9zZ1otNk53M3g3VVlQNkNWM0VGUnZOLVBvdE9BeDNKcVlrOGsyNFVMUmVmZThSRk9nY3J0bGx0ZHJYajdKSTM5Q1FESQ?oc=5",
-      "why": "ERG — ключевой игрок в орбите клиента, рост EBITDA важен для стратегии.",
-      "priority": "high",
-      "company": "ERG"
-    },
-    {
-      "ts": "2026-07-31T17:00:56.993743+00:00",
-      "title": "Ottawa approves Canada Nickel’s Crawford mine",
-      "desc": "Ottawa approves Canada Nickel’s Crawford mine &nbsp;&nbsp; Mining.com",
-      "domain": "mining.com",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1hd3dEMmRfM0RtbHlDWWhKaDZLWXVHb3EwS0lPN1dBRTRoUHVsLXZjejlrdFJpSmFQOGNqVjJDXy1KcmJneml1c2lEa1UzR1hHYW5lbnpWTGNlNzVxYnpaVzFmMTlXTXJpdlRjX01CdFFQOUgweTM4?oc=5",
-      "why": "Канадский никелевый проект Crawford одобрен — новый конкурент для Норникеля на рынке никеля.",
-      "priority": "high",
-      "company": "Canada Nickel"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Vale posts profit fall, lifts base metals outlook and unveils buyback",
-      "desc": "Vale posts profit fall, lifts base metals outlook and unveils buyback &nbsp;&nbsp; KITCO",
-      "domain": "kitco.com",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNc3FKSWwtNjZEYlMyVFZlVVJseTlPVU4xLXgtWkhfUExwVmR1UlZTc0V6cXN2NkhxYlVueXBwVnFraEVQZ2FCWVNQMTdzQzZjcW1EOTFMSmRhYVJSR2RhRlBZTUFQTUdYZGVIZFpYY0xJM3NMNmJ6YU9Zem5LVXh2bUFjYVExQ1NRMXpLWjJNOGNJa2NNVVQ2VWk2c1hTMlZiOVZ6RFVJVXFUNE13bHpDOWFsMXQzeXhJcG5r?oc=5",
-      "why": "Vale, глобальный конкурент, корректирует прогноз по цветным металлам и выкупает акции — сигнал для стратегии.",
-      "priority": "medium",
-      "company": "Vale"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Vedanta Aluminium’s profit surges three-fold in June quarter on record revenue",
-      "desc": "Vedanta Aluminium’s profit surges three-fold in June quarter on record revenue &nbsp;&nbsp; The Economic Times",
-      "domain": "The Economic Times",
-      "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxPYm1fQnkxcWZ2dTFBdGhHT1h0eDV1YXplOGpWMGZUOGZacUZ0Vnk2NFl2TDFOVHF2WmxaaGRkQjNxdlZXellDY2ExcFFwYkVzeVc1RlNJa2RHZDlSUDNBX3lZUHltVnJKMmJxOE9PNmt3T0c4MzhGUGM5Mm56X0dkX0hNYVhWclVTQ3BzZHR6eGFzREJNU1VQaGpvbkk5bFF3SXAyVlA3S3lzWFlhMWt4VDJtQm11QjlPclJkdUpIdlI1d0hKb1ExZEdWbVJYRkJXQ01qTzRYRHFPcENXOXhnZmJYWmJTNV9OdkxHMHVCbFFtVXRjNVdVT21kSmhMWS1EMFBEOExEWEhDa2drNmZqODFkem1mRGhXQlVqUGNjS0IzZmtSM05fcEZPREt0X1djQTl5WU1sMlA3MzVWc1FYaWc0Qmc5VTFVLWptUUhLSGpab0RQM0F5UDkybjZiSWpfV29RbTNvY9IBgwJBVV95cUxNMUpYOXE4T3dxdkJXR2FxQmtBakdpTlU5WVR2bHRzX21rQm1PRXVWNUFmRmNOOEJlOTk1bFUtOE9BUkI0VkRMUWNkSVdObkVHQ2duVzlWM1pSemw3UUx5MldiZ29aMU9mMEZSMHYxU0JZOG1JZzBPNHhNaHAyM1k0R3c0Q2FEN3NOT2VkaklQYi1LOW1XU2J5b01OUzNVWkRxQjcwUlVpU3dvVzJnTmV4N3RkVGpheXhaMUFDbVg3M1k5S0syNVVpdDJNMFd3YzhmMDVrcktYTkZDenRMdmthWXVLZ0hVY1N1QTBfOWE3SVRiQ2M1Zm1Rd1Z2dUoxQk5haDJz?oc=5",
-      "why": "Vedanta Aluminium's profit surge signals strong aluminium market, relevant for competitive analysis.",
-      "priority": "medium",
-      "company": "Vedanta Aluminium"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Vitol, Cargill, Glencore cut ties with Radiant World, Bloomberg N",
-      "desc": "Vitol, Cargill, Glencore cut ties with Radiant World, Bloomberg N &nbsp;&nbsp; Global Banking & Finance Review",
-      "domain": "Global Banking & Finance Review",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSkJramV4b3JxSWVIX3l1VlpMSkNWR3lRenRmTC1yRktrQXM2blVMMW9Bcm1jSmNLYWFhajdGYy1FWWJxYzBiQWtjYVkxcE5EODZjNF83SlY3cTV0RERBTW9HM3prNFJPeHhhWXlkVEJxRzd5dURLZDJzN3d3aGkzbi16c3VJNnVraXNUeEJVWlFCNmxqVnRtWmRxQTRpWUVGQS13?oc=5",
-      "why": "Трейдеры отказываются от Radiant World, что влияет на каналы сбыта металлов и сырья.",
-      "priority": "medium",
-      "company": "Radiant World"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Ottawa approves Canada Nickel’s Crawford mine",
-      "desc": "Ottawa approves Canada Nickel’s Crawford mine &nbsp;&nbsp; The Northern Miner",
-      "domain": "northernminer.com",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOdlB5MzMzSWY4bUdiZS1Celo5Sl9MdzBwSHg3X2ZsMS0tcEtfcmFVWDBmVWV3c2lyenBDRlpzQXpqQ1FrV1NzY205NlRqWVBrX2JFWjdTdFgyV3NPTXpWaEpfRXJzLUg2UUNQcjJpVFJzd2ZsWE95aEpPQjVqbGRqQ0pxNFBiN0h1RTZsUUJiT2lEMUJoZjdaYjNKcjNldUE?oc=5",
-      "why": "Канада одобрила никелевый проект Crawford, новый конкурент для Норникеля и ERG на рынке никеля.",
-      "priority": "high",
-      "company": "Canada Nickel"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Russia's Nornickel doubles H1 net profit, says it will discuss interim dividend",
-      "desc": "Russia's Nornickel doubles H1 net profit, says it will discuss interim dividend &nbsp;&nbsp; TradingView",
-      "domain": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNaVg1OXl0MkduclpyWGJ5SWxTcUdfSGw1TmNhM3N1NTZSQXNZeHFWSldmNHdOZW0xN1hyRFVYc0RhbGg3N29xREd5VzZuTkRVM2U2aldHUXFyMGRjQ0lQV0YycFF4R1ppRkxhX09VRHY2OGpJbEQ5eU50cVFvZF9aMk1aTjc0S0VxV1FsOWNIZ2t2Uk9MNlBhc19tOUtlU19td213VXAzYWlMMUVVQWNQbnJMa0h2MUhNM0JROWlRUFlxNUtFd0VGUVowTnhUcmlEREU0NE5RMnJsTXFZZjRRVkNB?oc=5",
-      "why": "Норникель удвоил прибыль и обсудит дивиденды — прямо влияет на стратегию и оценку компании.",
-      "priority": "high",
-      "company": "Nornickel"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Vale Q2 2026 slides: record output lifts EBITDA 19% despite cost pressures",
-      "desc": "Vale Q2 2026 slides: record output lifts EBITDA 19% despite cost pressures &nbsp;&nbsp; Investing.com",
-      "domain": "Investing.com",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOYzJKdVQxcHlJbzVmWmdSTXBhSl9NRHFOZnllTHZwckRqTjRxaFFhVTAtZV83Rk1PWG5OTlk3WEJpTkFEbjliekRQd25NbDlld2xNTHlkVGxMVXFsV3Jrd0pacHNHQ3VRQlAycUhpQ0xLN3A1eEIyTTQwLU5DYzJRUHBBRms2TW1EeGhHS1V4M003QXhJZlk4am5YRTlTbmRrUk9FVnltTE0wZFB2U21VTnNsamFPYWduYnY4aXdLT1VlSW5GUVotNQ?oc=5",
-      "why": "Vale рекордная добыча и EBITDA +19% — прямой сигнал по рынку железной руды и никеля, конкурент для Норникеля.",
-      "priority": "medium",
-      "company": "Vale"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Chile Posts Weakest Copper Output for Second Quarter in 19 Years",
-      "desc": "Chile Posts Weakest Copper Output for Second Quarter in 19 Years &nbsp;&nbsp; Bloomberg.com",
-      "domain": "Bloomberg.com",
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbHdoRV9MbE1CeGZQR3drYW94TzgzTzBxay1hZk52REN4UGZ1VUR5cDdEcFE0TTBPZGFmdmRVMUNURW5Tb25BSl9HdEkwUkhIeGY1bTBJeGhJR2RTVk9MbVJmZVlxRmUxalNIUG1USGZWME5ianZ4d1F1VXhNd2Q5Zk9EXzB0bEJIY3ZiTDVVYjBCaGpyVDdOX1pqNjVCVXlKbXd3WUp0eFlmOHJUaEF0V0pRWTYwUQ?oc=5",
-      "why": "Чили, крупнейший производитель меди, снижает выпуск — это влияет на мировые цены и конкурентоспособность активов в СНГ.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Chile US$700mn upstream project submitted for environmental review",
-      "desc": "Chile US$700mn upstream project submitted for environmental review &nbsp;&nbsp; BNamericas",
-      "domain": "bnamericas.com",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOTF9MdjNYbk5oRElFWW15Ym5FejFHNmxHVXJUci1XZmVWN0dXSElDWnZXV0hJb0NnYmNHd0w3dTh3WWhDeW5NX2k2eDIzYlVaN1lhRmhidl9UQXJER0RkNnpReDFwMUdIZ012T3VMOXN4YXlMU0xiNkRoMXRtTFFPOW5uNmNHeWZINzZzaUJWZmZTMW9CQnBEaHNBRmI2dE9CaXc?oc=5",
-      "why": "Крупный чилийский проект на $700 млн может повлиять на рынок меди, конкурируя с активами в СНГ.",
-      "priority": "medium",
-      "company": ""
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Mutapa Energy secures $300 million to develop Zimbabwe lithium assets",
-      "desc": "Mutapa Energy secures $300 million to develop Zimbabwe lithium assets &nbsp;&nbsp; AutoTechInsight",
-      "domain": "AutoTechInsight",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUEticVZsYzBiX2NTUTVJWkY5YUdDYnFaalBUY1VDWExTLW9vN2ZLV1hYRnhnMENiOXR4bURrQ2ZmcnFpM19SSEdpSk9ONkdYakcybUhnRlk1cFhqZkk5c29odXhQekdEd0FjMThLTkZVMXdZMjZoTTJhLVJXWVhDVzM4a1FKZGZOcWRBNjhZMFB2XzNDUzB2enYyMHBibUZUU2xiaS01eUIwVUI4S3prX3o0R2g0TXZRVUE?oc=5",
-      "why": "Mutapa Energy привлек $300 млн на литиевые активы в Зимбабве — новая ниша для стратегии в Африке.",
-      "priority": "high",
-      "company": "Mutapa Energy"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Nornickel : reports first half 2026 interim consolidated IFRS financial results",
-      "desc": "Nornickel : reports first half 2026 interim consolidated IFRS financial results &nbsp;&nbsp; marketscreener.com",
-      "domain": "marketscreener.com",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQS1c4ZHBYcWJnSkVrOTZFSEExSi1yLXlNazJFcW83dTVWeDZIT0ZMYi0zN05MaUdlcEFmeUJqZ1g1cUZBQWF4Vk9URU1JY1Uzc1NpNVVRaVBDdnlsZjAyTWduRnBTT0FGdWFnV3FIZHVmQTBfbFNjOWZjM0VUblZWT1h1MUJPSUc3ZXRJT1Q3WnRqMElVRmZhSjFsXzlnaTh6WDhwbFowaHphajNKZzd4cm9GclZfUlJheTFpMEpWTld2bHFzejh1d2V3?oc=5",
-      "why": "Финансовые результаты Норникеля за 1П26 — ключевые данные по производству и рынкам для стратегии.",
-      "priority": "high",
-      "company": "Nornickel"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Kazakhstan Targets 50% Increase in Refined Copper Output with Balkhash Smelter",
-      "desc": "Kazakhstan Targets 50% Increase in Refined Copper Output with Balkhash Smelter &nbsp;&nbsp; The Times Of Central Asia",
-      "domain": "The Times Of Central Asia",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOHp4VTlESHctRnY2RkQwaktHbmg0dG1xT2FNVFMwRVdzd3FWRnNMWTdGemRJN2ZvNlRRcExzS0t3cWpPclZZS19xSVJ2N2NoVVVnbXR6NUw3MDZ6c1R1d3IwRF9KeDA2VHRvX3BLaUFUdXVRM29LQktfY1UzeWEwektLazZSNEVzTE9ReUZDclhnT1U4VHhzR2NqbWtjWTg?oc=5",
-      "why": "Казахстан наращивает выпуск рафинированной меди на 50% за счет Балхашского завода — прямое влияние на рынок и конкурентов.",
-      "priority": "high",
-      "company": "Balkhash Smelter"
-    },
-    {
-      "ts": "2026-07-31T18:14:24.522450+00:00",
-      "title": "Alcoa takes full ownership of San Ciprián facility",
-      "desc": "Alcoa takes full ownership of San Ciprián facility &nbsp;&nbsp; Aluminium International Today",
-      "domain": "Aluminium International Today",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWVNJdDh2bW16NlJ4eFNfd2V4S19fdmZIMXhxd242d3VXMWp6U1ZvZlMzeG9acnhiWkJSaXN0VGR4N2FJX2tDdmN3cTJxT19mN1BoSUV4SG8wQ0QtVkJvYnk1RXBpaUgwLUh2MVcyQkFWLVpXbjRmRWhEa0txZ00zblFiekFncTJZN3c?oc=5",
-      "why": "Alcoa консолидирует испанский завод San Ciprián, меняя структуру алюминиевого рынка ЕС и конкурентную среду.",
-      "priority": "medium",
-      "company": "Alcoa"
-    },
-    {
       "ts": "2026-08-03T05:00:52.853126+00:00",
       "title": "Fundamental Support and Geopolitical Easing Signals Intertwine, the Most-Traded SHFE Tin Contract Continues to Consolidate at Highs [SMM Tin Midday Review]",
       "desc": "Fundamental Support and Geopolitical Easing Signals Intertwine, the Most-Traded SHFE Tin Contract Continues to Consolidate at Highs [SMM Tin Midday Review] &nbsp;&nbsp; Shanghai Metals Market",
@@ -1849,6 +1609,154 @@
       "why": "Медь: конкуренция США и Китая за металл влияет на цены и стратегию поставок для его компаний.",
       "priority": "medium",
       "company": ""
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "Beyond Rare Earths: Kazakhstan’s Untapped Germanium Potential",
+      "desc": "Beyond Rare Earths: Kazakhstan’s Untapped Germanium Potential &nbsp;&nbsp; moderndiplomacy.eu",
+      "domain": "moderndiplomacy.eu",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaWVGVUFpa0UyZHBSZC0zQUtmc0RHZE83b29VMkFCaXhjeE55RWIyRGRMTHV4RU1EUXduWURhaDNqNGdvOUgzNml1eEsyd1FnWmFxSC1lODJjM0xfcE00bmRvTllrSnh4SVk4ck9kemtJRTdFdTN5aFVpUEpucnRkWndMQlAzTjdGUklRUjNHNEw2Q044cFJjN1ljZzQwZW8?oc=5",
+      "why": "Казахстанский германий — новый стратегический актив, расширяющий сырьевую базу для переговоров и сделок.",
+      "priority": "medium",
+      "company": "Kazatomprom",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "Uzbekistan and Kazakhstan Aim to Boost Joint Exports to Afghanistan to $3 Billion",
+      "desc": "Uzbekistan and Kazakhstan Aim to Boost Joint Exports to Afghanistan to $3 Billion &nbsp;&nbsp; خبرگزاری اطلس",
+      "domain": "خبرگزاری اطلس",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMzZIbndGVXdDeFd1REdqZHNwWmVKZUlwU2gzdUdyd1VnTVRrMmRXeWF6a1ZNZ3gyUnBVNW8tcDgyRGhHeHBocW5aTEdQZ0Z2RDRUc1dsMGppdTNSSmlVdHNwMlA5WVRHX2dTLV9PaDk2bWx4M1NKUG4zbnpaaks3TlN0UGU0MmJTNWM4ZDJrM3RGYUZXdFFB?oc=5",
+      "why": "Узбекистан и Казахстан наращивают экспорт в Афганистан до $3 млрд, расширяя рынки сбыта для металлов.",
+      "priority": "medium",
+      "company": "",
+      "uzcopper": true,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "Steppe Gold Climbs 4.4% as Mongolia Producer Rides Gold's Momentum",
+      "desc": "Steppe Gold Climbs 4.4% as Mongolia Producer Rides Gold's Momentum &nbsp;&nbsp; kalkine.ca",
+      "domain": "kalkine.ca",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMElhaC1wMC1RUzVOVEJEY0p3aTVPcFJQZy1NbFhHVXpOQWhFeC1MWERqRjFNdE5iUEtLdjh3UWJYNUpMUGNRVVVjd1dwYXJKR2pubzhQNDg4cEJOeGxyUDhLZFJWNTNVeEU2YnR4bk5EdmJtTkN3REtydVdhYU9Ecko3UGhZLW82QTRXakY4d3g1TDBwSlZPamFR?oc=5",
+      "why": "Steppe Gold — монгольский золотодобытчик из орбиты клиента, рост котировок отражает конъюнктуру рынка.",
+      "priority": "high",
+      "company": "Steppe Gold",
+      "uzcopper": false,
+      "deep": {
+        "what": "Акции Steppe Gold выросли на 4,4% на фоне роста цен на золото.",
+        "who": "Steppe Gold, монгольский золотодобытчик, напрямую связан с клиентом.",
+        "action": "Проверить, не связано ли с новостями о проекте или финансировании."
+      }
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "More workers join strike at BHP's Port Hedland iron ore operations",
+      "desc": "More workers join strike at BHP's Port Hedland iron ore operations &nbsp;&nbsp; Reuters",
+      "domain": "reuters.com",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQS28zTWUyZVpQajNhUDJvQTd1UDZoMVVqOTZtOXpfNWlkQTBpeThvY1BWb1IxWmJ6WFdZeEJQNkVFdktpLWpxbmpleGxEYUhCQmZhNDZNcDdXRE90VUJYSVR1OUs3S1FRTGJpVks2ZjdENG9NeFRqRUM0SHpDZ3pkQU5KQ2cwdTZVMmEtcnhtb2UxT2JZUEFIaUhqMzFXMFVzSGFrMU5aT1JpZGZVbkowWXkzbFZXUDVxSThJdlZn?oc=5",
+      "why": "Забастовка в Порт-Хедленд у BHP угрожает поставкам железной руды, влияя на мировые цены и стратегию конкурентов.",
+      "priority": "medium",
+      "company": "BHP",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "Workers down tools for second time at BHP's Port Hedland operations",
+      "desc": "Workers down tools for second time at BHP's Port Hedland operations &nbsp;&nbsp; ABC News & Headlines – Australian Broadcasting Corporation",
+      "domain": "ABC News & Headlines – Australian Broadcasting Corporation",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMmN0dmJKd3A0VTFCYWtnWXVNRWs4NUNCYkFuSzVRVVB3Q1RqVVVTUk9MVVFsLUlBOWVIc0gzNVRCYkg5TUNXUmRtQmRHRHlHZ2NGMXN0d25hUWc2VWhld09qYWJsUERhMjFOazZlUVdLbS1zcmlISUJsRGp1ajgxT1hTV3BmdWNSdmR6eXpsdHAwSGs?oc=5",
+      "why": "Забастовка в Порт-Хедленд нарушает отгрузку железной руды BHP, влияя на мировые цены и конкуренцию.",
+      "priority": "medium",
+      "company": "BHP",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "BHP Workers Hit Pause At Port Hedland’s Iron Ore Hub",
+      "desc": "BHP Workers Hit Pause At Port Hedland’s Iron Ore Hub &nbsp;&nbsp; Finimize",
+      "domain": "Finimize",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOMFdYMG9BT0tUcmVOOFVsc1o2U2NPTWt1NVRHeXdoZWM4aFJVWVY3WU9EOVhoclNBV3h4MEoteEFyLS1qQkpMeFVfN1pNZTlHSlJTQi1iOWJUMFc4Y3BXMEdDNzlweFZaeS10WFhyRUZoVXFWUmxIWUVWc2JQT0x3WTNGbVRySm8?oc=5",
+      "why": "Забастовка на Порт-Хедленд ударит по экспорту железной руды BHP, что повлияет на мировые цены и логистику.",
+      "priority": "medium",
+      "company": "BHP",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "The Central Bank of Chile announced on Friday that copper export value",
+      "desc": "The Central Bank of Chile announced on Friday that copper export value &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeDVadUZlODdqd01SbXZ4NVFGemFhOC10RWtXZkVzcmRPa3pLLWhQOTlTS1hqckV6cWl5MVJNS1pBcGd6Q1NvUzMtMVQ1VDVrWTB6emp5ZlBuZ2g2V2ZPRGVEaGV4UlI4SG5ybW9xR0czT1k4eFhhM1llVGVUZ3dZMnREMEpSZE9iWWt2TWF2QVRJb3NtZmZXenMwN0Z2QllNNFNMZ1JJdDE3aC1TNFlPRlZyQlJpU3hwemg3TW93?oc=5",
+      "why": "Чили — ключевой поставщик меди, данные по экспорту влияют на ценовую конъюнктуру и стратегию закупок.",
+      "priority": "medium",
+      "company": "",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "Market sources indicate that the DRC has issued a new administrative d - Shanghai Metals Market (SMM)",
+      "desc": "Market sources indicate that the DRC has issued a new administrative d - Shanghai Metals Market (SMM) &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPTkpUU3Q1Q1d3X3VnUFBCNU0tSnpDT2RsVklEeS1DRlNxR25YY1FCdEUwVTJ2dV9SSTVLREItR2luZ0tKaHIzMDRzc1VRQjJNOWhHOWpRT256OXNUSUxrdmRBN2pMN25MQ21hSmFPNDlqR1VnVnd0blJacFFOTjNKa205bkplc1hIMXA0NVRPVUFqT0RKN2ExQ0MwTVUtTWhCU1BobUJGN1VSRzY2c3V6UzR3bmVfeEJLOVJJ?oc=5",
+      "why": "刚果金新行政令可能影响钴/铜供应，直接关系其客户与竞争格局。",
+      "priority": "medium",
+      "company": "DRC",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "Copper Scrap Market Struggles with Tight Supply and High Prices in July 2026",
+      "desc": "Copper Scrap Market Struggles with Tight Supply and High Prices in July 2026 &nbsp;&nbsp; Shanghai Metals Market",
+      "domain": "metal.com",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQURZcXFYSXZkTkFBeWhpT3BBRmJkbklCM19WRXp5ZG5uSWdvNjlsVXY2d3Z2Smp1QXJhT3BTNGRldTFqTGRPZmc4dXBwank5Yjd5Rmp1MlhCc2I4Tkt3Skd0ak1vd3JGbEZQZm9tX3p3YXl4MVc1WUE4dktUeUZvUk5CQnZZLTI1NHRSZm1JeHEtbUVGS1hqU3NtLXlRQ3RkS2d0UHd3Rk5EX2ZhX1puMFg1aXZhUXBrOTIxR0Fn?oc=5",
+      "why": "Дефицит медного лома и высокие цены влияют на сырьевую базу и маржу переработчиков, актуально для стратегии.",
+      "priority": "medium",
+      "company": "",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "Rio Tinto Hits Record Profits In Iron Ore Boom Paulie Malignaggi (WilRVVNUVL)",
+      "desc": "Rio Tinto Hits Record Profits In Iron Ore Boom Paulie Malignaggi (WilRVVNUVL) &nbsp;&nbsp; Mshale",
+      "domain": "Mshale",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE96dDkyWmo2WDBTTG5tWDg3SG91T05SckwyWWM1UmJnWDVqbjdQcFVUb2EwZ1BJZ1pkcmRObWxlNVotQmZ4UllVLVowVmxoWnhjVW1BM3NtWEh0d3M?oc=5",
+      "why": "Rio Tinto рекордная прибыль на железной руде — сигнал для стратегии в цветных металлах.",
+      "priority": "low",
+      "company": "Rio Tinto",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "BHP Group Ltd workers at Port Hedland go on strike again, heightening tensions in the global iron ore market",
+      "desc": "BHP Group Ltd workers at Port Hedland go on strike again, heightening tensions in the global iron ore market &nbsp;&nbsp; 富途牛牛",
+      "domain": "富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPeXQzWmJlWmNEYWlENUNkR1laWE5UWGVpTllzbGt3eDMyV3dkVzJta1JtMkg3cmJBVWZLRDlHNFNITXM2Q01XNVlaTnIyUzUzNXRZYjRmeGxUemx4dTB3ejBiczZtUmR6ZzdheFZhS21BOHhCUFhNSDU1Sk11aGpXdmNLaVBhSmtzeGFPT3FmVGloeURqaWc?oc=5",
+      "why": "BHP Port Hedland罢工影响铁矿石供应，直接冲击其客户和竞争对手的原料成本与定价。",
+      "priority": "medium",
+      "company": "BHP",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-09T02:14:41.562662+00:00",
+      "title": "Freeport Indonesia Manyar Smelter Restart: What It Means in 2026",
+      "desc": "Freeport Indonesia Manyar Smelter Restart: What It Means in 2026 &nbsp;&nbsp; Discovery Alert",
+      "domain": "Discovery Alert",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNaTBZdVV2aDBLeDNyR2F4NlVwak13N01vQnZkQnJKM3ViRUhqYlNnQ2lLemVfNW1LT3JSVVdaTk1nRmV2eG5tM2tqUHRkb18yYlRTTHQwdklaVDFDdWU3aVBRZmFoWjh3b0M1WjhEZ2VldG13dlRJZzBBUTQ0dkFhZDFDM2JoNmZVX0VicXdkdw?oc=5",
+      "why": "Запуск медеплавильного завода Manyar меняет баланс рынка меди, влияя на конкурентов из СНГ.",
+      "priority": "medium",
+      "company": "Freeport Indonesia",
+      "uzcopper": false,
+      "deep": null
     }
   ]
 }
