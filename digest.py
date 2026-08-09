@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Metals & Mining news digest -> Telegram.
 v8: persist priority + company to history.json — чтобы F-блок не ранжировал заново.
+v9 (09.08.2026): (1) native publisher RSS feeds добавлены в feeds.txt —
+    охват шире, не только Google News reroute. (2) Deep-analysis второй
+    проход DeepSeek для priority=high — структурный разбор что/кого/делать
+    вместо одной строки. (3) UZCOPPER-тег (🏭) — узкий сигнал copper +
+    Uzbekistan/Central Asia, отдельно от общего orbit, под текущую
+    инженерную работу.
 """
 from __future__ import annotations
 
@@ -300,6 +306,24 @@ def in_orbit(text):
     return any(p.search(text or "") for p in ORBIT_RE)
 
 
+# UZCOPPER-специфичный сигнал, добавлено 09.08.2026. Уже, чем ORBIT: тот
+# ловит весь СНГ/Центральную Азию для очереди приоритизации, этот — именно
+# медь/переработка + Узбекистан/регион, под текущую работу техдиректором.
+# Отдельный тег в digest'е (значок 🏭), не подмешивается в приоритет —
+# фильтр под задачу, а не замена orbit-логике.
+UZCOPPER_WORDS = [
+    r"uzcopper", r"almalyk", r"navoi", r"uzbek\w*",
+    r"\bcopper\b.*\b(concentrat\w*|smelt\w*|refin\w*|flotation)\b",
+    r"\b(concentrat\w*|smelt\w*|refin\w*)\b.*\bcopper\b",
+    r"copper cathode", r"copper concentrate", r"sx-ew", r"\bSX-EW\b",
+]
+UZCOPPER_RE = [re.compile(w, re.IGNORECASE) for w in UZCOPPER_WORDS]
+
+
+def is_uzcopper_relevant(text):
+    return any(p.search(text or "") for p in UZCOPPER_RE)
+
+
 TITLE_STOPWORDS = {
     "the", "and", "for", "with", "after", "says", "amid", "from", "over",
     "into", "its", "new", "will", "set", "market", "chatter", "faces",
@@ -382,6 +406,64 @@ def deepseek_enrich(title, desc, source):
         # причём хэш помечался seen и элемент больше не возвращался. Тихая
         # потеря качества. Теперь None: элемент не публикуем, seen не трогаем,
         # он вернётся следующим прогоном. Как в filings.py.
+        return None
+
+
+DEEP_SYS_PROMPT = (
+    "You are an analyst supporting a senior independent consultant in non-ferrous metals and "
+    "mining (16 years across UC RUSAL, Norilsk Nickel, UMMC, ERG; FEL 1-3 CapEx programs; "
+    "DD and turnaround experience). This news item was already flagged HIGH priority — his "
+    "direct orbit or a strategic threat/opportunity to it. Go one level deeper than a one-line "
+    "summary. In Russian, produce a short structured breakdown, 3 bullets max, each under 18 "
+    "words, no fluff: "
+    "(1) что произошло — the concrete fact, numbers if present; "
+    "(2) кого касается — which named player(s) or asset(s) are directly affected, and how; "
+    "(3) что делать — one concrete next action or question worth raising (e.g. what to verify, "
+    "who to ask, what this changes for a live engagement), or an explicit empty string if there "
+    "genuinely is no action beyond awareness — do not invent one. "
+    "Reply ONLY with valid JSON: {\"what\": str, \"who\": str, \"action\": str}."
+)
+
+
+def deepseek_deep_analysis(title, desc, source, why, company):
+    """Second-pass enrichment for priority=high items only.
+
+    Не на весь поток — цена вызова x2 на 12 заметок за прогон незаметна,
+    на весь candidates-список (до сотни) была бы ощутима. High уже
+    отобран первым проходом, здесь просто разворачиваем его подробнее.
+    """
+    payload = {
+        "model": "deepseek-chat",
+        "messages": [
+            {"role": "system", "content": DEEP_SYS_PROMPT},
+            {"role": "user", "content": (
+                f"SOURCE: {source}\nTITLE: {title}\nDESC: {desc[:800]}\n"
+                f"ALREADY NOTED WHY (first pass): {why}\nCOMPANY: {company}"
+            )},
+        ],
+        "temperature": 0.2,
+        "max_tokens": 220,
+        "response_format": {"type": "json_object"},
+    }
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        DEEPSEEK_URL,
+        data=data,
+        headers={
+            "Authorization": f"Bearer {DEEPSEEK_KEY}",
+            "Content-Type": "application/json",
+        },
+    )
+    try:
+        with net.urlopen_retry(req, timeout=30) as r:
+            resp = json.loads(r.read().decode("utf-8"))
+        content = resp["choices"][0]["message"]["content"]
+        return json.loads(content)
+    except Exception as e:
+        print(f"  ! deepseek deep_analysis error: {e}", file=sys.stderr)
+        # Сбой второго прохода не должен ронять итоговую заметку — она уже
+        # прошла первый проход и заслужила публикацию. Просто не будет
+        # расширенного блока, останется short "why" как раньше.
         return None
 
 
@@ -527,6 +609,15 @@ def main():
         c["why"] = (verdict.get("why") or "").strip()
         c["priority"] = (verdict.get("priority") or "low").lower()
         c["company"] = (verdict.get("company") or "").strip()
+        c["uzcopper"] = is_uzcopper_relevant(f"{c['title']} {c['desc']}")
+        # Deep-analysis: только high, второй проход. На low/medium не тратим —
+        # это был бы кап MAX_ITEMS_PER_RUN x2 вызовов на каждый прогон,
+        # тогда как high обычно 1-3 заметки из 12.
+        if c["priority"] == "high":
+            deep = deepseek_deep_analysis(c["title"], c["desc"], c["domain"], c["why"], c["company"])
+            c["deep"] = deep  # None если сбой — рендер ниже это обрабатывает
+        else:
+            c["deep"] = None
         enriched.append(c)
         seen[c["hash"]] = None
         # Append to history for F-block (CEO quote of the week)
@@ -542,6 +633,8 @@ def main():
             "why": c["why"],
             "priority": c["priority"],
             "company": c.get("company", ""),
+            "uzcopper": c.get("uzcopper", False),
+            "deep": c.get("deep"),
         })
 
     print(f"Enriched: {len(enriched)}")
@@ -602,11 +695,26 @@ def main():
             domain = esc(c["domain"])
             why = esc(c["why"])
             company = esc(c.get("company", ""))
-            block = f'\U0001f534 <b>{i}.</b> <a href="{link}">{title}</a>\n'
+            uzc = "\U0001f3ed " if c.get("uzcopper") else ""
+            block = f'\U0001f534 {uzc}<b>{i}.</b> <a href="{link}">{title}</a>\n'
             if why:
                 block += f"<i>{domain}</i> \u00b7 \U0001f4a1 {why}\n"
             else:
                 block += f"<i>{domain}</i>\n"
+            # Deep-анализ: только если второй проход отработал (None на сбой
+            # DeepSeek или на priority != high — по построению targets всегда high,
+            # но deep может быть None при сетевой ошибке второго вызова).
+            deep = c.get("deep")
+            if deep:
+                what = esc((deep.get("what") or "").strip())
+                who = esc((deep.get("who") or "").strip())
+                action = esc((deep.get("action") or "").strip())
+                if what:
+                    block += f"   \u2022 <b>что:</b> {what}\n"
+                if who:
+                    block += f"   \u2022 <b>кого:</b> {who}\n"
+                if action:
+                    block += f"   \u2022 <b>делать:</b> {action}\n"
             if company:
                 block += f"\u2192 <code>asset-to-hook: {company}</code>\n\n"
             else:
@@ -625,7 +733,8 @@ def main():
             domain = esc(c["domain"])
             why = esc(c["why"])
             dot = PRIORITY_EMOJI.get(c.get("priority", "low"), "\u26aa")
-            block = f'{dot} <b>{i}.</b> <a href="{link}">{title}</a>\n'
+            uzc = "\U0001f3ed " if c.get("uzcopper") else ""
+            block = f'{dot} {uzc}<b>{i}.</b> <a href="{link}">{title}</a>\n'
             if why:
                 block += f"<i>{domain}</i> \u00b7 \U0001f4a1 {why}\n\n"
             else:
