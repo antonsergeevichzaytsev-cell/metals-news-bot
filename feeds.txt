@@ -2,6 +2,14 @@
 # Lines starting with # are comments.
 # Format: Google News RSS — https://news.google.com/rss/search?q=QUERY&hl=en-US&gl=US&ceid=US:en
 # QUERY uses when:2d (last 48h). site: filters narrow to authoritative publications.
+#
+# 09.08.2026: 9 phrase-search queries below (Named operators, Specific markets,
+# Russia/CIS, Regulation, Critical minerals, Decarbonisation blocks) had
+# literal \" (backslash+quote) instead of " — confirmed via /status across
+# 5 consecutive runs (05-09.08): all 9 gave stable 0 items while every
+# non-quoted query in this file worked fine. Fixed by removing the stray
+# backslashes. Quote characters in URLs don't need escaping here — the file
+# is read as plain text and the query string is passed through as-is.
 
 # === Tier-1 commodities & business media ===
 https://news.google.com/rss/search?q=site:reuters.com+(aluminium+OR+copper+OR+nickel+OR+mining+OR+smelter)+when:2d&hl=en-US&gl=US&ceid=US:en
@@ -26,30 +34,30 @@ https://news.google.com/rss/search?q=site:kitco.com+(copper+OR+nickel+OR+gold+OR
 https://news.google.com/rss/search?q=site:metal.com+when:2d&hl=en-US&gl=US&ceid=US:en
 
 # === Named operators & deals (industry-specific) ===
-https://news.google.com/rss/search?q=(RUSAL+OR+EGA+OR+\"Norsk+Hydro\"+OR+Alcoa+OR+Hindalco+OR+Vedanta)+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=(Nornickel+OR+\"Norilsk+Nickel\"+OR+\"Anglo+American\"+OR+\"Rio+Tinto\"+OR+BHP+OR+Glencore+OR+Vale)+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=(Codelco+OR+Freeport+OR+Antofagasta+OR+\"First+Quantum\"+OR+\"KAZ+Minerals\"+OR+ERG)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(RUSAL+OR+EGA+OR+"Norsk+Hydro"+OR+Alcoa+OR+Hindalco+OR+Vedanta)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(Nornickel+OR+"Norilsk+Nickel"+OR+"Anglo+American"+OR+"Rio+Tinto"+OR+BHP+OR+Glencore+OR+Vale)+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(Codelco+OR+Freeport+OR+Antofagasta+OR+"First+Quantum"+OR+"KAZ+Minerals"+OR+ERG)+when:2d&hl=en-US&gl=US&ceid=US:en
 
 # === Specific markets & technical events ===
-https://news.google.com/rss/search?q=(\"alumina+price\"+OR+\"aluminium+premium\"+OR+\"LME+aluminium\")+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=(\"copper+TC\"+OR+\"treatment+charge\"+OR+\"refining+charge\"+OR+\"copper+concentrate\")+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=(\"smelter+restart\"+OR+\"smelter+shutdown\"+OR+\"smelter+expansion\"+OR+\"potline+restart\")+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=(\"Indonesia+nickel\"+OR+HPAL+OR+\"Tsingshan\"+OR+\"Weda+Bay\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("alumina+price"+OR+"aluminium+premium"+OR+"LME+aluminium")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("copper+TC"+OR+"treatment+charge"+OR+"refining+charge"+OR+"copper+concentrate")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("smelter+restart"+OR+"smelter+shutdown"+OR+"smelter+expansion"+OR+"potline+restart")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("Indonesia+nickel"+OR+HPAL+OR+"Tsingshan"+OR+"Weda+Bay")+when:2d&hl=en-US&gl=US&ceid=US:en
 
 # === Russia / CIS focus ===
-https://news.google.com/rss/search?q=(\"Russia+aluminium\"+OR+\"Russian+aluminium\"+OR+\"RUSAL+sanctions\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("Russia+aluminium"+OR+"Russian+aluminium"+OR+"RUSAL+sanctions")+when:2d&hl=en-US&gl=US&ceid=US:en
 https://news.google.com/rss/search?q=(Kazakhstan+OR+Uzbekistan+OR+Mongolia)+(copper+OR+gold+OR+mining+OR+aluminium)+when:2d&hl=en-US&gl=US&ceid=US:en
 
 # === Regulation, tariffs, sanctions ===
-https://news.google.com/rss/search?q=(\"Section+232\"+OR+\"aluminium+tariff\"+OR+\"steel+tariff\")+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=(CBAM+OR+\"carbon+border\"+OR+\"EU+aluminium+tariff\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("Section+232"+OR+"aluminium+tariff"+OR+"steel+tariff")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=(CBAM+OR+"carbon+border"+OR+"EU+aluminium+tariff")+when:2d&hl=en-US&gl=US&ceid=US:en
 
 # === Critical minerals & battery materials ===
-https://news.google.com/rss/search?q=(\"lithium+production\"+OR+\"lithium+mine\"+OR+\"lithium+offtake\")+when:2d&hl=en-US&gl=US&ceid=US:en
-https://news.google.com/rss/search?q=(\"rare+earth\"+OR+\"critical+minerals+list\"+OR+\"cobalt+DRC\"+OR+\"graphite+supply\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("lithium+production"+OR+"lithium+mine"+OR+"lithium+offtake")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("rare+earth"+OR+"critical+minerals+list"+OR+"cobalt+DRC"+OR+"graphite+supply")+when:2d&hl=en-US&gl=US&ceid=US:en
 
 # === Decarbonisation / technology ===
-https://news.google.com/rss/search?q=(\"green+aluminium\"+OR+\"low-carbon+steel\"+OR+\"hydrogen+DRI\"+OR+\"inert+anode\")+when:2d&hl=en-US&gl=US&ceid=US:en
+https://news.google.com/rss/search?q=("green+aluminium"+OR+"low-carbon+steel"+OR+"hydrogen+DRI"+OR+"inert+anode")+when:2d&hl=en-US&gl=US&ceid=US:en
 
 # === Native publisher feeds (direct, not routed through Google News) ===
 # Добавлено 09.08.2026. Не дублируют Google News RSS выше по механике —
