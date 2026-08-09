@@ -135,3 +135,31 @@ def test_is_near_duplicate_respects_threshold():
     sig_a = {"copper", "prices", "rise", "today"}
     sig_b = {"copper", "falls", "yesterday", "again"}
     assert dg.is_near_duplicate(sig_a, [sig_b], threshold=0.5) is False
+
+
+# --- v9: UZCOPPER-relevance tag ---------------------------------------------
+
+def test_uzcopper_relevant_named_entity():
+    assert dg.is_uzcopper_relevant("Almalyk MMC announces expansion") is True
+
+
+def test_uzcopper_relevant_copper_smelter_combo():
+    assert dg.is_uzcopper_relevant("New copper smelter capacity in Central Asia") is True
+
+
+def test_uzcopper_relevant_copper_concentrate_phrase():
+    assert dg.is_uzcopper_relevant("Copper concentrate exports rise sharply") is True
+
+
+def test_uzcopper_not_relevant_unrelated_copper_news():
+    # "copper" solo без переработки/региона — не должно ловиться, иначе тег
+    # обесценится (сработает на треть потока про медь вообще).
+    assert dg.is_uzcopper_relevant("Copper prices rise on demand outlook") is False
+
+
+def test_uzcopper_not_relevant_empty_text():
+    assert dg.is_uzcopper_relevant("") is False
+
+
+def test_uzcopper_not_relevant_other_metal():
+    assert dg.is_uzcopper_relevant("Nickel prices fall amid oversupply") is False
