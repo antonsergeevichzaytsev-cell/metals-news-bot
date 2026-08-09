@@ -50,3 +50,15 @@ https://news.google.com/rss/search?q=(\"rare+earth\"+OR+\"critical+minerals+list
 
 # === Decarbonisation / technology ===
 https://news.google.com/rss/search?q=(\"green+aluminium\"+OR+\"low-carbon+steel\"+OR+\"hydrogen+DRI\"+OR+\"inert+anode\")+when:2d&hl=en-US&gl=US&ceid=US:en
+
+# === Native publisher feeds (direct, not routed through Google News) ===
+# Добавлено 09.08.2026. Не дублируют Google News RSS выше по механике —
+# это прямой источник издателя: полнее desc (не обрезанный Google-сниппет),
+# не зависит от индексации Google News, не проходит через один прокси.
+# Возрастной фильтр (when:2d) здесь неприменим — эти ленты уже "последние N",
+# фильтрация по MAX_AGE_HOURS в digest.py работает так же для обоих типов.
+https://www.mining.com/feed/
+https://www.miningweekly.com/page/home/feed
+https://www.kitco.com/news/category/mining/rss
+https://im-mining.com/feed/
+https://www.mining-technology.com/feed/
