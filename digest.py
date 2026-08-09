@@ -7,6 +7,10 @@ v9 (09.08.2026): (1) native publisher RSS feeds добавлены в feeds.txt 
     вместо одной строки. (3) UZCOPPER-тег (🏭) — узкий сигнал copper +
     Uzbekistan/Central Asia, отдельно от общего orbit, под текущую
     инженерную работу.
+v10 (09.08.2026): нумерация targets+rest теперь сквозная (rest продолжает
+    с N+1, не начинается заново с 1) и сохраняется в
+    state_last_digest_sent.json — нужно для команды /why <номер> в новом
+    bot_commands.py (первая интерактивность бота, см. тот файл).
 """
 from __future__ import annotations
 
@@ -29,6 +33,7 @@ FEEDS_FILE = os.path.join(ROOT, "feeds.txt")
 KEYWORDS_FILE = os.path.join(ROOT, "keywords.txt")
 STATE_FILE = os.path.join(ROOT, "state.json")
 HISTORY_FILE = os.path.join(ROOT, "history.json")
+LAST_DIGEST_FILE = os.path.join(ROOT, "state_last_digest_sent.json")
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
@@ -727,7 +732,12 @@ def main():
     if rest:
         r_header = f"<b>\U0001f9e0 Metals &amp; Mining \u2014 контекст</b> \u2014 {now}\n\n"
         r_blocks = []
-        for i, c in enumerate(rest, 1):
+        # Нумерация продолжает targets (N+1..), а не начинается заново с 1 —
+        # иначе /why <номер> из bot_commands.py не совпадал бы с тем, что
+        # видно в этом сообщении. Цена: номера в r_blocks не начинаются с 1,
+        # если targets непустой — это ожидаемо, не баг.
+        start = len(targets) + 1
+        for i, c in enumerate(rest, start):
             title = esc(c["title"])
             link = esc(c["link"])
             domain = esc(c["domain"])
@@ -743,6 +753,25 @@ def main():
         sent_total += tg_send_chunks(r_blocks, r_header)
 
     print(f"Sent {len(targets)} target(s) + {len(rest)} context item(s) in {sent_total} message(s).")
+
+    # Сохранить порядок отправки для /why <номер> в bot_commands.py.
+    # Targets нумеруются 1..N в своём сообщении, rest — 1..M в своём;
+    # для команды нужен единый сквозной номер, иначе "/why 3" неоднозначен
+    # (targets #3 или rest #3?). Здесь nумерация продолжается: targets
+    # 1..N, затем rest N+1..N+M — это НЕ то, что видно в Telegram (там два
+    # отдельных 1..N), но однозначно и детерминированно для команды.
+    last_digest_items = []
+    for c in targets + rest:
+        last_digest_items.append({
+            "title": c["title"],
+            "link": c["link"],
+            "company": c.get("company", ""),
+            "why": c.get("why", ""),
+            "priority": c.get("priority", "low"),
+            "deep": c.get("deep"),
+        })
+    with open(LAST_DIGEST_FILE, "w", encoding="utf-8") as f:
+        json.dump({"ts": now_iso, "items": last_digest_items}, f, ensure_ascii=False, indent=2)
 
     state["seen"] = list(seen)
     save_state(state)
