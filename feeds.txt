@@ -57,8 +57,13 @@ https://news.google.com/rss/search?q=(\"green+aluminium\"+OR+\"low-carbon+steel\
 # не зависит от индексации Google News, не проходит через один прокси.
 # Возрастной фильтр (when:2d) здесь неприменим — эти ленты уже "последние N",
 # фильтрация по MAX_AGE_HOURS в digest.py работает так же для обоих типов.
+#
+# Проверено живым прогоном 09.08.2026 (run 31289928152):
+# kitco.com/news/category/mining/rss — отвечает 200, но 0 items (нет
+#   надёжного публичного RSS у Kitco, сторонние генераторы не первоисточник).
+#   Не добавлять обратно без нового рабочего URL.
+# mining-technology.com/feed/ — HTTP 403, блокирует автоматических клиентов.
+#   Не добавлять обратно, это не временный сбой.
 https://www.mining.com/feed/
 https://www.miningweekly.com/page/home/feed
-https://www.kitco.com/news/category/mining/rss
 https://im-mining.com/feed/
-https://www.mining-technology.com/feed/
