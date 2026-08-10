@@ -1320,16 +1320,27 @@
         ]
       },
       "ts": "2026-08-10T11:49:05.991942+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/308824/Lion-Copper-Gold-Provides-Definitive-Feasibility-Study-and-Permitting-Update-for-the-Yerington-Copper-Project",
+      "title": "Lion Copper & Gold Provides Definitive Feasibility Study and Permitting Update for the Yerington Copper Project",
+      "stage": "study",
+      "signal": "DFS продвигается",
+      "company": "Lion Copper & Gold Corp.",
+      "project": "Yerington Copper Project",
+      "region": "USA",
+      "why": "DFS и разрешения на стадии 3, но актив вне целевого региона.",
+      "hook": "Owner-side контроль графика DFS и затрат: не дать стадии 3 съесть бюджет.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-10T14:59:37.176189+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-03T13:00:58.620919+00:00",
-      "title": "NovaRed Mining to Evaluate Iron Carbonate-Silica Alteration Zones on the Plume Grid, Wilmac Copper-Gold Project",
-      "link": "https://www.newsfilecorp.com/release/307646/NovaRed-Mining-to-Evaluate-Iron-CarbonateSilica-Alteration-Zones-on-the-Plume-Grid-Wilmac-CopperGold-Project",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
     {
       "ts": "2026-08-03T20:24:17.413830+00:00",
       "title": "Lumina Metals Reports on 2026 Drilling at Its Three Projects in Poland",
@@ -2351,6 +2362,111 @@
       "link": "https://www.newsfilecorp.com/release/308799/SAGA-Metals-Reports-Assays-from-R0058-to-R0060-with-Intercepts-Including-43.86-Fe2O3-6.10-TiO2-0.317-V2O5-from-2026-Drilling-at-Radar-Critical-Minerals-Project-in-Labrador-and-Adds-to-Its-Advisory-Board",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Steppe Gold Mourns the Passing of Dr. Zamba Batjargal, Chair of the Audit Committee",
+      "link": "https://www.newsfilecorp.com/release/308826/Steppe-Gold-Mourns-the-Passing-of-Dr.-Zamba-Batjargal-Chair-of-the-Audit-Committee",
+      "reason": "кончина директора",
+      "orbit": true
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Barrick Declares Q2 Dividend",
+      "link": "https://www.globenewswire.com/news-release/2026/08/10/3341621/0/en/barrick-declares-q2-dividend.html",
+      "reason": "дивиденды",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Barrick Reports Second Quarter 2026 Results",
+      "link": "https://www.globenewswire.com/news-release/2026/08/10/3341633/0/en/barrick-reports-second-quarter-2026-results.html",
+      "reason": "корпоративные новости",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Barrick and Newmont Reach Agreement Regarding Nevada Gold Mines Joint Venture",
+      "link": "https://www.globenewswire.com/news-release/2026/08/10/3341630/0/en/barrick-and-newmont-reach-agreement-regarding-nevada-gold-mines-joint-venture.html",
+      "reason": "корпоративное соглашение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "QcX Gold Provides Additional Disclosure in Connection with Proposed Plan of Arrangement",
+      "link": "https://www.newsfilecorp.com/release/308916/QcX-Gold-Provides-Additional-Disclosure-in-Connection-with-Proposed-Plan-of-Arrangement",
+      "reason": "сделка/реорганизация",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Lode Gold Receives Three-year Drill Permit at Flagship Fremont Gold Mine, California",
+      "link": "https://www.newsfilecorp.com/release/308915/Lode-Gold-Receives-Threeyear-Drill-Permit-at-Flagship-Fremont-Gold-Mine-California",
+      "reason": "разрешение на бурение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Urbana Corporation Has Filed 2026 Second Quarter Interim Financial Statements",
+      "link": "https://www.newsfilecorp.com/release/308880/Urbana-Corporation-Has-Filed-2026-Second-Quarter-Interim-Financial-Statements",
+      "reason": "финансовая отчетность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "PTX Metals Strengthens Board and Technical Leadership for Next Phase of Growth",
+      "link": "https://www.newsfilecorp.com/release/308861/PTX-Metals-Strengthens-Board-and-Technical-Leadership-for-Next-Phase-of-Growth",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "GoldCoast Resource Corp. Commences Trading on the Canadian Securities Exchange Under Symbol \"GCR\"",
+      "link": "https://www.newsfilecorp.com/release/308858/GoldCoast-Resource-Corp.-Commences-Trading-on-the-Canadian-Securities-Exchange-Under-Symbol-GCR",
+      "reason": "листинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Nicola Mining and Its Partner Ocean Partners Provide $10.0 Million in Financing to Blue Lagoon Resources Inc.",
+      "link": "https://www.newsfilecorp.com/release/308818/Nicola-Mining-and-Its-Partner-Ocean-Partners-Provide-10.0-Million-in-Financing-to-Blue-Lagoon-Resources-Inc.",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Transition Metals Expands Gowganda Gold Project to 125 Square-kilometres in Ontario's Abitibi Greenstone Belt",
+      "link": "https://www.newsfilecorp.com/release/308859/Transition-Metals-Expands-Gowganda-Gold-Project-to-125-Squarekilometres-in-Ontarios-Abitibi-Greenstone-Belt",
+      "reason": "расширение участка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "Scandium Canada vise à allonger la zone TG de 700 à 900 mètres avec un forage d'extension des ressources en cours à Crater Lake",
+      "link": "https://www.newsfilecorp.com/release/308856/Scandium-Canada-vise-allonger-la-zone-TG-de-700-900-mtres-avec-un-forage-dextension-des-ressources-en-cours-Crater-Lake",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "GMG Announces Updated Battery Brand",
+      "link": "https://www.newsfilecorp.com/release/308851/GMG-Announces-Updated-Battery-Brand",
+      "reason": "технология без инженерного события",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "LithiumBank Receives First Tranche of Funding from Emissions Reduction Alberta Following Completion of Milestone 1 at Boardwalk",
+      "link": "https://www.newsfilecorp.com/release/308829/LithiumBank-Receives-First-Tranche-of-Funding-from-Emissions-Reduction-Alberta-Following-Completion-of-Milestone-1-at-Boardwalk",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.176189+00:00",
+      "title": "TNR Gold NSR Royalty Update - McEwen Provides Update on NSR Royalty on Los Azules Copper",
+      "link": "https://www.newsfilecorp.com/release/308805/TNR-Gold-NSR-Royalty-Update-McEwen-Provides-Update-on-NSR-Royalty-on-Los-Azules-Copper",
+      "reason": "третьи лица",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -2521,6 +2637,12 @@
       "ts": "2026-08-10T11:49:05.988848+00:00",
       "title": "Gem Oil Inc. Acquires 309 Sq Km Jan Lake Beryllium-Rare Element Pegmatite Project in Saskatchewan",
       "matched_noise_word": "\\bpegmatite\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T14:59:37.168708+00:00",
+      "title": "Sage Potash Completes Peterson 1 Drilling; Core and Geophysical Logging Validate Continuity of Cycle 18 Potash Members",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
