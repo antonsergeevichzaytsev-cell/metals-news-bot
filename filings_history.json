@@ -1288,34 +1288,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-07-31T22:54:31.702653+00:00",
-      "title": "Lion Copper & Gold Expands Strategic Land Position Associated with the Bear Project Area in the Yerington Copper District",
-      "link": "https://www.newsfilecorp.com/release/307579/Lion-Copper-Gold-Expands-Strategic-Land-Position-Associated-with-the-Bear-Project-Area-in-the-Yerington-Copper-District",
-      "reason": "приобретение земель",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T22:54:31.702653+00:00",
-      "title": "Prospector Metals and Lightning Resource Corp. Provide Update on Transaction",
-      "link": "https://www.newsfilecorp.com/release/307547/Prospector-Metals-and-Lightning-Resource-Corp.-Provide-Update-on-Transaction",
-      "reason": "корпоративная сделка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T22:54:31.702653+00:00",
-      "title": "Prospector Metals and Lightning Resource Corp. Provide Update on Transaction",
-      "link": "https://www.newsfilecorp.com/release/307536/Prospector-Metals-and-Lightning-Resource-Corp.-Provide-Update-on-Transaction",
-      "reason": "корпоративная сделка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-07-31T22:54:31.702653+00:00",
-      "title": "US Critical Metals Corp. Completes Acquisition of Korn Kob Copper Project in Arizona",
-      "link": "https://www.newsfilecorp.com/release/307327/US-Critical-Metals-Corp.-Completes-Acquisition-of-Korn-Kob-Copper-Project-in-Arizona",
-      "reason": "приобретение актива",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-03T05:30:39.745035+00:00",
       "title": "Benz Announces High-Grade Gold Multiplies at Icon as New Hinge Zones Emerge",
       "link": "https://www.newsfilecorp.com/release/307644/Benz-Announces-HighGrade-Gold-Multiplies-at-Icon-as-New-Hinge-Zones-Emerge",
@@ -2315,16 +2287,17 @@
       "link": "https://www.newsfilecorp.com/release/308522/Stracon-Group-Holding-Inc.-Files-New-Preliminary-Base-Prep-Prospectus-for-Initial-Public-Offering-of-Common-Shares",
       "reason": "IPO проспект",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-10T05:05:51.630296+00:00",
+      "title": "IN-VR Partners with Misurata Free Zone to Build the Next Global Energy Services Hub in Libya",
+      "link": "https://www.newsfilecorp.com/release/308794/INVR-Partners-with-Misurata-Free-Zone-to-Build-the-Next-Global-Energy-Services-Hub-in-Libya",
+      "reason": "инфраструктурный проект",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-07-31T22:54:31.700865+00:00",
-      "title": "AbraSilver Announces Closing of Concurrent Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-08-03T20:24:17.413086+00:00",
       "title": "Fairchild Gold Announces Update to Private Placement Financing and Early Warning Report",
@@ -2473,6 +2446,12 @@
       "ts": "2026-08-07T20:29:31.084977+00:00",
       "title": "First Phosphate Announces Uplisting of American Depositary Receipt (ADR) to Nasdaq Global Market Under Ticker Symbol PHOS",
       "matched_noise_word": "uplisting",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T05:05:51.629674+00:00",
+      "title": "Marquis Holdings Appoints Veteran Canadian Mining Executive John Hick as Senior Adviser",
+      "matched_noise_word": "appoint\\w*",
       "orbit": false
     }
   ]
