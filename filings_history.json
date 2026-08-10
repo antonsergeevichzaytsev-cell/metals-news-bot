@@ -1342,13 +1342,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-03T20:24:17.413830+00:00",
-      "title": "Lumina Metals Reports on 2026 Drilling at Its Three Projects in Poland",
-      "link": "https://www.newsfilecorp.com/release/307688/Lumina-Metals-Reports-on-2026-Drilling-at-Its-Three-Projects-in-Poland",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-04T07:58:17.328898+00:00",
       "title": "Total Voting Rights",
       "link": "https://www.globenewswire.com/news-release/2026/08/04/3338030/0/en/Total-Voting-Rights.html",
@@ -2474,16 +2467,24 @@
       "link": "https://www.newsfilecorp.com/release/307502/The-Arkenstone-and-Gallery-of-Natural-Art-Present-Unearthed-Raw-Beauty-at-the-Natural-History-Museum-of-Los-Angeles-County",
       "reason": "выставка минералов",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-10T20:31:33.248135+00:00",
+      "title": "Avanti Gold Announces Adoption of Shareholder Rights Plan",
+      "link": "https://www.newsfilecorp.com/release/308996/Avanti-Gold-Announces-Adoption-of-Shareholder-Rights-Plan",
+      "reason": "корпоративное событие",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T20:31:33.248135+00:00",
+      "title": "CBLT Announces Additional Business Venture",
+      "link": "https://www.newsfilecorp.com/release/309056/CBLT-Announces-Additional-Business-Venture",
+      "reason": "диверсификация",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-03T20:24:17.413086+00:00",
-      "title": "Fairchild Gold Announces Update to Private Placement Financing and Early Warning Report",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-08-04T13:01:03.163288+00:00",
       "title": "NexGen to Host Q2 2026 Conference Call",
@@ -2656,6 +2657,12 @@
       "ts": "2026-08-10T17:43:03.720606+00:00",
       "title": "CORRECTION FROM SOURCE: North Peak Commences 2026 Drilling Campaign at Prospect Mountain, Eureka, Nevada",
       "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T20:31:33.247438+00:00",
+      "title": "CEO.CA's Inside the Boardroom: Independence Gold Hits Three New Gold Discoveries With More Assays Pending",
+      "matched_noise_word": "\\bassay\\w*",
       "orbit": false
     }
   ]
