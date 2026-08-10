@@ -2467,6 +2467,13 @@
       "link": "https://www.newsfilecorp.com/release/308805/TNR-Gold-NSR-Royalty-Update-McEwen-Provides-Update-on-NSR-Royalty-on-Los-Azules-Copper",
       "reason": "третьи лица",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-10T17:43:03.720997+00:00",
+      "title": "The Arkenstone and Gallery of Natural Art Present Unearthed: Raw Beauty at the Natural History Museum of Los Angeles County",
+      "link": "https://www.newsfilecorp.com/release/307502/The-Arkenstone-and-Gallery-of-Natural-Art-Present-Unearthed-Raw-Beauty-at-the-Natural-History-Museum-of-Los-Angeles-County",
+      "reason": "выставка минералов",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -2642,6 +2649,12 @@
     {
       "ts": "2026-08-10T14:59:37.168708+00:00",
       "title": "Sage Potash Completes Peterson 1 Drilling; Core and Geophysical Logging Validate Continuity of Cycle 18 Potash Members",
+      "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-10T17:43:03.720606+00:00",
+      "title": "CORRECTION FROM SOURCE: North Peak Commences 2026 Drilling Campaign at Prospect Mountain, Eureka, Nevada",
       "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
