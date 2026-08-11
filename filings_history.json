@@ -1342,27 +1342,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-04T15:29:41.003322+00:00",
-      "title": "CEO.CA's Inside the Boardroom: How ICG Silver & Gold Plans to Make It in a Crowded Market",
-      "link": "https://www.newsfilecorp.com/release/307874/CEO.CAs-Inside-the-Boardroom-How-ICG-Silver-Gold-Plans-to-Make-It-in-a-Crowded-Market",
-      "reason": "интервью CEO",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T15:29:41.003322+00:00",
-      "title": "Skeleton Coast Uranium Files NI 43-101 Technical Reports for Namibia Exclusive Prospecting Licences 8208, 9727, and 8617",
-      "link": "https://www.newsfilecorp.com/release/307836/Skeleton-Coast-Uranium-Files-NI-43101-Technical-Reports-for-Namibia-Exclusive-Prospecting-Licences-8208-9727-and-8617",
-      "reason": "технические отчёты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T15:29:41.003322+00:00",
-      "title": "Kasis Clean Water Technologies Advances Patented Redox Materials for Cleaner Gold Recovery",
-      "link": "https://www.newsfilecorp.com/release/307574/Kasis-Clean-Water-Technologies-Advances-Patented-Redox-Materials-for-Cleaner-Gold-Recovery",
-      "reason": "технология в разработке",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-04T22:00:58.284814+00:00",
       "title": "Ferroglobe Reports Second Quarter 2026 Financial Results",
       "link": "https://www.globenewswire.com/news-release/2026/08/04/3338901/11914/en/Ferroglobe-Reports-Second-Quarter-2026-Financial-Results.html",
@@ -2500,12 +2479,6 @@
   "labels": [],
   "prefilter_dropped": [
     {
-      "ts": "2026-08-04T15:29:40.999172+00:00",
-      "title": "Montero Completes Geological Logging of 625.25-Metre Drillhole at Elvira and Reports Pyrite-Bearing High-Sulphidation Alteration",
-      "matched_noise_word": "\\bdrill\\w*",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-04T20:21:39.244492+00:00",
       "title": "Slave Lake Zinc Announces Name Change and Private Placement Offering",
       "matched_noise_word": "private placement",
@@ -2695,6 +2668,12 @@
       "ts": "2026-08-11T14:59:24.793337+00:00",
       "title": "Thunder Gold Intersects 661.5 Metres of Continuous Gold Mineralization Averaging 0.554 g/t Au",
       "matched_noise_word": "intersect\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T17:47:04.440942+00:00",
+      "title": "Geomorphic AI Doubles Pora Gold Project in Finland to 20,601 Hectares with Surface Samples up to 12.8 g/t Au and Boulders up to 28",
+      "matched_noise_word": "\\bg/t\\b",
       "orbit": false
     }
   ]
