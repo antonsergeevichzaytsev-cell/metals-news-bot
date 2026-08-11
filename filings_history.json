@@ -2481,6 +2481,55 @@
       "link": "https://www.newsfilecorp.com/release/309056/CBLT-Announces-Additional-Business-Venture",
       "reason": "диверсификация",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-11T04:50:16.000322+00:00",
+      "title": "Mont Royal Accepted into US Defense Industrial Base Consortium (DIBC)",
+      "link": "https://www.newsfilecorp.com/release/309139/Mont-Royal-Accepted-into-US-Defense-Industrial-Base-Consortium-DIBC",
+      "reason": "консорциум",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T04:50:16.000322+00:00",
+      "title": "Newfoundland Discovery to Acquire District-Scale Ganda Gold-Rare Earth Project in Angola, Western Africa",
+      "link": "https://www.newsfilecorp.com/release/309129/Newfoundland-Discovery-to-Acquire-DistrictScale-Ganda-GoldRare-Earth-Project-in-Angola-Western-Africa",
+      "reason": "приобретение актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T04:50:16.000322+00:00",
+      "title": "Homeland Critical Minerals Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/309116/Homeland-Critical-Minerals-Provides-Corporate-Update",
+      "reason": "корпоративное обновление",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T04:50:16.000322+00:00",
+      "title": "IAMGOLD annonce la clôture de la vente de sa participation dans la coentreprise Bambadji au Sénégal",
+      "link": "https://www.newsfilecorp.com/release/309036/IAMGOLD-annonce-la-clture-de-la-vente-de-sa-participation-dans-la-coentreprise-Bambadji-au-Sngal",
+      "reason": "продажа актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T04:50:16.000322+00:00",
+      "title": "IAMGOLD Announces Closing of Sale of Its Interest in the Bambadji Joint Venture in Senegal",
+      "link": "https://www.newsfilecorp.com/release/309034/IAMGOLD-Announces-Closing-of-Sale-of-Its-Interest-in-the-Bambadji-Joint-Venture-in-Senegal",
+      "reason": "продажа актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T04:50:16.000322+00:00",
+      "title": "Gladiator Announces Intention to List on NSX in Australia",
+      "link": "https://www.newsfilecorp.com/release/309022/Gladiator-Announces-Intention-to-List-on-NSX-in-Australia",
+      "reason": "листинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T04:50:16.000322+00:00",
+      "title": "Apex Resources Receives TSX Venture Exchange Acceptance to Grant of Option to Tungsten Reserve Corp. (formerly, Fortress Strategic",
+      "link": "https://www.newsfilecorp.com/release/309035/Apex-Resources-Receives-TSX-Venture-Exchange-Acceptance-to-Grant-of-Option-to-Tungsten-Reserve-Corp.-formerly-Fortress-Strategic-Metals-to-Explore-and-Mine-Tungsten-Zones-in-the-JerseyEmerald-Project-in-BC",
+      "reason": "опцион на аренду",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -2663,6 +2712,12 @@
       "ts": "2026-08-10T20:31:33.247438+00:00",
       "title": "CEO.CA's Inside the Boardroom: Independence Gold Hits Three New Gold Discoveries With More Assays Pending",
       "matched_noise_word": "\\bassay\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T04:50:15.996455+00:00",
+      "title": "Carolina Rush Extends Warrants",
+      "matched_noise_word": "warrant\\w*",
       "orbit": false
     }
   ]
