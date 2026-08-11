@@ -1342,118 +1342,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Golden Age Enters into Definitive Agreement to Acquire Australian Uranium Exploration Portfolio",
-      "link": "https://www.newsfilecorp.com/release/307886/Golden-Age-Enters-into-Definitive-Agreement-to-Acquire-Australian-Uranium-Exploration-Portfolio",
-      "reason": "приобретение портфеля",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Puma's Subsidiary Murray Brook Minerals Acquires Mount McInnes Project",
-      "link": "https://www.newsfilecorp.com/release/307859/Pumas-Subsidiary-Murray-Brook-Minerals-Acquires-Mount-McInnes-Project",
-      "reason": "приобретение проекта",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Tiger Gold Announces Vertical Amalgamation with Wholly-Owned Subsidiary",
-      "link": "https://www.newsfilecorp.com/release/307881/Tiger-Gold-Announces-Vertical-Amalgamation-with-WhollyOwned-Subsidiary",
-      "reason": "корпоративная реструктуризация",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Cosa Announces Results of Partner Funded Airborne Radiometric Survey at the Aurora Uranium Project, Athabasca Basin, Saskatchewan",
-      "link": "https://www.newsfilecorp.com/release/307861/Cosa-Announces-Results-of-Partner-Funded-Airborne-Radiometric-Survey-at-the-Aurora-Uranium-Project-Athabasca-Basin-Saskatchewan",
-      "reason": "аэрогеофизика",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "GMG's New Website and Revitalised Branding",
-      "link": "https://www.newsfilecorp.com/release/307862/GMGs-New-Website-and-Revitalised-Branding",
-      "reason": "ребрендинг сайта",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Lithium Africa Announces James Chabata as Chief Financial Officer",
-      "link": "https://www.newsfilecorp.com/release/307880/Lithium-Africa-Announces-James-Chabata-as-Chief-Financial-Officer",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Ridgeline Minerals Converts Exploration Success into All-Cash C$32.7 Million Sale of Carlin & Cortez Trend Gold Portfolio to Nevad",
-      "link": "https://www.newsfilecorp.com/release/307876/Ridgeline-Minerals-Converts-Exploration-Success-into-AllCash-C32.7-Million-Sale-of-Carlin-Cortez-Trend-Gold-Portfolio-to-Nevada-Gold-Mines",
-      "reason": "продажа активов",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "GreenLight Metals Executes Long-Form Documentation with Barrick for Staged Earn-In Joint Venture at Kalium Canyon Project in Nevad",
-      "link": "https://www.newsfilecorp.com/release/307852/GreenLight-Metals-Executes-LongForm-Documentation-with-Barrick-for-Staged-EarnIn-Joint-Venture-at-Kalium-Canyon-Project-in-Nevadas-Walker-Lane",
-      "reason": "опцион на разведку",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Great Pacific Gold Provides Management and Board Update",
-      "link": "https://www.newsfilecorp.com/release/307493/Great-Pacific-Gold-Provides-Management-and-Board-Update",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Metatek Awarded Department of Energy Contract in the Philippines",
-      "link": "https://www.newsfilecorp.com/release/307901/Metatek-Awarded-Department-of-Energy-Contract-in-the-Philippines",
-      "reason": "контракт на съёмку",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Nuvau Minerals renforce son conseil d'administration et son équipe technique avec la nomination de David Palmer au poste d'adminis",
-      "link": "https://www.newsfilecorp.com/release/307832/Nuvau-Minerals-renforce-son-conseil-dadministration-et-son-quipe-technique-avec-la-nomination-de-David-Palmer-au-poste-dadministrateur-et-de-Michael-Sutton-titre-de-conseiller-technique-auprs-du-conseil-dadministration",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "TriStar Gold Reaffirms Commitment to Indigenous Rights",
-      "link": "https://www.newsfilecorp.com/release/307860/TriStar-Gold-Reaffirms-Commitment-to-Indigenous-Rights",
-      "reason": "корпоративное заявление",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "West Point Gold Appoints Anthony Paterson as Executive Chairman",
-      "link": "https://www.newsfilecorp.com/release/307630/West-Point-Gold-Appoints-Anthony-Paterson-as-Executive-Chairman",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Scotia Metals Announces Resumption of Trading on the CSE",
-      "link": "https://www.newsfilecorp.com/release/307585/Scotia-Metals-Announces-Resumption-of-Trading-on-the-CSE",
-      "reason": "возобновление торгов",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Critical One Energy Engages Micon International for Howells Lake Antimony-Gold Project Resource Definition",
-      "link": "https://www.newsfilecorp.com/release/307583/Critical-One-Energy-Engages-Micon-International-for-Howells-Lake-AntimonyGold-Project-Resource-Definition",
-      "reason": "технический обзор",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T13:01:03.175382+00:00",
-      "title": "Buenos Aires and Mendoza Take Center Stage as Argentina Prepares to Host the 5th Argentina Critical Minerals Summit",
-      "link": "https://www.newsfilecorp.com/release/307900/Buenos-Aires-and-Mendoza-Take-Center-Stage-as-Argentina-Prepares-to-Host-the-5th-Argentina-Critical-Minerals-Summit",
-      "reason": "конференция",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-04T15:29:41.003322+00:00",
       "title": "CEO.CA's Inside the Boardroom: How ICG Silver & Gold Plans to Make It in a Crowded Market",
       "link": "https://www.newsfilecorp.com/release/307874/CEO.CAs-Inside-the-Boardroom-How-ICG-Silver-Gold-Plans-to-Make-It-in-a-Crowded-Market",
@@ -2579,16 +2467,38 @@
       "link": "https://www.newsfilecorp.com/release/308866/Ocean-Partners-Increases-Ownership-in-Canadian-Copper-Inc.-and-Receives-Independent-Analyst-Coverage",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-11T14:59:24.796889+00:00",
+      "title": "PM Super Fund Launches Withhold Campaign Ahead of Emerita Shareholder Meeting",
+      "link": "https://www.newsfilecorp.com/release/309178/PM-Super-Fund-Launches-Withhold-Campaign-Ahead-of-Emerita-Shareholder-Meeting",
+      "reason": "корпоративный конфликт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T14:59:24.796889+00:00",
+      "title": "QIMC Reports Record 23.5% Natural Hydrogen Within the First 300 Metres of Ongoing DDH-26-05 and Observations Consistent with Free ",
+      "link": "https://www.newsfilecorp.com/release/309171/QIMC-Reports-Record-23.5-Natural-Hydrogen-Within-the-First-300-Metres-of-Ongoing-DDH2605-and-Observations-Consistent-with-Free-Gas-at-Bennett-Hill-at-164-Metres",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T14:59:24.796889+00:00",
+      "title": "Element One Enters Accelerated Growth Phase and Outlines Near-Term Development Catalysts",
+      "link": "https://www.newsfilecorp.com/release/309155/Element-One-Enters-Accelerated-Growth-Phase-and-Outlines-NearTerm-Development-Catalysts",
+      "reason": "корпоративное обновление",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T14:59:24.796889+00:00",
+      "title": "Forsys Metals Announces Effective Date to Trade as Asarian Energy Limited",
+      "link": "https://www.newsfilecorp.com/release/309170/Forsys-Metals-Announces-Effective-Date-to-Trade-as-Asarian-Energy-Limited",
+      "reason": "переименование",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-04T13:01:03.163288+00:00",
-      "title": "NexGen to Host Q2 2026 Conference Call",
-      "matched_noise_word": "conference",
-      "orbit": false
-    },
     {
       "ts": "2026-08-04T15:29:40.999172+00:00",
       "title": "Montero Completes Geological Logging of 625.25-Metre Drillhole at Elvira and Reports Pyrite-Bearing High-Sulphidation Alteration",
@@ -2779,6 +2689,12 @@
       "ts": "2026-08-11T11:45:23.907558+00:00",
       "title": "Laramide Resources Announces $5 Million Private Placement with a Strategic Investor",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T14:59:24.793337+00:00",
+      "title": "Thunder Gold Intersects 661.5 Metres of Continuous Gold Mineralization Averaging 0.554 g/t Au",
+      "matched_noise_word": "intersect\\w*",
       "orbit": false
     }
   ]
