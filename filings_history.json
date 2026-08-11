@@ -1342,20 +1342,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-04T07:58:17.328898+00:00",
-      "title": "Total Voting Rights",
-      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338030/0/en/Total-Voting-Rights.html",
-      "reason": "корпоративная рутина",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T07:58:17.328898+00:00",
-      "title": "Allied Critical Metals Announces Update on the Second Tranche of Its U.S.$25 Million Equity Financing",
-      "link": "https://www.newsfilecorp.com/release/307872/Allied-Critical-Metals-Announces-Update-on-the-Second-Tranche-of-Its-U.S.25-Million-Equity-Financing",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-04T13:01:03.175382+00:00",
       "title": "Golden Age Enters into Definitive Agreement to Acquire Australian Uranium Exploration Portfolio",
       "link": "https://www.newsfilecorp.com/release/307886/Golden-Age-Enters-into-Definitive-Agreement-to-Acquire-Australian-Uranium-Exploration-Portfolio",
@@ -2530,6 +2516,69 @@
       "link": "https://www.newsfilecorp.com/release/309035/Apex-Resources-Receives-TSX-Venture-Exchange-Acceptance-to-Grant-of-Option-to-Tungsten-Reserve-Corp.-formerly-Fortress-Strategic-Metals-to-Explore-and-Mine-Tungsten-Zones-in-the-JerseyEmerald-Project-in-BC",
       "reason": "опцион на аренду",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "Metal Energy Announces Additional Investment from its Strategic Investors",
+      "link": "https://www.newsfilecorp.com/release/309168/Metal-Energy-Announces-Additional-Investment-from-its-Strategic-Investors",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "Maverick Provides Corporate Update: James Bay & Rainbow Canyon Advance Strategic Holdings in Noram, Kingman & NOA",
+      "link": "https://www.newsfilecorp.com/release/309140/Maverick-Provides-Corporate-Update-James-Bay-Rainbow-Canyon-Advance-Strategic-Holdings-in-Noram-Kingman-NOA",
+      "reason": "корпоративное обновление",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "NovaRed Reports Up to 1.67% Copper at Wilmac; Updated Model Identifies Multiple Porphyry Targets Approximately 10 km from Copper M",
+      "link": "https://www.newsfilecorp.com/release/309136/NovaRed-Reports-Up-to-1.67-Copper-at-Wilmac-Updated-Model-Identifies-Multiple-Porphyry-Targets-Approximately-10-km-from-Copper-Mountain",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "Gelum Completes Further Sampling of Las Tinajas Gold Project, Northern Maricunga Belt, Chile",
+      "link": "https://www.newsfilecorp.com/release/309124/Gelum-Completes-Further-Sampling-of-Las-Tinajas-Gold-Project-Northern-Maricunga-Belt-Chile",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "Arya Resources Completes Early Exercise of Wedge Lake Option and Acquires 100% Interest",
+      "link": "https://www.newsfilecorp.com/release/309154/Arya-Resources-Completes-Early-Exercise-of-Wedge-Lake-Option-and-Acquires-100-Interest",
+      "reason": "опцион исполнен",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "Athena Gold Further Expands Forester Project near Musselwhite, Ontario",
+      "link": "https://www.newsfilecorp.com/release/309138/Athena-Gold-Further-Expands-Forester-Project-near-Musselwhite-Ontario",
+      "reason": "расширение земельного участка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "Endurance Reports Encouraging Down Dip Extension of the Eagle Zone at Reliance",
+      "link": "https://www.newsfilecorp.com/release/309128/Endurance-Reports-Encouraging-Down-Dip-Extension-of-the-Eagle-Zone-at-Reliance",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "Carolina Rush Expands Jefferson Project Adjacent to Brewer",
+      "link": "https://www.newsfilecorp.com/release/309072/Carolina-Rush-Expands-Jefferson-Project-Adjacent-to-Brewer",
+      "reason": "аренда участков",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.910238+00:00",
+      "title": "Ocean Partners Increases Ownership in Canadian Copper Inc. and Receives Independent Analyst Coverage",
+      "link": "https://www.newsfilecorp.com/release/308866/Ocean-Partners-Increases-Ownership-in-Canadian-Copper-Inc.-and-Receives-Independent-Analyst-Coverage",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -2718,6 +2767,18 @@
       "ts": "2026-08-11T04:50:15.996455+00:00",
       "title": "Carolina Rush Extends Warrants",
       "matched_noise_word": "warrant\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.902744+00:00",
+      "title": "Metals Creek Returns Additional High-Grade Mineralization with 7.25 g/t Gold over 7.45 Meters at Ogden Gold Project in Timmins, On",
+      "matched_noise_word": "\\bg/t\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T11:45:23.907558+00:00",
+      "title": "Laramide Resources Announces $5 Million Private Placement with a Strategic Investor",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
