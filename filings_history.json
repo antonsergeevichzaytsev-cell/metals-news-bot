@@ -2474,16 +2474,38 @@
       "link": "https://www.newsfilecorp.com/release/309170/Forsys-Metals-Announces-Effective-Date-to-Trade-as-Asarian-Energy-Limited",
       "reason": "переименование",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-11T20:34:11.330654+00:00",
+      "title": "Elemental Royalty Delivers Record Quarterly GEOs and Operating Cash Flow",
+      "link": "https://www.newsfilecorp.com/release/309133/Elemental-Royalty-Delivers-Record-Quarterly-GEOs-and-Operating-Cash-Flow",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T20:34:11.330654+00:00",
+      "title": "Sigma Lithium CEO Keynotes S&P Global Energy Critical Minerals Forum; Joins Sustainable Industry Roundtable at World Climate Summi",
+      "link": "https://www.newsfilecorp.com/release/309239/Sigma-Lithium-CEO-Keynotes-SP-Global-Energy-Critical-Minerals-Forum-Joins-Sustainable-Industry-Roundtable-at-World-Climate-Summit",
+      "reason": "конференция",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T20:34:11.330654+00:00",
+      "title": "TNR Gold Schedules Annual General and Special Meeting",
+      "link": "https://www.newsfilecorp.com/release/309146/TNR-Gold-Schedules-Annual-General-and-Special-Meeting",
+      "reason": "собрание акционеров",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-11T20:34:11.330654+00:00",
+      "title": "Strathmore Welcomes Richard Newbury to the Board",
+      "link": "https://www.newsfilecorp.com/release/309243/Strathmore-Welcomes-Richard-Newbury-to-the-Board",
+      "reason": "назначение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-04T20:21:39.244492+00:00",
-      "title": "Slave Lake Zinc Announces Name Change and Private Placement Offering",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-08-04T22:00:58.283171+00:00",
       "title": "Azincourt Energy Options High-Grade Sylvia Lake Uranium Project in Labrador",

@@ -776,7 +776,11 @@
     "74699a54885560c7196841ea47293f9a",
     "c99923977d9fc15f1cb71462f5c82bc2",
     "aae437c2345ec946d168f0d76757ffde",
-    "aeca548871670310c8e80091f8d3cdb0"
+    "aeca548871670310c8e80091f8d3cdb0",
+    "65b62e92663ac6951aa4cb28cda39212",
+    "e7d0f9ec34c7c9b0ac61f3a0e2476c4e",
+    "3e12f16b8b62476399666c76c227d166",
+    "96f18b305939e97e75f88502a5937598"
   ],
   "pending": [],
   "feed_health": {
@@ -793,18 +797,17 @@
     "GNW:Copper": "timeout"
   },
   "last_run": {
-    "ts": "2026-08-11T17:47:04.441302+00:00",
+    "ts": "2026-08-11T20:34:11.330654+00:00",
     "raw": 60,
-    "fresh": 1,
-    "candidates": 0,
-    "prefiltered_out": 1,
-    "screened": 0,
-    "skipped_by_model": 0,
+    "fresh": 4,
+    "candidates": 4,
+    "prefiltered_out": 0,
+    "screened": 4,
+    "skipped_by_model": 4,
     "kept": 0,
     "cap": 40,
     "cap_hit": false,
-    "feeds_broken": 5,
-    "labels_collected": 0
+    "feeds_broken": 5
   },
   "msg_map": {
     "382": {
