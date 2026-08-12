@@ -1378,48 +1378,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-05T16:00:58.290193+00:00",
-      "title": "Sigma Lithium to Release 2Q 26 Earnings Results on Aug 14; Exceeded 1H 26 Production Target",
-      "link": "https://www.newsfilecorp.com/release/308117/Sigma-Lithium-to-Release-2Q-26-Earnings-Results-on-Aug-14-Exceeded-1H-26-Production-Target",
-      "reason": "отчёт о прибыли",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T16:00:58.290193+00:00",
-      "title": "Prism Resources Announces Closing of Royalty Sale to Agnico Eagle",
-      "link": "https://www.newsfilecorp.com/release/308118/Prism-Resources-Announces-Closing-of-Royalty-Sale-to-Agnico-Eagle",
-      "reason": "продажа роялти",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T16:00:58.290193+00:00",
-      "title": "EV Minerals Provides Corporate Update",
-      "link": "https://www.newsfilecorp.com/release/308115/EV-Minerals-Provides-Corporate-Update",
-      "reason": "корпоративное обновление",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T16:00:58.290193+00:00",
-      "title": "Universal Digital Inc. Announces Definitive Share Exchange Agreement to Acquire PQCEE Pte. Ltd.",
-      "link": "https://www.newsfilecorp.com/release/308101/Universal-Digital-Inc.-Announces-Definitive-Share-Exchange-Agreement-to-Acquire-PQCEE-Pte.-Ltd.",
-      "reason": "сделка M&A",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T16:00:58.290193+00:00",
-      "title": "Independent Trading Group Engaged as Market Maker",
-      "link": "https://www.newsfilecorp.com/release/308109/Independent-Trading-Group-Engaged-as-Market-Maker",
-      "reason": "маркет-мейкер",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T16:00:58.290193+00:00",
-      "title": "North America Lithium and Gold Corp. Expands Multi-Commodity Discovery at Midnight Owl with Seven High-Priority Gold Exploration T",
-      "link": "https://www.newsfilecorp.com/release/308073/North-America-Lithium-and-Gold-Corp.-Expands-MultiCommodity-Discovery-at-Midnight-Owl-with-Seven-HighPriority-Gold-Exploration-Targets-Identified-Through-Advanced-Hyperspectral-Refinement",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-05T18:13:41.567407+00:00",
       "title": "Sego Resources Announces Options for Directors, Officers, Consultants, and Employees",
       "link": "https://www.newsfilecorp.com/release/308160/Sego-Resources-Announces-Options-for-Directors-Officers-Consultants-and-Employees",
@@ -2573,16 +2531,24 @@
       "link": "https://www.newsfilecorp.com/release/309314/Dryden-Gold-Clarifies-Number-of-Claims-on-Lost-Lake-Property",
       "reason": "уточнение по claims",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-12T17:49:15.628720+00:00",
+      "title": "Libra Expands Quebec Lithium Footprint with Flagship Cisco West and Obamska Projects",
+      "link": "https://www.newsfilecorp.com/release/309351/Libra-Expands-Quebec-Lithium-Footprint-with-Flagship-Cisco-West-and-Obamska-Projects",
+      "reason": "опцион на проекты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T17:49:15.628720+00:00",
+      "title": "Doubleview Gold Corp. Pursues Strategic Government Engagement Following US$400M U.S. Dept of War Scandium Funding Initiative",
+      "link": "https://www.newsfilecorp.com/release/309323/Doubleview-Gold-Corp.-Pursues-Strategic-Government-Engagement-Following-US400M-U.S.-Dept-of-War-Scandium-Funding-Initiative",
+      "reason": "стратегические переговоры",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-05T16:00:58.285944+00:00",
-      "title": "Defiance Silver Receives Approval for up to 172 Drill Sites at Espiritu Copper Target, Sonora",
-      "matched_noise_word": "\\bdrill\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-05T20:55:39.462890+00:00",
       "title": "Pacific Booker Minerals Inc. Announces Final TSX Venture Approval and Receipt of Funds on Non-Brokered Private Placement",
