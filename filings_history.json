@@ -1342,20 +1342,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-05T05:30:39.345609+00:00",
-      "title": "NSJ Gold Corp. (NSJ) (9PZ) Announces Financing for Exploration on Its Antimony 2.0 Property",
-      "link": "https://www.newsfilecorp.com/release/308083/NSJ-Gold-Corp.-NSJ-9PZ-Announces-Financing-for-Exploration-on-Its-Antimony-2.0-Property",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T06:06:12.939502+00:00",
-      "title": "SAGA Metals Executes Property Sale Agreement for the North Wind Iron Ore Project in Labrador",
-      "link": "https://www.newsfilecorp.com/release/308080/SAGA-Metals-Executes-Property-Sale-Agreement-for-the-North-Wind-Iron-Ore-Project-in-Labrador",
-      "reason": "продажа актива",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-05T12:53:14.340893+00:00",
       "title": "Osisko Gold Confirms Presence of Mineralized System with Open Pit Potential at the Proserpine Target on the Cariboo Gold Project's",
       "link": "https://www.globenewswire.com/news-release/2026/08/05/3339200/0/en/Osisko-Gold-Confirms-Presence-of-Mineralized-System-with-Open-Pit-Potential-at-the-Proserpine-Target-on-the-Cariboo-Gold-Project-s-Regional-Property-Exploration-Drilling-Highlights.html",
@@ -2481,16 +2467,59 @@
       "link": "https://www.newsfilecorp.com/release/309266/1844-Resources-annonce-la-clture-de-la-premire-tranche-de-son-placement-priv-sans-courtier",
       "reason": "placement privé",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-12T11:48:09.364506+00:00",
+      "title": "GoGold Announces Q3 Financial Results",
+      "link": "https://www.newsfilecorp.com/release/309242/GoGold-Announces-Q3-Financial-Results",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T11:48:09.364506+00:00",
+      "title": "RETRANSMISSION: QIMC Reports Record 23.5% Natural Hydrogen Within the First 300 Metres of Ongoing DDH-26-05 and Observations Consi",
+      "link": "https://www.newsfilecorp.com/release/309311/RETRANSMISSION-QIMC-Reports-Record-23.5-Natural-Hydrogen-Within-the-First-300-Metres-of-Ongoing-DDH2605-and-Observations-Consistent-with-Free-Gas-at-Bennett-Hill-at-164-Metres",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T11:48:09.364506+00:00",
+      "title": "Emerita Responds to Withhold Campaign and Urges Shareholders to Vote for All Six Director Nominees",
+      "link": "https://www.newsfilecorp.com/release/309299/Emerita-Responds-to-Withhold-Campaign-and-Urges-Shareholders-to-Vote-for-All-Six-Director-Nominees",
+      "reason": "конференция",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T11:48:09.364506+00:00",
+      "title": "Platauro Metals Corp. Outlines Exploration and Development Strategy",
+      "link": "https://www.newsfilecorp.com/release/309262/Platauro-Metals-Corp.-Outlines-Exploration-and-Development-Strategy",
+      "reason": "стратегия без инженерии",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T11:48:09.364506+00:00",
+      "title": "White Gold Announces Approval of W2 Critical Minerals Corp Spinout",
+      "link": "https://www.newsfilecorp.com/release/309298/White-Gold-Announces-Approval-of-W2-Critical-Minerals-Corp-Spinout",
+      "reason": "корпоративное действие",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T11:48:09.364506+00:00",
+      "title": "Athena Provides Drilling Update from Excelsior Springs, Nevada",
+      "link": "https://www.newsfilecorp.com/release/309287/Athena-Provides-Drilling-Update-from-Excelsior-Springs-Nevada",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T11:48:09.364506+00:00",
+      "title": "Carolina Rush Improves Commercial Terms of Brewer Option Agreement with Government",
+      "link": "https://www.newsfilecorp.com/release/309275/Carolina-Rush-Improves-Commercial-Terms-of-Brewer-Option-Agreement-with-Government",
+      "reason": "опционное соглашение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-05T05:30:39.345205+00:00",
-      "title": "Focus Graphite Announces Grant of Stock Options and Restricted Share Units",
-      "matched_noise_word": "stock option\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-05T12:53:14.332197+00:00",
       "title": "Omega Pacific Closes Private Placement",
@@ -2681,6 +2710,12 @@
       "ts": "2026-08-12T05:15:59.612703+00:00",
       "title": "1844 Resources Announces First Tranche Closing of Non-Brokered Private Placement",
       "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T11:48:09.358193+00:00",
+      "title": "Gold Runner Exploration Appoints Justin Lowe as Senior Geologist and Manager of Exploration",
+      "matched_noise_word": "appoint\\w*",
       "orbit": false
     }
   ]
