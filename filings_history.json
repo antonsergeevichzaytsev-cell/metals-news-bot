@@ -1342,55 +1342,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-04T22:00:58.284814+00:00",
-      "title": "Ferroglobe Reports Second Quarter 2026 Financial Results",
-      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338901/11914/en/Ferroglobe-Reports-Second-Quarter-2026-Financial-Results.html",
-      "reason": "финансовые результаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T22:00:58.284814+00:00",
-      "title": "Wayfinder Announces Adoption of Semi-Annual Reporting, Changes to Management",
-      "link": "https://www.newsfilecorp.com/release/308055/Wayfinder-Announces-Adoption-of-SemiAnnual-Reporting-Changes-to-Management",
-      "reason": "отчётность",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T22:00:58.284814+00:00",
-      "title": "Elemental Royalty to Release Q2 2026 Results on August 11, 2026",
-      "link": "https://www.newsfilecorp.com/release/307938/Elemental-Royalty-to-Release-Q2-2026-Results-on-August-11-2026",
-      "reason": "финрезультаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T22:57:00.963556+00:00",
-      "title": "Cygnus Metals Limited : Mise à jour de la transaction relative au plan d'arrangement",
-      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338965/0/fr/Cygnus-Metals-Limited-Mise-%C3%A0-jour-de-la-transaction-relative-au-plan-d-arrangement.html",
-      "reason": "сделка/поглощение",
-      "orbit": true
-    },
-    {
-      "ts": "2026-08-04T22:57:00.963556+00:00",
-      "title": "Cygnus Metals Limited: Scheme Transaction Update",
-      "link": "https://www.globenewswire.com/news-release/2026/08/04/3338965/0/en/Cygnus-Metals-Limited-Scheme-Transaction-Update.html",
-      "reason": "схема сделки",
-      "orbit": true
-    },
-    {
-      "ts": "2026-08-04T22:57:00.963556+00:00",
-      "title": "Bahia Metals Bolsters Geological Team to Advance Mangueiros Main",
-      "link": "https://www.newsfilecorp.com/release/308046/Bahia-Metals-Bolsters-Geological-Team-to-Advance-Mangueiros-Main",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-04T22:57:00.963556+00:00",
-      "title": "Lode Gold Completes Full Repayment of Fremont Gold Mine Property Secured Loan Ahead of Schedule",
-      "link": "https://www.newsfilecorp.com/release/308056/Lode-Gold-Completes-Full-Repayment-of-Fremont-Gold-Mine-Property-Secured-Loan-Ahead-of-Schedule",
-      "reason": "погашение долга",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-05T05:30:39.345609+00:00",
       "title": "NSJ Gold Corp. (NSJ) (9PZ) Announces Financing for Exploration on Its Antimony 2.0 Property",
       "link": "https://www.newsfilecorp.com/release/308083/NSJ-Gold-Corp.-NSJ-9PZ-Announces-Financing-for-Exploration-on-Its-Antimony-2.0-Property",
@@ -2502,16 +2453,38 @@
       "link": "https://www.newsfilecorp.com/release/309243/Strathmore-Welcomes-Richard-Newbury-to-the-Board",
       "reason": "назначение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-12T05:15:59.614233+00:00",
+      "title": "Andean Precious Metals Reports Second Quarter 2026 Financial Results",
+      "link": "https://www.newsfilecorp.com/release/309280/Andean-Precious-Metals-Reports-Second-Quarter-2026-Financial-Results",
+      "reason": "финрезультаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T05:15:59.614233+00:00",
+      "title": "Walhalla Gold Corp Announces Passing of Director Jamie Burns",
+      "link": "https://www.newsfilecorp.com/release/309276/Walhalla-Gold-Corp-Announces-Passing-of-Director-Jamie-Burns",
+      "reason": "кадровое событие",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T05:15:59.614233+00:00",
+      "title": "Gold Springs Resource Corp. Files Q2 2026 Financial Statements, MD&A and Provides Operations Update",
+      "link": "https://www.newsfilecorp.com/release/309269/Gold-Springs-Resource-Corp.-Files-Q2-2026-Financial-Statements-MDA-and-Provides-Operations-Update",
+      "reason": "финансовая отчетность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T05:15:59.614233+00:00",
+      "title": "1844 Resources annonce la clôture de la première tranche de son placement privé sans courtier",
+      "link": "https://www.newsfilecorp.com/release/309266/1844-Resources-annonce-la-clture-de-la-premire-tranche-de-son-placement-priv-sans-courtier",
+      "reason": "placement privé",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-04T22:00:58.283171+00:00",
-      "title": "Azincourt Energy Options High-Grade Sylvia Lake Uranium Project in Labrador",
-      "matched_noise_word": "high-?grade",
-      "orbit": false
-    },
     {
       "ts": "2026-08-05T05:30:39.345205+00:00",
       "title": "Focus Graphite Announces Grant of Stock Options and Restricted Share Units",
@@ -2696,6 +2669,18 @@
       "ts": "2026-08-11T17:47:04.440942+00:00",
       "title": "Geomorphic AI Doubles Pora Gold Project in Finland to 20,601 Hectares with Surface Samples up to 12.8 g/t Au and Boulders up to 28",
       "matched_noise_word": "\\bg/t\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T05:15:59.609307+00:00",
+      "title": "Golden Pursuit Appoints Charles \"Chuck\" Westgard to Board of Directors",
+      "matched_noise_word": "appoint\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T05:15:59.612703+00:00",
+      "title": "1844 Resources Announces First Tranche Closing of Non-Brokered Private Placement",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
