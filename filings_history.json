@@ -1378,13 +1378,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-05T18:13:41.567407+00:00",
-      "title": "Sego Resources Announces Options for Directors, Officers, Consultants, and Employees",
-      "link": "https://www.newsfilecorp.com/release/308160/Sego-Resources-Announces-Options-for-Directors-Officers-Consultants-and-Employees",
-      "reason": "опционы",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-05T20:55:39.465063+00:00",
       "title": "Geomorphic AI Announces Njuggträskliden Polymetallic Project on Swedens Nickel Line for Joint Venture - Four Mineralised Zones Ove",
       "link": "https://www.newsfilecorp.com/release/308233/Geomorphic-AI-Announces-Njuggtrskliden-Polymetallic-Project-on-Swedens-Nickel-Line-for-Joint-Venture-Four-Mineralised-Zones-Over-2-Km-of-Strike-Undrilled-Below-268-Metres",
@@ -2545,6 +2538,13 @@
       "link": "https://www.newsfilecorp.com/release/309323/Doubleview-Gold-Corp.-Pursues-Strategic-Government-Engagement-Following-US400M-U.S.-Dept-of-War-Scandium-Funding-Initiative",
       "reason": "стратегические переговоры",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-12T20:33:04.842946+00:00",
+      "title": "Critical One Energy Provides Update on Kenora Property and Claim Against American Atomics Inc.",
+      "link": "https://www.newsfilecorp.com/release/309374/Critical-One-Energy-Provides-Update-on-Kenora-Property-and-Claim-Against-American-Atomics-Inc.",
+      "reason": "юридический спор",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -2727,6 +2727,12 @@
       "ts": "2026-08-12T14:58:46.642537+00:00",
       "title": "NovaRed Mining Inc. Announces Name Change to NRED Intelligent Mining Inc.",
       "matched_noise_word": "name change",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-12T20:33:04.841971+00:00",
+      "title": "CanCambria Energy Announces Participation in EnerCom Denver - The Energy Investment Conference",
+      "matched_noise_word": "conference",
       "orbit": false
     }
   ]
