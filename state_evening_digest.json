@@ -149,7 +149,12 @@
       "status": "sent_no_reply",
       "touches": 2,
       "last_activity": "2026-07-27"
+    },
+    "outreach_auto_aimc": {
+      "status": "sent_no_reply",
+      "touches": 1,
+      "last_activity": "2026-08-13"
     }
   },
-  "day_start_date": "2026-08-12"
+  "day_start_date": "2026-08-13"
 }
