@@ -849,9 +849,31 @@
     "5c7805121a6865339973dc769e61956f",
     "c191a4f6b31e85de3c6b8efab38e212d",
     "98fcaba33225745a187ccb2f03df5eb5",
-    "ad5b7c051669caf6061482d392e98337"
+    "ad5b7c051669caf6061482d392e98337",
+    "054da6e08a391e980896537f76cd92e0",
+    "db77d9259147cc7695fa66646f9874f4",
+    "c4d09dc20edca458bbeb7006e8764832"
   ],
-  "pending": [],
+  "pending": [
+    {
+      "link": "https://www.newsfilecorp.com/release/309544/Lumina-Metals-Reports-Q2-2026-Results",
+      "title": "Lumina Metals Reports Q2 2026 Results",
+      "stage": "study",
+      "signal": "PEA опубликован",
+      "company": "Lumina Metals Corp.",
+      "project": "Nowa Sól",
+      "region": "Poland",
+      "why": "PEA завершен, но проект вне целевого региона, нет CapEx данных.",
+      "hook": "Оценка затрат и FEL 1-3: сверить PEA с реальными рыночными ценами.",
+      "priority": "medium",
+      "facts": {
+        "horizon": [
+          "2026",
+          "Q2 2026"
+        ]
+      }
+    }
+  ],
   "feed_health": {
     "NF:mining-metals": "ok",
     "NF:non-ferrous-metals": "ok",
@@ -866,18 +888,17 @@
     "GNW:Copper": "timeout"
   },
   "last_run": {
-    "ts": "2026-08-13T17:47:55.861839+00:00",
+    "ts": "2026-08-13T20:30:42.612627+00:00",
     "raw": 60,
-    "fresh": 2,
-    "candidates": 0,
-    "prefiltered_out": 2,
-    "screened": 0,
-    "skipped_by_model": 0,
-    "kept": 0,
+    "fresh": 3,
+    "candidates": 3,
+    "prefiltered_out": 0,
+    "screened": 3,
+    "skipped_by_model": 2,
+    "kept": 1,
     "cap": 40,
     "cap_hit": false,
-    "feeds_broken": 5,
-    "labels_collected": 0
+    "feeds_broken": 5
   },
   "msg_map": {
     "382": {
