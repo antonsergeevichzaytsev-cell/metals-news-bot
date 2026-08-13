@@ -1432,76 +1432,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-06T12:57:31.307762+00:00",
-      "title": "Kinross upgraded to ‘BBB’ Rating by S&P Global Ratings",
-      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340053/0/en/Kinross-upgraded-to-BBB-Rating-by-S-P-Global-Ratings.html",
-      "reason": "рейтинговое действие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T12:57:31.307762+00:00",
-      "title": "Abcourt annonce une augmentation proposée de 10 M$ US de son financement par débenture avec Glencore",
-      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340244/0/fr/Abcourt-annonce-une-augmentation-propos%C3%A9e-de-10-M-US-de-son-financement-par-d%C3%A9benture-avec-Glencore.html",
-      "reason": "финансирование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T12:57:31.307762+00:00",
-      "title": "Abcourt Announces Proposed US$10M Increase to Debenture Financing with Glencore",
-      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340244/0/en/Abcourt-Announces-Proposed-US-10M-Increase-to-Debenture-Financing-with-Glencore.html",
-      "reason": "финансирование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T12:57:31.307762+00:00",
-      "title": "Asia Broadband Continues Upward Production And Gross Profit Trend In Q2 Financial Results To Be Published Next Week",
-      "link": "https://www.globenewswire.com/news-release/2026/08/06/3340272/0/en/Asia-Broadband-Continues-Upward-Production-And-Gross-Profit-Trend-In-Q2-Financial-Results-To-Be-Published-Next-Week.html",
-      "reason": "финансовые результаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T12:57:31.307762+00:00",
-      "title": "ATERRA Metals Commences Preparation of Maiden Mineral Resource Estimate for the Totora Cu/Au Project",
-      "link": "https://www.newsfilecorp.com/release/308363/ATERRA-Metals-Commences-Preparation-of-Maiden-Mineral-Resource-Estimate-for-the-Totora-CuAu-Project",
-      "reason": "начало оценки ресурсов",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T12:57:31.307762+00:00",
-      "title": "LithiumBank Signs Binding Option Agreement on Strategic Land for Central Processing Facility at Boardwalk Lithium Brine Project",
-      "link": "https://www.newsfilecorp.com/release/308358/LithiumBank-Signs-Binding-Option-Agreement-on-Strategic-Land-for-Central-Processing-Facility-at-Boardwalk-Lithium-Brine-Project",
-      "reason": "опцион на землю",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T12:57:31.307762+00:00",
-      "title": "Metatek-Group Ltd. Reports Second Quarter Fiscal Year 2026 Results and Provides Full-Year Fiscal Guidance",
-      "link": "https://www.newsfilecorp.com/release/308320/MetatekGroup-Ltd.-Reports-Second-Quarter-Fiscal-Year-2026-Results-and-Provides-FullYear-Fiscal-Guidance",
-      "reason": "финансовые результаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T12:57:31.307762+00:00",
-      "title": "Tudor Gold Discovers New Copper-Gold Porphyry System and Confirms Gold-Silver Epithermal Trend Within Treaty Creek's Perfectstorm ",
-      "link": "https://www.newsfilecorp.com/release/308290/Tudor-Gold-Discovers-New-CopperGold-Porphyry-System-and-Confirms-GoldSilver-Epithermal-Trend-Within-Treaty-Creeks-Perfectstorm-Zone",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T13:01:31.769754+00:00",
-      "title": "Getty Copper Commences Trading on OTCQX Best Market",
-      "link": "https://www.newsfilecorp.com/release/308340/Getty-Copper-Commences-Trading-on-OTCQX-Best-Market",
-      "reason": "листинг",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T13:01:31.769754+00:00",
-      "title": "Highcliff Provides Corporate Update",
-      "link": "https://www.newsfilecorp.com/release/308319/Highcliff-Provides-Corporate-Update",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-06T22:00:57.286906+00:00",
       "title": "Torex Gold Reports Q2 2026 Results",
       "link": "https://www.newsfilecorp.com/release/308421/Torex-Gold-Reports-Q2-2026-Results",
@@ -2606,28 +2536,45 @@
       "link": "https://www.newsfilecorp.com/release/309453/Maverick-Gold-and-Silver-Receives-Confirmation-of-New-Claims-Increasing-the-Size-of-the-Silver-Vista-Property-British-Columbia",
       "reason": "расширение участка",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-13T14:59:37.252240+00:00",
+      "title": "Phenom Reports Commercialization Progress at MK Plus's New Swedish Base",
+      "link": "https://www.newsfilecorp.com/release/309480/Phenom-Reports-Commercialization-Progress-at-MK-Pluss-New-Swedish-Base",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-13T14:59:37.252240+00:00",
+      "title": "Argo's June Oil Production",
+      "link": "https://www.newsfilecorp.com/release/309479/Argos-June-Oil-Production",
+      "reason": "производственный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-13T14:59:37.252240+00:00",
+      "title": "Goldcana Announces Forward Share Split",
+      "link": "https://www.newsfilecorp.com/release/309478/Goldcana-Announces-Forward-Share-Split",
+      "reason": "сплит акций",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-13T14:59:37.252240+00:00",
+      "title": "Brasnova Energy Materials Inc. Advances Capela Gold Project Through Expanded Sampling and Follow-Up of Additional Prospective Area",
+      "link": "https://www.newsfilecorp.com/release/309438/Brasnova-Energy-Materials-Inc.-Advances-Capela-Gold-Project-Through-Expanded-Sampling-and-FollowUp-of-Additional-Prospective-Areas",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-13T14:59:37.252240+00:00",
+      "title": "Americore Announces Management and Board Changes",
+      "link": "https://www.newsfilecorp.com/release/309451/Americore-Announces-Management-and-Board-Changes",
+      "reason": "назначение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-06T12:57:31.300140+00:00",
-      "title": "Delta Resources Completes Acquisition of 100% Interest in the Gold Creek Property Hosting the High-Grade I-Zone Gold Prospect, Thu",
-      "matched_noise_word": "high-?grade",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T12:57:31.303046+00:00",
-      "title": "Sorrento Resources Ltd. Intersects 31m of 0.42g/t Au, Rodgers Cove, Newfoundland",
-      "matched_noise_word": "intersect\\w*",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-06T13:01:31.768538+00:00",
-      "title": "Dynasty Completes First Five Drill-Holes in South-Pelham Area",
-      "matched_noise_word": "\\bdrill\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-06T22:00:57.281785+00:00",
       "title": "Sun Summit Announces Non-Brokered Private Placement of up to $4 Million to Expand the 2026 Drill Program at the JD Project to 15,0",
@@ -2794,6 +2741,18 @@
       "ts": "2026-08-13T11:48:59.910271+00:00",
       "title": "Grande Portage Resources Advances 2026 Drill Program and Field Activities, Confirms 100% Warrant Exercise",
       "matched_noise_word": "warrant\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-13T14:59:37.247246+00:00",
+      "title": "Thunderstruck Exploration Update License Renewal and $1.8M Private Placement",
+      "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-13T14:59:37.250815+00:00",
+      "title": "Iconic Minerals Reports Positive near Surface Gold and Silver Results in First Assays of 2026 Drill Program at New Pass Gold Prope",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
