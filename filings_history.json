@@ -1378,27 +1378,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-05T20:55:39.465063+00:00",
-      "title": "Geomorphic AI Announces Njuggträskliden Polymetallic Project on Swedens Nickel Line for Joint Venture - Four Mineralised Zones Ove",
-      "link": "https://www.newsfilecorp.com/release/308233/Geomorphic-AI-Announces-Njuggtrskliden-Polymetallic-Project-on-Swedens-Nickel-Line-for-Joint-Venture-Four-Mineralised-Zones-Over-2-Km-of-Strike-Undrilled-Below-268-Metres",
-      "reason": "совместное предприятие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T20:55:39.465063+00:00",
-      "title": "Atlas Salt ernennt Mark Stewart zum Chief Financial Officer und befördert Robert Booth zum Chief Operating Officer",
-      "link": "https://www.newsfilecorp.com/release/308252/Atlas-Salt-ernennt-Mark-Stewart-zum-Chief-Financial-Officer-und-befrdert-Robert-Booth-zum-Chief-Operating-Officer",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T22:00:47.760045+00:00",
-      "title": "DynaResource Announces Favorable Ruling in Amparo Proceedings",
-      "link": "https://www.newsfilecorp.com/release/308253/DynaResource-Announces-Favorable-Ruling-in-Amparo-Proceedings",
-      "reason": "судебное решение",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-06T05:30:35.039413+00:00",
       "title": "Kingman Adopts Semi-Annual Financial Reporting",
       "link": "https://www.newsfilecorp.com/release/308333/Kingman-Adopts-SemiAnnual-Financial-Reporting",
@@ -2545,22 +2524,24 @@
       "link": "https://www.newsfilecorp.com/release/309374/Critical-One-Energy-Provides-Update-on-Kenora-Property-and-Claim-Against-American-Atomics-Inc.",
       "reason": "юридический спор",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-13T05:18:58.591315+00:00",
+      "title": "New Found Gold Files Second Quarter 2026 Financial Statements",
+      "link": "https://www.newsfilecorp.com/release/309362/New-Found-Gold-Files-Second-Quarter-2026-Financial-Statements",
+      "reason": "финансовая отчетность",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-13T05:18:58.591315+00:00",
+      "title": "Allied Critical Metals Files Application to List on Nasdaq",
+      "link": "https://www.newsfilecorp.com/release/309361/Allied-Critical-Metals-Files-Application-to-List-on-Nasdaq",
+      "reason": "листинг",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-05T20:55:39.462890+00:00",
-      "title": "Pacific Booker Minerals Inc. Announces Final TSX Venture Approval and Receipt of Funds on Non-Brokered Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-05T22:00:47.758524+00:00",
-      "title": "Sage Potash Successfully Completes Peterson 1 Drill Program and Commences Core Analysis",
-      "matched_noise_word": "\\bdrill\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-06T06:10:02.245052+00:00",
       "title": "Thor Explorations Announces Further High-Grade Mineralisation Intersected Below Segilola Open Pit",
@@ -2733,6 +2714,12 @@
       "ts": "2026-08-12T20:33:04.841971+00:00",
       "title": "CanCambria Energy Announces Participation in EnerCom Denver - The Energy Investment Conference",
       "matched_noise_word": "conference",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-13T05:18:58.589776+00:00",
+      "title": "Strathmore Announces Change in Board of Directors",
+      "matched_noise_word": "board of directors",
       "orbit": false
     }
   ]
