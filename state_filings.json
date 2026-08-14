@@ -877,7 +877,9 @@
     "b86081a429d88f56e23d2dc8e95fc3cd",
     "5e482cc2fe9b0cefd5e80c33eef72042",
     "e993c4fcab6127a217a90ec5121cc4a9",
-    "219d320bf864bf967aaa1d2b799231e6"
+    "219d320bf864bf967aaa1d2b799231e6",
+    "212231c97e46695a82278568c7b8a3ae",
+    "9101f8b5eb63853274b78eb992f03091"
   ],
   "pending": [],
   "feed_health": {
@@ -894,14 +896,14 @@
     "GNW:Copper": "timeout"
   },
   "last_run": {
-    "ts": "2026-08-14T14:53:48.860110+00:00",
+    "ts": "2026-08-14T17:43:50.975007+00:00",
     "raw": 60,
-    "fresh": 7,
-    "candidates": 5,
-    "prefiltered_out": 2,
-    "screened": 5,
-    "skipped_by_model": 4,
-    "kept": 0,
+    "fresh": 2,
+    "candidates": 2,
+    "prefiltered_out": 0,
+    "screened": 2,
+    "skipped_by_model": 1,
+    "kept": 1,
     "cap": 40,
     "cap_hit": false,
     "feeds_broken": 5,
@@ -991,63 +993,69 @@
       "company": "Lumina Metals Corp.",
       "priority": "medium",
       "stage": "study"
+    },
+    "958": {
+      "link": "https://www.newsfilecorp.com/release/309668/White-Gold-Corp.-annonce-une-valuation-conomique-prliminaire-positive-pour-le-projet-White-Gold-au-Yukon-au-Canada-et-une-valeur-actualise-nette-VAN-aprs-impts-de-19-G-CA-un-taux-de-rendement-interne-TRI-de-38-et-un-dlai-de-rcupration-de-17",
+      "company": "White Gold Corp.",
+      "priority": "medium",
+      "stage": "study"
     }
   },
   "tg_offset": 96015226,
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 87,
+      "streak": 88,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 87,
+      "streak": 88,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 87,
+      "streak": 88,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 87,
+      "streak": 88,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 87,
+      "streak": 88,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 87,
+      "streak": 88,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "timeout",
-      "streak": 17,
+      "streak": 18,
       "reported": "timeout"
     },
     "GNW:Gold Mining": {
       "status": "timeout",
-      "streak": 16,
+      "streak": 17,
       "reported": "timeout"
     },
     "GNW:Nonferrous Metals": {
       "status": "timeout",
-      "streak": 18,
+      "streak": 19,
       "reported": "timeout"
     },
     "GNW:Aluminum": {
       "status": "timeout",
-      "streak": 16,
+      "streak": 17,
       "reported": "timeout"
     },
     "GNW:Copper": {
       "status": "timeout",
-      "streak": 18,
+      "streak": 19,
       "reported": "timeout"
     }
   }
