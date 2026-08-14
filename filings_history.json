@@ -1483,58 +1483,27 @@
         ]
       },
       "ts": "2026-08-14T05:16:22.215929+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/309640/Sigma-Lithium-Announces-Record-2Q-26-Results-EBITDA-Margin-of-47-Decrease-of-over-30-in-Costs-TAC-Agreement-Negotiations-Underway",
+      "title": "Sigma Lithium Announces Record 2Q 26 Results: EBITDA Margin of 47%, Decrease of over 30% in Costs; TAC Agreement Negotiations Underway",
+      "stage": "operating",
+      "signal": "операционные результаты",
+      "company": "Sigma Lithium",
+      "project": "",
+      "region": "Brazil",
+      "why": "Рекордная EBITDA 47%, снижение затрат на 30%, рост производства до 35,4 тыс. т.",
+      "hook": "Операционный turnaround: удержать маржу 47% при росте производства и снижении затрат.",
+      "priority": "low",
+      "facts": {
+        "money_musd": [
+          55.0
+        ]
+      },
+      "ts": "2026-08-14T14:53:48.860110+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-07T11:46:13.675046+00:00",
-      "title": "Standard Uranium Reaches Agreement for $3 Million Strategic Investment",
-      "link": "https://www.newsfilecorp.com/release/308537/Standard-Uranium-Reaches-Agreement-for-3-Million-Strategic-Investment",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-07T11:46:13.675046+00:00",
-      "title": "Besra Gold Reports Receipt of Purported Notice Under s.143 of CBCA",
-      "link": "https://www.newsfilecorp.com/release/308542/Besra-Gold-Reports-Receipt-of-Purported-Notice-Under-s.143-of-CBCA",
-      "reason": "корпоративное событие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-07T11:46:13.675046+00:00",
-      "title": "Arrow Announces IC-3, IC-4HZ, and IC-5HZ Well Results",
-      "link": "https://www.newsfilecorp.com/release/308504/Arrow-Announces-IC3-IC4HZ-and-IC5HZ-Well-Results",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-07T11:46:13.675046+00:00",
-      "title": "STRACON Group Holding Inc. Announces Preliminary Financial Results for the Three- and Six-Month Periods Ended June 30, 2026",
-      "link": "https://www.newsfilecorp.com/release/308481/STRACON-Group-Holding-Inc.-Announces-Preliminary-Financial-Results-for-the-Three-and-SixMonth-Periods-Ended-June-30-2026",
-      "reason": "финансовые результаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-07T11:46:13.675046+00:00",
-      "title": "Galiano Gold Reports Second Quarter 2026 Results",
-      "link": "https://www.newsfilecorp.com/release/308507/Galiano-Gold-Reports-Second-Quarter-2026-Results",
-      "reason": "квартальный отчёт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-07T11:46:13.675046+00:00",
-      "title": "Santacruz Silver Announces Equity Incentive Grants",
-      "link": "https://www.newsfilecorp.com/release/308508/Santacruz-Silver-Announces-Equity-Incentive-Grants",
-      "reason": "гранты акций",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-07T14:53:05.782902+00:00",
-      "title": "Golden Rapture Mining Acquires Ground Located Approximately 500 Metres South of NexGold's Proposed Goliath Open Pit",
-      "link": "https://www.newsfilecorp.com/release/308521/Golden-Rapture-Mining-Acquires-Ground-Located-Approximately-500-Metres-South-of-NexGolds-Proposed-Goliath-Open-Pit",
-      "reason": "приобретение лицензий",
-      "orbit": false
-    },
     {
       "ts": "2026-08-07T17:37:51.184711+00:00",
       "title": "Eramet : Informations relatives au nombre total de droits de vote et d’actions au 31 juillet 2026",
@@ -2220,22 +2189,38 @@
       "link": "https://www.newsfilecorp.com/release/309604/Arrow-Announces-Alberta-Property-Acquisition",
       "reason": "приобретение актива",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-14T14:53:48.860110+00:00",
+      "title": "Homerun Resources Inc. Amends Terms of Previously Announced Financing",
+      "link": "https://www.newsfilecorp.com/release/309656/Homerun-Resources-Inc.-Amends-Terms-of-Previously-Announced-Financing",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T14:53:48.860110+00:00",
+      "title": "Palamina Update on Colt Silver Spin-Out Transaction",
+      "link": "https://www.newsfilecorp.com/release/309626/Palamina-Update-on-Colt-Silver-SpinOut-Transaction",
+      "reason": "корпоративное событие",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T14:53:48.860110+00:00",
+      "title": "Fairchild Gold Completes Acquisition of Golden Arrow Property",
+      "link": "https://www.newsfilecorp.com/release/309649/Fairchild-Gold-Completes-Acquisition-of-Golden-Arrow-Property",
+      "reason": "приобретение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T14:53:48.860110+00:00",
+      "title": "Tiger Gold To Host Investor Update Call Tuesday August 18th",
+      "link": "https://www.newsfilecorp.com/release/309624/Tiger-Gold-To-Host-Investor-Update-Call-Tuesday-August-18th",
+      "reason": "конференция",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-07T11:46:13.670130+00:00",
-      "title": "Search Minerals Closes Initial Tranche of Non-Brokered Private Placement Financing and Announces Upsized Unit Financing",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-07T14:53:05.781044+00:00",
-      "title": "Stakeholder Gold Closes Flow-Through Financing",
-      "matched_noise_word": "flow-?through",
-      "orbit": false
-    },
     {
       "ts": "2026-08-07T17:37:51.182690+00:00",
       "title": "Drilling Underway at Pacific Ridge's RDP Copper-Gold Project",
@@ -2390,6 +2375,12 @@
       "ts": "2026-08-14T11:45:19.427041+00:00",
       "title": "Antimony Resources Corp. (ATMY) (ATMYF) (K8J0) Reports Visible Gold in Drilling of 285 grams per tonne (g/t) Gold Using Portable X",
       "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T14:53:48.857870+00:00",
+      "title": "AE Fuels Appoints Jason Tong as Chief Financial Officer",
+      "matched_noise_word": "appoint\\w*",
       "orbit": false
     }
   ]
