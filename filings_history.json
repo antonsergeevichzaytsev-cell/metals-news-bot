@@ -2178,6 +2178,48 @@
       "link": "https://www.newsfilecorp.com/release/309550/Mogotes-Metals-Announces-Closing-of-Exercise-of-Rights",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-14T11:45:19.430464+00:00",
+      "title": "Kincora Reports June 2026 Quarterly Activities and Financial Results",
+      "link": "https://www.newsfilecorp.com/release/309617/Kincora-Reports-June-2026-Quarterly-Activities-and-Financial-Results",
+      "reason": "квартальный отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T11:45:19.430464+00:00",
+      "title": "Unigold Updates Mineral Resource Estimate for the Candelones Project: 2.291 million ounces of gold in Measured and Indicated Resou",
+      "link": "https://www.newsfilecorp.com/release/309645/Unigold-Updates-Mineral-Resource-Estimate-for-the-Candelones-Project-2.291-million-ounces-of-gold-in-Measured-and-Indicated-Resources",
+      "reason": "ресурсная оценка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T11:45:19.430464+00:00",
+      "title": "NSJ Gold Corp. (NSJ) (9PZ) Announces Closing of First Tranche of Financing for Exploration on Its Antimony 2.0 Property, New Bruns",
+      "link": "https://www.newsfilecorp.com/release/309547/NSJ-Gold-Corp.-NSJ-9PZ-Announces-Closing-of-First-Tranche-of-Financing-for-Exploration-on-Its-Antimony-2.0-Property-New-Brunswick-Canada",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T11:45:19.430464+00:00",
+      "title": "Americas Gold and Silver Reports Financial Results for Q2 2026 Highlighted by Strong Operational Performance at Cosalá and Upgrade",
+      "link": "https://www.newsfilecorp.com/release/309620/Americas-Gold-and-Silver-Reports-Financial-Results-for-Q2-2026-Highlighted-by-Strong-Operational-Performance-at-Cosal-and-Upgrade-Project-Progress-at-the-Galena-Complex",
+      "reason": "финансовый отчёт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T11:45:19.430464+00:00",
+      "title": "Laramide Resources Expands into Sweden with Acquisition of Strategic Uranium Exploration Licences",
+      "link": "https://www.newsfilecorp.com/release/309609/Laramide-Resources-Expands-into-Sweden-with-Acquisition-of-Strategic-Uranium-Exploration-Licences",
+      "reason": "приобретение лицензий",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T11:45:19.430464+00:00",
+      "title": "Arrow Announces Alberta Property Acquisition",
+      "link": "https://www.newsfilecorp.com/release/309604/Arrow-Announces-Alberta-Property-Acquisition",
+      "reason": "приобретение актива",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -2341,6 +2383,12 @@
     {
       "ts": "2026-08-14T05:16:22.211401+00:00",
       "title": "PR0948 - Kimoukro Gold Project Maiden Diamond Drilling Results and Phase 2 Exploration Strategy",
+      "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-14T11:45:19.427041+00:00",
+      "title": "Antimony Resources Corp. (ATMY) (ATMYF) (K8J0) Reports Visible Gold in Drilling of 285 grams per tonne (g/t) Gold Using Portable X",
       "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
