@@ -14,6 +14,11 @@ digest.deepseek_deep_analysis напрямую (импорт digest внутри
 не на уровне модуля — чтобы не тянуть DEEPSEEK_API_KEY проверку при
 любом другом вызове bot_commands, если он вдруг понадобится без ключа).
 
+v3, 16.08.2026. cmd_deep теперь подтягивает контекст тренда через
+digest.find_similar_history перед вызовом deep-анализа — тот же путь,
+что digest.py использует в основном прогоне для priority=high (см. v11
+там). Ручной /deep больше не беднее автоматического разбора.
+
 Команды:
   /digest   — внеплановый прогон digest.py прямо сейчас
   /company  <имя> — история упоминаний компании из history.json, 7 дней
@@ -197,12 +202,15 @@ def cmd_why(arg):
         what = esc((deep.get("what") or "").strip())
         who = esc((deep.get("who") or "").strip())
         action = esc((deep.get("action") or "").strip())
+        trend = esc((deep.get("trend") or "").strip())
         if what:
             lines.append(f"• <b>что:</b> {what}")
         if who:
             lines.append(f"• <b>кого:</b> {who}")
         if action:
             lines.append(f"• <b>делать:</b> {action}")
+        if trend:
+            lines.append(f"• <b>тренд:</b> {trend}")
     else:
         lines.append("\n<i>(углублённого разбора нет — заметка не была priority=high)</i>")
     tg_send("\n".join(lines))
@@ -354,9 +362,12 @@ def cmd_deep(arg):
     except Exception as e:
         tg_send(f"⚠️ Не смог загрузить модуль анализа: {esc(str(e))}")
         return
+    history = load_json(HISTORY_FILE, {"items": []})
+    prior = dg.find_similar_history(history, it.get("company", ""), it.get("title", ""))
     deep = dg.deepseek_deep_analysis(
         it.get("title", ""), it.get("desc", ""), "",
         it.get("why", ""), it.get("company", ""),
+        prior_items=prior,
     )
     if not deep:
         tg_send("⚠️ DeepSeek не ответил — попробуй позже.")
@@ -367,12 +378,15 @@ def cmd_deep(arg):
     what = esc((deep.get("what") or "").strip())
     who = esc((deep.get("who") or "").strip())
     action = esc((deep.get("action") or "").strip())
+    trend = esc((deep.get("trend") or "").strip())
     if what:
         lines.append(f"• <b>что:</b> {what}")
     if who:
         lines.append(f"• <b>кого:</b> {who}")
     if action:
         lines.append(f"• <b>делать:</b> {action}")
+    if trend:
+        lines.append(f"• <b>тренд:</b> {trend}")
     tg_send("\n".join(lines))
 
 
