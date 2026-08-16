@@ -8,10 +8,20 @@ Cloudflare Worker принимает Telegram webhook, шлёт repository_dispa
 TELEGRAM_UPDATE_JSON — БЕЗ повторного getUpdates (см. fitness-bot
 DEPLOY.md/worker.js: getUpdates и активный webhook взаимоисключающи).
 
+v2, 16.08.2026. Четыре новые команды поверх исходных пяти:
+/orbit, /search, /feeds, /deep. /deep переиспользует
+digest.deepseek_deep_analysis напрямую (импорт digest внутри функции,
+не на уровне модуля — чтобы не тянуть DEEPSEEK_API_KEY проверку при
+любом другом вызове bot_commands, если он вдруг понадобится без ключа).
+
 Команды:
   /digest   — внеплановый прогон digest.py прямо сейчас
   /company  <имя> — история упоминаний компании из history.json, 7 дней
+  /search   <текст> — свободный поиск по всему тексту заметки, 14 дней
+  /orbit    [дни] — UZCOPPER-орбита за N дней (по умолчанию 7)
   /why      <номер> — deep-analysis по номеру из последнего дайджеста
+  /deep     <номер> — запросить deep-analysis для заметки без него
+  /feeds    — здоровье источников последнего прогона
   /status   — health: last_run, broken feeds, uzcopper-хиты за сутки
   /help     — список команд
 
@@ -87,7 +97,11 @@ def cmd_help():
         "<b>Команды</b>\n\n"
         "/digest — внеплановый прогон дайджеста сейчас\n"
         "/company &lt;имя&gt; — история упоминаний за 7 дней\n"
+        "/search &lt;текст&gt; — поиск по всему тексту заметок, 14 дней\n"
+        "/orbit [дни] — UZCOPPER-орбита, по умолчанию 7 дней\n"
         "/why &lt;номер&gt; — разбор заметки из последнего дайджеста\n"
+        "/deep &lt;номер&gt; — запросить разбор для заметки без него\n"
+        "/feeds — какие источники сейчас рабочие/битые\n"
         "/status — health бота: последний прогон, битые ленты\n"
         "/help — это сообщение"
     )
@@ -215,6 +229,153 @@ def cmd_status():
     tg_send("\n".join(lines))
 
 
+def cmd_orbit(arg):
+    """Новости в UZCOPPER/CIS-орбите за N дней (по умолчанию 7).
+
+    Переиспользует is_uzcopper_relevant из digest.py вместо повторной
+    реализации regex — единая точка правды для того, что считается
+    orbit-релевантным, не две расходящиеся копии списка слов.
+    """
+    days = 7
+    arg = (arg or "").strip()
+    if arg.isdigit():
+        days = max(1, min(int(arg), 30))
+    history = load_json(HISTORY_FILE, {"items": []})
+    items = history.get("items", [])
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
+    matches = [it for it in items if it.get("ts", "") >= cutoff and it.get("uzcopper")]
+    if not matches:
+        tg_send(f"🏭 За {days} дн. в UZCOPPER-орбите ничего не найдено.")
+        return
+    matches.sort(key=lambda x: x.get("ts", ""), reverse=True)
+    lines = [f"<b>🏭 UZCOPPER-орбита</b> — {len(matches)} за {days} дн.\n"]
+    for it in matches[:15]:
+        title = esc(it.get("title", ""))
+        link = esc(it.get("link", ""))
+        dot = {"high": "🔴", "medium": "🟡"}.get(it.get("priority"), "⚪")
+        lines.append(f'{dot} <a href="{link}">{title}</a>')
+    if len(matches) > 15:
+        lines.append(f"\n+{len(matches) - 15} ещё, не показаны")
+    tg_send("\n".join(lines))
+
+
+def cmd_search(arg):
+    """Свободный поиск по title+desc+why в history.json, 14 дней.
+
+    Отличие от /company: та ищет только по полю company (точный
+    справочник), эта — по всему тексту заметки, для случаев когда
+    интересующее слово не название компании (например 'смелтер' или
+    'CBAM' или конкретный регион).
+    """
+    arg = (arg or "").strip()
+    if not arg:
+        tg_send("Формат: <code>/search smelter restart</code>")
+        return
+    history = load_json(HISTORY_FILE, {"items": []})
+    items = history.get("items", [])
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).isoformat()
+    needle = arg.lower()
+    matches = []
+    for it in items:
+        if it.get("ts", "") < cutoff:
+            continue
+        haystack = " ".join([
+            it.get("title", ""), it.get("desc", ""),
+            it.get("why", ""), it.get("company", ""),
+        ]).lower()
+        if needle in haystack:
+            matches.append(it)
+    if not matches:
+        tg_send(f"🔍 За 14 дней ничего по «{esc(arg)}» не найдено.")
+        return
+    matches.sort(key=lambda x: x.get("ts", ""), reverse=True)
+    lines = [f"<b>🔍 «{esc(arg)}»</b> — {len(matches)} за 14 дней\n"]
+    for it in matches[:10]:
+        title = esc(it.get("title", ""))
+        link = esc(it.get("link", ""))
+        dot = {"high": "🔴", "medium": "🟡"}.get(it.get("priority"), "⚪")
+        lines.append(f'{dot} <a href="{link}">{title}</a>')
+    if len(matches) > 10:
+        lines.append(f"\n+{len(matches) - 10} ещё, не показаны")
+    tg_send("\n".join(lines))
+
+
+def cmd_feeds():
+    """Здоровье источников из последнего прогона — не только битые,
+    но и общая картина (сколько всего, какие конкретно отвалились).
+    Отдельно от /status: там сводка всего прогона, здесь фокус только
+    на источниках, для случая когда интересно именно это.
+    """
+    state = load_json(STATE_FILE, {})
+    last_run = state.get("last_run", {})
+    if not last_run:
+        tg_send("⚠️ Нет данных — state.json пуст.")
+        return
+    total = last_run.get("feeds_total", 0)
+    broken = last_run.get("broken", {})
+    ok = total - len(broken)
+    lines = [f"<b>📡 Источники</b>: {ok}/{total} рабочих"]
+    if broken:
+        lines.append("\n<b>Не отвечают:</b>")
+        for name, reason in broken.items():
+            lines.append(f"  • {esc(name)}: {esc(str(reason))}")
+    else:
+        lines.append("Все источники рабочие.")
+    tg_send("\n".join(lines))
+
+
+def cmd_deep(arg):
+    """Принудительный deep-analysis для ЛЮБОЙ заметки из последнего
+    дайджеста, не только priority=high (в отличие от /why, который
+    только показывает то, что уже посчитано в основном прогоне).
+    Живой вызов DeepSeek — не бесплатно и не мгновенно, поэтому
+    отдельная команда, не автоматическое поведение /why.
+    """
+    arg = (arg or "").strip()
+    if not arg.isdigit():
+        tg_send("Формат: <code>/deep 5</code> — номер из последнего дайджеста")
+        return
+    idx = int(arg)
+    last_sent = load_json(LAST_DIGEST_FILE, {"items": []})
+    items = last_sent.get("items", [])
+    if not items:
+        tg_send("Нет данных о последнем дайджесте.")
+        return
+    if idx < 1 or idx > len(items):
+        tg_send(f"Номер вне диапазона — заметок было {len(items)}.")
+        return
+    it = items[idx - 1]
+    if it.get("deep"):
+        tg_send(f"У заметки {idx} уже есть разбор — смотри <code>/why {idx}</code>.")
+        return
+    tg_send("⏳ Запрашиваю разбор…")
+    try:
+        import digest as dg
+    except Exception as e:
+        tg_send(f"⚠️ Не смог загрузить модуль анализа: {esc(str(e))}")
+        return
+    deep = dg.deepseek_deep_analysis(
+        it.get("title", ""), it.get("desc", ""), "",
+        it.get("why", ""), it.get("company", ""),
+    )
+    if not deep:
+        tg_send("⚠️ DeepSeek не ответил — попробуй позже.")
+        return
+    title = esc(it.get("title", ""))
+    link = esc(it.get("link", ""))
+    lines = [f'<b>{idx}.</b> <a href="{link}">{title}</a>\n']
+    what = esc((deep.get("what") or "").strip())
+    who = esc((deep.get("who") or "").strip())
+    action = esc((deep.get("action") or "").strip())
+    if what:
+        lines.append(f"• <b>что:</b> {what}")
+    if who:
+        lines.append(f"• <b>кого:</b> {who}")
+    if action:
+        lines.append(f"• <b>делать:</b> {action}")
+    tg_send("\n".join(lines))
+
+
 # --- Dispatch ------------------------------------------------------------
 
 COMMANDS = {
@@ -222,6 +383,10 @@ COMMANDS = {
     "/company": cmd_company,
     "/why": cmd_why,
     "/status": lambda arg: cmd_status(),
+    "/orbit": cmd_orbit,
+    "/search": cmd_search,
+    "/feeds": lambda arg: cmd_feeds(),
+    "/deep": cmd_deep,
     "/help": lambda arg: cmd_help(),
     "/start": lambda arg: cmd_help(),
 }
