@@ -345,8 +345,10 @@ def test_cmd_deep_calls_deepseek_and_sends_result():
     import types
     data = {"items": [{"title": "New smelter news", "link": "http://x", "desc": "d", "why": "w", "company": "c"}]}
     fake_digest = types.ModuleType("digest")
+    fake_digest.find_similar_history = lambda *a, **k: []
     fake_digest.deepseek_deep_analysis = lambda *a, **k: {
         "what": "smelter opened", "who": "local producers", "action": "verify capacity",
+        "trend": "escalates prior capacity concerns",
     }
     with patch.object(bc, "load_json", return_value=data):
         with patch.dict("sys.modules", {"digest": fake_digest}):
@@ -356,12 +358,14 @@ def test_cmd_deep_calls_deepseek_and_sends_result():
                 combined = "\n".join(calls)
                 assert "smelter opened" in combined
                 assert "verify capacity" in combined
+                assert "escalates prior capacity concerns" in combined
 
 
 def test_cmd_deep_deepseek_returns_none():
     import types
     data = {"items": [{"title": "x", "link": "http://x", "desc": "", "why": "", "company": ""}]}
     fake_digest = types.ModuleType("digest")
+    fake_digest.find_similar_history = lambda *a, **k: []
     fake_digest.deepseek_deep_analysis = lambda *a, **k: None
     with patch.object(bc, "load_json", return_value=data):
         with patch.dict("sys.modules", {"digest": fake_digest}):
