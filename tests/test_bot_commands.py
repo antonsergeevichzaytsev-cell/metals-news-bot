@@ -441,3 +441,214 @@ def test_cmd_weekly_smtp_failure_reports_error():
                     bc.cmd_weekly("")
                     final_text = mock_send.call_args_list[-1][0][0]
                     assert "Не удалось отправить" in final_text
+
+
+# --- cmd_prices ----------------------------------------------------------
+
+def test_cmd_prices_success():
+    fake_response = json.dumps({
+        "chart": {"result": [{"meta": {
+            "regularMarketPrice": 4.5123,
+            "chartPreviousClose": 4.5000,
+        }}]}
+    }).encode("utf-8")
+
+    class FakeResp:
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+        def read(self): return fake_response
+
+    with patch.object(bc.net, "urlopen_retry", return_value=FakeResp()):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_prices()
+            text = mock_send.call_args[0][0]
+            assert "4.5123" in text
+            assert "Медь" in text
+            assert "Алюминий" in text
+
+
+def test_cmd_prices_all_fail_shows_warning():
+    with patch.object(bc.net, "urlopen_retry", side_effect=Exception("timeout")):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_prices()
+            text = mock_send.call_args[0][0]
+            assert "Ни один тикер не ответил" in text
+
+
+def test_cmd_prices_partial_failure_still_shows_working_ticker():
+    fake_response = json.dumps({
+        "chart": {"result": [{"meta": {"regularMarketPrice": 2.5, "chartPreviousClose": 2.5}}]}
+    }).encode("utf-8")
+
+    class FakeResp:
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+        def read(self): return fake_response
+
+    calls = {"n": 0}
+
+    def fake_urlopen(req, timeout=15, max_attempts=2):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            raise Exception("boom")
+        return FakeResp()
+
+    with patch.object(bc.net, "urlopen_retry", side_effect=fake_urlopen):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_prices()
+            text = mock_send.call_args[0][0]
+            assert "недоступно" in text
+            assert "2.5000" in text
+
+
+# --- cmd_synthesis ---------------------------------------------------------
+
+def test_cmd_synthesis_no_clusters():
+    with patch.object(bc, "load_json", return_value={"items": []}):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_synthesis("")
+            assert "нечего связывать" in mock_send.call_args[0][0]
+
+
+def test_cmd_synthesis_requires_two_plus_high_priority_same_company():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    recent = (now - timedelta(days=1)).isoformat()
+    items = {
+        "items": [
+            {"ts": recent, "priority": "high", "company": "RUSAL", "title": "A", "why": "w1"},
+            {"ts": recent, "priority": "low", "company": "RUSAL", "title": "B", "why": "w2"},
+            {"ts": recent, "priority": "high", "company": "Glencore", "title": "C", "why": "w3"},
+        ]
+    }
+    with patch.object(bc, "load_json", return_value=items):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_synthesis("")
+            # Only one high-priority item each for RUSAL(1 high) and Glencore(1 high) -> no cluster
+            assert "нечего связывать" in mock_send.call_args[0][0]
+
+
+def test_cmd_synthesis_finds_and_synthesizes_cluster():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    recent = (now - timedelta(days=1)).isoformat()
+    items = {
+        "items": [
+            {"ts": recent, "priority": "high", "company": "RUSAL", "title": "First", "why": "w1", "link": "http://a"},
+            {"ts": recent, "priority": "high", "company": "RUSAL", "title": "Second", "why": "w2", "link": "http://b"},
+        ]
+    }
+    fake_result = {"picture": "escalating supply issue", "conflicts": "", "question": "check capacity"}
+    with patch.object(bc, "load_json", return_value=items):
+        with patch.object(bc, "synthesize_cluster", return_value=fake_result):
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_synthesis("")
+                calls = [c[0][0] for c in mock_send.call_args_list]
+                combined = "\n".join(calls)
+                assert "RUSAL" in combined
+                assert "escalating supply issue" in combined
+                assert "check capacity" in combined
+
+
+def test_cmd_synthesis_handles_synthesis_failure_gracefully():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    recent = (now - timedelta(days=1)).isoformat()
+    items = {
+        "items": [
+            {"ts": recent, "priority": "high", "company": "RUSAL", "title": "First", "why": "w1"},
+            {"ts": recent, "priority": "high", "company": "RUSAL", "title": "Second", "why": "w2"},
+        ]
+    }
+    with patch.object(bc, "load_json", return_value=items):
+        with patch.object(bc, "synthesize_cluster", side_effect=Exception("api down")):
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_synthesis("")
+                calls = [c[0][0] for c in mock_send.call_args_list]
+                assert any("синтез не удался" in c for c in calls)
+
+
+def test_cmd_synthesis_custom_days_clamped():
+    calls = []
+    with patch.object(bc, "load_json", side_effect=lambda *a, **k: calls.append(1) or {"items": []}):
+        with patch.object(bc, "tg_send"):
+            bc.cmd_synthesis("1")  # below min of 3, should not crash
+    assert len(calls) == 1
+
+
+# --- watchlist commands ----------------------------------------------------
+
+def test_cmd_watch_empty_arg():
+    with patch.object(bc, "tg_send") as mock_send:
+        bc.cmd_watch("")
+        assert "Формат" in mock_send.call_args[0][0]
+
+
+def test_cmd_watch_adds_new_term():
+    with patch.object(bc, "load_json", return_value={"terms": []}):
+        with patch.object(bc, "save_json") as mock_save:
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_watch("smelter restart")
+                saved_obj = mock_save.call_args[0][1]
+                assert "smelter restart" in saved_obj["terms"]
+                assert "Добавлено" in mock_send.call_args[0][0]
+
+
+def test_cmd_watch_normalizes_case():
+    with patch.object(bc, "load_json", return_value={"terms": []}):
+        with patch.object(bc, "save_json") as mock_save:
+            with patch.object(bc, "tg_send"):
+                bc.cmd_watch("CBAM")
+                saved_obj = mock_save.call_args[0][1]
+                assert "cbam" in saved_obj["terms"]
+
+
+def test_cmd_watch_duplicate_not_added_twice():
+    with patch.object(bc, "load_json", return_value={"terms": ["cbam"]}):
+        with patch.object(bc, "save_json") as mock_save:
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_watch("cbam")
+                mock_save.assert_not_called()
+                assert "уже в списке" in mock_send.call_args[0][0]
+
+
+def test_cmd_unwatch_empty_arg():
+    with patch.object(bc, "tg_send") as mock_send:
+        bc.cmd_unwatch("")
+        assert "Формат" in mock_send.call_args[0][0]
+
+
+def test_cmd_unwatch_removes_existing_term():
+    with patch.object(bc, "load_json", return_value={"terms": ["cbam", "smelter"]}):
+        with patch.object(bc, "save_json") as mock_save:
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_unwatch("cbam")
+                saved_obj = mock_save.call_args[0][1]
+                assert "cbam" not in saved_obj["terms"]
+                assert "smelter" in saved_obj["terms"]
+                assert "Убрано" in mock_send.call_args[0][0]
+
+
+def test_cmd_unwatch_term_not_present():
+    with patch.object(bc, "load_json", return_value={"terms": ["cbam"]}):
+        with patch.object(bc, "save_json") as mock_save:
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_unwatch("nonexistent")
+                mock_save.assert_not_called()
+                assert "не было в списке" in mock_send.call_args[0][0]
+
+
+def test_cmd_watchlist_empty():
+    with patch.object(bc, "load_json", return_value={"terms": []}):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_watchlist()
+            assert "пуст" in mock_send.call_args[0][0]
+
+
+def test_cmd_watchlist_shows_all_terms():
+    with patch.object(bc, "load_json", return_value={"terms": ["cbam", "smelter restart"]}):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_watchlist()
+            text = mock_send.call_args[0][0]
+            assert "cbam" in text
+            assert "smelter restart" in text
