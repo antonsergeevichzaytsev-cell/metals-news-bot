@@ -17,6 +17,11 @@ v11 (16.08.2026): deep-analysis получил 4-е поле "тренд" — fi
     отличить разовое событие от продолжения/эскалации паттерна. Пусто, если
     похожих заметок нет или связь была бы натянутой — промпт явно запрещает
     придумывать тренд. bot_commands.cmd_deep тоже подключает эту логику.
+v12 (16.08.2026): watchlist — /watch в bot_commands.py пишет термины в
+    state_watchlist.json, здесь при обработке каждой заметки (после
+    UZCOPPER-тега) проверяем title+desc на подстрочное совпадение и, если
+    есть, шлём отдельное немедленное сообщение — не ждём основного блока
+    дайджеста, watchlist-алерт про "сейчас", а не "в сводке позже".
 """
 from __future__ import annotations
 
@@ -40,6 +45,7 @@ KEYWORDS_FILE = os.path.join(ROOT, "keywords.txt")
 STATE_FILE = os.path.join(ROOT, "state.json")
 HISTORY_FILE = os.path.join(ROOT, "history.json")
 LAST_DIGEST_FILE = os.path.join(ROOT, "state_last_digest_sent.json")
+WATCHLIST_FILE = os.path.join(ROOT, "state_watchlist.json")
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
@@ -335,6 +341,31 @@ def is_uzcopper_relevant(text):
     return any(p.search(text or "") for p in UZCOPPER_RE)
 
 
+def load_watchlist():
+    """Список подписок из /watch — просто {'terms': [str, ...]}, все
+    lowercase. Управляется командами в bot_commands.py, здесь только
+    читаем, никогда не пишем — digest.py не владелец этого файла.
+    """
+    if not os.path.exists(WATCHLIST_FILE):
+        return []
+    try:
+        with open(WATCHLIST_FILE, encoding="utf-8") as f:
+            return json.load(f).get("terms", [])
+    except Exception:
+        return []
+
+
+def watchlist_matches(text, terms):
+    """Простое подстрочное совпадение, не regex — /watch принимает
+    произвольный текст от пользователя, компилировать его как regex
+    было бы и хрупко (спецсимволы ломают паттерн) и небезопасно
+    (ReDoS от специально составленной подписки). Достаточно substring
+    для того, чтобы ловить термины вроде 'smelter restart' или 'CBAM'.
+    """
+    low = (text or "").lower()
+    return [t for t in terms if t in low]
+
+
 TITLE_STOPWORDS = {
     "the", "and", "for", "with", "after", "says", "amid", "from", "over",
     "into", "its", "new", "will", "set", "market", "chatter", "faces",
@@ -571,11 +602,12 @@ def main():
     keywords = load_keywords()
     state = load_state()
     history = load_history()
+    watchlist_terms = load_watchlist()
     # dict, а не set: нужен порядок добавления, иначе обрезка в save_state
     # режет произвольные хэши. Мембершип-тест "h in seen" работает так же.
     seen = dict.fromkeys(state.get("seen", []))
 
-    print(f"Feeds: {len(feeds)}, keywords: {len(keywords)}, seen: {len(seen)}, history: {len(history.get('items', []))}")
+    print(f"Feeds: {len(feeds)}, keywords: {len(keywords)}, seen: {len(seen)}, history: {len(history.get('items', []))}, watchlist: {len(watchlist_terms)}")
 
     candidates = []
     health = {}
@@ -664,6 +696,16 @@ def main():
         c["priority"] = (verdict.get("priority") or "low").lower()
         c["company"] = (verdict.get("company") or "").strip()
         c["uzcopper"] = is_uzcopper_relevant(f"{c['title']} {c['desc']}")
+        if watchlist_terms:
+            hits = watchlist_matches(f"{c['title']} {c['desc']}", watchlist_terms)
+            if hits:
+                terms_str = ", ".join(esc(h) for h in hits)
+                tg_send(
+                    f"\U0001f440 <b>Совпадение подписки:</b> {terms_str}\n"
+                    f'<a href="{esc(c["link"])}">{esc(c["title"])}</a>\n'
+                    f"<i>{esc(c['domain'])}</i>"
+                )
+                time.sleep(0.5)
         # Deep-analysis: только high, второй проход. На low/medium не тратим —
         # это был бы кап MAX_ITEMS_PER_RUN x2 вызовов на каждый прогон,
         # тогда как high обычно 1-3 заметки из 12.
