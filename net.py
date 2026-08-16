@@ -1,4 +1,4 @@
-"""Общий модуль retry/backoff для HTTP и IMAP — используется всеми ботами.
+"""Общий модуль retry/backoff для HTTP, IMAP и SMTP — используется всеми ботами.
 
 Принцип: drop-in замена голых вызовов, поведение при исчерпании попыток
 не меняется (то же исключение улетает наверх, как и раньше). Ретраятся
@@ -11,6 +11,10 @@ Gmail/Telegram/DeepSeek — любой transient error валил весь пр�
 следующая попытка только по расписанию (до 24ч простоя на некоторых
 ботах). Retry здесь не чинит логические баги (для этого — static_check.yml
 и разметка), только сетевую хрупкость.
+
+smtp_send_retry (16.08.2026) добавлен для bot_commands.cmd_weekly — до
+этого GMAIL_USER/GMAIL_APP_PASSWORD использовались только для чтения
+(imap_connect_retry в inbox.py/mission_control.py), не для отправки.
 """
 import imaplib
 import random
@@ -84,6 +88,36 @@ def imap_connect_retry(host, port, user, password, max_attempts=3, base_delay=3)
                 raise
         delay = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 1)
         print(f"  ! IMAP retry {attempt}/{max_attempts} after {type(last_exc).__name__}: "
+              f"{last_exc} — waiting {delay:.1f}s")
+        time.sleep(delay)
+    raise last_exc
+
+
+def smtp_send_retry(host, port, user, password, msg, max_attempts=3, base_delay=3):
+    """Симметрично imap_connect_retry, но для отправки: коннект+login+send
+    в одном вызове, не выдаёт хендл наружу (SMTP-сессия короткоживущая,
+    в отличие от IMAP, который держат открытым для нескольких операций).
+
+    msg — готовый email.message.EmailMessage или MIMEMultipart с уже
+    выставленными From/To/Subject; эта функция только доставляет.
+    """
+    import smtplib
+
+    last_exc = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            with smtplib.SMTP_SSL(host, port, timeout=30) as s:
+                s.login(user, password)
+                s.send_message(msg)
+            return
+        except smtplib.SMTPAuthenticationError:
+            raise  # не транзиент — повтор не поможет
+        except (smtplib.SMTPException, OSError) as e:
+            last_exc = e
+            if attempt == max_attempts:
+                raise
+        delay = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 1)
+        print(f"  ! SMTP retry {attempt}/{max_attempts} after {type(last_exc).__name__}: "
               f"{last_exc} — waiting {delay:.1f}s")
         time.sleep(delay)
     raise last_exc
