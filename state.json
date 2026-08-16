@@ -5985,6 +5985,5 @@
     "https://www.mining.com/feed/": "ok",
     "https://www.miningweekly.com/page/home/feed": "ok",
     "https://im-mining.com/feed/": "ok"
-  },
-  "_test_marker": "diagnostic-check"
+  }
 }
