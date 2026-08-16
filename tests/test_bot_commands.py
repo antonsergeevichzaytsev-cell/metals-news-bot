@@ -373,3 +373,71 @@ def test_cmd_deep_deepseek_returns_none():
                 bc.cmd_deep("1")
                 calls = [c[0][0] for c in mock_send.call_args_list]
                 assert any("не ответил" in c for c in calls)
+
+
+# --- cmd_weekly --------------------------------------------------------
+
+def test_cmd_weekly_no_gmail_creds():
+    import os as os_mod
+    with patch.dict(os_mod.environ, {}, clear=False):
+        old_user = os_mod.environ.pop("GMAIL_USER", None)
+        old_pass = os_mod.environ.pop("GMAIL_APP_PASSWORD", None)
+        try:
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_weekly("")
+                assert "недоступна" in mock_send.call_args[0][0]
+        finally:
+            if old_user is not None:
+                os_mod.environ["GMAIL_USER"] = old_user
+            if old_pass is not None:
+                os_mod.environ["GMAIL_APP_PASSWORD"] = old_pass
+
+
+def test_cmd_weekly_empty_history():
+    with patch.dict(os.environ, {"GMAIL_USER": "u@x.com", "GMAIL_APP_PASSWORD": "p"}):
+        with patch.object(bc, "load_json", return_value={"items": []}):
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_weekly("")
+                assert "нечего собрать" in mock_send.call_args[0][0]
+
+
+def test_cmd_weekly_sends_email_with_correct_counts():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    recent = (now - timedelta(days=2)).isoformat()
+    old = (now - timedelta(days=10)).isoformat()
+    items = {
+        "items": [
+            {"ts": recent, "priority": "high", "uzcopper": False, "title": "High item", "link": "http://a", "why": "w"},
+            {"ts": recent, "priority": "low", "uzcopper": True, "title": "Orbit item", "link": "http://b", "why": ""},
+            {"ts": old, "priority": "high", "uzcopper": True, "title": "Too old", "link": "http://c", "why": ""},
+        ]
+    }
+    with patch.dict(os.environ, {"GMAIL_USER": "me@x.com", "GMAIL_APP_PASSWORD": "p"}):
+        with patch.object(bc, "load_json", return_value=items):
+            with patch.object(bc, "tg_send") as mock_send:
+                with patch.object(bc.net, "smtp_send_retry") as mock_smtp:
+                    bc.cmd_weekly("")
+                    mock_smtp.assert_called_once()
+                    # verify the email message content
+                    sent_msg = mock_smtp.call_args[0][4]
+                    body = sent_msg.get_content()
+                    assert "High item" in body
+                    assert "Orbit item" in body
+                    assert "Too old" not in body  # outside 7-day window
+                    final_text = mock_send.call_args_list[-1][0][0]
+                    assert "1 high-priority" in final_text
+                    assert "1 в UZCOPPER" in final_text
+
+
+def test_cmd_weekly_smtp_failure_reports_error():
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc).isoformat()
+    items = {"items": [{"ts": now, "priority": "high", "uzcopper": False, "title": "x", "link": "http://a", "why": ""}]}
+    with patch.dict(os.environ, {"GMAIL_USER": "me@x.com", "GMAIL_APP_PASSWORD": "p"}):
+        with patch.object(bc, "load_json", return_value=items):
+            with patch.object(bc, "tg_send") as mock_send:
+                with patch.object(bc.net, "smtp_send_retry", side_effect=OSError("network down")):
+                    bc.cmd_weekly("")
+                    final_text = mock_send.call_args_list[-1][0][0]
+                    assert "Не удалось отправить" in final_text
