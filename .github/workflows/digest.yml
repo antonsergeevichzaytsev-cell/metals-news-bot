@@ -52,3 +52,16 @@ jobs:
             echo "retry $i"; sleep $((RANDOM % 6 + 2))
           done
           echo "push failed after 5 retries"; exit 1
+      - name: Heartbeat ping (Cronitor)
+        if: success()
+        # Внешний dead-man's-switch, независимый от GitHub Actions самого
+        # репозитория — 16.08.2026 обнаружено, что Actions могут быть
+        # выключены на уровне репо (Settings→Actions: enabled=false) без
+        # видимого сигнала: ни один workflow_run не создаётся, значит
+        # alert_on_failure.yml тоже не срабатывает. Cronitor следит за
+        # тем же расписанием (0 3,15 * * 1-5) снаружи GitHub и шлёт алерт
+        # в Telegram сам, если пинг не пришёл вовремя — не зависит от того,
+        # выполняется ли здесь хоть что-то. Пингуем только на success:
+        # если digest.py или git push упали, шаг с if: success() не
+        # выполнится, пинг не уйдёт, и это тоже правильный сигнал тревоги.
+        run: curl -fsS -m 10 --retry 3 "https://cronitor.link/p/2b03b1b6f321411abeba488a443d257d/p34IN8" || true
