@@ -19,6 +19,12 @@ digest.find_similar_history перед вызовом deep-анализа — т
 что digest.py использует в основном прогоне для priority=high (см. v11
 там). Ручной /deep больше не беднее автоматического разбора.
 
+v4, 16.08.2026. /weekly — недельная сводка (high-priority + UZCOPPER-
+орбита) на почту через новый net.smtp_send_retry. GMAIL_USER/
+GMAIL_APP_PASSWORD уже были в секретах (использовались только для
+чтения через imap_connect_retry в inbox.py/mission_control.py) —
+переиспользованы для отправки, не заводили новый секрет.
+
 Команды:
   /digest   — внеплановый прогон digest.py прямо сейчас
   /company  <имя> — история упоминаний компании из history.json, 7 дней
@@ -107,6 +113,7 @@ def cmd_help():
         "/why &lt;номер&gt; — разбор заметки из последнего дайджеста\n"
         "/deep &lt;номер&gt; — запросить разбор для заметки без него\n"
         "/feeds — какие источники сейчас рабочие/битые\n"
+        "/weekly — недельная сводка на почту (high-priority + orbit)\n"
         "/status — health бота: последний прогон, битые ленты\n"
         "/help — это сообщение"
     )
@@ -390,6 +397,73 @@ def cmd_deep(arg):
     tg_send("\n".join(lines))
 
 
+def cmd_weekly(arg):
+    """Недельная сводка на почту: priority=high + весь UZCOPPER-орбита,
+    7 дней. GMAIL_USER/GMAIL_APP_PASSWORD читаются лениво здесь, не на
+    уровне модуля — команды, не касающиеся почты, не должны падать при
+    импорте bot_commands, если эти секреты почему-то не заданы в env.
+
+    Письмо шлётся самому себе (GMAIL_USER -> GMAIL_USER) — это архив/
+    дайджест для перечитывания, не оповещение кого-то ещё.
+    """
+    gmail_user = os.environ.get("GMAIL_USER")
+    gmail_password = os.environ.get("GMAIL_APP_PASSWORD")
+    if not gmail_user or not gmail_password:
+        tg_send("⚠️ GMAIL_USER/GMAIL_APP_PASSWORD не заданы — /weekly недоступна.")
+        return
+
+    history = load_json(HISTORY_FILE, {"items": []})
+    items = history.get("items", [])
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
+    week_items = [it for it in items if it.get("ts", "") >= cutoff]
+    if not week_items:
+        tg_send("📭 За 7 дней нечего собрать — history.json пуст за этот период.")
+        return
+
+    high = [it for it in week_items if it.get("priority") == "high"]
+    orbit = [it for it in week_items if it.get("uzcopper")]
+    high.sort(key=lambda x: x.get("ts", ""), reverse=True)
+    orbit.sort(key=lambda x: x.get("ts", ""), reverse=True)
+
+    def render_section(title, rows):
+        if not rows:
+            return f"{title}\n(пусто)\n"
+        lines = [title]
+        for it in rows:
+            ts = (it.get("ts") or "")[:10]
+            lines.append(f"- [{ts}] {it.get('title', '')}")
+            if it.get("why"):
+                lines.append(f"    {it['why']}")
+            lines.append(f"    {it.get('link', '')}")
+        return "\n".join(lines) + "\n"
+
+    now = datetime.now(timezone.utc)
+    body = (
+        f"Metals & Mining — недельная сводка\n"
+        f"{(now - timedelta(days=7)).strftime('%d.%m')} — {now.strftime('%d.%m.%Y')}\n\n"
+        f"{render_section(f'HIGH PRIORITY ({len(high)}):', high)}\n"
+        f"{render_section(f'UZCOPPER-ОРБИТА ({len(orbit)}):', orbit)}"
+    )
+
+    import email.message
+    msg = email.message.EmailMessage()
+    msg["Subject"] = f"Metals digest — неделя до {now.strftime('%d.%m.%Y')}"
+    msg["From"] = gmail_user
+    msg["To"] = gmail_user
+    msg.set_content(body)
+
+    tg_send("⏳ Собираю и отправляю сводку…")
+    try:
+        net.smtp_send_retry("smtp.gmail.com", 465, gmail_user, gmail_password, msg)
+    except Exception as e:
+        tg_send(f"⚠️ Не удалось отправить письмо: {esc(str(e))}")
+        return
+    tg_send(
+        f"📧 Отправлено на {esc(gmail_user)}: "
+        f"{len(high)} high-priority, {len(orbit)} в UZCOPPER-орбите."
+    )
+
+
 # --- Dispatch ------------------------------------------------------------
 
 COMMANDS = {
@@ -401,6 +475,7 @@ COMMANDS = {
     "/search": cmd_search,
     "/feeds": lambda arg: cmd_feeds(),
     "/deep": cmd_deep,
+    "/weekly": cmd_weekly,
     "/help": lambda arg: cmd_help(),
     "/start": lambda arg: cmd_help(),
 }
