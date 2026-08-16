@@ -229,3 +229,54 @@ def test_find_similar_history_sorted_newest_first_and_limited():
     assert len(result) == 3
     # Newest first: days_ago 1, 5, 10
     assert [it["title"] for it in result] == ["item-1", "item-5", "item-10"]
+
+
+# --- v12: watchlist_matches -------------------------------------------------
+
+def test_watchlist_matches_finds_substring():
+    assert dg.watchlist_matches("Smelter restart announced in Chile", ["smelter restart"]) == ["smelter restart"]
+
+
+def test_watchlist_matches_case_insensitive():
+    assert dg.watchlist_matches("CBAM tariffs increase", ["cbam"]) == ["cbam"]
+
+
+def test_watchlist_matches_multiple_terms_multiple_hits():
+    text = "Copper smelter restart amid CBAM concerns"
+    hits = dg.watchlist_matches(text, ["smelter restart", "cbam", "nickel"])
+    assert set(hits) == {"smelter restart", "cbam"}
+
+
+def test_watchlist_matches_no_hits():
+    assert dg.watchlist_matches("Gold prices steady", ["smelter", "cbam"]) == []
+
+
+def test_watchlist_matches_empty_text():
+    assert dg.watchlist_matches("", ["smelter"]) == []
+
+
+def test_watchlist_matches_empty_terms():
+    assert dg.watchlist_matches("Some smelter news", []) == []
+
+
+# --- v12: load_watchlist -----------------------------------------------
+
+def test_load_watchlist_missing_file_returns_empty(tmp_path, monkeypatch):
+    fake_path = tmp_path / "nonexistent_watchlist.json"
+    monkeypatch.setattr(dg, "WATCHLIST_FILE", str(fake_path))
+    assert dg.load_watchlist() == []
+
+
+def test_load_watchlist_reads_terms(tmp_path, monkeypatch):
+    import json as json_mod
+    fake_path = tmp_path / "watchlist.json"
+    fake_path.write_text(json_mod.dumps({"terms": ["cbam", "smelter"]}), encoding="utf-8")
+    monkeypatch.setattr(dg, "WATCHLIST_FILE", str(fake_path))
+    assert dg.load_watchlist() == ["cbam", "smelter"]
+
+
+def test_load_watchlist_corrupt_file_returns_empty(tmp_path, monkeypatch):
+    fake_path = tmp_path / "watchlist.json"
+    fake_path.write_text("not valid json{{{", encoding="utf-8")
+    monkeypatch.setattr(dg, "WATCHLIST_FILE", str(fake_path))
+    assert dg.load_watchlist() == []
