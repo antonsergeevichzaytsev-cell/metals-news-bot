@@ -11,6 +11,12 @@ v10 (09.08.2026): нумерация targets+rest теперь сквозная 
     с N+1, не начинается заново с 1) и сохраняется в
     state_last_digest_sent.json — нужно для команды /why <номер> в новом
     bot_commands.py (первая интерактивность бота, см. тот файл).
+v11 (16.08.2026): deep-analysis получил 4-е поле "тренд" — find_similar_history
+    подтягивает до 3 прошлых заметок той же компании за 30 дней из
+    history.json и передаёт их DeepSeek как контекст, чтобы модель могла
+    отличить разовое событие от продолжения/эскалации паттерна. Пусто, если
+    похожих заметок нет или связь была бы натянутой — промпт явно запрещает
+    придумывать тренд. bot_commands.cmd_deep тоже подключает эту логику.
 """
 from __future__ import annotations
 
@@ -419,24 +425,66 @@ DEEP_SYS_PROMPT = (
     "mining (16 years across UC RUSAL, Norilsk Nickel, UMMC, ERG; FEL 1-3 CapEx programs; "
     "DD and turnaround experience). This news item was already flagged HIGH priority — his "
     "direct orbit or a strategic threat/opportunity to it. Go one level deeper than a one-line "
-    "summary. In Russian, produce a short structured breakdown, 3 bullets max, each under 18 "
+    "summary. In Russian, produce a short structured breakdown, 4 bullets max, each under 18 "
     "words, no fluff: "
     "(1) что произошло — the concrete fact, numbers if present; "
     "(2) кого касается — which named player(s) or asset(s) are directly affected, and how; "
     "(3) что делать — one concrete next action or question worth raising (e.g. what to verify, "
     "who to ask, what this changes for a live engagement), or an explicit empty string if there "
-    "genuinely is no action beyond awareness — do not invent one. "
-    "Reply ONLY with valid JSON: {\"what\": str, \"who\": str, \"action\": str}."
+    "genuinely is no action beyond awareness — do not invent one; "
+    "(4) тренд — if PRIOR SIMILAR ITEMS are given below, say in one phrase whether this "
+    "continues/escalates/reverses that pattern, or leave empty if no prior items were given "
+    "or the connection is a stretch — do not force a trend narrative onto an unrelated item. "
+    "Reply ONLY with valid JSON: {\"what\": str, \"who\": str, \"action\": str, \"trend\": str}."
 )
 
 
-def deepseek_deep_analysis(title, desc, source, why, company):
+def find_similar_history(history, company, exclude_title, days=30, limit=3):
+    """Похожие прошлые заметки той же компании — контекст для тренда.
+
+    Совпадение строго по company (тому, что уже извлёк первый проход
+    DeepSeek), не по нечёткому текстовому поиску — иначе в контекст
+    деанализа попадёт шум и модель начнёт видеть тренды там, где их нет.
+    Исключает саму заметку (может уже быть в history.json к моменту
+    вызова deep-анализа, если порядок операций в main() это допускает).
+    """
+    if not company:
+        return []
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
+    needle = company.strip().lower()
+    out = []
+    for it in history.get("items", []):
+        if it.get("ts", "") < cutoff:
+            continue
+        if (it.get("company") or "").strip().lower() != needle:
+            continue
+        if it.get("title") == exclude_title:
+            continue
+        out.append(it)
+    out.sort(key=lambda x: x.get("ts", ""), reverse=True)
+    return out[:limit]
+
+
+def deepseek_deep_analysis(title, desc, source, why, company, prior_items=None):
     """Second-pass enrichment for priority=high items only.
 
     Не на весь поток — цена вызова x2 на 12 заметок за прогон незаметна,
     на весь candidates-список (до сотни) была бы ощутима. High уже
     отобран первым проходом, здесь просто разворачиваем его подробнее.
+
+    prior_items (16.08.2026): опционально — список похожих прошлых
+    заметок той же компании (см. find_similar_history), даёт модели
+    контекст для поля "тренд". Пусто по умолчанию — вызовы из
+    bot_commands./deep не обязаны собирать историю, чтобы получить
+    базовый разбор.
     """
+    prior_block = ""
+    if prior_items:
+        lines = []
+        for it in prior_items:
+            ts = (it.get("ts") or "")[:10]
+            lines.append(f"- [{ts}] {it.get('title', '')}: {it.get('why', '')}")
+        prior_block = "\n\nPRIOR SIMILAR ITEMS (same company, last 30 days):\n" + "\n".join(lines)
     payload = {
         "model": "deepseek-chat",
         "messages": [
@@ -444,10 +492,11 @@ def deepseek_deep_analysis(title, desc, source, why, company):
             {"role": "user", "content": (
                 f"SOURCE: {source}\nTITLE: {title}\nDESC: {desc[:800]}\n"
                 f"ALREADY NOTED WHY (first pass): {why}\nCOMPANY: {company}"
+                f"{prior_block}"
             )},
         ],
         "temperature": 0.2,
-        "max_tokens": 220,
+        "max_tokens": 260,
         "response_format": {"type": "json_object"},
     }
     data = json.dumps(payload).encode("utf-8")
@@ -619,7 +668,11 @@ def main():
         # это был бы кап MAX_ITEMS_PER_RUN x2 вызовов на каждый прогон,
         # тогда как high обычно 1-3 заметки из 12.
         if c["priority"] == "high":
-            deep = deepseek_deep_analysis(c["title"], c["desc"], c["domain"], c["why"], c["company"])
+            prior = find_similar_history(history, c["company"], c["title"])
+            deep = deepseek_deep_analysis(
+                c["title"], c["desc"], c["domain"], c["why"], c["company"],
+                prior_items=prior,
+            )
             c["deep"] = deep  # None если сбой — рендер ниже это обрабатывает
         else:
             c["deep"] = None
@@ -714,12 +767,15 @@ def main():
                 what = esc((deep.get("what") or "").strip())
                 who = esc((deep.get("who") or "").strip())
                 action = esc((deep.get("action") or "").strip())
+                trend = esc((deep.get("trend") or "").strip())
                 if what:
                     block += f"   \u2022 <b>что:</b> {what}\n"
                 if who:
                     block += f"   \u2022 <b>кого:</b> {who}\n"
                 if action:
                     block += f"   \u2022 <b>делать:</b> {action}\n"
+                if trend:
+                    block += f"   \u2022 <b>тренд:</b> {trend}\n"
             if company:
                 block += f"\u2192 <code>asset-to-hook: {company}</code>\n\n"
             else:
