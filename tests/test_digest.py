@@ -163,3 +163,69 @@ def test_uzcopper_not_relevant_empty_text():
 
 def test_uzcopper_not_relevant_other_metal():
     assert dg.is_uzcopper_relevant("Nickel prices fall amid oversupply") is False
+
+
+# --- v11: find_similar_history for deep-analysis trend context -------------
+
+def test_find_similar_history_no_company_returns_empty():
+    history = {"items": [{"ts": "2026-08-01T00:00:00Z", "company": "RUSAL", "title": "x"}]}
+    assert dg.find_similar_history(history, "", "current title") == []
+
+
+def test_find_similar_history_matches_same_company_case_insensitive():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    recent = (now - timedelta(days=5)).isoformat()
+    history = {"items": [
+        {"ts": recent, "company": "rusal", "title": "Old RUSAL news", "why": "context"},
+    ]}
+    result = dg.find_similar_history(history, "RUSAL", "current title")
+    assert len(result) == 1
+    assert result[0]["title"] == "Old RUSAL news"
+
+
+def test_find_similar_history_excludes_current_title():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    recent = (now - timedelta(days=5)).isoformat()
+    history = {"items": [
+        {"ts": recent, "company": "RUSAL", "title": "Same as current"},
+    ]}
+    result = dg.find_similar_history(history, "RUSAL", "Same as current")
+    assert result == []
+
+
+def test_find_similar_history_respects_days_window():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    old = (now - timedelta(days=40)).isoformat()
+    history = {"items": [
+        {"ts": old, "company": "RUSAL", "title": "Too old"},
+    ]}
+    result = dg.find_similar_history(history, "RUSAL", "current", days=30)
+    assert result == []
+
+
+def test_find_similar_history_different_company_excluded():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    recent = (now - timedelta(days=1)).isoformat()
+    history = {"items": [
+        {"ts": recent, "company": "Glencore", "title": "Unrelated"},
+    ]}
+    result = dg.find_similar_history(history, "RUSAL", "current")
+    assert result == []
+
+
+def test_find_similar_history_sorted_newest_first_and_limited():
+    from datetime import datetime, timedelta, timezone
+    now = datetime.now(timezone.utc)
+    items = []
+    for days_ago in [10, 5, 20, 1, 15]:
+        ts = (now - timedelta(days=days_ago)).isoformat()
+        items.append({"ts": ts, "company": "RUSAL", "title": f"item-{days_ago}"})
+    history = {"items": items}
+    result = dg.find_similar_history(history, "RUSAL", "current", limit=3)
+    assert len(result) == 3
+    # Newest first: days_ago 1, 5, 10
+    assert [it["title"] for it in result] == ["item-1", "item-5", "item-10"]
