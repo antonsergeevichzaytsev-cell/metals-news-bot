@@ -25,16 +25,30 @@ GMAIL_APP_PASSWORD уже были в секретах (использовали
 чтения через imap_connect_retry в inbox.py/mission_control.py) —
 переиспользованы для отправки, не заводили новый секрет.
 
+v5, 16.08.2026. Пять новых команд: /prices (COMEX медь/алюминий через
+Yahoo Finance chart API — LME напрямую платный, COMEX коррелирует
+достаточно для контекста), /synthesis (связывает high-priority заметки
+по компаниям, отдельный промпт от /deep — вопрос "что видно вместе",
+не "что в одной заметке"), /watch /unwatch /watchlist (подписки на
+ключевые слова в state_watchlist.json — сама сверка при публикации
+заметки живёт в digest.py, эти три команды только читают/пишут список).
+
 Команды:
-  /digest   — внеплановый прогон digest.py прямо сейчас
-  /company  <имя> — история упоминаний компании из history.json, 7 дней
-  /search   <текст> — свободный поиск по всему тексту заметки, 14 дней
-  /orbit    [дни] — UZCOPPER-орбита за N дней (по умолчанию 7)
-  /why      <номер> — deep-analysis по номеру из последнего дайджеста
-  /deep     <номер> — запросить deep-analysis для заметки без него
-  /feeds    — здоровье источников последнего прогона
-  /status   — health: last_run, broken feeds, uzcopper-хиты за сутки
-  /help     — список команд
+  /digest    — внеплановый прогон digest.py прямо сейчас
+  /company   <имя> — история упоминаний компании из history.json, 7 дней
+  /search    <текст> — свободный поиск по всему тексту заметки, 14 дней
+  /orbit     [дни] — UZCOPPER-орбита за N дней (по умолчанию 7)
+  /why       <номер> — deep-analysis по номеру из последнего дайджеста
+  /deep      <номер> — запросить deep-analysis для заметки без него
+  /synthesis [дни] — связать high-priority заметки по компаниям
+  /prices    — живые цены медь/алюминий (COMEX)
+  /watch     <слово> — подписаться на ключевое слово
+  /unwatch   <слово> — отписаться
+  /watchlist — список текущих подписок
+  /feeds     — здоровье источников последнего прогона
+  /weekly    — недельная сводка на почту
+  /status    — health: last_run, broken feeds, uzcopper-хиты за сутки
+  /help      — список команд
 
 Не сделано намеренно: произвольный чат/вопрос модели. Это бы превратило
 дайджест-бота в chat-интерфейс с открытым концом — другая функция,
@@ -58,6 +72,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 HISTORY_FILE = os.path.join(ROOT, "history.json")
 STATE_FILE = os.path.join(ROOT, "state.json")
 LAST_DIGEST_FILE = os.path.join(ROOT, "state_last_digest_sent.json")
+WATCHLIST_FILE = os.path.join(ROOT, "state_watchlist.json")
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
@@ -76,6 +91,11 @@ def load_json(path, default=None):
             return json.load(f)
     except Exception:
         return default if default is not None else {}
+
+
+def save_json(path, obj):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, ensure_ascii=False, indent=2)
 
 
 def esc(s):
@@ -112,6 +132,11 @@ def cmd_help():
         "/orbit [дни] — UZCOPPER-орбита, по умолчанию 7 дней\n"
         "/why &lt;номер&gt; — разбор заметки из последнего дайджеста\n"
         "/deep &lt;номер&gt; — запросить разбор для заметки без него\n"
+        "/synthesis [дни] — связать high-priority заметки по компаниям\n"
+        "/prices — живые цены медь/алюминий (COMEX)\n"
+        "/watch &lt;слово&gt; — подписаться, отдельный алерт при совпадении\n"
+        "/unwatch &lt;слово&gt; — отписаться\n"
+        "/watchlist — список текущих подписок\n"
         "/feeds — какие источники сейчас рабочие/битые\n"
         "/weekly — недельная сводка на почту (high-priority + orbit)\n"
         "/status — health бота: последний прогон, битые ленты\n"
@@ -241,6 +266,48 @@ def cmd_status():
         lines.append("\n<b>Битые ленты:</b>")
         for name, reason in list(broken.items())[:8]:
             lines.append(f"  • {esc(name)}: {esc(str(reason))}")
+    tg_send("\n".join(lines))
+
+
+def cmd_prices():
+    """Живые цены на медь и алюминий через COMEX-фьючерсы (Yahoo Finance).
+
+    Не LME напрямую — LME не даёт бесплатный JSON без ключа/подписки
+    (проверено 16.08.2026: Metals-API и официальный lme.com оба платные
+    или без API). COMEX HG=F/ALI=F торгуются с LME в жёсткой корреляции,
+    достаточно для оперативного контекста, но это не то же самое число,
+    что увидит трейдер на LME терминале — цена в центах/фунт, не $/тонна.
+    Никель и цинк здесь намеренно НЕ показаны: ликвидного COMEX-эквивалента
+    нет, выдумывать четвёртый источник ради двух метал точное не стоит —
+    честнее показать два числа, чем шесть, из которых половина ненадёжна.
+    """
+    tickers = {"HG=F": "Медь (COMEX)", "ALI=F": "Алюминий (COMEX)"}
+    lines = ["<b>💰 Цены</b> (COMEX, не LME напрямую)\n"]
+    any_ok = False
+    for ticker, label in tickers.items():
+        url = (
+            f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
+            "?interval=1d&range=5d"
+        )
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        try:
+            with net.urlopen_retry(req, timeout=15, max_attempts=2) as r:
+                data = json.loads(r.read().decode("utf-8"))
+            result = data["chart"]["result"][0]
+            meta = result["meta"]
+            price = meta["regularMarketPrice"]
+            prev = meta.get("chartPreviousClose") or meta.get("previousClose")
+            if prev:
+                pct = (price - prev) / prev * 100
+                arrow = "\U0001f53a" if pct > 0 else ("\U0001f53b" if pct < 0 else "\u25aa\ufe0f")
+                lines.append(f"{label}: <b>{price:.4f}</b> {arrow} {pct:+.2f}%")
+            else:
+                lines.append(f"{label}: <b>{price:.4f}</b>")
+            any_ok = True
+        except Exception as e:
+            lines.append(f"{label}: недоступно ({esc(str(e)[:60])})")
+    if not any_ok:
+        lines.append("\n\u26a0\ufe0f Ни один тикер не ответил — источник(и) мог измениться.")
     tg_send("\n".join(lines))
 
 
@@ -397,6 +464,105 @@ def cmd_deep(arg):
     tg_send("\n".join(lines))
 
 
+SYNTHESIS_SYS_PROMPT = (
+    "You are an analyst supporting a senior independent consultant in non-ferrous metals and "
+    "mining. You are given several HIGH-priority news items about the SAME company from the "
+    "past days, each already individually flagged as important. Your job is to see the "
+    "combined picture that no single item shows on its own — do they point the same direction, "
+    "contradict each other, or show an escalating pattern? In Russian, 3 bullets max, each "
+    "under 20 words: "
+    "(1) картина целиком — what the combined items say together that one item alone doesn't; "
+    "(2) противоречия — note any items that conflict or complicate each other, empty string if "
+    "none, don't invent a conflict that isn't there; "
+    "(3) вопрос — one sharp question this combination raises worth investigating, or empty "
+    "string if genuinely nothing beyond the individual items' own actions. "
+    "Reply ONLY with valid JSON: {\"picture\": str, \"conflicts\": str, \"question\": str}."
+)
+
+
+def synthesize_cluster(company, items):
+    payload = {
+        "model": "deepseek-chat",
+        "messages": [
+            {"role": "system", "content": SYNTHESIS_SYS_PROMPT},
+            {"role": "user", "content": (
+                f"COMPANY: {company}\n\nITEMS:\n" + "\n".join(
+                    f"- [{(it.get('ts') or '')[:10]}] {it.get('title', '')}: {it.get('why', '')}"
+                    for it in items
+                )
+            )},
+        ],
+        "temperature": 0.2,
+        "max_tokens": 260,
+        "response_format": {"type": "json_object"},
+    }
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        "https://api.deepseek.com/v1/chat/completions",
+        data=data,
+        headers={
+            "Authorization": f"Bearer {os.environ['DEEPSEEK_API_KEY']}",
+            "Content-Type": "application/json",
+        },
+    )
+    with net.urlopen_retry(req, timeout=30) as r:
+        resp = json.loads(r.read().decode("utf-8"))
+    return json.loads(resp["choices"][0]["message"]["content"])
+
+
+def cmd_synthesis(arg):
+    """Сводная аналитика: high-priority заметки по компаниям, у которых
+    их 2+ за последние N дней (по умолчанию 14). Одна заметка — это уже
+    /why, здесь ценность именно в связке нескольких сразу, чего не видно
+    построчно в дайджесте.
+
+    Не переиспользует deepseek_deep_analysis — тот работает с одной
+    заметкой плюс контекст истории, этот с явным набором заметок и
+    вопросом "что видно вместе, чего не видно поодиночке" — разные
+    промпты для разных задач, смешивать не стоит.
+    """
+    days = 14
+    arg = (arg or "").strip()
+    if arg.isdigit():
+        days = max(3, min(int(arg), 30))
+    history = load_json(HISTORY_FILE, {"items": []})
+    items = history.get("items", [])
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
+    high = [
+        it for it in items
+        if it.get("ts", "") >= cutoff and it.get("priority") == "high" and it.get("company")
+    ]
+    by_company = {}
+    for it in high:
+        by_company.setdefault(it["company"], []).append(it)
+    clusters = {c: rows for c, rows in by_company.items() if len(rows) >= 2}
+    if not clusters:
+        tg_send(f"За {days} дн. нет компаний с 2+ high-priority заметками — нечего связывать.")
+        return
+    tg_send(f"⏳ Нашёл {len(clusters)} связку(и), синтезирую…")
+    for company, rows in sorted(clusters.items(), key=lambda kv: -len(kv[1]))[:3]:
+        rows.sort(key=lambda x: x.get("ts", ""))
+        try:
+            result = synthesize_cluster(company, rows)
+        except Exception as e:
+            tg_send(f"⚠️ {esc(company)}: синтез не удался ({esc(str(e)[:60])})")
+            continue
+        lines = [f"<b>🔗 {esc(company)}</b> — {len(rows)} заметки за {days} дн.\n"]
+        for it in rows:
+            ts = (it.get("ts") or "")[:10]
+            lines.append(f"• [{ts}] {esc(it.get('title', ''))}")
+        picture = esc((result.get("picture") or "").strip())
+        conflicts = esc((result.get("conflicts") or "").strip())
+        question = esc((result.get("question") or "").strip())
+        if picture:
+            lines.append(f"\n<b>картина:</b> {picture}")
+        if conflicts:
+            lines.append(f"<b>противоречия:</b> {conflicts}")
+        if question:
+            lines.append(f"<b>вопрос:</b> {question}")
+        tg_send("\n".join(lines))
+
+
 def cmd_weekly(arg):
     """Недельная сводка на почту: priority=high + весь UZCOPPER-орбита,
     7 дней. GMAIL_USER/GMAIL_APP_PASSWORD читаются лениво здесь, не на
@@ -464,6 +630,56 @@ def cmd_weekly(arg):
     )
 
 
+# --- Watchlist -------------------------------------------------------------
+# Подписки на ключевые слова: state_watchlist.json — просто список строк,
+# сверка происходит в digest.py при публикации новой заметки (см. там
+# check_watchlist), не здесь — bot_commands.py не участвует в основном
+# прогоне. Эти три команды только читают/пишут сам список.
+
+def cmd_watch(arg):
+    term = (arg or "").strip().lower()
+    if not term:
+        tg_send("Формат: <code>/watch smelter restart</code>")
+        return
+    watchlist = load_json(WATCHLIST_FILE, {"terms": []})
+    terms = watchlist.get("terms", [])
+    if term in terms:
+        tg_send(f"«{esc(term)}» уже в списке.")
+        return
+    terms.append(term)
+    watchlist["terms"] = terms
+    save_json(WATCHLIST_FILE, watchlist)
+    tg_send(f"✅ Добавлено: «{esc(term)}». Алерт придёт при совпадении в новой заметке.")
+
+
+def cmd_unwatch(arg):
+    term = (arg or "").strip().lower()
+    if not term:
+        tg_send("Формат: <code>/unwatch smelter restart</code>")
+        return
+    watchlist = load_json(WATCHLIST_FILE, {"terms": []})
+    terms = watchlist.get("terms", [])
+    if term not in terms:
+        tg_send(f"«{esc(term)}» не было в списке.")
+        return
+    terms.remove(term)
+    watchlist["terms"] = terms
+    save_json(WATCHLIST_FILE, watchlist)
+    tg_send(f"❌ Убрано: «{esc(term)}».")
+
+
+def cmd_watchlist():
+    watchlist = load_json(WATCHLIST_FILE, {"terms": []})
+    terms = watchlist.get("terms", [])
+    if not terms:
+        tg_send("Список подписок пуст. Добавь через <code>/watch слово</code>.")
+        return
+    lines = ["<b>👁 Подписки</b>\n"]
+    for t in terms:
+        lines.append(f"• {esc(t)}")
+    tg_send("\n".join(lines))
+
+
 # --- Dispatch ------------------------------------------------------------
 
 COMMANDS = {
@@ -476,6 +692,11 @@ COMMANDS = {
     "/feeds": lambda arg: cmd_feeds(),
     "/deep": cmd_deep,
     "/weekly": cmd_weekly,
+    "/prices": lambda arg: cmd_prices(),
+    "/synthesis": cmd_synthesis,
+    "/watch": cmd_watch,
+    "/unwatch": cmd_unwatch,
+    "/watchlist": lambda arg: cmd_watchlist(),
     "/help": lambda arg: cmd_help(),
     "/start": lambda arg: cmd_help(),
 }
