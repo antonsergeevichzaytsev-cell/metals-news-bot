@@ -134,3 +134,75 @@ def test_imap_connect_retry_raises_after_exhausting_attempts():
          mock.patch("net.time.sleep", return_value=None):
         with pytest.raises(OSError):
             net.imap_connect_retry("imap.gmail.com", 993, "u", "p", max_attempts=3, base_delay=0.01)
+
+
+# --- smtp_send_retry -------------------------------------------------------
+
+def test_smtp_send_retry_fails_fast_on_auth_error():
+    import smtplib
+    calls = {"n": 0}
+
+    class FakeSMTP:
+        def __init__(self, host, port, timeout=30):
+            calls["n"] += 1
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *a):
+            return False
+
+        def login(self, u, p):
+            raise smtplib.SMTPAuthenticationError(535, b"bad creds")
+
+        def send_message(self, msg):
+            pass
+
+    with mock.patch("smtplib.SMTP_SSL", side_effect=FakeSMTP), \
+         mock.patch("net.time.sleep", return_value=None):
+        with pytest.raises(smtplib.SMTPAuthenticationError):
+            net.smtp_send_retry("smtp.gmail.com", 465, "u", "p", object(), max_attempts=3, base_delay=0.01)
+
+    assert calls["n"] == 1  # auth error — не транзиент
+
+
+def test_smtp_send_retry_recovers_after_transient_error():
+    import smtplib
+    calls = {"n": 0}
+
+    class FakeSMTP:
+        def __init__(self, host, port, timeout=30):
+            calls["n"] += 1
+            if calls["n"] < 2:
+                raise smtplib.SMTPServerDisconnected("connection reset")
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *a):
+            return False
+
+        def login(self, u, p):
+            return True
+
+        def send_message(self, msg):
+            pass
+
+    with mock.patch("smtplib.SMTP_SSL", side_effect=FakeSMTP), \
+         mock.patch("net.time.sleep", return_value=None):
+        net.smtp_send_retry("smtp.gmail.com", 465, "u", "p", object(), max_attempts=3, base_delay=0.01)
+
+    assert calls["n"] == 2
+
+
+def test_smtp_send_retry_raises_after_exhausting_attempts():
+    import smtplib
+
+    class FakeSMTP:
+        def __init__(self, host, port, timeout=30):
+            raise OSError("network unreachable")
+
+    with mock.patch("smtplib.SMTP_SSL", side_effect=FakeSMTP), \
+         mock.patch("net.time.sleep", return_value=None):
+        with pytest.raises(OSError):
+            net.smtp_send_retry("smtp.gmail.com", 465, "u", "p", object(), max_attempts=3, base_delay=0.01)
