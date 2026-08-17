@@ -1479,16 +1479,23 @@
         ]
       },
       "ts": "2026-08-17T17:17:25.943081+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310036/Unigold-aktualisiert-die-Mineralressourcenschtzung-fr-das-CandelonesProjekt-2291-Millionen-Unzen-Gold-in-gemessenen-und-angezeigten-Ressourcen",
+      "title": "Unigold aktualisiert die Mineralressourcenschätzung für das Candelones-Projekt: 2,291 Millionen Unzen Gold in gemessenen und angezeigten Ressourcen",
+      "stage": "study",
+      "signal": "ресурсы обновлены",
+      "company": "Unigold",
+      "project": "Candelones",
+      "region": "Dominican Republic",
+      "why": "Обновление ресурсов с 2,291 млн унций золота, но нет инженерного решения или CapEx.",
+      "hook": "Ресурсы есть, но нет экономики: нужен владелец-инженер для оценки затрат на этапе изучения.",
+      "priority": "low",
+      "facts": {},
+      "ts": "2026-08-17T20:15:25.143209+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-10T17:43:03.720997+00:00",
-      "title": "The Arkenstone and Gallery of Natural Art Present Unearthed: Raw Beauty at the Natural History Museum of Los Angeles County",
-      "link": "https://www.newsfilecorp.com/release/307502/The-Arkenstone-and-Gallery-of-Natural-Art-Present-Unearthed-Raw-Beauty-at-the-Natural-History-Museum-of-Los-Angeles-County",
-      "reason": "выставка минералов",
-      "orbit": false
-    },
     {
       "ts": "2026-08-10T20:31:33.248135+00:00",
       "title": "Avanti Gold Announces Adoption of Shareholder Rights Plan",
@@ -2139,16 +2146,24 @@
       "link": "https://www.newsfilecorp.com/release/309923/Primary-Hydrogen-Enters-Nova-Scotias-Cumberland-Basin-Natural-Hydrogen-District-with-Staking-of-the-Northumberland-Project",
       "reason": "staking",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-17T20:15:25.143209+00:00",
+      "title": "Rusoro Updates Gold Reserve Action with 5 of 6 Claims Thrown Out",
+      "link": "https://www.newsfilecorp.com/release/310061/Rusoro-Updates-Gold-Reserve-Action-with-5-of-6-Claims-Thrown-Out",
+      "reason": "судебный процесс",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T20:15:25.143209+00:00",
+      "title": "Twenty Mile Metals Inc. Announces Changes of Officers and Director",
+      "link": "https://www.newsfilecorp.com/release/309972/Twenty-Mile-Metals-Inc.-Announces-Changes-of-Officers-and-Director",
+      "reason": "назначение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-10T17:43:03.720606+00:00",
-      "title": "CORRECTION FROM SOURCE: North Peak Commences 2026 Drilling Campaign at Prospect Mountain, Eureka, Nevada",
-      "matched_noise_word": "\\bdrill\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-10T20:31:33.247438+00:00",
       "title": "CEO.CA's Inside the Boardroom: Independence Gold Hits Three New Gold Discoveries With More Assays Pending",
