@@ -1419,44 +1419,51 @@
         ]
       },
       "ts": "2026-08-17T11:28:29.760810+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/309826/Nicola-Mining-Enters-into-Mining-and-Milling-Profit-Share-Agreement-with-Red-Eye-Resources",
+      "title": "Nicola Mining Enters into Mining and Milling Profit Share Agreement with Red Eye Resources",
+      "stage": "operating",
+      "signal": "новый контракт на переработку",
+      "company": "Nicola Mining Inc.",
+      "project": "Merritt Mill",
+      "region": "Canada",
+      "why": "Мельница Nicola получит стороннее сырьё, загрузка мощностей и доход зависят от эффективности переработки.",
+      "hook": "Контроль производительности и извлечения на мельнице: не допустить потерь на стороннем сырье.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-17T14:29:40.603677+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/309890/PTX-Metals-Demonstrates-97-Copper-Recovery-from-Locked-Cycle-Test-at-W2-CopperNickelPGE-Project",
+      "title": "PTX Metals Demonstrates 97% Copper Recovery from Locked Cycle Test at W2 Copper-Nickel-PGE Project",
+      "stage": "study",
+      "signal": "металлургия не вышла",
+      "company": "PTX Metals Inc.",
+      "project": "W2 Copper-Nickel-PGE Project",
+      "region": "Canada",
+      "why": "Металлургические испытания показали 97% извлечение меди, но проект в Канаде, вне целевого региона.",
+      "hook": "Металлургия подтверждена, но нужна оценка затрат и масштабирование для FS.",
+      "priority": "low",
+      "facts": {
+        "percent": [
+          97.0,
+          28.0
+        ],
+        "percent_is_recovery": true,
+        "test_scale": "НЕ УКАЗАН",
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-17T14:29:40.603677+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-10T11:49:05.991942+00:00",
-      "title": "Valhalla Metals Identifies Multiple Untested VTEM Conductive Targets at the Sun Project",
-      "link": "https://www.newsfilecorp.com/release/308806/Valhalla-Metals-Identifies-Multiple-Untested-VTEM-Conductive-Targets-at-the-Sun-Project",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-10T11:49:05.991942+00:00",
-      "title": "CanCambria Energy Provides Updated Contingent Resource Evaluation for Flagship Deep Gas Project, Attributable to Strong European N",
-      "link": "https://www.newsfilecorp.com/release/308788/CanCambria-Energy-Provides-Updated-Contingent-Resource-Evaluation-for-Flagship-Deep-Gas-Project-Attributable-to-Strong-European-Natural-Gas-Prices-Driving-an-Increased-NPV10-of-US2.04-Billion",
-      "reason": "ресурсная оценка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-10T11:49:05.991942+00:00",
-      "title": "Ophir Metals Signs LOI for the BlackFyre Magmatic Copper Nickel-Cobalt Project in Quebec",
-      "link": "https://www.newsfilecorp.com/release/308832/Ophir-Metals-Signs-LOI-for-the-BlackFyre-Magmatic-Copper-NickelCobalt-Project-in-Quebec",
-      "reason": "опцион на покупку",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-10T11:49:05.991942+00:00",
-      "title": "RETRANSMISSION: First Phosphate annonce l'inscription de ses certificats de dépôt américains (ADR) sur le Nasdaq Global Market sou",
-      "link": "https://www.newsfilecorp.com/release/308803/RETRANSMISSION-First-Phosphate-annonce-linscription-de-ses-certificats-de-dpt-amricains-ADR-sur-le-Nasdaq-Global-Market-sous-le-symbole-boursier-PHOS",
-      "reason": "листинг ADR",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-10T11:49:05.991942+00:00",
-      "title": "SAGA Metals Reports Assays from R-0058 to R-0060 with Intercepts Including 43.86% Fe2O3, 6.10% TiO2, 0.317% V2O5 from 2026 Drillin",
-      "link": "https://www.newsfilecorp.com/release/308799/SAGA-Metals-Reports-Assays-from-R0058-to-R0060-with-Intercepts-Including-43.86-Fe2O3-6.10-TiO2-0.317-V2O5-from-2026-Drilling-at-Radar-Critical-Minerals-Project-in-Labrador-and-Adds-to-Its-Advisory-Board",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
     {
       "ts": "2026-08-10T14:59:37.176189+00:00",
       "title": "Steppe Gold Mourns the Passing of Dr. Zamba Batjargal, Chair of the Audit Committee",
@@ -2170,22 +2177,52 @@
       "link": "https://www.newsfilecorp.com/release/309868/SAGA-Metals-Reports-Assays-from-R0061-to-R0063-with-Intercepts-Including-47.36-Fe2O3-6.73-TiO2-0.353-V2O5-from-2026-Drilling-at-Radar-Critical-Minerals-Project-in-Labrador",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-17T14:29:40.603677+00:00",
+      "title": "Scott Blair Voices Support for PMSF's Withhold Campaign and Calls for Genuine Board Accountability at Emerita Resources",
+      "link": "https://www.newsfilecorp.com/release/309904/Scott-Blair-Voices-Support-for-PMSFs-Withhold-Campaign-and-Calls-for-Genuine-Board-Accountability-at-Emerita-Resources",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T14:29:40.603677+00:00",
+      "title": "Sage Potash Provides Investor Relations and Marketing Update",
+      "link": "https://www.newsfilecorp.com/release/309846/Sage-Potash-Provides-Investor-Relations-and-Marketing-Update",
+      "reason": "инвест-отношения",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T14:29:40.603677+00:00",
+      "title": "Stakeholder Gold Upgrades to OTCQX(R) Best Market",
+      "link": "https://www.newsfilecorp.com/release/309753/Stakeholder-Gold-Upgrades-to-OTCQXR-Best-Market",
+      "reason": "листинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T14:29:40.603677+00:00",
+      "title": "PM Super Fund Asks Emerita Resources to Urgently Protect the Falcon Assets, Including Bandeira, While Emerita's Claim Proceeds",
+      "link": "https://www.newsfilecorp.com/release/309889/PM-Super-Fund-Asks-Emerita-Resources-to-Urgently-Protect-the-Falcon-Assets-Including-Bandeira-While-Emeritas-Claim-Proceeds",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T14:29:40.603677+00:00",
+      "title": "Banyan Gold's Nitra Success Validates Mayo Lake's Exploration Model",
+      "link": "https://www.newsfilecorp.com/release/309866/Banyan-Golds-Nitra-Success-Validates-Mayo-Lakes-Exploration-Model",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T14:29:40.603677+00:00",
+      "title": "Northern Graphite Selected to Represent Canada in Battery Materials Evaluation Program with Japan's LIBTEC",
+      "link": "https://www.newsfilecorp.com/release/309850/Northern-Graphite-Selected-to-Represent-Canada-in-Battery-Materials-Evaluation-Program-with-Japans-LIBTEC",
+      "reason": "программа оценки",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-10T11:49:05.984856+00:00",
-      "title": "Western Copper and Gold Advances Site Program and Appoints Mark E. Smith as Chairman",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-10T11:49:05.988848+00:00",
-      "title": "Gem Oil Inc. Acquires 309 Sq Km Jan Lake Beryllium-Rare Element Pegmatite Project in Saskatchewan",
-      "matched_noise_word": "\\bpegmatite\\b",
-      "orbit": false
-    },
     {
       "ts": "2026-08-10T14:59:37.168708+00:00",
       "title": "Sage Potash Completes Peterson 1 Drilling; Core and Geophysical Logging Validate Continuity of Cycle 18 Potash Members",
@@ -2322,6 +2359,12 @@
       "ts": "2026-08-17T11:28:29.756410+00:00",
       "title": "Drilling Starts at Pacific Ridge's Kliyul Copper-Gold Project; Two Drill Programs Underway",
       "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T14:29:40.600321+00:00",
+      "title": "Big Gold Engages Palliser Exploration to Execute Exploration Program at the Tabor and Martin Kenty Gold Projects",
+      "matched_noise_word": "exploration program",
       "orbit": false
     }
   ]

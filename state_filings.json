@@ -893,7 +893,18 @@
     "33c6249dd2c803d78eb8e3e98c63fa26",
     "f644013b566d757647b5f676145f1cbb",
     "b1c715f57dcc9f1616df832cf8fd7d69",
-    "673dd5dac5726351e4158787c9b6799a"
+    "673dd5dac5726351e4158787c9b6799a",
+    "576a01de12ba4d86d6dcfb7adcf895f7",
+    "7c1917df7ad59a7847ad61da17fd7b3d",
+    "f06e0db7d25960044b9ccfcbb2d0def7",
+    "6d62bde9add54bac3bc93aa455d92c5d",
+    "eadd2176084b0e97b7a1ba8d75be2f51",
+    "2437e3ef7ecb742b61069e9d68e648d4",
+    "82902fdfb2e59aa698b2ccd1d7c00e00",
+    "4cec74d4f86539bca44fd77b8d15a8fc",
+    "2410e9db95136a8a7335e8be41df515f",
+    "9f4017ab9e7cbca9a95635e45b88dcee",
+    "44f2a01edfa0671dca7dc88a0d5c2777"
   ],
   "pending": [],
   "feed_health": {
@@ -910,13 +921,13 @@
     "GNW:Copper": "timeout"
   },
   "last_run": {
-    "ts": "2026-08-17T11:28:29.760810+00:00",
+    "ts": "2026-08-17T14:29:40.603677+00:00",
     "raw": 60,
-    "fresh": 12,
-    "candidates": 9,
+    "fresh": 11,
+    "candidates": 8,
     "prefiltered_out": 3,
-    "screened": 9,
-    "skipped_by_model": 8,
+    "screened": 8,
+    "skipped_by_model": 6,
     "kept": 0,
     "cap": 40,
     "cap_hit": false,
@@ -1019,57 +1030,57 @@
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 90,
+      "streak": 91,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 90,
+      "streak": 91,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 90,
+      "streak": 91,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 90,
+      "streak": 91,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 90,
+      "streak": 91,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 90,
+      "streak": 91,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "timeout",
-      "streak": 20,
+      "streak": 21,
       "reported": "timeout"
     },
     "GNW:Gold Mining": {
       "status": "timeout",
-      "streak": 19,
+      "streak": 20,
       "reported": "timeout"
     },
     "GNW:Nonferrous Metals": {
       "status": "timeout",
-      "streak": 21,
+      "streak": 22,
       "reported": "timeout"
     },
     "GNW:Aluminum": {
       "status": "timeout",
-      "streak": 19,
+      "streak": 20,
       "reported": "timeout"
     },
     "GNW:Copper": {
       "status": "timeout",
-      "streak": 21,
+      "streak": 22,
       "reported": "timeout"
     }
   }
