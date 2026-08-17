@@ -1401,16 +1401,27 @@
         ]
       },
       "ts": "2026-08-17T04:12:47.541092+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/309869/Selkirk-Copper-and-the-Municipality-of-Skagway-Announce-Scoping-Study-with-KPFF-to-Evaluate-Critical-Mineral-Concentrate-Shipping-Options-at-the-Port-of-Skagway",
+      "title": "Selkirk Copper and the Municipality of Skagway Announce Scoping Study with KPFF to Evaluate Critical Mineral Concentrate Shipping Options at the Port of Skagway",
+      "stage": "study",
+      "signal": "scoping study",
+      "company": "Selkirk Copper Mines Inc.",
+      "project": "Port of Skagway",
+      "region": "USA (Alaska)",
+      "why": "Scoping study for concentrate shipping options; no CapEx yet, but logistics critical for project.",
+      "hook": "Логистика концентрата: оценить варианты отгрузки и их влияние на CapEx и график.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-17T11:28:29.760810+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-10T05:05:51.630296+00:00",
-      "title": "IN-VR Partners with Misurata Free Zone to Build the Next Global Energy Services Hub in Libya",
-      "link": "https://www.newsfilecorp.com/release/308794/INVR-Partners-with-Misurata-Free-Zone-to-Build-the-Next-Global-Energy-Services-Hub-in-Libya",
-      "reason": "инфраструктурный проект",
-      "orbit": false
-    },
     {
       "ts": "2026-08-10T11:49:05.991942+00:00",
       "title": "Valhalla Metals Identifies Multiple Untested VTEM Conductive Targets at the Sun Project",
@@ -2103,16 +2114,66 @@
       "link": "https://www.newsfilecorp.com/release/309714/STRACON-Group-Reports-Second-Quarter-2026-Financial-Results",
       "reason": "финрезультаты",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.760810+00:00",
+      "title": "STRACON Group Publishes 2025 Sustainability Report",
+      "link": "https://www.newsfilecorp.com/release/309795/STRACON-Group-Publishes-2025-Sustainability-Report",
+      "reason": "отчет ESG",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.760810+00:00",
+      "title": "Scotia Metals Announces Marketing Services Agreements",
+      "link": "https://www.newsfilecorp.com/release/309871/Scotia-Metals-Announces-Marketing-Services-Agreements",
+      "reason": "маркетинговые услуги",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.760810+00:00",
+      "title": "West Point Gold Buys Back 2% Royalty, Secures 100% Ownership of Black Dyke and Bull 8 Discoveries",
+      "link": "https://www.newsfilecorp.com/release/309845/West-Point-Gold-Buys-Back-2-Royalty-Secures-100-Ownership-of-Black-Dyke-and-Bull-8-Discoveries",
+      "reason": "выкуп роялти",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.760810+00:00",
+      "title": "Santacruz Silver Reports Second Quarter 2026 Financial Results",
+      "link": "https://www.newsfilecorp.com/release/309844/Santacruz-Silver-Reports-Second-Quarter-2026-Financial-Results",
+      "reason": "финансовые результаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.760810+00:00",
+      "title": "Alaska Silver Announces Closing of C$7.6 Million Pipe Financing",
+      "link": "https://www.newsfilecorp.com/release/309831/Alaska-Silver-Announces-Closing-of-C7.6-Million-Pipe-Financing",
+      "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.760810+00:00",
+      "title": "Mining Americas Reports Q2 2026 Financial and Operating Results",
+      "link": "https://www.newsfilecorp.com/release/309835/Mining-Americas-Reports-Q2-2026-Financial-and-Operating-Results",
+      "reason": "финансовые результаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.760810+00:00",
+      "title": "Medaro Enters into Definitive Earn-In Agreement to Acquire up to 100% Interest in the Sala Silver-Zinc Project, Sweden",
+      "link": "https://www.newsfilecorp.com/release/309836/Medaro-Enters-into-Definitive-EarnIn-Agreement-to-Acquire-up-to-100-Interest-in-the-Sala-SilverZinc-Project-Sweden",
+      "reason": "опцион на актив",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.760810+00:00",
+      "title": "SAGA Metals Reports Assays from R-0061 to R-0063 with Intercepts Including 47.36% Fe2O3, 6.73% TiO2, 0.353% V2O5 from 2026 Drillin",
+      "link": "https://www.newsfilecorp.com/release/309868/SAGA-Metals-Reports-Assays-from-R0061-to-R0063-with-Intercepts-Including-47.36-Fe2O3-6.73-TiO2-0.353-V2O5-from-2026-Drilling-at-Radar-Critical-Minerals-Project-in-Labrador",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-10T05:05:51.629674+00:00",
-      "title": "Marquis Holdings Appoints Veteran Canadian Mining Executive John Hick as Senior Adviser",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-10T11:49:05.984856+00:00",
       "title": "Western Copper and Gold Advances Site Program and Appoints Mark E. Smith as Chairman",
@@ -2255,6 +2316,12 @@
       "ts": "2026-08-14T14:53:48.857870+00:00",
       "title": "AE Fuels Appoints Jason Tong as Chief Financial Officer",
       "matched_noise_word": "appoint\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-17T11:28:29.756410+00:00",
+      "title": "Drilling Starts at Pacific Ridge's Kliyul Copper-Gold Project; Two Drill Programs Underway",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
