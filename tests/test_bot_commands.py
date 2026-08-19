@@ -185,6 +185,33 @@ def test_cmd_status_with_last_run():
             assert "feed-a" in text
 
 
+# 19.08.2026: /status теперь также показывает просроченные секреты
+# (та же проверка, что раз в неделю делает weekly_check, но по
+# требованию) — GMAIL_APP_PASSWORD реально протух на 61-й день молча,
+# обнаружили только по failure-статистике Actions, не по еженедельному
+# отчёту. Мокаем wc.secrets_rotation_check напрямую (не load_json —
+# та функция живёт в другом модуле, bc.load_json её не подменяет).
+def test_cmd_status_includes_overdue_secrets():
+    state = {"last_run": {"ts": "x", "raw": 1, "candidates": 1, "enriched": 1, "feeds_broken": 0, "feeds_total": 1, "broken": {}}}
+    with patch.object(bc, "load_json", return_value=state):
+        with patch.object(bc.wc, "secrets_rotation_check", return_value=[("GMAIL_APP_PASSWORD", 61)]):
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_status()
+                text = mock_send.call_args[0][0]
+                assert "GMAIL_APP_PASSWORD" in text
+                assert "61 дн" in text
+
+
+def test_cmd_status_no_overdue_secrets_no_extra_section():
+    state = {"last_run": {"ts": "x", "raw": 1, "candidates": 1, "enriched": 1, "feeds_broken": 0, "feeds_total": 1, "broken": {}}}
+    with patch.object(bc, "load_json", return_value=state):
+        with patch.object(bc.wc, "secrets_rotation_check", return_value=[]):
+            with patch.object(bc, "tg_send") as mock_send:
+                bc.cmd_status()
+                text = mock_send.call_args[0][0]
+                assert "требуют ротации" not in text
+
+
 # --- cmd_orbit -----------------------------------------------------------
 
 def test_cmd_orbit_no_matches():
