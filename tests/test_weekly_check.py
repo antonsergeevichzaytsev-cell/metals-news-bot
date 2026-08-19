@@ -71,11 +71,15 @@ def _mock_load_json(pipeline=None, inbox_state=None, history=None):
     return fake
 
 
-def test_watchdog_alarms_when_pipeline_missing():
+def test_watchdog_no_alarm_when_pipeline_missing():
+    """19.08.2026: pipeline_sync + pipeline.json переехали в отдельный
+    репо metals-outreach-sync — отсутствие файла здесь теперь штатное
+    состояние (не every-run в этом репо), не повод для тревоги."""
     now = datetime.now(TST)
     with mock.patch("weekly_check.load_json", side_effect=_mock_load_json(pipeline=None)):
         alarms, facts = wc.watchdog(now)
-    assert any("pipeline.json не читается" in a for a in alarms)
+    assert alarms == []
+    assert facts == []
 
 
 def test_watchdog_alarms_when_pipeline_stale():
