@@ -1560,58 +1560,41 @@
         ]
       },
       "ts": "2026-08-19T11:27:43.524469+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310352/CopAur-Files-Kinsley-Mountain-Gold-Project-Preliminary-Plan-of-Operations",
+      "title": "CopAur Files Kinsley Mountain Gold Project Preliminary Plan of Operations",
+      "stage": "study",
+      "signal": "план рестарта подан",
+      "company": "CopAur Minerals Inc.",
+      "project": "Kinsley Mountain Gold Project",
+      "region": "USA",
+      "why": "План рестарта подан, но проект вне целевого региона и на ранней стадии.",
+      "hook": "Контроль затрат на этапе FEL: не дать бюджету рестарта вырасти до финального решения.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-19T14:35:22.791766+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310390/Northern-Graphite-Provides-Update-on-Lac-des-Iles-Restart-Plans",
+      "title": "Northern Graphite Provides Update on Lac des Iles Restart Plans",
+      "stage": "care_maintenance",
+      "signal": "рестарт отложен",
+      "company": "Northern Graphite",
+      "project": "Lac des Iles",
+      "region": "Canada",
+      "why": "Рестарт отложен из-за приостановки лицензии и финансовых проблем, суд может затянуть сроки.",
+      "hook": "Судебная тяжба и лицензия: контроль графика рестарта и затрат на восстановление.",
+      "priority": "low",
+      "facts": {},
+      "ts": "2026-08-19T14:35:22.791766+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-12T11:48:09.364506+00:00",
-      "title": "GoGold Announces Q3 Financial Results",
-      "link": "https://www.newsfilecorp.com/release/309242/GoGold-Announces-Q3-Financial-Results",
-      "reason": "финрезультаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T11:48:09.364506+00:00",
-      "title": "RETRANSMISSION: QIMC Reports Record 23.5% Natural Hydrogen Within the First 300 Metres of Ongoing DDH-26-05 and Observations Consi",
-      "link": "https://www.newsfilecorp.com/release/309311/RETRANSMISSION-QIMC-Reports-Record-23.5-Natural-Hydrogen-Within-the-First-300-Metres-of-Ongoing-DDH2605-and-Observations-Consistent-with-Free-Gas-at-Bennett-Hill-at-164-Metres",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T11:48:09.364506+00:00",
-      "title": "Emerita Responds to Withhold Campaign and Urges Shareholders to Vote for All Six Director Nominees",
-      "link": "https://www.newsfilecorp.com/release/309299/Emerita-Responds-to-Withhold-Campaign-and-Urges-Shareholders-to-Vote-for-All-Six-Director-Nominees",
-      "reason": "конференция",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T11:48:09.364506+00:00",
-      "title": "Platauro Metals Corp. Outlines Exploration and Development Strategy",
-      "link": "https://www.newsfilecorp.com/release/309262/Platauro-Metals-Corp.-Outlines-Exploration-and-Development-Strategy",
-      "reason": "стратегия без инженерии",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T11:48:09.364506+00:00",
-      "title": "White Gold Announces Approval of W2 Critical Minerals Corp Spinout",
-      "link": "https://www.newsfilecorp.com/release/309298/White-Gold-Announces-Approval-of-W2-Critical-Minerals-Corp-Spinout",
-      "reason": "корпоративное действие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T11:48:09.364506+00:00",
-      "title": "Athena Provides Drilling Update from Excelsior Springs, Nevada",
-      "link": "https://www.newsfilecorp.com/release/309287/Athena-Provides-Drilling-Update-from-Excelsior-Springs-Nevada",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T11:48:09.364506+00:00",
-      "title": "Carolina Rush Improves Commercial Terms of Brewer Option Agreement with Government",
-      "link": "https://www.newsfilecorp.com/release/309275/Carolina-Rush-Improves-Commercial-Terms-of-Brewer-Option-Agreement-with-Government",
-      "reason": "опционное соглашение",
-      "orbit": false
-    },
     {
       "ts": "2026-08-12T14:58:46.648258+00:00",
       "title": "Mogotes Metals Provides Additional Update on Exercise of Rights",
@@ -2185,16 +2168,52 @@
       "link": "https://www.newsfilecorp.com/release/310350/Surge-Battery-Metals-Announces-2026-Drill-Program-to-Accelerate-Nevada-North-Bankable-Feasibility-Study",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-19T14:35:22.791766+00:00",
+      "title": "Planned Arctic Economic and Security Corridor All-Weather Road Positively Affects Sixty North Gold's Mon Gold Mine, NWT",
+      "link": "https://www.newsfilecorp.com/release/310328/Planned-Arctic-Economic-and-Security-Corridor-AllWeather-Road-Positively-Affects-Sixty-North-Golds-Mon-Gold-Mine-NWT",
+      "reason": "инфраструктурная новость",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T14:35:22.791766+00:00",
+      "title": "Homerun Resources Inc. Announces Strategic MOU with Cebrace Brazil's Largest Float Glass Manufacturer",
+      "link": "https://www.newsfilecorp.com/release/310372/Homerun-Resources-Inc.-Announces-Strategic-MOU-with-Cebrace-Brazils-Largest-Float-Glass-Manufacturer",
+      "reason": "MOU о партнёрстве",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T14:35:22.791766+00:00",
+      "title": "District Copper Presents Integrated Geological Framework for Copper Keg Porphyry Copper Targets Ahead of DCIP Survey",
+      "link": "https://www.newsfilecorp.com/release/310344/District-Copper-Presents-Integrated-Geological-Framework-for-Copper-Keg-Porphyry-Copper-Targets-Ahead-of-DCIP-Survey",
+      "reason": "геофизика до бурения",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T14:35:22.791766+00:00",
+      "title": "SAGA Metals Begins Trading on OTCQX Best Market",
+      "link": "https://www.newsfilecorp.com/release/310394/SAGA-Metals-Begins-Trading-on-OTCQX-Best-Market",
+      "reason": "листинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T14:35:22.791766+00:00",
+      "title": "Exploration Accelerated at BCM's 100% Controlled Thompson Knolls Project, Utah",
+      "link": "https://www.newsfilecorp.com/release/310392/Exploration-Accelerated-at-BCMs-100-Controlled-Thompson-Knolls-Project-Utah",
+      "reason": "геофизические работы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T14:35:22.791766+00:00",
+      "title": "Altamira Gold Secures Land Access to High-Priority Gold Targets, Unlocking a New Phase of Exploration in the West of the Cajueiro ",
+      "link": "https://www.newsfilecorp.com/release/310420/Altamira-Gold-Secures-Land-Access-to-HighPriority-Gold-Targets-Unlocking-a-New-Phase-of-Exploration-in-the-West-of-the-Cajueiro-Gold-District-Brazil",
+      "reason": "доступ к участку",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-12T11:48:09.358193+00:00",
-      "title": "Gold Runner Exploration Appoints Justin Lowe as Senior Geologist and Manager of Exploration",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-12T14:58:46.642537+00:00",
       "title": "NovaRed Mining Inc. Announces Name Change to NRED Intelligent Mining Inc.",
@@ -2283,6 +2302,12 @@
       "ts": "2026-08-19T11:27:43.520851+00:00",
       "title": "Kirkland Lake Discoveries Expands Mirado Gold System with 80 m Step Out Including 4.4 m of 20.29 g/t Au",
       "matched_noise_word": "\\bg/t\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T14:35:22.786366+00:00",
+      "title": "Stakeholder Delivers Standout Assays from Hole BA2601 at the Loki Target: Highly Anomalous Cu-Ni-Co and Separate PGE Mineralizatio",
+      "matched_noise_word": "\\bassay\\w*",
       "orbit": false
     }
   ]
