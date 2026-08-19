@@ -265,20 +265,28 @@ def secrets_rotation_check(now):
     атаки, а не уменьшает). Вместо этого сверяет даты из
     secrets_rotation.json, обновляемого вручную при реальной смене.
 
+    19.08.2026: добавлен per_secret_threshold_days — GMAIL_APP_PASSWORD
+    реально протух на 61-м дне (Google инвалидировал раньше условного
+    срока), общий 90-дневный порог не успел бы предупредить заранее.
+    Секрет без своего порога в per_secret_threshold_days использует
+    общий rotation_threshold_days, как раньше.
+
     Возвращает список overdue (secret_name, days_since_rotation) для
-    секретов старше rotation_threshold_days. Файл отсутствует/битый ->
+    секретов старше применимого порога. Файл отсутствует/битый ->
     пустой список, не падает (это напоминание, не критичная проверка).
     """
     data = load_json(SECRETS_ROTATION_PATH, None)
     if not data:
         return []
-    threshold = data.get("rotation_threshold_days", 90)
+    default_threshold = data.get("rotation_threshold_days", 90)
+    per_secret = data.get("per_secret_threshold_days", {})
     overdue = []
     for name, date_str in data.get("secrets", {}).items():
         d = parse_date(date_str)
         if d is None:
             continue
         age = (now.date() - d).days
+        threshold = per_secret.get(name, default_threshold)
         if age >= threshold:
             overdue.append((name, age))
     return sorted(overdue, key=lambda x: -x[1])
