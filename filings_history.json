@@ -1493,191 +1493,27 @@
       "priority": "low",
       "facts": {},
       "ts": "2026-08-17T20:15:25.143209+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310207/Volt-Carbon-Advances-GraphitetoGraphene-and-Expandable-Graphite-Manufacturing-Platform",
+      "title": "Volt Carbon Advances Graphite-to-Graphene and Expandable Graphite Manufacturing Platform",
+      "stage": "operating",
+      "signal": "металлургия не вышла",
+      "company": "Volt Carbon Technologies Inc.",
+      "project": "Guelph facility",
+      "region": "Canada",
+      "why": "Производство графена и расширяемого графита запущено, но нет данных о выходах и качестве.",
+      "hook": "Контроль выхода и качества на опытной линии: не дать пилоту съесть бюджет.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-19T02:34:10.917627+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-10T20:31:33.248135+00:00",
-      "title": "Avanti Gold Announces Adoption of Shareholder Rights Plan",
-      "link": "https://www.newsfilecorp.com/release/308996/Avanti-Gold-Announces-Adoption-of-Shareholder-Rights-Plan",
-      "reason": "корпоративное событие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-10T20:31:33.248135+00:00",
-      "title": "CBLT Announces Additional Business Venture",
-      "link": "https://www.newsfilecorp.com/release/309056/CBLT-Announces-Additional-Business-Venture",
-      "reason": "диверсификация",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T04:50:16.000322+00:00",
-      "title": "Mont Royal Accepted into US Defense Industrial Base Consortium (DIBC)",
-      "link": "https://www.newsfilecorp.com/release/309139/Mont-Royal-Accepted-into-US-Defense-Industrial-Base-Consortium-DIBC",
-      "reason": "консорциум",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T04:50:16.000322+00:00",
-      "title": "Newfoundland Discovery to Acquire District-Scale Ganda Gold-Rare Earth Project in Angola, Western Africa",
-      "link": "https://www.newsfilecorp.com/release/309129/Newfoundland-Discovery-to-Acquire-DistrictScale-Ganda-GoldRare-Earth-Project-in-Angola-Western-Africa",
-      "reason": "приобретение актива",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T04:50:16.000322+00:00",
-      "title": "Homeland Critical Minerals Provides Corporate Update",
-      "link": "https://www.newsfilecorp.com/release/309116/Homeland-Critical-Minerals-Provides-Corporate-Update",
-      "reason": "корпоративное обновление",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T04:50:16.000322+00:00",
-      "title": "IAMGOLD annonce la clôture de la vente de sa participation dans la coentreprise Bambadji au Sénégal",
-      "link": "https://www.newsfilecorp.com/release/309036/IAMGOLD-annonce-la-clture-de-la-vente-de-sa-participation-dans-la-coentreprise-Bambadji-au-Sngal",
-      "reason": "продажа актива",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T04:50:16.000322+00:00",
-      "title": "IAMGOLD Announces Closing of Sale of Its Interest in the Bambadji Joint Venture in Senegal",
-      "link": "https://www.newsfilecorp.com/release/309034/IAMGOLD-Announces-Closing-of-Sale-of-Its-Interest-in-the-Bambadji-Joint-Venture-in-Senegal",
-      "reason": "продажа актива",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T04:50:16.000322+00:00",
-      "title": "Gladiator Announces Intention to List on NSX in Australia",
-      "link": "https://www.newsfilecorp.com/release/309022/Gladiator-Announces-Intention-to-List-on-NSX-in-Australia",
-      "reason": "листинг",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T04:50:16.000322+00:00",
-      "title": "Apex Resources Receives TSX Venture Exchange Acceptance to Grant of Option to Tungsten Reserve Corp. (formerly, Fortress Strategic",
-      "link": "https://www.newsfilecorp.com/release/309035/Apex-Resources-Receives-TSX-Venture-Exchange-Acceptance-to-Grant-of-Option-to-Tungsten-Reserve-Corp.-formerly-Fortress-Strategic-Metals-to-Explore-and-Mine-Tungsten-Zones-in-the-JerseyEmerald-Project-in-BC",
-      "reason": "опцион на аренду",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "Metal Energy Announces Additional Investment from its Strategic Investors",
-      "link": "https://www.newsfilecorp.com/release/309168/Metal-Energy-Announces-Additional-Investment-from-its-Strategic-Investors",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "Maverick Provides Corporate Update: James Bay & Rainbow Canyon Advance Strategic Holdings in Noram, Kingman & NOA",
-      "link": "https://www.newsfilecorp.com/release/309140/Maverick-Provides-Corporate-Update-James-Bay-Rainbow-Canyon-Advance-Strategic-Holdings-in-Noram-Kingman-NOA",
-      "reason": "корпоративное обновление",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "NovaRed Reports Up to 1.67% Copper at Wilmac; Updated Model Identifies Multiple Porphyry Targets Approximately 10 km from Copper M",
-      "link": "https://www.newsfilecorp.com/release/309136/NovaRed-Reports-Up-to-1.67-Copper-at-Wilmac-Updated-Model-Identifies-Multiple-Porphyry-Targets-Approximately-10-km-from-Copper-Mountain",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "Gelum Completes Further Sampling of Las Tinajas Gold Project, Northern Maricunga Belt, Chile",
-      "link": "https://www.newsfilecorp.com/release/309124/Gelum-Completes-Further-Sampling-of-Las-Tinajas-Gold-Project-Northern-Maricunga-Belt-Chile",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "Arya Resources Completes Early Exercise of Wedge Lake Option and Acquires 100% Interest",
-      "link": "https://www.newsfilecorp.com/release/309154/Arya-Resources-Completes-Early-Exercise-of-Wedge-Lake-Option-and-Acquires-100-Interest",
-      "reason": "опцион исполнен",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "Athena Gold Further Expands Forester Project near Musselwhite, Ontario",
-      "link": "https://www.newsfilecorp.com/release/309138/Athena-Gold-Further-Expands-Forester-Project-near-Musselwhite-Ontario",
-      "reason": "расширение земельного участка",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "Endurance Reports Encouraging Down Dip Extension of the Eagle Zone at Reliance",
-      "link": "https://www.newsfilecorp.com/release/309128/Endurance-Reports-Encouraging-Down-Dip-Extension-of-the-Eagle-Zone-at-Reliance",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "Carolina Rush Expands Jefferson Project Adjacent to Brewer",
-      "link": "https://www.newsfilecorp.com/release/309072/Carolina-Rush-Expands-Jefferson-Project-Adjacent-to-Brewer",
-      "reason": "аренда участков",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.910238+00:00",
-      "title": "Ocean Partners Increases Ownership in Canadian Copper Inc. and Receives Independent Analyst Coverage",
-      "link": "https://www.newsfilecorp.com/release/308866/Ocean-Partners-Increases-Ownership-in-Canadian-Copper-Inc.-and-Receives-Independent-Analyst-Coverage",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T14:59:24.796889+00:00",
-      "title": "PM Super Fund Launches Withhold Campaign Ahead of Emerita Shareholder Meeting",
-      "link": "https://www.newsfilecorp.com/release/309178/PM-Super-Fund-Launches-Withhold-Campaign-Ahead-of-Emerita-Shareholder-Meeting",
-      "reason": "корпоративный конфликт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T14:59:24.796889+00:00",
-      "title": "QIMC Reports Record 23.5% Natural Hydrogen Within the First 300 Metres of Ongoing DDH-26-05 and Observations Consistent with Free ",
-      "link": "https://www.newsfilecorp.com/release/309171/QIMC-Reports-Record-23.5-Natural-Hydrogen-Within-the-First-300-Metres-of-Ongoing-DDH2605-and-Observations-Consistent-with-Free-Gas-at-Bennett-Hill-at-164-Metres",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T14:59:24.796889+00:00",
-      "title": "Element One Enters Accelerated Growth Phase and Outlines Near-Term Development Catalysts",
-      "link": "https://www.newsfilecorp.com/release/309155/Element-One-Enters-Accelerated-Growth-Phase-and-Outlines-NearTerm-Development-Catalysts",
-      "reason": "корпоративное обновление",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T14:59:24.796889+00:00",
-      "title": "Forsys Metals Announces Effective Date to Trade as Asarian Energy Limited",
-      "link": "https://www.newsfilecorp.com/release/309170/Forsys-Metals-Announces-Effective-Date-to-Trade-as-Asarian-Energy-Limited",
-      "reason": "переименование",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T20:34:11.330654+00:00",
-      "title": "Elemental Royalty Delivers Record Quarterly GEOs and Operating Cash Flow",
-      "link": "https://www.newsfilecorp.com/release/309133/Elemental-Royalty-Delivers-Record-Quarterly-GEOs-and-Operating-Cash-Flow",
-      "reason": "финрезультаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T20:34:11.330654+00:00",
-      "title": "Sigma Lithium CEO Keynotes S&P Global Energy Critical Minerals Forum; Joins Sustainable Industry Roundtable at World Climate Summi",
-      "link": "https://www.newsfilecorp.com/release/309239/Sigma-Lithium-CEO-Keynotes-SP-Global-Energy-Critical-Minerals-Forum-Joins-Sustainable-Industry-Roundtable-at-World-Climate-Summit",
-      "reason": "конференция",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T20:34:11.330654+00:00",
-      "title": "TNR Gold Schedules Annual General and Special Meeting",
-      "link": "https://www.newsfilecorp.com/release/309146/TNR-Gold-Schedules-Annual-General-and-Special-Meeting",
-      "reason": "собрание акционеров",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T20:34:11.330654+00:00",
-      "title": "Strathmore Welcomes Richard Newbury to the Board",
-      "link": "https://www.newsfilecorp.com/release/309243/Strathmore-Welcomes-Richard-Newbury-to-the-Board",
-      "reason": "назначение",
-      "orbit": false
-    },
     {
       "ts": "2026-08-12T05:15:59.614233+00:00",
       "title": "Andean Precious Metals Reports Second Quarter 2026 Financial Results",
@@ -2160,46 +1996,136 @@
       "link": "https://www.newsfilecorp.com/release/309972/Twenty-Mile-Metals-Inc.-Announces-Changes-of-Officers-and-Director",
       "reason": "назначение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Mont Royal Receives C$2.22 Million Quebec Tax Credit",
+      "link": "https://www.newsfilecorp.com/release/310389/Mont-Royal-Receives-C2.22-Million-Quebec-Tax-Credit",
+      "reason": "налоговый кредит",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Lion Copper Announces Director Transition and Appointment of Co-Chairman",
+      "link": "https://www.newsfilecorp.com/release/310362/Lion-Copper-Announces-Director-Transition-and-Appointment-of-CoChairman",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Winchester Equity Corporation Announces Repayment of Loan Agreement",
+      "link": "https://www.newsfilecorp.com/release/310351/Winchester-Equity-Corporation-Announces-Repayment-of-Loan-Agreement",
+      "reason": "погашение займа",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Euro Manganese Announces Interim CFO and Corporate Secretary Changes",
+      "link": "https://www.newsfilecorp.com/release/310293/Euro-Manganese-Announces-Interim-CFO-and-Corporate-Secretary-Changes",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "CopAur Minerals to Provide a Kinsley PEA Update on the Emerging Growth Conference on Thursday August 20th, 2:55 - 3:05 pm Eastern ",
+      "link": "https://www.newsfilecorp.com/release/310302/CopAur-Minerals-to-Provide-a-Kinsley-PEA-Update-on-the-Emerging-Growth-Conference-on-Thursday-August-20th-255-305-pm-Eastern-Time",
+      "reason": "конференция",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "CEO.CA's Inside the Boardroom: Silver Hammer: Eric Sprott to Control Over 20% of This International Diversified Pure Silver Play",
+      "link": "https://www.newsfilecorp.com/release/310268/CEO.CAs-Inside-the-Boardroom-Silver-Hammer-Eric-Sprott-to-Control-Over-20-of-This-International-Diversified-Pure-Silver-Play",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "GoldCoast Resource Corp. Provides Corporate Update",
+      "link": "https://www.newsfilecorp.com/release/310265/GoldCoast-Resource-Corp.-Provides-Corporate-Update",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Dryden Gold Closes Option Agreement for Lost Lake Property",
+      "link": "https://www.newsfilecorp.com/release/310267/Dryden-Gold-Closes-Option-Agreement-for-Lost-Lake-Property",
+      "reason": "опцион на актив",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "CEO.CA's Inside the Boardroom: Amex Gold Mining: Bulk Sample Covers \"Heavy Lifting\" of Infrastructure Capital",
+      "link": "https://www.newsfilecorp.com/release/310260/CEO.CAs-Inside-the-Boardroom-Amex-Gold-Mining-Bulk-Sample-Covers-Heavy-Lifting-of-Infrastructure-Capital",
+      "reason": "интервью",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Canuc Launches Major Airborne Gravity Survey, Targeting Deep Discovery Potential at East Sudbury Project",
+      "link": "https://www.newsfilecorp.com/release/309939/Canuc-Launches-Major-Airborne-Gravity-Survey-Targeting-Deep-Discovery-Potential-at-East-Sudbury-Project",
+      "reason": "геофизическая съемка",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Phenom Accelerates Acquisition of 100% Interest in Dobbin Property",
+      "link": "https://www.newsfilecorp.com/release/310202/Phenom-Accelerates-Acquisition-of-100-Interest-in-Dobbin-Property",
+      "reason": "опцион на актив",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Royal Road Minerals Expands Near Surface Zinc-Silver Polymetallic Discovery at Hanash North; Kingdom of Saudi Arabia",
+      "link": "https://www.newsfilecorp.com/release/310215/Royal-Road-Minerals-Expands-Near-Surface-ZincSilver-Polymetallic-Discovery-at-Hanash-North-Kingdom-of-Saudi-Arabia",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "TNR Gold's Management Team Reinforces Commitment Through Increased Ownership; Company Acknowledges Receipt of Director Nominations",
+      "link": "https://www.newsfilecorp.com/release/310073/TNR-Golds-Management-Team-Reinforces-Commitment-Through-Increased-Ownership-Company-Acknowledges-Receipt-of-Director-Nominations",
+      "reason": "назначение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Protium Clean Energy Corp. Closes Agreement to Acquire Emma and Ten O'clock Property and Grants Options and RSUs",
+      "link": "https://www.newsfilecorp.com/release/309970/Protium-Clean-Energy-Corp.-Closes-Agreement-to-Acquire-Emma-and-Ten-Oclock-Property-and-Grants-Options-and-RSUs",
+      "reason": "приобретение актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Benton and Metals Creek Complete Hydrogen-Helium Soil Gas Sampling at Smoking Gun and Parson's Pond in Newfoundland, Acquire Addit",
+      "link": "https://www.newsfilecorp.com/release/310222/Benton-and-Metals-Creek-Complete-HydrogenHelium-Soil-Gas-Sampling-at-Smoking-Gun-and-Parsons-Pond-in-Newfoundland-Acquire-Additional-Claims",
+      "reason": "приобретение лицензий",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Metals Creek and Benton Complete Hydrogen-Helium Soil Gas Sampling at Smoking Gun and Parson's Pond in Newfoundland and Acquires A",
+      "link": "https://www.newsfilecorp.com/release/310162/Metals-Creek-and-Benton-Complete-HydrogenHelium-Soil-Gas-Sampling-at-Smoking-Gun-and-Parsons-Pond-in-Newfoundland-and-Acquires-Addition-Ground",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Nexcel Metals Commences Core Relogging and Resampling Program at the Burnt Hill Tungsten Project, New Brunswick",
+      "link": "https://www.newsfilecorp.com/release/310183/Nexcel-Metals-Commences-Core-Relogging-and-Resampling-Program-at-the-Burnt-Hill-Tungsten-Project-New-Brunswick",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.917627+00:00",
+      "title": "Focus Graphite Chairman Converts Final C$835,000 Loan to Equity at a Premium to Market",
+      "link": "https://www.newsfilecorp.com/release/310208/Focus-Graphite-Chairman-Converts-Final-C835000-Loan-to-Equity-at-a-Premium-to-Market",
+      "reason": "конвертация займа",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-10T20:31:33.247438+00:00",
-      "title": "CEO.CA's Inside the Boardroom: Independence Gold Hits Three New Gold Discoveries With More Assays Pending",
-      "matched_noise_word": "\\bassay\\w*",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T04:50:15.996455+00:00",
-      "title": "Carolina Rush Extends Warrants",
-      "matched_noise_word": "warrant\\w*",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.902744+00:00",
-      "title": "Metals Creek Returns Additional High-Grade Mineralization with 7.25 g/t Gold over 7.45 Meters at Ogden Gold Project in Timmins, On",
-      "matched_noise_word": "\\bg/t\\b",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T11:45:23.907558+00:00",
-      "title": "Laramide Resources Announces $5 Million Private Placement with a Strategic Investor",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T14:59:24.793337+00:00",
-      "title": "Thunder Gold Intersects 661.5 Metres of Continuous Gold Mineralization Averaging 0.554 g/t Au",
-      "matched_noise_word": "intersect\\w*",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-11T17:47:04.440942+00:00",
-      "title": "Geomorphic AI Doubles Pora Gold Project in Finland to 20,601 Hectares with Surface Samples up to 12.8 g/t Au and Boulders up to 28",
-      "matched_noise_word": "\\bg/t\\b",
-      "orbit": false
-    },
     {
       "ts": "2026-08-12T05:15:59.609307+00:00",
       "title": "Golden Pursuit Appoints Charles \"Chuck\" Westgard to Board of Directors",
@@ -2294,6 +2220,12 @@
       "ts": "2026-08-17T14:29:40.600321+00:00",
       "title": "Big Gold Engages Palliser Exploration to Execute Exploration Program at the Tabor and Martin Kenty Gold Projects",
       "matched_noise_word": "exploration program",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T02:34:10.904539+00:00",
+      "title": "Auro Intersects 496.5m Grading 0.76 g/t Gold and 0.12% Copper, Including 212.5m Grading 1.12 g/t Au and 0.14% Copper at the Santa ",
+      "matched_noise_word": "intersect\\w*",
       "orbit": false
     }
   ]
