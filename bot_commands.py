@@ -47,7 +47,7 @@ Yahoo Finance chart API — LME напрямую платный, COMEX корр�
   /watchlist — список текущих подписок
   /feeds     — здоровье источников последнего прогона
   /weekly    — недельная сводка на почту
-  /status    — health: last_run, broken feeds, uzcopper-хиты за сутки
+  /status    — health: last_run, broken feeds, uzcopper-хиты за сутки, секреты
   /help      — список команд
 
 Не сделано намеренно: произвольный чат/вопрос модели. Это бы превратило
@@ -67,6 +67,7 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 import net
+import weekly_check as wc
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 HISTORY_FILE = os.path.join(ROOT, "history.json")
@@ -139,7 +140,7 @@ def cmd_help():
         "/watchlist — список текущих подписок\n"
         "/feeds — какие источники сейчас рабочие/битые\n"
         "/weekly — недельная сводка на почту (high-priority + orbit)\n"
-        "/status — health бота: последний прогон, битые ленты\n"
+        "/status — health бота: последний прогон, битые ленты, секреты\n"
         "/help — это сообщение"
     )
 
@@ -266,6 +267,19 @@ def cmd_status():
         lines.append("\n<b>Битые ленты:</b>")
         for name, reason in list(broken.items())[:8]:
             lines.append(f"  • {esc(name)}: {esc(str(reason))}")
+    # 19.08.2026: та же проверка, что раз в неделю делает weekly_check,
+    # но по требованию, а не только по воскресеньям — секрет может
+    # протухнуть в любой момент между отчётами (см. GMAIL_APP_PASSWORD,
+    # реально протух на 61-й день молча, обнаружили только по failure
+    # статистике Actions, не по еженедельному отчёту).
+    try:
+        overdue = wc.secrets_rotation_check(datetime.now(timezone.utc))
+        if overdue:
+            lines.append("\n<b>⚠️ Секреты требуют ротации:</b>")
+            for name, age in overdue:
+                lines.append(f"  • {esc(name)}: {age} дн. с последней смены")
+    except Exception as e:
+        print(f"secrets_rotation_check error in /status: {e}", file=sys.stderr)
     tg_send("\n".join(lines))
 
 
