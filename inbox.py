@@ -166,7 +166,28 @@ def main():
     # публикаций за неделю (28.07-03.08). Мембершип-тест не меняется.
     seen = dict.fromkeys(state["seen"])
     urgent_seen = dict.fromkeys(state["urgent_seen"])
-    msgs = fetch_emails(WINDOW_HOURS)
+    # 19.08.2026: до этой правки fetch_emails() не была защищена —
+    # любой сбой IMAP (протухший App Password, временная блокировка
+    # Google, лимит сессий) после исчерпания retry в net.py валил
+    # ВЕСЬ прогон необработанным исключением, до save_state дело не
+    # доходило. Итог: state_inbox.json молча замер на last_run
+    # 14.08.2026, пока воркфлоу продолжал запускаться и падать
+    # каждые 2 часа — 13+ failure подряд, sторож (weekly_check) не
+    # видел проблему явно, только по failure-статистике Actions.
+    # Тот же паттерн (try/except вокруг fetch + fallback на []) уже
+    # есть в mission_control.py — переносим сюда.
+    try:
+        msgs = fetch_emails(WINDOW_HOURS)
+    except Exception as e:
+        print(f"IMAP error: {e}", file=sys.stderr)
+        # Не пишем last_run: если IMAP не разово моргнул, а сломан
+        # надолго (протухший App Password, отозванный доступ), пусть
+        # last_run стареет по-настоящему — так weekly_check замечает
+        # проблему через STALE_HOURS, а не видит "всё живо" по свежей
+        # отметке, оставленной прогоном, который ничего не сделал.
+        # Разовый пинг в Telegram — сразу, не ждать воскресного отчёта.
+        tg_send(f"⚠️ Inbox: IMAP error, письма не прочитаны — {esc(str(e)[:200])}")
+        return
     print(f"Fetched {len(msgs)} message headers (window {WINDOW_HOURS}h)")
 
     by_platform = {p["name"]: [] for p in cfg["platforms"]}
