@@ -1511,37 +1511,58 @@
         ]
       },
       "ts": "2026-08-19T02:34:10.917627+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310402/Omai-Gold-Announces-Preliminary-Economic-Assessment-for-Its-Omai-Project-Guyana",
+      "title": "Omai Gold Announces Preliminary Economic Assessment for Its Omai Project, Guyana",
+      "stage": "study",
+      "signal": "PEA опубликован",
+      "company": "Omai Gold Mines",
+      "project": "Omai Project",
+      "region": "Guyana",
+      "why": "PEA показывает $1.427 млрд начальных капзатрат и NPV $4 млрд, но актив вне целевого региона.",
+      "hook": "Оценка капзатрат на этапе PEA: сверка с бенчмарками до финального инвестиционного решения.",
+      "priority": "medium",
+      "facts": {
+        "money_musd": [
+          5500.0,
+          4000.0,
+          1427.0
+        ],
+        "tonnage": [
+          {
+            "value": 6327000.0,
+            "unit": "ounces"
+          }
+        ]
+      },
+      "ts": "2026-08-19T11:27:43.524469+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310418/Abitibi-Metals-Announces-Initial-Recoveries-at-B26-of-98.2-Copper-in-Metallurgical-Testwork",
+      "title": "Abitibi Metals Announces Initial Recoveries at B26 of 98.2% Copper in Metallurgical Testwork",
+      "stage": "study",
+      "signal": "металлургия не вышла",
+      "company": "Abitibi Metals Corp.",
+      "project": "B26 Polymetallic Deposit",
+      "region": "Canada",
+      "why": "Металлургические тесты показывают извлечение меди 98.2%, но проект на ранней стадии изучения.",
+      "hook": "Оценка технологической схемы и извлечения на этапе изучения: подтвердить флотируемость и оптимизировать flowsheet.",
+      "priority": "low",
+      "facts": {
+        "percent": [
+          98.2
+        ],
+        "percent_is_recovery": true,
+        "test_scale": "НЕ УКАЗАН",
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-19T11:27:43.524469+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-12T05:15:59.614233+00:00",
-      "title": "Andean Precious Metals Reports Second Quarter 2026 Financial Results",
-      "link": "https://www.newsfilecorp.com/release/309280/Andean-Precious-Metals-Reports-Second-Quarter-2026-Financial-Results",
-      "reason": "финрезультаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T05:15:59.614233+00:00",
-      "title": "Walhalla Gold Corp Announces Passing of Director Jamie Burns",
-      "link": "https://www.newsfilecorp.com/release/309276/Walhalla-Gold-Corp-Announces-Passing-of-Director-Jamie-Burns",
-      "reason": "кадровое событие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T05:15:59.614233+00:00",
-      "title": "Gold Springs Resource Corp. Files Q2 2026 Financial Statements, MD&A and Provides Operations Update",
-      "link": "https://www.newsfilecorp.com/release/309269/Gold-Springs-Resource-Corp.-Files-Q2-2026-Financial-Statements-MDA-and-Provides-Operations-Update",
-      "reason": "финансовая отчетность",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T05:15:59.614233+00:00",
-      "title": "1844 Resources annonce la clôture de la première tranche de son placement privé sans courtier",
-      "link": "https://www.newsfilecorp.com/release/309266/1844-Resources-annonce-la-clture-de-la-premire-tranche-de-son-placement-priv-sans-courtier",
-      "reason": "placement privé",
-      "orbit": false
-    },
     {
       "ts": "2026-08-12T11:48:09.364506+00:00",
       "title": "GoGold Announces Q3 Financial Results",
@@ -2122,22 +2143,52 @@
       "link": "https://www.newsfilecorp.com/release/310208/Focus-Graphite-Chairman-Converts-Final-C835000-Loan-to-Equity-at-a-Premium-to-Market",
       "reason": "конвертация займа",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-19T11:27:43.524469+00:00",
+      "title": "NeoTerrex Enters into LOI with Fury Gold to Earn up to 100% of the Copper-Gold-Silver-Tungsten Reservoir Project",
+      "link": "https://www.newsfilecorp.com/release/310354/NeoTerrex-Enters-into-LOI-with-Fury-Gold-to-Earn-up-to-100-of-the-CopperGoldSilverTungsten-Reservoir-Project",
+      "reason": "опцион на актив",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T11:27:43.524469+00:00",
+      "title": "37 Capital Announces Option to Purchase Mineral Property in Colombia",
+      "link": "https://www.newsfilecorp.com/release/310385/37-Capital-Announces-Option-to-Purchase-Mineral-Property-in-Colombia",
+      "reason": "опцион на покупку",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T11:27:43.524469+00:00",
+      "title": "Gladiator Intersects 40.0m @ 1.98% Cu, 0.31 g/t Au, 13.29 g/t Ag & 920 ppm Mo Adding Broad High-Grade Copper and Molybdenum at Cow",
+      "link": "https://www.newsfilecorp.com/release/310409/Gladiator-Intersects-40.0m-1.98-Cu-0.31-gt-Au-13.29-gt-Ag-920-ppm-Mo-Adding-Broad-HighGrade-Copper-and-Molybdenum-at-Cowley",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T11:27:43.524469+00:00",
+      "title": "QcX Gold Announces Shareholder Approval for Arrangement",
+      "link": "https://www.newsfilecorp.com/release/310404/QcX-Gold-Announces-Shareholder-Approval-for-Arrangement",
+      "reason": "одобрение сделки",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T11:27:43.524469+00:00",
+      "title": "Quimbaya Gold Grants Option to Sell Non-Core Berrio Project for Up to US$3.75 Million in Cash and Shares",
+      "link": "https://www.newsfilecorp.com/release/310368/Quimbaya-Gold-Grants-Option-to-Sell-NonCore-Berrio-Project-for-Up-to-US3.75-Million-in-Cash-and-Shares",
+      "reason": "продажа актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T11:27:43.524469+00:00",
+      "title": "Surge Battery Metals Announces 2026 Drill Program to Accelerate Nevada North Bankable Feasibility Study",
+      "link": "https://www.newsfilecorp.com/release/310350/Surge-Battery-Metals-Announces-2026-Drill-Program-to-Accelerate-Nevada-North-Bankable-Feasibility-Study",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-12T05:15:59.609307+00:00",
-      "title": "Golden Pursuit Appoints Charles \"Chuck\" Westgard to Board of Directors",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-12T05:15:59.612703+00:00",
-      "title": "1844 Resources Announces First Tranche Closing of Non-Brokered Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
     {
       "ts": "2026-08-12T11:48:09.358193+00:00",
       "title": "Gold Runner Exploration Appoints Justin Lowe as Senior Geologist and Manager of Exploration",
@@ -2226,6 +2277,12 @@
       "ts": "2026-08-19T02:34:10.904539+00:00",
       "title": "Auro Intersects 496.5m Grading 0.76 g/t Gold and 0.12% Copper, Including 212.5m Grading 1.12 g/t Au and 0.14% Copper at the Santa ",
       "matched_noise_word": "intersect\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-19T11:27:43.520851+00:00",
+      "title": "Kirkland Lake Discoveries Expands Mirado Gold System with 80 m Step Out Including 4.4 m of 20.29 g/t Au",
+      "matched_noise_word": "\\bg/t\\b",
       "orbit": false
     }
   ]

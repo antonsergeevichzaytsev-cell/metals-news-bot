@@ -932,7 +932,17 @@
     "89a9cc72386cef0d111705ffaac82bf6",
     "cb2974e90b31dcb8f3622b848238b16a",
     "bdef26a6598f670ce60024ccae568674",
-    "24b1f5f89c6fa4d4db097abd5d1969bd"
+    "24b1f5f89c6fa4d4db097abd5d1969bd",
+    "9897cd52d44b3dd80d47fe0c315e9ae8",
+    "32c789eea1337acb158b3d1b0ebbe126",
+    "e813b89d792930aa50f5167e900ffc70",
+    "285457cabb56519b5721721c3396f9f8",
+    "864a67abca225273b14ef282ebc6213a",
+    "d2f6f2af26c568202b21be4a701feae0",
+    "1a733ef918eb006ef462dd15d8eda654",
+    "52012b99ac1a1c877ff70fc789772574",
+    "d7746f4bf8a76accce26ecd9e616c0a7",
+    "45ca2d3fb7a4139b08cbad34a4880841"
   ],
   "pending": [],
   "feed_health": {
@@ -949,14 +959,14 @@
     "GNW:Copper": "timeout"
   },
   "last_run": {
-    "ts": "2026-08-19T04:08:51.102599+00:00",
+    "ts": "2026-08-19T11:27:43.524469+00:00",
     "raw": 60,
-    "fresh": 0,
-    "candidates": 0,
-    "prefiltered_out": 0,
-    "screened": 0,
-    "skipped_by_model": 0,
-    "kept": 0,
+    "fresh": 10,
+    "candidates": 8,
+    "prefiltered_out": 2,
+    "screened": 8,
+    "skipped_by_model": 6,
+    "kept": 1,
     "cap": 40,
     "cap_hit": false,
     "feeds_broken": 5,
@@ -1052,63 +1062,69 @@
       "company": "White Gold Corp.",
       "priority": "medium",
       "stage": "study"
+    },
+    "1075": {
+      "link": "https://www.newsfilecorp.com/release/310402/Omai-Gold-Announces-Preliminary-Economic-Assessment-for-Its-Omai-Project-Guyana",
+      "company": "Omai Gold Mines",
+      "priority": "medium",
+      "stage": "study"
     }
   },
   "tg_offset": 96015226,
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 93,
+      "streak": 94,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 93,
+      "streak": 94,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 93,
+      "streak": 94,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 93,
+      "streak": 94,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 93,
+      "streak": 94,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 93,
+      "streak": 94,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "timeout",
-      "streak": 23,
+      "streak": 24,
       "reported": "timeout"
     },
     "GNW:Gold Mining": {
       "status": "timeout",
-      "streak": 22,
+      "streak": 23,
       "reported": "timeout"
     },
     "GNW:Nonferrous Metals": {
       "status": "timeout",
-      "streak": 24,
+      "streak": 25,
       "reported": "timeout"
     },
     "GNW:Aluminum": {
       "status": "timeout",
-      "streak": 22,
+      "streak": 23,
       "reported": "timeout"
     },
     "GNW:Copper": {
       "status": "timeout",
-      "streak": 24,
+      "streak": 25,
       "reported": "timeout"
     }
   }
