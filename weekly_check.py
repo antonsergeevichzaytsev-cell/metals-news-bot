@@ -61,9 +61,11 @@ RESET_POINTS = [
 # исчерпывает ретраи. Обнаружено 20.07 на filings (два прогона за 7 сек),
 # найдено вручную по письму GitHub, не автоматически. Список — файлы
 # workflow, не их "имена" (display name), т.к. API работает по filename.
+# 19.08.2026: account_watch.yml и pipeline_sync.yml убраны из списка —
+# оба переехали в metals-outreach-sync вместе с pipeline.json, их
+# гонки push теперь там, не в этом репо.
 WRITE_WORKFLOW_FILES = [
-    "account_watch.yml", "digest.yml", "evening_digest.yml",
-    "filings.yml", "inbox.yml", "pipeline_sync.yml",
+    "digest.yml", "evening_digest.yml", "filings.yml", "inbox.yml",
 ]
 
 
@@ -152,12 +154,17 @@ def watchdog(now):
 
     Всё считается из полей самих файлов — состояния сторож не хранит
     (у воркфлоу права contents: read).
+
+    19.08.2026: pipeline_sync + его данные (pipeline.json) вынесены в
+    отдельный репо metals-outreach-sync — отсутствие pipeline.json ЗДЕСЬ
+    теперь ожидаемое штатное состояние, не сигнал о падении бота. Раньше
+    отсутствие файла было алармом ("pipeline_sync мёртв"); теперь тихо
+    пропускаем весь блок проверок пайплайна вместо ложной тревоги.
     """
     alarms, facts = [], []
 
     pipeline = load_json(PIPELINE_PATH, None)
     if pipeline is None:
-        alarms.append("pipeline.json не читается или отсутствует — pipeline_sync мёртв")
         return alarms, facts
 
     leads = pipeline.get("leads", [])
