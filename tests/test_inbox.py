@@ -83,3 +83,43 @@ def test_is_urgent_substring_match():
 
 def test_is_urgent_empty_keywords_list():
     assert ib.is_urgent("Anything at all", []) is False
+
+
+# --- main(): IMAP-сбой не должен валить весь прогон -----------------------
+# 19.08.2026: до фикса main() не ловила исключение из fetch_emails() —
+# любой сбой IMAP после исчерпания retry в net.py валил process с
+# ненулевым кодом, до save_state дело не доходило. state_inbox.json
+# замер на last_run 14.08.2026, воркфлоу тем временем падал 13+ раз
+# подряд каждые 2 часа. Тест фиксирует: main() не бросает исключение
+# наружу при сбое IMAP, и последующий вызов save_state НЕ происходит
+# (last_run должен стареть по-настоящему, чтобы weekly_check.watchdog
+# видел проблему через STALE_HOURS, а не свежую отметку от прогона,
+# который ничего не сделал).
+def test_main_survives_imap_failure_without_crashing(monkeypatch, tmp_path):
+    import json as _json
+
+    state_file = tmp_path / "state_inbox.json"
+    state_file.write_text(_json.dumps({"seen": ["old1"], "urgent_seen": [], "last_run": "2026-08-01T00:00:00+00:00"}))
+    platforms_file = tmp_path / "platforms.json"
+    platforms_file.write_text(_json.dumps(CFG | {"urgent_keywords": ["urgent"]}))
+
+    monkeypatch.setattr(ib, "STATE_PATH", str(state_file))
+    monkeypatch.setattr(ib, "PLATFORMS_PATH", str(platforms_file))
+
+    def boom(_window_hours):
+        raise OSError("[Errno 110] Connection timed out")
+    monkeypatch.setattr(ib, "fetch_emails", boom)
+
+    sent = []
+    monkeypatch.setattr(ib, "tg_send", lambda text: sent.append(text) or True)
+
+    # Не должно бросить исключение наружу.
+    ib.main()
+
+    assert len(sent) == 1
+    assert "IMAP error" in sent[0] or "imap" in sent[0].lower()
+
+    # state НЕ переписан — last_run остался старым, seen не тронут.
+    saved = _json.loads(state_file.read_text())
+    assert saved["last_run"] == "2026-08-01T00:00:00+00:00"
+    assert saved["seen"] == ["old1"]
