@@ -246,6 +246,37 @@ def test_secrets_rotation_uses_default_threshold_if_missing():
     assert len(overdue) == 1  # дефолт 90 -> 95 дней просрочено
 
 
+# 19.08.2026: per_secret_threshold_days — GMAIL_APP_PASSWORD реально
+# протух на 61-м дне, общий 90-дневный порог не предупредил бы вовремя.
+def test_secrets_rotation_per_secret_threshold_overrides_default():
+    now = datetime.now(TST)
+    age_50 = (now.date() - timedelta(days=50)).strftime("%Y-%m-%d")
+    data = {
+        "secrets": {"GMAIL_APP_PASSWORD": age_50, "OTHER_KEY": age_50},
+        "rotation_threshold_days": 90,
+        "per_secret_threshold_days": {"GMAIL_APP_PASSWORD": 45},
+    }
+    with mock.patch("weekly_check.load_json", return_value=data):
+        overdue = wc.secrets_rotation_check(now)
+    names = [n for n, _ in overdue]
+    # 50 дней >= 45 (свой порог) -> просрочен; 50 дней < 90 (общий) -> не просрочен
+    assert "GMAIL_APP_PASSWORD" in names
+    assert "OTHER_KEY" not in names
+
+
+def test_secrets_rotation_per_secret_threshold_not_yet_overdue():
+    now = datetime.now(TST)
+    age_30 = (now.date() - timedelta(days=30)).strftime("%Y-%m-%d")
+    data = {
+        "secrets": {"GMAIL_APP_PASSWORD": age_30},
+        "rotation_threshold_days": 90,
+        "per_secret_threshold_days": {"GMAIL_APP_PASSWORD": 45},
+    }
+    with mock.patch("weekly_check.load_json", return_value=data):
+        overdue = wc.secrets_rotation_check(now)
+    assert overdue == []
+
+
 # --- filings_labeling_status -------------------------------------------------
 # 28.07: единственная проверка DeepSeek-гейта — разметка Антона. Функция
 # переиспользует eval_filings.summarize_labels, не дублирует логику.
