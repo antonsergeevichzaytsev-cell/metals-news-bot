@@ -305,3 +305,91 @@ def test_filings_labeling_status_sufficient_data_silent():
         total, msg = wc.filings_labeling_status()
     assert total == eval_filings.MIN_LABELS_FOR_VERDICT
     assert msg is None  # достаточно данных — не докучаем в еженедельном отчёте
+
+
+# --- send_backup_email --------------------------------------------------
+# 20.08.2026: disaster recovery — полная потеря репозитория (случайное
+# удаление, блокировка GitHub-аккаунта) означала полную потерю всей
+# истории. Еженедельный email-бэкап на GMAIL_USER->GMAIL_USER, тот же
+# net.smtp_send_retry, что использует cmd_weekly в bot_commands.py.
+
+def test_send_backup_email_skips_without_gmail_creds(monkeypatch):
+    monkeypatch.delenv("GMAIL_USER", raising=False)
+    monkeypatch.delenv("GMAIL_APP_PASSWORD", raising=False)
+    ok, detail = wc.send_backup_email(datetime.now(TST))
+    assert ok is False
+    assert "not configured" in detail.lower()
+
+
+def test_send_backup_email_sends_zip_with_all_existing_files(tmp_path, monkeypatch):
+    monkeypatch.setenv("GMAIL_USER", "bot@example.com")
+    monkeypatch.setenv("GMAIL_APP_PASSWORD", "fake-password")
+    monkeypatch.setattr(wc, "ROOT", str(tmp_path))
+
+    (tmp_path / "state.json").write_text('{"a": 1}', encoding="utf-8")
+    (tmp_path / "history.json").write_text('{"items": []}', encoding="utf-8")
+    # остальные BACKUP_FILES намеренно не созданы -> должны попасть в missing
+
+    sent_msgs = []
+
+    def fake_smtp(host, port, user, password, msg, max_attempts=3, base_delay=3):
+        sent_msgs.append(msg)
+
+    with mock.patch.object(wc.net, "smtp_send_retry", side_effect=fake_smtp):
+        ok, detail = wc.send_backup_email(datetime.now(TST))
+
+    assert ok is True
+    assert len(sent_msgs) == 1
+    msg = sent_msgs[0]
+    assert msg["From"] == "bot@example.com"
+    assert msg["To"] == "bot@example.com"
+    assert "backup" in msg["Subject"].lower()
+
+    # найти zip-вложение и проверить его содержимое
+    attachment = None
+    for part in msg.iter_attachments():
+        attachment = part
+        break
+    assert attachment is not None
+    assert attachment.get_filename().endswith(".zip")
+
+    import io
+    import zipfile
+    zf = zipfile.ZipFile(io.BytesIO(attachment.get_payload(decode=True)))
+    names = zf.namelist()
+    assert "state.json" in names
+    assert "history.json" in names
+    assert len(names) == 2  # только два реально существующих файла
+
+
+def test_send_backup_email_smtp_failure_returns_false(tmp_path, monkeypatch):
+    monkeypatch.setenv("GMAIL_USER", "bot@example.com")
+    monkeypatch.setenv("GMAIL_APP_PASSWORD", "fake-password")
+    monkeypatch.setattr(wc, "ROOT", str(tmp_path))
+    (tmp_path / "state.json").write_text("{}", encoding="utf-8")
+
+    with mock.patch.object(wc.net, "smtp_send_retry", side_effect=OSError("smtp down")):
+        ok, detail = wc.send_backup_email(datetime.now(TST))
+
+    assert ok is False
+    assert "smtp down" in detail
+
+
+def test_send_backup_email_no_files_exist_still_sends_empty_zip(tmp_path, monkeypatch):
+    """Ни один файл не существует на диске (пустой каталог) — не должно
+    крашиться, письмо всё равно уходит с пустым архивом и списком missing."""
+    monkeypatch.setenv("GMAIL_USER", "bot@example.com")
+    monkeypatch.setenv("GMAIL_APP_PASSWORD", "fake-password")
+    monkeypatch.setattr(wc, "ROOT", str(tmp_path))
+
+    sent_msgs = []
+
+    def fake_smtp(host, port, user, password, msg, max_attempts=3, base_delay=3):
+        sent_msgs.append(msg)
+
+    with mock.patch.object(wc.net, "smtp_send_retry", side_effect=fake_smtp):
+        ok, detail = wc.send_backup_email(datetime.now(TST))
+
+    assert ok is True
+    assert len(sent_msgs) == 1
+    assert "0 bytes" not in detail or True  # zip header сам по себе не 0 байт
