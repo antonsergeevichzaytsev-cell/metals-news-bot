@@ -61,7 +61,7 @@ jobs:
           # history.json/state.json, которые реально менялись каждый
           # прогон. Фикс: добавляем только те файлы, что существуют.
           FILES_TO_ADD=""
-          for f in state.json history.json state_last_digest_sent.json state_watchlist.json state_usage.json; do
+          for f in state.json history.json state_last_digest_sent.json state_watchlist.json state_usage.json state_feedback_map.json; do
             [ -f "$f" ] && FILES_TO_ADD="$FILES_TO_ADD $f"
           done
           if [ -z "$FILES_TO_ADD" ]; then
