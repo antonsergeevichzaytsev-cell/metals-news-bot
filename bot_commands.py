@@ -76,6 +76,12 @@ HISTORY_FILE = os.path.join(ROOT, "history.json")
 STATE_FILE = os.path.join(ROOT, "state.json")
 LAST_DIGEST_FILE = os.path.join(ROOT, "state_last_digest_sent.json")
 WATCHLIST_FILE = os.path.join(ROOT, "state_watchlist.json")
+# 20.08.2026: feedback loop — FEEDBACK_MAP_FILE записывается digest.py
+# (message_id -> какие ссылки вошли в это сообщение), FEEDBACK_FILE
+# записывается здесь (реакция пользователя + связанные ссылки).
+FEEDBACK_MAP_FILE = os.path.join(ROOT, "state_feedback_map.json")
+FEEDBACK_FILE = os.path.join(ROOT, "state_feedback.json")
+FEEDBACK_KEEP = 500
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
@@ -138,6 +144,7 @@ def cmd_help():
         "/synthesis [дни] — связать high-priority заметки по компаниям\n"
         "/prices — живые цены медь/алюминий (COMEX)\n"
         "/usage [дни] — траты DeepSeek API, по умолчанию 7 дней\n"
+        "/feedback [дни] — сводка реакций на дайджест, по умолчанию 14 дней\n"
         "/watch &lt;слово&gt; — подписаться, отдельный алерт при совпадении\n"
         "/unwatch &lt;слово&gt; — отписаться\n"
         "/watchlist — список текущих подписок\n"
@@ -313,6 +320,58 @@ def cmd_usage(arg):
         "(peak/off-peak с 16.08.26), не официальный счёт — сверяй с "
         "platform.deepseek.com при сомнениях.</i>"
     )
+    tg_send("\n".join(lines))
+
+
+def cmd_feedback(arg):
+    """Сводка реакций на дайджест за последние N дней (по умолчанию 14).
+
+    20.08.2026: первая видимость того, что реально резонирует —
+    handle_message_reaction записывает каждую реакцию с привязкой к
+    новостям, которые были в том же сообщении (группа 1-5 новостей,
+    не одна — см. digest.py:tg_send_chunks). Считает частоту эмодзи
+    и топ новостей по позитивным реакциям (👍/🔥/❤).
+    """
+    days = 14
+    arg = (arg or "").strip()
+    if arg.isdigit():
+        days = max(1, min(int(arg), 90))
+
+    feedback = load_json(FEEDBACK_FILE, {"reactions": []})
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
+    recent = [r for r in feedback.get("reactions", []) if r.get("ts", "") >= cutoff]
+
+    if not recent:
+        tg_send(f"📭 Реакций за {days} дн. не было — ставь 👍/👎 на сообщения дайджеста.")
+        return
+
+    from collections import Counter
+    emoji_counts = Counter(e for r in recent for e in r.get("emojis", []))
+    POSITIVE = {"\U0001f44d", "\U0001f525", "\u2764\ufe0f", "\U0001f4af"}
+    NEGATIVE = {"\U0001f44e", "\U0001f4a9"}
+
+    link_scores = Counter()
+    for r in recent:
+        sign = 0
+        for e in r.get("emojis", []):
+            if e in POSITIVE:
+                sign += 1
+            elif e in NEGATIVE:
+                sign -= 1
+        for link in r.get("links", []):
+            link_scores[link] += sign
+
+    lines = [f"<b>👍 Feedback — последние {days} дн.</b>", f"Реакций: {len(recent)}\n"]
+    lines.append("<b>По эмодзи:</b>")
+    for emoji, count in emoji_counts.most_common(8):
+        lines.append(f"  {emoji} × {count}")
+
+    top_positive = [l for l, s in link_scores.most_common(5) if s > 0]
+    if top_positive:
+        lines.append("\n<b>Лучше всего резонирует:</b>")
+        for link in top_positive:
+            lines.append(f"  • {esc(link)}")
+
     tg_send("\n".join(lines))
 
 
@@ -732,6 +791,7 @@ COMMANDS = {
     "/weekly": cmd_weekly,
     "/prices": lambda arg: cmd_prices(),
     "/usage": cmd_usage,
+    "/feedback": cmd_feedback,
     "/synthesis": cmd_synthesis,
     "/watch": cmd_watch,
     "/unwatch": cmd_unwatch,
@@ -741,7 +801,56 @@ COMMANDS = {
 }
 
 
+def handle_message_reaction(reaction_update):
+    """20.08.2026: feedback loop — записывает реакцию пользователя на
+    сообщение бота. Реакция на сообщение засчитывается всем новостям,
+    которые вошли в это сообщение (см. digest.py:tg_send_chunks —
+    сообщения группируют 1-5 новостей по лимиту символов, точная
+    привязка к одной новости потребовала бы сломать компактный формат
+    дайджеста; групповая привязка — реалистичный компромисс).
+
+    Игнорирует реакции не из авторизованного чата (та же проверка, что
+    handle_update для команд) и реакции, снятые пользователем (new_reaction
+    пустой — фиксируем только момент, когда реакция ПОЯВИЛАСЬ, не когда
+    исчезла, иначе один клик даёт две противоречивые записи).
+    """
+    chat_id = str(reaction_update.get("chat", {}).get("id", ""))
+    if chat_id != str(AUTHORIZED_CHAT_ID):
+        print(f"Ignoring reaction from unauthorized chat_id={chat_id}")
+        return
+
+    new_reaction = reaction_update.get("new_reaction", [])
+    if not new_reaction:
+        print("Reaction removed (empty new_reaction), not recording.")
+        return
+
+    message_id = reaction_update.get("message_id")
+    emojis = [r.get("emoji", "") for r in new_reaction if r.get("type") == "emoji"]
+    if not emojis:
+        print("Non-emoji reaction (custom_emoji/paid), not recording.")
+        return
+
+    feedback_map = load_json(FEEDBACK_MAP_FILE, {"messages": {}})
+    entry = feedback_map.get("messages", {}).get(str(message_id))
+    links = entry.get("links", []) if entry else []
+
+    feedback = load_json(FEEDBACK_FILE, {"reactions": []})
+    feedback.setdefault("reactions", []).append({
+        "message_id": message_id,
+        "emojis": emojis,
+        "links": links,
+        "ts": datetime.now(timezone.utc).isoformat(),
+    })
+    feedback["reactions"] = feedback["reactions"][-FEEDBACK_KEEP:]
+    save_json(FEEDBACK_FILE, feedback)
+    print(f"Recorded reaction {emojis} on message_id={message_id}, {len(links)} linked item(s)")
+
+
 def handle_update(update):
+    if "message_reaction" in update:
+        handle_message_reaction(update["message_reaction"])
+        return
+
     msg = update.get("message") or update.get("edited_message")
     if not msg:
         print("No message in update, ignoring (likely callback_query or other type).")
