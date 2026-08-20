@@ -68,6 +68,7 @@ from datetime import datetime, timedelta, timezone
 
 import net
 import prices as pr
+import usage_tracker as ut
 import weekly_check as wc
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -136,6 +137,7 @@ def cmd_help():
         "/deep &lt;номер&gt; — запросить разбор для заметки без него\n"
         "/synthesis [дни] — связать high-priority заметки по компаниям\n"
         "/prices — живые цены медь/алюминий (COMEX)\n"
+        "/usage [дни] — траты DeepSeek API, по умолчанию 7 дней\n"
         "/watch &lt;слово&gt; — подписаться, отдельный алерт при совпадении\n"
         "/unwatch &lt;слово&gt; — отписаться\n"
         "/watchlist — список текущих подписок\n"
@@ -281,6 +283,36 @@ def cmd_status():
                 lines.append(f"  • {esc(name)}: {age} дн. с последней смены")
     except Exception as e:
         print(f"secrets_rotation_check error in /status: {e}", file=sys.stderr)
+    tg_send("\n".join(lines))
+
+
+def cmd_usage(arg):
+    """Траты на DeepSeek API за последние N дней (по умолчанию 7).
+
+    20.08.2026: до этой команды ни один из семи мест, вызывающих
+    DeepSeek, не давал видимости трат вообще — реальные деньги без
+    контроля. usage_tracker.record_usage() уже пишется после каждого
+    реального вызова во всех модулях, здесь просто читаем накопленное.
+    """
+    days = 7
+    arg = (arg or "").strip()
+    if arg.isdigit():
+        days = max(1, min(int(arg), 60))
+    total_cost, total_calls, by_caller = ut.summary(days=days)
+    lines = [
+        f"<b>💸 DeepSeek usage — последние {days} дн.</b>",
+        f"Всего вызовов: {total_calls}",
+        f"Оценка расхода: ${total_cost:.4f}",
+    ]
+    if by_caller:
+        lines.append("\n<b>По источнику:</b>")
+        for caller, cost in by_caller[:10]:
+            lines.append(f"  • {esc(caller)}: ${cost:.4f}")
+    lines.append(
+        "\n<i>Оценка по документированным тарифам DeepSeek-V4-Flash "
+        "(peak/off-peak с 16.08.26), не официальный счёт — сверяй с "
+        "platform.deepseek.com при сомнениях.</i>"
+    )
     tg_send("\n".join(lines))
 
 
@@ -512,6 +544,7 @@ def synthesize_cluster(company, items):
     )
     with net.urlopen_retry(req, timeout=30) as r:
         resp = json.loads(r.read().decode("utf-8"))
+    ut.record_usage("bot_commands.synthesize_cluster", resp.get("usage", {}))
     return json.loads(resp["choices"][0]["message"]["content"])
 
 
@@ -698,6 +731,7 @@ COMMANDS = {
     "/deep": cmd_deep,
     "/weekly": cmd_weekly,
     "/prices": lambda arg: cmd_prices(),
+    "/usage": cmd_usage,
     "/synthesis": cmd_synthesis,
     "/watch": cmd_watch,
     "/unwatch": cmd_unwatch,
