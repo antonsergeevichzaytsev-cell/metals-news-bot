@@ -1,14 +1,5 @@
 {
   "seen": [
-    "b54a235fd6bbd91adafd78dc2831c4d2",
-    "7c92e54ad6a09b7ee75784f95d826ed6",
-    "804b68585e90757833e43c59e4086deb",
-    "69a013181db3ac76da4a5c2f84084036",
-    "492433fcd715cfb27096a8148f55cd40",
-    "8b95510ab90716c44e407461723c7456",
-    "e1a4f76605b830fe9b769fb640edb521",
-    "dc882d89c072ae8f9ac06c987d6577ac",
-    "149455b2719c86c95d8e2f2fb06ab97b",
     "7809ad98c47148885d2a8a58844e030a",
     "9b802ed0e4502f48b600b7540975841e",
     "60b226b5a6d0d69c3c57e144434d81e9",
@@ -1499,99 +1490,18 @@
     "dbf8fe71395c40d8352d16564117fe7d",
     "c79fa781c7ab5e8128ee876157bcef71",
     "c590f9392125cc636d233dfa15d137e4",
-    "3e9020d0a3505feed4ce50186cf90406"
+    "3e9020d0a3505feed4ce50186cf90406",
+    "e03e28781a5c8cc63b7e645370985bc4",
+    "f5335747e8cf5d7e5a13495705a27166",
+    "8c9a93750368da47b950ef0652051d7a",
+    "873db1a8ab5f7d2a42877bb8e0be0ad8",
+    "146efc6ac10002dcd9facd244a9f17a4",
+    "8f0b2937ba9a1a8afef41a2dd86bfb52",
+    "5b11ded5bf7b1cb6960fb012e92b47d8",
+    "406d91db5b62aa8cbc9e2ecb2d32535e",
+    "e5c6e7a6424490d3d3c680a5d6d793d8"
   ],
   "title_sigs": [
-    [
-      "asia",
-      "cannot",
-      "central",
-      "china",
-      "democracy",
-      "jargalsaikhan",
-      "lens",
-      "mendee",
-      "mongolia",
-      "one",
-      "through",
-      "understood"
-    ],
-    [
-      "but",
-      "computer",
-      "disqualified",
-      "flag",
-      "gets",
-      "gold",
-      "high",
-      "israeli",
-      "national",
-      "olympiad",
-      "schooler",
-      "science",
-      "uzbekistan",
-      "wins"
-    ],
-    [
-      "aluminium",
-      "commodity",
-      "first",
-      "giant",
-      "half",
-      "higher",
-      "prices",
-      "profit",
-      "rusal",
-      "swings"
-    ],
-    [
-      "affirms",
-      "com",
-      "external",
-      "fitch",
-      "growth",
-      "investing",
-      "mining",
-      "mongolia",
-      "risks"
-    ],
-    [
-      "built",
-      "copper",
-      "kazakhstan",
-      "smelter"
-    ],
-    [
-      "484",
-      "759",
-      "baltic",
-      "emerge",
-      "exports",
-      "flows",
-      "near",
-      "novorossiysk",
-      "rise",
-      "risks",
-      "russia",
-      "shutdown",
-      "term",
-      "threatens",
-      "tonnes",
-      "weekly",
-      "wheat"
-    ],
-    [
-      "2022",
-      "case",
-      "court",
-      "fish",
-      "hearing",
-      "kill",
-      "latest",
-      "october",
-      "rusal",
-      "trial"
-    ],
     [
       "export",
       "global",
@@ -5784,16 +5694,76 @@
       "survey",
       "trough",
       "zone"
+    ],
+    [
+      "billion",
+      "cent",
+      "green",
+      "per",
+      "ramps",
+      "renewable",
+      "rises",
+      "spending",
+      "use",
+      "vedanta"
+    ],
+    [
+      "2026",
+      "bmw",
+      "interior",
+      "look",
+      "lwb",
+      "review"
+    ],
+    [
+      "bhp",
+      "buy",
+      "csl",
+      "hold",
+      "hub24",
+      "sell",
+      "shares"
+    ],
+    [
+      "antofagasta",
+      "slips",
+      "tuesday",
+      "underperforms"
+    ],
+    [
+      "bhp",
+      "looks",
+      "overvalued",
+      "ticker",
+      "value"
+    ],
+    [
+      "bhp",
+      "boosted",
+      "copper",
+      "demand",
+      "profits"
+    ],
+    [
+      "agreement",
+      "alcoa",
+      "equus",
+      "gas",
+      "offshore",
+      "project",
+      "sales",
+      "sign",
+      "year"
     ]
   ],
   "last_run": {
-    "ts": "2026-08-20T03:15:23.054606+00:00",
-    "raw": 1559,
-    "candidates": 4,
-    "screened": 4,
-    "skipped_by_model": 3,
+    "ts": "2026-08-20T03:52:37.161337+00:00",
+    "raw": 1550,
+    "candidates": 7,
+    "screened": 7,
+    "skipped_by_model": 5,
     "model_errors": 0,
-    "enriched": 1,
+    "enriched": 2,
     "cap": 12,
     "cap_hit": false,
     "feeds_total": 35,
@@ -5803,7 +5773,7 @@
       "site:miningjournal.com": "0 items",
       "(\"smelter restart\" OR \"smelter shutdown\" OR ": "0 items"
     },
-    "seen_size": 1506,
+    "seen_size": 1509,
     "cross_dups": 2
   },
   "feed_health": {

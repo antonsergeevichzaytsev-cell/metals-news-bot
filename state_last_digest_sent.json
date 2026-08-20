@@ -1,11 +1,19 @@
 {
-  "ts": "2026-08-20T03:15:23.054606+00:00",
+  "ts": "2026-08-20T03:52:37.161337+00:00",
   "items": [
     {
-      "title": "BHP provides Jansen Potash Project update",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPS0FobzVlQW1PMFNZTTdlYmxOTGxLcy04eUFCRHBtbWoxeE9KWVFINWc5YXFRWk1kaE9YTGR0dmlNcml4WWJLb1ZwVUhJcXEwZGhxQVc3RjR4TzQtSDhfQnZzY1MtaXE4dnpwRWRlWmNjZTlQR3NCSjk4U2NiWDZNVzRSRVNvdw?oc=5",
-      "company": "BHP / Jansen",
-      "why": "BHP Jansen — крупный калийный проект, стратегический ориентир для конкурентного анализа в удобрениях.",
+      "title": "Vedanta ramps up green spending to $1 billion, renewable use rises 52 per cent",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbjBpT3BWSkoyYVVuazlPS3NQVndfVVhLUWpvb0lOSkdsY3l5RWdlMWlSYjEzNzE2dC1qYWI1SDdBaEtzRE9WVVlpMGdPSy14SEZVaTR0eTVQSF9Kcl9tTVVmb1d2WkFXYW9YMTlidXF6SlRXaWJWdWxLcGU5Q0phVjQ3X0JkLTltR2pXYlJJNmtJM1hVaGoxd2xqeERwWkRMMnRJZ3RqRHdScE02SUtj?oc=5",
+      "company": "Vedanta",
+      "why": "Vedanta увеличивает зеленые инвестиции до $1 млрд, что влияет на стратегию конкурентов в цветмете.",
+      "priority": "medium",
+      "deep": null
+    },
+    {
+      "title": "Alcoa and Equus sign 10-year gas sales agreement for WA offshore project",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZmI4ZjhvVVFOX1ByTzdCLXpWMUp4WFl2YmUyZHo1TzdiSEZDeGxhMnVmY2Rub0J1bDVUUlBFa3pTaDB2V2ZCblFZQk02ZHZFUHNlS21ZQjRzcWZvR0Zfc3RET1BlbFZEUEJma1BHYTdaLTQ2djRsYzdJQXFCcDNfdlU4b2NEYXdFZ1pjV1M1QVZmMXdTc1pkWl91U3YyRFVkWU8zLVNtal9hTWl3WUt2cQ?oc=5",
+      "company": "Alcoa",
+      "why": "Alcoa закрепляет долгосрочные поставки газа для австралийских глинозёмных заводов, снижая риски энергоснабжения.",
       "priority": "medium",
       "deep": null
     }
