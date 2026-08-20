@@ -1,11 +1,11 @@
 {
   "daily": {
     "2026-08-20": {
-      "prompt_cache_hit_tokens": 12160,
-      "prompt_cache_miss_tokens": 2756,
-      "completion_tokens": 814,
-      "calls": 16,
-      "cost_usd": 0.00207092,
+      "prompt_cache_hit_tokens": 16896,
+      "prompt_cache_miss_tokens": 3557,
+      "completion_tokens": 1133,
+      "calls": 20,
+      "cost_usd": 0.0024908319999999997,
       "by_caller": {
         "digest.deepseek_enrich": {
           "calls": 11,
@@ -16,8 +16,8 @@
           "cost_usd": 0.00062892
         },
         "filings.deepseek_screen": {
-          "calls": 3,
-          "cost_usd": 0.00017186
+          "calls": 7,
+          "cost_usd": 0.000591772
         },
         "linkedin_ideas.deepseek_call": {
           "calls": 1,

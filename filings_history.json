@@ -1553,23 +1553,45 @@
       "priority": "low",
       "facts": {},
       "ts": "2026-08-19T14:35:22.791766+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310565/Atlas-Salt-Enters-MOU-with-CN-to-Evaluate-Logistics-Opportunities-to-Optimize-Great-Atlantic-Salt-Project-Economics",
+      "title": "Atlas Salt Enters MOU with CN to Evaluate Logistics Opportunities to Optimize Great Atlantic Salt Project Economics",
+      "stage": "study",
+      "signal": "логистика в проработке",
+      "company": "Atlas Salt Inc.",
+      "project": "Great Atlantic Salt Project",
+      "region": "Canada",
+      "why": "Логистика влияет на экономику проекта, но нет конкретных цифр или инженерных решений.",
+      "hook": "Оценка CapEx и логистики на этапе FEL: не дать бюджету уйти на транспорт.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-20T11:28:23.467659+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310563/Grande-Portage-Resources-Receives-State-of-Alaska-Regulatory-Clearance-for-Road-Easement",
+      "title": "Grande Portage Resources Receives State of Alaska Regulatory Clearance for Road Easement",
+      "stage": "study",
+      "signal": "разрешение на дорогу",
+      "company": "Grande Portage Resources Ltd.",
+      "project": "New Amalga Gold Project",
+      "region": "USA (Alaska)",
+      "why": "Получено разрешение на дорогу для доступа к проекту, но это не инженерное событие.",
+      "hook": "Разрешение на дорогу — шаг к изучению, но не повод для контакта.",
+      "priority": "low",
+      "facts": {
+        "horizon": [
+          "2026"
+        ]
+      },
+      "ts": "2026-08-20T11:28:23.467659+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-13T05:18:58.591315+00:00",
-      "title": "New Found Gold Files Second Quarter 2026 Financial Statements",
-      "link": "https://www.newsfilecorp.com/release/309362/New-Found-Gold-Files-Second-Quarter-2026-Financial-Statements",
-      "reason": "финансовая отчетность",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T05:18:58.591315+00:00",
-      "title": "Allied Critical Metals Files Application to List on Nasdaq",
-      "link": "https://www.newsfilecorp.com/release/309361/Allied-Critical-Metals-Files-Application-to-List-on-Nasdaq",
-      "reason": "листинг",
-      "orbit": false
-    },
     {
       "ts": "2026-08-13T11:48:59.912876+00:00",
       "title": "enCore Energy Enters into Controlled Equity Offering Sales Agreement",
@@ -2143,16 +2165,24 @@
       "link": "https://www.newsfilecorp.com/release/310534/Myriad-Uranium-Corp.-and-Rush-Rare-Metals-Corp.-Announce-Receipt-of-Final-Court-Approval-for-Plan-of-Arrangement",
       "reason": "корпоративная сделка",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-20T11:28:23.467659+00:00",
+      "title": "STLLR Gold Welcomes Proposed Arctic Economic and Security Corridor Alignment, Highlighting Potential Strategic Benefits to the Col",
+      "link": "https://www.newsfilecorp.com/release/310581/STLLR-Gold-Welcomes-Proposed-Arctic-Economic-and-Security-Corridor-Alignment-Highlighting-Potential-Strategic-Benefits-to-the-Colomac-Gold-Project",
+      "reason": "инфраструктурная инициатива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T11:28:23.467659+00:00",
+      "title": "Awalé Defines New 4-Kilometre Gold Target at 100%-Owned Seydou Permit; Drilling Underway at the Fremen Discovery",
+      "link": "https://www.newsfilecorp.com/release/310523/Awal-Defines-New-4Kilometre-Gold-Target-at-100Owned-Seydou-Permit-Drilling-Underway-at-the-Fremen-Discovery",
+      "reason": "буровые пробы",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-13T05:18:58.589776+00:00",
-      "title": "Strathmore Announces Change in Board of Directors",
-      "matched_noise_word": "board of directors",
-      "orbit": false
-    },
     {
       "ts": "2026-08-13T11:48:59.905848+00:00",
       "title": "NovaRed Confirms Resistivity Anomaly and Defines 42-Hectare Chargeability Target Open to the North at Wilmac",
@@ -2241,6 +2271,18 @@
       "ts": "2026-08-20T04:09:09.903225+00:00",
       "title": "Data Watts' Closes Debt Settlement and Updates Warrants",
       "matched_noise_word": "warrant\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T11:28:23.460837+00:00",
+      "title": "Critical One Energy Discovers Gold with More High-Grade Antimony at Howells Lake Project",
+      "matched_noise_word": "high-?grade",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T11:28:23.464300+00:00",
+      "title": "Sirios Intersects 2.4 g/t Gold over 48.5m and Confirms the Cheechoo Deposit's Extension Beyond the 2025 Resource Estimate",
+      "matched_noise_word": "intersect\\w*",
       "orbit": false
     }
   ]
