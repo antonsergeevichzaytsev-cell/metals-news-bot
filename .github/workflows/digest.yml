@@ -24,7 +24,13 @@ permissions:
 jobs:
   digest:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    # 20.08.2026: увеличено с 8 до 12 минут — deepseek-v4-flash после
+    # миграции с deepseek-chat местами отвечает медленнее (даже с
+    # отключённым thinking mode), а первый прогон после простоя
+    # накапливает необычно большой бэклог кандидатов. MAX_ENRICH_ATTEMPTS
+    # в digest.py теперь тоже ограничивает число попыток за прогон —
+    # это вторая, более важная защита, таймаут лишь страховка сверху.
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
