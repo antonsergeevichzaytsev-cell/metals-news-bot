@@ -28,4 +28,10 @@ jobs:
           TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
           GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY:  ${{ github.repository }}
+          # 20.08.2026: добавлены для еженедельного disaster-recovery
+          # бэкапа (send_backup_email в weekly_check.py) — тот же Gmail,
+          # что уже используют inbox.yml/mission_control.yml/bot_commands.py
+          # (/weekly команда), не новый секрет.
+          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python weekly_check.py
