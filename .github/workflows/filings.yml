@@ -47,7 +47,20 @@ jobs:
         run: |
           git config user.name  "metals-bot"
           git config user.email "bot@noreply.local"
-          git add state_filings.json filings_history.json || true
+          # 20.08.2026: тот же защитный паттерн, что в digest.yml/command.yml —
+          # git add с несуществующим файлом среди аргументов падает целиком
+          # (exit 128), проглатывается через || true, весь commit молча
+          # пропускается. Оба файла здесь сейчас существуют, но паттерн
+          # хрупок на будущее при добавлении третьего файла в этот список.
+          FILES_TO_ADD=""
+          for f in state_filings.json filings_history.json; do
+            [ -f "$f" ] && FILES_TO_ADD="$FILES_TO_ADD $f"
+          done
+          if [ -z "$FILES_TO_ADD" ]; then
+            echo "no tracked state files exist on disk, nothing to add"
+            exit 0
+          fi
+          git add $FILES_TO_ADD
           git diff --cached --quiet && echo "nothing to commit" && exit 0
           git commit -m "filings state: $(date -u +%Y-%m-%d_%H-%MZ)"
           for i in 1 2 3 4 5 6 7 8; do
