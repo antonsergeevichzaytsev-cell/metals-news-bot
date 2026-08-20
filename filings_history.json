@@ -1,32 +1,6 @@
 {
   "items": [
     {
-      "link": "https://www.newsfilecorp.com/release/305923/Lion-One-Announces-Start-of-Phase-1-Plant-Expansion-from-300-TPD-to-400-TPD-with-Filter-Press-Upgrade",
-      "title": "Lion One Announces Start of Phase 1 Plant Expansion from 300 TPD to 400 TPD with Filter Press Upgrade",
-      "stage": "construction",
-      "signal": "расширение мощностей",
-      "company": "Lion One Metals Limited",
-      "project": "Tuvatu Gold Mine",
-      "region": "Fiji",
-      "why": "Расширение завода с 300 до 400 т/сут, риск срыва графика и бюджета.",
-      "hook": "Owner-side контроль подрядчика и графика: не дать расширению съесть бюджет.",
-      "priority": "low",
-      "ts": "2026-07-21T13:02:01.085084+00:00"
-    },
-    {
-      "link": "https://www.newsfilecorp.com/release/305921/Champion-Bear-Resources-Ltd.-Secures-Drilling-Contract-for-Plomp-Farm-Pit-Study-and-Announces-Planned-NI-43101-Technical-Disclosure-Update",
-      "title": "Champion Bear Resources Ltd. Secures Drilling Contract for Plomp Farm Pit Study and Announces Planned NI 43-101 Technical Disclosure Update",
-      "stage": "study",
-      "signal": "пит-стади",
-      "company": "Champion Bear Resources Ltd.",
-      "project": "Plomp Farm",
-      "region": "Canada",
-      "why": "Начало пит-стади, требуется обновление NI 43-101.",
-      "hook": "Owner-side контроль затрат и FEL: не дать пит-стади уйти в завышенный CapEx.",
-      "priority": "low",
-      "ts": "2026-07-21T13:02:01.085084+00:00"
-    },
-    {
       "link": "https://www.globenewswire.com/news-release/2026/07/22/3331219/0/en/NOVAGOLD-Enters-Into-Definitive-Agreements-to-Acquire-100-of-Donlin-Gold.html",
       "title": "NOVAGOLD Enters Into Definitive Agreements to Acquire 100% of Donlin Gold",
       "stage": "study",
@@ -1589,44 +1563,23 @@
         ]
       },
       "ts": "2026-08-20T11:28:23.467659+00:00"
+    },
+    {
+      "link": "https://www.newsfilecorp.com/release/310605/Ucore-Demonstrates-the-Flexibility-of-RapidSXTM-by-Producing-99.5-NdPr-from-Multiple-Sources",
+      "title": "Ucore Demonstrates the Flexibility of RapidSX(TM) by Producing 99.5% NdPr from Multiple Sources",
+      "stage": "operating",
+      "signal": "металлургия подтверждена",
+      "company": "Ucore Rare Metals",
+      "project": "RapidSX CDF",
+      "region": "Canada",
+      "why": "Демонстрация производства NdPr 99.5% из двух видов сырья подтверждает технологию, но актив вне целевого региона.",
+      "hook": "Металлургия на CDF подтверждена: контроль извлечения и качества при масштабировании на тоннаж.",
+      "priority": "low",
+      "facts": {},
+      "ts": "2026-08-20T14:38:07.925557+00:00"
     }
   ],
   "skipped": [
-    {
-      "ts": "2026-08-13T11:48:59.912876+00:00",
-      "title": "enCore Energy Enters into Controlled Equity Offering Sales Agreement",
-      "link": "https://www.newsfilecorp.com/release/309460/enCore-Energy-Enters-into-Controlled-Equity-Offering-Sales-Agreement",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T11:48:59.912876+00:00",
-      "title": "Bravada Corporate Update",
-      "link": "https://www.newsfilecorp.com/release/309388/Bravada-Corporate-Update",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T11:48:59.912876+00:00",
-      "title": "First Phosphate sonnera la cloche d'ouverture du Nasdaq pour marquer son inscription au Nasdaq Global Market",
-      "link": "https://www.newsfilecorp.com/release/309337/First-Phosphate-sonnera-la-cloche-douverture-du-Nasdaq-pour-marquer-son-inscription-au-Nasdaq-Global-Market",
-      "reason": "листинг",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T11:48:59.912876+00:00",
-      "title": "Green Arrow Resources Inc. Announces Effective Date of Consolidation",
-      "link": "https://www.newsfilecorp.com/release/309428/Green-Arrow-Resources-Inc.-Announces-Effective-Date-of-Consolidation",
-      "reason": "консолидация акций",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T11:48:59.912876+00:00",
-      "title": "Maverick Gold and Silver Receives Confirmation of New Claims - Increasing the Size of the Silver Vista Property, British Columbia",
-      "link": "https://www.newsfilecorp.com/release/309453/Maverick-Gold-and-Silver-Receives-Confirmation-of-New-Claims-Increasing-the-Size-of-the-Silver-Vista-Property-British-Columbia",
-      "reason": "расширение участка",
-      "orbit": false
-    },
     {
       "ts": "2026-08-13T14:59:37.252240+00:00",
       "title": "Phenom Reports Commercialization Progress at MK Plus's New Swedish Base",
@@ -2179,22 +2132,45 @@
       "link": "https://www.newsfilecorp.com/release/310523/Awal-Defines-New-4Kilometre-Gold-Target-at-100Owned-Seydou-Permit-Drilling-Underway-at-the-Fremen-Discovery",
       "reason": "буровые пробы",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-20T14:38:07.925557+00:00",
+      "title": "Sitka Gold Completes Acquisition of 100% Interest in the Clear Creek Property at Its RC Gold Project, Yukon",
+      "link": "https://www.newsfilecorp.com/release/310570/Sitka-Gold-Completes-Acquisition-of-100-Interest-in-the-Clear-Creek-Property-at-Its-RC-Gold-Project-Yukon",
+      "reason": "приобретение актива",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T14:38:07.925557+00:00",
+      "title": "Americore Advances Trinity Silver Project Following SRK Site Review; Updated Mineral Resource and NI 43-101 Work Underway",
+      "link": "https://www.newsfilecorp.com/release/310587/Americore-Advances-Trinity-Silver-Project-Following-SRK-Site-Review-Updated-Mineral-Resource-and-NI-43101-Work-Underway",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T14:38:07.925557+00:00",
+      "title": "Pacifica Silver Secures 491 New Drill Pad Sites and Expands 2026 Drill Program to 30,000 Metres",
+      "link": "https://www.newsfilecorp.com/release/310567/Pacifica-Silver-Secures-491-New-Drill-Pad-Sites-and-Expands-2026-Drill-Program-to-30000-Metres",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T14:38:07.925557+00:00",
+      "title": "Benton Trenching Program in Progress at Dominion Project and Discovers New Gold Zone at Stoney Caldera",
+      "link": "https://www.newsfilecorp.com/release/310588/Benton-Trenching-Program-in-Progress-at-Dominion-Project-and-Discovers-New-Gold-Zone-at-Stoney-Caldera",
+      "reason": "буровые пробы",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T14:38:07.925557+00:00",
+      "title": "SAGA Metals Approved to Join the Defense Industrial Base Consortium (DIBC) to Support Critical Mineral Supply Chain Security in No",
+      "link": "https://www.newsfilecorp.com/release/310589/SAGA-Metals-Approved-to-Join-the-Defense-Industrial-Base-Consortium-DIBC-to-Support-Critical-Mineral-Supply-Chain-Security-in-North-America",
+      "reason": "членство в консорциуме",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-13T11:48:59.905848+00:00",
-      "title": "NovaRed Confirms Resistivity Anomaly and Defines 42-Hectare Chargeability Target Open to the North at Wilmac",
-      "matched_noise_word": "\\banomal\\w*",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T11:48:59.910271+00:00",
-      "title": "Grande Portage Resources Advances 2026 Drill Program and Field Activities, Confirms 100% Warrant Exercise",
-      "matched_noise_word": "warrant\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-13T14:59:37.247246+00:00",
       "title": "Thunderstruck Exploration Update License Renewal and $1.8M Private Placement",
@@ -2283,6 +2259,18 @@
       "ts": "2026-08-20T11:28:23.464300+00:00",
       "title": "Sirios Intersects 2.4 g/t Gold over 48.5m and Confirms the Cheechoo Deposit's Extension Beyond the 2025 Resource Estimate",
       "matched_noise_word": "intersect\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T14:38:07.920018+00:00",
+      "title": "Kingsmen Drills 1.40 Metres of 433 g/t AgEq (239 g/t Ag) at Las Coloradas, Expanding a High-Grade Silver Zone Open at Depth and Al",
+      "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T14:38:07.922948+00:00",
+      "title": "Bold Ventures to Drill at Traxxin Gold Project",
+      "matched_noise_word": "\\bdrill\\w*",
       "orbit": false
     }
   ]
