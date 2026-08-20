@@ -351,3 +351,79 @@ def test_max_enrich_attempts_exceeds_max_items_per_run():
     на попытки сработает раньше, чем бот успеет набрать нормальную
     дневную квоту публикаций даже без единого skip."""
     assert dg.MAX_ENRICH_ATTEMPTS > dg.MAX_ITEMS_PER_RUN
+
+
+# --- tg_send / tg_send_chunks: feedback loop --------------------------------
+# 20.08.2026: tg_send теперь возвращает message_id (раньше отбрасывался),
+# tg_send_chunks принимает (block, link) пары вместо голых блоков и
+# возвращает (total, [(message_id, [links])]) — нужно, чтобы связать
+# реакцию пользователя на сообщение с конкретными новостями внутри него
+# (bot_commands.py читает эту связку из state_feedback_map.json).
+
+def test_tg_send_returns_message_id(monkeypatch):
+    class FakeResp:
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+        def read(self):
+            import json as json_mod
+            return json_mod.dumps({"ok": True, "result": {"message_id": 12345}}).encode()
+
+    monkeypatch.setattr(dg.net, "urlopen_retry", lambda *a, **k: FakeResp())
+    mid = dg.tg_send("test message")
+    assert mid == 12345
+
+
+def test_tg_send_chunks_single_message_maps_all_links(monkeypatch):
+    sent_ids = iter([100])
+
+    def fake_tg_send(text):
+        return next(sent_ids)
+
+    monkeypatch.setattr(dg, "tg_send", fake_tg_send)
+    items = [("block1\n", "https://a.com"), ("block2\n", "https://b.com")]
+    total, sent = dg.tg_send_chunks(items, "HEADER\n")
+    assert total == 1
+    assert sent == [(100, ["https://a.com", "https://b.com"])]
+
+
+def test_tg_send_chunks_splits_by_budget_and_maps_correctly(monkeypatch):
+    original_budget = dg.TG_BUDGET
+    monkeypatch.setattr(dg, "TG_BUDGET", 50)  # маленький бюджет форсирует разбивку
+
+    sent_ids = iter([201, 202])
+
+    def fake_tg_send(text):
+        return next(sent_ids)
+
+    monkeypatch.setattr(dg, "tg_send", fake_tg_send)
+    items = [
+        ("x" * 30 + "\n", "https://a.com"),
+        ("y" * 30 + "\n", "https://b.com"),
+    ]
+    total, sent = dg.tg_send_chunks(items, "H\n")
+    assert total == 2
+    # каждая ссылка попадает ровно в то сообщение, где реально оказался её блок
+    all_links = [link for _, links in sent for link in links]
+    assert "https://a.com" in all_links
+    assert "https://b.com" in all_links
+    monkeypatch.setattr(dg, "TG_BUDGET", original_budget)
+
+
+def test_tg_send_chunks_empty_items_no_send(monkeypatch):
+    calls = []
+    monkeypatch.setattr(dg, "tg_send", lambda text: calls.append(text) or 1)
+    total, sent = dg.tg_send_chunks([], "just a header\n")
+    # заголовок сам по себе непустой -> одно сообщение с пустым списком ссылок
+    assert total == 1
+    assert sent == [(1, [])]
+
+
+def test_tg_send_chunks_none_message_id_on_failure_still_tracked(monkeypatch):
+    """Если tg_send вернёт None (сбой Telegram), запись всё равно
+    появляется в sent — вызывающий код (main()) отвечает за то, чтобы
+    не записывать None message_id в feedback map."""
+    monkeypatch.setattr(dg, "tg_send", lambda text: None)
+    items = [("block\n", "https://a.com")]
+    total, sent = dg.tg_send_chunks(items, "H\n")
+    assert total == 1
+    assert sent == [(None, ["https://a.com"])]
