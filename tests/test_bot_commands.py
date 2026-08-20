@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+from datetime import datetime, timedelta, timezone
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -703,3 +704,153 @@ def test_cmd_usage_zero_calls_no_crash():
             bc.cmd_usage("")
             text = mock_send.call_args[0][0]
             assert "0" in text
+
+
+# --- handle_message_reaction / handle_update routing ------------------------
+# 20.08.2026: feedback loop — реакция на сообщение дайджеста записывается
+# в state_feedback.json вместе со связанными новостями (из
+# state_feedback_map.json, который пишет digest.py).
+
+def _reaction_update(message_id=555, chat_id="test", emoji="\U0001f44d"):
+    return {
+        "chat": {"id": chat_id},
+        "message_id": message_id,
+        "date": 1755600000,
+        "old_reaction": [],
+        "new_reaction": [{"type": "emoji", "emoji": emoji}],
+    }
+
+
+def test_handle_update_routes_message_reaction_to_handler():
+    with patch.object(bc, "handle_message_reaction") as mock_handler:
+        bc.handle_update({"message_reaction": _reaction_update()})
+        mock_handler.assert_called_once()
+
+
+def test_handle_message_reaction_records_with_linked_items(tmp_path, monkeypatch):
+    map_file = tmp_path / "state_feedback_map.json"
+    feedback_file = tmp_path / "state_feedback.json"
+    map_file.write_text(json.dumps({
+        "messages": {"555": {"links": ["https://a.com", "https://b.com"], "ts": "2026-08-20T00:00:00+00:00"}}
+    }), encoding="utf-8")
+    monkeypatch.setattr(bc, "FEEDBACK_MAP_FILE", str(map_file))
+    monkeypatch.setattr(bc, "FEEDBACK_FILE", str(feedback_file))
+
+    bc.handle_message_reaction(_reaction_update(message_id=555))
+
+    saved = json.loads(feedback_file.read_text())
+    assert len(saved["reactions"]) == 1
+    entry = saved["reactions"][0]
+    assert entry["message_id"] == 555
+    assert entry["emojis"] == ["\U0001f44d"]
+    assert entry["links"] == ["https://a.com", "https://b.com"]
+
+
+def test_handle_message_reaction_unknown_message_id_empty_links(tmp_path, monkeypatch):
+    """message_id не найден в feedback map (например слишком старое
+    сообщение, обрезанное по FEEDBACK_MAP_KEEP) — реакция всё равно
+    записывается, просто без привязки к конкретным новостям."""
+    map_file = tmp_path / "state_feedback_map.json"
+    feedback_file = tmp_path / "state_feedback.json"
+    map_file.write_text(json.dumps({"messages": {}}), encoding="utf-8")
+    monkeypatch.setattr(bc, "FEEDBACK_MAP_FILE", str(map_file))
+    monkeypatch.setattr(bc, "FEEDBACK_FILE", str(feedback_file))
+
+    bc.handle_message_reaction(_reaction_update(message_id=9999))
+
+    saved = json.loads(feedback_file.read_text())
+    assert saved["reactions"][0]["links"] == []
+
+
+def test_handle_message_reaction_ignores_unauthorized_chat(tmp_path, monkeypatch):
+    feedback_file = tmp_path / "state_feedback.json"
+    monkeypatch.setattr(bc, "FEEDBACK_FILE", str(feedback_file))
+    bc.handle_message_reaction(_reaction_update(chat_id="stranger"))
+    assert not feedback_file.exists()
+
+
+def test_handle_message_reaction_removed_reaction_not_recorded(tmp_path, monkeypatch):
+    """new_reaction пустой = пользователь СНЯЛ реакцию, не поставил.
+    Не должно записываться — иначе один клик даёт противоречивую пару
+    записей (сначала 'поставил', потом 'снял' как отдельный сигнал)."""
+    feedback_file = tmp_path / "state_feedback.json"
+    monkeypatch.setattr(bc, "FEEDBACK_FILE", str(feedback_file))
+    update = _reaction_update()
+    update["new_reaction"] = []
+    bc.handle_message_reaction(update)
+    assert not feedback_file.exists()
+
+
+def test_handle_message_reaction_multiple_emojis_all_recorded(tmp_path, monkeypatch):
+    map_file = tmp_path / "state_feedback_map.json"
+    feedback_file = tmp_path / "state_feedback.json"
+    map_file.write_text(json.dumps({"messages": {}}), encoding="utf-8")
+    monkeypatch.setattr(bc, "FEEDBACK_MAP_FILE", str(map_file))
+    monkeypatch.setattr(bc, "FEEDBACK_FILE", str(feedback_file))
+
+    update = _reaction_update()
+    update["new_reaction"] = [
+        {"type": "emoji", "emoji": "\U0001f44d"},
+        {"type": "emoji", "emoji": "\U0001f525"},
+    ]
+    bc.handle_message_reaction(update)
+
+    saved = json.loads(feedback_file.read_text())
+    assert saved["reactions"][0]["emojis"] == ["\U0001f44d", "\U0001f525"]
+
+
+def test_handle_message_reaction_appends_not_overwrites(tmp_path, monkeypatch):
+    map_file = tmp_path / "state_feedback_map.json"
+    feedback_file = tmp_path / "state_feedback.json"
+    map_file.write_text(json.dumps({"messages": {}}), encoding="utf-8")
+    monkeypatch.setattr(bc, "FEEDBACK_MAP_FILE", str(map_file))
+    monkeypatch.setattr(bc, "FEEDBACK_FILE", str(feedback_file))
+
+    bc.handle_message_reaction(_reaction_update(message_id=1))
+    bc.handle_message_reaction(_reaction_update(message_id=2))
+
+    saved = json.loads(feedback_file.read_text())
+    assert len(saved["reactions"]) == 2
+
+
+# --- cmd_feedback --------------------------------------------------------
+
+def test_cmd_feedback_empty_history():
+    with patch.object(bc, "load_json", return_value={"reactions": []}):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_feedback("")
+            assert "не было" in mock_send.call_args[0][0]
+
+
+def test_cmd_feedback_counts_emojis_and_ranks_positive_links():
+    fresh = datetime.now(timezone.utc).isoformat()
+    reactions = {"reactions": [
+        {"emojis": ["\U0001f44d"], "links": ["https://a.com"], "ts": fresh},
+        {"emojis": ["\U0001f44d"], "links": ["https://a.com"], "ts": fresh},
+        {"emojis": ["\U0001f44e"], "links": ["https://b.com"], "ts": fresh},
+    ]}
+    with patch.object(bc, "load_json", return_value=reactions):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_feedback("")
+            text = mock_send.call_args[0][0]
+            assert "3" in text  # total reactions
+            assert "https://a.com" in text  # positive link surfaced
+            assert "https://b.com" not in text  # negative link not in "лучше всего"
+
+
+def test_cmd_feedback_excludes_old_reactions_outside_window():
+    old = (datetime.now(timezone.utc) - timedelta(days=100)).isoformat()
+    reactions = {"reactions": [{"emojis": ["\U0001f44d"], "links": [], "ts": old}]}
+    with patch.object(bc, "load_json", return_value=reactions):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_feedback("14")
+            assert "не было" in mock_send.call_args[0][0]
+
+
+def test_cmd_feedback_custom_days_arg():
+    fresh = datetime.now(timezone.utc).isoformat()
+    reactions = {"reactions": [{"emojis": ["\U0001f44d"], "links": [], "ts": fresh}]}
+    with patch.object(bc, "load_json", return_value=reactions):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_feedback("30")
+            assert "30 дн" in mock_send.call_args[0][0]
