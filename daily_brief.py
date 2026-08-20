@@ -152,6 +152,9 @@ def pick_top_of_week(history):
         "temperature": 0.3,
         "max_tokens": 200,
         "response_format": {"type": "json_object"},
+        # 20.08.2026: см. digest.py:deepseek_enrich — thinking mode
+        # отключён явно, иначе default effort=high съедает max_tokens.
+        "extra_body": {"thinking": {"type": "disabled"}},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
