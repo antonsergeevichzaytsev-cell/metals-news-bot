@@ -211,7 +211,7 @@ def deepseek_synthesize(context, max_tokens=900):
         "messages": [{"role": "system", "content": "Ты sharp Chief of Staff. Direct, no fluff."}, {"role": "user", "content": prompt}],
         "max_tokens": max_tokens,
         "temperature": 0.3,
-        "extra_body": {"thinking": {"type": "disabled"}},
+        "thinking": {"type": "disabled"},
     }).encode()
     req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "Authorization": f"Bearer {DEEPSEEK_KEY}"})
     try:
