@@ -483,7 +483,7 @@ SYNTHESIS_SYS_PROMPT = (
 
 def synthesize_cluster(company, items):
     payload = {
-        "model": "deepseek-chat",
+        "model": "deepseek-v4-flash",
         "messages": [
             {"role": "system", "content": SYNTHESIS_SYS_PROMPT},
             {"role": "user", "content": (
