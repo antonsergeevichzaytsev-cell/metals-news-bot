@@ -44,6 +44,19 @@ Y1_TOTAL_WEEKS = 52
 # уже двое суток как не обновлялись — пороги это учитывают.
 from cadence import DEAD_STATUSES, is_cadence_exhausted
 
+# 20.08.2026: файлы для еженедельного email-бэкапа — вся история и
+# состояние ботов, не только "самые важные". Полный список сознательно
+# избыточен: цена лишнего файла в архиве — несколько KB, цена
+# пропущенного файла при реальном disaster recovery — потерянные данные
+# навсегда. Обновлять при добавлении новых state_*.json файлов в проект.
+BACKUP_FILES = [
+    "anton_state.json", "filings_history.json", "history.json",
+    "phrases.json", "platforms.json", "secrets_rotation.json",
+    "state.json", "state_evening_digest.json", "state_filings.json",
+    "state_inbox.json", "state_last_digest_sent.json",
+    "state_linkedin_ideas.json", "state_usage.json", "state_watchlist.json",
+]
+
 STALE_HOURS = 72          # pipeline.json / history.json не трогали дольше -> бот не бежит
 FOSSIL_DAYS = 14          # ни одного нового лида дольше -> пайплайн окаменел
 STALE_REPLY_DAYS = 7      # ответ лежит дольше -> гниющие деньги
@@ -344,6 +357,62 @@ def telegram_is_alive():
         return False
 
 
+def send_backup_email(now):
+    """Еженедельный disaster-recovery бэкап: все data-файлы (BACKUP_FILES)
+    в один ZIP, вложением на GMAIL_USER -> GMAIL_USER же (архив для
+    восстановления, не оповещение). 20.08.2026: до этой функции полная
+    потеря репозитория (случайное удаление, блокировка аккаунта GitHub)
+    означала полную потерю всей истории — 331KB данных, которые нигде
+    не дублировались вне git. Использует тот же net.smtp_send_retry, что
+    cmd_weekly в bot_commands.py (проверенный SMTP-путь, не новый код).
+
+    Тихо пропускает бэкап (не считает это тревогой weekly_check), если
+    GMAIL_USER/GMAIL_APP_PASSWORD не заданы — этот воркфлоу их раньше
+    не получал, пока Антон не добавит секреты явно.
+    """
+    gmail_user = os.environ.get("GMAIL_USER")
+    gmail_password = os.environ.get("GMAIL_APP_PASSWORD")
+    if not gmail_user or not gmail_password:
+        print("GMAIL_USER/GMAIL_APP_PASSWORD not set - skipping backup email", file=sys.stderr)
+        return False, "GMAIL secrets not configured"
+
+    import io
+    import zipfile
+
+    buf = io.BytesIO()
+    included, missing = [], []
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as zf:
+        for fname in BACKUP_FILES:
+            path = os.path.join(ROOT, fname)
+            if os.path.exists(path):
+                zf.write(path, arcname=fname)
+                included.append(fname)
+            else:
+                missing.append(fname)
+    zip_bytes = buf.getvalue()
+
+    import email.message
+    msg = email.message.EmailMessage()
+    msg["Subject"] = f"metals-news-bot backup — {now.strftime('%Y-%m-%d')}"
+    msg["From"] = gmail_user
+    msg["To"] = gmail_user
+    body = f"Еженедельный бэкап data-файлов metals-news-bot.\n\nВключено ({len(included)}): {', '.join(included)}\n"
+    if missing:
+        body += f"\nОтсутствуют на диске, пропущены ({len(missing)}): {', '.join(missing)}\n"
+    msg.set_content(body)
+    msg.add_attachment(
+        zip_bytes, maintype="application", subtype="zip",
+        filename=f"metals-news-bot-backup-{now.strftime('%Y-%m-%d')}.zip"
+    )
+
+    try:
+        net.smtp_send_retry("smtp.gmail.com", 465, gmail_user, gmail_password, msg)
+    except Exception as e:
+        print(f"  ! backup email failed: {e}", file=sys.stderr)
+        return False, str(e)
+    return True, f"{len(included)} files, {len(zip_bytes)} bytes"
+
+
 def github_issue_alert(title, body):
     """Единственный запасной канал, не зависящий от Telegram.
     Ищет открытый issue с тем же title (по метке) — не плодит дубликаты
@@ -423,6 +492,16 @@ def main():
     days_since_start = (now.date() - Y1_START.date()).days
     week_in_y1 = 0 if days_since_start < 0 else (days_since_start // 7) + 1
     days_to_end = (Y1_END.date() - now.date()).days
+
+    # 20.08.2026: бэкап делаем рано в main(), не в конце — если что-то
+    # дальше в отчёте упадёт с исключением, бэкап уже успел уйти. Не
+    # блокирует остальной отчёт: сбой бэкапа логируется, не поднимает
+    # исключение наружу, weekly_check продолжает как обычно.
+    backup_ok, backup_detail = send_backup_email(now)
+    if backup_ok:
+        print(f"Backup email sent: {backup_detail}")
+    else:
+        print(f"Backup email skipped/failed: {backup_detail}", file=sys.stderr)
 
     weekday = now.weekday()
     monday = now - timedelta(days=weekday)
