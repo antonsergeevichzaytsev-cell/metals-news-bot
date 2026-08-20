@@ -285,7 +285,7 @@ def gather_price_context_candidates(digest_items, window_hours=24, move_threshol
 
 def deepseek_call(system, user, max_tokens, temperature=0.3):
     payload = {
-        "model": "deepseek-chat",
+        "model": "deepseek-v4-flash",
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
         "temperature": temperature,
         "max_tokens": max_tokens,
