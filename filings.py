@@ -399,7 +399,7 @@ SYS_PROMPT = (
 
 def deepseek_screen(title, desc):
     payload = {
-        "model": "deepseek-chat",
+        "model": "deepseek-v4-flash",
         "messages": [
             {"role": "system", "content": SYS_PROMPT},
             {"role": "user", "content": f"TITLE: {title}\nBODY: {desc[:900]}"},
