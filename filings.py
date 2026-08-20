@@ -34,6 +34,7 @@ import xml.etree.ElementTree as ET
 
 import facts
 import net
+import usage_tracker as ut
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -423,6 +424,7 @@ def deepseek_screen(title, desc):
     try:
         with net.urlopen_retry(req, timeout=40) as r:
             resp = json.loads(r.read().decode("utf-8"))
+        ut.record_usage("filings.deepseek_screen", resp.get("usage", {}))
         return json.loads(resp["choices"][0]["message"]["content"])
     except Exception as e:
         print(f"  ! deepseek error: {e}", file=sys.stderr)
