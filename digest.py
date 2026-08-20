@@ -46,6 +46,11 @@ KEYWORDS_FILE = os.path.join(ROOT, "keywords.txt")
 STATE_FILE = os.path.join(ROOT, "state.json")
 HISTORY_FILE = os.path.join(ROOT, "history.json")
 LAST_DIGEST_FILE = os.path.join(ROOT, "state_last_digest_sent.json")
+# 20.08.2026: feedback loop — message_id -> [links, ts] для сообщений,
+# отправленных digest'ом. bot_commands.py читает этот файл при получении
+# message_reaction, чтобы связать реакцию с конкретными новостями.
+FEEDBACK_MAP_PATH = os.path.join(ROOT, "state_feedback_map.json")
+FEEDBACK_MAP_KEEP = 500
 WATCHLIST_FILE = os.path.join(ROOT, "state_watchlist.json")
 
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
@@ -160,6 +165,18 @@ def load_state():
         except Exception:
             return {"seen": []}
     return {"seen": []}
+
+
+def load_json(path, default):
+    """Общая обёртка для файлов состояния, у которых нет собственной
+    специализированной load_*() (пока только FEEDBACK_MAP_PATH)."""
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return default
+    return default
 
 
 def save_state(state):
@@ -600,33 +617,48 @@ def tg_send(text):
     req = urllib.request.Request(url, data=data)
     try:
         with net.urlopen_retry(req, timeout=20) as r:
-            r.read()
+            resp = json.loads(r.read().decode("utf-8"))
+        return resp.get("result", {}).get("message_id")
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
         print(f"  ! telegram error {e.code}: {body}", file=sys.stderr)
         raise
 
 
-def tg_send_chunks(blocks, header):
-    msgs = []
-    cur = header
-    for b in blocks:
-        if len(cur) + len(b) > TG_BUDGET:
-            msgs.append(cur.rstrip())
-            cur = b
+def tg_send_chunks(items, header):
+    """items — список (block_text, link) пар, по одной на новость.
+    Группирует блоки в сообщения по лимиту символов (как раньше), но
+    теперь также возвращает список (message_id, [links]) — какие
+    ссылки реально вошли в каждое отправленное сообщение. Нужно для
+    feedback loop (20.08.2026): реакция на сообщение в Telegram теперь
+    может быть связана с конкретными новостями внутри него, а не только
+    с фактом "что-то из дайджеста понравилось/не понравилось".
+    """
+    msgs = []  # список (text, [links])
+    cur_text = header
+    cur_links = []
+    for block_text, link in items:
+        if len(cur_text) + len(block_text) > TG_BUDGET:
+            msgs.append((cur_text.rstrip(), cur_links))
+            cur_text = block_text
+            cur_links = [link] if link else []
         else:
-            cur += b
-    if cur.strip():
-        msgs.append(cur.rstrip())
+            cur_text += block_text
+            if link:
+                cur_links.append(link)
+    if cur_text.strip():
+        msgs.append((cur_text.rstrip(), cur_links))
 
     total = len(msgs)
-    for i, m in enumerate(msgs, 1):
+    sent = []
+    for i, (m, links) in enumerate(msgs, 1):
         if total > 1:
             m = m + f"\n\n<i>({i}/{total})</i>"
-        tg_send(m)
+        message_id = tg_send(m)
+        sent.append((message_id, links))
         if i < total:
             time.sleep(1.2)
-    return total
+    return total, sent
 
 
 def main():
@@ -833,11 +865,12 @@ def main():
     rest = [c for c in enriched if c.get("priority") != "high"]
 
     sent_total = 0
+    feedback_map = []  # (message_id, [links]) для всех отправленных сообщений — записывается после отправки
 
     # --- Лента целей: только \U0001f534, отдельным сообщением, с входом для агента ---
     if targets:
         t_header = f"<b>\U0001f3af Цели \u2014 в разработку</b> \u2014 {now}\n\n"
-        t_blocks = []
+        t_items = []
         for i, c in enumerate(targets, 1):
             title = esc(c["title"])
             link = esc(c["link"])
@@ -871,8 +904,10 @@ def main():
                 block += f"\u2192 <code>asset-to-hook: {company}</code>\n\n"
             else:
                 block += "\n"
-            t_blocks.append(block)
-        sent_total += tg_send_chunks(t_blocks, t_header)
+            t_items.append((block, c["link"]))
+        count, sent = tg_send_chunks(t_items, t_header)
+        sent_total += count
+        feedback_map.extend(sent)
         time.sleep(1.2)
 
     # --- Остальное: контекст, ниже ---
@@ -896,10 +931,34 @@ def main():
                 block += f"<i>{domain}</i> \u00b7 \U0001f4a1 {why}\n\n"
             else:
                 block += f"<i>{domain}</i>\n\n"
-            r_blocks.append(block)
-        sent_total += tg_send_chunks(r_blocks, r_header)
+            r_blocks.append((block, c["link"]))
+        count, sent = tg_send_chunks(r_blocks, r_header)
+        sent_total += count
+        feedback_map.extend(sent)
 
     print(f"Sent {len(targets)} target(s) + {len(rest)} context item(s) in {sent_total} message(s).")
+
+    # 20.08.2026: feedback loop — записать какие ссылки вошли в каждое
+    # отправленное сообщение, чтобы позже связать реакцию пользователя
+    # (message_reaction, обрабатывается в bot_commands.py) с конкретными
+    # новостями. Реакция на сгруппированное сообщение (1-5 новостей)
+    # засчитывается всем новостям внутри него — точнее для одиночных
+    # сообщений, менее точно для длинных чанков, но не требует ломать
+    # текущий компактный формат дайджеста (одно сообщение = много новостей).
+    if feedback_map:
+        fb = load_json(FEEDBACK_MAP_PATH, {"messages": {}})
+        for message_id, links in feedback_map:
+            if message_id is None:
+                continue
+            fb["messages"][str(message_id)] = {"links": links, "ts": now_iso}
+        # Обрезка хвоста — не растёт бесконечно, старые записи бесполезны
+        # (Telegram-реакция на сообщение недельной давности маловероятна,
+        # но храним с запасом).
+        if len(fb["messages"]) > FEEDBACK_MAP_KEEP:
+            items = sorted(fb["messages"].items(), key=lambda kv: kv[1].get("ts", ""))
+            fb["messages"] = dict(items[-FEEDBACK_MAP_KEEP:])
+        with open(FEEDBACK_MAP_PATH, "w", encoding="utf-8") as f:
+            json.dump(fb, f, ensure_ascii=False, indent=2)
 
     # Сохранить порядок отправки для /why <номер> в bot_commands.py.
     # Targets нумеруются 1..N в своём сообщении, rest — 1..M в своём;
