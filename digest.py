@@ -418,7 +418,7 @@ SYS_PROMPT = (
 
 def deepseek_enrich(title, desc, source):
     payload = {
-        "model": "deepseek-chat",
+        "model": "deepseek-v4-flash",
         "messages": [
             {"role": "system", "content": SYS_PROMPT},
             {"role": "user", "content": f"SOURCE: {source}\nTITLE: {title}\nDESC: {desc[:500]}"},
@@ -517,7 +517,7 @@ def deepseek_deep_analysis(title, desc, source, why, company, prior_items=None):
             lines.append(f"- [{ts}] {it.get('title', '')}: {it.get('why', '')}")
         prior_block = "\n\nPRIOR SIMILAR ITEMS (same company, last 30 days):\n" + "\n".join(lines)
     payload = {
-        "model": "deepseek-chat",
+        "model": "deepseek-v4-flash",
         "messages": [
             {"role": "system", "content": DEEP_SYS_PROMPT},
             {"role": "user", "content": (
