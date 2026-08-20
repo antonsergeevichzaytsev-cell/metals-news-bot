@@ -172,6 +172,7 @@ def esc(s):
 # устранена та же правка) ------------------------------------------------------
 
 import prices as pr
+import usage_tracker as ut
 
 
 def deepseek_synthesize(context, max_tokens=900):
@@ -217,6 +218,7 @@ def deepseek_synthesize(context, max_tokens=900):
     try:
         with net.urlopen_retry(req, timeout=60) as r:
             resp = json.loads(r.read())
+            ut.record_usage("mission_control.deepseek_synthesize", resp.get("usage", {}))
             return resp["choices"][0]["message"]["content"].strip()
     except Exception as e:
         print(f"DeepSeek error: {e}", file=sys.stderr)
