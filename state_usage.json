@@ -1,0 +1,17 @@
+{
+  "daily": {
+    "2026-08-20": {
+      "prompt_cache_hit_tokens": 2560,
+      "prompt_cache_miss_tokens": 449,
+      "completion_tokens": 112,
+      "calls": 4,
+      "cost_usd": 0.00038124000000000003,
+      "by_caller": {
+        "digest.deepseek_enrich": {
+          "calls": 4,
+          "cost_usd": 0.00038124000000000003
+        }
+      }
+    }
+  }
+}

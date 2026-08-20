@@ -1,11 +1,5 @@
 {
   "seen": [
-    "b9c6a15bba502b99844e8b877cda771d",
-    "3b88e6d0878f63878018eae20529ce0d",
-    "9d5b5b0a9865543908c848811192237b",
-    "62bf401acfe0de149101d5f6cf67f45e",
-    "07fc60094518c713c002e8e787226cfe",
-    "7c24df85edb5a8980d3a3dec2d0ef639",
     "b54a235fd6bbd91adafd78dc2831c4d2",
     "7c92e54ad6a09b7ee75784f95d826ed6",
     "804b68585e90757833e43c59e4086deb",
@@ -1499,56 +1493,15 @@
     "5ca8b5c77b763e03663f9c5f5a6de302",
     "627a2807064272d0ec14cc728029ad58",
     "e09d5e09bbd5e8b48e774646a258e5cd",
-    "ea39a2c87323142128dfe03c9034f2dd"
+    "ea39a2c87323142128dfe03c9034f2dd",
+    "9348a0a40ee56a1b66c0a0c9650b4506",
+    "2497512a835a23ffe8bb984ff4a577ef",
+    "dbf8fe71395c40d8352d16564117fe7d",
+    "c79fa781c7ab5e8128ee876157bcef71",
+    "c590f9392125cc636d233dfa15d137e4",
+    "3e9020d0a3505feed4ce50186cf90406"
   ],
   "title_sigs": [
-    [
-      "displaying",
-      "disqualified",
-      "flag",
-      "gold",
-      "israeli",
-      "medalist",
-      "olympiad",
-      "uzbekistan"
-    ],
-    [
-      "cup",
-      "day",
-      "golds",
-      "grab",
-      "iran",
-      "korea",
-      "president",
-      "thailand",
-      "three",
-      "uzbekistan"
-    ],
-    [
-      "500",
-      "annually",
-      "complex",
-      "kazakhstan",
-      "mine",
-      "produce",
-      "tons",
-      "uranium",
-      "zhalpak"
-    ],
-    [
-      "500",
-      "ancient",
-      "burial",
-      "golden",
-      "greek",
-      "kazakhstan",
-      "lavish",
-      "motif",
-      "old",
-      "reveals",
-      "shoes",
-      "year"
-    ],
     [
       "asia",
       "cannot",
@@ -5783,28 +5736,75 @@
       "spot",
       "stabilize",
       "uptick"
+    ],
+    [
+      "ambassadors",
+      "appear",
+      "around",
+      "countries",
+      "export",
+      "uzbekistan",
+      "world"
+    ],
+    [
+      "august",
+      "constitution",
+      "elections",
+      "first",
+      "hold",
+      "kazakhstan",
+      "parliamentary",
+      "under"
+    ],
+    [
+      "bhp",
+      "jansen",
+      "potash",
+      "project",
+      "provides",
+      "update"
+    ],
+    [
+      "commence",
+      "copper",
+      "earth",
+      "element",
+      "exploration",
+      "gold",
+      "including",
+      "induced",
+      "labrador",
+      "malaco",
+      "midland",
+      "mountain",
+      "polarization",
+      "program",
+      "rare",
+      "soquem",
+      "survey",
+      "trough",
+      "zone"
     ]
   ],
   "last_run": {
-    "ts": "2026-08-20T03:09:49.977311+00:00",
-    "raw": 1541,
-    "candidates": 8,
-    "screened": 8,
-    "skipped_by_model": 5,
+    "ts": "2026-08-20T03:15:23.054606+00:00",
+    "raw": 1559,
+    "candidates": 4,
+    "screened": 4,
+    "skipped_by_model": 3,
     "model_errors": 0,
-    "enriched": 3,
+    "enriched": 1,
     "cap": 12,
     "cap_hit": false,
     "feeds_total": 35,
-    "feeds_broken": 4,
+    "feeds_broken": 3,
     "broken": {
       "site:aluminiuminsider.com": "0 items",
       "site:miningjournal.com": "0 items",
-      "(\"smelter restart\" OR \"smelter shutdown\" OR ": "0 items",
-      "https://im-mining.com/feed/": "0 items"
+      "(\"smelter restart\" OR \"smelter shutdown\" OR ": "0 items"
     },
-    "seen_size": 1511,
-    "cross_dups": 3
+    "seen_size": 1506,
+    "cross_dups": 2
   },
   "feed_health": {
     "site:reuters.com (aluminium OR copper OR nic": "ok",
@@ -5841,6 +5841,6 @@
     "(\"green aluminium\" OR \"low-carbon steel\" OR ": "ok",
     "https://www.mining.com/feed/": "ok",
     "https://www.miningweekly.com/page/home/feed": "ok",
-    "https://im-mining.com/feed/": "0 items"
+    "https://im-mining.com/feed/": "ok"
   }
 }
