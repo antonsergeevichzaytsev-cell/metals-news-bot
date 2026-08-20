@@ -473,29 +473,24 @@ def test_cmd_weekly_smtp_failure_reports_error():
 # --- cmd_prices ----------------------------------------------------------
 
 def test_cmd_prices_success():
-    fake_response = json.dumps({
-        "chart": {"result": [{"meta": {
-            "regularMarketPrice": 4.5123,
-            "chartPreviousClose": 4.5000,
-        }}]}
-    }).encode("utf-8")
-
-    class FakeResp:
-        def __enter__(self): return self
-        def __exit__(self, *a): return False
-        def read(self): return fake_response
-
-    with patch.object(bc.net, "urlopen_retry", return_value=FakeResp()):
+    """19.08.2026: cmd_prices теперь тонкая обёртка над prices.py —
+    мокаем pr.fetch_prices() напрямую (высокоуровневый контракт),
+    сетевой слой (Yahoo/Stooq) тестируется отдельно в test_prices.py."""
+    with patch.object(bc.pr, "fetch_prices", return_value={
+        "Cu": (9950.0, 1.2, "CME"),
+        "Al": (2480.0, -0.5, "CME"),
+    }):
         with patch.object(bc, "tg_send") as mock_send:
             bc.cmd_prices()
             text = mock_send.call_args[0][0]
-            assert "4.5123" in text
+            assert "9,950" in text
+            assert "2,480" in text
             assert "Медь" in text
             assert "Алюминий" in text
 
 
 def test_cmd_prices_all_fail_shows_warning():
-    with patch.object(bc.net, "urlopen_retry", side_effect=Exception("timeout")):
+    with patch.object(bc.pr, "fetch_prices", return_value={}):
         with patch.object(bc, "tg_send") as mock_send:
             bc.cmd_prices()
             text = mock_send.call_args[0][0]
@@ -503,29 +498,12 @@ def test_cmd_prices_all_fail_shows_warning():
 
 
 def test_cmd_prices_partial_failure_still_shows_working_ticker():
-    fake_response = json.dumps({
-        "chart": {"result": [{"meta": {"regularMarketPrice": 2.5, "chartPreviousClose": 2.5}}]}
-    }).encode("utf-8")
-
-    class FakeResp:
-        def __enter__(self): return self
-        def __exit__(self, *a): return False
-        def read(self): return fake_response
-
-    calls = {"n": 0}
-
-    def fake_urlopen(req, timeout=15, max_attempts=2):
-        calls["n"] += 1
-        if calls["n"] == 1:
-            raise Exception("boom")
-        return FakeResp()
-
-    with patch.object(bc.net, "urlopen_retry", side_effect=fake_urlopen):
+    with patch.object(bc.pr, "fetch_prices", return_value={"Cu": (9950.0, 0.0, "CME")}):
         with patch.object(bc, "tg_send") as mock_send:
             bc.cmd_prices()
             text = mock_send.call_args[0][0]
-            assert "недоступно" in text
-            assert "2.5000" in text
+            assert "недоступно" in text  # Al отсутствует в результате
+            assert "9,950" in text
 
 
 # --- cmd_synthesis ---------------------------------------------------------
