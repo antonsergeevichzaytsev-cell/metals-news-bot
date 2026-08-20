@@ -52,6 +52,12 @@ CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 DEEPSEEK_KEY = os.environ["DEEPSEEK_API_KEY"]
 
 MAX_ITEMS_PER_RUN = 12
+# 20.08.2026: защитный потолок на число ПОПЫТОК enrichment за прогон
+# (не на число принятых) — раньше отсутствовал, см. комментарий в
+# main() у цикла enrichment. 150 — с запасом над обычными ~86 попытками
+# в нормальном прогоне (raw~1100 -> candidates~220 -> screened~86), но
+# не бесконечно при аномальном бэклоге после простоя.
+MAX_ENRICH_ATTEMPTS = 150
 # Окно возраста 48ч при ~50 публикациях в день + отказы модели: 500 хэшей
 # покрывали окно впритык. 1500 — запас, файл всё равно копеечный.
 SEEN_KEEP = 1500
@@ -695,9 +701,26 @@ def main():
     n_skipped = 0
     n_model_errors = 0
     now_iso = datetime.now(timezone.utc).isoformat()
+    # 20.08.2026: раньше цикл ограничивался только len(enriched) >=
+    # MAX_ITEMS_PER_RUN — верхнего предела на число ПОПЫТОК не было.
+    # Если модель массово говорит skip=True (нормально — большинство
+    # кандидатов отсеивается), enriched почти не растёт, а цикл
+    # продолжает вызывать DeepSeek для каждого кандидата без остановки.
+    # На бэклоге после простоя (4 дня накопленных кандидатов) это дало
+    # 86+ вызовов за прогон и упёрлось в 8-минутный timeout воркфлоу —
+    # даже с отключённым thinking mode, если часть запросов ловит
+    # полный retry-цикл net.urlopen_retry (до 3×30с на транзиентную
+    # ошибку). MAX_ENRICH_ATTEMPTS — защитный потолок независимо от
+    # того, сколько из попыток реально прошли skip-фильтр.
+    n_attempts = 0
     for c in candidates:
         if len(enriched) >= MAX_ITEMS_PER_RUN:
             break
+        if n_attempts >= MAX_ENRICH_ATTEMPTS:
+            print(f"  ! hit MAX_ENRICH_ATTEMPTS={MAX_ENRICH_ATTEMPTS}, "
+                  f"{len(candidates) - n_attempts} candidates left unprocessed this run")
+            break
+        n_attempts += 1
         verdict = deepseek_enrich(c["title"], c["desc"], c["domain"])
         if verdict is None:
             n_model_errors += 1
