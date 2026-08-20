@@ -442,7 +442,15 @@ def deepseek_enrich(title, desc, source):
         # быстрый, дешёвый, детерминированный JSON без рассуждений
         # (см. также: temperature/top_p не действуют в thinking mode —
         # это тоже незаметно ломалось бы, если thinking был бы включён).
-        "extra_body": {"thinking": {"type": "disabled"}},
+        # ИСПРАВЛЕНО 20.08.2026 позже в тот же день: "thinking" — поле
+        # ВЕРХНЕГО УРОВНЯ raw JSON body (подтверждено официальным curl-
+        # примером в доках DeepSeek). Обёртка "extra_body": {...} — это
+        # деталь OpenAI Python SDK-клиента (SDK разворачивает extra_body
+        # на верхний уровень при сериализации запроса), не буквальное
+        # имя поля в HTTP body. Бот шлёт raw JSON через urllib, не через
+        # SDK, — обёрнутое в extra_body поле молча игнорировалось API
+        # как неизвестный ключ, thinking оставался включённым как и был.
+        "thinking": {"type": "disabled"},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
@@ -549,7 +557,7 @@ def deepseek_deep_analysis(title, desc, source, why, company, prior_items=None):
         # 20.08.2026: см. комментарий в deepseek_enrich выше — thinking
         # mode отключён явно, иначе default effort=high съедает
         # max_tokens на рассуждения, оставляя пустой content.
-        "extra_body": {"thinking": {"type": "disabled"}},
+        "thinking": {"type": "disabled"},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
