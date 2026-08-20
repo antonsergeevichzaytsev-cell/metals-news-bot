@@ -280,3 +280,74 @@ def test_load_watchlist_corrupt_file_returns_empty(tmp_path, monkeypatch):
     fake_path.write_text("not valid json{{{", encoding="utf-8")
     monkeypatch.setattr(dg, "WATCHLIST_FILE", str(fake_path))
     assert dg.load_watchlist() == []
+
+
+# --- MAX_ENRICH_ATTEMPTS: защитный потолок на число попыток -----------------
+# 20.08.2026: изолированная проверка логики цикла enrichment (не полный
+# main() — он не тестируется здесь как интеграционная функция, см.
+# заголовок файла). Симулирует именно тот паттерн, который раньше давал
+# неограниченное число вызовов DeepSeek за прогон: если модель массово
+# говорит skip=True, len(enriched) почти не растёт, а без верхнего
+# предела на попытки цикл продолжает бы дёргать API для каждого
+# кандидата. На бэклоге после простоя (сотни кандидатов) это упирало
+# 8-минутный timeout воркфлоу даже с отключённым thinking mode.
+
+def test_enrich_loop_respects_max_attempts_when_mostly_skipped():
+    """Симулирует реальный цикл из digest.py:main() с мокнутым
+    deepseek_enrich, который всегда говорит skip=True — воспроизводит
+    точную форму бага (enriched не растёт, но без капа попытки росли
+    бы неограниченно)."""
+    candidates = [{"title": f"c{i}", "desc": "", "domain": "x"} for i in range(500)]
+    n_attempts = 0
+    enriched = []
+
+    def fake_enrich(title, desc, domain):
+        return {"skip": True}
+
+    for c in candidates:
+        if len(enriched) >= dg.MAX_ITEMS_PER_RUN:
+            break
+        if n_attempts >= dg.MAX_ENRICH_ATTEMPTS:
+            break
+        n_attempts += 1
+        verdict = fake_enrich(c["title"], c["desc"], c["domain"])
+        if verdict.get("skip"):
+            continue
+        enriched.append(c)
+
+    assert n_attempts == dg.MAX_ENRICH_ATTEMPTS
+    assert n_attempts < len(candidates)  # не проехал по всем 500 -> кап реально сработал
+
+
+def test_enrich_loop_stops_at_max_items_before_hitting_attempt_cap():
+    """Когда кандидатов принимается достаточно быстро, MAX_ITEMS_PER_RUN
+    останавливает цикл раньше MAX_ENRICH_ATTEMPTS — кап на попытки не
+    мешает нормальному (быстрому) случаю."""
+    candidates = [{"title": f"c{i}", "desc": "", "domain": "x"} for i in range(500)]
+    n_attempts = 0
+    enriched = []
+
+    def fake_enrich(title, desc, domain):
+        return {"skip": False, "why": "x", "priority": "low", "company": ""}
+
+    for c in candidates:
+        if len(enriched) >= dg.MAX_ITEMS_PER_RUN:
+            break
+        if n_attempts >= dg.MAX_ENRICH_ATTEMPTS:
+            break
+        n_attempts += 1
+        verdict = fake_enrich(c["title"], c["desc"], c["domain"])
+        if verdict.get("skip"):
+            continue
+        enriched.append(c)
+
+    assert len(enriched) == dg.MAX_ITEMS_PER_RUN
+    assert n_attempts == dg.MAX_ITEMS_PER_RUN  # ни одного skip -> attempts == enriched
+    assert n_attempts < dg.MAX_ENRICH_ATTEMPTS
+
+
+def test_max_enrich_attempts_exceeds_max_items_per_run():
+    """Сама константа должна быть больше MAX_ITEMS_PER_RUN — иначе кап
+    на попытки сработает раньше, чем бот успеет набрать нормальную
+    дневную квоту публикаций даже без единого skip."""
+    assert dg.MAX_ENRICH_ATTEMPTS > dg.MAX_ITEMS_PER_RUN
