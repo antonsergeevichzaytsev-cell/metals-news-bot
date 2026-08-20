@@ -34,6 +34,7 @@ import urllib.parse
 import urllib.request
 
 import net
+import prices as pr
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -119,9 +120,18 @@ def save_state(state):
 
 
 def gather_candidates():
-    """Собирает кандидатов из двух источников. Каждый кандидат:
+    """Собирает кандидатов из пяти источников. Каждый кандидат:
     {source, title, note, url}. note — уже готовое обоснование от прошлого
-    прогона (skip/why для digest, тема хука для filings), не выдумываем заново."""
+    прогона (skip/why для digest, тема хука для filings), не выдумываем заново.
+
+    19.08.2026: добавлены три новых источника (facts_shifts, company_clusters,
+    price_context) поверх исходных двух (filings labels, digest priority).
+    До этого момента у бота были только сырые новости — ни связок цифр во
+    времени, ни повторных упоминаний одной компании, ни контекста цены
+    металла не попадало в материал, хотя вся эта логика уже существовала
+    в системе (facts.compare_facts в filings.py, priority-кластеры в
+    cmd_synthesis, prices.py) и просто не была подключена сюда.
+    """
     candidates = []
 
     fh = load_json(FILINGS_HISTORY_PATH, {})
@@ -140,7 +150,8 @@ def gather_candidates():
 
     dh = load_json(DIGEST_HISTORY_PATH, {})
     cutoff_dt = datetime.now(timezone.utc) - timedelta(hours=DIGEST_WINDOW_HOURS)
-    for it in dh.get("items", []):
+    digest_items = dh.get("items", [])
+    for it in digest_items:
         try:
             ts = datetime.fromisoformat(it.get("ts", "").replace("Z", "+00:00"))
         except (ValueError, TypeError):
@@ -156,6 +167,119 @@ def gather_candidates():
             "url": it.get("link", ""),
         })
 
+    candidates.extend(gather_facts_shifts_candidates(fh))
+    candidates.extend(gather_company_cluster_candidates(digest_items))
+    candidates.extend(gather_price_context_candidates(digest_items))
+
+    return candidates
+
+
+def gather_facts_shifts_candidates(filings_history):
+    """Источник 3: filings-записи, где facts.compare_facts уже нашла
+    сдвиг во времени (сумма/срок/извлечение изменились с прошлого
+    упоминания того же проекта) — вычисляется и сохраняется в
+    filings.py, здесь просто читаем готовое поле 'shifts'. Не требует
+    ручной метки '+' от Антона (в отличие от источника filings выше) —
+    сам факт сдвига уже сигнал, независимо от того, размечен ли пост."""
+    candidates = []
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=LABEL_WINDOW_DAYS)).isoformat()
+    for it in filings_history.get("items", []):
+        shifts = it.get("shifts")
+        if not shifts:
+            continue
+        if it.get("ts", "") < cutoff:
+            continue
+        company = it.get("company", "")
+        project = it.get("project", "")
+        where = f"{company} — {project}" if project else company
+        candidates.append({
+            "source": "facts_shift",
+            "title": f"{where}: {'; '.join(shifts)}",
+            "note": it.get("why", ""),
+            "url": it.get("link", ""),
+        })
+    return candidates
+
+
+def gather_company_cluster_candidates(digest_items, min_count=2, window_days=7):
+    """Источник 4: одна компания упомянута 2+ раз за неделю среди
+    high/medium-priority заметок digest — та же логика, что в
+    cmd_synthesis (bot_commands.py), но здесь не требует ручной
+    команды /synthesis, срабатывает сама при сборе кандидатов.
+    Повторное появление одной компании — сигнал тренда, не шума,
+    даже если ни одна отдельная заметка не выглядела как пост."""
+    cutoff_dt = datetime.now(timezone.utc) - timedelta(days=window_days)
+    by_company = {}
+    for it in digest_items:
+        company = (it.get("company") or "").strip()
+        if not company:
+            continue
+        if it.get("priority") not in ("high", "medium"):
+            continue
+        try:
+            ts = datetime.fromisoformat(it.get("ts", "").replace("Z", "+00:00"))
+        except (ValueError, TypeError):
+            continue
+        if ts < cutoff_dt:
+            continue
+        by_company.setdefault(company.lower(), []).append(it)
+
+    candidates = []
+    for key, items in by_company.items():
+        if len(items) < min_count:
+            continue
+        company_name = items[0].get("company", key)
+        titles = [i.get("title", "") for i in items]
+        candidates.append({
+            "source": "company_cluster",
+            "title": f"{company_name}: {len(items)} упоминания за {window_days} дн — " + " | ".join(titles[:3]),
+            "note": " / ".join(i.get("why", "") for i in items if i.get("why")),
+            "url": items[-1].get("link", ""),
+        })
+    return candidates
+
+
+def gather_price_context_candidates(digest_items, window_hours=24, move_threshold_pct=2.0):
+    """Источник 5: если цена меди или алюминия за последние сутки
+    сдвинулась заметно (>= move_threshold_pct), связывает это с
+    рыночными new digest-заметками того же металла за то же окно —
+    'цена упала X% + новость про закрытие смелтера' куда содержательнее
+    голой новости или голой цены по отдельности. Молчит, если цены
+    недоступны (сетевой сбой) или сдвиг незначительный."""
+    try:
+        prices = pr.fetch_prices()
+    except Exception as e:
+        print(f"  ! price_context: fetch_prices failed: {e}", file=sys.stderr)
+        return []
+
+    candidates = []
+    cutoff_dt = datetime.now(timezone.utc) - timedelta(hours=window_hours)
+    keywords = {"Cu": ("copper", "медь", "медн"), "Al": ("aluminium", "aluminum", "алюмин")}
+
+    for sym, (price, chg, src) in prices.items():
+        if chg is None or abs(chg) < move_threshold_pct:
+            continue
+        related = []
+        for it in digest_items:
+            try:
+                ts = datetime.fromisoformat(it.get("ts", "").replace("Z", "+00:00"))
+            except (ValueError, TypeError):
+                continue
+            if ts < cutoff_dt:
+                continue
+            title_lower = (it.get("title", "") + " " + it.get("desc", "")).lower()
+            if any(kw in title_lower for kw in keywords.get(sym, ())):
+                related.append(it)
+        if not related:
+            continue  # движение цены без связанной новости — не пост, просто цифра
+        arrow = "выросла" if chg > 0 else "упала"
+        metal_name = {"Cu": "Медь", "Al": "Алюминий"}.get(sym, sym)
+        candidates.append({
+            "source": "price_context",
+            "title": f"{metal_name} {arrow} на {abs(chg):.1f}% (${price:,.0f}/т, {src}) на фоне: {related[0].get('title', '')}",
+            "note": related[0].get("why", ""),
+            "url": related[0].get("link", ""),
+        })
     return candidates
 
 
