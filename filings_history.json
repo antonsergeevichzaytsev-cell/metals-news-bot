@@ -1581,41 +1581,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-13T14:59:37.252240+00:00",
-      "title": "Phenom Reports Commercialization Progress at MK Plus's New Swedish Base",
-      "link": "https://www.newsfilecorp.com/release/309480/Phenom-Reports-Commercialization-Progress-at-MK-Pluss-New-Swedish-Base",
-      "reason": "третьи лица",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T14:59:37.252240+00:00",
-      "title": "Argo's June Oil Production",
-      "link": "https://www.newsfilecorp.com/release/309479/Argos-June-Oil-Production",
-      "reason": "производственный отчёт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T14:59:37.252240+00:00",
-      "title": "Goldcana Announces Forward Share Split",
-      "link": "https://www.newsfilecorp.com/release/309478/Goldcana-Announces-Forward-Share-Split",
-      "reason": "сплит акций",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T14:59:37.252240+00:00",
-      "title": "Brasnova Energy Materials Inc. Advances Capela Gold Project Through Expanded Sampling and Follow-Up of Additional Prospective Area",
-      "link": "https://www.newsfilecorp.com/release/309438/Brasnova-Energy-Materials-Inc.-Advances-Capela-Gold-Project-Through-Expanded-Sampling-and-FollowUp-of-Additional-Prospective-Areas",
-      "reason": "буровые пробы",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T14:59:37.252240+00:00",
-      "title": "Americore Announces Management and Board Changes",
-      "link": "https://www.newsfilecorp.com/release/309451/Americore-Announces-Management-and-Board-Changes",
-      "reason": "назначение",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-13T20:30:42.612627+00:00",
       "title": "1844 Resources Engages NAI Interactive Ltd. for Investor Relations and Promotional Services",
       "link": "https://www.newsfilecorp.com/release/309556/1844-Resources-Engages-NAI-Interactive-Ltd.-for-Investor-Relations-and-Promotional-Services",
@@ -2167,22 +2132,31 @@
       "link": "https://www.newsfilecorp.com/release/310589/SAGA-Metals-Approved-to-Join-the-Defense-Industrial-Base-Consortium-DIBC-to-Support-Critical-Mineral-Supply-Chain-Security-in-North-America",
       "reason": "членство в консорциуме",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-20T17:18:43.989850+00:00",
+      "title": "CEO.CA's Inside the Boardroom: Lion One Metals: Increasing Mill Capacity for Faster Cash Flow",
+      "link": "https://www.newsfilecorp.com/release/310606/CEO.CAs-Inside-the-Boardroom-Lion-One-Metals-Increasing-Mill-Capacity-for-Faster-Cash-Flow",
+      "reason": "интервью CEO",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T17:18:43.989850+00:00",
+      "title": "Althea Copper Corp. To List its Common Shares on The Canadian Securities Exchange",
+      "link": "https://www.newsfilecorp.com/release/310616/Althea-Copper-Corp.-To-List-its-Common-Shares-on-The-Canadian-Securities-Exchange",
+      "reason": "листинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T17:18:43.989850+00:00",
+      "title": "Scandium Canada annonce la clôture d'un placement privé d'unités accréditives de bienfaisance en vertu de la dispense pour finance",
+      "link": "https://www.newsfilecorp.com/release/310604/Scandium-Canada-annonce-la-clture-dun-placement-priv-dunits-accrditives-de-bienfaisance-en-vertu-de-la-dispense-pour-financement-de-lmetteur-Cot",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-13T14:59:37.247246+00:00",
-      "title": "Thunderstruck Exploration Update License Renewal and $1.8M Private Placement",
-      "matched_noise_word": "private placement",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T14:59:37.250815+00:00",
-      "title": "Iconic Minerals Reports Positive near Surface Gold and Silver Results in First Assays of 2026 Drill Program at New Pass Gold Prope",
-      "matched_noise_word": "\\bdrill\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-13T17:47:55.861186+00:00",
       "title": "Mayo Lake Share Consolidation and Life Offering Closing Dates Extended",
@@ -2271,6 +2245,12 @@
       "ts": "2026-08-20T14:38:07.922948+00:00",
       "title": "Bold Ventures to Drill at Traxxin Gold Project",
       "matched_noise_word": "\\bdrill\\w*",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T17:18:43.987101+00:00",
+      "title": "Geomorphic AI Offers Riikonkoski Copper-Gold Project in Finland for Joint Venture - Historic Copper System Shows High-Grade Gold P",
+      "matched_noise_word": "high-?grade",
       "orbit": false
     }
   ]
