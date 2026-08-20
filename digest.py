@@ -37,6 +37,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 import net
+import usage_tracker as ut
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -464,6 +465,7 @@ def deepseek_enrich(title, desc, source):
     try:
         with net.urlopen_retry(req, timeout=30) as r:
             resp = json.loads(r.read().decode("utf-8"))
+        ut.record_usage("digest.deepseek_enrich", resp.get("usage", {}))
         content = resp["choices"][0]["message"]["content"]
         return json.loads(content)
     except Exception as e:
@@ -571,6 +573,7 @@ def deepseek_deep_analysis(title, desc, source, why, company, prior_items=None):
     try:
         with net.urlopen_retry(req, timeout=30) as r:
             resp = json.loads(r.read().decode("utf-8"))
+        ut.record_usage("digest.deepseek_deep_analysis", resp.get("usage", {}))
         content = resp["choices"][0]["message"]["content"]
         return json.loads(content)
     except Exception as e:
