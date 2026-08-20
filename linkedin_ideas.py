@@ -35,6 +35,7 @@ import urllib.request
 
 import net
 import prices as pr
+import usage_tracker as ut
 from datetime import datetime, timezone, timedelta
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -299,6 +300,7 @@ def deepseek_call(system, user, max_tokens, temperature=0.3):
         "Authorization": f"Bearer {DEEPSEEK_KEY}", "Content-Type": "application/json"})
     with net.urlopen_retry(req, timeout=45) as r:
         resp = json.loads(r.read().decode("utf-8"))
+    ut.record_usage("linkedin_ideas.deepseek_call", resp.get("usage", {}))
     return json.loads(resp["choices"][0]["message"]["content"])
 
 
