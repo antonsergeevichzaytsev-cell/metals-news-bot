@@ -176,7 +176,11 @@ import prices as pr
 
 def deepseek_synthesize(context, max_tokens=900):
     if not DEEPSEEK_KEY: return None
-    url = "https://api.deepseek.com/chat/completions"
+    # 20.08.2026: URL унифицирован с остальными пятью модулями
+    # (были /chat/completions здесь vs /v1/chat/completions везде
+    # ещё — оба варианта у DeepSeek обычно эквивалентны, но нет
+    # смысла держать единственное расхождение без причины).
+    url = "https://api.deepseek.com/v1/chat/completions"
     prompt = (
         "Ты — Chief of Staff Антона Зайцева. Утренний briefing на русском.\n\n"
         "Правила:\n- Никакой воды, никаких 'отличного утра' и преамбул\n- Только факты из переданного контекста, ничего не выдумывай\n- HTML теги Telegram: <b>, <i>, <code>, без других\n- Эмодзи только в заголовках секций\n- Максимум 2500 символов всего\n"
@@ -198,7 +202,17 @@ def deepseek_synthesize(context, max_tokens=900):
         "⚠️ <b>HARD TRUTH</b>\n[ОДНА честная строка если есть проблема. Иначе пропустить.]\n\n"
         f"=== КОНТЕКСТ ===\n{json.dumps(context, ensure_ascii=False)}"
     )
-    body = json.dumps({"model": "deepseek-v4-flash", "messages": [{"role": "system", "content": "Ты sharp Chief of Staff. Direct, no fluff."}, {"role": "user", "content": prompt}], "max_tokens": max_tokens, "temperature": 0.3}).encode()
+    # 20.08.2026: thinking mode отключён явно — см. digest.py:deepseek_enrich
+    # для полного объяснения (default effort=high съедает max_tokens).
+    # Здесь риск ниже (max_tokens=900, не строгий JSON), но для
+    # консистентности и предсказуемой стоимости отключаем везде одинаково.
+    body = json.dumps({
+        "model": "deepseek-v4-flash",
+        "messages": [{"role": "system", "content": "Ты sharp Chief of Staff. Direct, no fluff."}, {"role": "user", "content": prompt}],
+        "max_tokens": max_tokens,
+        "temperature": 0.3,
+        "extra_body": {"thinking": {"type": "disabled"}},
+    }).encode()
     req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "Authorization": f"Bearer {DEEPSEEK_KEY}"})
     try:
         with net.urlopen_retry(req, timeout=60) as r:
