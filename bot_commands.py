@@ -499,7 +499,7 @@ def synthesize_cluster(company, items):
         # 20.08.2026: deepseek-v4-flash по умолчанию thinking=on
         # (effort=high) — при малом max_tokens это съедает лимит на
         # рассуждения, оставляя пустой content. Отключаем явно.
-        "extra_body": {"thinking": {"type": "disabled"}},
+        "thinking": {"type": "disabled"},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
