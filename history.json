@@ -242,6 +242,180 @@
       "company": "Alcoa",
       "uzcopper": false,
       "deep": null
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "CBAM changes the rules for Central Asian exporters to the EU",
+      "desc": "CBAM changes the rules for Central Asian exporters to the EU &nbsp;&nbsp; FOCUS ON Business",
+      "domain": "FOCUS ON Business",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSW93NlRGTnNsd1hUNVdjYjl2QTJSVGRZZnhWbWh4V1RqcTE5Um5HSzFYNXBTbXF4R0Eycl9xMktlZGh5UjhqVkl1WV9PbFhZeDlxRlM2cTZzZ0dUY0FLSi1uV2stbTltUFVINExXTmIxQUNuZXFfc1poMzJ4TjBvT2tOX2lFV0laYm5PbXRpQWJPYUdkQ1ZYOEFxR2E2UWtnc1E?oc=5",
+      "why": "CBAM напрямую влияет на экспорт металлов из Центральной Азии в ЕС, меняя стратегию игроков.",
+      "priority": "medium",
+      "company": "",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "China, India, Russia reject CBAM as punitive measure",
+      "desc": "China, India, Russia reject CBAM as punitive measure &nbsp;&nbsp; Balkan Green Energy News",
+      "domain": "Balkan Green Energy News",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNQ1d4LWRadXVOUmc1bDBKZUNLd0RTTDdtY05WNWxoMW51R1pKOTZWWld0UFpWdWhwS3Nrdlc1UFJNc2J1ekNpSXd6NHhGMjM3NzMzX1BxYUk4dldTaVg4YjROQ3ptQ0dXak5PRDU2QVRHLUh3YzhRaG9JczM0RlY4VEIza1NVWVNUSTNtRGlR?oc=5",
+      "why": "Россия против CBAM — прямое регуляторное давление на экспорт металлов РФ, влияет на стратегию Норникеля и Русала.",
+      "priority": "high",
+      "company": "",
+      "uzcopper": false,
+      "deep": {
+        "what": "Китай, Индия и Россия совместно отвергли CBAM как карательную меру, усилив координацию против углеродного регулирования ЕС.",
+        "who": "Российские экспортёры металлов — Норникель, Русал — под угрозой дополнительных пошлин на поставки в ЕС.",
+        "action": "Проверить, готовит ли Минпромторг ответные меры или компенсации для экспортёров цветных металлов.",
+        "trend": "Продолжает эскалацию противостояния РФ и ЕС по климатическим торговым барьерам."
+      }
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "Uzbekistan woos Japan to develop promising mineral deposits",
+      "desc": "Uzbekistan woos Japan to develop promising mineral deposits &nbsp;&nbsp; trend.az",
+      "domain": "trend.az",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9Rc2VkbHA0ZmdHQXpWRUJGMDVQb2VOTlRZcVloRkctbTkxTWZ0OERuY3FOZ2FITUhWdkZIdmNjZWVuOGFheExTS1p2d19LNHRkOExmN2ZOUkVFOXJNbnZF?oc=5",
+      "why": "Узбекистан привлекает Японию к разработке месторождений — потенциальные партнерства для горнодобывающих компаний в ЦА.",
+      "priority": "medium",
+      "company": "",
+      "uzcopper": true,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "Kazakh State Tightens Grip Over Critical Minerals Miner ERG",
+      "desc": "Kazakh State Tightens Grip Over Critical Minerals Miner ERG &nbsp;&nbsp; The Diplomat – Asia",
+      "domain": "The Diplomat – Asia",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPeXdMbkFBXzk1eW9QWTNoU1ItUDZsUXIzTHFabnQ2QTJPMzhvbWo0RXdXc0VuQWt0YWpuaEFLd0NYNExRZER6SGZtVGhyYzFSM3lIaGNwY0ZWZUcxbmFSWjh3VngxaFZqUHVzLTV0R0RlSWpIMG9yMWxUUW5hWHNqU2xWeXg1c1dKak5LZGpzLUhTWTJhaWFn?oc=5",
+      "why": "Госрегулирование контроля над ERG напрямую влияет на стратегию в Центральной Азии.",
+      "priority": "high",
+      "company": "ERG",
+      "uzcopper": false,
+      "deep": {
+        "what": "Казахстан усиливает госконтроль над ERG, производителем критических минералов, ограничивая частное влияние.",
+        "who": "ERG и её акционеры; прямое влияние на операционные и стратегические решения в Казахстане.",
+        "action": "Проверить условия нового регулирования и его влияние на текущие контракты и проекты ERG.",
+        "trend": ""
+      }
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "RUSAL's profit under IFRS for the first half of the year amounted to $419 million rubles",
+      "desc": "RUSAL's profit under IFRS for the first half of the year amounted to $419 million rubles &nbsp;&nbsp; AKM.RU",
+      "domain": "AKM.RU",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVGhGU2lSd290NXF0SHU5WnFsdDdkRGRQT29meGNmdl94amM0d3dEb29TSmZOX0Q3QW5Yc0RzN19HTlVfNlBHTFBibXhTSXVrOUZVVkRvdnl5Y1dKZ1F6NjVIeWc3TDVVRFRaS0pCUTBrcmVMWUJwT0N1bWs3eTRYSExwZmtZUHd1N2VWdWVDZzVvNEVsdHp0Y1lUUTJiRU11SUt0ZTE1eDBYQkdxMTVvaGFOS2h3Vms?oc=5",
+      "why": "Финансовый результат RUSAL за полугодие — ключевой индикатор для стратегии алюминиевого бизнеса.",
+      "priority": "high",
+      "company": "RUSAL",
+      "uzcopper": false,
+      "deep": {
+        "what": "RUSAL отчитался о прибыли по МСФО за 1П: $419 млн, что отражает текущую конъюнктуру алюминиевого рынка.",
+        "who": "RUSAL — ключевой игрок алюминиевой отрасли; результат влияет на оценку его стратегии и инвестпривлекательность.",
+        "action": "Сопоставить прибыль с ожиданиями рынка и динамикой цен на алюминий; уточнить влияние санкций и логистики.",
+        "trend": "Продолжает тренд дефицита алюминия и рисков поставок, отмеченных ранее."
+      }
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "Vedanta Aluminium Expands Automotive Portfolio with Two Advanced Alloys",
+      "desc": "Vedanta Aluminium Expands Automotive Portfolio with Two Advanced Alloys &nbsp;&nbsp; Autocar Professional",
+      "domain": "Autocar Professional",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQemY5WlMzRHhBVURIN0RfR1AteV94NHhqSi1hOVVwak16Z1pqbENJeGlHSFlkMFNQMlVwQ01ZelZSZGtBSmpqS25idnB0czRYM3JTSUgwUE1OVm5LOFV5QlFETjQ0NkdmTllWQWk0M2RrcGg2QVpTenptbzhwamcweXJfUmZLQVRQdXlDVVY0YXdsQ0VNVHRaWm9kQU5OWGZBaTBOLUQ5S1B4bmx6bXfSAbYBQVVfeXFMT2U5NEJaLVZIdVFpcjBXb0hicGFpbnpZV0psNVlhdnY3ZEY1T0NGR05zaGZpeEFTVmlZQUI1OGZuRzhQRVNFUGRfdVFLd2VTODAtQTA1Q0o2Vm1ZMk1kYjZiSE5fY3hRUGdOSEVlZmFKR21vU0sybk80ZFh5T0F3ZDAyZkE4VTIzU3padnhndWtUUTBSOExJS1JtNUxzNTZCUWFPM1FQdDU3LVJGVGl0d01pWmNXLUE?oc=5",
+      "why": "Vedanta расширяет алюминиевый портфель для автопрома, что усиливает конкуренцию для RUSAL на рынке сплавов.",
+      "priority": "medium",
+      "company": "Vedanta Aluminium",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "MMG temporarily halts Las Bambas copper mine in Peru after accident",
+      "desc": "MMG temporarily halts Las Bambas copper mine in Peru after accident &nbsp;&nbsp; BNamericas",
+      "domain": "bnamericas.com",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNblMyMnNZLW9VT1dqYUhXUEhHZ21pVkJmTHlxTDE1dnRITEZBazVrNWFNdzFyOFdyNHRIbjRHdERKMVlWTkNVZHduZHQ3dkJDZWoyQ2JIOTBMNHU0cnh6cDVRV2htYUdLQjFCRlJqUFFrWlM0NXdSODRwWjdBS253bG0xWXNpUU5xV3VhUFNQekUzUGVXUDVVUG9ZbGN0eThKWjhNSA?oc=5",
+      "why": "Остановка крупного медного рудника Las Bambas влияет на мировые поставки меди и цены.",
+      "priority": "high",
+      "company": "MMG / Las Bambas",
+      "uzcopper": false,
+      "deep": {
+        "what": "MMG приостановила Las Bambas (Перу) после аварии; сроки возобновления не объявлены.",
+        "who": "MMG и Las Bambas — крупный медный актив; влияет на поставки меди и цены.",
+        "action": "Проверить детали аварии и прогноз по срокам; оценить влияние на контракты и рынок.",
+        "trend": ""
+      }
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "Vedanta Aluminium''s New Alloys Cut Auto Imports in India",
+      "desc": "Vedanta Aluminium''s New Alloys Cut Auto Imports in India &nbsp;&nbsp; Rediff MoneyWiz",
+      "domain": "Rediff MoneyWiz",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPMWE5ZHp6ZWxaS0Q0X3k1dGNidnNiSGlqeFU2emVfcEdpTk9ySnlPTm42RDdQRXh5T0VJVEJ4WjNHN1N6dmtVRUtQRk1WYnZVNEVoSmF3VW5ZMFhkR0ZrRkdDZE4wX3RqQldXZ0MwNWZkQTZ1ZXZjRkFCdlJsVHRWV0dfcGszYWx1YmxENW41b2h6aG9fMDBnRGdrYkVsRlA2U0ZUQUphdkpjaWhT0gGyAUFVX3lxTE40Z0JUU0thdWQ0OTFoZ3F3a3JMYW85YXMtV2JNbW1LOWdqTUtMbVBJbGFsakNlZnRSSTBScUhnNlM3UHYzSDFWS1VTUWxVRWFFSnhnemFGVng4UnU1Yy1EYU80TjhhVXlfTnFOM1NfcC1FN3dQWTJVVzZ4ZENLU1lxNW5yOElxeHdVekNHOUtRT19GSTJqUEg3NEQ2d2xJTC1NeFVEb3RvbzVCNlNIYlZvM3c?oc=5",
+      "why": "Vedanta Aluminium расширяет продуктовую линейку, снижая импортозависимость Индии, что усиливает конкуренцию для RUSAL на рынке алюминия.",
+      "priority": "medium",
+      "company": "Vedanta Aluminium",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "Electra, Glencore extend cobalt purchase contract",
+      "desc": "Electra, Glencore extend cobalt purchase contract &nbsp;&nbsp; Canadian Mining Journal",
+      "domain": "Canadian Mining Journal",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOV3ViTVJvaF9rN1lXUVZZaGpJREFPUkJpcDM0b3h6SFpZMl9ULUVUYl9fTTNiU3M0YW9iVS1Oei1xdkRfU3lCaEhIZ2xTUWZMRFNjYS1yWHRjM3dFbl9VSUdTU0l1TzZjX3BKeFd5THdSNDQxQVZHTkNwdkRvYmtETko1bHhmREVrNlJGQlJvYVlReDNsaEdn?oc=5",
+      "why": "Расширение контракта Electra с Glencore на кобальт влияет на цепочку поставок и переработку, что важно для стратегии в цветных металлах.",
+      "priority": "medium",
+      "company": "Electra",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "Exxaro wants energy, future metals to be more than half of group earnings by 2030",
+      "desc": "Exxaro wants its growing energy and future-facing metals businesses to account for more than half of group earnings by 2030. “This is the business we are building for tomorrow,” Exxaro CEO Ben Magara said while displaying a slide showing a diversified natural resources champion not only providing earnings and reducing carbon intensity, but also providing the career opportunities of many young and upcoming people \"to make sure that we remain a key driver to our country's economy\". (Also watch att",
+      "domain": "miningweekly.com",
+      "link": "https://www.miningweekly.com/article/exxaro-wants-energy-future-metals-to-be-more-than-half-of-group-earnings-by-2030-2026-08-20",
+      "why": "Exxaro диверсифицируется в энергетику и металлы будущего, что меняет конкурентный ландшафт для игроков СНГ.",
+      "priority": "medium",
+      "company": "Exxaro",
+      "uzcopper": false,
+      "deep": null
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "China’s $2 Billion Aluminium Investment in Egypt’s Clean Energy Complex",
+      "desc": "China’s $2 Billion Aluminium Investment in Egypt’s Clean Energy Complex &nbsp;&nbsp; Discovery Alert",
+      "domain": "Discovery Alert",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOTTg5YUM3Rlp4X2xNSWY2azNtLU4ySmdlM1F4cTkyU19TUDZDYnJtSklwQjBRdkl6T3hZMkkxamZ2SlUxeTl1R29lcERSaS1VRlIybzRJdVh6LU5lQS1KZHNtUlJ2X21ucFpjVFlMejhMUUd4UnpMX3RVX2NMZkN2QmRTT2E5bG4wdGxF?oc=5",
+      "why": "Крупный проект алюминия в Египте меняет глобальные потоки и конкуренцию для RUSAL.",
+      "priority": "high",
+      "company": "China / Egypt aluminium",
+      "uzcopper": false,
+      "deep": {
+        "what": "Китай инвестирует $2 млрд в алюминиевый комплекс в Египте на базе чистой энергии.",
+        "who": "RUSAL и другие производители алюминия: новый конкурент на рынке с низкоуглеродным металлом.",
+        "action": "Оценить влияние на экспортные рынки и ценовую конкуренцию для RUSAL.",
+        "trend": ""
+      }
+    },
+    {
+      "ts": "2026-08-20T15:32:00.914596+00:00",
+      "title": "Las Bambas halt adds to South America copper woes",
+      "desc": "Las Bambas halt adds to South America copper woes &nbsp;&nbsp; Mining.com",
+      "domain": "mining.com",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBYTjZkV05OZHpuU0Jra0VqXzNhVzZHTkhlOGFPb1hnRWN6RE0yei1QWVk1YzJQdTBJanJnRG93S01mY3pLbFRYRUJ3YzBDdWdJMkVRY1hlWVQwTjN1VkFmemVNSXBWaVdxdTU1RUhmcVh3aXV1c1d2dTQzM0hFdw?oc=5",
+      "why": "Las Bambas停产影响铜供应，直接关系其关注的铜市场战略。",
+      "priority": "high",
+      "company": "Las Bambas",
+      "uzcopper": false,
+      "deep": {
+        "what": "Las Bambas铜矿停产，加剧南美铜供应紧张，具体产量损失未披露。",
+        "who": "Las Bambas（MMG旗下）及全球铜买家，供应中断推升铜价风险。",
+        "action": "核实停产时长及复产时间表，评估对铜价和客户合同的短期影响。",
+        "trend": ""
+      }
     }
   ]
 }
