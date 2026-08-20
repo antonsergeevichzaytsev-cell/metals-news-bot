@@ -51,7 +51,20 @@ jobs:
           git config user.email "bot@noreply.local"
           # /digest внутри cmd_digest() может изменить state.json/history.json/
           # state_last_digest_sent.json — коммитим всё, что реально изменилось.
-          git add state.json history.json state_last_digest_sent.json state_watchlist.json 2>/dev/null || true
+          # 20.08.2026: тот же баг, что нашли в digest.yml — git add с
+          # несуществующим файлом среди аргументов падает целиком (exit 128),
+          # "2>/dev/null || true" глушил и это, и весь commit молча
+          # пропускался с 16.08 (когда state_watchlist.json попал в этот
+          # список, но сам файл создаётся только при первом /watch).
+          FILES_TO_ADD=""
+          for f in state.json history.json state_last_digest_sent.json state_watchlist.json; do
+            [ -f "$f" ] && FILES_TO_ADD="$FILES_TO_ADD $f"
+          done
+          if [ -z "$FILES_TO_ADD" ]; then
+            echo "no tracked state files exist on disk, nothing to add"
+            exit 0
+          fi
+          git add $FILES_TO_ADD
           git diff --cached --quiet && echo "nothing to commit" && exit 0
           git commit -m "command: $(date -u +%Y-%m-%d_%H-%MZ)"
           for i in 1 2 3 4 5; do
