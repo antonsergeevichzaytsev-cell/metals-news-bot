@@ -1,114 +1,11 @@
 {
-  "ts": "2026-08-16T11:42:20.275731+00:00",
+  "ts": "2026-08-20T02:52:36.538342+00:00",
   "items": [
     {
-      "title": "Cantor Fitzgerald Triples USA Rare Earth Stake Amid $1.6 Billion Commerce Deal and Congressional Probe",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPUGxReTRMZjRPaGpKT0VXOUtXZEp6Zl84ME80UnZ3OFNJTGhndElueWNPdkdUdmRFeFFHYkdYblNUV05DUHRJbnAyTkJ5Y0s3NWgwZnZPS25yXzVwZjZNSkhVNWtZcXZCYU96SW9SaDJVOU5iNllyV2JneldBT2Q0Z1dqN19IVGdscFpqSXktV0IxNFhEb3VFN2FaTXI4bW9pbGlMYlFtRF9UcUNXdlpFQ3BrV296OGs5QjNYaUVsZF90bkxWc0lybXJjblF5ekt3b2pZ?oc=5",
-      "company": "USA Rare Earth",
-      "why": "Сделка на $1.6 млрд с Минторгом США по редкоземельным металлам — прямой сигнал для стратегии в нецветных металлах.",
-      "priority": "high",
-      "deep": {
-        "what": "Cantor Fitzgerald утроил долю в USA Rare Earth на фоне сделки с Минторгом США на $1.6 млрд и конгрессионального расследования.",
-        "who": "USA Rare Earth и Cantor Fitzgerald; сделка влияет на стратегию в редкоземельных металлах.",
-        "action": "Проверить детали сделки с Минторгом и статус расследования; оценить влияние на цепочку поставок РЗМ.",
-        "trend": "Продолжает серию крупных сделок USA Rare Earth (после Serra Verde), усиливая консолидацию в секторе."
-      }
-    },
-    {
-      "title": "Aluminium’s 36-Year Inventory Low Hides a 2 Million-Ton Supply Risk",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQUN2UVlHUDF3TE5zOW9iODNkUXRDX01UWWRVWlZhSlVEenM2dTFvakhWU0JHS0hGeGthMW41TGNLM2xTeW5QTkhTN2R5YUloTUtDQ1V6VU43MFQ5dVlldDl4aUZKYllTQ1I1Y1RxTjFrTGtOcUphVTVfNU13bjVXMVdXWkF4S3NrT2FucFcwYjQ?oc=5",
-      "company": "RUSAL",
-      "why": "Алюминиевый дефицит и риск поставок 2 млн т напрямую влияют на стратегию RUSAL и рынок.",
-      "priority": "high",
-      "deep": {
-        "what": "Запасы алюминия на 36-летнем минимуме; скрытый риск дефицита 2 млн т поставок.",
-        "who": "RUSAL и весь алюминиевый рынок: рост цен и волатильность, влияние на стратегию продаж.",
-        "action": "Проверить, как дефицит 2 млн т отражается на контрактных ценах RUSAL и хеджировании.",
-        "trend": "Продолжает тренд усиления дефицита и протекционизма, начатый тарифами на кремний."
-      }
-    },
-    {
-      "title": "Rio Tinto accused of withholding Oyu Tolgoi revenue figures from Mongolians",
-      "link": "https://news.google.com/rss/articles/CBMiQEFVX3lxTFBBZ19Ca3dVZVgyX2U5OUh6bndLXzd4dS1pNlptdTZZc2hWb243Y3F6UmJmQ2ZWT3ZnR1UxMWJldDU?oc=5",
-      "company": "Rio Tinto / Oyu Tolgoi",
-      "why": "Прямое влияние на Oyu Tolgoi, актив в Монголии, стратегически важен для его портфеля.",
-      "priority": "high",
-      "deep": {
-        "what": "Rio Tinto обвиняют в сокрытии данных о доходах Oyu Tolgoi от монгольской стороны.",
-        "who": "Rio Tinto и Oyu Tolgoi; затрагивает отношения с правительством Монголии.",
-        "action": "Проверить, какие именно цифры не раскрыты и как это влияет на переговоры.",
-        "trend": ""
-      }
-    },
-    {
-      "title": "Antofagasta cuts its copper production forecast for 2026",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOd2psSS1hcFVuZkYyUVl2bGx1cnJkWl9lc0o3ZnVqVlpDdjNQTERHUFZENnVQdVJUdTNDbVhLZmM4bUJLV3ZaX21QTWdYU3BnODFxYnpTUWp6WW5yb1JyRGc2cC1SOU9Ka1Y4S280VWFaazZhYTJYM3FPQ0pHRFFRYQ?oc=5",
-      "company": "Antofagasta",
-      "why": "Antofagasta снижает прогноз добычи меди на 2026 год, что влияет на баланс рынка и конкуренцию для российских производителей.",
-      "priority": "medium",
-      "deep": null
-    },
-    {
-      "title": "CATL Balances Aussie Storage Expansion Against a Lingering Lithium-Mine Question",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQemZUTXBwRldHNG0xbzNiNGdGdUNjUFkyYmhvaUtxTTZKTF9RaG9ybEJYMzY0YzVnd2c3cXhYR2ExcWJZbEkxVnAzbGtpNU1MRjcxc0FkdU9qblY3OU1RVU1WTE13eF9PQ0VVN3Y2Wjl0Z0FMRDRkQ0NHN3A4YzBDNXNtbV9vbXkxdTR0X2U0N1M4SHF6NVA2RlVWbVJDMHo3SFVOdm9fT2lfVnF6R2hYbFp0T0FZcmZ0MjRBZG90dmJvRU9PN1gyYUtmaW9HZEMwT1lDSF8wVmJvSmc?oc=5",
-      "company": "CATL",
-      "why": "CATL расширяет хранение энергии в Австралии, что влияет на спрос на литий и конкуренцию для производителей.",
-      "priority": "medium",
-      "deep": null
-    },
-    {
-      "title": "Antofagasta production cuts from Chilean — A Turning Point for the Market?",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdjNmVlVFdFIxaEtaUjZzc2JOUm0wV2R5MXZ4SkE5dGNySTV3dUlyZG41d043V3E5VFc0Y0pnMDRCQWNpdFcwbzRPSWRBZXAtWnJVc0lNRC00bXJEM2R5aEFleTgzaUtvc0k2VjFPQVdyVHl5ZVkxd3g2ak5tWlZVOU56VjltUzF0d3NxNFN5S1RBMlNobVZaSENZalpFU19GM1NXR0xUMWV3cHRPTS1EVDl3?oc=5",
-      "company": "Antofagasta",
-      "why": "Antofagasta снижает производство в Чили, что влияет на рынок меди и конкурентную среду для Норникеля и РУСАЛа.",
-      "priority": "medium",
-      "deep": null
-    },
-    {
-      "title": "Alcoa confirms Australian gas agreement",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFA2Vkt3bjNacEk4QjRDTC1jYWhNMDF1MFNWNGFIYmlTcnNRd080ZVRrSExON2NhVHVHbTNHc2VRZVJJbFgxMVhiU3hHeEZ3VG94aUktczFqV0dtOWwxNldfdzk5RU1qWHJ1SUJBV29OY3N5eHhOd1BFMWw5dw?oc=5",
-      "company": "Alcoa",
-      "why": "Alcoa обеспечивает газ для австралийских заводов, влияя на себестоимость алюминия и конкуренцию для RUSAL.",
-      "priority": "medium",
-      "deep": null
-    },
-    {
-      "title": "Russia discovers new rare-earth mineral as global race for critical minerals intensifies",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNQWpZaXd3X0NiTEZLVkxpNWpqMFdOSUpfWWpINWlYdldCaXpSYkJCNlUtbWpjRFV3YndKdnlfeXRReWdQYkpNNm04ajNFMWZZR2xKdVo5WkNteWRuVnhjcW84YmZzYklzaENjM1dmeEpqazVDWnBYMklRWGprVmNKbWI4LVljd1VvX0pfNVBxcHJLOGt2OTFBVXJ2dkRvZ3lTdXdQZmpLS0lJQ0dUeEhFMnotaUtDaHVEUGlBYkx0cEM?oc=5",
-      "company": "Russia",
-      "why": "Новое редкоземельное месторождение в РФ усиливает позиции страны на рынке критических минералов, что важно для стратегии.",
-      "priority": "medium",
-      "deep": null
-    },
-    {
-      "title": "Drone Tariff Rally Hits Engineering Wall: Magnets and Batteries Stay China-Made",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNQlk1ejJwa25HT3Eyc05lSTNNVUhLWHJCcWtQRGVaQ05PeDJDOGlFZGV3T0EtMFY0eTdJLU1XZWUxUUFnOHlOcWZEaW5hcTFCbXVzcFFqYk5DcGVBVk9vaVNxZWI3UWJVQWxqbi1vbGhlQmhkSFh2MnNFUXVSY2VlYjgyRmRpMzFuaXR5WGJzcm1Bbk11ZE9TczdpdzdCNVVjLW5Cbld1QkdHckxLSXBVeGV1dm5YR1VIZWx3MmJXLVg0T3ZvMUJMQg?oc=5",
-      "company": "",
-      "why": "Тарифы на дроны затрагивают цепочки поставок магнитов и батарей, влияя на стратегию в цветных металлах.",
-      "priority": "medium",
-      "deep": null
-    },
-    {
-      "title": "China Aluminum Billet Supply: July Extended the Inertia-Driven Uptrend; Expectations of a Retreat from Highs in August",
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQT2g4YWdpdndpb3RtczVUbzZfa0p6dzh2UV9sY2lvTHprTndzNnNPNXpTTkNZSmNMYy1OYm5nX2dtWl9wU3U2MkkxcG5lSEVTN3FBOEZZd3d5WFE1Q1hzZ3VPZFVaUGdiNmNkY1llSVdLSmtqdmc0WjFpYU05NW1pdmpYb1pONGoxSkwwWFZTaUlfOG9kU0t0eHdyWkJDaGVPLXV5bUo1bkt5QWhFMW1DR1BUNGZsTkZtaVFDQ3pGdW13and6RWtuSDR5ejFwRVBPTXBoLU84NGxjY0xiTURjZUVrRE5TNWlheFRvNWZLdmpqUnM?oc=5",
-      "company": "RUSAL",
-      "why": "Китайский рынок алюминиевых заготовок влияет на цены и премии, что важно для стратегии RUSAL.",
-      "priority": "medium",
-      "deep": null
-    },
-    {
-      "title": "Equus signs 10-year Alcoa gas deal",
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5oWmVtZG1ONFZDME5uZzJENlMwS0piemdtbGsxdTNFNV9IV1k5OGIwWWZpdUl3MHBNeERrZHYtc0ZWb3BPVE9RZWdCZi1aX1FGcVl4N2ZjRG9kU216R3p3UUZlaXBRU0ha?oc=5",
-      "company": "Equus / Alcoa",
-      "why": "Долгосрочный газовый контракт Equus с Alcoa влияет на энергозатраты алюминиевого сектора, конкурентная среда для RUSAL.",
-      "priority": "medium",
-      "deep": null
-    },
-    {
-      "title": "Russian scientists make new critical mineral discovery",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNandKUWtOUWZNQUdrQ3V1aTlSdFJPTC11ZHp5SlJtT25OMGZYWktHNVk3STM5elNqb0FJZzYydEFhdTV6Ny1GcG1fbWpHZDdLNzlKQy0tU1J1VDRDdDBmSTY3SnhUUFZMWTB4bi1RS3ZjMWVkUDFfVXYzWVBkbVhIc3I4b2VXWkRZUldrbWw5S3ZjQUV5SDN1dGJCdkE?oc=5",
-      "company": "",
-      "why": "Открытие критических минералов в России может повлиять на сырьевую стратегию и конкуренцию для Норникеля и РУСАЛа.",
+      "title": "According to Bloomberg Technoz, Indonesia’s Ministry of Energy and Min",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQUGRuWGhwUzl1VWNjVzRQQ29YRDM4UUFPZ05GUVBrdUZyemgwaHdCNllaSzJIWFFrSXRLVW9IaEwxbUtYUDc2X0lBWTR5T2V6SVZzY045ODNUMVdmOTVFV243YU1xRlNadnp2b2J4R1IyLWMycWdfZzZpLXdKUDFTUWxwcTlBeS1GTXNvcHJMUkhTZVVjNDR6eFp6aUpLUFd6QklrXy1wZk1nR3VHZ3V5STZMX0Q5MGpZaUZ5dlZCVGp2TGt3UW5HMUZfQnEzY1JkWmdaQlVlWDVkaTlqM3pGVkJFVTBBZEhqOElGNQ?oc=5",
+      "company": "Indonesia Ministry of Energy and Mineral Resources",
+      "why": "Индонезия меняет регулирование никелевой отрасли, что влияет на глобальный рынок и конкурентов.",
       "priority": "medium",
       "deep": null
     }
