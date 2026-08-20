@@ -630,6 +630,14 @@ def main():
 
     print(f"Feeds: {len(feeds)}, keywords: {len(keywords)}, seen: {len(seen)}, history: {len(history.get('items', []))}, watchlist: {len(watchlist_terms)}")
 
+    # ВРЕМЕННО 20.08.2026: диагностика после серии фиксов (deepseek-v4-flash
+    # + thinking disabled + MAX_ENRICH_ATTEMPTS) — прогон завершается success,
+    # но history.json/state.json не обновляются с 16.08, ни один новый commit
+    # не появляется. Нужно увидеть реальные цифры до/после enrichment без
+    # доступа к логам Actions (blob-хост вне network allowlist). Убрать
+    # после диагностики.
+    tg_send(f"\U0001f50d DIAG: seen_before={len(seen)}, feeds={len(feeds)}, history_before={len(history.get('items', []))}")
+
     candidates = []
     health = {}
     n_raw = 0
@@ -696,6 +704,7 @@ def main():
         print(f"Near-duplicates dropped: {n_cross_dup}")
 
     print(f"Candidates after filter: {len(candidates)}")
+    tg_send(f"\U0001f50d DIAG: candidates_after_filter={len(candidates)}")
 
     enriched = []
     n_skipped = 0
@@ -801,9 +810,11 @@ def main():
 
     if not enriched:
         print("Nothing to send.")
+        tg_send(f"\U0001f50d DIAG: enriched=0, model_errors={n_model_errors}, n_skipped={n_skipped}, n_attempts={n_attempts}, about to save_state+save_history and return 0")
         state["seen"] = list(seen)
         save_state(state)
         save_history(history)
+        tg_send(f"\U0001f50d DIAG: save_state+save_history called, state ts should now be {now_iso}")
         return 0
 
     enriched.sort(key=lambda x: (
