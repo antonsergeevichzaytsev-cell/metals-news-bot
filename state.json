@@ -1,16 +1,5 @@
 {
   "seen": [
-    "036cd89ac4342c07a18e6f11a0dc4dd8",
-    "1663adbff9eeb09510344c845f6204fd",
-    "da26993e784f081598db03fc671bfb28",
-    "9022bec9b49c7e269cf1da97f17dc084",
-    "8ba2fbfc392dd1374a6702f48ba37da9",
-    "cf91d0e57da7d1a186bf65dc3a16524a",
-    "0d83bc5b15d2d974e42af16fa667be04",
-    "9c90c742300367d720f103e538088424",
-    "05f446509e72ce341cc40a4878609052",
-    "06e852593bb6ed2bb0e05beb5efe627b",
-    "063387729f8de1cb5434fe69dc85c1c2",
     "b9c6a15bba502b99844e8b877cda771d",
     "3b88e6d0878f63878018eae20529ce0d",
     "9d5b5b0a9865543908c848811192237b",
@@ -1499,84 +1488,20 @@
     "98e63dd9a5da11dc468453be6a0a8037",
     "4fe01979215bb89850f5e10e26f1d7a2",
     "3c78367bce5e9a731dd61ab8ff413fae",
-    "43ef20ae35fac3b2f26926c5faab3a4b"
+    "43ef20ae35fac3b2f26926c5faab3a4b",
+    "f6ac8d853f97417e8a6db64940544cbe",
+    "2dc8bfe70e5c6624e36fe0921656f502",
+    "0515855661462c9bdd4339a1daf23c85",
+    "524f20728cbbe8c194a9c75190b35180",
+    "434572f17e552704d7ee01b293494b0a",
+    "968f1087c09b74a9686b194b294f4b98",
+    "804961a49e6606169bde517626c4232b",
+    "5ca8b5c77b763e03663f9c5f5a6de302",
+    "627a2807064272d0ec14cc728029ad58",
+    "e09d5e09bbd5e8b48e774646a258e5cd",
+    "ea39a2c87323142128dfe03c9034f2dd"
   ],
   "title_sigs": [
-    [
-      "coverage",
-      "matchday",
-      "port",
-      "vale"
-    ],
-    [
-      "announces",
-      "bourse",
-      "commodity",
-      "indonesia",
-      "our",
-      "prabowo",
-      "prices",
-      "resources"
-    ],
-    [
-      "12th",
-      "birthday",
-      "celebrates",
-      "daughter",
-      "guthrie",
-      "her",
-      "missing",
-      "mom",
-      "nancy",
-      "remains",
-      "savannah",
-      "vale"
-    ],
-    [
-      "agreement",
-      "american",
-      "anglo",
-      "cmrg",
-      "iron",
-      "ore",
-      "signs",
-      "supply"
-    ],
-    [
-      "copper",
-      "recycling",
-      "sro"
-    ],
-    [
-      "jse",
-      "listed",
-      "palladium",
-      "price",
-      "r23",
-      "share",
-      "southern",
-      "surged"
-    ],
-    [
-      "block",
-      "manganese",
-      "punnam",
-      "vedanta",
-      "wins"
-    ],
-    [
-      "controversy",
-      "flag",
-      "gold",
-      "israeli",
-      "medalist",
-      "olympiad",
-      "raising",
-      "rankings",
-      "removed",
-      "unexpected",
-      "uzbekistan"
-    ],
     [
       "displaying",
       "disqualified",
@@ -5764,27 +5689,122 @@
       "min",
       "ministry",
       "technoz"
+    ],
+    [
+      "2026",
+      "azerbaijan",
+      "cable",
+      "caspian",
+      "fiber",
+      "kazakhstan",
+      "launch",
+      "optic",
+      "plan",
+      "trans"
+    ],
+    [
+      "border",
+      "canadian",
+      "carbon",
+      "costs",
+      "exporters",
+      "face",
+      "multiply",
+      "reporting",
+      "taxes"
+    ],
+    [
+      "all",
+      "aluminium",
+      "demerged",
+      "driving",
+      "gas",
+      "green",
+      "oil",
+      "rally",
+      "stocks",
+      "vedanta",
+      "what"
+    ],
+    [
+      "2026",
+      "billion",
+      "exports",
+      "hit",
+      "lithiu",
+      "mineral",
+      "zimbabwe"
+    ],
+    [
+      "bhp",
+      "capitalizes",
+      "copper",
+      "pivot",
+      "strategic",
+      "towards"
+    ],
+    [
+      "aluminium",
+      "bse",
+      "live",
+      "ltd",
+      "metal",
+      "nse",
+      "price",
+      "share",
+      "stock",
+      "today",
+      "vedanta"
+    ],
+    [
+      "bhp",
+      "copper",
+      "dividend",
+      "estimates",
+      "growth",
+      "highest",
+      "pay",
+      "powers",
+      "profit",
+      "tops",
+      "years"
+    ],
+    [
+      "consumption",
+      "copper",
+      "fall",
+      "highs",
+      "premiums",
+      "prices",
+      "sees",
+      "shanghai",
+      "slight",
+      "smm",
+      "spot",
+      "stabilize",
+      "uptick"
     ]
   ],
   "last_run": {
-    "ts": "2026-08-20T02:52:36.538342+00:00",
-    "raw": 1553,
-    "candidates": 1,
-    "screened": 1,
-    "skipped_by_model": 0,
+    "ts": "2026-08-20T03:09:49.977311+00:00",
+    "raw": 1541,
+    "candidates": 8,
+    "screened": 8,
+    "skipped_by_model": 5,
     "model_errors": 0,
-    "enriched": 1,
+    "enriched": 3,
     "cap": 12,
     "cap_hit": false,
     "feeds_total": 35,
-    "feeds_broken": 3,
+    "feeds_broken": 4,
     "broken": {
       "site:aluminiuminsider.com": "0 items",
       "site:miningjournal.com": "0 items",
-      "(\"smelter restart\" OR \"smelter shutdown\" OR ": "0 items"
+      "(\"smelter restart\" OR \"smelter shutdown\" OR ": "0 items",
+      "https://im-mining.com/feed/": "0 items"
     },
-    "seen_size": 1883,
-    "cross_dups": 382
+    "seen_size": 1511,
+    "cross_dups": 3
   },
   "feed_health": {
     "site:reuters.com (aluminium OR copper OR nic": "ok",
@@ -5821,6 +5841,6 @@
     "(\"green aluminium\" OR \"low-carbon steel\" OR ": "ok",
     "https://www.mining.com/feed/": "ok",
     "https://www.miningweekly.com/page/home/feed": "ok",
-    "https://im-mining.com/feed/": "ok"
+    "https://im-mining.com/feed/": "0 items"
   }
 }
