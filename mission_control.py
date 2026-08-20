@@ -198,7 +198,7 @@ def deepseek_synthesize(context, max_tokens=900):
         "⚠️ <b>HARD TRUTH</b>\n[ОДНА честная строка если есть проблема. Иначе пропустить.]\n\n"
         f"=== КОНТЕКСТ ===\n{json.dumps(context, ensure_ascii=False)}"
     )
-    body = json.dumps({"model": "deepseek-chat", "messages": [{"role": "system", "content": "Ты sharp Chief of Staff. Direct, no fluff."}, {"role": "user", "content": prompt}], "max_tokens": max_tokens, "temperature": 0.3}).encode()
+    body = json.dumps({"model": "deepseek-v4-flash", "messages": [{"role": "system", "content": "Ты sharp Chief of Staff. Direct, no fluff."}, {"role": "user", "content": prompt}], "max_tokens": max_tokens, "temperature": 0.3}).encode()
     req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "Authorization": f"Bearer {DEEPSEEK_KEY}"})
     try:
         with net.urlopen_retry(req, timeout=60) as r:
