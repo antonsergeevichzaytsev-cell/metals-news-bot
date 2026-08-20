@@ -290,6 +290,9 @@ def deepseek_call(system, user, max_tokens, temperature=0.3):
         "temperature": temperature,
         "max_tokens": max_tokens,
         "response_format": {"type": "json_object"},
+        # 20.08.2026: см. digest.py:deepseek_enrich — thinking mode
+        # отключён явно, иначе default effort=high съедает max_tokens.
+        "extra_body": {"thinking": {"type": "disabled"}},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(DEEPSEEK_URL, data=data, headers={
