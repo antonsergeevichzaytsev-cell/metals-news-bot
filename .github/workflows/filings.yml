@@ -53,7 +53,7 @@ jobs:
           # пропускается. Оба файла здесь сейчас существуют, но паттерн
           # хрупок на будущее при добавлении третьего файла в этот список.
           FILES_TO_ADD=""
-          for f in state_filings.json filings_history.json; do
+          for f in state_filings.json filings_history.json state_usage.json; do
             [ -f "$f" ] && FILES_TO_ADD="$FILES_TO_ADD $f"
           done
           if [ -z "$FILES_TO_ADD" ]; then
