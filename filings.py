@@ -407,6 +407,9 @@ def deepseek_screen(title, desc):
         "temperature": 0.2,
         "max_tokens": 300,
         "response_format": {"type": "json_object"},
+        # 20.08.2026: см. digest.py:deepseek_enrich — thinking mode
+        # отключён явно, иначе default effort=high съедает max_tokens.
+        "extra_body": {"thinking": {"type": "disabled"}},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
