@@ -57,7 +57,7 @@ jobs:
           # пропускался с 16.08 (когда state_watchlist.json попал в этот
           # список, но сам файл создаётся только при первом /watch).
           FILES_TO_ADD=""
-          for f in state.json history.json state_last_digest_sent.json state_watchlist.json; do
+          for f in state.json history.json state_last_digest_sent.json state_watchlist.json state_usage.json; do
             [ -f "$f" ] && FILES_TO_ADD="$FILES_TO_ADD $f"
           done
           if [ -z "$FILES_TO_ADD" ]; then
