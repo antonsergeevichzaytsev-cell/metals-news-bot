@@ -657,3 +657,49 @@ def test_cmd_watchlist_shows_all_terms():
             text = mock_send.call_args[0][0]
             assert "cbam" in text
             assert "smelter restart" in text
+
+
+# --- cmd_usage -----------------------------------------------------------
+# 20.08.2026: до этой команды ни одно из 7 мест, вызывающих DeepSeek, не
+# давало видимости трат — реальные деньги без контроля. Тестируем через
+# ut.summary напрямую (не через файловую систему — та логика уже
+# покрыта в test_usage_tracker.py).
+
+def test_cmd_usage_default_days():
+    with patch.object(bc.ut, "summary", return_value=(0.1234, 42, [("digest.deepseek_enrich", 0.1)])) as mock_summary:
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_usage("")
+            mock_summary.assert_called_once_with(days=7)
+            text = mock_send.call_args[0][0]
+            assert "42" in text
+            assert "0.1234" in text
+            assert "digest.deepseek_enrich" in text
+
+
+def test_cmd_usage_custom_days():
+    with patch.object(bc.ut, "summary", return_value=(0.0, 0, [])) as mock_summary:
+        with patch.object(bc, "tg_send"):
+            bc.cmd_usage("14")
+            mock_summary.assert_called_once_with(days=14)
+
+
+def test_cmd_usage_clamps_to_max_60_days():
+    with patch.object(bc.ut, "summary", return_value=(0.0, 0, [])) as mock_summary:
+        with patch.object(bc, "tg_send"):
+            bc.cmd_usage("9999")
+            mock_summary.assert_called_once_with(days=60)
+
+
+def test_cmd_usage_non_numeric_arg_falls_back_to_default():
+    with patch.object(bc.ut, "summary", return_value=(0.0, 0, [])) as mock_summary:
+        with patch.object(bc, "tg_send"):
+            bc.cmd_usage("not-a-number")
+            mock_summary.assert_called_once_with(days=7)
+
+
+def test_cmd_usage_zero_calls_no_crash():
+    with patch.object(bc.ut, "summary", return_value=(0.0, 0, [])):
+        with patch.object(bc, "tg_send") as mock_send:
+            bc.cmd_usage("")
+            text = mock_send.call_args[0][0]
+            assert "0" in text
