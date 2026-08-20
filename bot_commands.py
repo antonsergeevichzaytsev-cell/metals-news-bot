@@ -67,6 +67,7 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 
 import net
+import prices as pr
 import weekly_check as wc
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -284,43 +285,29 @@ def cmd_status():
 
 
 def cmd_prices():
-    """Живые цены на медь и алюминий через COMEX-фьючерсы (Yahoo Finance).
+    """Живые цены на медь и алюминий через COMEX-фьючерсы (Yahoo Finance,
+    Stooq как fallback). Логика в prices.py — единый источник правды,
+    тот же, что использует mission_control.py и linkedin_ideas.py.
 
-    Не LME напрямую — LME не даёт бесплатный JSON без ключа/подписки
-    (проверено 16.08.2026: Metals-API и официальный lme.com оба платные
-    или без API). COMEX HG=F/ALI=F торгуются с LME в жёсткой корреляции,
-    достаточно для оперативного контекста, но это не то же самое число,
-    что увидит трейдер на LME терминале — цена в центах/фунт, не $/тонна.
-    Никель и цинк здесь намеренно НЕ показаны: ликвидного COMEX-эквивалента
-    нет, выдумывать четвёртый источник ради двух метал точное не стоит —
-    честнее показать два числа, чем шесть, из которых половина ненадёжна.
+    19.08.2026: раньше здесь была третья независимая копия сетевого
+    запроса к Yahoo (без Stooq-fallback, без sanity-проверки, в других
+    единицах — центы/фунт вместо $/тонна). Устранено — теперь везде
+    одинаковые единицы и одна логика получения цены.
     """
-    tickers = {"HG=F": "Медь (COMEX)", "ALI=F": "Алюминий (COMEX)"}
+    prices = pr.fetch_prices()
+    labels = {"Cu": "Медь", "Al": "Алюминий"}
     lines = ["<b>💰 Цены</b> (COMEX, не LME напрямую)\n"]
-    any_ok = False
-    for ticker, label in tickers.items():
-        url = (
-            f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
-            "?interval=1d&range=5d"
-        )
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        try:
-            with net.urlopen_retry(req, timeout=15, max_attempts=2) as r:
-                data = json.loads(r.read().decode("utf-8"))
-            result = data["chart"]["result"][0]
-            meta = result["meta"]
-            price = meta["regularMarketPrice"]
-            prev = meta.get("chartPreviousClose") or meta.get("previousClose")
-            if prev:
-                pct = (price - prev) / prev * 100
-                arrow = "\U0001f53a" if pct > 0 else ("\U0001f53b" if pct < 0 else "\u25aa\ufe0f")
-                lines.append(f"{label}: <b>{price:.4f}</b> {arrow} {pct:+.2f}%")
+    for sym, label in labels.items():
+        if sym in prices:
+            price, chg, src = prices[sym]
+            if chg is None:
+                lines.append(f"{label}: <b>${price:,.0f}/т</b> ({src})")
             else:
-                lines.append(f"{label}: <b>{price:.4f}</b>")
-            any_ok = True
-        except Exception as e:
-            lines.append(f"{label}: недоступно ({esc(str(e)[:60])})")
-    if not any_ok:
+                arrow = "\U0001f53a" if chg > 0 else ("\U0001f53b" if chg < 0 else "\u25aa\ufe0f")
+                lines.append(f"{label}: <b>${price:,.0f}/т</b> {arrow} {chg:+.2f}% ({src})")
+        else:
+            lines.append(f"{label}: недоступно (оба источника не ответили)")
+    if not prices:
         lines.append("\n\u26a0\ufe0f Ни один тикер не ответил — источник(и) мог измениться.")
     tg_send("\n".join(lines))
 
