@@ -144,7 +144,7 @@ def pick_top_of_week(history):
     user_msg = "\n".join(lines)
 
     payload = {
-        "model": "deepseek-chat",
+        "model": "deepseek-v4-flash",
         "messages": [
             {"role": "system", "content": F_BLOCK_PROMPT},
             {"role": "user", "content": user_msg},
