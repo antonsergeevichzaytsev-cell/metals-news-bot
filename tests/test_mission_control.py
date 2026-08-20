@@ -133,21 +133,7 @@ def test_analyze_pipeline_empty():
     assert result["live_leads"] == 0
 
 
-# --- is_plausible_price ------------------------------------------------------
-
-def test_plausible_price_aluminium_in_range():
-    assert mc.is_plausible_price("Al", 2500) is True
-
-
-def test_plausible_price_aluminium_out_of_range():
-    assert mc.is_plausible_price("Al", 100) is False
-    assert mc.is_plausible_price("Al", 10000) is False
-
-
-def test_plausible_price_copper_in_range():
-    assert mc.is_plausible_price("Cu", 9000) is True
-
-
-def test_plausible_price_unknown_symbol_always_plausible():
-    # Нет sanity-диапазона для незнакомого символа -> (0, inf), не режем
-    assert mc.is_plausible_price("Ni", 15000) is True
+# 19.08.2026: тесты is_plausible_price/fetch_prices/fetch_yahoo/fetch_stooq
+# переехали в test_prices.py вместе с самими функциями — mission_control.py
+# теперь использует их через prices.py (import prices as pr), больше не
+# определяет эту логику сам.
