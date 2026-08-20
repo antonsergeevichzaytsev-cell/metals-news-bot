@@ -2153,16 +2153,45 @@
       "link": "https://www.newsfilecorp.com/release/310604/Scandium-Canada-annonce-la-clture-dun-placement-priv-dunits-accrditives-de-bienfaisance-en-vertu-de-la-dispense-pour-financement-de-lmetteur-Cot",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-20T20:17:40.647869+00:00",
+      "title": "Largo Secures US$82.2 Million Debt Restructuring, Extending Maturity to 2030",
+      "link": "https://www.newsfilecorp.com/release/310668/Largo-Secures-US82.2-Million-Debt-Restructuring-Extending-Maturity-to-2030",
+      "reason": "реструктуризация долга",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T20:17:40.647869+00:00",
+      "title": "Zentek Awarded Government of Canada Standing Offer for HVAC Filters",
+      "link": "https://www.newsfilecorp.com/release/310651/Zentek-Awarded-Government-of-Canada-Standing-Offer-for-HVAC-Filters",
+      "reason": "госзаказ",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T20:17:40.647869+00:00",
+      "title": "Scandium Canada annonce le déploiement commercial à grande échelle de son alliage Scalium(R), intégré dans toute la nouvelle colle",
+      "link": "https://www.newsfilecorp.com/release/310644/Scandium-Canada-annonce-le-dploiement-commercial-grande-chelle-de-son-alliage-ScaliumR-intgr-dans-toute-la-nouvelle-collection-20262027-de-Ferreol-Skis",
+      "reason": "коммерческое применение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T20:17:40.647869+00:00",
+      "title": "Scandium Canada Announces the Large-Scale Commercial Deployment of its Scalium(R) Alloy in Ferreol Skis' Entire 2026-2027 Collecti",
+      "link": "https://www.newsfilecorp.com/release/310643/Scandium-Canada-Announces-the-LargeScale-Commercial-Deployment-of-its-ScaliumR-Alloy-in-Ferreol-Skis-Entire-20262027-Collection",
+      "reason": "коммерческий продукт",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T20:17:40.647869+00:00",
+      "title": "Scandium Canada annonce la clôture d'un placement privé d'unités accréditives de bienfaisance en vertu de la dispense pour finance",
+      "link": "https://www.newsfilecorp.com/release/310604/Scandium-Canada-annonce-la-clture-dun-placement-priv-dunits-accrditives-de-bienfaisance-en-vertu-de-la-dispense-pour-financement-de-lmetteur-cot",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-13T17:47:55.861186+00:00",
-      "title": "Mayo Lake Share Consolidation and Life Offering Closing Dates Extended",
-      "matched_noise_word": "\\bLIFE offering\\b",
-      "orbit": false
-    },
     {
       "ts": "2026-08-14T05:16:22.211401+00:00",
       "title": "PR0948 - Kimoukro Gold Project Maiden Diamond Drilling Results and Phase 2 Exploration Strategy",
@@ -2251,6 +2280,12 @@
       "ts": "2026-08-20T17:18:43.987101+00:00",
       "title": "Geomorphic AI Offers Riikonkoski Copper-Gold Project in Finland for Joint Venture - Historic Copper System Shows High-Grade Gold P",
       "matched_noise_word": "high-?grade",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-20T20:17:40.644420+00:00",
+      "title": "Silver Dollar Resources Announces AGM Results and Provides Operational Update",
+      "matched_noise_word": "\\bAGM\\b",
       "orbit": false
     }
   ]

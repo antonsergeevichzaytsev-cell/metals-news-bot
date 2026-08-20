@@ -991,7 +991,15 @@
     "8786c51e0653133a5cb94fc2d4dabfdd",
     "a4232420fddc21aa37b50db85bfdacdd",
     "5f1881ac06a298fb0fb45076a5928a52",
-    "382a3947636cec108445a5b72ff94e67"
+    "382a3947636cec108445a5b72ff94e67",
+    "f33e4e9f387aee1fbc28c9c8e417884e",
+    "677ecc3f35ed42a3c8b6b01c8ecba435",
+    "d96c78cf7e061b2cc4a5f5a3291406c9",
+    "b75ef7f83295bbe3267e3dbe08765da7",
+    "141933402ccdabfd3ebaa5d488630bfd",
+    "669b41542caeb355e76fcecee501ee2b",
+    "711633c85f7460e6823f6562ea891a22",
+    "e66008e684c6468b7405c3549c0369f9"
   ],
   "pending": [],
   "feed_health": {
@@ -1008,18 +1016,17 @@
     "GNW:Copper": "timeout"
   },
   "last_run": {
-    "ts": "2026-08-20T17:18:43.989850+00:00",
+    "ts": "2026-08-20T20:17:40.647869+00:00",
     "raw": 60,
-    "fresh": 5,
-    "candidates": 3,
-    "prefiltered_out": 2,
-    "screened": 3,
-    "skipped_by_model": 3,
+    "fresh": 8,
+    "candidates": 5,
+    "prefiltered_out": 3,
+    "screened": 5,
+    "skipped_by_model": 5,
     "kept": 0,
     "cap": 40,
     "cap_hit": false,
-    "feeds_broken": 5,
-    "labels_collected": 0
+    "feeds_broken": 5
   },
   "msg_map": {
     "382": {
