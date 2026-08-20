@@ -426,6 +426,17 @@ def deepseek_enrich(title, desc, source):
         "temperature": 0.2,
         "max_tokens": 120,
         "response_format": {"type": "json_object"},
+        # 20.08.2026: deepseek-v4-flash включает thinking mode по
+        # умолчанию (effort=high) — DeepSeek's официальная документация
+        # подтверждает. При max_tokens=120 thinking-токены съедали весь
+        # лимит, content приходил пустым (finish_reason: "length"),
+        # json.loads(content) падал -> deepseek_enrich возвращал None
+        # на каждом кандидате -> бот молчал 4 дня, репортя success.
+        # Отключение thinking восстанавливает исходное поведение:
+        # быстрый, дешёвый, детерминированный JSON без рассуждений
+        # (см. также: temperature/top_p не действуют в thinking mode —
+        # это тоже незаметно ломалось бы, если thinking был бы включён).
+        "extra_body": {"thinking": {"type": "disabled"}},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
@@ -529,6 +540,10 @@ def deepseek_deep_analysis(title, desc, source, why, company, prior_items=None):
         "temperature": 0.2,
         "max_tokens": 260,
         "response_format": {"type": "json_object"},
+        # 20.08.2026: см. комментарий в deepseek_enrich выше — thinking
+        # mode отключён явно, иначе default effort=high съедает
+        # max_tokens на рассуждения, оставляя пустой content.
+        "extra_body": {"thinking": {"type": "disabled"}},
     }
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
