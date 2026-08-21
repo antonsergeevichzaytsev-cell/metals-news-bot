@@ -30,11 +30,11 @@
       }
     },
     "2026-08-21": {
-      "prompt_cache_hit_tokens": 31872,
-      "prompt_cache_miss_tokens": 8233,
-      "completion_tokens": 2296,
-      "calls": 48,
-      "cost_usd": 0.006340248000000002,
+      "prompt_cache_hit_tokens": 33024,
+      "prompt_cache_miss_tokens": 11191,
+      "completion_tokens": 2618,
+      "calls": 50,
+      "cost_usd": 0.007211592000000003,
       "by_caller": {
         "mission_control.deepseek_synthesize": {
           "calls": 1,
@@ -55,6 +55,10 @@
         "filings.deepseek_screen": {
           "calls": 4,
           "cost_usd": 0.00023692
+        },
+        "linkedin_ideas.deepseek_call": {
+          "calls": 2,
+          "cost_usd": 0.000871344
         }
       }
     }
