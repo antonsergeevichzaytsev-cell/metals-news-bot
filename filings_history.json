@@ -1576,13 +1576,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-14T17:43:50.975007+00:00",
-      "title": "Emerita Provides Shareholders with Additional Facts Regarding Falcon Project and Risk of Activist Led Withhold Campaign",
-      "link": "https://www.newsfilecorp.com/release/309697/Emerita-Provides-Shareholders-with-Additional-Facts-Regarding-Falcon-Project-and-Risk-of-Activist-Led-Withhold-Campaign",
-      "reason": "акционерный конфликт",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-14T20:22:12.103537+00:00",
       "title": "STRACON Group Reports Second Quarter 2026 Financial Results",
       "link": "https://www.newsfilecorp.com/release/309714/STRACON-Group-Reports-Second-Quarter-2026-Financial-Results",
@@ -2133,6 +2126,13 @@
       "title": "Metal Energy Closes Additional Investment from Strategic Investors",
       "link": "https://www.newsfilecorp.com/release/310833/Metal-Energy-Closes-Additional-Investment-from-Strategic-Investors",
       "reason": "размещение",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T20:14:22.986689+00:00",
+      "title": "Green Mountain Announces Acquisition of Streamline Metals Capital Ltd. and Concurrent Transition to Royalty and Streaming Model",
+      "link": "https://www.newsfilecorp.com/release/310860/Green-Mountain-Announces-Acquisition-of-Streamline-Metals-Capital-Ltd.-and-Concurrent-Transition-to-Royalty-and-Streaming-Model",
+      "reason": "смена бизнес-модели",
       "orbit": false
     }
   ],
