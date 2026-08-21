@@ -1,19 +1,6 @@
 {
   "items": [
     {
-      "link": "https://www.newsfilecorp.com/release/306087/Laramide-Resources-Announces-Updated-Preliminary-Economic-Assessment-and-Positions-Westmoreland-Uranium-Project-for-the-Next-Phase-of-Development",
-      "title": "Laramide Resources Announces Updated Preliminary Economic Assessment and Positions Westmoreland Uranium Project for the Next Phase of Development",
-      "stage": "study",
-      "signal": "PEA обновлён",
-      "company": "Laramide Resources Ltd.",
-      "project": "Westmoreland Uranium Project",
-      "region": "Australia",
-      "why": "Обновлён PEA для уранового проекта в Австралии.",
-      "hook": "Owner-side review PEA и CapEx: не дать завысить бюджет на следующей стадии.",
-      "priority": "low",
-      "ts": "2026-07-22T15:09:22.936033+00:00"
-    },
-    {
       "link": "https://www.newsfilecorp.com/release/306131/Sigma-Lithium-Negotiating-Agreement-with-Minas-Gerais-State-Government-to-Settle-Notification-by-Regional-Environmental-State-Body-Coincides-with-2Q-Production-Target-Beat",
       "title": "Sigma Lithium Negotiating Agreement with Minas Gerais State Government to Settle Notification by Regional Environmental State Body; Coincides with 2Q Production Target Beat",
       "stage": "operating",
@@ -1589,34 +1576,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-14T14:53:48.860110+00:00",
-      "title": "Homerun Resources Inc. Amends Terms of Previously Announced Financing",
-      "link": "https://www.newsfilecorp.com/release/309656/Homerun-Resources-Inc.-Amends-Terms-of-Previously-Announced-Financing",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-14T14:53:48.860110+00:00",
-      "title": "Palamina Update on Colt Silver Spin-Out Transaction",
-      "link": "https://www.newsfilecorp.com/release/309626/Palamina-Update-on-Colt-Silver-SpinOut-Transaction",
-      "reason": "корпоративное событие",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-14T14:53:48.860110+00:00",
-      "title": "Fairchild Gold Completes Acquisition of Golden Arrow Property",
-      "link": "https://www.newsfilecorp.com/release/309649/Fairchild-Gold-Completes-Acquisition-of-Golden-Arrow-Property",
-      "reason": "приобретение",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-14T14:53:48.860110+00:00",
-      "title": "Tiger Gold To Host Investor Update Call Tuesday August 18th",
-      "link": "https://www.newsfilecorp.com/release/309624/Tiger-Gold-To-Host-Investor-Update-Call-Tuesday-August-18th",
-      "reason": "конференция",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-14T17:43:50.975007+00:00",
       "title": "Emerita Provides Shareholders with Additional Facts Regarding Falcon Project and Risk of Activist Led Withhold Campaign",
       "link": "https://www.newsfilecorp.com/release/309697/Emerita-Provides-Shareholders-with-Additional-Facts-Regarding-Falcon-Project-and-Risk-of-Activist-Led-Withhold-Campaign",
@@ -2161,16 +2120,24 @@
       "link": "https://www.newsfilecorp.com/release/310686/Focus-Graphite-Highlighted-in-Prime-Minister-Carneys-Historic-Clean-Energy-and-Critical-Minerals-Announcement-Completes-Lac-Knife-Electrical-Desktop-Study",
       "reason": "политическое упоминание",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-21T17:18:54.721495+00:00",
+      "title": "Krait Critical Minerals Announces Receipt of Final Approval for CSE Listing and Commencement of Trading",
+      "link": "https://www.newsfilecorp.com/release/310855/Krait-Critical-Minerals-Announces-Receipt-of-Final-Approval-for-CSE-Listing-and-Commencement-of-Trading",
+      "reason": "листинг",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T17:18:54.721495+00:00",
+      "title": "Metal Energy Closes Additional Investment from Strategic Investors",
+      "link": "https://www.newsfilecorp.com/release/310833/Metal-Energy-Closes-Additional-Investment-from-Strategic-Investors",
+      "reason": "размещение",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-14T14:53:48.857870+00:00",
-      "title": "AE Fuels Appoints Jason Tong as Chief Financial Officer",
-      "matched_noise_word": "appoint\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-17T11:28:29.756410+00:00",
       "title": "Drilling Starts at Pacific Ridge's Kliyul Copper-Gold Project; Two Drill Programs Underway",
@@ -2258,6 +2225,12 @@
     {
       "ts": "2026-08-21T14:36:51.983471+00:00",
       "title": "Montero Announces $2,200,000 Non-Brokered Private Placement",
+      "matched_noise_word": "private placement",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T17:18:54.719906+00:00",
+      "title": "Thunder Mountain Gold Announces Closing of Private Placement",
       "matched_noise_word": "private placement",
       "orbit": false
     }
