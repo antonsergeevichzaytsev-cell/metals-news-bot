@@ -1,119 +1,114 @@
 {
-  "ts": "2026-08-21T03:55:45.314724+00:00",
+  "ts": "2026-08-21T15:31:56.227098+00:00",
   "items": [
     {
-      "title": "Ukraine has imposed new sanctions against the Russian defense-industrial complex, Rusal, and the creators of \"Masha and the Bear\"",
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOV0JrOG11WEF3QkZzNmZPSXJndUROdnpLMVVZOTV6NTJ1di10N2c2ODJPNmhEbjdPUFUtZWNLWFg5dEthSEQ5TU9lY21NclBySUc4bkNkSE9OSXBRTEwwdmVsYmtzWERyUVJpckR3RkJMMFFPTEdGWXB2QTRSWlFURlJSMlUzVmtBUlhMTS12UnlaUUVBSjA0ZWo1RjNxQXNQMGZySmdhTzRpQ1NvOG02Z2UyN19EaUdqeXhXWkxXUjk2WGJNSU9yZmkzRFRoLWtIRTRfNDRvcFB1S3oxajJ5d3cwMFlQYXpDOEp5QlY5Wkc?oc=5",
-      "company": "RUSAL",
-      "why": "Санкции против Русала напрямую затрагивают алюминиевый бизнес и стратегию компании.",
+      "title": "Kazatomprom plans uranium supply deals with China and Russia",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE54NnBUdmRHdy1iaFhlRmZXMUpueVhIQ0FNYXNIcWFMc3pVVDRVNHhvN1lMUnJkbWRMbG8xVjNqY1BsbnNCdVVIWk50b29RN1hJYzdvVHE4QlFnRlpjTGo0?oc=5",
+      "company": "Kazatomprom",
+      "why": "Прямое стратегическое действие Казатомпрома по сделкам с Китаем и Россией, влияет на рынок урана.",
       "priority": "high",
       "deep": {
-        "what": "Украина ввела новые санкции против Русала и российского ОПК.",
-        "who": "Русал — прямое ограничение на операции и экспорт в Украину.",
-        "action": "Проверить, затронуты ли активы Русала за пределами РФ и контракты с ЕС.",
-        "trend": "Продолжает серию санкционных давлений на Русал, усиливая риски."
-      }
-    },
-    {
-      "title": "Ukraine hits Deripaska’s business: Rusal structures come under sanctions",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOLXVKVGdxdDNWM3RpdHJWNHVfblQzX2RydjJjeTA5eWFfcWJteVhGM0E5ZzdkWUlSMnJTT3JXX3FLTWJhQzRWNThRZGw5T1d5el8zNEtEaGZ0OGZkNThjTVJhOUFhd3FNQjFNM2dCWWlNTFBJWnZfZXdicWNzb095ZmpLNHF5OXRyUmRUVlJDQjB5RTZ5NzdlN21aUHR3aGczYTJHa1lRZndzUjF0Z0IxMQ?oc=5",
-      "company": "Rusal",
-      "why": "Санкции против структур Русала напрямую затрагивают активы в орбите клиента и влияют на стратегию.",
-      "priority": "high",
-      "deep": {
-        "what": "Украина ввела санкции против структур Русала и Дерипаски, расширяя ограничения на алюминиевый бизнес.",
-        "who": "Rusal и Дерипаска: санкции затрагивают активы и операционную деятельность компании.",
-        "action": "Проверить, какие именно структуры попали под санкции и как это повлияет на экспортные контракты.",
-        "trend": "Продолжает и усиливает предыдущие санкционные меры против Русала."
-      }
-    },
-    {
-      "title": "Companies of the \"Rusal\" group, Russian officials, and the creators of the animated series \"Masha and the Bear\" — who has been hit by Ukraine's new sanctions",
-      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOSFN3NzdFNWprYnhrbkEzRXBFSk56WjlIUkdMd1lZY0ZsNW5Xb1BrbXNteEI4M28xWmJ6NFliNktKZ19Eam9neGlJdlJPZzlCLXdEeE9LQnd1YWxNRU01ZnNfWldSaDhXOEY1S1diNHBOSVpzclI4TTY1cGVtWTlwTTFmNVJ2elhxcW1iTHBGZ0t6WmdER3B4clJ4MlhYYndrb194Q3RBemkyMGJBcEN6ZmZkNnh4OW14N1hOSDVhWFljMnp1WEZVWXJLbVFrYkRPZUxMcHp0d0IyX3YtbW4wdVpiOXJqbXlMeElZT2FDUW5HTlBXbkMydmgzWkF2U2JKemkxWdIBhAJBVV95cUxOSFN3NzdFNWprYnhrbkEzRXBFSk56WjlIUkdMd1lZY0ZsNW5Xb1BrbXNteEI4M28xWmJ6NFliNktKZ19Eam9neGlJdlJPZzlCLXdEeE9LQnd1YWxNRU01ZnNfWldSaDhXOEY1S1diNHBOSVpzclI4TTY1cGVtWTlwTTFmNVJ2elhxcW1iTHBGZ0t6WmdER3B4clJ4MlhYYndrb194Q3RBemkyMGJBcEN6ZmZkNnh4OW14N1hOSDVhWFljMnp1WEZVWXJLbVFrYkRPZUxMcHp0d0IyX3YtbW4wdVpiOXJqbXlMeElZT2FDUW5HTlBXbkMydmgzWkF2U2JKemkxWQ?oc=5",
-      "company": "Rusal",
-      "why": "Санкції України проти Rusal — пряме регуляторне обмеження для ключового гравця, впливає на стратегію збуту.",
-      "priority": "high",
-      "deep": {
-        "what": "Україна ввела нові санкції проти компаній групи Rusal, російських чиновників і творців «Маші та Ведмедя».",
-        "who": "Rusal та його структури, пов'язані з Дерипаскою, підпадають під обмеження, що впливає на збут.",
-        "action": "Перевірити, чи входять конкретні активи Rusal у списки, і оцінити вплив на контракти.",
-        "trend": "Продовжує серію санкцій України проти Rusal, посилюючи тиск на бізнес."
-      }
-    },
-    {
-      "title": "New complex at Kazakhstan’s Zhalpak mine to produce 500 tons of uranium annually",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTl83NGtUZ0ZxNWp1Z1dIUmZQUktvczhOUkdfR1FtYlBPdktpOUV2MVpONV9TMWJ5Q3IzOW0weERWY2NpQmtDWkNRVTV2Nm5iSUhPUWMtaEY3ZmRiNXExb1hwRUd6NkM3VVJTTkpkRTJRMXljZks2VElOS1BGZ2p6UWVsMzEwcDFGNldoOUdFWWpzYzVDa1VxZ0tFNGR3QUx0di0tUWpfbW1ZT0w0cDhKdGxHQdIBswFBVV95cUxOb2d5cUFkZFUyU2dDT3hEX1Q5YmJweFRVZzN5SmhfeUE5YjIwV19DWTlIb2NIYTF2QkRSaS1FTk9FUVNDOTEtSkdqOWhDcXpuZ3R6ZENjTFB6VkZRaHZKTGJMeWtKSHBocnJFa2JQVXVVUmZkdkFtNmJQUVpEX0hkUDB0SEpnN3BZZmVoZE5ZMHlhamd0M19IS3dXdlZFYXpHdGJlRUt4SXUyS1dJMjZWeS15bw?oc=5",
-      "company": "Zhalpak mine",
-      "why": "Новое производство урана в Казахстане — прямой интерес для стратегии в урановом секторе.",
-      "priority": "high",
-      "deep": {
-        "what": "На руднике Жалпак в Казахстане запущен новый комплекс мощностью 500 тонн урана в год.",
-        "who": "Касается оператора рудника Жалпак и игроков уранового рынка Казахстана, включая возможных партнёров.",
-        "action": "Проверить, кто оператор и инвестор комплекса, и как это влияет на баланс спроса/предложения урана.",
+        "what": "Казатомпром планирует контракты на поставку урана в Китай и Россию, расширяя экспортные рынки.",
+        "who": "Казатомпром — напрямую; Китай и Россия — как покупатели; влияет на глобальный рынок урана.",
+        "action": "Проверить объёмы и сроки контрактов, оценить влияние на цены и конкуренцию с западными покупателями.",
         "trend": ""
       }
     },
     {
-      "title": "EU Details Carbon Import Compliance Standards",
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQaUF5QXVEWENwRC1XUDFJNHV1dER3WjJrQzBYalRPV2gwVEJ1S3VZODNSNDcwNzQ0cUpTb1lRNmJ2WWh4VHlpc0c0Mlo2V0FYVkFDbGJtNEh6cEhidHFfNERGZW0zd1RUTm95SVlvcWVqeEtXOTI1eF9oYW1IVkpYUXBIdEE5dHllM3p3R3FKQ3ZNcGdLVWlMWV9n?oc=5",
+      "title": "Ukraine working to restrict alumina supplies from Ireland to RUSAL smelters – presidential envoy",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBwZ21ydzFnSVJFR0d1bVhVaU53R1RjSUxjaWZITHY1b0pWcFp3RlZrWVhRaHZsTGpLQk9QczhYQXpmdU82MnRIMVFtbnBfZVprclAtUzNaeVRaTkpwNUFRaGV1MNIBaEFVX3lxTFBZb1prd3Jwcjlfa2JpMi13Q1hwNGczNXl0cFZBeVM2V1hTb1dLRUgzZmYzTkI4MFlCZXdmUmdLVkUxY0NtaVhweUZWRUpaSV8yb2dZSkIyYndKREpwU2tHVkpQMkVydkJy?oc=5",
+      "company": "RUSAL",
+      "why": "Прямое ограничение поставок глинозема для RUSAL, влияет на сырьевую стратегию компании.",
+      "priority": "high",
+      "deep": {
+        "what": "Украина работает над ограничением поставок глинозема из Ирландии на заводы RUSAL.",
+        "who": "RUSAL — прямое ограничение сырьевой базы, затрагивает производственную стратегию.",
+        "action": "Проверить альтернативные источники глинозема и оценить влияние на себестоимость алюминия.",
+        "trend": "Продолжает серию санкционных ограничений против RUSAL, усиливая давление."
+      }
+    },
+    {
+      "title": "Rusal returns to profit in first half on higher aluminum prices; shares rise",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNaUtIa3g2dGlMWnJESW9YRVNmdVJoRXNfS3N5Nmh1d3ppcWtVeFRyby1NVmVIS1Mwa0VDR2lvMW5CVGhIN0FfRTlsTWwyUlJ0MTRadUgxQ3kwMkdsYlE2NXlxMnZNcGUtZ1VrUlVyMW5XVDBhMjhhOUY2WWdNRklFMkl5alhUSkF1OUxlRzVUd2NrY1VjaDZHV0JfYWdHSk9oY3VvcVRZeGd6ak1NZ2pQREt6ZU5HWWI1OXV4azJQTkhkNWJRdXhsVEwweUZremZSNmp4cTBLWU9lMTJFU0tHMHJ3?oc=5",
+      "company": "Rusal",
+      "why": "Rusal вернулась к прибыли в 1П на росте цен на алюминий — сигнал для стратегии по алюминиевому рынку.",
+      "priority": "high",
+      "deep": {
+        "what": "Rusal вернулась к прибыли в 1П 2026 на фоне роста цен на алюминий; акции выросли.",
+        "who": "Rusal — улучшение финансовых показателей на фоне санкций и ограничений поставок глинозема.",
+        "action": "Проверить, как прибыль влияет на оценку активов в текущем DD и переговорах.",
+        "trend": "Продолжает тренд: прибыль на фоне санкций и ограничений, но риски сохраняются."
+      }
+    },
+    {
+      "title": "LGMG’s MTH150M steps up to meet China’s methanol mining truck boom",
+      "link": "https://im-mining.com/2026/08/21/lgmgs-mth150m-steps-up-to-meet-chinas-methanol-mining-truck-boom/",
+      "company": "LGMG",
+      "why": "Китайский бум метанольных карьерных самосвалов меняет структуру затрат и энергетику на рудниках, влияя на стратегию конкурентов.",
+      "priority": "medium",
+      "deep": null
+    },
+    {
+      "title": "At 13:00 on August 20 Peru time, a 7.2-magnitude earthquake struck the",
+      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNbENFMnpXeFVrWDJuVFR6WjhscEFtcWhZTVRuX2RwRHc3Q3ZXNVhEaC1yQ2tFRWJGaUdvVmJRNFhrZmduaC1yWVVLUzVFNWotWDJXbi0xTFVXTkN3MnJOVG5oTWxaU0hsT1VwTEIwTXNYT2JEMFMtX2NYWTB0LUQyQXNjeUZiTGR6aUk2S0VvaVZQbDRZRWN2VlpfSTJ1Ym42QVdlOVVhTm45cUhDVUdEUUs0bWU2bTVQS05kT3lIWEdVZFJIMEVRYkVXV01yYkFMVTNRN0dVdnhOTjBsWEdmMzNMd3hsbU5TamkyUnNyVUJzYlVlWXNfb1AzbW4?oc=5",
       "company": "",
-      "why": "Углеродное регулирование ЕС напрямую влияет на экспорт металлов из СНГ, требуя стратегической адаптации.",
+      "why": "Землетрясение в Перу может нарушить добычу меди, влияя на мировые цены и поставки.",
       "priority": "medium",
       "deep": null
     },
     {
-      "title": "Brookfield and La Caisse have completed the acquisition of Canadian re",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOb1NIcjJOU2lQaFFoQ2JZTUpEVUIzTzMxVmdsaVVMSkZNQjE3cmdwdlBIOG1paEpvYWJmWXNveVlldGRReDR6eFUwSUotTmJZMDZHMXFQVWNQczc1ZnZqbVg2SFVCNFRDQy1QRXJVSk4zMWd2dVVMTy1OcmJBZjdTZFNKbGFLdDhTbFlsYnE2cGpCTDlvUzhJaDduQjVYOGMzZmtn?oc=5",
-      "company": "Brookfield",
-      "why": "Brookfield и La Caisse завершили покупку канадского актива, что меняет структуру рынка.",
+      "title": "Zinc hits four-year peak on supply fears and speculators",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUG12UVNjZkg4WHR2V2xZYWNSTjh5MEJBQkRXblR4YWFoZDhnRlVzejVEUlJYRXVwYi1hQW5GY0VmQmwwUW94djZQMHlhd0Z3UTd4enJaNG9TNC1JSUM5M0JRYW9BeVJpcjRTUVRVeEJ5cnBvUlVPM3lGQV9neE9pR3kzMEJzblpZRFRIMXJ1cWtEVWhnQ1gtODlRQm9qUXlQSVF3djN4aw?oc=5",
+      "company": "",
+      "why": "Цинк на 4-летнем пике из-за опасений по поставкам — сигнал для стратегии по металлам.",
       "priority": "medium",
       "deep": null
     },
     {
-      "title": "[SMM Rare Earth Morning Meeting Minutes] Major Producers’ Purchasing Drove a Recovery in Pr-Nd Oxide; Metals Stopped Falling and Rose in Tandem; Dysprosium Oxide Continued to Rise; Magnetic Material Scrap Stayed on the Sidelines",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPUHVJaGRqUzFXZHVGSHozd04tWkNrUXladnBrTHNBTHFPWERlVkgxdUdSSXhBTmVZOEY1TFFIVjJmSF84M2k1ZzQyU2luOFJHMzVGYXdVTmFDZXV1SWEtY202b0FSRTY1WFVNZWhVOW4zUmhTOUNwX0pkVThNSHJNWUc4eml1STNkRDVQY0J0aHI3dnZZM09NcG51QW1oOGktRW80RWMtSVVPeXJhSHZES2Q3cHhhaEtYaDMtdWZmZzRuUFlBdE5KQktwYW9oTE5EZXdRQTFHZU5mVDFEZEpEMzNFX0FrSjU5TXN1dHVsbFZaMjkyVGJLdWkyUXM?oc=5",
-      "company": "SMM",
-      "why": "Редкоземельный рынок: рост цен на Pr-Nd оксид из-за закупок крупных производителей, влияет на стратегию в цветных металлах.",
+      "title": "6,000 Malagasy villagers prepare legal action against Rio Tinto as African lawmaker raises Simandou concerns",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNdWo4anZZVzJ1WTZKY0RrRzZMRHREXzdaekNVeVRHOWwwVG1GeFZtSmwybUZ0djFLUjY3ZjZkNmRwUmEzYmIwZVc2XzdRMUMxRE9KWkxpUXVNQU1xZHJaSjVRYUlUSFhra1hxZy1mQUZMa0ViMzRTWHFmalBlNFpPemdLSXY1ZlVCV3hwVThxdVlsVXlOcklIakVhQlBLU1FLV0llb21pcloycFltZFJwSEF4ai1Qd3ZFeGY0ZjdEd3IzMUFWLXhjYU5rRXdjbFgxUE11TTA1THQ?oc=5",
+      "company": "Rio Tinto",
+      "why": "Судебный иск против Rio Tinto на Мадагаскаре может затронуть добычу и репутацию, влияя на стратегию в Африке.",
       "priority": "medium",
       "deep": null
     },
     {
-      "title": "India’s Copper Surge: Hindustan Copper, Hindalco, and Vedanta Push Capacity",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWTFad3RoYjVnRHRGTk9EcU54bGV1bjZmVks0M2hiOVpWRkVrYTNLRWlDY2h1U3FNYjJLWkdqWDVXR25fb0hhVmk4MXRPMVBVbVhsem5ONmpMTGZldGtfdVJxUDNjdjk5OVNGNzJsS0VOc1l2MkFlMGxYVVp6YXJjd2dJZTZLcENuamx1RHFENEo4RjRrQXZCd0pWZk9uYWhxd2RES3J6QUoxUkd2SWl1Q05nM3p5UHcwNzhzTkZ0UVZiZk9TeHdlTlpuNzZVSWlxVGVocFlnVDJrSXhtMzJlamdn?oc=5",
-      "company": "Hindustan Copper",
-      "why": "Индийские производители меди расширяют мощности, что усилит конкуренцию на рынке для его игроков.",
+      "title": "US DOE to Provide $500 Million for Lithium, Cobalt and Battery Materials Projects, Nth Cycle Gets $100 Million",
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPLXllN0N0THVwejhfdjVzdGl6LVhHdmhuODlmaWttTm53UTEySFJWaUdhTkpidUFZRlZNemRNSEJIVjFtWDVnS1d0bEI3bmZtSnFQQ2RqNXh0S3JoQXl2bmNkYjluSTNHaGVkTkxPUmRCTGRaT216SjdJc0NPX1g3ME1zMjAyVGtidmZYeUpIY3RQWF80MXFVb01Gb1pKZVIwZkpHU3J1dVpFZ0dEV2VPUXBBMEEtLXg1VS0wcjQyM2FkYnRNZEZSdGs2bDNrRHVCQllQUmhPNWo2M0dzdnVzdVNSVTdqMWdhN1E?oc=5",
+      "company": "Nth Cycle",
+      "why": "Госфинансирование США в $500 млн на литий и кобальт усилит конкуренцию для RUSAL и Норникеля.",
       "priority": "medium",
       "deep": null
     },
     {
-      "title": "Iron Bear Resources Says Vale Provides USD $1.3M Funding Tranche To Advance Project Iron Bear",
-      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNRXNlY1FTcldPTDBkNmpPbF9tX2M4YTB3dV9PbHJrRWtDbHBOYlllNzNVSDJadDVZMGxvQV9sMEh4Y2NPSWVybGt1eFEzWUhPRGI0Nm9KaVFfLVJXd3pzanB5cS1qVmo1azZLa21UOHBjeVZDTFd2RGRBZm5lYk5XZlFoRUd2WDBhYUpobGhoXzBFbEd5YWM4YzlvUF9iUi12bFUwMWtTWWFWYWh2Q3NDS0NHSUhpd2x0alo1bnV3Z3p1RW9CS0gxdHhHdjRtQk1sVk5mNDBMYXRYMDVwTGxvOVBreXFjMnAtN2tVNDBNNlBYM1dL?oc=5",
-      "company": "Iron Bear Resources",
-      "why": "Vale финансирует проект Iron Bear, что может создать конкуренцию в никелевой отрасли.",
+      "title": "Alcoa receives US funding for critical minerals project",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOM0Q5OElJZldveVg3OUxLU3NxWTFQS0VmSF9Jb0lhVG1obkh0TGpxNW0zbWptSGhXSlloZXVWZ204OXBJWG1qUWJwc1NqSllNbDJmRm0zcDlLVVJrbTFpRDBqa3pNaFh6VWZveG1CSTRCVzJ5Ykl6Vm9hdXNVMGF2RlRuZXFxZ1pZa2NfZ2NYb3E?oc=5",
+      "company": "Alcoa",
+      "why": "Alcoa получает госфинансирование США на проект критических минералов, что влияет на конкуренцию в алюминии.",
       "priority": "medium",
       "deep": null
     },
     {
-      "title": "Iron Bear Resources Receives USD $1.3M Final Phase 1 Tranche from Vale",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNampaWWt0RUozcTZkMHZnWkJpcFlYZU1rNXBVWXYzVUFFOE5jVEdBa2Q1QjlvaDB4dklNMDB2Mm9TNjJVbXhLZXhpYklYYXR6Y0dVSXpWX3ZadlUwUHJGMTd4NzdOcmhYWFZfN1ZqUkZZVTB4OS05cWFBaW9MamVzbFd2UVBEcTJQOE5aTXFNTExkcmxZY2xneFB0cUpBZXBXOFBXMlpXUGxOU19fNFBn?oc=5",
-      "company": "Iron Bear Resources",
-      "why": "Iron Bear получает $1,3 млн от Vale — сигнал о развитии проекта, потенциально интересного для стратегии.",
+      "title": "Omani delegation visits Solidcore’s Kyzyl mine in Kazakhstan as investment cooperation deepens",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOYmZPR1k1cHFrTW1xNGFoVTZabDZhaFBkREVtNUhHazAwc2x6VnJOMmZFZngzSEV0Z0NtbXlsX1VkVFBwTk9FdXhTaDFJNDFsOTMyWTRPRUpIN3ZmMC1vVHh5LWFZWG45REJnLVpFRFJEMjRIaE1lUVBIUHlrTXNTQk53SVpDbjhtaTQ0c3FhdHlaTzBBdmVBamp1S2Z4d21jWl9sMFBvekpZZlg4Tm40S19CSjhVczMyaE92d1JFbVpBaWRHYVHSAcYBQVVfeXFMTkxaN0gwLTZVUFU2WXBNdGp3RkpOclBac1BKNVRaSjNiQWVJQUd0TDlLc0hINUJwc25SZkI1RTQ5V295MVBZYXdqcFE1c1JvbXJ1SFJMQ1ZfeWc1LVpGeGwyWUFBZXlWRWdTLVJTRXBEUFhERVZLRjZobl9iMU1NVXB4cmxLRHFLa3pWNlJMNlZiSkxpR0lKXy1YVDNSTkdWV2NFYkFBeTBmQUdWU3lySG9DWWpvdzcweC1VNm52U2h0WDQyYkV3?oc=5",
+      "company": "Solidcore / Kyzyl",
+      "why": "Визит оманской делегации на рудник Kyzyl указывает на возможные инвестиции в актив Solidcore в Казахстане.",
       "priority": "medium",
       "deep": null
     },
     {
-      "title": "Vale To Maintain 20 Mln Tonnes Of Iron Ore Transshipment Through Malaysia",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1WbU1yY3lmczBsQ2l2Mk1FellHQ0tCRENJVHFZVVgydk5BakJIRmZ0ZFZlMGlldEFZaFRJU0tGeWVPTEVYcjZwSEZic0FyQ2NueGs4Wlh5SlVrdw?oc=5",
-      "company": "Vale",
-      "why": "Vale сохраняет 20 млн т перевалки руды через Малайзию, что влияет на логистику и рынок сырья.",
+      "title": "Fastmarkets increases frequency of aluminium 6063 extrusion billet premium, DDP Spain",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPblFrcTZwdU13Yjh1WXI0QVg0UWw5MGNLZUJ5bGk2d1d5ZjFYM1ZHSmxsaDlpajFvWUFmLXpZZkt1Nlc5czBUQ3NzTWZYMVo2NWJ0TUw0Rnd6Yk5oZm9TQ3BQcjhwU0ZUeGRTc3ZUalRpMXJtbDgxZHc2VVVaVldVZzAwT1pkUVNXc0xRWldZSkRrYlpoeGdxRkh4WmFxcHZhdU9qcE1WWFRDZTVtQWFVMWtjN2FJU1NXVlFiZXp2SQ?oc=5",
+      "company": "",
+      "why": "Изменение частоты котировок премий на алюминиевый биллет в Испании отражает волатильность рынка, влияет на ценообразование для потребителей и производителей.",
       "priority": "low",
       "deep": null
     },
     {
-      "title": "Cast Aluminum Alloy Social Inventory Increases for Two Consecutive Weeks to 28,100 mt; Inventory Buildup Pace Expands [SMM Morning Comment on Cast Aluminum Alloy]",
-      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQMm0yNHNOT0RDeWt3enhQdzVkOUZmM0VmcEJpWFhWMFJITXdlUzVJVWFXZXdvbUItQ01hQUdOOU1HaTBaVnNVOWJrSmswSmRycGN6bVZlZzNHUlRKV2szXzRjLW56MkZJNUdfYU9taVA1SE9DTlRMWWM3SWQ1eEkxMGgxal9ROFBtVXk3c01kS1lJTy1GV3MwYmxtWktyVm5XSDBrMi14UVhmb3BkSHpHVDJ5RGFzTXo4cGxhQTFyMnMwYkpaYS0tbWJXTkF1aWhBc0IzbzV2ZzhKWFhYR3FHVG9sbGI2OFdtTEZZbUMwYVZqa0dnMWQ2eWVMdw?oc=5",
+      "title": "\"Squeeze → Ship to Delivery Warehouse → Return\": Review of the Current LME Market Moves and Outlook [SMM Analysis]",
+      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNbUJZYURVR2dQQ0tBdHhnWFRHOHVDOFd4Z3VkbFE2TTRHU3l5dmhmMHVGY1dMWS1jek5mWE9zb0Q5SGdRUFFFV2IzcjFqVkJwTUJ2eDJBMEtzcEd3bjkxM3VCbW1mNmFoaTNONktaUzYwTkJYYTBQRThrVkNDMXd2Y3RiOW9FaGZwZ2o2TEYxTXMxUVMyRFh5d2lvd1BFSnJVZDZKS01aVXNnSk5EMVVIZzd0Q2FodnpyLUhMbTZFTVVZUTgyM3N5OWwwMnNxWDcyc0FXQ2lydG1HaUlSUVYwYWZwS2p2Yi1Xb1dTdmM0OFhVRE1rQ2xRZVB2ZTFVYnZiRmd3?oc=5",
       "company": "",
-      "why": "Данные по запасам литейных алюминиевых сплавов в Китае отражают спрос и цены, влияя на стратегию RUSAL.",
+      "why": "Анализ LME-сжатия и возврата металла на склады влияет на цены и премии, что важно для стратегии трейдинга.",
       "priority": "low",
       "deep": null
     }
