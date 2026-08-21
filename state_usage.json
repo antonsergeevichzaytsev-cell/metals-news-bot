@@ -30,15 +30,23 @@
       }
     },
     "2026-08-21": {
-      "prompt_cache_hit_tokens": 640,
-      "prompt_cache_miss_tokens": 659,
-      "completion_tokens": 383,
-      "calls": 1,
-      "cost_usd": 0.00080448,
+      "prompt_cache_hit_tokens": 26752,
+      "prompt_cache_miss_tokens": 5611,
+      "completion_tokens": 2074,
+      "calls": 43,
+      "cost_usd": 0.0055810480000000025,
       "by_caller": {
         "mission_control.deepseek_synthesize": {
           "calls": 1,
           "cost_usd": 0.00080448
+        },
+        "digest.deepseek_enrich": {
+          "calls": 38,
+          "cost_usd": 0.0034822720000000007
+        },
+        "digest.deepseek_deep_analysis": {
+          "calls": 4,
+          "cost_usd": 0.0012942960000000001
         }
       }
     }
