@@ -1581,20 +1581,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-13T20:30:42.612627+00:00",
-      "title": "1844 Resources Engages NAI Interactive Ltd. for Investor Relations and Promotional Services",
-      "link": "https://www.newsfilecorp.com/release/309556/1844-Resources-Engages-NAI-Interactive-Ltd.-for-Investor-Relations-and-Promotional-Services",
-      "reason": "IR-контракт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-13T20:30:42.612627+00:00",
-      "title": "PM Super Fund Reveals Marilia Bento, Chair of the Special Committee Refuses Cross Examination, Catherine Stretch Owned Shares in P",
-      "link": "https://www.newsfilecorp.com/release/309520/PM-Super-Fund-Reveals-Marilia-Bento-Chair-of-the-Special-Committee-Refuses-Cross-Examination-Catherine-Stretch-Owned-Shares-in-Parent-Company-of-MGLIT-and-Sets-Record-Straight-on-Matters-in-Emeritas-August-12-News-Release",
-      "reason": "корпоративный спор",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-14T05:16:22.215929+00:00",
       "title": "Seabridge Gold Files Second Quarter 2026 Report to Shareholders and Its Financial Statements and MD&A",
       "link": "https://www.newsfilecorp.com/release/309598/Seabridge-Gold-Files-Second-Quarter-2026-Report-to-Shareholders-and-Its-Financial-Statements-and-MDA",
@@ -2188,6 +2174,34 @@
       "link": "https://www.newsfilecorp.com/release/310604/Scandium-Canada-annonce-la-clture-dun-placement-priv-dunits-accrditives-de-bienfaisance-en-vertu-de-la-dispense-pour-financement-de-lmetteur-cot",
       "reason": "размещение",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-21T04:10:33.260166+00:00",
+      "title": "Canstar Resources Extends Director-Related Bridge Note and Increases Aggregate Principal Cap to C$500,000",
+      "link": "https://www.newsfilecorp.com/release/310681/Canstar-Resources-Extends-DirectorRelated-Bridge-Note-and-Increases-Aggregate-Principal-Cap-to-C500000",
+      "reason": "финансирование",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T04:10:33.260166+00:00",
+      "title": "Seabridge Gold Reports Gitxsan Government Has Called for Meaningful Consultation and Collaboration with Tsetsaut Skii km La Hax",
+      "link": "https://www.newsfilecorp.com/release/310678/Seabridge-Gold-Reports-Gitxsan-Government-Has-Called-for-Meaningful-Consultation-and-Collaboration-with-Tsetsaut-Skii-km-La-Hax",
+      "reason": "третьи лица",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T04:10:33.260166+00:00",
+      "title": "IMPACT Silver Reports Q2 2026 Results: Revenue Increased by 124%, Gross Profit up 756% on Silver Leverage, Higher Grades",
+      "link": "https://www.newsfilecorp.com/release/310677/IMPACT-Silver-Reports-Q2-2026-Results-Revenue-Increased-by-124-Gross-Profit-up-756-on-Silver-Leverage-Higher-Grades",
+      "reason": "финансовые результаты",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T04:10:33.260166+00:00",
+      "title": "STRACON Group Holding Inc. Withdraws Initial Public Offering of Common Shares",
+      "link": "https://www.newsfilecorp.com/release/310675/STRACON-Group-Holding-Inc.-Withdraws-Initial-Public-Offering-of-Common-Shares",
+      "reason": "отмена IPO",
+      "orbit": false
     }
   ],
   "labels": [],
@@ -2286,6 +2300,12 @@
       "ts": "2026-08-20T20:17:40.644420+00:00",
       "title": "Silver Dollar Resources Announces AGM Results and Provides Operational Update",
       "matched_noise_word": "\\bAGM\\b",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T04:10:33.255757+00:00",
+      "title": "Green Arrow Resources Inc. Announces Closing of Private Placement",
+      "matched_noise_word": "private placement",
       "orbit": false
     }
   ]
