@@ -1581,41 +1581,6 @@
   ],
   "skipped": [
     {
-      "ts": "2026-08-14T05:16:22.215929+00:00",
-      "title": "Seabridge Gold Files Second Quarter 2026 Report to Shareholders and Its Financial Statements and MD&A",
-      "link": "https://www.newsfilecorp.com/release/309598/Seabridge-Gold-Files-Second-Quarter-2026-Report-to-Shareholders-and-Its-Financial-Statements-and-MDA",
-      "reason": "финансовый отчёт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-14T05:16:22.215929+00:00",
-      "title": "Wesdome Announces Implementation of Dividend Reinvestment Plan",
-      "link": "https://www.newsfilecorp.com/release/309599/Wesdome-Announces-Implementation-of-Dividend-Reinvestment-Plan",
-      "reason": "дивидендная программа",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-14T05:16:22.215929+00:00",
-      "title": "Wesdome Reports Strong Second Quarter 2026 Results and Reaffirms Full-Year Production and Cost Guidance",
-      "link": "https://www.newsfilecorp.com/release/309589/Wesdome-Reports-Strong-Second-Quarter-2026-Results-and-Reaffirms-FullYear-Production-and-Cost-Guidance",
-      "reason": "финансовые результаты",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-14T05:16:22.215929+00:00",
-      "title": "Talon Metals Reports Second Quarter 2026 Results",
-      "link": "https://www.newsfilecorp.com/release/309592/Talon-Metals-Reports-Second-Quarter-2026-Results",
-      "reason": "финансовый отчёт",
-      "orbit": false
-    },
-    {
-      "ts": "2026-08-14T05:16:22.215929+00:00",
-      "title": "Mogotes Metals Announces Closing of Exercise of Rights",
-      "link": "https://www.newsfilecorp.com/release/309550/Mogotes-Metals-Announces-Closing-of-Exercise-of-Rights",
-      "reason": "размещение",
-      "orbit": false
-    },
-    {
       "ts": "2026-08-14T11:45:19.430464+00:00",
       "title": "Kincora Reports June 2026 Quarterly Activities and Financial Results",
       "link": "https://www.newsfilecorp.com/release/309617/Kincora-Reports-June-2026-Quarterly-Activities-and-Financial-Results",
@@ -2202,16 +2167,38 @@
       "link": "https://www.newsfilecorp.com/release/310675/STRACON-Group-Holding-Inc.-Withdraws-Initial-Public-Offering-of-Common-Shares",
       "reason": "отмена IPO",
       "orbit": false
+    },
+    {
+      "ts": "2026-08-21T11:28:00.465483+00:00",
+      "title": "Bunker Hill and Silver47 Announce Merger to Create a 'Made in America' U.S. Silver & Critical Minerals Champion",
+      "link": "https://www.newsfilecorp.com/release/310697/Bunker-Hill-and-Silver47-Announce-Merger-to-Create-a-Made-in-America-U.S.-Silver-Critical-Minerals-Champion",
+      "reason": "слияние компаний",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T11:28:00.465483+00:00",
+      "title": "Argentina Metals Announces Engagement of Market Maker",
+      "link": "https://www.newsfilecorp.com/release/310685/Argentina-Metals-Announces-Engagement-of-Market-Maker",
+      "reason": "маркет-мейкер",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T11:28:00.465483+00:00",
+      "title": "Meridian Announces Application for Admission of Shares",
+      "link": "https://www.newsfilecorp.com/release/310754/Meridian-Announces-Application-for-Admission-of-Shares",
+      "reason": "размещение акций",
+      "orbit": false
+    },
+    {
+      "ts": "2026-08-21T11:28:00.465483+00:00",
+      "title": "Focus Graphite Highlighted in Prime Minister Carney's Historic Clean Energy and Critical Minerals Announcement; Completes Lac Knif",
+      "link": "https://www.newsfilecorp.com/release/310686/Focus-Graphite-Highlighted-in-Prime-Minister-Carneys-Historic-Clean-Energy-and-Critical-Minerals-Announcement-Completes-Lac-Knife-Electrical-Desktop-Study",
+      "reason": "политическое упоминание",
+      "orbit": false
     }
   ],
   "labels": [],
   "prefilter_dropped": [
-    {
-      "ts": "2026-08-14T05:16:22.211401+00:00",
-      "title": "PR0948 - Kimoukro Gold Project Maiden Diamond Drilling Results and Phase 2 Exploration Strategy",
-      "matched_noise_word": "\\bdrill\\w*",
-      "orbit": false
-    },
     {
       "ts": "2026-08-14T11:45:19.427041+00:00",
       "title": "Antimony Resources Corp. (ATMY) (ATMYF) (K8J0) Reports Visible Gold in Drilling of 285 grams per tonne (g/t) Gold Using Portable X",

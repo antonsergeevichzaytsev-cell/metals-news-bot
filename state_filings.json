@@ -1007,7 +1007,11 @@
     "e08d0049b9ad3b1c347135b5f3240477",
     "6139baee19529013910a1c2d5c6f6394",
     "b90f264eb47d2e5b1b7982df6674a366",
-    "a64cc281bc8d977221017a5ad3078fbd"
+    "a64cc281bc8d977221017a5ad3078fbd",
+    "63448f7a62cf33ae0b162f1b1c931572",
+    "4318cb9c1dee701035174cf9408545f5",
+    "659e5c8f451b663d792bcb8fc2a58563",
+    "a58eac7e5872222587db3d30422bd360"
   ],
   "pending": [],
   "feed_health": {
@@ -1024,11 +1028,11 @@
     "GNW:Copper": "timeout"
   },
   "last_run": {
-    "ts": "2026-08-21T04:10:33.260166+00:00",
+    "ts": "2026-08-21T11:28:00.465483+00:00",
     "raw": 60,
-    "fresh": 8,
+    "fresh": 4,
     "candidates": 4,
-    "prefiltered_out": 4,
+    "prefiltered_out": 0,
     "screened": 4,
     "skipped_by_model": 4,
     "kept": 0,
@@ -1139,57 +1143,57 @@
   "feed_health_track": {
     "NF:mining-metals": {
       "status": "ok",
-      "streak": 101,
+      "streak": 102,
       "reported": "ok"
     },
     "NF:non-ferrous-metals": {
       "status": "ok",
-      "streak": 101,
+      "streak": 102,
       "reported": "ok"
     },
     "NF:precious-metals": {
       "status": "ok",
-      "streak": 101,
+      "streak": 102,
       "reported": "ok"
     },
     "NF:energy-metals": {
       "status": "ok",
-      "streak": 101,
+      "streak": 102,
       "reported": "ok"
     },
     "NF:rare-earths": {
       "status": "ok",
-      "streak": 101,
+      "streak": 102,
       "reported": "ok"
     },
     "NF:diamonds": {
       "status": "ok",
-      "streak": 101,
+      "streak": 102,
       "reported": "ok"
     },
     "GNW:General Mining": {
       "status": "timeout",
-      "streak": 31,
+      "streak": 32,
       "reported": "timeout"
     },
     "GNW:Gold Mining": {
       "status": "timeout",
-      "streak": 30,
+      "streak": 31,
       "reported": "timeout"
     },
     "GNW:Nonferrous Metals": {
       "status": "timeout",
-      "streak": 32,
+      "streak": 33,
       "reported": "timeout"
     },
     "GNW:Aluminum": {
       "status": "timeout",
-      "streak": 30,
+      "streak": 31,
       "reported": "timeout"
     },
     "GNW:Copper": {
       "status": "timeout",
-      "streak": 32,
+      "streak": 33,
       "reported": "timeout"
     }
   }
