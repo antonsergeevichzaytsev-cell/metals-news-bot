@@ -28,6 +28,19 @@
           "cost_usd": 0.0006085399999999999
         }
       }
+    },
+    "2026-08-21": {
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 659,
+      "completion_tokens": 383,
+      "calls": 1,
+      "cost_usd": 0.00080448,
+      "by_caller": {
+        "mission_control.deepseek_synthesize": {
+          "calls": 1,
+          "cost_usd": 0.00080448
+        }
+      }
     }
   }
 }
